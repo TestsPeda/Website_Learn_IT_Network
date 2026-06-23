@@ -1,4 +1,4 @@
-/* FU-IT Test — generic quiz interaction.
+/* IT-Lernmaterial — generic quiz interaction.
    Works on any page that uses the .q / .opt / .q-reveal markup.
    No build step, no dependencies. */
 (function () {
@@ -18,7 +18,7 @@
       opt.setAttribute("data-multi", multi ? "true" : "false");
 
       function choose() {
-        if (list.classList.contains("locked") && !multi) return;
+        if (list.classList.contains("locked")) return;
         if (multi) {
           opt.classList.toggle("picked");
           opt.setAttribute("aria-checked", opt.classList.contains("picked"));

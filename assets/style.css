@@ -1,7 +1,7 @@
 /* =========================================================================
-   FU-IT · Test Themen 10–15
-   Visual identity adopted from the FU-IT / TechSolutions source handbooks:
-   signal-orange + deep teal on cool blue-grey paper. Monospace carries all
+   IT-Lernmaterial · Themen 10–15
+   Visual identity: signal-orange + deep teal on cool blue-grey paper.
+   Monospace carries all
    technical tokens (IP, binär, hex, RAID) — the subject's own vernacular.
    ========================================================================= */
 
@@ -178,6 +178,9 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
 }
 .opt[data-multi="true"] .tick { border-radius: 4px; }
 .q-options.locked .opt { cursor: default; }
+.opt.picked { border-color: var(--ink); background: var(--surface-2); }
+.opt.picked .tick { background: var(--ink); border-color: var(--ink); color: #fff; }
+.q-options:not(.locked) .opt.picked .tick::after { content: "✓"; }
 .opt.correct   { border-color: var(--accent-2); background: var(--accent-2-tint); }
 .opt.correct .tick { background: var(--accent-2); border-color: var(--accent-2); color:#fff; }
 .opt.wrong     { border-color: var(--warn); background: var(--accent-tint); }
