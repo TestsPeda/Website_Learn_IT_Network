@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13 · Topologien — FU-IT Test</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">FU<span class="slash">·</span>IT</span><b>Test 10–15</b></a>
+  <nav class="topnav">
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html" class="current">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+      <a href="galerie.html">Galerie</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+
+<main><div class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Themenblock · Netzwerkstruktur</p>
+    <div class="hero-num"><span class="hash">#</span>13</div>
+    <h1>Netzwerktopologien</h1>
+    <p class="lede">Bus, Linie, Ring, Stern, Mesh und Baum – Aufbau, Vor- und Nachteile sowie die Bewertung
+      nach Kosten, Skalierbarkeit, Fehleranfälligkeit und Wartungsaufwand.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>19</b> Aufgaben</span>
+      <span class="pill"><b>6</b> Diagramme</span>
+      <span class="pill">MC · Bewertung · Szenario</span>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ============== A · Bus, Linie & Ring ============== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Bus, Linie &amp; Ring</h2></div>
+  <p class="sec-sub">Gemeinsame Leitung, Reihen-Verkettung und geschlossener Ring.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 640 170" role="img" aria-label="Bus-Topologie: gemeinsame Leitung mit Abschlusswiderständen an beiden Enden und vier angeschlossenen PCs">
+      <text x="320" y="22" text-anchor="middle" class="svg-title">Bus-Topologie</text>
+      <line x1="50" y1="115" x2="590" y2="115" stroke="#16242E" stroke-width="3"></line>
+      <rect x="30" y="103" width="22" height="24" rx="3" fill="#DD5430"></rect>
+      <rect x="588" y="103" width="22" height="24" rx="3" fill="#DD5430"></rect>
+      <text x="41" y="150" text-anchor="middle" class="svg-label-sm">Terminator</text>
+      <text x="599" y="150" text-anchor="middle" class="svg-label-sm">Terminator</text>
+      <g stroke="#B9C7D2" stroke-width="2">
+        <line x1="140" y1="70" x2="140" y2="115"></line>
+        <line x1="260" y1="70" x2="260" y2="115"></line>
+        <line x1="380" y1="70" x2="380" y2="115"></line>
+        <line x1="500" y1="70" x2="500" y2="115"></line>
+      </g>
+      <g fill="#fff" stroke="#16242E" stroke-width="2">
+        <circle cx="140" cy="55" r="18"></circle><circle cx="260" cy="55" r="18"></circle>
+        <circle cx="380" cy="55" r="18"></circle><circle cx="500" cy="55" r="18"></circle>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="140" y="59">PC1</text><text x="260" y="59">PC2</text>
+        <text x="380" y="59">PC3</text><text x="500" y="59">PC4</text>
+      </g>
+    </svg>
+    <figcaption>Bus – gemeinsame Leitung mit Abschlusswiderständen; immer nur eine Station sendet.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wozu dienen die <strong>Abschlusswiderstände</strong> (Terminatoren) an den Enden eines Bus-Kabels?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie verhindern Signalreflexionen am Kabelende.</li>
+        <li class="opt"><span class="tick"></span>Sie vergeben IP-Adressen an die Stationen.</li>
+        <li class="opt"><span class="tick"></span>Sie verstärken das Signal für lange Strecken.</li>
+        <li class="opt"><span class="tick"></span>Sie trennen das Netz in mehrere Subnetze.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Die Terminatoren <strong>verhindern Signalreflexionen</strong> am offenen Kabelende, die das Bussignal stören würden. Der Bus ist ein passives Medium ohne zentrale Steuerung.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist der größte <strong>Nachteil</strong> der Bus-Topologie?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Jede Station braucht einen eigenen Switch.</li>
+        <li class="opt"><span class="tick"></span>Sie ist besonders teuer in der Verkabelung.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein einziger Kabeldefekt legt das gesamte Netz lahm.</li>
+        <li class="opt"><span class="tick"></span>Der Ausfall einer Station stört sofort das ganze Netz.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Ein <strong>einziger Kabeldefekt</strong> legt das gesamte Netz lahm, und die Fehlersuche ist aufwendig. <span class="tag-mistake">Achtung</span> Der Ausfall einer einzelnen <em>Station</em> dagegen stört den Bus nicht.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wie viele Stationen können in einer Bus-Topologie <strong>gleichzeitig senden</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Nur eine Station gleichzeitig.</li>
+        <li class="opt"><span class="tick"></span>Beliebig viele, das Medium ist vollduplex.</li>
+        <li class="opt"><span class="tick"></span>So viele, wie Terminatoren vorhanden sind.</li>
+        <li class="opt"><span class="tick"></span>Genau zwei (Sender und Empfänger).</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Es kann <strong>immer nur eine Station gleichzeitig</strong> senden – alle teilen sich dieselbe Leitung. Zudem ist der Verkehr leicht abhörbar.</p>
+    </div>
+  </article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 400 250" role="img" aria-label="Ring-Topologie: fünf Stationen zu einem geschlossenen Ring verbunden">
+      <text x="200" y="22" text-anchor="middle" class="svg-title">Ring-Topologie</text>
+      <g stroke="#16242E" stroke-width="2.5" fill="none">
+        <polygon points="200,55 286,114 253,209 147,209 114,114" fill="none"></polygon>
+      </g>
+      <g fill="#fff" stroke="#16242E" stroke-width="2">
+        <circle cx="200" cy="55" r="20"></circle>
+        <circle cx="286" cy="114" r="20"></circle>
+        <circle cx="253" cy="209" r="20"></circle>
+        <circle cx="147" cy="209" r="20"></circle>
+        <circle cx="114" cy="114" r="20"></circle>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="200" y="59">PC1</text><text x="286" y="118">PC2</text>
+        <text x="253" y="213">PC3</text><text x="147" y="213">PC4</text><text x="114" y="118">PC5</text>
+      </g>
+      <text x="200" y="240" text-anchor="middle" class="svg-label-sm">geschlossener Ring · optionaler Ring-Manager schaltet bei Bruch auf Bus-Betrieb</text>
+    </svg>
+    <figcaption>Ring – geschlossener Kreis; jede Station verstärkt das Signal, keine Kollisionen.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Aussage über die <strong>Ring-Topologie</strong> stimmt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Alle Stationen können jederzeit gleichzeitig senden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es treten keine Kollisionen auf, und jede Station wirkt als Signalverstärker.</li>
+        <li class="opt"><span class="tick"></span>Sie benötigt immer einen zentralen Switch.</li>
+        <li class="opt"><span class="tick"></span>Der Ausfall einer Station hat nie Auswirkungen.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Die Kommunikation ist geregelt: <strong>keine Kollisionen</strong>, jede Station ist <strong>Signalverstärker</strong>, die Bandbreite ist garantiert. Nachteil: teure Komponenten und der Ausfall einer Station kann die Übertragung unterbrechen.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was bewirkt ein <strong>Ring-Manager</strong> bei einer Unterbrechung des Rings?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er vergibt neue IP-Adressen an alle Stationen.</li>
+        <li class="opt"><span class="tick"></span>Er trennt die defekte Station dauerhaft vom Strom.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er schaltet auf Bus-Betrieb um und sorgt so für Redundanz.</li>
+        <li class="opt"><span class="tick"></span>Er verdoppelt die Übertragungsgeschwindigkeit.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Bei einer Unterbrechung schaltet der Ring-Manager auf <strong>Bus-Betrieb</strong> um – das macht den Ring <strong>redundant</strong> und hält die Kommunikation aufrecht.</p>
+    </div>
+  </article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 640 160" role="img" aria-label="Linientopologie: vier Stationen in Reihe hintereinander verkettet, ohne Abschlusswiderstände">
+      <text x="320" y="22" text-anchor="middle" class="svg-title">Linientopologie (Daisy Chain)</text>
+      <g stroke="#16242E" stroke-width="2.5">
+        <line x1="112" y1="95" x2="228" y2="95"></line>
+        <line x1="272" y1="95" x2="388" y2="95"></line>
+        <line x1="432" y1="95" x2="548" y2="95"></line>
+      </g>
+      <g fill="#fff" stroke="#16242E" stroke-width="2">
+        <circle cx="90" cy="95" r="22"></circle>
+        <circle cx="250" cy="95" r="22"></circle>
+        <circle cx="410" cy="95" r="22"></circle>
+        <circle cx="570" cy="95" r="22"></circle>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="90" y="99">PC1</text><text x="250" y="99">PC2</text>
+        <text x="410" y="99">PC3</text><text x="570" y="99">PC4</text>
+      </g>
+      <text x="320" y="140" text-anchor="middle" class="svg-label-sm">Punkt-zu-Punkt in Reihe · keine Abschlusswiderstände · verbindet man die offenen Enden, entsteht ein Ring</text>
+    </svg>
+    <figcaption>Linie – Stationen in Reihe verkettet; jedes Gerät ist mit dem nächsten verbunden.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wie ist eine <strong>Linientopologie</strong> (Daisy Chain) aufgebaut – und worin unterscheidet sie sich vom Bus?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Alle Stationen hängen sternförmig an einem zentralen Switch.</li>
+        <li class="opt"><span class="tick"></span>Jede Station ist direkt mit jeder anderen verbunden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Stationen sind in Reihe direkt hintereinander verkettet (Punkt-zu-Punkt); anders als beim Bus gibt es keine durchgehende gemeinsame Leitung mit Abschlusswiderständen.</li>
+        <li class="opt"><span class="tick"></span>Die Stationen bilden von vornherein einen geschlossenen Kreis.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Bei der Linientopologie ist jedes Gerät <strong>Punkt-zu-Punkt mit dem nächsten verkettet</strong> (Reihe). Im Gegensatz zum <strong>Bus</strong> gibt es keine gemeinsame Leitung mit Abschlusswiderständen. Verbindet man die beiden offenen Enden, wird daraus ein <strong>Ring</strong>.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was passiert in einer <strong>Linientopologie</strong>, wenn die Verbindung zwischen zwei Stationen unterbrochen wird?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nichts – der Verkehr wird automatisch umgeleitet.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Linie wird aufgetrennt; alle dahinterliegenden Stationen sind nicht mehr erreichbar.</li>
+        <li class="opt"><span class="tick"></span>Nur die beiden direkt betroffenen Stationen tauschen die Rollen.</li>
+        <li class="opt"><span class="tick"></span>Das gesamte Netz schaltet automatisch auf Stern-Betrieb um.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Da es nur <strong>einen Pfad</strong> gibt, trennt eine Unterbrechung die Kette: Alle <strong>nachfolgenden Stationen</strong> sind abgehängt. Eine automatische Umleitung wie im Mesh gibt es nicht – das ist die zentrale Schwäche der Linie.</p>
+    </div>
+  </article>
+
+  <!-- ============== B · Stern & Mesh ============== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Stern &amp; Mesh</h2></div>
+  <p class="sec-sub">Zentraler Verteiler versus dezentrale Vermaschung.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 400 270" role="img" aria-label="Stern-Topologie: fünf Stationen sternförmig an einem zentralen Switch">
+      <text x="200" y="22" text-anchor="middle" class="svg-title">Stern-Topologie</text>
+      <g stroke="#B9C7D2" stroke-width="2">
+        <line x1="200" y1="140" x2="200" y2="55"></line>
+        <line x1="200" y1="140" x2="300" y2="110"></line>
+        <line x1="200" y1="140" x2="262" y2="215"></line>
+        <line x1="200" y1="140" x2="138" y2="215"></line>
+        <line x1="200" y1="140" x2="100" y2="110"></line>
+      </g>
+      <rect x="160" y="120" width="80" height="42" rx="6" fill="#16242E"></rect>
+      <text x="200" y="146" text-anchor="middle" fill="#fff" class="svg-title" style="font-size:12px;">SWITCH</text>
+      <g fill="#fff" stroke="#DD5430" stroke-width="2">
+        <circle cx="200" cy="55" r="20"></circle>
+        <circle cx="300" cy="110" r="20"></circle>
+        <circle cx="262" cy="215" r="20"></circle>
+        <circle cx="138" cy="215" r="20"></circle>
+        <circle cx="100" cy="110" r="20"></circle>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="200" y="59">PC1</text><text x="300" y="114">PC2</text>
+        <text x="262" y="219">PC3</text><text x="138" y="219">PC4</text><text x="100" y="114">PC5</text>
+      </g>
+      <text x="200" y="258" text-anchor="middle" class="svg-label-sm">eigene Leitung je Host · Switch-Ausfall = Totalausfall</text>
+    </svg>
+    <figcaption>Stern – zentraler Switch, eigene Leitung je Host; einzelne Stationen unkritisch.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was passiert in einer <strong>Stern-Topologie</strong>, wenn der zentrale Switch ausfällt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nur eine einzelne Station ist betroffen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Das gesamte Netz fällt aus.</li>
+        <li class="opt"><span class="tick"></span>Nichts – die Stationen kommunizieren direkt weiter.</li>
+        <li class="opt"><span class="tick"></span>Das Netz schaltet automatisch auf Ring-Betrieb.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Der zentrale Switch ist der <strong>Single Point of Failure</strong>: fällt er aus, fällt das gesamte Netz aus. Der Ausfall einer <em>einzelnen Station/Leitung</em> bleibt dagegen folgenlos.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist ein <strong>Vorteil</strong> der Stern-Topologie?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Sie kommt ganz ohne zentrales Gerät aus.</li>
+        <li class="opt"><span class="tick"></span>Sie ist die billigste aller Topologien.</li>
+        <li class="opt"><span class="tick"></span>Es wird überhaupt kein Kabel benötigt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ausfall einer einzelnen Station/Leitung bleibt ohne Auswirkung; einfache Erweiterung im laufenden Betrieb.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Einzelne Stationen lassen sich <strong>im laufenden Betrieb hinzufügen oder entfernen</strong>, und der Ausfall einer Leitung betrifft nur das eine Gerät. Preis dafür: hoher Kabelaufwand und die Abhängigkeit vom zentralen Switch.</p>
+    </div>
+  </article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 400 270" role="img" aria-label="Mesh-Topologie: fünf Knoten vollvermascht, jeder mit jedem verbunden">
+      <text x="200" y="22" text-anchor="middle" class="svg-title">Mesh-Topologie (vermascht)</text>
+      <g stroke="#B9C7D2" stroke-width="1.8">
+        <line x1="200" y1="60" x2="295" y2="120"></line>
+        <line x1="200" y1="60" x2="258" y2="220"></line>
+        <line x1="200" y1="60" x2="142" y2="220"></line>
+        <line x1="200" y1="60" x2="105" y2="120"></line>
+        <line x1="295" y1="120" x2="258" y2="220"></line>
+        <line x1="295" y1="120" x2="142" y2="220"></line>
+        <line x1="295" y1="120" x2="105" y2="120"></line>
+        <line x1="258" y1="220" x2="142" y2="220"></line>
+        <line x1="258" y1="220" x2="105" y2="120"></line>
+        <line x1="142" y1="220" x2="105" y2="120"></line>
+      </g>
+      <g fill="#fff" stroke="#15786E" stroke-width="2">
+        <circle cx="200" cy="60" r="20"></circle>
+        <circle cx="295" cy="120" r="20"></circle>
+        <circle cx="258" cy="220" r="20"></circle>
+        <circle cx="142" cy="220" r="20"></circle>
+        <circle cx="105" cy="120" r="20"></circle>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="200" y="64">K1</text><text x="295" y="124">K2</text>
+        <text x="258" y="224">K3</text><text x="142" y="224">K4</text><text x="105" y="124">K5</text>
+      </g>
+      <text x="200" y="258" text-anchor="middle" class="svg-label-sm">jeder mit jedem · bei Ausfall automatische Umleitung (Routing)</text>
+    </svg>
+    <figcaption>Mesh – viele direkte Verbindungen; das Internet basiert im Kern darauf.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Warum gilt das <strong>Mesh-Netz</strong> als besonders ausfallsicher?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es gibt nur eine einzige zentrale Steuerung.</li>
+        <li class="opt"><span class="tick"></span>Es nutzt Abschlusswiderstände an jedem Knoten.</li>
+        <li class="opt"><span class="tick"></span>Es kommt mit einem einzigen Kabel aus.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Bei Ausfall einer Verbindung wird der Verkehr automatisch umgeleitet (Routing).</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Durch die vielen direkten Verbindungen kann der Verkehr bei einem Ausfall <strong>automatisch umgeleitet</strong> werden. Das macht Mesh zur sichersten Variante mit guter Lastverteilung.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welcher <strong>Nachteil</strong> ist typisch für die Mesh-Topologie?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Hoher Energieverbrauch und komplexes Routing bei sehr hohen Kosten.</li>
+        <li class="opt"><span class="tick"></span>Sie kann nur sehr wenige Geräte verbinden.</li>
+        <li class="opt"><span class="tick"></span>Sie bietet keinerlei Ausfallsicherheit.</li>
+        <li class="opt"><span class="tick"></span>Ein einzelner Kabeldefekt legt sofort alles lahm.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Die hohe Zahl an Verbindungen bedeutet <strong>sehr hohe Kosten, hohen Energieverbrauch und komplexes Routing</strong>; die Knoten sollten dauerhaft eingeschaltet bleiben.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Auf welcher Topologie basiert das <strong>Internet</strong> im Kern?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Bus</li>
+        <li class="opt"><span class="tick"></span>Ring</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mesh (vermaschtes Netz)</li>
+        <li class="opt"><span class="tick"></span>Stern mit einem einzigen zentralen Switch</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Das Internet ist <strong>vermascht (Mesh)</strong>: viele Router sind redundant verbunden, und Pakete werden bei Ausfällen automatisch umgeleitet.</p>
+    </div>
+  </article>
+
+  <!-- ============== C · Baum (Tree) ============== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Baum (Tree)</h2></div>
+  <p class="sec-sub">Hierarchische Kombination mehrerer Stern-Netze über einen Backbone – Grundlage der strukturierten Verkabelung.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 480 290" role="img" aria-label="Baum-Topologie: hierarchische Struktur, ein Wurzel-Switch verbindet zwei Verteiler-Switches, an denen jeweils zwei PCs hängen">
+      <text x="240" y="22" text-anchor="middle" class="svg-title">Baum-Topologie (hierarchisch)</text>
+      <g stroke="#B9C7D2" stroke-width="2">
+        <line x1="240" y1="82" x2="130" y2="120"></line>
+        <line x1="240" y1="82" x2="350" y2="120"></line>
+        <line x1="130" y1="156" x2="70" y2="208"></line>
+        <line x1="130" y1="156" x2="190" y2="208"></line>
+        <line x1="350" y1="156" x2="290" y2="208"></line>
+        <line x1="350" y1="156" x2="410" y2="208"></line>
+      </g>
+      <rect x="200" y="42" width="80" height="40" rx="6" fill="#16242E"></rect>
+      <text x="240" y="66" text-anchor="middle" fill="#fff" class="svg-title" style="font-size:11px;">ROOT-SW</text>
+      <rect x="92" y="120" width="76" height="36" rx="6" fill="#15786E"></rect>
+      <text x="130" y="143" text-anchor="middle" fill="#fff" class="svg-label-sm">Switch A</text>
+      <rect x="312" y="120" width="76" height="36" rx="6" fill="#15786E"></rect>
+      <text x="350" y="143" text-anchor="middle" fill="#fff" class="svg-label-sm">Switch B</text>
+      <g fill="#fff" stroke="#DD5430" stroke-width="2">
+        <circle cx="70" cy="225" r="18"></circle>
+        <circle cx="190" cy="225" r="18"></circle>
+        <circle cx="290" cy="225" r="18"></circle>
+        <circle cx="410" cy="225" r="18"></circle>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="70" y="229">PC1</text><text x="190" y="229">PC2</text>
+        <text x="290" y="229">PC3</text><text x="410" y="229">PC4</text>
+      </g>
+      <text x="240" y="278" text-anchor="middle" class="svg-label-sm">mehrere Stern-Netze hierarchisch über einen Backbone verbunden</text>
+    </svg>
+    <figcaption>Baum – Wurzel-Switch (Backbone) verzweigt zu untergeordneten Verteiler-Switches; jeder Ast ist ein Stern.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wie ist eine <strong>Baum-Topologie</strong> grundsätzlich aufgebaut?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Alle Stationen hängen an einer einzigen gemeinsamen Leitung mit Abschlusswiderständen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mehrere Stern-Netze werden hierarchisch über eine übergeordnete Leitung (Backbone) zu einer Baumstruktur verbunden.</li>
+        <li class="opt"><span class="tick"></span>Jeder Knoten ist direkt mit jedem anderen Knoten verbunden.</li>
+        <li class="opt"><span class="tick"></span>Die Stationen sind zu einem geschlossenen Kreis verkabelt.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Die Baum-Topologie ist eine <strong>hierarchische Erweiterung der Stern-Topologie</strong>: Ein Wurzel-Verteiler (Backbone) verzweigt sich zu untergeordneten Switches, an denen jeweils sternförmig Endgeräte hängen. Sie ist die Grundlage der <strong>strukturierten Verkabelung</strong> in Gebäuden (Thema 6).</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist ein zentraler <strong>Vorteil</strong> der Baum-Topologie?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Der Ausfall der Wurzel hat keinerlei Auswirkungen auf das Netz.</li>
+        <li class="opt"><span class="tick"></span>Sie kommt vollständig ohne aktive Verteiler (Switches) aus.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie ist hierarchisch sehr gut erweiterbar, und Fehler lassen sich auf einzelne Segmente eingrenzen.</li>
+        <li class="opt"><span class="tick"></span>Jeder Knoten ist redundant mit jedem anderen verbunden.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Durch die klare <strong>Hierarchie</strong> lässt sich das Netz gut skalieren (neue Äste/Etagen ergänzen) und die <strong>Fehlersuche</strong> auf einzelne Segmente eingrenzen. Redundante Verbindungen wie im Mesh bietet sie dagegen nicht.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">15</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was passiert, wenn in einer Baum-Topologie ein <strong>übergeordneter Verteiler</strong> (z. B. die Wurzel) ausfällt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nur das direkt angeschlossene Endgerät ist betroffen.</li>
+        <li class="opt"><span class="tick"></span>Der Datenverkehr wird automatisch über eine andere Route umgeleitet.</li>
+        <li class="opt"><span class="tick"></span>Das Netz schaltet selbstständig auf Ring-Betrieb um.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der gesamte darunter liegende Teilbaum wird vom Netz getrennt.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Übergeordnete Verteiler sind <strong>Single Points of Failure</strong> für ihren Zweig: Fällt ein Knoten aus, ist der komplette <strong>Teilbaum</strong> darunter abgehängt. Eine automatische Umleitung wie im Mesh gibt es nicht. <span class="tag-mistake">Verwechslung</span> mit Mesh (Routing) bzw. Ring (Bus-Umschaltung).</p>
+    </div>
+  </article>
+
+  <!-- ============== D · Bewertung & Szenario ============== -->
+  <div class="sec-head"><span class="ix">D</span><h2>Bewertung &amp; Szenario</h2></div>
+  <p class="sec-sub">Topologien nach Kosten, Skalierbarkeit, Fehleranfälligkeit und Wartung vergleichen.</p>
+
+  <div class="tbl-wrap">
+    <table class="ref">
+      <caption style="text-align:left;color:var(--muted);font-size:.85rem;padding:6px 0;">Bewertung der fünf Topologien</caption>
+      <thead><tr><th>Topologie</th><th>Kosten</th><th>Skalierbarkeit</th><th>Fehleranfälligkeit</th><th>Wartung</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bus</strong></td><td>gering</td><td>gering</td><td>hoch (1 Kabelbruch = Totalausfall)</td><td>Fehlersuche aufwendig</td></tr>
+        <tr><td><strong>Linie</strong></td><td>gering</td><td>gering–mittel (Kette wird verlängert)</td><td>hoch (Unterbrechung trennt alles Nachfolgende)</td><td>einfach verkabelt, Fehlersuche entlang der Kette</td></tr>
+        <tr><td><strong>Ring</strong></td><td>mittel–hoch</td><td>mittel</td><td>mittel (redundant mit Ring-Manager)</td><td>mittel</td></tr>
+        <tr><td><strong>Stern</strong></td><td>mittel</td><td>hoch (jederzeit erweiterbar)</td><td>gering für Geräte, aber Switch = Totalausfall</td><td>gering</td></tr>
+        <tr><td><strong>Mesh</strong></td><td>sehr hoch</td><td>sehr hoch</td><td>sehr gering (sicherste Variante)</td><td>hoch (komplexes Routing)</td></tr>
+        <tr><td><strong>Baum</strong></td><td>mittel–hoch</td><td>sehr hoch (hierarchisch erweiterbar)</td><td>mittel (Verteiler-Ausfall trennt ganzen Teilbaum)</td><td>gering–mittel (klare Hierarchie)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">16</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Topologie hat die <strong>höchste Ausfallsicherheit</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Bus</li>
+        <li class="opt"><span class="tick"></span>Ring ohne Ring-Manager</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mesh</li>
+        <li class="opt"><span class="tick"></span>Stern</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>Mesh</strong> – die sicherste Variante mit sehr geringer Fehleranfälligkeit dank automatischer Umleitung.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">17</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Topologie verursacht die <strong>geringsten Kosten</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Mesh</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Bus</li>
+        <li class="opt"><span class="tick"></span>Ring</li>
+        <li class="opt"><span class="tick"></span>Stern</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>Bus</strong> – geringe Kosten und einfache Verkabelung; der Preis dafür ist die hohe Fehleranfälligkeit.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">18</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Ordne Bus, Linie, Ring, Stern, Mesh und Baum jeweils eine charakteristische <strong>Stärke</strong> und <strong>Schwäche</strong> zu.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>Bus:</strong> + günstig &amp; einfach verkabelt · − ein Kabeldefekt legt alles lahm, nur einer sendet.</li>
+        <li><strong>Linie:</strong> + sehr einfache, günstige Reihen-Verkettung ohne zentrales Gerät · − Unterbrechung trennt alle nachfolgenden Stationen, kein Ausweichpfad.</li>
+        <li><strong>Ring:</strong> + keine Kollisionen, jede Station verstärkt das Signal · − teure Komponenten, Stationsausfall stört die Übertragung.</li>
+        <li><strong>Stern:</strong> + einzelner Ausfall unkritisch, leicht erweiterbar · − hoher Kabelaufwand, Switch ist Single Point of Failure.</li>
+        <li><strong>Mesh:</strong> + höchste Ausfallsicherheit, gute Lastverteilung · − sehr hohe Kosten, komplexes Routing.</li>
+        <li><strong>Baum:</strong> + hierarchisch sehr gut skalierbar, gute Fehlereingrenzung (Grundlage strukturierte Verkabelung) · − übergeordneter Verteiler trennt bei Ausfall den ganzen Teilbaum.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">19</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Ein expandierendes <strong>Start-up mit 10 Arbeitsplätzen</strong> soll ein Netzwerk bekommen.
+        Welche Topologie empfiehlst du und warum? Begründe anhand von Kosten, Skalierbarkeit,
+        Fehleranfälligkeit und Wartungsaufwand.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Empfehlung: <strong>Stern-Topologie</strong>.</p>
+      <ul>
+        <li><strong>Skalierbarkeit:</strong> hoch – weitere Arbeitsplätze lassen sich im laufenden Betrieb am Switch ergänzen (ideal für ein expandierendes Unternehmen).</li>
+        <li><strong>Kosten:</strong> moderat – Standard-Switch und strukturierte Verkabelung, deutlich günstiger als Mesh.</li>
+        <li><strong>Fehleranfälligkeit:</strong> gering für Endgeräte – fällt ein PC oder Kabel aus, arbeiten die anderen weiter.</li>
+        <li><strong>Wartung:</strong> gering – klare Struktur, einfache Fehlersuche.</li>
+      </ul>
+      <p>Einziges Risiko ist der zentrale Switch (Single Point of Failure); bei hohen Verfügbarkeitsanforderungen redundant auslegen. Bus wäre zu fehleranfällig, Mesh für 10 Plätze unnötig teuer.</p>
+    </div>
+  </article>
+
+  <!-- ============== 🔬 Vertiefung (Extra) ============== -->
+  <div class="sec-head"><span class="ix">🔬</span><h2>Vertiefung · Extra</h2></div>
+  <p class="sec-sub">Über den Kern-Prüfungsstoff hinaus – freiwillige Zusatzaufgabe zum Mitdenken.</p>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">🔬</span><span class="q-type">Zusatzaufgabe · Vertiefung</span><span class="q-pts">Extra</span></div>
+    <div class="q-body">
+      <p class="q-text"><strong>Kollisionen am Bus.</strong> In der Netzwerktechnik bezeichnet eine
+        <strong>Kollision</strong> bei der Bus-Topologie den Fall, dass zwei oder mehr Geräte
+        <strong>gleichzeitig</strong> Daten auf dem gemeinsamen Bus senden. Die Signale überlagern sich,
+        die Daten werden verfälscht und sind unbrauchbar.</p>
+      <p class="q-text">Überlegen Sie sich <em>(ohne Recherche)</em>, wie sich Kollisionen
+        <strong>verhindern</strong> lassen.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösungsvorschläge</span>
+      <ul>
+        <li><strong>Token-Passing (Staffelstab-Verfahren):</strong> Ein virtuelles „Token“ (Sendeerlaubnis) wird reihum weitergegeben. Nur die Station, die gerade das Token besitzt, darf senden – alle anderen warten. Dadurch sendet immer nur eine Station gleichzeitig.</li>
+        <li><strong>Zeitschlitzverfahren (Time Division):</strong> Jedem Gerät wird ein fester Zeitschlitz (Time Slot) zugewiesen. Außerhalb seines Zeitfensters muss die Station schweigen.</li>
+        <li><strong>Priorisierung:</strong> Geräten werden Prioritätsstufen zugewiesen. Bei gleichzeitigem Sendewunsch darf das Gerät mit der höchsten Priorität zuerst senden; die anderen warten.</li>
+        <li><strong>Zufällige Wartezeit (Backoff):</strong> Wird eine Kollision erkannt, warten alle beteiligten Stationen eine zufällig gewählte Zeitspanne vor dem nächsten Sendeversuch. Die unterschiedlichen Wartezeiten verringern die Wahrscheinlichkeit einer erneuten Kollision.</li>
+        <li><strong>Abhören vor dem Senden (Carrier Sense / Listen Before Talk):</strong> Eine Station prüft zunächst, ob der Bus gerade frei ist. Erst wenn keine andere Station sendet, beginnt sie mit der Übertragung.</li>
+      </ul>
+      <p><strong>Praxisbezug:</strong> Das klassische Ethernet am Bus kombinierte <em>Abhören vor dem Senden</em> + <em>zufällige Wartezeit</em> zu <strong>CSMA/CD</strong> (Carrier Sense Multiple Access / Collision Detection); <strong>Token Ring</strong> setzte auf das <strong>Token-Passing</strong>.</p>
+    </div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="12-uebertragungsarten.html"><span>Zurück · Thema 12</span><b>← Übertragungsarten</b></a>
+    <a class="next" href="14-speichersysteme.html"><span>Weiter · Thema 14</span><b>Speichersysteme →</b></a>
+  </nav>
+
+</div></main>
+
+<footer class="foot"><div class="wrap"><span class="mono">FU-IT · Thema 13 — Topologien</span> · Kern-Prüfungsstoff + 🔬 Vertiefung</div></footer>
+
+<script src="assets/quiz.js"></script>
+</body>
+</html>

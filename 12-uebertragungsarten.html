@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12 · Übertragungsarten — FU-IT Test</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">FU<span class="slash">·</span>IT</span><b>Test 10–15</b></a>
+  <nav class="topnav">
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html" class="current">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+      <a href="galerie.html">Galerie</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Themenblock · Bitübertragung</p>
+    <div class="hero-num"><span class="hash">#</span>12</div>
+    <h1>Übertragungsarten</h1>
+    <p class="lede">Seriell vs. parallel, die drei Richtungsbetriebe Simplex / Halbduplex /
+      Vollduplex und die Multiplexverfahren FDM, TDM, CDM und WDM.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>15</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Zuordnung</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Seriell &amp; Parallel</h2></div>
+  <p class="sec-sub">Wie werden die Bits über die Leitung(en) geschickt — nacheinander oder gleichzeitig?</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 230" role="img" aria-label="Serielle Übertragung über eine Leitung gegenüber paralleler Übertragung über vier Leitungen">
+      <text x="20" y="28" class="svg-title">Seriell vs. parallel</text>
+
+      <!-- Seriell -->
+      <text x="20" y="60" class="svg-label">Seriell</text>
+      <rect x="20" y="75" width="70" height="44" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="55" y="102" text-anchor="middle" class="svg-label-sm">Sender</text>
+      <line x1="90" y1="97" x2="280" y2="97" stroke="#16242E" stroke-width="2"/>
+      <text x="120" y="90" class="svg-label-sm">1</text>
+      <text x="155" y="90" class="svg-label-sm">0</text>
+      <text x="190" y="90" class="svg-label-sm">1</text>
+      <text x="225" y="90" class="svg-label-sm">1</text>
+      <rect x="280" y="75" width="70" height="44" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="315" y="102" text-anchor="middle" class="svg-label-sm">Empf.</text>
+      <text x="20" y="140" class="svg-label-sm">1 Bit pro Takt · eine Leitung</text>
+
+      <!-- Parallel -->
+      <text x="400" y="60" class="svg-label">Parallel</text>
+      <rect x="400" y="70" width="70" height="120" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="435" y="134" text-anchor="middle" class="svg-label-sm">Sender</text>
+      <rect x="610" y="70" width="70" height="120" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="645" y="134" text-anchor="middle" class="svg-label-sm">Empf.</text>
+      <line x1="470" y1="88" x2="610" y2="88" stroke="#16242E" stroke-width="2"/>
+      <line x1="470" y1="113" x2="610" y2="113" stroke="#16242E" stroke-width="2"/>
+      <line x1="470" y1="138" x2="610" y2="138" stroke="#16242E" stroke-width="2"/>
+      <line x1="470" y1="163" x2="610" y2="163" stroke="#16242E" stroke-width="2"/>
+      <text x="535" y="83" text-anchor="middle" class="svg-label-sm">1</text>
+      <text x="535" y="108" text-anchor="middle" class="svg-label-sm">0</text>
+      <text x="535" y="133" text-anchor="middle" class="svg-label-sm">1</text>
+      <text x="535" y="158" text-anchor="middle" class="svg-label-sm">1</text>
+      <text x="400" y="210" class="svg-label-sm">n Bit pro Takt · n Leitungen</text>
+    </svg>
+    <figcaption>Seriell: 1 Bit pro Takt auf einer Leitung. Parallel: n Bit pro Takt auf n Leitungen.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was kennzeichnet die <b>serielle</b> Übertragung?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Bits werden nacheinander über eine einzige Leitung übertragen.</li>
+        <li class="opt"><span class="tick"></span>Jedes Bit bekommt eine eigene Frequenz auf demselben Kabel.</li>
+        <li class="opt"><span class="tick"></span>Es können nur ganze Bytes, aber keine einzelnen Bits übertragen werden.</li>
+        <li class="opt"><span class="tick"></span>Mehrere Bits werden gleichzeitig über mehrere Leitungen übertragen.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Seriell heißt <b>sequenziell</b>: Bits laufen nacheinander über <b>eine</b> Leitung. Vorteile: einfacher Aufbau, geringerer Hardwareaufwand, gut für lange Strecken, keine Laufzeitunterschiede.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Problem tritt bei der <b>parallelen</b> Übertragung über mehrere Leitungen auf?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die Übertragung ist grundsätzlich langsamer als seriell.</li>
+        <li class="opt"><span class="tick"></span>Es kann immer nur in eine Richtung gesendet werden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Laufzeitunterschiede und Übersprechen – Bits können zeitlich versetzt ankommen.</li>
+        <li class="opt"><span class="tick"></span>Es lässt sich nur über Glasfaser realisieren.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Parallel überträgt mehrere Bits <b>gleichzeitig</b> über mehrere Leitungen — hoher Durchsatz auf kurzen Strecken, aber aufwendige Verdrahtung, anfällig für <b>Übersprechen</b> und <b>Laufzeitunterschiede</b> (Bits kommen zeitlich versetzt an).</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches ist ein Beispiel für eine <b>serielle</b> Schnittstelle?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>IDE/PATA</li>
+        <li class="opt"><span class="tick"></span>LPT/Centronics-Druckerschnittstelle</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>USB</code></li>
+        <li class="opt"><span class="tick"></span>PCI-Bus</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>USB</code> ist seriell. Weitere serielle Beispiele: <code>RS-232/UART</code> (COM), <code>SATA</code>, <code>SPI</code>, <code>I²C</code>, Ethernet (intern seriell). <span class="tag-mistake">Verwechslung</span> LPT/Centronics, IDE/PATA und PCI-Bus sind <b>parallel</b>.</p></div>
+  </article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Richtungsbetrieb</h2></div>
+  <p class="sec-sub">Simplex, Halbduplex und Vollduplex — wer darf wann in welche Richtung senden?</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 320" role="img" aria-label="Simplex mit einem Pfeil, Halbduplex mit abwechselndem Doppelpfeil, Vollduplex mit zwei gleichzeitigen Pfeilen">
+      <text x="20" y="28" class="svg-title">Simplex · Halbduplex · Vollduplex</text>
+
+      <!-- Simplex -->
+      <text x="20" y="62" class="svg-label">Simplex</text>
+      <rect x="20" y="75" width="60" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="50" y="100" text-anchor="middle" class="svg-label-sm">A</text>
+      <rect x="240" y="75" width="60" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="270" y="100" text-anchor="middle" class="svg-label-sm">B</text>
+      <line x1="80" y1="95" x2="232" y2="95" stroke="#DD5430" stroke-width="2"/>
+      <polygon points="232,95 222,90 222,100" fill="#DD5430"/>
+      <text x="330" y="100" class="svg-label-sm">nur eine Richtung</text>
+
+      <!-- Halbduplex -->
+      <text x="20" y="160" class="svg-label">Halbduplex</text>
+      <rect x="20" y="173" width="60" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="50" y="198" text-anchor="middle" class="svg-label-sm">A</text>
+      <rect x="240" y="173" width="60" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="270" y="198" text-anchor="middle" class="svg-label-sm">B</text>
+      <line x1="84" y1="193" x2="236" y2="193" stroke="#15786E" stroke-width="2"/>
+      <polygon points="236,193 226,188 226,198" fill="#15786E"/>
+      <polygon points="84,193 94,188 94,198" fill="#15786E"/>
+      <text x="330" y="198" class="svg-label-sm">abwechselnd · nicht gleichzeitig</text>
+
+      <!-- Vollduplex -->
+      <text x="20" y="258" class="svg-label">Vollduplex</text>
+      <rect x="20" y="271" width="60" height="40" rx="5" fill="#FBEAE3" stroke="#16242E" stroke-width="2"/>
+      <text x="50" y="296" text-anchor="middle" class="svg-label-sm">A</text>
+      <rect x="240" y="271" width="60" height="40" rx="5" fill="#FBEAE3" stroke="#16242E" stroke-width="2"/>
+      <text x="270" y="296" text-anchor="middle" class="svg-label-sm">B</text>
+      <line x1="80" y1="282" x2="232" y2="282" stroke="#DD5430" stroke-width="2"/>
+      <polygon points="232,282 222,277 222,287" fill="#DD5430"/>
+      <line x1="240" y1="300" x2="88" y2="300" stroke="#15786E" stroke-width="2"/>
+      <polygon points="88,300 98,295 98,305" fill="#15786E"/>
+      <text x="330" y="296" class="svg-label-sm">beide Richtungen gleichzeitig</text>
+    </svg>
+    <figcaption>Simplex – nur eine Richtung. Halbduplex – beide Richtungen, aber nicht gleichzeitig. Vollduplex – beide Richtungen gleichzeitig.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Bei welcher Betriebsart ist nur <b>eine</b> Übertragungsrichtung möglich (kein Rückkanal)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Multiplex</li>
+        <li class="opt"><span class="tick"></span>Halbduplex</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Simplex</li>
+        <li class="opt"><span class="tick"></span>Vollduplex</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Simplex (SX)</b> überträgt nur in eine Richtung; der Empfänger kann nicht zurücksenden. Beispiele: Rundfunk (UKW, DAB+), Fernsehen (DVB-T, Satellit), Pager.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Ein Walkie-Talkie – bei dem immer nur einer sprechen kann – ist ein Beispiel für …?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Simplex</li>
+        <li class="opt"><span class="tick"></span>Vollduplex</li>
+        <li class="opt"><span class="tick"></span>Frequenzmultiplex</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Halbduplex</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Halbduplex (HX/HDX)</b>: bidirektional, aber nur eine Richtung gleichzeitig — Sender und Empfänger wechseln sich ab. Weitere Beispiele: WLAN (CSMA/CA), Ethernet mit Hub.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Betriebsart erlaubt <b>gleichzeitiges</b> Senden und Empfangen (z. B. Telefon, Ethernet mit Switch)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Simplex</li>
+        <li class="opt"><span class="tick"></span>Halbduplex</li>
+        <li class="opt"><span class="tick"></span>Codemultiplex</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Vollduplex</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Vollduplex (DX/FDX)</b>: gleichzeitige Übertragung in <b>beide</b> Richtungen über getrennte Kanäle. Beispiele: Telefon/VoIP, Ethernet mit Switch (Vollduplex-Port), DSL/Glasfaser.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Als welche Betriebsart arbeitet klassisches WLAN (eine Funkfrequenz, Zugriff per <code>CSMA/CA</code>)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Halbduplex</li>
+        <li class="opt"><span class="tick"></span>Wellenlängenmultiplex</li>
+        <li class="opt"><span class="tick"></span>Vollduplex</li>
+        <li class="opt"><span class="tick"></span>Simplex</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Klassisches WLAN nutzt eine gemeinsame Funkfrequenz und regelt den Zugriff per <code>CSMA/CA</code> — es kann immer nur eine Station gleichzeitig senden, also <b>Halbduplex</b>.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">08</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne <b>Simplex</b>, <b>Halbduplex</b> und <b>Vollduplex</b> jeweils einer Definition und einem Beispiel zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>Simplex</b> – Übertragung nur in eine Richtung, kein Rückkanal. Beispiel: Rundfunk (UKW/DAB+), Pager.</li>
+        <li><b>Halbduplex</b> – beide Richtungen möglich, aber nur abwechselnd (nicht gleichzeitig). Beispiel: Walkie-Talkie, WLAN, Ethernet mit Hub.</li>
+        <li><b>Vollduplex</b> – beide Richtungen gleichzeitig über getrennte Kanäle. Beispiel: Telefon/VoIP, Ethernet mit Switch, DSL.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Multiplexverfahren</h2></div>
+  <p class="sec-sub">Mehrere Signale teilen sich ein Medium — aufgeteilt nach Frequenz, Zeit, Code oder Wellenlänge.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 250" role="img" aria-label="FDM teilt nach Frequenzbändern, TDM teilt nach rotierenden Zeitschlitzen, WDM nutzt mehrere Lichtwellenlängen in einer Glasfaser">
+      <text x="20" y="28" class="svg-title">FDM · TDM · WDM</text>
+
+      <!-- FDM -->
+      <text x="20" y="58" class="svg-label">FDM – nach Frequenz</text>
+      <rect x="20" y="68" width="200" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <line x1="86" y1="68" x2="86" y2="102" stroke="#DD5430" stroke-width="2"/>
+      <line x1="153" y1="68" x2="153" y2="102" stroke="#DD5430" stroke-width="2"/>
+      <text x="53" y="90" text-anchor="middle" class="svg-label-sm">K1</text>
+      <text x="119" y="90" text-anchor="middle" class="svg-label-sm">K2</text>
+      <text x="186" y="90" text-anchor="middle" class="svg-label-sm">K3</text>
+      <text x="20" y="122" class="svg-label-sm">Frequenz →</text>
+
+      <!-- TDM -->
+      <text x="270" y="58" class="svg-label">TDM – nach Zeit</text>
+      <rect x="270" y="68" width="280" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <line x1="316" y1="68" x2="316" y2="102" stroke="#15786E" stroke-width="2"/>
+      <line x1="363" y1="68" x2="363" y2="102" stroke="#15786E" stroke-width="2"/>
+      <line x1="410" y1="68" x2="410" y2="102" stroke="#15786E" stroke-width="2"/>
+      <line x1="456" y1="68" x2="456" y2="102" stroke="#15786E" stroke-width="2"/>
+      <line x1="503" y1="68" x2="503" y2="102" stroke="#15786E" stroke-width="2"/>
+      <text x="293" y="90" text-anchor="middle" class="svg-label-sm">A</text>
+      <text x="339" y="90" text-anchor="middle" class="svg-label-sm">B</text>
+      <text x="386" y="90" text-anchor="middle" class="svg-label-sm">C</text>
+      <text x="433" y="90" text-anchor="middle" class="svg-label-sm">A</text>
+      <text x="479" y="90" text-anchor="middle" class="svg-label-sm">B</text>
+      <text x="526" y="90" text-anchor="middle" class="svg-label-sm">C</text>
+      <text x="270" y="122" class="svg-label-sm">Zeit →</text>
+
+      <!-- WDM -->
+      <text x="20" y="170" class="svg-label">WDM – nach Lichtwellenlänge (Glasfaser)</text>
+      <rect x="20" y="182" width="60" height="40" rx="5" fill="#16242E" stroke="#16242E" stroke-width="2"/>
+      <text x="50" y="207" text-anchor="middle" class="svg-label-sm" fill="#ffffff">Laser</text>
+      <line x1="80" y1="195" x2="600" y2="195" stroke="#DD5430" stroke-width="2"/>
+      <line x1="80" y1="202" x2="600" y2="202" stroke="#15786E" stroke-width="2"/>
+      <line x1="80" y1="209" x2="600" y2="209" stroke="#B9C7D2" stroke-width="2"/>
+      <text x="610" y="207" class="svg-label-sm">Faser</text>
+    </svg>
+    <figcaption>FDM – Aufteilung nach Frequenz. TDM – Aufteilung nach Zeitschlitzen. WDM – mehrere Lichtwellenlängen in einer Glasfaser.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was bedeutet „Multiplexing"?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Mehrere Signale/Kanäle teilen sich dasselbe Übertragungsmedium.</li>
+        <li class="opt"><span class="tick"></span>Daten werden vor dem Senden komprimiert.</li>
+        <li class="opt"><span class="tick"></span>Bits werden parallel über mehrere Leitungen übertragen.</li>
+        <li class="opt"><span class="tick"></span>Ein Signal wird zur Sicherheit über mehrere getrennte Medien geschickt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim Multiplexing teilen sich <b>mehrere Signale/Kanäle dasselbe Übertragungsmedium</b> — getrennt nach Frequenz (FDM), Zeit (TDM), Code (CDM) oder Wellenlänge (WDM).</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Nach welchem Kriterium teilt <b>FDM</b> (Frequenzmultiplex) das Medium auf?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Nach Frequenz (jedes Signal ein eigenes Frequenzband).</li>
+        <li class="opt"><span class="tick"></span>Nach Zeit (jedes Signal ein eigener Zeitschlitz).</li>
+        <li class="opt"><span class="tick"></span>Nach Code (jedes Signal ein eigener Spreizcode).</li>
+        <li class="opt"><span class="tick"></span>Nach Lichtwellenlänge (jedes Signal eine eigene Farbe).</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>FDM</b> teilt nach <b>Frequenz</b>: jedes Signal erhält ein eigenes Frequenzband, alle senden gleichzeitig. Medium: Funk/Kabel. Beispiele: UKW-Radio, Kabelfernsehen, DSL.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie funktioniert <b>TDM</b> (Zeitmultiplex)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Gleiche Frequenz, jedes Signal sendet in einem eigenen, rotierenden Zeitschlitz (z. B. GSM mit 8 Zeitschlitzen).</li>
+        <li class="opt"><span class="tick"></span>Jedes Signal wird über eine eigene Lichtwellenlänge in der Faser übertragen.</li>
+        <li class="opt"><span class="tick"></span>Jedes Signal bekommt dauerhaft ein eigenes Frequenzband.</li>
+        <li class="opt"><span class="tick"></span>Alle senden gleichzeitig, getrennt durch einen Spreizcode.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>TDM</b> teilt nach <b>Zeit</b>: gleiche Frequenz, jedes Signal bekommt einen festen, rotierenden Zeitschlitz. Medium: Kupfer/Funk. Beispiele: ISDN, GSM (8 Zeitschlitze pro Träger), DECT, Satellit.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Medium nutzt <b>WDM</b> (Wellenlängenmultiplex)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Glasfaser – mehrere Lichtwellenlängen in einer Faser.</li>
+        <li class="opt"><span class="tick"></span>Kupfer-Twisted-Pair mit mehreren Aderpaaren.</li>
+        <li class="opt"><span class="tick"></span>Koaxialkabel mit mehreren Zeitschlitzen.</li>
+        <li class="opt"><span class="tick"></span>Funk mit mehreren Frequenzbändern.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>WDM</b> teilt nach <b>Lichtwellenlänge (Farbe)</b> — das optische Pendant zu FDM: mehrere Lichtwellenlängen in <b>einer</b> Glasfaser. Beispiele: DWDM-Backbone (&gt;80 Kanäle pro Faser), Seekabel. Ideal in explosionsgefährdeten Umgebungen oder bei starker elektromagnetischer Beeinflussung.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Bei welchem Verfahren senden alle <b>gleichzeitig auf derselben Frequenz</b>, getrennt nur durch einen eindeutigen Code (z. B. UMTS, GPS)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>FDM (Frequenzmultiplex)</li>
+        <li class="opt"><span class="tick"></span>TDM (Zeitmultiplex)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>CDM (Codemultiplex)</li>
+        <li class="opt"><span class="tick"></span>WDM (Wellenlängenmultiplex)</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>CDM</b> teilt nach <b>Code</b>: alle senden gleichzeitig auf derselben Frequenz, jedes Signal mit eigenem mathematischem Spreizcode; der Empfänger filtert per Code. Medium: Funk. Beispiele: UMTS (3G), GPS.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">14</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Vervollständige die Tabelle <b>Verfahren → aufgeteilt nach → typisches Medium</b> für FDM, TDM, CDM und WDM.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">FDM | Frequenz | Funk/Kabel
+TDM | Zeit | Kupfer/Funk
+CDM | Code | Funk
+WDM | Lichtwellenlänge | Glasfaser</div>
+    </div>
+  </article>
+
+  <!-- ===================== SECTION D ===================== -->
+  <div class="sec-head"><span class="ix">D</span><h2>🔬 [Vertiefung] Bluetooth</h2></div>
+  <p class="sec-sub">🔬 [Vertiefung] – über den Kern-Prüfungsstoff hinaus: Piconet und Scatternet.</p>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">15</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie viele <b>aktive Slaves</b> kann ein Bluetooth-<b>Piconet</b> neben dem einen Master maximal haben?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>1 aktiver Slave</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>7 aktive Slaves</li>
+        <li class="opt"><span class="tick"></span>15 aktive Slaves</li>
+        <li class="opt"><span class="tick"></span>8 aktive Slaves</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <b>Piconet</b> besteht aus 1 Master + bis zu <b>7 aktiven Slaves</b> (FHSS-Frequenzsprungverfahren). Mehrere Piconets ergeben zusammen ein <b>Scatternet</b>.</p></div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="11-dhcp-dns.html"><span>Zurück · Thema 11</span><b>← DHCP &amp; DNS</b></a>
+    <a class="next" href="13-topologien.html"><span>Weiter · Thema 13</span><b>Topologien →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">FU-IT · Thema 12 — Übertragungsarten</span> · Kern-Prüfungsstoff</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

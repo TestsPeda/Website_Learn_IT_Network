@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11 · DHCP &amp; DNS — FU-IT Test</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">FU<span class="slash">·</span>IT</span><b>Test 10–15</b></a>
+  <nav class="topnav">
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html" class="current">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+      <a href="galerie.html">Galerie</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Themenblock · Netzwerkdienste</p>
+    <div class="hero-num"><span class="hash">#</span>11</div>
+    <h1>DHCP &amp; DNS</h1>
+    <p class="lede">Automatische Adressvergabe per DHCP (DORA-Ablauf, Zuweisungsarten, Lease-Time)
+      und die Namensauflösung per DNS samt Caching.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>2</b> Diagramme</span>
+      <span class="pill">MC · Ablauf · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ============ SECTION A — DHCP ============ -->
+  <div class="sec-head"><span class="ix">A</span><h2>DHCP – Dynamische Adressvergabe</h2></div>
+  <p class="sec-sub">Parameter, DORA-Ablauf, Zuweisungsarten und Vorteile gegenüber manueller Konfiguration.</p>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche vier Parameter weist ein <code>DHCP</code>-Server einem Client typischerweise zu?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>MAC-Adresse, Hostname, Treiber und Firmware</li>
+        <li class="opt"><span class="tick"></span>IP-Adresse, Port-Nummer, Protokoll und Bandbreite</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>IP-Adresse, Subnetzmaske, Standard-Gateway und DNS-Server</li>
+        <li class="opt"><span class="tick"></span>Benutzername, Passwort, Domäne und Zertifikat</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein DHCP-Server vergibt automatisch <code>IP-Adresse</code>, <code>Subnetzmaske</code>, <code>Standard-Gateway</code> und <code>DNS-Server</code>. Ohne DHCP müsste jedes Gerät diese Werte manuell erhalten – aufwändig und fehleranfällig.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wofür steht die Abkürzung <code>DHCP</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Dynamic Hardware Connection Protocol</li>
+        <li class="opt"><span class="tick"></span>Domain Host Control Protocol</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Dynamic Host Configuration Protocol</li>
+        <li class="opt"><span class="tick"></span>Distributed Host Configuration Process</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>DHCP</code> = <b>Dynamic Host Configuration Protocol</b>. Es konfiguriert Hosts (Clients) dynamisch und automatisch mit den nötigen Netzwerkparametern.</p></div>
+  </article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 300" role="img" aria-label="DORA-Ablauf zwischen Client und DHCP-Server mit vier Nachrichten: Discover, Offer, Request und Acknowledge">
+      <text x="350" y="22" text-anchor="middle" class="svg-title">DHCP-Adressvergabe – DORA</text>
+      <!-- Client column -->
+      <rect x="40" y="40" width="150" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+      <text x="115" y="65" text-anchor="middle" class="svg-label">Client</text>
+      <line x1="115" y1="80" x2="115" y2="280" stroke="#D4DEE6" stroke-width="2"></line>
+      <!-- Server column -->
+      <rect x="510" y="40" width="150" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+      <text x="585" y="65" text-anchor="middle" class="svg-label">DHCP-Server</text>
+      <line x1="585" y1="80" x2="585" y2="280" stroke="#D4DEE6" stroke-width="2"></line>
+      <!-- 1 Discover -> -->
+      <line x1="115" y1="115" x2="585" y2="115" stroke="#DD5430" stroke-width="2"></line>
+      <polygon points="585,115 573,110 573,120" fill="#DD5430"></polygon>
+      <text x="350" y="108" text-anchor="middle" class="svg-label">1. Discover →</text>
+      <text x="350" y="132" text-anchor="middle" class="svg-label-sm">„Ich brauche eine IP-Adresse!"</text>
+      <!-- 2 Offer <- -->
+      <line x1="585" y1="165" x2="115" y2="165" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="115,165 127,160 127,170" fill="#15786E"></polygon>
+      <text x="350" y="158" text-anchor="middle" class="svg-label">← 2. Offer</text>
+      <text x="350" y="182" text-anchor="middle" class="svg-label-sm">„Ich habe eine für dich!"</text>
+      <!-- 3 Request -> -->
+      <line x1="115" y1="215" x2="585" y2="215" stroke="#DD5430" stroke-width="2"></line>
+      <polygon points="585,215 573,210 573,220" fill="#DD5430"></polygon>
+      <text x="350" y="208" text-anchor="middle" class="svg-label">3. Request →</text>
+      <text x="350" y="232" text-anchor="middle" class="svg-label-sm">„Ich nehme die angebotene Adresse."</text>
+      <!-- 4 ACK <- -->
+      <line x1="585" y1="265" x2="115" y2="265" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="115,265 127,260 127,270" fill="#15786E"></polygon>
+      <text x="350" y="258" text-anchor="middle" class="svg-label">← 4. Acknowledge (ACK)</text>
+      <text x="350" y="282" text-anchor="middle" class="svg-label-sm">„Bestätigt – die IP gehört dir."</text>
+    </svg>
+    <figcaption>Vier Schritte der DHCP-Adressvergabe (DORA).</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">In welcher Reihenfolge läuft die DHCP-Kommunikation ab?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Discover → Request → Offer → Acknowledge</li>
+        <li class="opt"><span class="tick"></span>Offer → Discover → Acknowledge → Request</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Discover → Offer → Request → Acknowledge (DORA)</li>
+        <li class="opt"><span class="tick"></span>Request → Discover → Offer → Acknowledge</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die korrekte Reihenfolge ist <b>DORA</b>: <code>Discover</code> (Client-Broadcast) → <code>Offer</code> (Server bietet an) → <code>Request</code> (Client fordert an) → <code>Acknowledge</code> (Server bestätigt).</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche DHCP-Nachricht sendet der Client als <b>Broadcast</b>, um überhaupt eine Adresse zu finden?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>DHCP Offer</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>DHCP Discover</li>
+        <li class="opt"><span class="tick"></span>DHCP Request</li>
+        <li class="opt"><span class="tick"></span>DHCP Acknowledge</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Client startet mit dem <code>DHCP Discover</code> als Broadcast („Ich brauche eine IP-Adresse!"), da er den Server noch nicht kennt. <span class="tag-mistake">Verwechslung</span> Das <code>Offer</code> und das <code>ACK</code> kommen vom Server, das <code>Request</code> folgt erst nach dem Angebot.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche DHCP-Nachricht ist die abschließende Bestätigung der Zuweisung durch den Server?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>DHCP Discover</li>
+        <li class="opt"><span class="tick"></span>DHCP Request</li>
+        <li class="opt"><span class="tick"></span>DHCP Offer</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>DHCP Acknowledge (ACK)</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der vierte und letzte Schritt ist das <code>DHCP Acknowledge (ACK)</code>: Der Server bestätigt damit die Zuweisung der zuvor angebotenen und angeforderten Adresse.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">06</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Erkläre die drei Zuweisungsarten (<b>manuell</b>, <b>automatisch</b>, <b>dynamisch</b>) und ihren jeweiligen Unterschied.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>Manuelle Zuordnung:</b> Die IP ist fest an die MAC-Adresse gebunden, das Gerät bekommt immer dieselbe IP. Nachteil: Sind alle Adressen vergeben, können keine neuen Clients aufgenommen werden.</li>
+        <li><b>Automatische Zuordnung:</b> Der Server wählt eine freie IP aus dem Adresspool (Range). Die Zuordnung ist dauerhaft – auch ungenutzte Adressen bleiben blockiert.</li>
+        <li><b>Dynamische Zuordnung:</b> Wie automatisch, aber mit einer <code>Lease-Time</code>. Clients erneuern ihre Adresse regelmäßig; nicht genutzte Adressen werden wieder freigegeben.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Zu welcher Zuweisungsart gehört die <code>Lease-Time</code>, nach deren Ablauf ungenutzte Adressen wieder freigegeben werden?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Automatische Zuordnung</li>
+        <li class="opt"><span class="tick"></span>Statische Zuordnung</li>
+        <li class="opt"><span class="tick"></span>Manuelle Zuordnung</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Dynamische Zuordnung</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Nur die <b>dynamische Zuordnung</b> arbeitet mit einer <code>Lease-Time</code>: Clients erneuern ihre Adresse regelmäßig, und nicht mehr genutzte Adressen werden wieder freigegeben. <span class="tag-mistake">Verwechslung</span> Bei der automatischen Zuordnung bleiben auch ungenutzte Adressen dauerhaft blockiert.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist der wesentliche Vorteil von DHCP gegenüber manueller Konfiguration?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die Übertragung wird verschlüsselt und damit abhörsicher</li>
+        <li class="opt"><span class="tick"></span>Die Internetgeschwindigkeit wird automatisch erhöht</li>
+        <li class="opt"><span class="tick"></span>Jedes Gerät erhält eine öffentliche, weltweit eindeutige IP</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Geräte werden automatisch konfiguriert – das spart Aufwand und vermeidet Fehler</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Hauptvorteil: <b>Geräte werden automatisch konfiguriert</b>. Ohne DHCP müsste jedes Gerät einzeln von Hand eingestellt werden – das ist aufwändig und fehleranfällig.</p></div>
+  </article>
+
+  <!-- ============ SECTION B — DNS ============ -->
+  <div class="sec-head"><span class="ix">B</span><h2>DNS – Namensauflösung</h2></div>
+  <p class="sec-sub">Vom Domainnamen zur IP-Adresse, Ablauf der Auflösung und Caching über die TTL.</p>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Aufgabe hat <code>DNS</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es verschlüsselt den Datenverkehr zwischen Browser und Webserver</li>
+        <li class="opt"><span class="tick"></span>Es vergibt automatisch IP-Adressen an Clients im Netzwerk</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es übersetzt Domain-Namen in IP-Adressen (Telefonbuch des Internets)</li>
+        <li class="opt"><span class="tick"></span>Es weist jedem Gerät eine feste MAC-Adresse zu</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>DNS</code> = Domain Name System, das „Telefonbuch des Internets". Es übersetzt für Menschen lesbare Domain-Namen (z. B. <code>google.com</code>) in IP-Adressen (z. B. <code>172.217.16.78</code>). <span class="tag-mistake">Verwechslung</span> Die automatische IP-Vergabe ist Aufgabe von DHCP, nicht von DNS.</p></div>
+  </article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 230" role="img" aria-label="DNS-Auflösung mit drei Stationen Client-PC, DNS-Server und Webserver sowie drei nummerierten Anfragen">
+      <text x="350" y="22" text-anchor="middle" class="svg-title">DNS-Auflösung</text>
+      <!-- Boxes -->
+      <rect x="30" y="90" width="150" height="50" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+      <text x="105" y="120" text-anchor="middle" class="svg-label">Client / PC</text>
+      <rect x="275" y="90" width="150" height="50" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+      <text x="350" y="120" text-anchor="middle" class="svg-label">DNS-Server</text>
+      <rect x="520" y="90" width="150" height="50" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+      <text x="595" y="120" text-anchor="middle" class="svg-label">Webserver</text>
+      <!-- 1 PC -> DNS -->
+      <line x1="180" y1="105" x2="275" y2="105" stroke="#DD5430" stroke-width="2"></line>
+      <polygon points="275,105 263,100 263,110" fill="#DD5430"></polygon>
+      <text x="227" y="66" text-anchor="middle" class="svg-label">1.</text>
+      <text x="227" y="82" text-anchor="middle" class="svg-label-sm">„IP von google.com?"</text>
+      <!-- 2 DNS -> PC -->
+      <line x1="275" y1="128" x2="180" y2="128" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="180,128 192,123 192,133" fill="#15786E"></polygon>
+      <text x="227" y="158" text-anchor="middle" class="svg-label">2.</text>
+      <text x="227" y="174" text-anchor="middle" class="svg-label-sm">„172.217.16.78"</text>
+      <!-- 3 PC -> Webserver -->
+      <line x1="425" y1="116" x2="520" y2="116" stroke="#16242E" stroke-width="2"></line>
+      <polygon points="520,116 508,111 508,121" fill="#16242E"></polygon>
+      <text x="472" y="66" text-anchor="middle" class="svg-label">3.</text>
+      <text x="472" y="82" text-anchor="middle" class="svg-label-sm">Anfrage an diese IP</text>
+    </svg>
+    <figcaption>Namensauflösung: vom Domainnamen zur IP-Adresse.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">10</span><span class="q-type">Freitext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Beschreibe in <b>vier Schritten</b>, wie die DNS-Auflösung abläuft, wenn ein Benutzer eine Webadresse eingibt.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li>Der Benutzer gibt eine Webadresse ein.</li>
+        <li>Der PC fragt den DNS-Server nach der zugehörigen IP-Adresse.</li>
+        <li>Der DNS-Server antwortet mit der IP-Adresse.</li>
+        <li>Der PC stellt die Anfrage an den Webserver unter dieser IP.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was steuert, wie lange ein aufgelöster DNS-Eintrag im Cache gültig bleibt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Die TTL (Time to Live)</li>
+        <li class="opt"><span class="tick"></span>Die Subnetzmaske des Clients</li>
+        <li class="opt"><span class="tick"></span>Die Lease-Time des DHCP-Servers</li>
+        <li class="opt"><span class="tick"></span>Die MAC-Adresse des Webservers</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Gültigkeitsdauer eines gecachten Eintrags wird durch die <code>TTL (Time to Live)</code> bestimmt. <span class="tag-mistake">Verwechslung</span> Die Lease-Time gehört zu DHCP, nicht zum DNS-Cache.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welchen Vorteil bringt DNS-Caching im Browser bzw. Betriebssystem?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Der Browser verschlüsselt dadurch automatisch alle Verbindungen</li>
+        <li class="opt"><span class="tick"></span>Jeder Client bekommt eine eigene öffentliche IP-Adresse</li>
+        <li class="opt"><span class="tick"></span>Die IP-Adresse des Servers wird dauerhaft und unveränderlich gespeichert</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Schnellere Auflösung und weniger Netzlast, weil der Eintrag näher am Client liegt</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Browser und Betriebssystem speichern aufgelöste Einträge temporär. Liegt der Eintrag näher am Client, erfolgt die Auflösung <b>schneller</b> und es entsteht <b>weniger Netzlast</b>. Die Gültigkeit wird über die TTL begrenzt (in Chrome prüfbar unter <code>chrome://net-internals/#dns</code>).</p></div>
+  </article>
+
+  <!-- ============ SECTION C — Vertiefung ============ -->
+  <div class="sec-head"><span class="ix">C</span><h2>🔬 [Vertiefung] Zwei DHCP-Server im Netz</h2></div>
+  <p class="sec-sub">Über den Kern-Prüfungsstoff hinaus: typische Symptome und saubere Behebung einer doppelten DHCP-Konfiguration.</p>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">13</span><span class="q-type">Szenario</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">In einem Netzsegment sind versehentlich zwei aktive DHCP-Server (z. B. ein zweiter Router als Access Point). Welches Symptom ist typisch?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die Übertragungsgeschwindigkeit verdoppelt sich automatisch</li>
+        <li class="opt"><span class="tick"></span>Alle Clients erhalten zuverlässig dieselbe, korrekte IP-Adresse</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>IP-Konflikte und falsches Gateway → instabiler oder kein Internetzugang</li>
+        <li class="opt"><span class="tick"></span>Das DNS funktioniert nicht mehr, DHCP bleibt aber stabil</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Sind zwei DHCP-Server im selben Segment aktiv, akzeptieren Clients jeden der beiden Server. Folge sind zufällige IPs, oft ein <b>falsches Gateway</b>, <b>IP-Konflikte</b> und ein instabiler oder gar kein Internetzugang – das Verhalten ist unvorhersehbar.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wie behebt man das Problem zweier DHCP-Server am saubersten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Bei allen Clients die IP-Adresse manuell fest eintragen</li>
+        <li class="opt"><span class="tick"></span>Beide DHCP-Server aktiv lassen, aber denselben Adresspool eintragen</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>DHCP am zweiten Gerät deaktivieren und es nur über einen LAN-Port (nicht WAN) anschließen</li>
+        <li class="opt"><span class="tick"></span>Das zweite Gerät über den WAN-Port anschließen und DHCP aktiviert lassen</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Typische Ursache ist ein zweiter Router, der als Access Point dient, aber noch DHCP aktiv hat. Sauberste Lösung: <b>DHCP am zweiten Gerät deaktivieren</b> und es <b>nur über einen LAN-Port</b> (nicht über den WAN-Port) anschließen. Dann verteilt nur noch ein Server die Adressen.</p></div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="10-adressierung.html"><span>Zurück · Thema 10</span><b>← Adressierung</b></a>
+    <a class="next" href="12-uebertragungsarten.html"><span>Weiter · Thema 12</span><b>Übertragungsarten →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">FU-IT · Thema 11 — DHCP &amp; DNS</span> · Kern-Prüfungsstoff</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

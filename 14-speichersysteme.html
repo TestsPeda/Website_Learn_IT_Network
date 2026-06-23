@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14 · Speichersysteme — FU-IT Test</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">FU<span class="slash">·</span>IT</span><b>Test 10–15</b></a>
+  <nav class="topnav">
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html" class="current">14</a>
+    <a href="15-raid.html">15</a>
+      <a href="galerie.html">Galerie</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Themenblock · Speicherarchitektur</p>
+    <div class="hero-num"><span class="hash">#</span>14</div>
+    <h1>Speichersysteme — DAS, NAS &amp; SAN</h1>
+    <p class="lede">Drei Architekturen im Vergleich: Zugriffsebene (Block oder Datei), Datentyp,
+      Netzanbindung, Ort von Dateisystem und LUN, Protokolle und typische Einsätze.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>17</b> Aufgaben</span>
+      <span class="pill"><b>4</b> Diagramme</span>
+      <span class="pill">MC · Vergleich · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Grundlagen DAS / NAS / SAN</h2></div>
+  <p class="sec-sub">Zugriffsebene, Datentyp und das Grundprinzip der drei Architekturen.</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was kennzeichnet <code>DAS</code> (Direct Attached Storage)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Speicher steht mehreren Clients gleichzeitig über das LAN bereit.</li>
+        <li class="opt"><span class="tick"></span>Speicher wird über ein dediziertes Glasfasernetz angebunden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Speicher direkt am Rechner angeschlossen, kein Netzwerk dazwischen.</li>
+        <li class="opt"><span class="tick"></span>Speicher erscheint am Client immer als Netzlaufwerk.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>DAS ist Speicher, der über <code>SATA/SAS</code>, <code>NVMe/PCIe</code> oder extern über <code>USB/eSATA/Thunderbolt</code> direkt am Host hängt – ohne Netzwerk-Protokoll-Stack dazwischen. Die Leistung entspricht der einer internen Platte.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Auf welcher Zugriffsebene arbeitet ein <code>NAS</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Bitebene über einen seriellen Bus.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Dateiebene (Datei-/File-Zugriff).</li>
+        <li class="opt"><span class="tick"></span>Blockebene (rohe Blöcke).</li>
+        <li class="opt"><span class="tick"></span>Sektorebene direkt auf der Magnetscheibe.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein NAS arbeitet auf <code>Dateiebene</code>: Clients sehen Ordner und Dateien, nicht einzelne Blöcke. <span class="tag-mistake">Verwechslung</span> mit SAN, das auf Blockebene arbeitet.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Auf welcher Zugriffsebene arbeitet ein <code>SAN</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Datensatzebene direkt in der Datenbank.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Blockebene (rohe Blöcke wie eine lokale Festplatte).</li>
+        <li class="opt"><span class="tick"></span>Dateiebene über SMB-Freigaben.</li>
+        <li class="opt"><span class="tick"></span>Objektebene über HTTP-Buckets.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein SAN stellt rohe <code>Blöcke</code> bereit. Der Server sieht sie wie eine eingebaute Festplatte (z. B. <code>/dev/sdb</code>, roh und ohne Dateisystem).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welcher Datentyp passt zu welchem System?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>NAS = unstrukturierte Daten, SAN = strukturierte Daten.</li>
+        <li class="opt"><span class="tick"></span>Beide ausschließlich für strukturierte Datenbankdaten.</li>
+        <li class="opt"><span class="tick"></span>NAS = strukturierte Daten, SAN = unstrukturierte Daten.</li>
+        <li class="opt"><span class="tick"></span>Beide ausschließlich für unstrukturierte Mediendateien.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>NAS ist ideal für <code>unstrukturierte</code> Daten (E-Mails, Videos, Office-Dateien, IoT-Daten). SAN ist für <code>strukturierte</code> Daten gedacht (Datenbanken, ERP/CRM).</p></div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>NAS — Network Attached Storage</h2></div>
+  <p class="sec-sub">Dateizugriff über das LAN, Protokolle, Netzlaufwerk und RAID.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 280" role="img" aria-label="NAS: drei Clients verbinden sich über LAN/Ethernet mit einem NAS-Gerät">
+    <text class="svg-title" x="20" y="28">NAS – Dateizugriff über das LAN</text>
+    <rect x="20" y="60" width="120" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="80" y="87" text-anchor="middle">Windows-Client</text>
+    <rect x="20" y="118" width="120" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="80" y="145" text-anchor="middle">Linux-Client</text>
+    <rect x="20" y="176" width="120" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="80" y="203" text-anchor="middle">Mac-Client</text>
+    <rect x="280" y="90" width="140" height="100" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="350" y="125" text-anchor="middle">LAN / Ethernet</text>
+    <text class="svg-label-sm" x="350" y="148" text-anchor="middle">TCP/IP</text>
+    <line x1="140" y1="82" x2="280" y2="120" stroke="#B9C7D2" stroke-width="2"></line>
+    <line x1="140" y1="140" x2="280" y2="140" stroke="#B9C7D2" stroke-width="2"></line>
+    <line x1="140" y1="198" x2="280" y2="160" stroke="#B9C7D2" stroke-width="2"></line>
+    <text class="svg-label-sm" x="205" y="100" text-anchor="middle">SMB</text>
+    <text class="svg-label-sm" x="205" y="178" text-anchor="middle">NFS</text>
+    <line x1="420" y1="140" x2="560" y2="140" stroke="#16242E" stroke-width="2"></line>
+    <rect x="560" y="80" width="140" height="120" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="630" y="115" text-anchor="middle">NAS-Gerät</text>
+    <text class="svg-label-sm" x="630" y="140" text-anchor="middle">eigene IP</text>
+    <text class="svg-label-sm" x="630" y="160" text-anchor="middle">Dateisystem im NAS</text>
+    <text class="svg-label-sm" x="630" y="180" text-anchor="middle">Netzlaufwerk Z:\</text>
+  </svg><figcaption>NAS – Dateizugriff über das LAN, mehrere Clients gleichzeitig.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wo liegt bei einem NAS das Dateisystem?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Im Fibre-Channel-Switch.</li>
+        <li class="opt"><span class="tick"></span>Auf dem Storage Array Controller.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Auf dem NAS-Gerät selbst.</li>
+        <li class="opt"><span class="tick"></span>Auf jedem zugreifenden Client.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Das Dateisystem liegt auf dem <code>NAS-Gerät</code>. Es stellt fertige Dateien über das Netz bereit – die Clients sehen Ordner und Dateien, nicht Blöcke.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie erscheint ein NAS typischerweise am Windows-Client?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Als lokale, rohe Festplatte ohne Dateisystem.</li>
+        <li class="opt"><span class="tick"></span>Als FC-HBA im Geräte-Manager.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Als Netzlaufwerk (z. B. <code>Z:\</code>).</li>
+        <li class="opt"><span class="tick"></span>Als eingebauter NVMe-Datenträger.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein NAS hat eine eigene IP-Adresse und erscheint am Client als <code>Netzlaufwerk</code> (z. B. <code>Z:\</code>). <span class="tag-mistake">Verwechslung</span>: Ein SAN erscheint dagegen als lokale Platte.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Protokolle nutzt ein NAS für den Dateizugriff?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span><code>SMB/CIFS</code> (Windows) und <code>NFS</code> (Linux/Unix).</li>
+        <li class="opt"><span class="tick"></span>Fibre Channel und FCoE.</li>
+        <li class="opt"><span class="tick"></span>SATA und NVMe.</li>
+        <li class="opt"><span class="tick"></span>iSCSI und NVMe-oF ausschließlich.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Typische NAS-Protokolle sind <code>SMB/CIFS</code> (Windows), <code>NFS</code> (Linux/Unix), außerdem <code>AFP</code> (altes macOS), <code>FTP/SFTP</code> und <code>WebDAV</code>. Fibre Channel ist dagegen ein SAN-Protokoll.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist der wesentliche Nachteil eines NAS gegenüber einem SAN?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Der <code>TCP/IP</code>-Protokoll-Overhead senkt den Durchsatz – nicht ideal für höchste Leistung.</li>
+        <li class="opt"><span class="tick"></span>Es kann nur von einem einzigen Client genutzt werden.</li>
+        <li class="opt"><span class="tick"></span>Es unterstützt grundsätzlich kein RAID.</li>
+        <li class="opt"><span class="tick"></span>Es benötigt zwingend einen FC-HBA im Client.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Durch den <code>TCP/IP</code>-Protokoll-Overhead ist der Durchsatz eines NAS geringer. Für höchste Leistung ist ein SAN die bessere Wahl.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie viele Laufwerksschächte hat ein NAS mindestens, und welche RAID-Stufen unterstützt es?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Keine Schächte; Speicher liegt immer in der Cloud.</li>
+        <li class="opt"><span class="tick"></span>Mindestens vier Schächte; ausschließlich RAID 6.</li>
+        <li class="opt"><span class="tick"></span>Genau einen Schacht; nur RAID 0.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mindestens zwei Schächte; RAID 0, 1, 5 (und Kombinationen wie RAID 10).</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein NAS hat <code>mindestens zwei</code> Laufwerksschächte und unterstützt <code>RAID 0/1/5</code> sowie Kombinationen wie <code>RAID 10</code>.</p></div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>SAN — Storage Area Network</h2></div>
+  <p class="sec-sub">Block-Zugriff, LUN, Dateisystem auf dem Server, FC/HBA und Geschwindigkeit.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 290" role="img" aria-label="SAN: Server mit HBA verbinden sich über einen FC-Switch mit einem Storage Array mit LUN">
+    <text class="svg-title" x="20" y="28">SAN – dediziertes Block-Netz</text>
+    <rect x="20" y="60" width="130" height="46" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="85" y="80" text-anchor="middle">Server 1</text>
+    <text class="svg-label-sm" x="85" y="98" text-anchor="middle">HBA</text>
+    <rect x="20" y="122" width="130" height="46" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="85" y="142" text-anchor="middle">Server 2</text>
+    <text class="svg-label-sm" x="85" y="160" text-anchor="middle">HBA</text>
+    <rect x="20" y="184" width="130" height="46" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="85" y="204" text-anchor="middle">Server 3</text>
+    <text class="svg-label-sm" x="85" y="222" text-anchor="middle">HBA</text>
+    <rect x="290" y="120" width="120" height="50" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="350" y="150" text-anchor="middle">FC-Switch</text>
+    <line x1="150" y1="83" x2="290" y2="138" stroke="#16242E" stroke-width="2"></line>
+    <line x1="150" y1="145" x2="290" y2="145" stroke="#16242E" stroke-width="2"></line>
+    <line x1="150" y1="207" x2="290" y2="152" stroke="#16242E" stroke-width="2"></line>
+    <line x1="410" y1="145" x2="540" y2="145" stroke="#16242E" stroke-width="2"></line>
+    <rect x="540" y="80" width="160" height="130" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="620" y="108" text-anchor="middle">Storage Array</text>
+    <rect x="560" y="125" width="120" height="36" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="620" y="148" text-anchor="middle">LUN</text>
+    <text class="svg-label-sm" x="620" y="190" text-anchor="middle">Block-Zugriff</text>
+    <text class="svg-label-sm" x="350" y="200" text-anchor="middle">Dateisystem auf dem Server</text>
+  </svg><figcaption>SAN – dediziertes Block-Netz, LUNs vom Storage Array.</figcaption></figure>
+
+  <div class="note">
+    <span class="lbl">Aufbau eines SAN</span>
+    <p>Ein SAN ist meist ein <strong>eigenes, dediziertes Netzwerk</strong> – getrennt vom normalen LAN – das ausschließlich den Speicherzugriff transportiert. Es besteht typischerweise aus drei Bausteinen:</p>
+    <ul>
+      <li><strong>Storage Array</strong> – das zentrale Speichersystem mit Festplatten/SSDs, RAID-Gruppen und (meist doppelten) <strong>Controllern</strong>, das die <strong>LUNs</strong> bereitstellt.</li>
+      <li><strong>Server (Hosts)</strong> – greifen über ihre <strong>HBAs</strong> auf die Blöcke zu; für die Ausfallsicherheit <strong>redundant</strong> ausgelegt (mehrere Server, mehrere Pfade).</li>
+      <li><strong>Switches</strong> – spannen das Speichernetz auf (z. B. FC-Switches) und werden <strong>redundant</strong> als zwei getrennte „Fabrics“ (A/B) betrieben, damit kein einzelner Switch zum Single Point of Failure wird.</li>
+    </ul>
+    <p>Durch die durchgängige Redundanz (mehrere Server, zwei Fabrics, doppelte Controller) bleibt der Speicher auch bei Ausfall einer Komponente erreichbar – wichtig für Virtualisierung und Datenbanken.</p>
+  </div>
+
+  <figure class="diagram"><svg viewBox="0 0 720 330" role="img" aria-label="Aufbau eines SAN: zwei redundante Server, zwei FC-Switches (Fabric A und B) und ein Storage Array mit zwei Controllern, verbunden über ein dediziertes Speichernetz">
+    <text class="svg-title" x="20" y="26">SAN – Aufbau: dediziertes, redundantes Speichernetz</text>
+    <rect x="20" y="70" width="140" height="56" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="90" y="93" text-anchor="middle">Server 1</text>
+    <text class="svg-label-sm" x="90" y="113" text-anchor="middle">2× HBA (redundant)</text>
+    <rect x="20" y="200" width="140" height="56" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="90" y="223" text-anchor="middle">Server 2</text>
+    <text class="svg-label-sm" x="90" y="243" text-anchor="middle">2× HBA (redundant)</text>
+    <rect x="300" y="78" width="130" height="48" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="365" y="100" text-anchor="middle">FC-Switch A</text>
+    <text class="svg-label-sm" x="365" y="117" text-anchor="middle">Fabric A</text>
+    <rect x="300" y="200" width="130" height="48" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="365" y="222" text-anchor="middle">FC-Switch B</text>
+    <text class="svg-label-sm" x="365" y="239" text-anchor="middle">Fabric B</text>
+    <rect x="560" y="70" width="150" height="186" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="635" y="94" text-anchor="middle">Storage Array</text>
+    <rect x="578" y="108" width="114" height="34" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="129" text-anchor="middle">Controller A</text>
+    <rect x="578" y="150" width="114" height="34" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="171" text-anchor="middle">Controller B</text>
+    <rect x="578" y="196" width="114" height="44" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="214" text-anchor="middle">LUNs (Blöcke)</text>
+    <text class="svg-label-sm" x="635" y="230" text-anchor="middle">RAID-Gruppen</text>
+    <g stroke="#16242E" stroke-width="2">
+      <line x1="160" y1="90" x2="300" y2="98"></line>
+      <line x1="160" y1="112" x2="300" y2="220"></line>
+      <line x1="160" y1="218" x2="300" y2="104"></line>
+      <line x1="160" y1="236" x2="300" y2="224"></line>
+      <line x1="430" y1="102" x2="560" y2="125"></line>
+      <line x1="430" y1="224" x2="560" y2="167"></line>
+    </g>
+    <text class="svg-label-sm" x="320" y="300" text-anchor="middle" style="fill:#15786E;">dediziertes SAN — vom normalen LAN getrennt; redundante Pfade = kein Single Point of Failure</text>
+  </svg><figcaption>SAN-Aufbau – dediziertes Netzwerk aus Storage Array, redundanten Servern und FC-Switches (Dual Fabric).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie ist ein SAN typischerweise <strong>aufgebaut</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Als einzelne Festplatte, die per USB direkt am Server hängt.</li>
+        <li class="opt"><span class="tick"></span>Als Dateiserver mit eigener IP, der Ordner per SMB im LAN freigibt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Als eigenes, dediziertes Netzwerk aus einem Storage Array, (redundanten) Servern und (redundanten) Switches.</li>
+        <li class="opt"><span class="tick"></span>Als Cloud-Dienst, der Objekte über HTTP-Buckets bereitstellt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein SAN ist meist ein <strong>dediziertes Netzwerk</strong> (getrennt vom LAN) aus <strong>Storage Array</strong>, <strong>Servern (Hosts)</strong> und <strong>Switches</strong>. Server und Switches werden <strong>redundant</strong> ausgelegt (mehrere Pfade, zwei Fabrics), um Ausfälle abzufangen. <span class="tag-mistake">Verwechslung</span>: USB-Platte = DAS, SMB-Dateiserver = NAS, HTTP-Buckets = Objektspeicher.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wo liegt bei einem SAN das Dateisystem?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Im Storage Array auf den Platten.</li>
+        <li class="opt"><span class="tick"></span>Auf jedem zugreifenden Client gespiegelt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Auf dem Server (Host), nicht im SAN.</li>
+        <li class="opt"><span class="tick"></span>Im FC-Switch.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim SAN liegt das Dateisystem auf dem <code>Server (Host)</code>. Das SAN liefert nur rohe Blöcke – deshalb liegt kein Dateisystem auf dem Übertragungsweg, was die hohe Geschwindigkeit ermöglicht.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist eine <code>LUN</code> und wo wird sie erstellt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Eine eindeutige IP-Adresse des Storage Arrays.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein logisches Block-Speichergerät (Logical Unit Number), erstellt vom Storage Array Controller aus RAID-Gruppen.</li>
+        <li class="opt"><span class="tick"></span>Eine Spezialkarte im Server zur FC-Anbindung.</li>
+        <li class="opt"><span class="tick"></span>Eine Dateifreigabe, die das NAS über SMB bereitstellt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Eine <code>LUN</code> (Logical Unit Number) ist ein logisches Block-Speichergerät. Der <code>Storage Array Controller</code> erstellt sie aus RAID-Gruppen; <code>LUN-Masking</code> steuert, welcher Server welche LUN sieht (z. B. als <code>/dev/sdb</code>).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Geschwindigkeiten bietet <code>Fibre Channel (FC)</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>100 / 200 / 400 Mbit/s.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>8 / 16 / 32 / 64 Gbit/s.</li>
+        <li class="opt"><span class="tick"></span>6 / 12 Gbit/s wie SAS.</li>
+        <li class="opt"><span class="tick"></span>1 / 10 / 25 Gbit/s.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Fibre Channel bietet <code>8/16/32/64 Gbit/s</code> (bei hohen Kosten). <code>iSCSI</code> läuft mit 1/10/25 Gbit/s über Standard-Ethernet, <code>FCoE</code> mit 10/25 Gbit/s, <code>NVMe-oF</code> mit 25/100+ Gbit/s.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist ein <code>HBA</code> (Host Bus Adapter)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Eine Spezialkarte im Server zur Anbindung an das SAN (FC-HBA mit eindeutiger WWPN oder iSCSI-HBA).</li>
+        <li class="opt"><span class="tick"></span>Ein Dateiprotokoll für den NAS-Zugriff.</li>
+        <li class="opt"><span class="tick"></span>Ein logisches Block-Speichergerät auf dem Storage Array.</li>
+        <li class="opt"><span class="tick"></span>Ein Switch, der das dedizierte Speichernetz aufspannt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <code>HBA</code> ist eine Spezialkarte im Server für die SAN-Anbindung. Der <code>FC-HBA</code> besitzt eine weltweit eindeutige <code>WWPN</code> (analog zur MAC-Adresse); alternativ gibt es den <code>iSCSI-HBA</code>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum erreicht ein SAN eine sehr hohe Zugriffsgeschwindigkeit?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Weil es alle Daten zusätzlich komprimiert.</li>
+        <li class="opt"><span class="tick"></span>Weil das Dateisystem im FC-Switch zwischengespeichert wird.</li>
+        <li class="opt"><span class="tick"></span>Weil es ausschließlich über das normale LAN läuft.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Weil kein Dateisystem auf dem Übertragungsweg liegt – der Block-Zugriff erfolgt direkt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim SAN liegt <code>kein Dateisystem</code> auf dem Übertragungsweg – der Server greift direkt auf Blöcke zu. Dazu kommt ein dediziertes Hochgeschwindigkeitsnetz und die Entkopplung von Speicher und Server.</p></div></article>
+
+  <div class="sec-head"><span class="ix">D</span><h2>Vergleich &amp; Szenario</h2></div>
+  <p class="sec-sub">Die drei Architekturen im Überblick und in der Anwendung.</p>
+
+  <div class="tbl-wrap"><table class="ref">
+    <thead><tr><th>Merkmal</th><th>DAS</th><th>NAS</th><th>SAN</th></tr></thead>
+    <tbody>
+      <tr><td>Zugriffsebene</td><td>Block</td><td>Datei</td><td>Block</td></tr>
+      <tr><td>Datentyp</td><td>beliebig</td><td>unstrukturiert</td><td>strukturiert</td></tr>
+      <tr><td>Netzwerk nötig</td><td>nein</td><td>ja (LAN/Ethernet)</td><td>ja (dediziert, z. B. FC)</td></tr>
+      <tr><td>Dateisystem</td><td>beim Host</td><td>auf dem NAS-Gerät</td><td>beim Host/Server</td></tr>
+      <tr><td>LUN</td><td>nein</td><td>nein (außer iSCSI)</td><td>ja (auf dem Storage Array)</td></tr>
+      <tr><td>Mehrere Clients</td><td>nein (nur über Host)</td><td>ja</td><td>ja (mit Koordination)</td></tr>
+      <tr><td>Kosten</td><td>gering</td><td>mittel</td><td>hoch</td></tr>
+      <tr><td>Einsatz</td><td>Workstation, einzelner Server</td><td>Dateifreigabe, Backup</td><td>Virtualisierung, Datenbanken</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note">
+    <span class="lbl">Missverständnis vermeiden · gleichzeitiger Dateizugriff</span>
+    <p>Beim <strong>gleichzeitigen Zugriff mehrerer Nutzer auf dieselben Dateien</strong> ist ein <strong>NAS</strong> die bessere Wahl: Es arbeitet <strong>dateibasiert</strong> und besitzt ein eigenes Betriebssystem, das den Zugriff <strong>koordiniert</strong> (File-Locking). Ist eine Datei gerade in Benutzung, verweigert bzw. beschränkt das NAS den konkurrierenden Schreibzugriff – so bleiben die Daten konsistent.</p>
+    <p>Ein <strong>SAN</strong> arbeitet dagegen <strong>blockbasiert</strong> und liefert nur rohe Blöcke; es kennt keine Dateien und <strong>steuert den gleichzeitigen Zugriff nicht</strong>. Greifen zwei Server ohne zusätzliche Koordination (cluster-fähiges Dateisystem auf den Hosts) auf dieselbe LUN zu, drohen Konflikte und Datenkorruption – das erklärt das „<em>ja, mit Koordination</em>“ in der Tabelle.</p>
+  </div>
+
+  <figure class="diagram"><svg viewBox="0 0 720 200" role="img" aria-label="DAS: ein Host direkt mit einer Festplatte verbunden, kein Netzwerk">
+    <text class="svg-title" x="20" y="28">DAS – Speicher direkt am Host</text>
+    <rect x="80" y="70" width="180" height="70" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="170" y="105" text-anchor="middle">PC / Server</text>
+    <text class="svg-label-sm" x="170" y="125" text-anchor="middle">Dateisystem beim Host</text>
+    <line x1="260" y1="105" x2="420" y2="105" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="340" y="95" text-anchor="middle">SATA/SAS/USB</text>
+    <rect x="420" y="70" width="180" height="70" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="510" y="105" text-anchor="middle">Festplatte</text>
+    <text class="svg-label-sm" x="510" y="125" text-anchor="middle">kein Netzwerk</text>
+  </svg><figcaption>DAS – Speicher direkt am Host, kein Netzwerk.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">16</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Vergleiche DAS, NAS und SAN anhand von Zugriffsebene, Datentyp, Ort des Dateisystems und Kosten.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Merkmal</th><th>DAS</th><th>NAS</th><th>SAN</th></tr></thead>
+        <tbody>
+          <tr><td>Zugriffsebene</td><td>Block</td><td>Datei</td><td>Block</td></tr>
+          <tr><td>Datentyp</td><td>beliebig</td><td>unstrukturiert</td><td>strukturiert</td></tr>
+          <tr><td>Dateisystem</td><td>beim Host</td><td>auf dem NAS-Gerät</td><td>beim Server/Host</td></tr>
+          <tr><td>Kosten</td><td>gering</td><td>mittel</td><td>hoch</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">17</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein IT-Startup braucht zentralen Speicher mit gleichzeitigem Zugriff mehrerer Mitarbeiter, Benutzerrechten, automatischen Backups und einfacher Kollaboration. Welches System empfiehlst du?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Ein <code>NAS</code> deckt den Großteil der Anforderungen ab:</p>
+      <ul>
+        <li>Dateizugriff für mehrere Clients gleichzeitig über das LAN.</li>
+        <li>Benutzer- und Gruppenrechte für die Zugriffssteuerung.</li>
+        <li>Automatische Backups durch Replikation bzw. Cloud-Backup.</li>
+        <li>Einfache Kollaboration und plattformübergreifender Zugang.</li>
+      </ul>
+      <div class="step">Kommt später eine hochperformante Datenbank mit hohem I/O dazu, ist eine hybride NAS+SAN-Architektur sinnvoll: NAS für die Dateiablage/Kollaboration, SAN für den schnellen Block-Zugriff der Datenbank.</div>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="13-topologien.html"><span>Zurück · Thema 13</span><b>← Topologien</b></a>
+    <a class="next" href="15-raid.html"><span>Weiter · Thema 15</span><b>RAID →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">FU-IT · Thema 14 — Speichersysteme</span> · Kern-Prüfungsstoff</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

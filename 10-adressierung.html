@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 · Adressierung — FU-IT Test</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">FU<span class="slash">·</span>IT</span><b>Test 10–15</b></a>
+  <nav class="topnav">
+    <a href="10-adressierung.html" class="current">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+      <a href="galerie.html">Galerie</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+
+<main><div class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Themenblock · Vermittlungsschicht</p>
+    <div class="hero-num"><span class="hash">#</span>10</div>
+    <h1>Adressierung — IPv4, Subnetting &amp; IPv6</h1>
+    <p class="lede">Aufbau der IPv4-Adresse, Netz- und Hostanteil, Subnetzmaske und CIDR,
+      das Rechnen mit Blockgrößen sowie die wichtigsten IPv6-Grundlagen.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>18</b> Aufgaben</span>
+      <span class="pill"><b>4</b> Diagramme</span>
+      <span class="pill">MC · Rechnen · IPv6</span>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ============== A · IPv4-Grundlagen ============== -->
+  <div class="sec-head"><span class="ix">A</span><h2>IPv4 — Grundlagen</h2></div>
+  <p class="sec-sub">Aufbau, Netz- und Hostanteil, Vergaberegeln.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 200" role="img" aria-label="IPv4-Adresse 192.168.2.105 als vier Oktette mit Binärdarstellung">
+      <text x="360" y="22" text-anchor="middle" class="svg-title">IPv4 = 32 Bit = 4 Oktette × 8 Bit</text>
+      <g>
+        <rect x="20"  y="42" width="160" height="58" rx="5" fill="#FBEAE3" stroke="#DD5430"></rect>
+        <rect x="190" y="42" width="160" height="58" rx="5" fill="#FBEAE3" stroke="#DD5430"></rect>
+        <rect x="360" y="42" width="160" height="58" rx="5" fill="#FBEAE3" stroke="#DD5430"></rect>
+        <rect x="530" y="42" width="160" height="58" rx="5" fill="#E4F1EF" stroke="#15786E"></rect>
+      </g>
+      <g text-anchor="middle" class="svg-label" style="font-size:22px;font-weight:700;">
+        <text x="100" y="68">192</text><text x="270" y="68">168</text>
+        <text x="440" y="68">2</text><text x="610" y="68">105</text>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="100" y="90">11000000</text><text x="270" y="90">10101000</text>
+        <text x="440" y="90">00000010</text><text x="610" y="90">01101001</text>
+      </g>
+      <g text-anchor="middle">
+        <text x="270" y="130" class="svg-label" style="fill:#DD5430;font-weight:700;">Netzanteil  (Maske 255.255.255 .0)</text>
+        <text x="610" y="130" class="svg-label" style="fill:#15786E;font-weight:700;">Hostanteil</text>
+      </g>
+      <g text-anchor="middle" class="svg-label-sm">
+        <text x="270" y="152">identifiziert das Netzwerk</text>
+        <text x="610" y="152">identifiziert das Endgerät</text>
+      </g>
+      <text x="360" y="185" text-anchor="middle" class="svg-label-sm">jedes Oktett 0–255 · 2⁸ = 256 Werte · 2³² ≈ 4,3 Mrd. Adressen gesamt</text>
+    </svg>
+    <figcaption>Eine IPv4-Adresse: vier dezimale Oktette, intern binär verarbeitet.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Aus wie vielen <strong>Bit</strong> besteht eine IPv4-Adresse?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>8 Bit</li>
+        <li class="opt"><span class="tick"></span>16 Bit</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>32 Bit</li>
+        <li class="opt"><span class="tick"></span>128 Bit</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>32 Bit</strong> — aufgeteilt in 4 Oktette (Blöcke) zu je 8 Bit. <span class="tag-mistake">Verwechslung</span> 128 Bit ist IPv6.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welchen <strong>Wertebereich</strong> hat ein einzelnes Oktett (dezimal)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>1 – 256</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>0 – 255</li>
+        <li class="opt"><span class="tick"></span>0 – 256</li>
+        <li class="opt"><span class="tick"></span>1 – 255</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>0 – 255.</strong> 8 Bit ergeben 2⁸ = 256 verschiedene Werte; gezählt wird ab 0, also <code>0…255</code> (binär <code>00000000</code> bis <code>11111111</code>).</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Warum wurde IPv6 entwickelt? Wie viele Adressen liefert IPv4 ungefähr?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>IPv4 ist unsicher; ca. 4,3 Millionen Adressen</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>IPv4-Adressen reichen nicht; nur ca. 4,3 Milliarden Adressen</li>
+        <li class="opt"><span class="tick"></span>IPv4 ist zu langsam; ca. 340 Sextillionen Adressen</li>
+        <li class="opt"><span class="tick"></span>IPv4 ist veraltet und wird nicht mehr genutzt</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>IPv4 liefert nur <strong>≈ 4,3 Milliarden</strong> (2³²) Adressen — zu wenig für die wachsende Zahl internetfähiger Geräte. IPv6 (128 Bit) liefert ca. <strong>340 Sextillionen (3,4 × 10³⁸)</strong>. In privaten Netzen ist IPv4 weiterhin überwiegend im Einsatz.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Zwei Rechner können <strong>ohne Router direkt</strong> miteinander kommunizieren, wenn …</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>… ihr Hostanteil identisch ist.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>… ihr Netzanteil identisch ist (gleiches Subnetz).</li>
+        <li class="opt"><span class="tick"></span>… sie dieselbe IP-Adresse haben.</li>
+        <li class="opt"><span class="tick"></span>… sie am selben Stromkreis hängen.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Entscheidend ist der <strong>identische Netzanteil</strong>. Der Sender vergleicht eigene IP + Maske mit der Ziel-IP: gleiches Subnetz → direkte Zustellung über den Switch; anderes Subnetz → das Paket geht an den Router (Gateway). Der Hostanteil muss im selben Netz dagegen <em>unterschiedlich</em> (eindeutig) sein.</p>
+    </div>
+  </article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 150" role="img" aria-label="IP 192.168.2.105 mit Subnetzmaske 255.255.255.0: Netzkennung 192.168.2.0, Broadcast 192.168.2.255">
+      <text x="20" y="30" class="svg-label">IP-Adresse</text>
+      <text x="160" y="30" class="svg-label" style="font-weight:700;">192.168.2.</text>
+      <text x="262" y="30" class="svg-label" style="font-weight:700;fill:#15786E;">105</text>
+      <text x="20" y="56" class="svg-label">Subnetzmaske</text>
+      <text x="160" y="56" class="svg-label" style="font-weight:700;">255.255.255.</text>
+      <text x="284" y="56" class="svg-label" style="font-weight:700;">0</text>
+      <line x1="20" y1="68" x2="420" y2="68" stroke="#D4DEE6"></line>
+      <text x="20" y="92" class="svg-label">Netzkennung</text>
+      <text x="160" y="92" class="svg-label" style="fill:#DD5430;font-weight:700;">192.168.2.0</text>
+      <text x="300" y="92" class="svg-label-sm">(Hostanteil = 0)</text>
+      <text x="20" y="116" class="svg-label">Broadcast</text>
+      <text x="160" y="116" class="svg-label" style="fill:#DD5430;font-weight:700;">192.168.2.255</text>
+      <text x="320" y="116" class="svg-label-sm">(Hostanteil = 255)</text>
+      <text x="20" y="140" class="svg-label-sm">Vergebbare Hosts: 192.168.2.1 – 192.168.2.254  →  254 Endgeräte</text>
+    </svg>
+    <figcaption>Reservierte Adressen pro /24-Netz: erste = Netzkennung, letzte = Broadcast.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Adresse darf im Netz <code>192.168.2.0/24</code> <strong>nicht</strong> an ein Endgerät vergeben werden?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span><code>192.168.2.1</code></li>
+        <li class="opt"><span class="tick"></span><code>192.168.2.105</code></li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>192.168.2.255</code></li>
+        <li class="opt"><span class="tick"></span><code>192.168.2.254</code></li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><code>192.168.2.255</code> ist die <strong>Broadcast-Adresse</strong> (Hostanteil = 255, spricht alle Geräte gleichzeitig an). Ebenfalls gesperrt: <code>192.168.2.0</code> (Netzkennung, Hostanteil = 0). Vergebbar ist alles dazwischen: <code>.1</code> bis <code>.254</code>.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">06</span><span class="q-type">Zuordnung / Freitext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Gegeben: IP <code>192.168.2.105</code>, Maske <code>255.255.255.0</code>.
+        Bestimme <strong>Netzanteil, Hostanteil, Netzkennung</strong> und <strong>Broadcast-Adresse</strong>.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>Netzanteil:</strong> <code>192.168.2.</code> (die ersten 3 Oktette, dort steht in der Maske 255)</li>
+        <li><strong>Hostanteil:</strong> <code>105</code> (letztes Oktett, Maske = 0)</li>
+        <li><strong>Netzkennung:</strong> <code>192.168.2.0</code> (Hostbits alle 0)</li>
+        <li><strong>Broadcast:</strong> <code>192.168.2.255</code> (Hostbits alle 1)</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was unterscheidet eine <strong>statische</strong> von einer <strong>dynamischen</strong> IP-Adresse?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Statisch = fest vergeben und unveränderlich; dynamisch = wird bei Verwendung zugewiesen und bei Nichtgebrauch wieder freigegeben.</li>
+        <li class="opt"><span class="tick"></span>Statisch ändert sich täglich, dynamisch bleibt gleich.</li>
+        <li class="opt"><span class="tick"></span>Statisch ist immer öffentlich, dynamisch immer privat.</li>
+        <li class="opt"><span class="tick"></span>Es gibt keinen Unterschied.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Eine <strong>statische</strong> Adresse behält ihren Wert dauerhaft. Eine <strong>dynamische</strong> wird bei Verwendung zugewiesen und bei Nichtgebrauch gelöscht (typisch beim Netzbetreiber bzw. per DHCP, siehe Thema 11).</p>
+    </div>
+  </article>
+
+  <!-- ============== B · Subnetzmaske, CIDR & Subnetting ============== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Subnetzmaske, CIDR &amp; Rechnen</h2></div>
+  <p class="sec-sub">Maske ↔ CIDR umrechnen, nutzbare Hosts und Blockgrößen bestimmen.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 210" role="img" aria-label="Bitwertigkeiten eines Oktetts und Umrechnung von 224 in /27">
+      <text x="350" y="22" text-anchor="middle" class="svg-title">Bitwertigkeiten im Oktett — Maske 255.255.255.224</text>
+      <g text-anchor="middle">
+        <text x="100" y="48" class="svg-label-sm">128</text><text x="170" y="48" class="svg-label-sm">64</text>
+        <text x="240" y="48" class="svg-label-sm">32</text><text x="310" y="48" class="svg-label-sm">16</text>
+        <text x="380" y="48" class="svg-label-sm">8</text><text x="450" y="48" class="svg-label-sm">4</text>
+        <text x="520" y="48" class="svg-label-sm">2</text><text x="590" y="48" class="svg-label-sm">1</text>
+      </g>
+      <g>
+        <rect x="76"  y="58" width="48" height="44" rx="4" fill="#DD5430"></rect>
+        <rect x="146" y="58" width="48" height="44" rx="4" fill="#DD5430"></rect>
+        <rect x="216" y="58" width="48" height="44" rx="4" fill="#DD5430"></rect>
+        <rect x="286" y="58" width="48" height="44" rx="4" fill="#E4F1EF" stroke="#15786E"></rect>
+        <rect x="356" y="58" width="48" height="44" rx="4" fill="#E4F1EF" stroke="#15786E"></rect>
+        <rect x="426" y="58" width="48" height="44" rx="4" fill="#E4F1EF" stroke="#15786E"></rect>
+        <rect x="496" y="58" width="48" height="44" rx="4" fill="#E4F1EF" stroke="#15786E"></rect>
+        <rect x="566" y="58" width="48" height="44" rx="4" fill="#E4F1EF" stroke="#15786E"></rect>
+      </g>
+      <g text-anchor="middle" class="svg-label" style="font-size:20px;font-weight:700;">
+        <text x="100" y="87" fill="#fff">1</text><text x="170" y="87" fill="#fff">1</text><text x="240" y="87" fill="#fff">1</text>
+        <text x="310" y="87" fill="#15786E">0</text><text x="380" y="87" fill="#15786E">0</text><text x="450" y="87" fill="#15786E">0</text>
+        <text x="520" y="87" fill="#15786E">0</text><text x="590" y="87" fill="#15786E">0</text>
+      </g>
+      <text x="200" y="130" text-anchor="middle" class="svg-label" style="fill:#DD5430;font-weight:700;">128 + 64 + 32 = 224  →  3 Netz-Bits</text>
+      <text x="450" y="130" text-anchor="middle" class="svg-label" style="fill:#15786E;font-weight:700;">5 Host-Bits</text>
+      <text x="350" y="165" text-anchor="middle" class="svg-label" style="font-weight:700;">CIDR = 8 + 8 + 8 + 3 = /27</text>
+      <text x="350" y="192" text-anchor="middle" class="svg-label-sm">Nutzbare Hosts = 2⁵ − 2 = 32 − 2 = 30</text>
+    </svg>
+    <figcaption>Ein Maskenoktett aus den Bitwertigkeiten lesen — der Schlüssel zum Subnetting.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welcher CIDR-Präfix entspricht der Subnetzmaske <code>255.255.255.0</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>/16</li>
+        <li class="opt"><span class="tick"></span>/23</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>/24</li>
+        <li class="opt"><span class="tick"></span>/27</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>/24.</strong> Jede <code>255</code> = <code>11111111</code> = 8 Einsen. Drei volle Oktette: 8 + 8 + 8 + 0 = <strong>24</strong> Netz-Bits.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">09</span><span class="q-type calc">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Rechne die Maske <code>255.255.255.224</code> in die CIDR-Notation um und gib die Anzahl der <strong>nutzbaren Hosts</strong> an.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung mit Rechenweg</span>
+      <div class="step">224 = 128 + 64 + 32 = binär 11100000  → 3 Netz-Bits
+CIDR = 8 + 8 + 8 + 3 = /27
+Host-Bits = 32 − 27 = 5
+Nutzbare Hosts = 2^5 − 2 = 32 − 2 = 30</div>
+      <p>Ergebnis: <strong>/27</strong>, <strong>30 nutzbare Hosts</strong> (−2 für Netzkennung und Broadcast).</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Mit welcher Formel berechnet man die Anzahl der <strong>nutzbaren Hosts</strong> in einem Subnetz?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>2<sup>Host-Bits</sup></li>
+        <li class="opt" data-correct="true"><span class="tick"></span>2<sup>Host-Bits</sup> − 2</li>
+        <li class="opt"><span class="tick"></span>2<sup>Netz-Bits</sup> − 2</li>
+        <li class="opt"><span class="tick"></span>256 − CIDR</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>2<sup>Host-Bits</sup> − 2.</strong> Die „−2“ steht für die nicht vergebbare Netzkennung (alle Hostbits 0) und die Broadcast-Adresse (alle Hostbits 1). <code>2^Host-Bits</code> allein wäre die <em>Blockgröße gesamt</em> (alle Adressen inkl. Netz + Broadcast).</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">11</span><span class="q-type calc">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Ein Netz hat die Maske <code>255.255.252.0</code> (/22). Bestimme: (a) Anzahl Host-Bits, (b) Blockgröße gesamt, (c) nutzbare Hosts, (d) Blockgröße im relevanten Oktett (Schrittweite).</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung mit Rechenweg</span>
+      <div class="step">Maske drittes Oktett 252 = 11111100 → 6 Netz-Bits, 2 Host-Bits in diesem Oktett
+(a) Host-Bits gesamt = 32 − 22 = 10
+(b) Blockgröße gesamt = 2^10 = 1024 Adressen
+(c) Nutzbare Hosts = 1024 − 2 = 1022
+(d) Blockgröße im Oktett = 256 − 252 = 4</div>
+      <p>Die Subnetze springen daher in Vierer-Schritten im dritten Oktett:
+        <code>10.10.0.0/22</code>, <code>10.10.4.0/22</code>, <code>10.10.8.0/22</code>, <code>10.10.12.0/22</code> …</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Wie berechnet man die <strong>Blockgröße im Oktett</strong> (die Schrittweite zwischen den Subnetzen)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>2<sup>Netz-Bits</sup></li>
+        <li class="opt" data-correct="true"><span class="tick"></span>256 − Wert des relevanten Maskenoktetts</li>
+        <li class="opt"><span class="tick"></span>CIDR − 24</li>
+        <li class="opt"><span class="tick"></span>255 − CIDR</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>256 − Maskenwert.</strong> Beispiel /22: 256 − 252 = 4. Bei /24 (255): 256 − 255 = 1, bei /20 (240): 256 − 240 = 16.</p>
+    </div>
+  </article>
+
+  <div class="note">
+    <span class="lbl">Verständnis · Warum wird die Schrittweite nach rechts immer kleiner?</span>
+    <p><strong>In einfachen Worten:</strong> Ein <strong>kleinerer Netzanteil</strong> (weniger Einser in der Maske) lässt den <strong>Hostbereich wachsen</strong> – und ein größerer Hostbereich braucht <strong>mehr Platz</strong>, also größere Adressblöcke und damit eine größere Schrittweite. Umgekehrt gilt: je <strong>größer der Netzanteil</strong>, desto <strong>kleiner der Hostbereich</strong> und desto kleiner die Blöcke. Darum ist die Schrittweite bei <code>…254</code> nur <strong>2</strong> – kleiner als bei <code>…252</code> mit <strong>4</strong>: 254 hat einen größeren Netzanteil (ein Host-Bit weniger).</p>
+    <p>Der eigentliche Grund steckt in den <strong>Bitwertigkeiten</strong>: Jedes Bit im Oktett ist nur halb so viel wert wie sein linker Nachbar. Eine Maske füllt die Einser <strong>immer von links</strong> auf – das jeweils hinzukommende Bit wird also immer kleiner.</p>
+    <div class="step">Wert je Bit:  128  64  32  16  8  4  2  1   ← halbiert sich nach rechts
+
+… 248 = 11111000   (+8)
+… 252 = 11111100   (+4)
+… 254 = 11111110   (+2)   ← nur noch +2: es kommt das 2er-Bit dazu
+… 255 = 11111111   (+1)   ← nur noch +1: das kleinste Bit</div>
+    <p>Dieselbe Logik gilt für die <strong>Blockgröße/Schrittweite</strong> = 256 − Maskenwert: <code>252 → 4</code> Adressen pro Block, <code>254 → 2</code>, <code>255 → 1</code>. <strong>Höhere Maske = mehr, aber kleinere Netze.</strong> Eine höhere Maske bedeutet also <em>nicht</em> einen größeren Schritt, sondern einen kleineren.</p>
+  </div>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">13</span><span class="q-type calc">Szenario · Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Eine Abteilung benötigt ein Subnetz für <strong>50 Endgeräte</strong>. Welcher CIDR-Präfix
+        ist der kleinste, der ausreicht — und wie viele Hosts sind dann nutzbar?</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung mit Rechenweg</span>
+      <div class="step">Benötigt: ≥ 50 nutzbare Hosts
+2^5 − 2 = 30   → zu wenig  (/27)
+2^6 − 2 = 62   → reicht    (/26)
+Host-Bits = 6  →  CIDR = 32 − 6 = /26  (Maske 255.255.255.192)</div>
+      <p>Antwort: <strong>/26</strong> mit <strong>62 nutzbaren Hosts</strong> (256 − 192 = 64 Adressen gesamt, davon 62 vergebbar).</p>
+    </div>
+  </article>
+
+  <div class="tbl-wrap">
+    <table class="ref">
+      <caption style="text-align:left;color:var(--muted);font-size:.85rem;padding:6px 0;">Schnellreferenz Subnetting</caption>
+      <thead><tr><th>Präfix</th><th>Subnetzmaske</th><th>Host-Bits</th><th>Adressen gesamt</th><th>nutzbar</th><th>Schrittweite</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">/24</td><td class="mono">255.255.255.0</td><td>8</td><td>256</td><td>254</td><td>1</td></tr>
+        <tr><td class="mono">/25</td><td class="mono">255.255.255.128</td><td>7</td><td>128</td><td>126</td><td>128</td></tr>
+        <tr><td class="mono">/26</td><td class="mono">255.255.255.192</td><td>6</td><td>64</td><td>62</td><td>64</td></tr>
+        <tr><td class="mono">/27</td><td class="mono">255.255.255.224</td><td>5</td><td>32</td><td>30</td><td>32</td></tr>
+        <tr><td class="mono">/22</td><td class="mono">255.255.252.0</td><td>10</td><td>1024</td><td>1022</td><td>4 (3. Oktett)</td></tr>
+        <tr><td class="mono">/16</td><td class="mono">255.255.0.0</td><td>16</td><td>65536</td><td>65534</td><td>256</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============== C · IPv6 ============== -->
+  <div class="sec-head"><span class="ix">C</span><h2>IPv6 — Grundlagen</h2></div>
+  <p class="sec-sub">Aufbau, Kürzungsregeln und Adresstypen.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 220" role="img" aria-label="IPv6-Kürzung von 2001:0DB8:0000:0000:0000:0000:0000:0001 zu 2001:db8::1">
+      <text x="360" y="22" text-anchor="middle" class="svg-title">IPv6 = 128 Bit = 8 Blöcke × 16 Bit (hexadezimal)</text>
+      <text x="20" y="58" class="svg-label-sm">Voll</text>
+      <text x="20" y="78" class="svg-label" style="font-weight:700;">2001:0DB8:0000:0000:0000:0000:0000:0001</text>
+      <text x="20" y="112" class="svg-label-sm">Regel 1 — führende Nullen weglassen</text>
+      <text x="20" y="132" class="svg-label" style="font-weight:700;">2001:DB8:0:0:0:0:0:1</text>
+      <text x="20" y="166" class="svg-label-sm">Regel 2 — zusammenhängende Null-Blöcke → :: (nur einmal!)</text>
+      <text x="20" y="186" class="svg-label" style="font-weight:700;fill:#15786E;">2001:db8::1</text>
+      <line x1="360" y1="196" x2="700" y2="196" stroke="#D4DEE6"></line>
+      <text x="20" y="210" class="svg-label-sm" style="fill:#B5462F;">Ungültig: 2001::1::1  —  „::“ darf nur ein einziges Mal vorkommen</text>
+    </svg>
+    <figcaption>Erste 64 Bit = Netzwerkpräfix (Routing), letzte 64 Bit = Interface-ID (Host).</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Aus wie vielen Bit besteht eine IPv6-Adresse und wie wird sie dargestellt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>32 Bit, dezimal, 4 Blöcke</li>
+        <li class="opt"><span class="tick"></span>64 Bit, binär, 4 Blöcke</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>128 Bit, hexadezimal, 8 Blöcke à 16 Bit</li>
+        <li class="opt"><span class="tick"></span>256 Bit, hexadezimal, 16 Blöcke</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>128 Bit</strong>, dargestellt als <strong>8 Blöcke à 16 Bit in Hexadezimal</strong>, durch Doppelpunkt getrennt — z. B. <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">15</span><span class="q-type calc">Kürzen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Kürze die Adresse <code>2001:0DB8:0000:0000:0000:0000:0000:0001</code> nach den IPv6-Regeln so weit wie möglich.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung mit Rechenweg</span>
+      <div class="step">Regel 1 (führende Nullen weg): 2001:DB8:0:0:0:0:0:1
+Regel 2 (Null-Blöcke → ::):     2001:DB8::1</div>
+      <p>Ergebnis: <code>2001:db8::1</code>. Das <code>::</code> darf <strong>nur einmal</strong> stehen, sonst wäre die Adresse nicht eindeutig rekonstruierbar.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">16</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Warum ist die Schreibweise <code>2001::1::1</code> <strong>ungültig</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>IPv6 erlaubt keine Hexadezimalzahlen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Das Doppelkürzel <code>::</code> darf pro Adresse nur einmal vorkommen — sonst ist die Anzahl der Null-Blöcke nicht mehr eindeutig rekonstruierbar.</li>
+        <li class="opt"><span class="tick"></span>Eine IPv6-Adresse darf höchstens 4 Blöcke haben.</li>
+        <li class="opt"><span class="tick"></span>Die Adresse ist zu kurz.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Mit zwei <code>::</code> wüsste man nicht, wie viele Null-Blöcke jeweils gemeint sind. Daher: <strong>höchstens ein <code>::</code> pro Adresse</strong>.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">17</span><span class="q-type">Multiple Choice · Mehrfachauswahl</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Ordne zu: Welche Aussagen über IPv6-Adresstypen sind <strong>korrekt</strong>? (Mehrfachauswahl, dann „Auswerten“.)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span><code>fe80::/10</code> = Link-Local (nur im selben Segment, wird nie geroutet)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>2000::/3</code> = Global Unicast (weltweit routbar)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>fc00::/7</code> = Unique Local (Pendant zu privaten IPv4-Adressen)</li>
+        <li class="opt"><span class="tick"></span>IPv6 nutzt weiterhin Broadcast-Adressen für alle Geräte</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Korrekt sind die ersten drei. <strong>Broadcast existiert in IPv6 nicht mehr</strong> — seine Aufgabe übernimmt <strong>Multicast</strong> (<code>ff00::/8</code>, z. B. <code>ff02::1</code> = alle Knoten, <code>ff02::2</code> = alle Router).</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">18</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was beschreibt <strong>SLAAC</strong> bei IPv6?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Stateless Address Autoconfiguration — der Host bildet seine Adresse selbst aus dem per Router Advertisement empfangenen Präfix (64 Bit) + Interface-ID (64 Bit), ohne DHCP-Server.</li>
+        <li class="opt"><span class="tick"></span>Ein Verschlüsselungsverfahren für IPv6-Pakete.</li>
+        <li class="opt"><span class="tick"></span>Das IPv6-Pendant zu NAT.</li>
+        <li class="opt"><span class="tick"></span>Ein Protokoll zur Namensauflösung.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>Stateless Address Autoconfiguration:</strong> Plug &amp; Play ohne Server. Der Router schickt per <em>Router Advertisement</em> das Präfix; der Host hängt seine Interface-ID an (EUI-64 oder zufällig). Alternativ vergibt <strong>DHCPv6</strong> Adressen zustandsbehaftet (M-Flag = 1).</p>
+    </div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="index.html"><span>Zurück</span><b>← Übersicht</b></a>
+    <a class="next" href="11-dhcp-dns.html"><span>Weiter · Thema 11</span><b>DHCP &amp; DNS →</b></a>
+  </nav>
+
+</div></main>
+
+<footer class="foot"><div class="wrap"><span class="mono">FU-IT · Thema 10 — Adressierung</span> · Kern-Prüfungsstoff</div></footer>
+
+<script src="assets/quiz.js"></script>
+</body>
+</html>

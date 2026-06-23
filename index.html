@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FU-IT · Test Themen 10–15</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="mark">FU<span class="slash">·</span>IT</span>
+    <b>Test 10–15</b><span class="sub">Fachunterricht IT</span>
+  </a>
+  <div class="spacer"></div>
+  <span class="scorechip">Selbsttest · Netzwerktechnik &amp; Speicher</span>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Berufsschule · Prüfungsvorbereitung</p>
+    <h1>Umfassender Selbsttest<br>Themenblöcke 10 bis 15</h1>
+    <p class="lede">Sechs Themen, von der IP-Adressierung bis zu den RAID-Leveln — mit
+      anschaulichen Diagrammen, gemischten Aufgabentypen und vollständigen Lösungen zum
+      Aufdecken. Inhaltlich abgeglichen mit der Notion-Lerngrundlage und dem Quellmaterial.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>6</b> Themen</span>
+      <span class="pill"><b>90</b> Aufgaben</span>
+      <a class="pill" href="galerie.html" style="text-decoration:none;"><b>23</b> Diagramme · Galerie →</a>
+      <span class="pill">Lösungen <b>inklusive</b></span>
+    </div>
+  </section>
+
+  <!-- Star topology = navigation that teaches Topic 13 -->
+  <figure class="diagram" style="background:var(--surface);">
+    <svg viewBox="0 0 760 430" role="img" aria-label="Sterntopologie: zentraler Switch verbunden mit den sechs Themenseiten">
+      <defs>
+        <marker id="dot" markerWidth="6" markerHeight="6" refX="3" refY="3">
+          <circle cx="3" cy="3" r="2.4" fill="#B9C7D2"></circle>
+        </marker>
+      </defs>
+      <!-- links -->
+      <g stroke="#B9C7D2" stroke-width="2">
+        <line x1="380" y1="215" x2="150" y2="80"></line>
+        <line x1="380" y1="215" x2="380" y2="62"></line>
+        <line x1="380" y1="215" x2="610" y2="80"></line>
+        <line x1="380" y1="215" x2="150" y2="350"></line>
+        <line x1="380" y1="215" x2="380" y2="368"></line>
+        <line x1="380" y1="215" x2="610" y2="350"></line>
+      </g>
+      <!-- central switch -->
+      <g>
+        <rect x="312" y="190" width="136" height="50" rx="6" fill="#16242E"></rect>
+        <text x="380" y="212" text-anchor="middle" fill="#fff" class="svg-title">SWITCH</text>
+        <text x="380" y="229" text-anchor="middle" fill="#9FB3C0" class="svg-label-sm">Test 10–15 · Start</text>
+      </g>
+      <!-- nodes (links) -->
+      <a href="10-adressierung.html"><g class="node">
+        <rect x="48" y="48" width="200" height="62" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
+        <text x="64" y="78" fill="#DD5430" class="svg-title" style="font-size:18px;">10</text>
+        <text x="92" y="74" class="svg-label" style="font-weight:700;">Adressierung</text>
+        <text x="92" y="92" class="svg-label-sm">IPv4 · Subnetting · IPv6</text>
+      </g></a>
+      <a href="11-dhcp-dns.html"><g class="node">
+        <rect x="280" y="30" width="200" height="62" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
+        <text x="296" y="60" fill="#DD5430" class="svg-title" style="font-size:18px;">11</text>
+        <text x="324" y="56" class="svg-label" style="font-weight:700;">DHCP &amp; DNS</text>
+        <text x="324" y="74" class="svg-label-sm">DORA · Namensauflösung</text>
+      </g></a>
+      <a href="12-uebertragungsarten.html"><g class="node">
+        <rect x="512" y="48" width="200" height="62" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
+        <text x="528" y="78" fill="#DD5430" class="svg-title" style="font-size:18px;">12</text>
+        <text x="556" y="74" class="svg-label" style="font-weight:700;">Übertragungsarten</text>
+        <text x="556" y="92" class="svg-label-sm">Duplex · Multiplexing</text>
+      </g></a>
+      <a href="13-topologien.html"><g class="node">
+        <rect x="48" y="320" width="200" height="62" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
+        <text x="64" y="350" fill="#DD5430" class="svg-title" style="font-size:18px;">13</text>
+        <text x="92" y="346" class="svg-label" style="font-weight:700;">Topologien</text>
+        <text x="92" y="364" class="svg-label-sm">Bus · Ring · Stern · Mesh</text>
+      </g></a>
+      <a href="14-speichersysteme.html"><g class="node">
+        <rect x="280" y="338" width="200" height="62" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
+        <text x="296" y="368" fill="#DD5430" class="svg-title" style="font-size:18px;">14</text>
+        <text x="324" y="364" class="svg-label" style="font-weight:700;">Speichersysteme</text>
+        <text x="324" y="382" class="svg-label-sm">DAS · NAS · SAN</text>
+      </g></a>
+      <a href="15-raid.html"><g class="node">
+        <rect x="512" y="320" width="200" height="62" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
+        <text x="528" y="350" fill="#DD5430" class="svg-title" style="font-size:18px;">15</text>
+        <text x="556" y="346" class="svg-label" style="font-weight:700;">Speicherablage</text>
+        <text x="556" y="364" class="svg-label-sm">RAID 0 · 1 · 5 · 10</text>
+      </g></a>
+    </svg>
+    <figcaption>Klicke einen Knoten an, um den Test zum Thema zu öffnen — das Navigationsbild ist selbst eine Sterntopologie (Thema 13).</figcaption>
+  </figure>
+
+  <div class="sec-head"><span class="ix">→</span><h2>Themen auswählen</h2></div>
+  <p class="sec-sub">Jede Seite ist eigenständig: Fragen beantworten, Lösungen einzeln aufdecken
+    oder per Knopf alle einblenden.</p>
+
+  <div class="topic-grid">
+    <a class="topic-card" href="10-adressierung.html">
+      <span class="tc-num">10</span><h3>Adressierung</h3>
+      <p>IPv4-Aufbau, Subnetzmaske &amp; CIDR, Subnetting-Rechnen, Netz-/Broadcast-Adresse, IPv6-Kürzung &amp; Adresstypen.</p>
+      <span class="tc-meta">18 Aufgaben · 4 Diagramme</span>
+    </a>
+    <a class="topic-card" href="11-dhcp-dns.html">
+      <span class="tc-num">11</span><h3>DHCP &amp; DNS</h3>
+      <p>Zuweisungsarten, DORA-Ablauf, Lease-Time, DNS-Auflösung &amp; Caching, doppelter DHCP-Server.</p>
+      <span class="tc-meta">14 Aufgaben · 2 Diagramme</span>
+    </a>
+    <a class="topic-card" href="12-uebertragungsarten.html">
+      <span class="tc-num">12</span><h3>Übertragungsarten</h3>
+      <p>Seriell/parallel, Simplex/Halb-/Vollduplex, Multiplexing FDM · TDM · CDM · WDM.</p>
+      <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
+    </a>
+    <a class="topic-card" href="13-topologien.html">
+      <span class="tc-num">13</span><h3>Topologien</h3>
+      <p>Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Bewertung nach Kosten, Skalierbarkeit, Ausfallsicherheit.</p>
+      <span class="tc-meta">14 Aufgaben · 4 Diagramme</span>
+    </a>
+    <a class="topic-card" href="14-speichersysteme.html">
+      <span class="tc-num">14</span><h3>Speichersysteme</h3>
+      <p>DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem, Protokolle, Einsatz.</p>
+      <span class="tc-meta">16 Aufgaben · 3 Diagramme</span>
+    </a>
+    <a class="topic-card" href="15-raid.html">
+      <span class="tc-num">15</span><h3>Speicherablagearten</h3>
+      <p>RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität, Ausfallsicherheit, Auswahl.</p>
+      <span class="tc-meta">13 Aufgaben · 4 Diagramme</span>
+    </a>
+  </div>
+
+  <div class="sec-head"><span class="ix">▦</span><h2>Grafik-Galerie</h2></div>
+  <p class="sec-sub">Alle 23 Diagramme der Themen 10–15 auf einer Seite — gruppiert nach Thema,
+    ohne Aufgaben dazwischen. Schnell zum Wiederholen.</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="galerie.html">
+      <span class="tc-num">▦</span><h3>Alle Grafiken</h3>
+      <p>Sämtliche Diagramme von der IPv4-Adresse über DORA und Multiplexing bis zu den RAID-Leveln, nach Thema sortiert und zurück zum jeweiligen Test verlinkt.</p>
+      <span class="tc-meta">23 Diagramme · 6 Themen</span>
+    </a>
+  </div>
+
+  <div class="note" style="margin-top:36px;">
+    <span class="lbl">Hinweis zur Nutzung</span>
+    <p style="margin:.4em 0 0;">Bei Multiple-Choice-Fragen klickst du die Antwort an — richtig/falsch wird sofort
+    farbig markiert und die Erklärung erscheint. Rechen-, Zuordnungs- und Freitextaufgaben löst du
+    selbst und deckst die Musterlösung mit „Lösung anzeigen“ auf. Der Zähler oben auf jeder Themenseite
+    zählt nur die automatisch auswertbaren Fragen.</p>
+  </div>
+
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span class="mono">FU-IT · Fachunterricht IT</span> — Selbsttest Themen 10–15.
+  Inhalt abgeglichen mit der Notion-Lerngrundlage und dem Workspace-Quellmaterial.
+  Kern-Prüfungsstoff; <span class="mono">🔬 [Vertiefung]</span> ist als solche gekennzeichnet.
+</div></footer>
+
+</body>
+</html>
