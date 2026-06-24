@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grafiken · Themen 10–15 — IT-Lernmaterial</title>
+<title>Lernseite · Themen 10–15 — IT-Lernmaterial</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -17,24 +17,24 @@
     <a href="13-topologien.html">13</a>
     <a href="14-speichersysteme.html">14</a>
     <a href="15-raid.html">15</a>
-    <a href="galerie.html" class="current">Galerie</a>
+    <a href="lernseite.html" class="current">Lernen</a>
   </nav>
   <div class="spacer"></div>
-  <span class="scorechip">23 Grafiken</span>
+  <span class="scorechip">Konzepte &amp; 23 Diagramme</span>
 </header>
 
 <main><div class="wrap">
 
   <section class="hero">
-    <p class="eyebrow">Test 10–15 · Diagramm-Galerie</p>
-    <h1>Alle Grafiken<br>auf einen Blick</h1>
-    <p class="lede">Sämtliche 23 Diagramme der Themenblöcke 10 bis 15 — herausgelöst aus den
-      einzelnen Testseiten und nach Thema gruppiert. Ideal zum schnellen Wiederholen, ohne
-      durch die Aufgaben scrollen zu müssen. Jeder Block verlinkt zurück auf den zugehörigen Test.</p>
+    <p class="eyebrow">Test 10–15 · Konzepte wiederholen</p>
+    <h1>Lernseite<br>Konzepte auf einen Blick</h1>
+    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 23 Diagrammen
+      der Themenblöcke 10 bis 15, nach Thema gruppiert. Zum Wiederholen ohne Aufgaben; jeder
+      Block verlinkt zurück auf den zugehörigen Test.</p>
     <div class="hero-meta">
       <span class="pill"><b>6</b> Themen</span>
       <span class="pill"><b>23</b> Diagramme</span>
-      <span class="pill">SVG · gestochen scharf</span>
+      <span class="pill">Konzepte + Grafiken</span>
     </div>
     <nav class="gal-nav">
       <a class="pill" href="#t10"><b>10</b> Adressierung <span class="cnt">4</span></a>
@@ -48,6 +48,12 @@
 
   <div class="sec-head" id="t10"><span class="ix">10</span><h2>Adressierung</h2></div>
   <p class="sec-sub">IPv4 · Subnetting · IPv6 · <a class="src-link" href="10-adressierung.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+    <div class="learn-card"><span class="lc-term">IPv4-Aufbau</span><p class="lc-def"><code>32 Bit</code> = 4 Oktette à 8 Bit (je <code>0–255</code>). Geteilt in <b>Netzanteil</b> (identifiziert das Netz) und <b>Hostanteil</b> (das Endgerät).</p></div>
+    <div class="learn-card"><span class="lc-term">Subnetzmaske / CIDR</span><p class="lc-def">Die Maske trennt Netz- vom Hostanteil. Bitwertigkeiten <code>128 64 32 …</code> aufaddieren: <code>224</code> = 3 Netz-Bits → Suffix <code>/27</code>.</p></div>
+    <div class="learn-card"><span class="lc-term">Netz- &amp; Broadcast-Adresse</span><p class="lc-def">Erste Adresse (Hostanteil = 0) = <b>Netzkennung</b>, letzte (Hostanteil = alle 1) = <b>Broadcast</b>. Nutzbare Hosts = <code>2^Hostbits − 2</code>.</p></div>
+    <div class="learn-card"><span class="lc-term">IPv6</span><p class="lc-def"><code>128 Bit</code> = 8 Blöcke à 16 Bit (hex). Kürzen: führende Nullen weg, ein <code>::</code> für zusammenhängende Null-Blöcke (nur <b>einmal</b>). Erste 64 Bit = Präfix, letzte 64 = Interface-ID.</p></div>
+  </div>
   <div class="gal-grid">
     <div class="gal-item">
       <figure class="diagram">
@@ -153,6 +159,12 @@
   </div>
   <div class="sec-head" id="t11"><span class="ix">11</span><h2>DHCP & DNS</h2></div>
   <p class="sec-sub">DORA · Namensauflösung · <a class="src-link" href="11-dhcp-dns.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+    <div class="learn-card"><span class="lc-term">DHCP</span><p class="lc-def">Vergibt automatisch <code>IP-Adresse</code>, <code>Subnetzmaske</code>, <code>Gateway</code> und <code>DNS-Server</code> — spart manuelle Konfiguration und Fehler.</p></div>
+    <div class="learn-card"><span class="lc-term">DORA</span><p class="lc-def">Ablauf in vier Schritten: <code>Discover → Offer → Request → Acknowledge</code>. Der Client startet mit dem Discover-Broadcast.</p></div>
+    <div class="learn-card"><span class="lc-term">Zuweisungsarten</span><p class="lc-def"><b>manuell</b> (feste IP je MAC), <b>automatisch</b> (freie IP, dauerhaft), <b>dynamisch</b> (mit <code>Lease-Time</code>, Adressen werden wieder frei).</p></div>
+    <div class="learn-card"><span class="lc-term">DNS</span><p class="lc-def">Übersetzt Domainnamen → IP-Adresse („Telefonbuch des Internets"). Die <code>TTL</code> steuert, wie lange ein Eintrag im Cache gültig bleibt.</p></div>
+  </div>
   <div class="gal-grid">
     <div class="gal-item">
       <figure class="diagram">
@@ -223,6 +235,11 @@
   </div>
   <div class="sec-head" id="t12"><span class="ix">12</span><h2>Übertragungsarten</h2></div>
   <p class="sec-sub">Duplex · Multiplexing · <a class="src-link" href="12-uebertragungsarten.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+    <div class="learn-card"><span class="lc-term">Seriell vs. parallel</span><p class="lc-def"><b>Seriell:</b> 1 Bit pro Takt über eine Leitung. <b>Parallel:</b> n Bit pro Takt über n Leitungen.</p></div>
+    <div class="learn-card"><span class="lc-term">Richtungsbetrieb</span><p class="lc-def"><b>Simplex</b> – nur eine Richtung. <b>Halbduplex</b> – beide Richtungen, aber nicht gleichzeitig. <b>Vollduplex</b> – beide gleichzeitig.</p></div>
+    <div class="learn-card"><span class="lc-term">Multiplexing</span><p class="lc-def">Mehrere Signale teilen ein Medium: <code>FDM</code> nach Frequenz, <code>TDM</code> nach Zeitschlitzen, <code>WDM</code> nach Lichtwellenlänge (Glasfaser), <code>CDM</code> nach Code.</p></div>
+  </div>
   <div class="gal-grid">
     <div class="gal-item">
       <figure class="diagram">
@@ -348,6 +365,13 @@
   </div>
   <div class="sec-head" id="t13"><span class="ix">13</span><h2>Topologien</h2></div>
   <p class="sec-sub">Bus · Ring · Stern · Mesh · <a class="src-link" href="13-topologien.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+    <div class="learn-card"><span class="lc-term">Bus / Linie</span><p class="lc-def"><b>Bus:</b> gemeinsame Leitung mit Abschlusswiderständen, immer nur eine Station sendet. <b>Linie:</b> Stationen in Reihe verkettet.</p></div>
+    <div class="learn-card"><span class="lc-term">Ring</span><p class="lc-def">Geschlossener Kreis; jede Station verstärkt das Signal, keine Kollisionen. Ein Bruch kann den Ring unterbrechen.</p></div>
+    <div class="learn-card"><span class="lc-term">Stern</span><p class="lc-def">Zentraler <b>Switch</b>, eigene Leitung je Host. Einzelne Stationen unkritisch, aber Switch-Ausfall = Totalausfall.</p></div>
+    <div class="learn-card"><span class="lc-term">Mesh / Baum</span><p class="lc-def"><b>Mesh:</b> jeder mit jedem, bei Ausfall automatische Umleitung (Basis des Internets). <b>Baum:</b> mehrere Sterne hierarchisch über einen Backbone.</p></div>
+    <div class="learn-card"><span class="lc-term">Bewertung</span><p class="lc-def">Topologien vergleicht man nach <b>Kosten</b>, <b>Skalierbarkeit</b> und <b>Ausfallsicherheit</b>.</p></div>
+  </div>
   <div class="gal-grid">
     <div class="gal-item">
       <figure class="diagram">
@@ -520,6 +544,11 @@
   </div>
   <div class="sec-head" id="t14"><span class="ix">14</span><h2>Speichersysteme</h2></div>
   <p class="sec-sub">DAS · NAS · SAN · <a class="src-link" href="14-speichersysteme.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+    <div class="learn-card"><span class="lc-term">DAS</span><p class="lc-def">Speicher <b>direkt am Host</b> (SATA/SAS/USB), kein Netzwerk. Block-Zugriff, Dateisystem beim Host. Günstig, aber nicht geteilt.</p></div>
+    <div class="learn-card"><span class="lc-term">NAS</span><p class="lc-def"><b>Datei</b>-Zugriff über das LAN (<code>SMB</code>/<code>NFS</code>), eigene IP und eigenes Dateisystem. Mehrere Clients gleichzeitig (Netzlaufwerk).</p></div>
+    <div class="learn-card"><span class="lc-term">SAN</span><p class="lc-def">Dediziertes <b>Block</b>-Netz (FC, <code>HBA</code>, <code>LUN</code>), vom LAN getrennt. Dateisystem auf dem Server; redundante Pfade = kein Single Point of Failure.</p></div>
+  </div>
   <div class="gal-grid">
     <div class="gal-item">
       <figure class="diagram"><svg viewBox="0 0 720 280" role="img" aria-label="NAS: drei Clients verbinden sich über LAN/Ethernet mit einem NAS-Gerät">
@@ -623,6 +652,12 @@
   </div>
   <div class="sec-head" id="t15"><span class="ix">15</span><h2>Speicherablagearten</h2></div>
   <p class="sec-sub">RAID 0 · 1 · 5 · 10 · <a class="src-link" href="15-raid.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+    <div class="learn-card"><span class="lc-term">RAID 0 – Striping</span><p class="lc-def">Daten über ≥2 Platten verteilt → <b>schnell</b>, volle Kapazität, aber <b>keine</b> Redundanz (eine Platte fällt aus → alles weg).</p></div>
+    <div class="learn-card"><span class="lc-term">RAID 1 – Mirroring</span><p class="lc-def">Identische Spiegelung auf 2 Platten. Verträgt 1 Plattenausfall, nur <b>50 %</b> nutzbar.</p></div>
+    <div class="learn-card"><span class="lc-term">RAID 5 – verteilte Parität</span><p class="lc-def">Mind. <b>3</b> Platten, Parität rotiert. Verträgt 1 Ausfall, nutzbar = <code>(n−1)</code> Platten.</p></div>
+    <div class="learn-card"><span class="lc-term">RAID 10 – 1+0</span><p class="lc-def">Erst spiegeln, dann stripen. Mind. <b>4</b> Platten, <b>50 %</b> nutzbar — kombiniert Tempo und Ausfallsicherheit.</p></div>
+  </div>
   <div class="gal-grid">
     <div class="gal-item">
       <figure class="diagram">
@@ -740,8 +775,8 @@
 </div></main>
 
 <footer class="foot"><div class="wrap">
-  <span class="mono">IT-Lernmaterial · Netzwerktechnik &amp; Speicher</span> — Diagramm-Galerie, Themen 10–15.
-  Alle Grafiken stammen aus den jeweiligen Testseiten.
+  <span class="mono">IT-Lernmaterial · Netzwerktechnik &amp; Speicher</span> — Lernseite, Themen 10–15.
+  Kernkonzepte &amp; Diagramme zum Wiederholen; alle Grafiken stammen aus den jeweiligen Testseiten.
 </div></footer>
 
 </body>

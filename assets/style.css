@@ -255,6 +255,25 @@ figure.diagram figcaption {
 .gal-item { display: flex; }
 .gal-item figure.diagram { margin: 0; width: 100%; }
 
+/* ---------- learning page (concept review) ---------------------------- */
+.learn-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px; margin: 8px 0 18px;
+}
+.learn-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  border-left: 3px solid var(--accent-2); padding: 14px 16px; box-shadow: var(--shadow);
+}
+.learn-card .lc-term {
+  font-family: var(--font-mono); font-weight: 700; color: var(--accent-2);
+  font-size: .92rem; display: block; margin-bottom: 5px;
+}
+.learn-card .lc-def { margin: 0; font-size: .92rem; color: var(--ink); }
+.learn-card .lc-def code {
+  font-family: var(--font-mono); background: var(--surface-2);
+  border: 1px solid var(--line); border-radius: 3px; padding: .04em .35em; font-size: .9em;
+}
+
 /* ---------- reference tables ------------------------------------------ */
 .tbl-wrap { overflow-x: auto; margin: 4px 0 12px; }
 table.ref {
