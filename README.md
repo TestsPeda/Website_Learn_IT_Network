@@ -3,7 +3,7 @@
 Lernmaterial zu ausgewählten IT- und Netzwerkthemen, Themen 10–15
 (Adressierung, DHCP & DNS, Übertragungsarten, Topologien, Speichersysteme, RAID).
 
-**Live:** https://testspeda.github.io/Website_FUIT_2SA/
+**Live:** [testspeda.github.io/Website_Learn_IT_Network](https://testspeda.github.io/Website_Learn_IT_Network/)
 
 ## Urheberrecht
 
