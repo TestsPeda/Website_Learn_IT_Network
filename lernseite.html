@@ -3,60 +3,1005 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lernseite · Themen 10–15 — IT-Lernmaterial</title>
+<title>Lernseite · Themen 1–16 — IT-Lernmaterial</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 10–15</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
   <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
     <a href="10-adressierung.html">10</a>
     <a href="11-dhcp-dns.html">11</a>
     <a href="12-uebertragungsarten.html">12</a>
     <a href="13-topologien.html">13</a>
     <a href="14-speichersysteme.html">14</a>
     <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
     <a href="lernseite.html" class="current">Lernen</a>
   </nav>
   <div class="spacer"></div>
-  <span class="scorechip">Konzepte &amp; 23 Diagramme</span>
+  <span class="scorechip">Konzepte &amp; 56 Diagramme</span>
 </header>
 
 <main><div class="wrap">
 
   <section class="hero">
-    <p class="eyebrow">Test 10–15 · Konzepte wiederholen</p>
+    <p class="eyebrow">Konzepte wiederholen</p>
     <h1>Lernseite<br>Konzepte auf einen Blick</h1>
-    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 23 Diagrammen
-      der Themenblöcke 10 bis 15, nach Thema gruppiert. Zum Wiederholen ohne Aufgaben; jeder
+    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 56 Diagrammen
+      der Themenblöcke 1 bis 16, nach Thema gruppiert. Zum Wiederholen ohne Aufgaben; jeder
       Block verlinkt zurück auf den zugehörigen Test.</p>
     <div class="hero-meta">
-      <span class="pill"><b>6</b> Themen</span>
-      <span class="pill"><b>23</b> Diagramme</span>
+      <span class="pill"><b>16</b> Themen</span>
+      <span class="pill"><b>56</b> Diagramme</span>
       <span class="pill">Konzepte + Grafiken</span>
     </div>
     <nav class="gal-nav">
+      <a class="pill" href="#t1"><b>1</b> Grundbegriffe <span class="cnt">3</span></a>
+      <a class="pill" href="#t2"><b>2</b> Verkabelungsplan <span class="cnt">3</span></a>
+      <a class="pill" href="#t3"><b>3</b> Übertragungsmedien <span class="cnt">5</span></a>
+      <a class="pill" href="#t4"><b>4</b> Stückliste <span class="cnt">2</span></a>
+      <a class="pill" href="#t5"><b>5</b> Geräteklassen <span class="cnt">3</span></a>
+      <a class="pill" href="#t6"><b>6</b> Strukt. Verkabelung <span class="cnt">3</span></a>
+      <a class="pill" href="#t7"><b>7</b> IT-Infrastruktur <span class="cnt">4</span></a>
+      <a class="pill" href="#t8"><b>8</b> Edge-Computing <span class="cnt">4</span></a>
+      <a class="pill" href="#t9"><b>9</b> Server-BS <span class="cnt">3</span></a>
       <a class="pill" href="#t10"><b>10</b> Adressierung <span class="cnt">4</span></a>
-      <a class="pill" href="#t11"><b>11</b> DHCP & DNS <span class="cnt">2</span></a>
+      <a class="pill" href="#t11"><b>11</b> DHCP &amp; DNS <span class="cnt">2</span></a>
       <a class="pill" href="#t12"><b>12</b> Übertragungsarten <span class="cnt">3</span></a>
       <a class="pill" href="#t13"><b>13</b> Topologien <span class="cnt">6</span></a>
       <a class="pill" href="#t14"><b>14</b> Speichersysteme <span class="cnt">4</span></a>
-      <a class="pill" href="#t15"><b>15</b> Speicherablagearten <span class="cnt">4</span></a>
+      <a class="pill" href="#t15"><b>15</b> RAID <span class="cnt">4</span></a>
+      <a class="pill" href="#t16"><b>16</b> E-Mail-Protokolle <span class="cnt">3</span></a>
     </nav>
   </section>
+
+  <div class="sec-head" id="t1"><span class="ix">1</span><h2>Netzwerk-Grundbegriffe</h2></div>
+  <p class="sec-sub">Device · Host · aktive/passive Komponenten · <a class="src-link" href="1-grundbegriffe.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Device</span><p class="lc-def">Technischer Oberbegriff für <strong>alle Hardwarekomponenten</strong> (z. B. <code>CPU</code>, Netzwerkkarte). Kann auch <strong>virtuell</strong> sein, sodass dem Betriebssystem kein Unterschied zur echten Hardware auffällt.</p></div><div class="learn-card"><span class="lc-term">Peripheriegerät</span><p class="lc-def">Gerät, das <strong>nicht zum eigentlichen Computer</strong> gehört, sondern ihn bei Ein-/Ausgabe und Kommunikation erweitert (EVA-Prinzip). Beispiele: Tastatur, Bildschirm, Lautsprecher.</p></div><div class="learn-card"><span class="lc-term">Host</span><p class="lc-def">Meist ein <strong>Endgerät im LAN</strong>, das Daten anfragt und verarbeitet (<strong>Client</strong>, z. B. Laptop) oder Dienste/Daten bereitstellt (<strong>Server</strong>).</p></div><div class="learn-card"><span class="lc-term">Übertragungsmedium</span><p class="lc-def">Die Technik/Ressource zur Datenübertragung — die „Leiterbahn" der Datenpakete: <strong>Glasfaser</strong>, <strong>Kupfer</strong> (DSL) und <strong>elektromagnetische Wellen</strong> (Funk/WLAN).</p></div><div class="learn-card"><span class="lc-term">Router</span><p class="lc-def">Verbindet <strong>mehrere Netze</strong> und routet Datenpakete (OSI-Schicht 3). Stellt über das <strong>Gateway</strong> die Verbindung zum Internet her, vergibt per <code>DHCP</code> IP-Adressen und schützt per Firewall.</p></div><div class="learn-card"><span class="lc-term">Switch</span><p class="lc-def">Verbindet die <strong>Hosts im LAN aktiv</strong> miteinander. Entscheidet anhand der <code>MAC</code>-Adressen (OSI-Schicht 2) bzw. per Broadcasting.</p></div><div class="learn-card"><span class="lc-term">Hauptverteiler</span><p class="lc-def"><em>Main Distribution Frame</em> — <strong>zentraler Verteilungspunkt</strong> ganz oben in der Hierarchie; kann Router und Switches enthalten.</p></div><div class="learn-card"><span class="lc-term">Aktiv vs. passiv</span><p class="lc-def"><strong>Aktiv:</strong> verarbeitet/steuert Daten, eigene Elektronik + Strom (Router, Switch, Firewall). <strong>Passiv:</strong> leitet nur physikalisch weiter, ohne Logik (Kabel, Patchfeld, Steckverbinder).</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 250" role="img" aria-label="Begriffshierarchie: Device als Oberbegriff, darunter interne Komponenten und Peripheriegeräte; Host und Übertragungsmedium im Netzwerk">
+      <text x="360" y="24" text-anchor="middle" class="svg-title">Device = Oberbegriff aller Hardwarekomponenten</text>
+      <rect x="270" y="38" width="180" height="40" rx="6" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="360" y="63" text-anchor="middle" class="svg-label" style="font-weight:700;">Device (Gerät)</text>
+      <line x1="360" y1="78" x2="200" y2="108" stroke="#B9C7D2"></line>
+      <line x1="360" y1="78" x2="520" y2="108" stroke="#B9C7D2"></line>
+      <rect x="60" y="108" width="280" height="46" rx="6" fill="#E4F1EF" stroke="#15786E"></rect>
+      <text x="200" y="128" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#15786E;">interne Komponenten</text>
+      <text x="200" y="145" text-anchor="middle" class="svg-label-sm">CPU · Netzwerkkarte · RAM (auch virtuell)</text>
+      <rect x="380" y="108" width="280" height="46" rx="6" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="520" y="128" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#B23E1F;">Peripheriegeräte</text>
+      <text x="520" y="145" text-anchor="middle" class="svg-label-sm">Tastatur · Bildschirm · Lautsprecher</text>
+      <line x1="360" y1="170" x2="360" y2="190" stroke="#D4DEE6"></line>
+      <text x="360" y="206" text-anchor="middle" class="svg-label-sm">Peripherie gehört nicht zum eigentlichen Computer, sondern erweitert ihn (Ein-/Ausgabe, Kommunikation)</text>
+      <text x="360" y="232" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Ein <tspan style="font-weight:700;fill:#16242E;">Host</tspan> ist ein vollwertiges Endgerät im Netzwerk (Client oder Server) mit eigener Adresse.</text>
+    </svg>
+    <figcaption>Begriffshierarchie: Device ist der technische Oberbegriff; Peripheriegeräte erweitern den Computer von außen.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Router verbindet das LAN über das Gateway mit dem Internet; der Switch verbindet die Hosts innerhalb des LAN">
+      <text x="360" y="22" text-anchor="middle" class="svg-title">Switch verbindet Hosts im LAN · Router verbindet Netze</text>
+      <!-- Internet / andere Netze (oben) -->
+      <rect x="255" y="38" width="210" height="38" rx="8" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="360" y="62" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#B23E1F;">Internet / andere Netze</text>
+      <!-- Gateway-Verbindung Internet -> Router -->
+      <line x1="360" y1="76" x2="360" y2="102" stroke="#DD5430" stroke-width="2"></line>
+      <text x="370" y="94" class="svg-label-sm" style="fill:#DD5430;">Gateway</text>
+      <!-- Router -->
+      <rect x="300" y="102" width="120" height="40" rx="6" fill="#DD5430"></rect>
+      <text x="360" y="127" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#fff;">Router</text>
+      <!-- Router -> Switch -->
+      <line x1="360" y1="142" x2="360" y2="176" stroke="#15786E" stroke-width="2"></line>
+      <!-- LAN-Container -->
+      <rect x="20" y="172" width="700" height="118" rx="10" fill="#E4F1EF" stroke="#15786E" stroke-dasharray="5 4"></rect>
+      <text x="34" y="192" class="svg-label-sm" style="fill:#15786E;font-weight:700;">LAN (Local Area Network)</text>
+      <!-- Switch -->
+      <rect x="300" y="176" width="120" height="40" rx="6" fill="#fff" stroke="#15786E"></rect>
+      <text x="360" y="201" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#15786E;">Switch</text>
+      <!-- Hosts -->
+      <rect x="55" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="107" y="267" text-anchor="middle" class="svg-label-sm">Host 1</text>
+      <rect x="195" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="247" y="267" text-anchor="middle" class="svg-label-sm">Host 2</text>
+      <rect x="420" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="472" y="267" text-anchor="middle" class="svg-label-sm">Host 3</text>
+      <rect x="560" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="612" y="267" text-anchor="middle" class="svg-label-sm">Server</text>
+      <!-- Switch -> Hosts -->
+      <line x1="330" y1="216" x2="107" y2="250" stroke="#15786E"></line>
+      <line x1="345" y1="216" x2="247" y2="250" stroke="#15786E"></line>
+      <line x1="390" y1="216" x2="472" y2="250" stroke="#15786E"></line>
+      <line x1="405" y1="216" x2="612" y2="250" stroke="#15786E"></line>
+    </svg>
+    <figcaption>Der Switch verbindet Hosts <em>innerhalb</em> des LAN; der Router verbindet das LAN über das Gateway mit anderen Netzen.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 220" role="img" aria-label="Gegenüberstellung aktiver Netzwerkkomponenten mit eigener Elektronik und passiver Komponenten ohne Logik">
+      <text x="360" y="24" text-anchor="middle" class="svg-title">Aktiv vs. passiv</text>
+      <rect x="30" y="44" width="320" height="150" rx="10" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="190" y="68" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#B23E1F;">AKTIV</text>
+      <text x="190" y="90" text-anchor="middle" class="svg-label-sm">verarbeiten, leiten weiter, steuern</text>
+      <text x="190" y="110" text-anchor="middle" class="svg-label-sm">eigene Elektronik (Prozessor) · brauchen Strom</text>
+      <text x="190" y="140" text-anchor="middle" class="svg-label" style="font-weight:700;">Router · Switch · Firewall</text>
+      <text x="190" y="172" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Logik vorhanden (z. B. Switch: MAC-Adressen, OSI-L2)</text>
+      <rect x="370" y="44" width="320" height="150" rx="10" fill="#E4F1EF" stroke="#15786E"></rect>
+      <text x="530" y="68" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#15786E;">PASSIV</text>
+      <text x="530" y="90" text-anchor="middle" class="svg-label-sm">leiten Daten nur weiter — ohne Verarbeitung</text>
+      <text x="530" y="110" text-anchor="middle" class="svg-label-sm">rein physikalisch leitend · keine Logik</text>
+      <text x="530" y="140" text-anchor="middle" class="svg-label" style="font-weight:700;">Kabel · Patchfeld · Steckverbinder</text>
+      <text x="530" y="172" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">keine eigene Stromversorgung nötig</text>
+      <text x="360" y="212" text-anchor="middle" class="svg-label-sm">Server &amp; Clients zählen streng genommen zu den Endgeräten, nicht zu den Netzwerkkomponenten.</text>
+    </svg>
+    <figcaption>Aktive Komponenten besitzen eigene Elektronik und Logik; passive Komponenten leiten Daten nur physikalisch weiter.</figcaption>
+  </figure></div>
+    </div>
+
+  <div class="sec-head" id="t2"><span class="ix">2</span><h2>Gebäude- &amp; Verkabelungsplan</h2></div>
+  <p class="sec-sub">Pläne · Lastenheft &amp; Pflichtenheft · <a class="src-link" href="2-verkabelungsplan.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Gebäudeplan</span><p class="lc-def">Grundriss je Stockwerk mit Räumen/Nummern, Kabelkanälen, Dosen, Bodentanks und Netzwerkschrank. Braucht <b>Maßstab</b> und <b>Legende</b>.</p></div><div class="learn-card"><span class="lc-term">Legende &amp; Symbole</span><p class="lc-def">Ordnet jedem Zeichen die Bedeutung zu: Linie = horizontaler Kanal, Raute = <b>Bodentank</b>, oranges Rechteck = Netzwerkschrank mit Patchpanel/Switch/Router.</p></div><div class="learn-card"><span class="lc-term">Kabelkanäle &amp; Kennungen</span><p class="lc-def">Jeder Kanal bekommt ein sprechendes Kürzel aus Art + Raum, z. B. <code>K1B2</code> (Kanal 1, Büro 2). Vertikale Kanäle bilden die <b>Steigzone</b>.</p></div><div class="learn-card"><span class="lc-term">Verkabelungsplan</span><p class="lc-def">Dokumentiert jede Strecke: ID, Schrank, Patchpanel + Port (<code>PP/PN</code>), Anfangs-/Endraum, Dose/Port, Kanäle und Medium.</p></div><div class="learn-card"><span class="lc-term">Medium (S/FTP Kat.6)</span><p class="lc-def"><code>S/FTP</code> = Kabelart/Schirmung, <code>Kat.6</code> = Kategorie. Beides legt das Übertragungsmedium der Strecke fest.</p></div><div class="learn-card"><span class="lc-term">Lastenheft</span><p class="lc-def">Vom <b>Auftraggeber</b>: beschreibt das <b>Was/Wozu</b> (Anforderungen, Ziele = das <em>Soll</em>) – noch ohne technische Umsetzung.</p></div><div class="learn-card"><span class="lc-term">Pflichtenheft</span><p class="lc-def">Vom <b>Auftragnehmer</b>: beschreibt das <b>Wie</b> – die konkrete technische Antwort auf das Lastenheft.</p></div><div class="learn-card"><span class="lc-term">Vollständigkeit</span><p class="lc-def">Jede Anschlussstrecke muss erfasst sein – Lücken im Plan führen zu nicht angeschlossenen Räumen.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 320" role="img" aria-label="Schematischer Gebäudeschnitt mit zwei Etagen, Technikraum mit Netzwerkschrank, horizontalen Kabelkanälen je Etage und einer vertikalen Steigzone, die die Etagen verbindet">
+    <text class="svg-title" x="20" y="26">Schematischer Gebäudeschnitt – Verlegewege</text>
+    <!-- Gebäudehülle -->
+    <rect x="40" y="50" width="560" height="230" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <!-- Etagentrennung -->
+    <line x1="40" y1="165" x2="600" y2="165" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="55" y="72" >1. OG</text>
+    <text class="svg-label-sm" x="55" y="187" >EG</text>
+    <!-- Technikraum mit Schrank (EG) -->
+    <rect x="60" y="200" width="120" height="62" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="120" y="222" text-anchor="middle">Technikraum</text>
+    <rect x="92" y="230" width="56" height="22" rx="3" fill="#DD5430" stroke="#B23E1F" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="120" y="245" text-anchor="middle" style="fill:#FFFFFF;">Schrank</text>
+    <!-- Räume EG -->
+    <rect x="220" y="200" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="275" y="235" text-anchor="middle">Büro 1</text>
+    <rect x="360" y="200" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="415" y="235" text-anchor="middle">Konferenz</text>
+    <!-- Räume OG -->
+    <rect x="220" y="85" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="275" y="120" text-anchor="middle">Büro 3</text>
+    <rect x="360" y="85" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="415" y="120" text-anchor="middle">Büro 4</text>
+    <!-- Horizontale Kanäle -->
+    <line x1="180" y1="231" x2="470" y2="231" stroke="#15786E" stroke-width="3"></line>
+    <line x1="180" y1="116" x2="470" y2="116" stroke="#15786E" stroke-width="3"></line>
+    <text class="svg-label-sm" x="500" y="225" >horizontal</text>
+    <text class="svg-label-sm" x="500" y="110" >horizontal</text>
+    <!-- Vertikale Steigzone -->
+    <rect x="170" y="116" width="14" height="115" fill="#DD5430" opacity="0.85"></rect>
+    <text class="svg-label-sm" x="120" y="160" text-anchor="middle" style="fill:#B23E1F;">Steigzone</text>
+    <text class="svg-label-sm" x="120" y="174" text-anchor="middle" style="fill:#B23E1F;">(vertikal)</text>
+  </svg><figcaption>Vom Netzwerkschrank im Technikraum laufen horizontale Kabelkanäle in die Räume; eine vertikale Steigzone verbindet die Etagen.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Verkabelungsstrecke vom Netzwerkschrank über Patchpanel-Port und Kabelkanäle bis zur Anschlussdose im Zielraum">
+    <text class="svg-title" x="20" y="26">Eine Strecke im Verkabelungsplan</text>
+    <!-- Schrank -->
+    <rect x="30" y="70" width="130" height="120" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="95" y="94" text-anchor="middle">Schrank S1</text>
+    <rect x="48" y="110" width="94" height="22" rx="3" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="95" y="125" text-anchor="middle">Patchpanel PP1</text>
+    <rect x="48" y="150" width="94" height="22" rx="3" fill="#15786E"></rect>
+    <text class="svg-label-sm" x="95" y="165" text-anchor="middle" style="fill:#FFFFFF;">Switch S1</text>
+    <!-- Port -->
+    <text class="svg-label-sm" x="200" y="116" text-anchor="middle">PP1-PN12</text>
+    <!-- Kanal -->
+    <line x1="160" y1="130" x2="470" y2="130" stroke="#15786E" stroke-width="3"></line>
+    <text class="svg-label-sm" x="315" y="118" text-anchor="middle">Kanäle: K1T / Kwest / K1B1</text>
+    <text class="svg-label-sm" x="315" y="150" text-anchor="middle" style="fill:#5C6B78;">Medium: S/FTP Kat.6</text>
+    <!-- Zielraum -->
+    <rect x="470" y="70" width="220" height="120" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="580" y="96" text-anchor="middle">Büro 1 (Endraum)</text>
+    <rect x="510" y="120" width="140" height="40" rx="4" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="580" y="138" text-anchor="middle">Doppeldose</text>
+    <text class="svg-label-sm" x="580" y="153" text-anchor="middle">DD1/B1 · DD2/B1</text>
+  </svg><figcaption>Jede Strecke: Anfangsraum/Schrank → Patchpanel-Port (PP/PN) → beteiligte Kabelkanäle → Endraum → Anschlussdose; dazu das Medium (z. B. <code>S/FTP Kat.6</code>).</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 230" role="img" aria-label="Fluss vom Lastenheft des Auftraggebers zum Pflichtenheft des Auftragnehmers: Soll-Anforderungen werden zur Wie-Umsetzung">
+    <text class="svg-title" x="20" y="26">Lastenheft → Pflichtenheft</text>
+    <!-- Auftraggeber -->
+    <rect x="30" y="60" width="280" height="130" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="170" y="86" text-anchor="middle">Auftraggeber (Kunde)</text>
+    <rect x="55" y="100" width="230" height="70" rx="5" fill="#FFFFFF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label" x="170" y="126" text-anchor="middle">Lastenheft</text>
+    <text class="svg-label-sm" x="170" y="148" text-anchor="middle" style="fill:#5C6B78;">WAS &amp; WOZU — das Soll</text>
+    <text class="svg-label-sm" x="170" y="162" text-anchor="middle" style="fill:#5C6B78;">Anforderungen / Ziele</text>
+    <!-- Pfeil -->
+    <line x1="310" y1="135" x2="410" y2="135" stroke="#DD5430" stroke-width="3"></line>
+    <polygon points="410,128 426,135 410,142" fill="#DD5430"></polygon>
+    <text class="svg-label-sm" x="368" y="124" text-anchor="middle" style="fill:#B23E1F;">beauftragt</text>
+    <!-- Auftragnehmer -->
+    <rect x="430" y="60" width="260" height="130" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="560" y="86" text-anchor="middle">Auftragnehmer (Anbieter)</text>
+    <rect x="450" y="100" width="220" height="70" rx="5" fill="#FFFFFF" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label" x="560" y="126" text-anchor="middle">Pflichtenheft</text>
+    <text class="svg-label-sm" x="560" y="148" text-anchor="middle" style="fill:#5C6B78;">WIE — die Umsetzung</text>
+    <text class="svg-label-sm" x="560" y="162" text-anchor="middle" style="fill:#5C6B78;">technische Antwort auf das Soll</text>
+  </svg><figcaption>Das Lastenheft (Auftraggeber, „Was/Wozu“) ist die Vorgabe; das Pflichtenheft (Auftragnehmer, „Wie“) die konkrete technische Antwort darauf.</figcaption></figure></div>
+    </div>
+
+  <div class="sec-head" id="t3"><span class="ix">3</span><h2>Übertragungsmedien</h2></div>
+  <p class="sec-sub">Kupfer · Glasfaser · Stecker · <a class="src-link" href="3-uebertragungsmedien.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Twisted Pair (TP)</span><p class="lc-def">Verdrilltes Aderpaar: zwei Adern werden umeinander gewickelt, um Übersprechen und eingestreute Magnetfelder zu reduzieren. Kupferkabel haben i. d. R. 4 Aderpaare.</p></div><div class="learn-card"><span class="lc-term">Schirmung X/YTP</span><p class="lc-def">Links Gesamtschirm (<code>X</code>), rechts Paarschirm (<code>Y</code>): <code>S</code> = Geflecht, <code>F</code> = Folie, <code>U</code> = ohne. Beispiele: <code>S/FTP</code> (best geschirmt), <code>U/UTP</code> (ungeschirmt).</p></div><div class="learn-card"><span class="lc-term">Kategorie vs. Klasse</span><p class="lc-def">Nach DIN EN 50173-1: <code>Kategorie</code> bewertet eine einzelne Komponente (z. B. <code>Cat 6A</code>), <code>Klasse</code> die gesamte Strecke (z. B. Klasse E<sub>A</sub>). Die schwächste Komponente bestimmt die Klasse.</p></div><div class="learn-card"><span class="lc-term">Kategorien-Eckdaten</span><p class="lc-def"><code>Cat 5e</code> 100 MHz/1 Gbit/s · <code>Cat 6</code> 250 MHz · <code>Cat 6A</code> 500 MHz/10 Gbit/s · <code>Cat 7</code> 600 MHz. Jeweils bis ~100 m.</p></div><div class="learn-card"><span class="lc-term">Totalreflexion</span><p class="lc-def">Kern und Mantel haben unterschiedliche Brechungsindizes; an der Grenze wird das Licht reflektiert und so im Kern geführt. Grundprinzip jeder Glasfaser.</p></div><div class="learn-card"><span class="lc-term">Multimode vs. Singlemode</span><p class="lc-def">Multimode: Kern ~50 µm, mehrere Moden, günstiger, kürzere Reichweite. Singlemode: Kern ~9 µm, eine Mode, Laser, große Reichweite. Mantel je 125 µm.</p></div><div class="learn-card"><span class="lc-term">Stecker</span><p class="lc-def"><code>RJ45</code> (8-polig) für Kupfer/TP; <code>SC</code> und <code>LC</code> für Glasfaser. Patchpanel = zentrale Verteilstelle.</p></div><div class="learn-card"><span class="lc-term">Kupfer vs. LWL</span><p class="lc-def">Kupfer: günstig, robust, kurze Strecken, EMV-anfällig. Glasfaser: hohe Bandbreite, geringe Dämpfung, EMV-immun, große Reichweite, aber teurer.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 250" role="img" aria-label="Verdrilltes Aderpaar (Twisted Pair) – zwei Adern werden umeinander gewickelt, um Störungen zu reduzieren">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Twisted Pair – verdrilltes Aderpaar</text>
+      <text class="svg-label-sm" x="20" y="50" font-size="12" style="fill:#5C6B78;">Das Verdrillen reduziert eingestreute Störungen (Übersprechen / EMV).</text>
+      <!-- gerade Adern (oben) -->
+      <text class="svg-label-sm" x="20" y="92" font-size="11" style="fill:#5C6B78;">nicht verdrillt</text>
+      <line x1="120" y1="86" x2="690" y2="86" stroke="#DD5430" stroke-width="4"/>
+      <line x1="120" y1="100" x2="690" y2="100" stroke="#15786E" stroke-width="4"/>
+      <!-- verdrilltes Paar (unten) -->
+      <text class="svg-label-sm" x="20" y="180" font-size="11" style="fill:#5C6B78;">verdrillt</text>
+      <path d="M120 170 C150 140, 180 140, 210 170 S270 200, 300 170 S360 140, 390 170 S450 200, 480 170 S540 140, 570 170 S630 200, 660 170 L690 170"
+            fill="none" stroke="#DD5430" stroke-width="4"/>
+      <path d="M120 170 C150 200, 180 200, 210 170 S270 140, 300 170 S360 200, 390 170 S450 140, 480 170 S540 200, 570 170 S630 140, 660 170 L690 170"
+            fill="none" stroke="#15786E" stroke-width="4"/>
+    </svg>
+    <figcaption>Verdrillte Aderpaare (Twisted Pair) – das Umeinanderwickeln mindert Übersprechen und Einstreuungen.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Querschnitt eines S/FTP-Kabels mit Geflecht-Gesamtschirm und vier folienumhüllten Aderpaaren">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Querschnitt S/FTP – Schirmung in zwei Ebenen</text>
+      <!-- Kabelmantel -->
+      <circle cx="180" cy="170" r="115" fill="#FBEAE3" stroke="#16242E" stroke-width="3"/>
+      <!-- Gesamtschirm (Geflecht S) -->
+      <circle cx="180" cy="170" r="100" fill="#fff" stroke="#5C6B78" stroke-width="6" stroke-dasharray="4 4"/>
+      <!-- 4 Paare, jeweils Folie (F) -->
+      <g>
+        <circle cx="148" cy="138" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="138" cy="138" r="11" fill="#DD5430"/><circle cx="160" cy="138" r="11" fill="#B23E1F"/>
+        <circle cx="212" cy="138" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="202" cy="138" r="11" fill="#15786E"/><circle cx="224" cy="138" r="11" fill="#16242E"/>
+        <circle cx="148" cy="202" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="138" cy="202" r="11" fill="#15786E"/><circle cx="160" cy="202" r="11" fill="#DD5430"/>
+        <circle cx="212" cy="202" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="202" cy="202" r="11" fill="#B23E1F"/><circle cx="224" cy="202" r="11" fill="#16242E"/>
+      </g>
+      <!-- Legende -->
+      <line x1="360" y1="90"  x2="395" y2="90"  stroke="#16242E" stroke-width="3"/>
+      <text class="svg-label" x="405" y="95"  font-size="13" style="fill:#16242E;">Kabelmantel (außen)</text>
+      <line x1="360" y1="125" x2="395" y2="125" stroke="#5C6B78" stroke-width="6" stroke-dasharray="4 4"/>
+      <text class="svg-label" x="405" y="130" font-size="13" style="fill:#16242E;"><tspan font-weight="700">S</tspan> = Gesamtschirm (Geflecht)</text>
+      <circle cx="377" cy="158" r="14" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+      <text class="svg-label" x="405" y="163" font-size="13" style="fill:#16242E;"><tspan font-weight="700">F</tspan> = Folienschirm je Paar</text>
+      <circle cx="377" cy="190" r="9" fill="#DD5430"/>
+      <text class="svg-label" x="405" y="195" font-size="13" style="fill:#16242E;"><tspan font-weight="700">TP</tspan> = verdrilltes Aderpaar</text>
+      <text class="svg-label-sm" x="360" y="232" font-size="12" style="fill:#5C6B78;">Schema X/YTP:  X = Gesamtschirm · Y = Paarschirm</text>
+      <text class="svg-label-sm" x="360" y="252" font-size="12" style="fill:#5C6B78;">S = Geflecht · F = Folie · U = ohne (unscreened)</text>
+    </svg>
+    <figcaption>S/FTP: Geflecht-Gesamtschirm (S) außen, jedes der vier Aderpaare zusätzlich von einer Folie (F) umhüllt.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 280" role="img" aria-label="Lichtführung in einer Glasfaser: Licht wird an der Grenze zwischen Kern und Mantel durch Totalreflexion im Kern gehalten">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Totalreflexion im Faserkern</text>
+      <text class="svg-label-sm" x="20" y="50" font-size="12" style="fill:#5C6B78;">Kern und Mantel haben unterschiedliche Brechungsindizes → Licht bleibt im Kern.</text>
+      <!-- Mantel (cladding) -->
+      <rect x="60" y="80" width="630" height="150" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
+      <text class="svg-label-sm" x="70" y="102" font-size="12" style="fill:#5C6B78;">Mantel (cladding) – höhere Reflexion, niedrigerer Brechungsindex</text>
+      <!-- Kern (core) -->
+      <rect x="60" y="125" width="630" height="60" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text class="svg-label-sm" x="70" y="218" font-size="12" style="fill:#5C6B78;">Kern / Modenfeld (core) – hier wird das Licht geführt</text>
+      <!-- Grenzlinien -->
+      <line x1="60" y1="125" x2="690" y2="125" stroke="#B23E1F" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="60" y1="185" x2="690" y2="185" stroke="#B23E1F" stroke-width="2" stroke-dasharray="6 4"/>
+      <!-- Lichtstrahl, zickzack durch Totalreflexion -->
+      <polyline points="70,180 170,130 270,180 370,130 470,180 570,130 670,180"
+                fill="none" stroke="#15786E" stroke-width="3"/>
+      <circle cx="170" cy="130" r="4" fill="#15786E"/>
+      <circle cx="270" cy="180" r="4" fill="#15786E"/>
+      <circle cx="370" cy="130" r="4" fill="#15786E"/>
+      <circle cx="470" cy="180" r="4" fill="#15786E"/>
+      <circle cx="570" cy="130" r="4" fill="#15786E"/>
+      <text class="svg-label-sm" x="190" y="122" font-size="11" style="fill:#15786E;">Reflexion an der Grenze</text>
+    </svg>
+    <figcaption>Totalreflexion: An der Grenze Kern↔Mantel wird das Licht reflektiert und so im Kern/Modenfeld geführt.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 260" role="img" aria-label="Vergleich Multimodefaser mit 50 Mikrometer Kern und mehreren Moden gegen Singlemodefaser mit 9 Mikrometer Kern und einer Mode">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Multimode vs. Singlemode</text>
+      <!-- Multimode -->
+      <text class="svg-label" x="40" y="62" font-size="13" font-weight="600" style="fill:#16242E;">Multimode (G50/125)</text>
+      <rect x="40" y="74" width="300" height="70" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
+      <rect x="40" y="92" width="300" height="34" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <polyline points="50,109 110,96 170,122 230,96 290,122 335,109" fill="none" stroke="#15786E" stroke-width="2"/>
+      <polyline points="50,109 120,124 190,94 260,124 320,98 335,109" fill="none" stroke="#B23E1F" stroke-width="2"/>
+      <line x1="50" y1="109" x2="335" y2="109" stroke="#16242E" stroke-width="1.5"/>
+      <text class="svg-label-sm" x="40" y="166" font-size="12" style="fill:#5C6B78;">Kern 50 μm · mehrere Moden · LED · kürzere Reichweite, günstiger</text>
+      <!-- Singlemode -->
+      <text class="svg-label" x="380" y="62" font-size="13" font-weight="600" style="fill:#16242E;">Singlemode (E9/125)</text>
+      <rect x="380" y="74" width="300" height="70" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
+      <rect x="380" y="103" width="300" height="12" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <line x1="390" y1="109" x2="675" y2="109" stroke="#15786E" stroke-width="3"/>
+      <text class="svg-label-sm" x="380" y="166" font-size="12" style="fill:#5C6B78;">Kern 9 μm · eine Mode · Laser · große Reichweite</text>
+      <!-- Mantel-Hinweis -->
+      <text class="svg-label-sm" x="40" y="210" font-size="12" style="fill:#5C6B78;">Manteldurchmesser bei beiden üblicherweise 125 μm.</text>
+      <text class="svg-label-sm" x="40" y="232" font-size="12" style="fill:#5C6B78;">Beide Faserarten dürfen nicht auf derselben Strecke gemischt werden (hohe Verluste).</text>
+    </svg>
+    <figcaption>Multimode (50 μm Kern, mehrere Moden) gegenüber Singlemode (9 μm Kern, eine Mode) – Mantel je 125 μm.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 720 250" role="img" aria-label="Vergleichstabelle Kupfer gegen Glasfaser nach EMV, Reichweite, Bandbreite und Kosten">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Kupfer (TP) vs. Glasfaser (LWL)</text>
+      <!-- Kopfzeile -->
+      <rect x="20" y="50" width="240" height="38" fill="#16242E"/>
+      <rect x="260" y="50" width="220" height="38" fill="#DD5430"/>
+      <rect x="480" y="50" width="220" height="38" fill="#15786E"/>
+      <text x="140" y="74" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Kriterium</text>
+      <text x="370" y="74" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Kupfer / TP</text>
+      <text x="590" y="74" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Glasfaser / LWL</text>
+      <!-- Zeilen -->
+      <g font-size="12.5">
+        <rect x="20" y="88"  width="680" height="32" fill="#FBEAE3"/>
+        <text x="32" y="109" fill="#16242E" font-weight="600">EMV / Störfelder</text>
+        <text x="272" y="109" fill="#16242E">störanfällig, Schirmung nötig</text>
+        <text x="492" y="109" fill="#16242E">unempfindlich (immun)</text>
+        <rect x="20" y="120" width="680" height="32" fill="#E4F1EF"/>
+        <text x="32" y="141" fill="#16242E" font-weight="600">Reichweite</text>
+        <text x="272" y="141" fill="#16242E">kurz (~100 m)</text>
+        <text x="492" y="141" fill="#16242E">sehr groß (WAN)</text>
+        <rect x="20" y="152" width="680" height="32" fill="#FBEAE3"/>
+        <text x="32" y="173" fill="#16242E" font-weight="600">Bandbreite / Dämpfung</text>
+        <text x="272" y="173" fill="#16242E">geringer, höhere Dämpfung</text>
+        <text x="492" y="173" fill="#16242E">sehr hoch, geringe Dämpfung</text>
+        <rect x="20" y="184" width="680" height="32" fill="#E4F1EF"/>
+        <text x="32" y="205" fill="#16242E" font-weight="600">Kosten / Verlegung</text>
+        <text x="272" y="205" fill="#16242E">günstig, einfach, robust</text>
+        <text x="492" y="205" fill="#16242E">teurer, aufwendig, empfindlich</text>
+      </g>
+      <rect x="20" y="50" width="680" height="166" fill="none" stroke="#B9C7D2" stroke-width="2"/>
+    </svg>
+    <figcaption>Vergleich Kupfer ↔ Glasfaser: EMV, Reichweite, Bandbreite und Kosten als Entscheidungshilfe.</figcaption>
+  </figure></div>
+    </div>
+
+  <div class="sec-head" id="t4"><span class="ix">4</span><h2>Stückliste (BOM)</h2></div>
+  <p class="sec-sub">Aufbau · Mengen · Kalkulation · <a class="src-link" href="4-stueckliste.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Stückliste (BOM)</span><p class="lc-def">Strukturierte Auflistung aller Materialien eines Projekts mit <code>Menge</code> und <code>Preis</code> – Grundlage für Beschaffung, Kalkulation und Angebot.</p></div><div class="learn-card"><span class="lc-term">Kopfdaten</span><p class="lc-def">Identifizieren die Liste: <code>Projekt</code>, <code>Projektnr.</code>, <code>Datum</code> und <code>Ersteller</code>.</p></div><div class="learn-card"><span class="lc-term">Positionszeile</span><p class="lc-def">Spalten: <code>Lfd. Nr.</code>, <code>Menge</code>, <code>Einheit</code>, <code>Bezeichnung</code>, <code>Einzelpreis</code> und <code>Gesamtpreis</code>.</p></div><div class="learn-card"><span class="lc-term">Gesamtpreis je Position</span><p class="lc-def">Berechnung: <code>Menge × Einzelpreis</code>. Beispiel: 400 m × 0,40 € = 160,00 €.</p></div><div class="learn-card"><span class="lc-term">Mengenermittlung</span><p class="lc-def">Mengen werden aus dem Gebäude-/Verkabelungsplan abgeleitet (z. B. 1 Dose + 1 Patchkabel je Arbeitsplatz) – ohne Engpass oder Überschuss.</p></div><div class="learn-card"><span class="lc-term">Summenbildung</span><p class="lc-def"><code>Summe (Netto)</code> = Σ aller Positions-Gesamtpreise = reiner Materialwert ohne Steuer.</p></div><div class="learn-card"><span class="lc-term">Netto / Brutto</span><p class="lc-def">Stücklisten führen i. d. R. <code>Netto</code>-Preise. <code>Brutto = Netto × 1,19</code> (19 % MwSt).</p></div><div class="learn-card"><span class="lc-term">Zweck</span><p class="lc-def">Drei Funktionen: <code>Beschaffung</code>, <code>Kalkulation</code> und <code>Angebot</code> (Preisbasis für den Kunden).</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Aufbau einer Stückliste: Kopfdaten oben, darunter eine Tabelle mit den Spalten Lfd. Nr., Menge, Einheit, Bezeichnung, Einzelpreis und Gesamtpreis, ganz unten die Summenzeile">
+    <text class="svg-title" x="20" y="26">Aufbau einer Stückliste</text>
+    <rect x="20" y="42" width="680" height="44" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="34" y="62" text-anchor="start">Kopf: Projekt · Projektnr. · Datum · Ersteller</text>
+    <text class="svg-label-sm" x="34" y="79" text-anchor="start">Wer kalkuliert für welches Projekt?</text>
+    <rect x="20" y="98" width="680" height="30" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="60" y="118" text-anchor="middle">Lfd. Nr.</text>
+    <text class="svg-label-sm" x="150" y="118" text-anchor="middle">Menge</text>
+    <text class="svg-label-sm" x="235" y="118" text-anchor="middle">Einheit</text>
+    <text class="svg-label-sm" x="360" y="118" text-anchor="middle">Bezeichnung</text>
+    <text class="svg-label-sm" x="505" y="118" text-anchor="middle">Einzelpreis</text>
+    <text class="svg-label-sm" x="630" y="118" text-anchor="middle">Gesamtpreis</text>
+    <rect x="20" y="130" width="680" height="26" rx="0" fill="#FFFFFF" stroke="#D4DEE6" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="60" y="147" text-anchor="middle">1</text>
+    <text class="svg-label-sm" x="150" y="147" text-anchor="middle">400</text>
+    <text class="svg-label-sm" x="235" y="147" text-anchor="middle">Meter</text>
+    <text class="svg-label-sm" x="360" y="147" text-anchor="middle">Netzwerkkabel Cat.7</text>
+    <text class="svg-label-sm" x="505" y="147" text-anchor="middle">0,40 €</text>
+    <text class="svg-label-sm" x="630" y="147" text-anchor="middle">160,00 €</text>
+    <rect x="20" y="156" width="680" height="26" rx="0" fill="#FFFFFF" stroke="#D4DEE6" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="60" y="173" text-anchor="middle">2</text>
+    <text class="svg-label-sm" x="150" y="173" text-anchor="middle">16</text>
+    <text class="svg-label-sm" x="235" y="173" text-anchor="middle">Stk.</text>
+    <text class="svg-label-sm" x="360" y="173" text-anchor="middle">Netzwerkdosen</text>
+    <text class="svg-label-sm" x="505" y="173" text-anchor="middle">13,90 €</text>
+    <text class="svg-label-sm" x="630" y="173" text-anchor="middle">222,40 €</text>
+    <rect x="20" y="192" width="680" height="34" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="505" y="214" text-anchor="middle">Summe (Netto)</text>
+    <text class="svg-label" x="630" y="214" text-anchor="middle">Σ</text>
+    <text class="svg-label-sm" x="150" y="244" text-anchor="middle" style="fill:#15786E;">Gesamtpreis = Menge × Einzelpreis &nbsp;·&nbsp; Summe = Σ aller Gesamtpreise</text>
+  </svg><figcaption>Aufbau einer Stückliste: Kopfdaten, Positionszeilen (Spalten) und Summenzeile.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 230" role="img" aria-label="Von der Position zur Summe und zum Bruttopreis: Positions-Gesamtpreise werden zur Netto-Summe addiert, plus 19 Prozent Mehrwertsteuer ergibt den Brutto-Endbetrag">
+    <text class="svg-title" x="20" y="26">Von den Positionen zum Endbetrag</text>
+    <rect x="20" y="50" width="180" height="120" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="110" y="72" text-anchor="middle">Gesamtpreise je Pos.</text>
+    <text class="svg-label-sm" x="110" y="96" text-anchor="middle">160,00 €</text>
+    <text class="svg-label-sm" x="110" y="114" text-anchor="middle">222,40 €</text>
+    <text class="svg-label-sm" x="110" y="132" text-anchor="middle">79,90 € · 63,68 €</text>
+    <text class="svg-label-sm" x="110" y="150" text-anchor="middle">3.199,00 €</text>
+    <line x1="200" y1="110" x2="270" y2="110" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="235" y="100" text-anchor="middle">Σ</text>
+    <rect x="270" y="60" width="180" height="100" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="360" y="100" text-anchor="middle">Summe (Netto)</text>
+    <text class="svg-label-sm" x="360" y="124" text-anchor="middle">3.824,98 €</text>
+    <line x1="450" y1="110" x2="520" y2="110" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="485" y="100" text-anchor="middle">+19 %</text>
+    <rect x="520" y="60" width="180" height="100" rx="5" fill="#FBEAE3" stroke="#B23E1F" stroke-width="2"></rect>
+    <text class="svg-label" x="610" y="100" text-anchor="middle">Brutto (inkl. MwSt)</text>
+    <text class="svg-label-sm" x="610" y="124" text-anchor="middle">4.551,73 €</text>
+    <text class="svg-label-sm" x="360" y="205" text-anchor="middle" style="fill:#15786E;">Netto-Summe × 1,19 = Brutto &nbsp;·&nbsp; MwSt = Netto × 0,19</text>
+  </svg><figcaption>Summenbildung: Positions-Gesamtpreise → Netto-Summe → Brutto (inkl. 19 % MwSt).</figcaption></figure></div>
+    </div>
+
+  <div class="sec-head" id="t5"><span class="ix">5</span><h2>Geräteklassen</h2></div>
+  <p class="sec-sub">Geräteklassen · Rolle → Klasse · <a class="src-link" href="5-geraeteklassen.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Barebone</span><p class="lc-def">Kompaktes Gerät mit <code>Mini-ITX-Board</code> und integriertem Netzteil. WLAN-fähig, aber nur begrenzt erweiterbar; aktive Kühlung erzeugt Geräusche.</p></div><div class="learn-card"><span class="lc-term">Notebook</span><p class="lc-def">Mobiler PC mit Akku; Komponenten, Tastatur und Bildschirm integriert. Zustände <code>On</code>, <code>Idle</code>, <code>Stand-By</code>. Intern kaum erweiterbar.</p></div><div class="learn-card"><span class="lc-term">Tablet &amp; Smartphone</span><p class="lc-def">Sehr portabel, Touch-Bedienung, optimiert auf <code>WLAN</code>/Mobilfunk. Geringe Leistung, OS wie <code>iOS</code>/<code>Android</code>; fest verbauter Akku.</p></div><div class="learn-card"><span class="lc-term">Convertible</span><p class="lc-def">Tablet mit ausklappbarer Tastatur, das Notebook-Leistung erreicht; dafür etwas unhandlicher als ein reines Tablet.</p></div><div class="learn-card"><span class="lc-term">Desktop-PC</span><p class="lc-def">Stationär, genormte Hauptplatine (<code>RAM</code>, <code>CPU</code>, <code>GPU</code>). Ergonomisch und durch Komponententausch gezielt aufrüstbar.</p></div><div class="learn-card"><span class="lc-term">Industrie-PC</span><p class="lc-def">Für raue Umgebungen: temperatur-, schock- und wasserresistent, echtzeitfähig, mit Langzeitverfügbarkeit. Geringe CPU-Leistung reicht.</p></div><div class="learn-card"><span class="lc-term">Einteilungskriterien</span><p class="lc-def">Nach <code>technischen Merkmalen</code> (CPU, RAM, GPU, Mobilität, Schnittstellen) und Gehäuseform – passend zum Einsatzzweck.</p></div><div class="learn-card"><span class="lc-term">Rolle → Klasse</span><p class="lc-def">Office → Barebone/Desktop, Homeoffice → Notebook, Außendienst → Notebook/Tablet, Produktion → Industrie-PC.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 320" role="img" aria-label="Übersicht der fünf Geräteklassen Barebone, Notebook, Tablet/Smartphone, Desktop-PC und Industrie-PC mit ihren Kernmerkmalen">
+    <text class="svg-title" x="20" y="26">Die fünf Geräteklassen im Überblick</text>
+    <rect x="20" y="44" width="210" height="78" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="34" y="66" text-anchor="start">Barebone</text>
+    <text class="svg-label-sm" x="34" y="86" text-anchor="start">Würfelförmig, Mini-ITX,</text>
+    <text class="svg-label-sm" x="34" y="102" text-anchor="start">kompakt, vom Kunden ergänzt</text>
+    <rect x="255" y="44" width="210" height="78" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="269" y="66" text-anchor="start">Notebook</text>
+    <text class="svg-label-sm" x="269" y="86" text-anchor="start">Mobil, Akku, alles integriert,</text>
+    <text class="svg-label-sm" x="269" y="102" text-anchor="start">sofort einsatzbereit</text>
+    <rect x="490" y="44" width="210" height="78" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="504" y="66" text-anchor="start">Tablet / Smartphone</text>
+    <text class="svg-label-sm" x="504" y="86" text-anchor="start">Touch, sehr portabel,</text>
+    <text class="svg-label-sm" x="504" y="102" text-anchor="start">geringe Leistung, iOS/Android</text>
+    <rect x="140" y="148" width="210" height="78" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="154" y="170" text-anchor="start">Desktop-PC</text>
+    <text class="svg-label-sm" x="154" y="190" text-anchor="start">Genormtes Board, stationär,</text>
+    <text class="svg-label-sm" x="154" y="206" text-anchor="start">ergonomisch, aufrüstbar</text>
+    <rect x="370" y="148" width="210" height="78" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="384" y="170" text-anchor="start">Industrie-PC</text>
+    <text class="svg-label-sm" x="384" y="190" text-anchor="start">Robust, Echtzeit, resistent,</text>
+    <text class="svg-label-sm" x="384" y="206" text-anchor="start">schwache CPU reicht</text>
+    <text class="svg-label-sm" x="20" y="262" text-anchor="start">Einteilungskriterien: technische Merkmale (CPU, RAM, GPU, Mobilität, Schnittstellen)</text>
+    <text class="svg-label-sm" x="20" y="282" text-anchor="start">und teils die Gehäuseform — passend zum Einsatzzweck des Mitarbeiters.</text>
+  </svg><figcaption>Überblick der Geräteklassen aus dem Infoblatt „Die PC-Geräteklassen".</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 270" role="img" aria-label="Vergleichsmatrix der Geräteklassen nach Mobilität, Erweiterbarkeit, Leistungsspanne und Einsatzort">
+    <text class="svg-title" x="20" y="26">Vergleichsmatrix der Geräteklassen</text>
+    <rect x="20" y="40" width="180" height="30" fill="#16242E"></rect>
+    <text class="svg-label" x="30" y="60" text-anchor="start" style="fill:#FFFFFF;">Merkmal</text>
+    <rect x="200" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="210" y="60" text-anchor="start" style="fill:#FFFFFF;">Notebook</text>
+    <rect x="325" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="335" y="60" text-anchor="start" style="fill:#FFFFFF;">Tablet/Phone</text>
+    <rect x="450" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="460" y="60" text-anchor="start" style="fill:#FFFFFF;">Desktop-PC</text>
+    <rect x="575" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="585" y="60" text-anchor="start" style="fill:#FFFFFF;">Industrie-PC</text>
+
+    <text class="svg-label-sm" x="30" y="92" text-anchor="start">Mobilität</text>
+    <text class="svg-label-sm" x="210" y="92" text-anchor="start">hoch</text>
+    <text class="svg-label-sm" x="335" y="92" text-anchor="start">sehr hoch</text>
+    <text class="svg-label-sm" x="460" y="92" text-anchor="start">stationär</text>
+    <text class="svg-label-sm" x="585" y="92" text-anchor="start">stationär</text>
+    <line x1="20" y1="104" x2="700" y2="104" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="128" text-anchor="start">Erweiterbar</text>
+    <text class="svg-label-sm" x="210" y="128" text-anchor="start">kaum (Express)</text>
+    <text class="svg-label-sm" x="335" y="128" text-anchor="start">nein</text>
+    <text class="svg-label-sm" x="460" y="128" text-anchor="start">gut, genormt</text>
+    <text class="svg-label-sm" x="585" y="128" text-anchor="start">begrenzt</text>
+    <line x1="20" y1="140" x2="700" y2="140" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="164" text-anchor="start">Leistung</text>
+    <text class="svg-label-sm" x="210" y="164" text-anchor="start">mittel–hoch</text>
+    <text class="svg-label-sm" x="335" y="164" text-anchor="start">gering</text>
+    <text class="svg-label-sm" x="460" y="164" text-anchor="start">alle Klassen</text>
+    <text class="svg-label-sm" x="585" y="164" text-anchor="start">gering reicht</text>
+    <line x1="20" y1="176" x2="700" y2="176" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="200" text-anchor="start">Einsatzort</text>
+    <text class="svg-label-sm" x="210" y="200" text-anchor="start">unterwegs</text>
+    <text class="svg-label-sm" x="335" y="200" text-anchor="start">mobil/Internet</text>
+    <text class="svg-label-sm" x="460" y="200" text-anchor="start">Büro</text>
+    <text class="svg-label-sm" x="585" y="200" text-anchor="start">Halle/Außen</text>
+    <line x1="20" y1="212" x2="700" y2="212" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="236" text-anchor="start">Ergonomie</text>
+    <text class="svg-label-sm" x="210" y="236" text-anchor="start">gering</text>
+    <text class="svg-label-sm" x="335" y="236" text-anchor="start">gering</text>
+    <text class="svg-label-sm" x="460" y="236" text-anchor="start">gut</text>
+    <text class="svg-label-sm" x="585" y="236" text-anchor="start">robust</text>
+  </svg><figcaption>Gegenüberstellung zentraler Merkmale der Geräteklassen (abgeleitet aus dem Quellmaterial).</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Zuordnung von Mitarbeiterrollen zu passenden Geräteklassen">
+    <text class="svg-title" x="20" y="26">Mitarbeiterrolle → passende Geräteklasse</text>
+    <rect x="20" y="46" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="68" text-anchor="start">Office mit Standardsoftware</text>
+    <rect x="450" y="46" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="68" text-anchor="start">Barebone / Desktop-PC</text>
+    <line x1="270" y1="63" x2="450" y2="63" stroke="#B9C7D2" stroke-width="2"></line>
+
+    <rect x="20" y="92" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="114" text-anchor="start">Remote / Homeoffice + Office</text>
+    <rect x="450" y="92" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="114" text-anchor="start">Notebook (ein Gerät, mobil)</text>
+    <line x1="270" y1="109" x2="450" y2="109" stroke="#B9C7D2" stroke-width="2"></line>
+
+    <rect x="20" y="138" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="160" text-anchor="start">Außendienst (Outdoor, SIM)</text>
+    <rect x="450" y="138" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="160" text-anchor="start">Notebook / Tablet</text>
+    <line x1="270" y1="155" x2="450" y2="155" stroke="#B9C7D2" stroke-width="2"></line>
+
+    <rect x="20" y="184" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="206" text-anchor="start">Produktionshalle / raue Umgebung</text>
+    <rect x="450" y="184" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="206" text-anchor="start">Industrie-PC</text>
+    <line x1="270" y1="201" x2="450" y2="201" stroke="#B9C7D2" stroke-width="2"></line>
+  </svg><figcaption>Typische Rollen-zu-Klasse-Zuordnungen, abgeleitet aus den Mitarbeiter-Notizen der Quelle.</figcaption></figure></div>
+    </div>
+
+  <div class="sec-head" id="t6"><span class="ix">6</span><h2>Strukturierte Verkabelung</h2></div>
+  <p class="sec-sub">Primär · Sekundär · Tertiär · <a class="src-link" href="6-strukturierte-verkabelung.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Norm EN 50173 / ISO 11801</span><p class="lc-def">Regeln die <code>anwendungsneutrale</code> strukturierte Verkabelung. Ziel: Erweiterbarkeit, Kapazitätsreserven, einfache Fehlersuche.</p></div><div class="learn-card"><span class="lc-term">Primärverkabelung</span><p class="lc-def">Gelände-/Campus-Backbone <code>SV → GV</code>. Medium fast nur <code>LWL</code>, max. <code>1,5 km</code>.</p></div><div class="learn-card"><span class="lc-term">Sekundärverkabelung</span><p class="lc-def">Gebäude-/Steigbereich <code>GV → EV</code>. Medium <code>LWL</code> oder Kupfer, max. <code>500 m</code>.</p></div><div class="learn-card"><span class="lc-term">Tertiärverkabelung</span><p class="lc-def">Horizontalverkabelung <code>EV → Anschlussdose</code>. Medium <code>Twisted-Pair</code>, max. <code>90 m</code> bis zum Arbeitsplatz.</p></div><div class="learn-card"><span class="lc-term">Verteiler (SV / GV / EV)</span><p class="lc-def">Sternzentren der Ebenen: <code>Standort-</code>, <code>Gebäude-</code>, <code>Etagenverteiler</code> als <code>19-Zoll-Schränke</code> mit Patchpanels.</p></div><div class="learn-card"><span class="lc-term">Permanent- vs. Channel-Link</span><p class="lc-def"><code>Permanent-Link</code> = feste Strecke EV → TA, max. <code>90 m</code>. <code>Channel-Link</code> = plus Patchkabel, max. <code>100 m</code>.</p></div><div class="learn-card"><span class="lc-term">Beschriftung</span><p class="lc-def">Schema <code>A-II.1-3.8</code> = Gebäude · Stockwerk · Etagenverteiler · Patchfeld · Steckplatz. Dokumentation im Verteiler hinterlegen.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 360" role="img" aria-label="Drei-Ebenen-Hierarchie der strukturierten Verkabelung als Baum: Standortverteiler oben, darunter Gebäudeverteiler, darunter Etagenverteiler und Arbeitsplätze">
+    <text class="svg-title" x="20" y="26">3-Ebenen-Hierarchie der strukturierten Verkabelung</text>
+    <!-- Standortverteiler -->
+    <rect x="290" y="48" width="140" height="46" rx="6" fill="#FBEAE3" stroke="#B23E1F" stroke-width="2"></rect>
+    <text class="svg-label" x="360" y="69" text-anchor="middle">Standortverteiler</text>
+    <text class="svg-label-sm" x="360" y="86" text-anchor="middle">SV (Campus)</text>
+    <!-- Primärlinks -->
+    <g stroke="#B23E1F" stroke-width="3" stroke-dasharray="2 5">
+      <line x1="330" y1="94" x2="180" y2="150"></line>
+      <line x1="390" y1="94" x2="540" y2="150"></line>
+    </g>
+    <text class="svg-label-sm" x="232" y="118" text-anchor="middle" style="fill:#B23E1F;">Primär · LWL · ≤ 1,5 km</text>
+    <text class="svg-label-sm" x="490" y="118" text-anchor="middle" style="fill:#B23E1F;">Sterntopologie</text>
+    <!-- Gebäudeverteiler -->
+    <rect x="110" y="150" width="140" height="46" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="180" y="171" text-anchor="middle">Gebäudeverteiler</text>
+    <text class="svg-label-sm" x="180" y="188" text-anchor="middle">GV (Gebäude A)</text>
+    <rect x="470" y="150" width="140" height="46" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="171" text-anchor="middle">Gebäudeverteiler</text>
+    <text class="svg-label-sm" x="540" y="188" text-anchor="middle">GV (Gebäude B)</text>
+    <!-- Sekundärlinks -->
+    <g stroke="#15786E" stroke-width="3">
+      <line x1="150" y1="196" x2="110" y2="250"></line>
+      <line x1="210" y1="196" x2="250" y2="250"></line>
+      <line x1="540" y1="196" x2="540" y2="250"></line>
+    </g>
+    <text class="svg-label-sm" x="120" y="226" text-anchor="middle" style="fill:#15786E;">Sekundär · LWL/Kupfer · ≤ 500 m</text>
+    <!-- Etagenverteiler -->
+    <rect x="50" y="250" width="120" height="42" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="110" y="269" text-anchor="middle">Etagenverteiler</text>
+    <text class="svg-label-sm" x="110" y="285" text-anchor="middle">EV · OG 1</text>
+    <rect x="190" y="250" width="120" height="42" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="250" y="269" text-anchor="middle">Etagenverteiler</text>
+    <text class="svg-label-sm" x="250" y="285" text-anchor="middle">EV · EG</text>
+    <rect x="480" y="250" width="120" height="42" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="269" text-anchor="middle">Etagenverteiler</text>
+    <text class="svg-label-sm" x="540" y="285" text-anchor="middle">EV · OG 1</text>
+    <!-- Tertiärlinks -->
+    <g stroke="#DD5430" stroke-width="2">
+      <line x1="110" y1="292" x2="110" y2="330"></line>
+      <line x1="250" y1="292" x2="250" y2="330"></line>
+      <line x1="540" y1="292" x2="540" y2="330"></line>
+    </g>
+    <circle cx="110" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
+    <circle cx="250" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
+    <circle cx="540" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
+    <text class="svg-label-sm" x="180" y="350" text-anchor="middle" style="fill:#DD5430;">Tertiär · Twisted-Pair · ≤ 90 m → Anschlussdose / Arbeitsplatz</text>
+  </svg><figcaption>Hierarchische Sternverkabelung: SV → GV → EV → Arbeitsplatz. Primär (gestrichelt, LWL), Sekundär (Steigbereich), Tertiär (Horizontal zum Arbeitsplatz).</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 240" role="img" aria-label="Lineare Strecke vom Standortverteiler über Gebäudeverteiler und Etagenverteiler bis zum technischen Anschluss, mit den drei Verkabelungsbereichen und den maximalen Längen">
+    <text class="svg-title" x="20" y="26">Verteilerkette &amp; Maximallängen</text>
+    <!-- baseline -->
+    <line x1="40" y1="120" x2="680" y2="120" stroke="#D4DEE6" stroke-width="2"></line>
+    <!-- SV -->
+    <rect x="40" y="98" width="44" height="44" rx="5" fill="#FBEAE3" stroke="#B23E1F" stroke-width="2"></rect>
+    <text class="svg-label" x="62" y="125" text-anchor="middle">SV</text>
+    <!-- GV -->
+    <rect x="240" y="98" width="44" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="262" y="125" text-anchor="middle">GV</text>
+    <!-- EV -->
+    <rect x="440" y="98" width="44" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="462" y="125" text-anchor="middle">EV</text>
+    <!-- TA -->
+    <rect x="636" y="100" width="40" height="40" rx="5" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="656" y="124" text-anchor="middle">TA</text>
+    <!-- span labels -->
+    <text class="svg-label-sm" x="160" y="92" text-anchor="middle" style="fill:#B23E1F;">Primär · LWL</text>
+    <text class="svg-label-sm" x="160" y="150" text-anchor="middle" style="fill:#B23E1F;">≤ 1,5 km</text>
+    <text class="svg-label-sm" x="360" y="92" text-anchor="middle" style="fill:#15786E;">Sekundär · LWL/Kupfer</text>
+    <text class="svg-label-sm" x="360" y="150" text-anchor="middle" style="fill:#15786E;">≤ 500 m</text>
+    <text class="svg-label-sm" x="558" y="92" text-anchor="middle" style="fill:#DD5430;">Tertiär · Twisted-Pair</text>
+    <text class="svg-label-sm" x="558" y="150" text-anchor="middle" style="fill:#DD5430;">≤ 90 m (Permanent-Link)</text>
+    <!-- bereich captions -->
+    <text class="svg-label-sm" x="160" y="185" text-anchor="middle">Primärbereich (Gelände)</text>
+    <text class="svg-label-sm" x="360" y="185" text-anchor="middle">Sekundärbereich (Gebäude)</text>
+    <text class="svg-label-sm" x="558" y="185" text-anchor="middle">Tertiärbereich (Etage)</text>
+    <!-- channel note -->
+    <text class="svg-label-sm" x="360" y="216" text-anchor="middle" style="fill:#5C6B78;">Channel-Link (EV → TA → Endgerät): ≤ 100 m</text>
+  </svg><figcaption>SV → GV → Primär (≤ 1,5 km), GV → EV → Sekundär (≤ 500 m), EV → TA → Tertiär/Permanent-Link (≤ 90 m); Channel-Link inkl. Endgeräte-Anschluss ≤ 100 m.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 230" role="img" aria-label="Etagenverteiler mit Patchpanel und Switch, Permanent-Link bis zur Anschlussdose und Channel-Link inklusive Patchkabel und Endgerät">
+    <text class="svg-title" x="20" y="26">Permanent-Link vs. Channel-Link</text>
+    <!-- EV cabinet -->
+    <rect x="40" y="60" width="150" height="120" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="115" y="82" text-anchor="middle">Etagenverteiler</text>
+    <rect x="58" y="96" width="114" height="26" rx="3" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="115" y="113" text-anchor="middle">Switch</text>
+    <rect x="58" y="130" width="114" height="26" rx="3" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="115" y="147" text-anchor="middle">Patchpanel</text>
+    <!-- short patch inside -->
+    <line x1="115" y1="122" x2="115" y2="130" stroke="#15786E" stroke-width="2"></line>
+    <!-- Permanent link -->
+    <line x1="172" y1="143" x2="540" y2="143" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="350" y="133" text-anchor="middle">fest verlegte Leitung (Twisted-Pair, in Flurkanal)</text>
+    <!-- TA / Dose -->
+    <rect x="540" y="120" width="46" height="46" rx="4" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="563" y="147" text-anchor="middle">TA</text>
+    <!-- patch to endgerät -->
+    <line x1="586" y1="143" x2="650" y2="143" stroke="#15786E" stroke-width="2"></line>
+    <rect x="650" y="120" width="46" height="46" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="673" y="147" text-anchor="middle">PC</text>
+    <!-- brackets -->
+    <line x1="115" y1="190" x2="563" y2="190" stroke="#B23E1F" stroke-width="1.5"></line>
+    <line x1="115" y1="186" x2="115" y2="194" stroke="#B23E1F" stroke-width="1.5"></line>
+    <line x1="563" y1="186" x2="563" y2="194" stroke="#B23E1F" stroke-width="1.5"></line>
+    <text class="svg-label-sm" x="339" y="208" text-anchor="middle" style="fill:#B23E1F;">Permanent-Link (EV → TA) ≤ 90 m</text>
+    <line x1="115" y1="216" x2="673" y2="216" stroke="#15786E" stroke-width="1.5"></line>
+    <line x1="115" y1="212" x2="115" y2="220" stroke="#15786E" stroke-width="1.5"></line>
+    <line x1="673" y1="212" x2="673" y2="220" stroke="#15786E" stroke-width="1.5"></line>
+    <text class="svg-label-sm" x="500" y="228" text-anchor="middle" style="fill:#15786E;">Channel-Link (inkl. Patchkabel + Endgerät) ≤ 100 m</text>
+  </svg><figcaption>Permanent-Link = fest verbaute Strecke EV → TA (≤ 90 m). Channel-Link = Permanent-Link plus Patchkabel zum Endgerät (≤ 100 m).</figcaption></figure></div>
+    </div>
+
+  <div class="sec-head" id="t7"><span class="ix">7</span><h2>IT-Infrastruktur</h2></div>
+  <p class="sec-sub">Server · Rechenzentrum · Cloud · <a class="src-link" href="7-it-infrastruktur.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Server</span><p class="lc-def">System, das auf <strong>Anforderungen von Clients</strong> antwortet und Ressourcen/Dienste bereitstellt (Request-Response). Server kann Hardware <em>und</em> Software sein.</p></div><div class="learn-card"><span class="lc-term">Bauformen</span><p class="lc-def"><code>Tower</code> (eigenständig), <code>Rack</code> (im 19-Zoll-Schrank, Höhe in <code>HE/U</code>) und <code>Blade</code> (Einschübe in einem Gehäuse, hohe Dichte).</p></div><div class="learn-card"><span class="lc-term">Serverhardware</span><p class="lc-def">Auf Dauerbetrieb ausgelegt: <strong>redundante Netzteile</strong>, <code>Hot-Swap</code>, <code>RAID</code> und <code>ECC-RAM</code> (Fehlerkorrektur) für hohe Verfügbarkeit.</p></div><div class="learn-card"><span class="lc-term">Serverdienste</span><p class="lc-def"><code>DHCP</code> (IP-Vergabe), <code>DNS</code> (Namensauflösung), Web-, Mail-, Datei-, Druck- und Verzeichnisdienst (<code>AD</code>) — je nach installierter Rolle.</p></div><div class="learn-card"><span class="lc-term">Rechenzentrum</span><p class="lc-def">Gesicherte Umgebung: <strong>Verfügbarkeit/Tier</strong>, <code>USV</code>, Klimatisierung/Kühlung, Brandschutz und <strong>Redundanz</strong>. Effizienzkennzahl <code>PUE</code>.</p></div><div class="learn-card"><span class="lc-term">Cloud: XaaS</span><p class="lc-def"><code>IaaS</code> (Infrastruktur), <code>PaaS</code> (Plattform/Entwicklungsumgebung), <code>SaaS</code> (fertige Anwendung wie E-Mail) — je mehr „aaS", desto weniger eigene Verantwortung.</p></div><div class="learn-card"><span class="lc-term">Cloud-Modelle</span><p class="lc-def"><code>Public</code> (Anbieter, geteilt), <code>Private</code> (eigen, exklusiv) und <code>Hybrid</code> (Kombination). Vorteil: <strong>Skalierbarkeit</strong> nach Bedarf.</p></div><div class="learn-card"><span class="lc-term">Server vs. Client</span><p class="lc-def">Der Server <em>stellt bereit</em>, der Client <em>nutzt</em>. Ein Gerät kann zugleich beides sein.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Client-Server-Modell: Mehrere Clients senden eine Anforderung über das Netzwerk an einen Server, der mit der passenden Antwort reagiert (Request-Response-Modell).">
+    <text class="svg-title" x="20" y="26">Client-Server-Modell — Anforderung &amp; Antwort</text>
+    <!-- Clients -->
+    <rect x="20" y="60" width="120" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="80" y="85" text-anchor="middle">Client 1</text>
+    <rect x="20" y="115" width="120" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="80" y="140" text-anchor="middle">Client 2</text>
+    <rect x="20" y="170" width="120" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="80" y="195" text-anchor="middle">Client 3</text>
+    <!-- Netz -->
+    <rect x="290" y="105" width="150" height="60" rx="30" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="365" y="140" text-anchor="middle">Netzwerk</text>
+    <!-- Server -->
+    <rect x="580" y="80" width="150" height="110" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="655" y="118" text-anchor="middle" style="font-weight:700;">Server</text>
+    <text class="svg-label-sm" x="655" y="141" text-anchor="middle">stellt Ressourcen,</text>
+    <text class="svg-label-sm" x="655" y="157" text-anchor="middle">Daten &amp; Dienste</text>
+    <text class="svg-label-sm" x="655" y="173" text-anchor="middle">bereit</text>
+    <!-- Anforderung: Clients -> Netzwerk (Pfeile mit Spitze) -->
+    <line x1="142" y1="78" x2="286" y2="116" stroke="#DD5430" stroke-width="2"></line>
+    <line x1="142" y1="135" x2="286" y2="135" stroke="#DD5430" stroke-width="2"></line>
+    <line x1="142" y1="192" x2="286" y2="154" stroke="#DD5430" stroke-width="2"></line>
+    <polygon points="290,135 278,130 278,140" fill="#DD5430"></polygon>
+    <text class="svg-label-sm" x="213" y="48" text-anchor="middle" style="fill:#B23E1F;font-weight:700;">Anforderung →</text>
+    <!-- Antwort: Server -> Netzwerk (gestrichelt) -->
+    <line x1="578" y1="178" x2="442" y2="178" stroke="#15786E" stroke-width="2" stroke-dasharray="6 4"></line>
+    <polygon points="438,178 450,173 450,183" fill="#15786E"></polygon>
+    <text class="svg-label-sm" x="515" y="200" text-anchor="middle" style="fill:#15786E;font-weight:700;">← Antwort</text>
+    <text class="svg-label-sm" x="20" y="238" text-anchor="start" style="fill:#5C6B78;">Ein Gerät kann zugleich Server (stellt bereit) und Client (nutzt) sein.</text>
+  </svg><figcaption>Request-Response-Modell: Clients fragen an, der Server prüft Berechtigung und antwortet mit den passenden Daten.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 320" role="img" aria-label="19-Zoll-Rack mit Höheneinheiten: Mehrere Geräte unterschiedlicher Höhe in U/HE gestapelt, Höhe einer Höheneinheit 1,75 Zoll bzw. 4,45 cm, Rackbreite 19 Zoll bzw. 48,26 cm.">
+    <text class="svg-title" x="20" y="26">19″-Rack &amp; Höheneinheit (HE / U)</text>
+    <!-- Rack frame -->
+    <rect x="250" y="50" width="240" height="250" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <!-- Geräte -->
+    <rect x="262" y="62" width="216" height="26" rx="3" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="80" text-anchor="middle">Switch · 1 HE</text>
+    <rect x="262" y="94" width="216" height="48" rx="3" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="123" text-anchor="middle">Rack-Server · 2 HE</text>
+    <rect x="262" y="148" width="216" height="26" rx="3" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="166" text-anchor="middle">Rack-Server · 1 HE</text>
+    <rect x="262" y="180" width="216" height="100" rx="3" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="226" text-anchor="middle">Blade-Chassis · 4 HE</text>
+    <text class="svg-label-sm" x="370" y="244" text-anchor="middle">(mehrere Blade-Server)</text>
+    <!-- Breite -->
+    <line x1="250" y1="40" x2="490" y2="40" stroke="#B9C7D2" stroke-width="1.5"></line>
+    <text class="svg-label-sm" x="370" y="36" text-anchor="middle" style="fill:#5C6B78;">Breite 19″ = 48,26 cm</text>
+    <!-- HE Maß rechts -->
+    <line x1="510" y1="62" x2="510" y2="88" stroke="#DD5430" stroke-width="2"></line>
+    <text class="svg-label-sm" x="600" y="72" text-anchor="middle" style="fill:#B23E1F;">1 HE / 1 U =</text>
+    <text class="svg-label-sm" x="600" y="88" text-anchor="middle" style="fill:#B23E1F;">1,75″ = 4,45 cm</text>
+    <text class="svg-label-sm" x="20" y="170" text-anchor="start" style="fill:#5C6B78;">Racks werden in</text>
+    <text class="svg-label-sm" x="20" y="186" text-anchor="start" style="fill:#5C6B78;">Höhen von 8 U bis</text>
+    <text class="svg-label-sm" x="20" y="202" text-anchor="start" style="fill:#5C6B78;">48 U verkauft.</text>
+    <text class="svg-label-sm" x="20" y="310" text-anchor="start" style="fill:#15786E;">Hot aisle / cold aisle: Lufteinlass vorne (kalt), Abluft hinten (warm) — Reihen Rücken an Rücken.</text>
+  </svg><figcaption>Geräte werden in U/HE (1 U = 1,75″ = 4,45 cm) angegeben, das Rack ist 19″ (48,26 cm) breit.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 290" role="img" aria-label="Redundanz und Versorgung im Rechenzentrum: Stromnetz und USV speisen redundante Netzteile der Server, Klimatisierung (HVAC) kühlt, Brandschutz und Zutrittskontrolle sichern den Raum.">
+    <text class="svg-title" x="20" y="26">Rechenzentrum — Redundanz &amp; Schutz</text>
+    <!-- Strom -->
+    <rect x="20" y="56" width="130" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="85" y="82" text-anchor="middle">Stromnetz (AC)</text>
+    <rect x="20" y="120" width="130" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="85" y="140" text-anchor="middle">USV (Akku)</text>
+    <text class="svg-label-sm" x="85" y="156" text-anchor="middle">+ PDU</text>
+    <line x1="150" y1="78" x2="300" y2="110" stroke="#DD5430" stroke-width="2"></line>
+    <line x1="150" y1="142" x2="300" y2="130" stroke="#15786E" stroke-width="2"></line>
+    <!-- Server mit redundanten Netzteilen -->
+    <rect x="300" y="90" width="190" height="80" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="395" y="118" text-anchor="middle">Server</text>
+    <text class="svg-label-sm" x="395" y="140" text-anchor="middle">2× redundante</text>
+    <text class="svg-label-sm" x="395" y="156" text-anchor="middle">Netzteile + RAID</text>
+    <!-- Klima -->
+    <rect x="540" y="56" width="180" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="630" y="76" text-anchor="middle">Klimatisierung</text>
+    <text class="svg-label-sm" x="630" y="92" text-anchor="middle">HVAC / Kühlung</text>
+    <line x1="540" y1="100" x2="490" y2="120" stroke="#15786E" stroke-width="2" stroke-dasharray="5 3"></line>
+    <!-- Brandschutz -->
+    <rect x="540" y="116" width="180" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="630" y="142" text-anchor="middle">Brandschutz (Gas)</text>
+    <!-- Zutritt -->
+    <rect x="540" y="176" width="180" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="630" y="202" text-anchor="middle">Zutrittskontrolle</text>
+    <text class="svg-label-sm" x="20" y="200" text-anchor="start" style="fill:#5C6B78;">Redundanz = doppelte</text>
+    <text class="svg-label-sm" x="20" y="216" text-anchor="start" style="fill:#5C6B78;">Auslegung kritischer</text>
+    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#5C6B78;">Komponenten</text>
+    <text class="svg-label-sm" x="20" y="278" text-anchor="start" style="fill:#15786E;">Ziel: hohe Verfügbarkeit — ein Einzelausfall darf den Betrieb nicht stoppen.</text>
+  </svg><figcaption>Hohe Verfügbarkeit durch redundante Stromversorgung (USV/PDU, Netzteile), Klimatisierung, Brandschutz und Zutrittskontrolle.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 300" role="img" aria-label="Verantwortungs-Stapel IaaS, PaaS, SaaS: Je höher das Servicemodell, desto mehr Schichten übernimmt der Cloud-Anbieter und desto weniger der Kunde. IaaS liefert Hardware/Netzwerk, PaaS zusätzlich die Entwicklungsumgebung, SaaS die komplette Anwendung.">
+    <text class="svg-title" x="20" y="26">IaaS · PaaS · SaaS — wer verwaltet was?</text>
+    <!-- Spaltenüberschriften -->
+    <text class="svg-label" x="170" y="56" text-anchor="middle">IaaS</text>
+    <text class="svg-label" x="370" y="56" text-anchor="middle">PaaS</text>
+    <text class="svg-label" x="570" y="56" text-anchor="middle">SaaS</text>
+    <!-- Legende -->
+    <rect x="20" y="270" width="16" height="16" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="44" y="283" text-anchor="start">Kunde verwaltet</text>
+    <rect x="200" y="270" width="16" height="16" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="224" y="283" text-anchor="start">Anbieter verwaltet</text>
+    <!-- IaaS column -->
+    <rect x="70" y="70" width="200" height="40" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="170" y="94" text-anchor="middle">Anwendung</text>
+    <rect x="70" y="112" width="200" height="40" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="170" y="136" text-anchor="middle">Entwicklungsumgebung</text>
+    <rect x="70" y="154" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="170" y="178" text-anchor="middle">Hardware / Netzwerk</text>
+    <!-- PaaS column -->
+    <rect x="270" y="70" width="200" height="40" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="94" text-anchor="middle">Anwendung</text>
+    <rect x="270" y="112" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="136" text-anchor="middle">Entwicklungsumgebung</text>
+    <rect x="270" y="154" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="178" text-anchor="middle">Hardware / Netzwerk</text>
+    <!-- SaaS column -->
+    <rect x="470" y="70" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="570" y="94" text-anchor="middle">Anwendung</text>
+    <rect x="470" y="112" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="570" y="136" text-anchor="middle">Entwicklungsumgebung</text>
+    <rect x="470" y="154" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="570" y="178" text-anchor="middle">Hardware / Netzwerk</text>
+    <text class="svg-label-sm" x="20" y="222" text-anchor="start" style="fill:#5C6B78;">Beispiele: IaaS = Server-/Rechenkapazität, Speicher · PaaS = Entwicklungsumgebung · SaaS = E-Mail, Textverarbeitung</text>
+    <text class="svg-label-sm" x="20" y="244" text-anchor="start" style="fill:#15786E;">Von IaaS → SaaS übernimmt der Anbieter immer mehr Schichten.</text>
+  </svg><figcaption>Je höher das Modell (IaaS → PaaS → SaaS), desto mehr verwaltet der Anbieter — der Kunde immer weniger.</figcaption></figure></div>
+    </div>
+
+  <div class="sec-head" id="t8"><span class="ix">8</span><h2>Edge- &amp; Fog-Computing</h2></div>
+  <p class="sec-sub">Edge · Fog · Cloud · <a class="src-link" href="8-edgecomputing.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Edge-Computing</span><p class="lc-def">Verarbeitung der Daten <code>vor Ort</code>, am Rand des Internets — nahe der Quelle. Nur notwendige Daten gehen anschließend in die Cloud.</p></div><div class="learn-card"><span class="lc-term">Edge-Computer (Hardware)</span><p class="lc-def"><strong>Erster intelligenter Knoten</strong>: empfängt Rohdaten, verarbeitet lokal, gibt nur Relevantes weiter. Z. B. <code>Mikrocontroller</code>, <code>Raspberry Pi</code>, <code>SPS/PLC</code> oder Industrie-Mini-PC. Sensoren = „Sinnesorgane" ohne eigene Intelligenz.</p></div><div class="learn-card"><span class="lc-term">Cloud-Computing</span><p class="lc-def">Zentrale, entfernte Rechenzentren; bei Edge/Fog nur noch für <strong>langfristige Analysen und Speicherung</strong> zuständig. Hohe Latenz, große Datenmenge.</p></div><div class="learn-card"><span class="lc-term">Fog-Computing</span><p class="lc-def">„Nebel" = Vielzahl kleinster Geräte in großer Dichte. Laut Cisco treffen die <strong>Geräte selbst</strong> kurzfristige Entscheidungen; oft synonym zu Edge.</p></div><div class="learn-card"><span class="lc-term">Schichtenmodell</span><p class="lc-def"><code>Cloud → Fog → Edge → Endgeräte</code>: nach oben steigen Latenz und Datenmenge, nach unten Nähe zur Quelle und Echtzeit.</p></div><div class="learn-card"><span class="lc-term">Vorteile</span><p class="lc-def">Geringe <strong>Latenz</strong>, gesparte <strong>Bandbreite</strong>/Kosten, schnellere <strong>Echtzeit</strong>-Reaktion (autonomes Fahren, AR/VR).</p></div><div class="learn-card"><span class="lc-term">Nachteile</span><p class="lc-def">Mehr abzusichernde Geräte/Verbindungen (<code>VPN</code>, Zugangskontrolle), geringe Fehlertoleranz → teure <strong>Redundanzen</strong>.</p></div><div class="learn-card"><span class="lc-term">Edge-Devices / IoT</span><p class="lc-def">Datenquellen: Maschinen (Industrie 4.0), Autos, VR-Brillen, Smart-Home. Die <code>Big-Data</code>-Mengen aus dem <code>IoT</code> machten Edge nötig.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 360" role="img" aria-label="Schichtenmodell: Cloud oben (zentral, hohe Latenz, große Datenmenge), darunter Fog, darunter Edge, unten die Endgeräte. Latenz und Datenmenge steigen nach oben, Echtzeit-Nähe steigt nach unten.">
+    <text class="svg-title" x="20" y="26">Schichtenmodell — Cloud · Fog · Edge · Endgeräte</text>
+    <!-- Achse rechts: Datenmenge / Latenz -->
+    <line x1="660" y1="56" x2="660" y2="310" stroke="#B9C7D2" stroke-width="2"></line>
+    <polygon points="660,50 655,62 665,62" fill="#B9C7D2"></polygon>
+    <text class="svg-label-sm" x="690" y="78" text-anchor="middle">hohe</text>
+    <text class="svg-label-sm" x="690" y="94" text-anchor="middle">Latenz</text>
+    <text class="svg-label-sm" x="690" y="116" text-anchor="middle">große</text>
+    <text class="svg-label-sm" x="690" y="132" text-anchor="middle">Daten-</text>
+    <text class="svg-label-sm" x="690" y="148" text-anchor="middle">menge</text>
+    <text class="svg-label-sm" x="690" y="262" text-anchor="middle">Echtzeit</text>
+    <text class="svg-label-sm" x="690" y="278" text-anchor="middle">&amp; Nähe</text>
+    <text class="svg-label-sm" x="690" y="294" text-anchor="middle">zur Quelle</text>
+    <!-- Cloud -->
+    <rect x="30" y="56" width="600" height="58" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="82" text-anchor="start">Cloud (zentral)</text>
+    <text class="svg-label-sm" x="60" y="102" text-anchor="start">langfristige Analyse &amp; Speicherung · weit entfernte Rechenzentren</text>
+    <!-- Fog -->
+    <rect x="30" y="122" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="148" text-anchor="start">Fog (Zwischenebene)</text>
+    <text class="svg-label-sm" x="60" y="168" text-anchor="start">Geräte selbst treffen kurzfristige Entscheidungen · Vielzahl kleinster Sensoren/Aktoren</text>
+    <!-- Edge -->
+    <rect x="30" y="188" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="214" text-anchor="start">Edge (Rand des Netzes)</text>
+    <text class="svg-label-sm" x="60" y="234" text-anchor="start">Edge-Server nahe der Quelle · Analyse vor Ort · nur nötige Daten gehen weiter</text>
+    <!-- Endgeräte -->
+    <rect x="30" y="254" width="600" height="58" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="280" text-anchor="start">Endgeräte / Edge-Devices</text>
+    <text class="svg-label-sm" x="60" y="300" text-anchor="start">Maschinen, Autos, VR-Brillen, Smart-Home · Sensoren &amp; Aktoren (Datenquellen)</text>
+    <text class="svg-label-sm" x="30" y="338" text-anchor="start" style="fill:#15786E;">Je weiter unten, desto näher an der Quelle und reaktionsschneller · je weiter oben, desto zentraler.</text>
+  </svg><figcaption>Schichtenmodell: oben zentrale Cloud (hohe Latenz, große Datenmenge), unten die Endgeräte (Echtzeit, Nähe zur Quelle).</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 290" role="img" aria-label="Vergleich: Cloud-Computing zentral mit weitem Weg und hoher Latenz gegenüber Edge-Computing mit kurzem Weg und niedriger Latenz nahe an der Quelle.">
+    <text class="svg-title" x="20" y="26">Cloud-Computing vs. Edge-Computing</text>
+    <!-- Cloud-Variante -->
+    <text class="svg-label" x="20" y="60" text-anchor="start">Cloud (zentral)</text>
+    <rect x="20" y="72" width="110" height="46" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="75" y="94" text-anchor="middle">Sensor /</text>
+    <text class="svg-label-sm" x="75" y="110" text-anchor="middle">Gerät</text>
+    <line x1="130" y1="95" x2="560" y2="95" stroke="#DD5430" stroke-width="2" stroke-dasharray="6 4"></line>
+    <text class="svg-label-sm" x="345" y="86" text-anchor="middle" style="fill:#B23E1F;">weiter Weg übers Internet → hohe Latenz</text>
+    <rect x="560" y="72" width="150" height="46" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="94" text-anchor="middle">Cloud-Rechen-</text>
+    <text class="svg-label-sm" x="635" y="110" text-anchor="middle">zentrum</text>
+    <!-- Trennlinie -->
+    <line x1="20" y1="150" x2="710" y2="150" stroke="#D4DEE6" stroke-width="1"></line>
+    <!-- Edge-Variante -->
+    <text class="svg-label" x="20" y="186" text-anchor="start">Edge (am Rand)</text>
+    <rect x="20" y="198" width="110" height="46" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="75" y="220" text-anchor="middle">Sensor /</text>
+    <text class="svg-label-sm" x="75" y="236" text-anchor="middle">Gerät</text>
+    <line x1="130" y1="221" x2="210" y2="221" stroke="#15786E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="170" y="212" text-anchor="middle" style="fill:#15786E;">kurz</text>
+    <rect x="210" y="198" width="130" height="46" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="275" y="220" text-anchor="middle">Edge-Server</text>
+    <text class="svg-label-sm" x="275" y="236" text-anchor="middle">(vor Ort)</text>
+    <line x1="340" y1="221" x2="560" y2="221" stroke="#B9C7D2" stroke-width="2" stroke-dasharray="6 4"></line>
+    <text class="svg-label-sm" x="450" y="212" text-anchor="middle" style="fill:#5C6B78;">nur nötige Daten</text>
+    <rect x="560" y="198" width="150" height="46" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="220" text-anchor="middle">Cloud</text>
+    <text class="svg-label-sm" x="635" y="236" text-anchor="middle">(Langzeit)</text>
+    <text class="svg-label-sm" x="275" y="270" text-anchor="middle" style="fill:#15786E;">Analyse nahe der Quelle → geringe Latenz, weniger Bandbreite</text>
+  </svg><figcaption>Cloud: weiter Weg, hohe Latenz. Edge: Verarbeitung vor Ort, nur noch nötige Daten gehen in die Cloud.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Edge vs Fog nach Cisco: Beim Fog-Computing treffen die Geräte selbst kurzfristige Entscheidungen; beim Edge-Computing erfolgt die Analyse in nahen, aber schon zentraleren Instanzen. Langfristige Analyse und Speicherung erfolgen bei beiden in der Cloud.">
+    <text class="svg-title" x="20" y="26">Fog vs. Edge (nach Cisco)</text>
+    <rect x="20" y="50" width="330" height="150" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="40" y="78" text-anchor="start">Fog-Computing</text>
+    <text class="svg-label-sm" x="40" y="104" text-anchor="start">Geräte selbst treffen</text>
+    <text class="svg-label-sm" x="40" y="122" text-anchor="start">kurzfristige Entscheidungen</text>
+    <text class="svg-label-sm" x="40" y="146" text-anchor="start">„Nebel“ = Vielzahl kleinster</text>
+    <text class="svg-label-sm" x="40" y="164" text-anchor="start">Geräte (Sensoren/Aktoren) in</text>
+    <text class="svg-label-sm" x="40" y="182" text-anchor="start">großer Dichte (IoT)</text>
+    <rect x="390" y="50" width="330" height="150" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="410" y="78" text-anchor="start">Edge-Computing</text>
+    <text class="svg-label-sm" x="410" y="104" text-anchor="start">Analyse in nahen, aber schon</text>
+    <text class="svg-label-sm" x="410" y="122" text-anchor="start">etwas zentraleren Instanzen</text>
+    <text class="svg-label-sm" x="410" y="146" text-anchor="start">(Edge-Server am Rand)</text>
+    <text class="svg-label-sm" x="410" y="170" text-anchor="start">oft synonym zu Fog verwendet</text>
+    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#15786E;">Gemeinsam: nur langfristige Analysen &amp; Speicherungen finden in der Cloud statt.</text>
+  </svg><figcaption>Cisco (Urheber von „Fog“): Fog = Geräte entscheiden selbst, Edge = Analyse in nahen, etwas zentraleren Instanzen.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Datenfluss in einer Fabrik: Sensoren liefern Rohdaten an einen Edge-Computer (Mikrocontroller, Raspberry Pi, SPS), der lokal verarbeitet und nur Relevantes an Fog/Gateway und schließlich aggregiert an die Cloud weitergibt.">
+      <text x="380" y="24" text-anchor="middle" class="svg-title">Vom Sensor bis in die Cloud — der Edge-Computer als erster Knoten</text>
+      <!-- Pfeil-Labels (oberhalb der Boxen, in den Lücken) -->
+      <text x="165" y="70" text-anchor="middle" class="svg-label-sm" style="fill:#B23E1F;font-weight:700;">Rohdaten →</text>
+      <text x="395" y="70" text-anchor="middle" class="svg-label-sm" style="fill:#B23E1F;font-weight:700;">nur Relevantes →</text>
+      <text x="595" y="70" text-anchor="middle" class="svg-label-sm" style="fill:#15786E;font-weight:700;">aggregiert →</text>
+      <!-- Sensoren -->
+      <text x="75" y="58" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;font-weight:700;">Sensoren</text>
+      <rect x="20" y="70" width="110" height="30" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="75" y="89" text-anchor="middle" class="svg-label-sm">Temperatur</text>
+      <rect x="20" y="110" width="110" height="30" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="75" y="129" text-anchor="middle" class="svg-label-sm">Vibration</text>
+      <rect x="20" y="150" width="110" height="30" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="75" y="169" text-anchor="middle" class="svg-label-sm">Druck</text>
+      <text x="75" y="202" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Sinnesorgane —</text>
+      <text x="75" y="217" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">keine eigene Logik</text>
+      <!-- Sensoren -> Edge -->
+      <line x1="130" y1="85" x2="200" y2="118" stroke="#DD5430" stroke-width="1.8"></line>
+      <line x1="130" y1="125" x2="200" y2="130" stroke="#DD5430" stroke-width="1.8"></line>
+      <line x1="130" y1="165" x2="200" y2="146" stroke="#DD5430" stroke-width="1.8"></line>
+      <!-- Edge-Computer -->
+      <rect x="200" y="78" width="160" height="110" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+      <text x="280" y="104" text-anchor="middle" class="svg-label" style="fill:#B23E1F;font-weight:700;">Edge-Computer</text>
+      <text x="280" y="126" text-anchor="middle" class="svg-label-sm">1. intelligenter Knoten</text>
+      <text x="280" y="146" text-anchor="middle" class="svg-label-sm">µC · Raspberry Pi</text>
+      <text x="280" y="164" text-anchor="middle" class="svg-label-sm">SPS/PLC · Mini-PC</text>
+      <!-- Edge -> Fog -->
+      <line x1="360" y1="133" x2="424" y2="133" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="430,133 420,128 420,138" fill="#15786E"></polygon>
+      <!-- Fog / Gateway -->
+      <rect x="430" y="88" width="130" height="90" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+      <text x="495" y="118" text-anchor="middle" class="svg-label" style="fill:#15786E;font-weight:700;">Fog / Gateway</text>
+      <text x="495" y="140" text-anchor="middle" class="svg-label-sm">Maschinen-Ebene</text>
+      <text x="495" y="158" text-anchor="middle" class="svg-label-sm">bündelt Edge-Knoten</text>
+      <!-- Fog -> Cloud -->
+      <line x1="560" y1="133" x2="624" y2="133" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="630,133 620,128 620,138" fill="#15786E"></polygon>
+      <!-- Cloud -->
+      <rect x="630" y="98" width="110" height="72" rx="14" fill="#fff" stroke="#16242E" stroke-width="2"></rect>
+      <text x="685" y="124" text-anchor="middle" class="svg-label" style="font-weight:700;">Cloud</text>
+      <text x="685" y="144" text-anchor="middle" class="svg-label-sm">Langzeit-Analyse</text>
+      <text x="685" y="160" text-anchor="middle" class="svg-label-sm">&amp; Speicher</text>
+      <!-- Fußnote -->
+      <text x="20" y="252" text-anchor="start" class="svg-label-sm" style="fill:#5C6B78;">Mehrere Sensoren an einem Mikrocontroller = klassisches Edge-Szenario:</text>
+      <text x="20" y="270" text-anchor="start" class="svg-label-sm" style="fill:#5C6B78;">der µC IST der Edge-Computer, die Sensoren liefern nur Rohdaten.</text>
+    </svg>
+    <figcaption>Fabrik-Datenfluss: Sensoren (ohne eigene Intelligenz) → Edge-Computer (verarbeitet lokal) → Fog/Gateway → Cloud (nur Langzeit-Analyse &amp; Speicher).</figcaption>
+  </figure></div>
+    </div>
+
+  <div class="sec-head" id="t9"><span class="ix">9</span><h2>Server-Betriebssysteme</h2></div>
+  <p class="sec-sub">Server-BS · Lizenzen · Virtualisierung · <a class="src-link" href="9-server-betriebssystem.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Server-Betriebssystem</span><p class="lc-def">Auf <code>24/7</code>-Dauerbetrieb, Stabilität und viele gleichzeitige Nutzer ausgelegt; stellt <code>Dienste/Rollen</code> bereit und antwortet auf <code>Clients</code>.</p></div><div class="learn-card"><span class="lc-term">Server-BS vs. Desktop-BS</span><p class="lc-def">Server: Dauerbetrieb, Multiuser, Dienste, oft <code>Core/CLI</code> + Remote-Verwaltung. Desktop: Einzelplatz, ein Nutzer, immer <code>GUI</code>.</p></div><div class="learn-card"><span class="lc-term">Windows Server</span><p class="lc-def">Microsofts <code>proprietäre</code> Reihe — vom ersten echten Server-BS <code>Windows NT</code> bis <code>Windows Server 2025</code>; mit Hypervisor Hyper-V.</p></div><div class="learn-card"><span class="lc-term">Linux/Unix</span><p class="lc-def"><code>Open-Source</code>-Welt mit <code>RHEL</code>, <code>Debian</code>, <code>CentOS</code>; sehr beliebt als Webserver, oft mit <code>Apache</code>.</p></div><div class="learn-card"><span class="lc-term">NetWare / OES</span><p class="lc-def">Großer Akteur der Client-Server-Ära; auf einen <code>Linux-Kernel</code> verlegt als <code>Novell OES</code>.</p></div><div class="learn-card"><span class="lc-term">Proprietär vs. Open Source</span><p class="lc-def">Proprietär = geschlossener Code + kostenpflichtige Lizenz (Windows Server). Open Source = offener, frei anpassbarer Code (Linux).</p></div><div class="learn-card"><span class="lc-term">Cloudserver</span><p class="lc-def"><code>Virtuelle Server</code> auf Drittanbieter-Infrastruktur (Azure, Google Cloud); Vorreiter <code>AWS</code> — sofort erstellbar und skalierbar.</p></div><div class="learn-card"><span class="lc-term">Hypervisor</span><p class="lc-def">Ermöglicht mehrere virtuelle Server auf einer Hardware. <code>Typ 1</code> direkt auf der Hardware (Hyper-V, ESXi), <code>Typ 2</code> als App auf einem Host-BS.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 300" role="img" aria-label="Vergleich Server-Betriebssystem und Desktop-Betriebssystem nach Stabilität, Nutzern, Diensten und Bedienung">
+    <text class="svg-title" x="20" y="28">Server-BS vs. Desktop-BS</text>
+    <rect x="20" y="50" width="320" height="220" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="180" y="78" text-anchor="middle">Server-Betriebssystem</text>
+    <text class="svg-label-sm" x="40" y="112">• Dauerbetrieb 24/7, hohe Stabilität</text>
+    <text class="svg-label-sm" x="40" y="140">• viele Nutzer gleichzeitig (Multiuser)</text>
+    <text class="svg-label-sm" x="40" y="168">• stellt Dienste/Rollen bereit</text>
+    <text class="svg-label-sm" x="40" y="196">• Remote-Verwaltung, oft Core/CLI</text>
+    <text class="svg-label-sm" x="40" y="224">• Skalierung: viel RAM/CPU/Storage</text>
+    <text class="svg-label-sm" x="40" y="252">• Sicherheit/Rechte im Vordergrund</text>
+    <rect x="380" y="50" width="320" height="220" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="78" text-anchor="middle">Desktop-Betriebssystem</text>
+    <text class="svg-label-sm" x="400" y="112">• Einzelarbeitsplatz, wird ausgeschaltet</text>
+    <text class="svg-label-sm" x="400" y="140">• meist ein angemeldeter Nutzer</text>
+    <text class="svg-label-sm" x="400" y="168">• nutzt Dienste, bietet kaum welche an</text>
+    <text class="svg-label-sm" x="400" y="196">• lokale Bedienung, immer mit GUI</text>
+    <text class="svg-label-sm" x="400" y="224">• Komfort/Multimedia im Vordergrund</text>
+    <text class="svg-label-sm" x="400" y="252">• z. B. Windows 11, macOS, Ubuntu Desktop</text>
+  </svg><figcaption>Ein Server-BS ist auf Dauerbetrieb, Dienste und viele Nutzer optimiert; ein Desktop-BS auf den Einzelarbeitsplatz.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Lizenzmodelle proprietär und Open Source gegenübergestellt">
+    <text class="svg-title" x="20" y="28">Lizenzmodelle im Vergleich</text>
+    <rect x="20" y="50" width="320" height="170" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="180" y="78" text-anchor="middle">Proprietär</text>
+    <text class="svg-label-sm" x="40" y="108">• z. B. Windows Server</text>
+    <text class="svg-label-sm" x="40" y="134">• Quellcode geschlossen</text>
+    <text class="svg-label-sm" x="40" y="160">• kostenpflichtige Lizenz</text>
+    <text class="svg-label-sm" x="40" y="186">• Support vom Hersteller</text>
+    <text class="svg-label-sm" x="40" y="212">• Nutzung an Lizenz gebunden</text>
+    <rect x="380" y="50" width="320" height="170" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="78" text-anchor="middle">Open Source</text>
+    <text class="svg-label-sm" x="400" y="108">• z. B. Linux (Debian, CentOS)</text>
+    <text class="svg-label-sm" x="400" y="134">• Quellcode offen einsehbar</text>
+    <text class="svg-label-sm" x="400" y="160">• meist kostenfrei nutzbar</text>
+    <text class="svg-label-sm" x="400" y="186">• Support über Community/Distributor</text>
+    <text class="svg-label-sm" x="400" y="212">• anpass- und weitergebbar</text>
+  </svg><figcaption>Windows Server ist proprietär; Linux ist als Open-Source-System frei nutzbar und anpassbar.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 330" role="img" aria-label="Hypervisor Typ 1 läuft direkt auf der Hardware, Hypervisor Typ 2 läuft auf einem Host-Betriebssystem">
+    <text class="svg-title" x="20" y="28">Virtualisierung: Hypervisor Typ 1 vs. Typ 2</text>
+
+    <text class="svg-label" x="180" y="58" text-anchor="middle">Typ 1 (Bare-Metal)</text>
+    <rect x="40" y="70" width="90" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="85" y="97" text-anchor="middle">VM 1</text>
+    <rect x="140" y="70" width="90" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="185" y="97" text-anchor="middle">VM 2</text>
+    <rect x="240" y="70" width="90" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="285" y="97" text-anchor="middle">VM 3</text>
+    <rect x="40" y="122" width="290" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="185" y="147" text-anchor="middle">Hypervisor (Typ 1)</text>
+    <rect x="40" y="170" width="290" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="185" y="195" text-anchor="middle">Hardware</text>
+    <text class="svg-label-sm" x="185" y="234" text-anchor="middle">z. B. Hyper-V, ESXi, KVM, Proxmox</text>
+
+    <text class="svg-label" x="540" y="58" text-anchor="middle">Typ 2 (Hosted)</text>
+    <rect x="400" y="70" width="130" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="465" y="97" text-anchor="middle">VM 1</text>
+    <rect x="540" y="70" width="130" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="605" y="97" text-anchor="middle">VM 2</text>
+    <rect x="400" y="122" width="270" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="535" y="147" text-anchor="middle">Hypervisor (Typ 2)</text>
+    <rect x="400" y="170" width="270" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="535" y="195" text-anchor="middle">Host-Betriebssystem</text>
+    <rect x="400" y="218" width="270" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="535" y="243" text-anchor="middle">Hardware</text>
+    <text class="svg-label-sm" x="535" y="282" text-anchor="middle">z. B. VirtualBox, VMware Workstation</text>
+  </svg><figcaption>Typ 1 läuft direkt auf der Hardware (Server/Rechenzentrum), Typ 2 als Anwendung auf einem Host-BS (Arbeitsplatz/Test).</figcaption></figure></div>
+    </div>
 
   <div class="sec-head" id="t10"><span class="ix">10</span><h2>Adressierung</h2></div>
   <p class="sec-sub">IPv4 · Subnetting · IPv6 · <a class="src-link" href="10-adressierung.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
-    <div class="learn-card"><span class="lc-term">IPv4-Aufbau</span><p class="lc-def"><code>32 Bit</code> = 4 Oktette à 8 Bit (je <code>0–255</code>). Geteilt in <b>Netzanteil</b> (identifiziert das Netz) und <b>Hostanteil</b> (das Endgerät).</p></div>
+<div class="learn-card"><span class="lc-term">IPv4-Aufbau</span><p class="lc-def"><code>32 Bit</code> = 4 Oktette à 8 Bit (je <code>0–255</code>). Geteilt in <b>Netzanteil</b> (identifiziert das Netz) und <b>Hostanteil</b> (das Endgerät).</p></div>
     <div class="learn-card"><span class="lc-term">Subnetzmaske / CIDR</span><p class="lc-def">Die Maske trennt Netz- vom Hostanteil. Bitwertigkeiten <code>128 64 32 …</code> aufaddieren: <code>224</code> = 3 Netz-Bits → Suffix <code>/27</code>.</p></div>
     <div class="learn-card"><span class="lc-term">Netz- &amp; Broadcast-Adresse</span><p class="lc-def">Erste Adresse (Hostanteil = 0) = <b>Netzkennung</b>, letzte (Hostanteil = alle 1) = <b>Broadcast</b>. Nutzbare Hosts = <code>2^Hostbits − 2</code>.</p></div>
     <div class="learn-card"><span class="lc-term">IPv6</span><p class="lc-def"><code>128 Bit</code> = 8 Blöcke à 16 Bit (hex). Kürzen: führende Nullen weg, ein <code>::</code> für zusammenhängende Null-Blöcke (nur <b>einmal</b>). Erste 64 Bit = Präfix, letzte 64 = Interface-ID.</p></div>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item">
-      <figure class="diagram">
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 720 200" role="img" aria-label="IPv4-Adresse 192.168.2.105 als vier Oktette mit Binärdarstellung">
       <text x="360" y="22" text-anchor="middle" class="svg-title">IPv4 = 32 Bit = 4 Oktette × 8 Bit</text>
       <g>
@@ -84,10 +1029,8 @@
       <text x="360" y="185" text-anchor="middle" class="svg-label-sm">jedes Oktett 0–255 · 2⁸ = 256 Werte · 2³² ≈ 4,3 Mrd. Adressen gesamt</text>
     </svg>
     <figcaption>Eine IPv4-Adresse: vier dezimale Oktette, intern binär verarbeitet.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 150" role="img" aria-label="IP 192.168.2.105 mit Subnetzmaske 255.255.255.0: Netzkennung 192.168.2.0, Broadcast 192.168.2.255">
       <text x="20" y="30" class="svg-label">IP-Adresse</text>
       <text x="160" y="30" class="svg-label" style="font-weight:700;">192.168.2.</text>
@@ -105,10 +1048,8 @@
       <text x="20" y="140" class="svg-label-sm">Vergebbare Hosts: 192.168.2.1 – 192.168.2.254  →  254 Endgeräte</text>
     </svg>
     <figcaption>Reservierte Adressen pro /24-Netz: erste = Netzkennung, letzte = Broadcast.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 210" role="img" aria-label="Bitwertigkeiten eines Oktetts und Umrechnung von 224 in /27">
       <text x="350" y="22" text-anchor="middle" class="svg-title">Bitwertigkeiten im Oktett — Maske 255.255.255.224</text>
       <g text-anchor="middle">
@@ -138,10 +1079,8 @@
       <text x="350" y="192" text-anchor="middle" class="svg-label-sm">Nutzbare Hosts = 2⁵ − 2 = 32 − 2 = 30</text>
     </svg>
     <figcaption>Ein Maskenoktett aus den Bitwertigkeiten lesen — der Schlüssel zum Subnetting.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 720 220" role="img" aria-label="IPv6-Kürzung von 2001:0DB8:0000:0000:0000:0000:0000:0001 zu 2001:db8::1">
       <text x="360" y="22" text-anchor="middle" class="svg-title">IPv6 = 128 Bit = 8 Blöcke × 16 Bit (hexadezimal)</text>
       <text x="20" y="58" class="svg-label-sm">Voll</text>
@@ -154,20 +1093,19 @@
       <text x="20" y="210" class="svg-label-sm" style="fill:#B5462F;">Ungültig: 2001::1::1  —  „::“ darf nur ein einziges Mal vorkommen</text>
     </svg>
     <figcaption>Erste 64 Bit = Netzwerkpräfix (Routing), letzte 64 Bit = Interface-ID (Host).</figcaption>
-  </figure>
+  </figure></div>
     </div>
-  </div>
-  <div class="sec-head" id="t11"><span class="ix">11</span><h2>DHCP & DNS</h2></div>
+
+  <div class="sec-head" id="t11"><span class="ix">11</span><h2>DHCP &amp; DNS</h2></div>
   <p class="sec-sub">DORA · Namensauflösung · <a class="src-link" href="11-dhcp-dns.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
-    <div class="learn-card"><span class="lc-term">DHCP</span><p class="lc-def">Vergibt automatisch <code>IP-Adresse</code>, <code>Subnetzmaske</code>, <code>Gateway</code> und <code>DNS-Server</code> — spart manuelle Konfiguration und Fehler.</p></div>
+<div class="learn-card"><span class="lc-term">DHCP</span><p class="lc-def">Vergibt automatisch <code>IP-Adresse</code>, <code>Subnetzmaske</code>, <code>Gateway</code> und <code>DNS-Server</code> — spart manuelle Konfiguration und Fehler.</p></div>
     <div class="learn-card"><span class="lc-term">DORA</span><p class="lc-def">Ablauf in vier Schritten: <code>Discover → Offer → Request → Acknowledge</code>. Der Client startet mit dem Discover-Broadcast.</p></div>
     <div class="learn-card"><span class="lc-term">Zuweisungsarten</span><p class="lc-def"><b>manuell</b> (feste IP je MAC), <b>automatisch</b> (freie IP, dauerhaft), <b>dynamisch</b> (mit <code>Lease-Time</code>, Adressen werden wieder frei).</p></div>
     <div class="learn-card"><span class="lc-term">DNS</span><p class="lc-def">Übersetzt Domainnamen → IP-Adresse („Telefonbuch des Internets"). Die <code>TTL</code> steuert, wie lange ein Eintrag im Cache gültig bleibt.</p></div>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item">
-      <figure class="diagram">
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 300" role="img" aria-label="DORA-Ablauf zwischen Client und DHCP-Server mit vier Nachrichten: Discover, Offer, Request und Acknowledge">
       <text x="350" y="22" text-anchor="middle" class="svg-title">DHCP-Adressvergabe – DORA</text>
       <!-- Client column -->
@@ -200,10 +1138,8 @@
       <text x="350" y="282" text-anchor="middle" class="svg-label-sm">„Bestätigt – die IP gehört dir."</text>
     </svg>
     <figcaption>Vier Schritte der DHCP-Adressvergabe (DORA).</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 230" role="img" aria-label="DNS-Auflösung mit drei Stationen Client-PC, DNS-Server und Webserver sowie drei nummerierten Anfragen">
       <text x="350" y="22" text-anchor="middle" class="svg-title">DNS-Auflösung</text>
       <!-- Boxes -->
@@ -230,19 +1166,18 @@
       <text x="472" y="82" text-anchor="middle" class="svg-label-sm">Anfrage an diese IP</text>
     </svg>
     <figcaption>Namensauflösung: vom Domainnamen zur IP-Adresse.</figcaption>
-  </figure>
+  </figure></div>
     </div>
-  </div>
+
   <div class="sec-head" id="t12"><span class="ix">12</span><h2>Übertragungsarten</h2></div>
   <p class="sec-sub">Duplex · Multiplexing · <a class="src-link" href="12-uebertragungsarten.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
-    <div class="learn-card"><span class="lc-term">Seriell vs. parallel</span><p class="lc-def"><b>Seriell:</b> 1 Bit pro Takt über eine Leitung. <b>Parallel:</b> n Bit pro Takt über n Leitungen.</p></div>
+<div class="learn-card"><span class="lc-term">Seriell vs. parallel</span><p class="lc-def"><b>Seriell:</b> 1 Bit pro Takt über eine Leitung. <b>Parallel:</b> n Bit pro Takt über n Leitungen.</p></div>
     <div class="learn-card"><span class="lc-term">Richtungsbetrieb</span><p class="lc-def"><b>Simplex</b> – nur eine Richtung. <b>Halbduplex</b> – beide Richtungen, aber nicht gleichzeitig. <b>Vollduplex</b> – beide gleichzeitig.</p></div>
     <div class="learn-card"><span class="lc-term">Multiplexing</span><p class="lc-def">Mehrere Signale teilen ein Medium: <code>FDM</code> nach Frequenz, <code>TDM</code> nach Zeitschlitzen, <code>WDM</code> nach Lichtwellenlänge (Glasfaser), <code>CDM</code> nach Code.</p></div>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item">
-      <figure class="diagram">
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 230" role="img" aria-label="Serielle Übertragung über eine Leitung gegenüber paralleler Übertragung über vier Leitungen">
       <text x="20" y="28" class="svg-title">Seriell vs. parallel</text>
 
@@ -276,10 +1211,8 @@
       <text x="400" y="210" class="svg-label-sm">n Bit pro Takt · n Leitungen</text>
     </svg>
     <figcaption>Seriell: 1 Bit pro Takt auf einer Leitung. Parallel: n Bit pro Takt auf n Leitungen.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 320" role="img" aria-label="Simplex mit einem Pfeil, Halbduplex mit abwechselndem Doppelpfeil, Vollduplex mit zwei gleichzeitigen Pfeilen">
       <text x="20" y="28" class="svg-title">Simplex · Halbduplex · Vollduplex</text>
 
@@ -317,10 +1250,8 @@
       <text x="330" y="296" class="svg-label-sm">beide Richtungen gleichzeitig</text>
     </svg>
     <figcaption>Simplex – nur eine Richtung. Halbduplex – beide Richtungen, aber nicht gleichzeitig. Vollduplex – beide Richtungen gleichzeitig.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 700 250" role="img" aria-label="FDM teilt nach Frequenzbändern, TDM teilt nach rotierenden Zeitschlitzen, WDM nutzt mehrere Lichtwellenlängen in einer Glasfaser">
       <text x="20" y="28" class="svg-title">FDM · TDM · WDM</text>
 
@@ -353,28 +1284,27 @@
       <!-- WDM -->
       <text x="20" y="170" class="svg-label">WDM – nach Lichtwellenlänge (Glasfaser)</text>
       <rect x="20" y="182" width="60" height="40" rx="5" fill="#16242E" stroke="#16242E" stroke-width="2"/>
-      <text x="50" y="207" text-anchor="middle" class="svg-label-sm" fill="#ffffff">Laser</text>
+      <text x="50" y="207" text-anchor="middle" class="svg-label-sm" style="fill:#ffffff;">Laser</text>
       <line x1="80" y1="195" x2="600" y2="195" stroke="#DD5430" stroke-width="2"/>
       <line x1="80" y1="202" x2="600" y2="202" stroke="#15786E" stroke-width="2"/>
       <line x1="80" y1="209" x2="600" y2="209" stroke="#B9C7D2" stroke-width="2"/>
       <text x="610" y="207" class="svg-label-sm">Faser</text>
     </svg>
     <figcaption>FDM – Aufteilung nach Frequenz. TDM – Aufteilung nach Zeitschlitzen. WDM – mehrere Lichtwellenlängen in einer Glasfaser.</figcaption>
-  </figure>
+  </figure></div>
     </div>
-  </div>
+
   <div class="sec-head" id="t13"><span class="ix">13</span><h2>Topologien</h2></div>
   <p class="sec-sub">Bus · Ring · Stern · Mesh · <a class="src-link" href="13-topologien.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
-    <div class="learn-card"><span class="lc-term">Bus / Linie</span><p class="lc-def"><b>Bus:</b> gemeinsame Leitung mit Abschlusswiderständen, immer nur eine Station sendet. <b>Linie:</b> Stationen in Reihe verkettet.</p></div>
+<div class="learn-card"><span class="lc-term">Bus / Linie</span><p class="lc-def"><b>Bus:</b> gemeinsame Leitung mit Abschlusswiderständen, immer nur eine Station sendet. <b>Linie:</b> Stationen in Reihe verkettet.</p></div>
     <div class="learn-card"><span class="lc-term">Ring</span><p class="lc-def">Geschlossener Kreis; jede Station verstärkt das Signal, keine Kollisionen. Ein Bruch kann den Ring unterbrechen.</p></div>
     <div class="learn-card"><span class="lc-term">Stern</span><p class="lc-def">Zentraler <b>Switch</b>, eigene Leitung je Host. Einzelne Stationen unkritisch, aber Switch-Ausfall = Totalausfall.</p></div>
     <div class="learn-card"><span class="lc-term">Mesh / Baum</span><p class="lc-def"><b>Mesh:</b> jeder mit jedem, bei Ausfall automatische Umleitung (Basis des Internets). <b>Baum:</b> mehrere Sterne hierarchisch über einen Backbone.</p></div>
     <div class="learn-card"><span class="lc-term">Bewertung</span><p class="lc-def">Topologien vergleicht man nach <b>Kosten</b>, <b>Skalierbarkeit</b> und <b>Ausfallsicherheit</b>.</p></div>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item">
-      <figure class="diagram">
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 640 170" role="img" aria-label="Bus-Topologie: gemeinsame Leitung mit Abschlusswiderständen an beiden Enden und vier angeschlossenen PCs">
       <text x="320" y="22" text-anchor="middle" class="svg-title">Bus-Topologie</text>
       <line x1="50" y1="115" x2="590" y2="115" stroke="#16242E" stroke-width="3"></line>
@@ -398,10 +1328,8 @@
       </g>
     </svg>
     <figcaption>Bus – gemeinsame Leitung mit Abschlusswiderständen; immer nur eine Station sendet.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 400 250" role="img" aria-label="Ring-Topologie: fünf Stationen zu einem geschlossenen Ring verbunden">
       <text x="200" y="22" text-anchor="middle" class="svg-title">Ring-Topologie</text>
       <g stroke="#16242E" stroke-width="2.5" fill="none">
@@ -421,10 +1349,8 @@
       <text x="200" y="240" text-anchor="middle" class="svg-label-sm">geschlossener Ring · optionaler Ring-Manager schaltet bei Bruch auf Bus-Betrieb</text>
     </svg>
     <figcaption>Ring – geschlossener Kreis; jede Station verstärkt das Signal, keine Kollisionen.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 640 160" role="img" aria-label="Linientopologie: vier Stationen in Reihe hintereinander verkettet, ohne Abschlusswiderstände">
       <text x="320" y="22" text-anchor="middle" class="svg-title">Linientopologie (Daisy Chain)</text>
       <g stroke="#16242E" stroke-width="2.5">
@@ -445,10 +1371,8 @@
       <text x="320" y="140" text-anchor="middle" class="svg-label-sm">Punkt-zu-Punkt in Reihe · keine Abschlusswiderstände · verbindet man die offenen Enden, entsteht ein Ring</text>
     </svg>
     <figcaption>Linie – Stationen in Reihe verkettet; jedes Gerät ist mit dem nächsten verbunden.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 400 270" role="img" aria-label="Stern-Topologie: fünf Stationen sternförmig an einem zentralen Switch">
       <text x="200" y="22" text-anchor="middle" class="svg-title">Stern-Topologie</text>
       <g stroke="#B9C7D2" stroke-width="2">
@@ -459,7 +1383,7 @@
         <line x1="200" y1="140" x2="100" y2="110"></line>
       </g>
       <rect x="160" y="120" width="80" height="42" rx="6" fill="#16242E"></rect>
-      <text x="200" y="146" text-anchor="middle" fill="#fff" class="svg-title" style="font-size:12px;">SWITCH</text>
+      <text x="200" y="146" text-anchor="middle" class="svg-title" style="fill:#fff;font-size:12px;">SWITCH</text>
       <g fill="#fff" stroke="#DD5430" stroke-width="2">
         <circle cx="200" cy="55" r="20"></circle>
         <circle cx="300" cy="110" r="20"></circle>
@@ -474,10 +1398,8 @@
       <text x="200" y="258" text-anchor="middle" class="svg-label-sm">eigene Leitung je Host · Switch-Ausfall = Totalausfall</text>
     </svg>
     <figcaption>Stern – zentraler Switch, eigene Leitung je Host; einzelne Stationen unkritisch.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 400 270" role="img" aria-label="Mesh-Topologie: fünf Knoten vollvermascht, jeder mit jedem verbunden">
       <text x="200" y="22" text-anchor="middle" class="svg-title">Mesh-Topologie (vermascht)</text>
       <g stroke="#B9C7D2" stroke-width="1.8">
@@ -506,10 +1428,8 @@
       <text x="200" y="258" text-anchor="middle" class="svg-label-sm">jeder mit jedem · bei Ausfall automatische Umleitung (Routing)</text>
     </svg>
     <figcaption>Mesh – viele direkte Verbindungen; das Internet basiert im Kern darauf.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 480 290" role="img" aria-label="Baum-Topologie: hierarchische Struktur, ein Wurzel-Switch verbindet zwei Verteiler-Switches, an denen jeweils zwei PCs hängen">
       <text x="240" y="22" text-anchor="middle" class="svg-title">Baum-Topologie (hierarchisch)</text>
       <g stroke="#B9C7D2" stroke-width="2">
@@ -521,11 +1441,11 @@
         <line x1="350" y1="156" x2="410" y2="208"></line>
       </g>
       <rect x="200" y="42" width="80" height="40" rx="6" fill="#16242E"></rect>
-      <text x="240" y="66" text-anchor="middle" fill="#fff" class="svg-title" style="font-size:11px;">ROOT-SW</text>
+      <text x="240" y="66" text-anchor="middle" class="svg-title" style="fill:#fff;font-size:11px;">ROOT-SW</text>
       <rect x="92" y="120" width="76" height="36" rx="6" fill="#15786E"></rect>
-      <text x="130" y="143" text-anchor="middle" fill="#fff" class="svg-label-sm">Switch A</text>
+      <text x="130" y="143" text-anchor="middle" class="svg-label-sm" style="fill:#fff;">Switch A</text>
       <rect x="312" y="120" width="76" height="36" rx="6" fill="#15786E"></rect>
-      <text x="350" y="143" text-anchor="middle" fill="#fff" class="svg-label-sm">Switch B</text>
+      <text x="350" y="143" text-anchor="middle" class="svg-label-sm" style="fill:#fff;">Switch B</text>
       <g fill="#fff" stroke="#DD5430" stroke-width="2">
         <circle cx="70" cy="225" r="18"></circle>
         <circle cx="190" cy="225" r="18"></circle>
@@ -539,19 +1459,18 @@
       <text x="240" y="278" text-anchor="middle" class="svg-label-sm">mehrere Stern-Netze hierarchisch über einen Backbone verbunden</text>
     </svg>
     <figcaption>Baum – Wurzel-Switch (Backbone) verzweigt zu untergeordneten Verteiler-Switches; jeder Ast ist ein Stern.</figcaption>
-  </figure>
+  </figure></div>
     </div>
-  </div>
+
   <div class="sec-head" id="t14"><span class="ix">14</span><h2>Speichersysteme</h2></div>
   <p class="sec-sub">DAS · NAS · SAN · <a class="src-link" href="14-speichersysteme.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
-    <div class="learn-card"><span class="lc-term">DAS</span><p class="lc-def">Speicher <b>direkt am Host</b> (SATA/SAS/USB), kein Netzwerk. Block-Zugriff, Dateisystem beim Host. Günstig, aber nicht geteilt.</p></div>
+<div class="learn-card"><span class="lc-term">DAS</span><p class="lc-def">Speicher <b>direkt am Host</b> (SATA/SAS/USB), kein Netzwerk. Block-Zugriff, Dateisystem beim Host. Günstig, aber nicht geteilt.</p></div>
     <div class="learn-card"><span class="lc-term">NAS</span><p class="lc-def"><b>Datei</b>-Zugriff über das LAN (<code>SMB</code>/<code>NFS</code>), eigene IP und eigenes Dateisystem. Mehrere Clients gleichzeitig (Netzlaufwerk).</p></div>
     <div class="learn-card"><span class="lc-term">SAN</span><p class="lc-def">Dediziertes <b>Block</b>-Netz (FC, <code>HBA</code>, <code>LUN</code>), vom LAN getrennt. Dateisystem auf dem Server; redundante Pfade = kein Single Point of Failure.</p></div>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item">
-      <figure class="diagram"><svg viewBox="0 0 720 280" role="img" aria-label="NAS: drei Clients verbinden sich über LAN/Ethernet mit einem NAS-Gerät">
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 280" role="img" aria-label="NAS: drei Clients verbinden sich über LAN/Ethernet mit einem NAS-Gerät">
     <text class="svg-title" x="20" y="28">NAS – Dateizugriff über das LAN</text>
     <rect x="20" y="60" width="120" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="80" y="87" text-anchor="middle">Windows-Client</text>
@@ -573,10 +1492,8 @@
     <text class="svg-label-sm" x="630" y="140" text-anchor="middle">eigene IP</text>
     <text class="svg-label-sm" x="630" y="160" text-anchor="middle">Dateisystem im NAS</text>
     <text class="svg-label-sm" x="630" y="180" text-anchor="middle">Netzlaufwerk Z:\</text>
-  </svg><figcaption>NAS – Dateizugriff über das LAN, mehrere Clients gleichzeitig.</figcaption></figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram"><svg viewBox="0 0 720 290" role="img" aria-label="SAN: Server mit HBA verbinden sich über einen FC-Switch mit einem Storage Array mit LUN">
+  </svg><figcaption>NAS – Dateizugriff über das LAN, mehrere Clients gleichzeitig.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 290" role="img" aria-label="SAN: Server mit HBA verbinden sich über einen FC-Switch mit einem Storage Array mit LUN">
     <text class="svg-title" x="20" y="28">SAN – dediziertes Block-Netz</text>
     <rect x="20" y="60" width="130" height="46" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="85" y="80" text-anchor="middle">Server 1</text>
@@ -599,10 +1516,8 @@
     <text class="svg-label" x="620" y="148" text-anchor="middle">LUN</text>
     <text class="svg-label-sm" x="620" y="190" text-anchor="middle">Block-Zugriff</text>
     <text class="svg-label-sm" x="350" y="200" text-anchor="middle">Dateisystem auf dem Server</text>
-  </svg><figcaption>SAN – dediziertes Block-Netz, LUNs vom Storage Array.</figcaption></figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram"><svg viewBox="0 0 720 330" role="img" aria-label="Aufbau eines SAN: zwei redundante Server, zwei FC-Switches (Fabric A und B) und ein Storage Array mit zwei Controllern, verbunden über ein dediziertes Speichernetz">
+  </svg><figcaption>SAN – dediziertes Block-Netz, LUNs vom Storage Array.</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 330" role="img" aria-label="Aufbau eines SAN: zwei redundante Server, zwei FC-Switches (Fabric A und B) und ein Storage Array mit zwei Controllern, verbunden über ein dediziertes Speichernetz">
     <text class="svg-title" x="20" y="26">SAN – Aufbau: dediziertes, redundantes Speichernetz</text>
     <rect x="20" y="70" width="140" height="56" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="90" y="93" text-anchor="middle">Server 1</text>
@@ -634,10 +1549,8 @@
       <line x1="430" y1="224" x2="560" y2="167"></line>
     </g>
     <text class="svg-label-sm" x="320" y="300" text-anchor="middle" style="fill:#15786E;">dediziertes SAN — vom normalen LAN getrennt; redundante Pfade = kein Single Point of Failure</text>
-  </svg><figcaption>SAN-Aufbau – dediziertes Netzwerk aus Storage Array, redundanten Servern und FC-Switches (Dual Fabric).</figcaption></figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram"><svg viewBox="0 0 720 200" role="img" aria-label="DAS: ein Host direkt mit einer Festplatte verbunden, kein Netzwerk">
+  </svg><figcaption>SAN-Aufbau – dediziertes Netzwerk aus Storage Array, redundanten Servern und FC-Switches (Dual Fabric).</figcaption></figure></div>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 200" role="img" aria-label="DAS: ein Host direkt mit einer Festplatte verbunden, kein Netzwerk">
     <text class="svg-title" x="20" y="28">DAS – Speicher direkt am Host</text>
     <rect x="80" y="70" width="180" height="70" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="170" y="105" text-anchor="middle">PC / Server</text>
@@ -647,49 +1560,46 @@
     <rect x="420" y="70" width="180" height="70" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
     <text class="svg-label" x="510" y="105" text-anchor="middle">Festplatte</text>
     <text class="svg-label-sm" x="510" y="125" text-anchor="middle">kein Netzwerk</text>
-  </svg><figcaption>DAS – Speicher direkt am Host, kein Netzwerk.</figcaption></figure>
+  </svg><figcaption>DAS – Speicher direkt am Host, kein Netzwerk.</figcaption></figure></div>
     </div>
-  </div>
+
   <div class="sec-head" id="t15"><span class="ix">15</span><h2>Speicherablagearten</h2></div>
   <p class="sec-sub">RAID 0 · 1 · 5 · 10 · <a class="src-link" href="15-raid.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
-    <div class="learn-card"><span class="lc-term">RAID 0 – Striping</span><p class="lc-def">Daten über ≥2 Platten verteilt → <b>schnell</b>, volle Kapazität, aber <b>keine</b> Redundanz (eine Platte fällt aus → alles weg).</p></div>
+<div class="learn-card"><span class="lc-term">RAID 0 – Striping</span><p class="lc-def">Daten über ≥2 Platten verteilt → <b>schnell</b>, volle Kapazität, aber <b>keine</b> Redundanz (eine Platte fällt aus → alles weg).</p></div>
     <div class="learn-card"><span class="lc-term">RAID 1 – Mirroring</span><p class="lc-def">Identische Spiegelung auf 2 Platten. Verträgt 1 Plattenausfall, nur <b>50 %</b> nutzbar.</p></div>
     <div class="learn-card"><span class="lc-term">RAID 5 – verteilte Parität</span><p class="lc-def">Mind. <b>3</b> Platten, Parität rotiert. Verträgt 1 Ausfall, nutzbar = <code>(n−1)</code> Platten.</p></div>
     <div class="learn-card"><span class="lc-term">RAID 10 – 1+0</span><p class="lc-def">Erst spiegeln, dann stripen. Mind. <b>4</b> Platten, <b>50 %</b> nutzbar — kombiniert Tempo und Ausfallsicherheit.</p></div>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item">
-      <figure class="diagram">
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 460 240" role="img" aria-label="RAID 0 – Daten gestreift über zwei Platten ohne Redundanz">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 0 – Striping</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">keine Redundanz</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 0 – Striping</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">keine Redundanz</text>
       <!-- Disk 1 -->
       <rect x="40" y="70" width="150" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="115" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="115" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="60" y="105" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="115" y="130" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A1</text>
       <rect x="60" y="155" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="115" y="180" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A3</text>
       <!-- Disk 2 -->
       <rect x="270" y="70" width="150" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="345" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 2</text>
+      <text class="svg-label" x="345" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2</text>
       <rect x="290" y="105" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="345" y="130" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A2</text>
       <rect x="290" y="155" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="345" y="180" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A4</text>
     </svg>
     <figcaption>RAID 0 – Daten gestreift über 2 Platten, kein Schutz.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 460 270" role="img" aria-label="RAID 1 – identische Spiegelung über zwei Platten">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 1 – Mirroring</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">50 % nutzbar</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 1 – Mirroring</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">50 % nutzbar</text>
       <!-- Disk 1 -->
       <rect x="40" y="70" width="150" height="185" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="115" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="115" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="60" y="105" width="110" height="38" rx="5" fill="#DD5430"/>
       <text x="115" y="129" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A1</text>
       <rect x="60" y="150" width="110" height="38" rx="5" fill="#DD5430"/>
@@ -698,7 +1608,7 @@
       <text x="115" y="219" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A3</text>
       <!-- Disk 2 (Kopie) -->
       <rect x="270" y="70" width="150" height="185" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="345" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 2 (Kopie)</text>
+      <text class="svg-label" x="345" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2 (Kopie)</text>
       <rect x="290" y="105" width="110" height="38" rx="5" fill="#15786E"/>
       <text x="345" y="129" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A1</text>
       <rect x="290" y="150" width="110" height="38" rx="5" fill="#15786E"/>
@@ -707,40 +1617,36 @@
       <text x="345" y="219" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A3</text>
     </svg>
     <figcaption>RAID 1 – identische Spiegelung.</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 620 240" role="img" aria-label="RAID 5 – Striping mit rotierender Parität über drei Platten">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 5 – verteilte Parität</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">mind. 3 Platten · Parität rotiert</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 5 – verteilte Parität</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">mind. 3 Platten · Parität rotiert</text>
       <!-- Disk 1 -->
       <rect x="40" y="70" width="160" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="120" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="120" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="60" y="100" width="120" height="32" rx="5" fill="#DD5430"/><text x="120" y="121" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A1</text>
       <rect x="60" y="138" width="120" height="32" rx="5" fill="#DD5430"/><text x="120" y="159" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">B1</text>
       <rect x="60" y="176" width="120" height="32" rx="5" fill="#C6841E"/><text x="120" y="197" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Cp</text>
       <!-- Disk 2 -->
       <rect x="230" y="70" width="160" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="310" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 2</text>
+      <text class="svg-label" x="310" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2</text>
       <rect x="250" y="100" width="120" height="32" rx="5" fill="#DD5430"/><text x="310" y="121" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A2</text>
       <rect x="250" y="138" width="120" height="32" rx="5" fill="#C6841E"/><text x="310" y="159" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Bp</text>
       <rect x="250" y="176" width="120" height="32" rx="5" fill="#DD5430"/><text x="310" y="197" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">C1</text>
       <!-- Disk 3 -->
       <rect x="420" y="70" width="160" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="500" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 3</text>
+      <text class="svg-label" x="500" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 3</text>
       <rect x="440" y="100" width="120" height="32" rx="5" fill="#C6841E"/><text x="500" y="121" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Ap</text>
       <rect x="440" y="138" width="120" height="32" rx="5" fill="#DD5430"/><text x="500" y="159" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">B2</text>
       <rect x="440" y="176" width="120" height="32" rx="5" fill="#DD5430"/><text x="500" y="197" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">C2</text>
     </svg>
     <figcaption>RAID 5 – Striping mit rotierender Parität (mind. 3 Platten).</figcaption>
-  </figure>
-    </div>
-    <div class="gal-item">
-      <figure class="diagram">
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 640 290" role="img" aria-label="RAID 10 – gespiegelte Paare, die anschließend gestriped werden">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 10 – spiegeln + stripen</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">mind. 4 Platten</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 10 – spiegeln + stripen</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">mind. 4 Platten</text>
       <!-- Stripe-Klammer -->
       <line x1="120" y1="68" x2="520" y2="68" stroke="#DD5430" stroke-width="2"/>
       <line x1="120" y1="62" x2="120" y2="74" stroke="#DD5430" stroke-width="2"/>
@@ -749,34 +1655,191 @@
       <!-- Paar 1 -->
       <text x="155" y="98" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Spiegelpaar 1</text>
       <rect x="40" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="92" y="128" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="92" y="128" font-size="12" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="55" y="140" width="75" height="45" rx="5" fill="#DD5430"/><text x="92" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A1</text>
       <rect x="55" y="195" width="75" height="45" rx="5" fill="#DD5430"/><text x="92" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A3</text>
       <rect x="165" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="217" y="128" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Disk 2 (Kopie)</text>
+      <text class="svg-label" x="217" y="128" font-size="11" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2 (Kopie)</text>
       <rect x="180" y="140" width="75" height="45" rx="5" fill="#15786E"/><text x="217" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A1</text>
       <rect x="180" y="195" width="75" height="45" rx="5" fill="#15786E"/><text x="217" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A3</text>
       <!-- Paar 2 -->
       <text x="445" y="98" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Spiegelpaar 2</text>
       <rect x="330" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="382" y="128" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Disk 3</text>
+      <text class="svg-label" x="382" y="128" font-size="12" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 3</text>
       <rect x="345" y="140" width="75" height="45" rx="5" fill="#DD5430"/><text x="382" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A2</text>
       <rect x="345" y="195" width="75" height="45" rx="5" fill="#DD5430"/><text x="382" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A4</text>
       <rect x="455" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="507" y="128" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Disk 4 (Kopie)</text>
+      <text class="svg-label" x="507" y="128" font-size="11" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 4 (Kopie)</text>
       <rect x="470" y="140" width="75" height="45" rx="5" fill="#15786E"/><text x="507" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A2</text>
       <rect x="470" y="195" width="75" height="45" rx="5" fill="#15786E"/><text x="507" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A4</text>
     </svg>
     <figcaption>RAID 10 – gespiegelte Paare, dann gestriped (mind. 4 Platten).</figcaption>
-  </figure>
+  </figure></div>
     </div>
+
+  <div class="sec-head" id="t16"><span class="ix">16</span><h2>E-Mail-Protokolle</h2></div>
+  <p class="sec-sub">SMTP · IMAP · POP3 · <a class="src-link" href="16-email-protokolle.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">SMTP</span><p class="lc-def">Simple Mail Transfer Protocol — <code>Versand</code>. Transportiert die Mail vom Client über Relay-Server zum Empfänger-Mailserver. Port <code>25</code>, <code>587</code>/<code>465</code> (TLS).</p></div><div class="learn-card"><span class="lc-term">POP3</span><p class="lc-def">Post Office Protocol v3 — <b>gerätebasierter</b> Abruf: lädt Mails lokal herunter und löscht sie standardmäßig vom Server. Port <code>110</code>, <code>995</code> (TLS).</p></div><div class="learn-card"><span class="lc-term">IMAP</span><p class="lc-def">Internet Message Access Protocol — <b>serverbasierter</b> Abruf: Mails &amp; Ordner bleiben auf dem Server, über mehrere Geräte <b>synchron</b>. Port <code>143</code>, <code>993</code> (TLS).</p></div><div class="learn-card"><span class="lc-term">Weg einer E-Mail</span><p class="lc-def">Sender → <code>SMTP</code> → MTA → (Relay) → Empfänger-Postfach → Abruf per <code>POP3</code>/<code>IMAP</code>. SMTP schiebt (Push), POP3/IMAP holen ab (Pull).</p></div><div class="learn-card"><span class="lc-term">MTA &amp; Relay</span><p class="lc-def">Ein <b>MTA</b> (Mail Transfer Agent) nimmt die Mail per SMTP an und transportiert sie weiter; die <b>Relay</b>-Funktion leitet über mehrere Server bis zum Ziel.</p></div><div class="learn-card"><span class="lc-term">SSL/TLS</span><p class="lc-def">Sichert den Transportweg. <b>Implizit</b>: von Beginn verschlüsselt (eigener Port <code>465</code>/<code>993</code>/<code>995</code>). <b>Explizit</b> (<code>STARTTLS</code>): Start im Klartext, dann Umschalten (<code>587</code>/<code>143</code>).</p></div><div class="learn-card"><span class="lc-term">POP3 vs. IMAP</span><p class="lc-def">POP3 = lokal, ein Gerät, löscht vom Server. IMAP = serverseitig, mehrere Geräte synchron — ideal für PC, Tablet und Smartphone gleichzeitig.</p></div>
   </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 740 250" role="img" aria-label="Weg einer E-Mail: Sender per SMTP zum Mailserver, Relay über MTA zum Empfänger-Postfach, Abruf per POP3 oder IMAP">
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">Der Weg einer E-Mail</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#5C6B78;">Versand (SMTP) → Ablage im Postfach → Abruf (POP3 / IMAP)</text>
+
+      <!-- Sender -->
+      <rect x="20" y="80" width="120" height="80" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="80" y="112" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">Sender</text>
+      <text x="80" y="132" fill="#5C6B78" font-size="11" text-anchor="middle">Mail-Client</text>
+
+      <!-- SMTP arrow 1 -->
+      <line x1="140" y1="120" x2="205" y2="120" stroke="#DD5430" stroke-width="2.5" marker-end="url(#ah)"/>
+      <text x="172" y="110" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">SMTP</text>
+
+      <!-- MTA 1 (sendender Server) -->
+      <rect x="210" y="80" width="120" height="80" rx="8" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
+      <text x="270" y="108" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">MTA</text>
+      <text x="270" y="126" fill="#5C6B78" font-size="11" text-anchor="middle">Sende-Server</text>
+      <text x="270" y="142" fill="#5C6B78" font-size="11" text-anchor="middle">(Relay)</text>
+
+      <!-- SMTP arrow 2 (relay) -->
+      <line x1="330" y1="120" x2="395" y2="120" stroke="#DD5430" stroke-width="2.5" marker-end="url(#ah)"/>
+      <text x="362" y="110" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">SMTP</text>
+
+      <!-- MTA 2 / Postfach (Empfänger-Server) -->
+      <rect x="400" y="80" width="150" height="80" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="475" y="106" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">Mailserver</text>
+      <text x="475" y="123" fill="#5C6B78" font-size="11" text-anchor="middle">Empfänger-</text>
+      <text x="475" y="138" fill="#5C6B78" font-size="11" text-anchor="middle">Postfach</text>
+
+      <!-- Abruf arrow -->
+      <line x1="550" y1="120" x2="615" y2="120" stroke="#15786E" stroke-width="2.5" marker-end="url(#ah2)"/>
+      <text x="582" y="110" fill="#15786E" font-size="11" text-anchor="middle" font-weight="700">POP3 /</text>
+      <text x="582" y="146" fill="#15786E" font-size="11" text-anchor="middle" font-weight="700">IMAP</text>
+
+      <!-- Empfänger -->
+      <rect x="620" y="80" width="100" height="80" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="670" y="112" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">Empfänger</text>
+      <text x="670" y="132" fill="#5C6B78" font-size="11" text-anchor="middle">Mail-Client</text>
+
+      <!-- Phasen-Klammern -->
+      <line x1="20" y1="195" x2="395" y2="195" stroke="#DD5430" stroke-width="1.5"/>
+      <text x="207" y="215" fill="#DD5430" font-size="12" text-anchor="middle" font-weight="700">Versand &amp; Transport (SMTP, Push)</text>
+      <line x1="550" y1="195" x2="720" y2="195" stroke="#15786E" stroke-width="1.5"/>
+      <text x="635" y="215" fill="#15786E" font-size="12" text-anchor="middle" font-weight="700">Abruf (Pull)</text>
+
+      <defs>
+        <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#DD5430"/></marker>
+        <marker id="ah2" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#15786E"/></marker>
+      </defs>
+    </svg>
+    <figcaption>SMTP transportiert die Mail (ggf. über Relay-MTAs) bis ins Empfänger-Postfach; der Empfänger holt sie von dort per POP3 oder IMAP ab.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 740 320" role="img" aria-label="Vergleich POP3 lädt herunter und löscht auf dem Server, IMAP belässt die Mails auf dem Server und synchronisiert mehrere Geräte">
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">POP3 vs. IMAP</text>
+
+      <!-- POP3 Spalte -->
+      <text x="185" y="58" fill="#DD5430" font-size="14" text-anchor="middle" font-weight="700">POP3 — gerätebasiert</text>
+      <rect x="120" y="70" width="130" height="58" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="185" y="95" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Server</text>
+      <text x="185" y="114" fill="#5C6B78" font-size="11" text-anchor="middle">Postfach (leer)</text>
+      <line x1="185" y1="128" x2="185" y2="178" stroke="#DD5430" stroke-width="2.5" marker-end="url(#ahp)"/>
+      <text x="265" y="150" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">herunterladen</text>
+      <text x="262" y="166" fill="#B23E1F" font-size="11" text-anchor="middle" font-weight="700">+ löschen</text>
+      <rect x="120" y="182" width="130" height="58" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="185" y="207" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">1 Endgerät</text>
+      <text x="185" y="226" fill="#5C6B78" font-size="11" text-anchor="middle">Mails liegen lokal</text>
+      <text x="185" y="270" fill="#5C6B78" font-size="11" text-anchor="middle">Standard: Mail wird</text>
+      <text x="185" y="286" fill="#5C6B78" font-size="11" text-anchor="middle">vom Server gelöscht,</text>
+      <text x="185" y="302" fill="#5C6B78" font-size="11" text-anchor="middle">keine Synchronisierung</text>
+
+      <!-- Trennlinie -->
+      <line x1="375" y1="60" x2="375" y2="300" stroke="#D4DEE6" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+      <!-- IMAP Spalte -->
+      <text x="560" y="58" fill="#15786E" font-size="14" text-anchor="middle" font-weight="700">IMAP — serverbasiert</text>
+      <rect x="495" y="70" width="130" height="58" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="560" y="95" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Server</text>
+      <text x="560" y="114" fill="#5C6B78" font-size="11" text-anchor="middle">Mails bleiben hier</text>
+
+      <!-- drei Geräte synchron -->
+      <line x1="510" y1="128" x2="450" y2="180" stroke="#15786E" stroke-width="2" marker-end="url(#ahi)"/>
+      <line x1="560" y1="128" x2="560" y2="180" stroke="#15786E" stroke-width="2" marker-end="url(#ahi)"/>
+      <line x1="610" y1="128" x2="670" y2="180" stroke="#15786E" stroke-width="2" marker-end="url(#ahi)"/>
+      <text x="560" y="150" fill="#15786E" font-size="11" text-anchor="middle" font-weight="700">synchron</text>
+
+      <rect x="408" y="184" width="84" height="50" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="450" y="214" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">PC</text>
+      <rect x="518" y="184" width="84" height="50" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="560" y="214" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Tablet</text>
+      <rect x="628" y="184" width="84" height="50" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="670" y="214" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Smartphone</text>
+
+      <text x="560" y="270" fill="#5C6B78" font-size="11" text-anchor="middle">Lesen / Verschieben / Löschen</text>
+      <text x="560" y="286" fill="#5C6B78" font-size="11" text-anchor="middle">geschieht auf dem Server →</text>
+      <text x="560" y="302" fill="#5C6B78" font-size="11" text-anchor="middle">gleicher Stand auf allen Geräten</text>
+
+      <defs>
+        <marker id="ahp" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#DD5430"/></marker>
+        <marker id="ahi" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#15786E"/></marker>
+      </defs>
+    </svg>
+    <figcaption>POP3 lädt die Mail auf <b>ein</b> Gerät und löscht sie standardmäßig vom Server. IMAP belässt alles auf dem Server und hält <b>mehrere Geräte synchron</b>.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 740 250" role="img" aria-label="Tabelle der Standardports: SMTP 25 und 587/465, POP3 110 und 995, IMAP 143 und 993, jeweils unverschlüsselt und verschlüsselt">
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">Standardports der E-Mail-Protokolle</text>
+
+      <!-- Kopfzeile -->
+      <rect x="20" y="50" width="240" height="40" fill="#16242E"/>
+      <rect x="262" y="50" width="230" height="40" fill="#16242E"/>
+      <rect x="494" y="50" width="226" height="40" fill="#16242E"/>
+      <text x="40" y="75" fill="#fff" font-size="13" font-weight="700">Protokoll · Aufgabe</text>
+      <text x="282" y="75" fill="#fff" font-size="13" font-weight="700">Unverschlüsselt</text>
+      <text x="514" y="75" fill="#fff" font-size="13" font-weight="700">Verschlüsselt (SSL/TLS)</text>
+
+      <!-- SMTP -->
+      <rect x="20" y="92" width="240" height="48" fill="#FBEAE3" stroke="#fff" stroke-width="2"/>
+      <rect x="262" y="92" width="230" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <rect x="494" y="92" width="226" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <text x="40" y="115" fill="#16242E" font-size="13" font-weight="700">SMTP</text>
+      <text x="40" y="132" fill="#5C6B78" font-size="11">Versand</text>
+      <text x="282" y="122" fill="#16242E" font-size="13" font-weight="700">25</text>
+      <text x="514" y="116" fill="#16242E" font-size="13" font-weight="700">587 (STARTTLS) · 465</text>
+      <text x="514" y="132" fill="#5C6B78" font-size="11">587 = Submission</text>
+
+      <!-- POP3 -->
+      <rect x="20" y="142" width="240" height="48" fill="#FBEAE3" stroke="#fff" stroke-width="2"/>
+      <rect x="262" y="142" width="230" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <rect x="494" y="142" width="226" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <text x="40" y="165" fill="#16242E" font-size="13" font-weight="700">POP3</text>
+      <text x="40" y="182" fill="#5C6B78" font-size="11">Abruf (Download)</text>
+      <text x="282" y="172" fill="#16242E" font-size="13" font-weight="700">110</text>
+      <text x="514" y="172" fill="#16242E" font-size="13" font-weight="700">995</text>
+
+      <!-- IMAP -->
+      <rect x="20" y="192" width="240" height="48" fill="#E4F1EF" stroke="#fff" stroke-width="2"/>
+      <rect x="262" y="192" width="230" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <rect x="494" y="192" width="226" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <text x="40" y="215" fill="#16242E" font-size="13" font-weight="700">IMAP</text>
+      <text x="40" y="232" fill="#5C6B78" font-size="11">Abruf (serverseitig)</text>
+      <text x="282" y="222" fill="#16242E" font-size="13" font-weight="700">143</text>
+      <text x="514" y="222" fill="#16242E" font-size="13" font-weight="700">993</text>
+    </svg>
+    <figcaption>Standardports im Überblick: unverschlüsselt links, per SSL/TLS abgesichert rechts. Kern-Prüfungsstoff: <code>25 / 110 / 143</code> (unverschlüsselt) und <code>465</code> (SMTP verschlüsselt).</figcaption>
+  </figure></div>
+    </div>
+
+  <nav class="pager">
+    <a class="prev" href="index.html"><span>Zurück</span><b>← Übersicht</b></a>
+    <a class="next" href="1-grundbegriffe.html"><span>Zum ersten Test</span><b>1 · Grundbegriffe →</b></a>
+  </nav>
 
 </div></main>
-
 <footer class="foot"><div class="wrap">
-  <span class="mono">IT-Lernmaterial · Netzwerktechnik &amp; Speicher</span> — Lernseite, Themen 10–15.
-  Kernkonzepte &amp; Diagramme zum Wiederholen; alle Grafiken stammen aus den jeweiligen Testseiten.
+  <span class="mono">IT-Lernmaterial · Konzepte &amp; Diagramme</span> — Lernseite Themen 1–16.
 </div></footer>
 
 </body>

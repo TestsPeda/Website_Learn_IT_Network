@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · IT-Infrastruktur — Server, Rechenzentren &amp; Cloud — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html" class="current">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Server &amp; Rechenzentren</p>
+    <div class="hero-num"><span class="hash">#</span>7</div>
+    <h1>IT-Infrastruktur — Server, Rechenzentren &amp; Cloud</h1>
+    <p class="lede">Vom einzelnen Server über seine Dienste bis zum hochverfügbaren Rechenzentrum und der Cloud:
+      Wie Ressourcen für Clients bereitgestellt, Hardware untergebracht und IT-Leistungen flexibel als Service bezogen werden.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>18</b> Aufgaben</span>
+      <span class="pill"><b>4</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Server-Grundlagen &amp; Hardware</h2></div>
+  <p class="sec-sub">Was ein Server ist, das Client-Server-Modell und die Bauformen Tower, Rack und Blade — inkl. Höheneinheit (HE/U) und 19″-Rack.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Client-Server-Modell: Mehrere Clients senden eine Anforderung über das Netzwerk an einen Server, der mit der passenden Antwort reagiert (Request-Response-Modell).">
+    <text class="svg-title" x="20" y="26">Client-Server-Modell — Anforderung &amp; Antwort</text>
+    <!-- Clients -->
+    <rect x="20" y="60" width="120" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="80" y="85" text-anchor="middle">Client 1</text>
+    <rect x="20" y="115" width="120" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="80" y="140" text-anchor="middle">Client 2</text>
+    <rect x="20" y="170" width="120" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="80" y="195" text-anchor="middle">Client 3</text>
+    <!-- Netz -->
+    <rect x="290" y="105" width="150" height="60" rx="30" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="365" y="140" text-anchor="middle">Netzwerk</text>
+    <!-- Server -->
+    <rect x="580" y="80" width="150" height="110" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="655" y="118" text-anchor="middle" style="font-weight:700;">Server</text>
+    <text class="svg-label-sm" x="655" y="141" text-anchor="middle">stellt Ressourcen,</text>
+    <text class="svg-label-sm" x="655" y="157" text-anchor="middle">Daten &amp; Dienste</text>
+    <text class="svg-label-sm" x="655" y="173" text-anchor="middle">bereit</text>
+    <!-- Anforderung: Clients -> Netzwerk (Pfeile mit Spitze) -->
+    <line x1="142" y1="78" x2="286" y2="116" stroke="#DD5430" stroke-width="2"></line>
+    <line x1="142" y1="135" x2="286" y2="135" stroke="#DD5430" stroke-width="2"></line>
+    <line x1="142" y1="192" x2="286" y2="154" stroke="#DD5430" stroke-width="2"></line>
+    <polygon points="290,135 278,130 278,140" fill="#DD5430"></polygon>
+    <text class="svg-label-sm" x="213" y="48" text-anchor="middle" style="fill:#B23E1F;font-weight:700;">Anforderung →</text>
+    <!-- Antwort: Server -> Netzwerk (gestrichelt) -->
+    <line x1="578" y1="178" x2="442" y2="178" stroke="#15786E" stroke-width="2" stroke-dasharray="6 4"></line>
+    <polygon points="438,178 450,173 450,183" fill="#15786E"></polygon>
+    <text class="svg-label-sm" x="515" y="200" text-anchor="middle" style="fill:#15786E;font-weight:700;">← Antwort</text>
+    <text class="svg-label-sm" x="20" y="238" text-anchor="start" style="fill:#5C6B78;">Ein Gerät kann zugleich Server (stellt bereit) und Client (nutzt) sein.</text>
+  </svg><figcaption>Request-Response-Modell: Clients fragen an, der Server prüft Berechtigung und antwortet mit den passenden Daten.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist die treffendste Definition eines <code>Servers</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein besonders schneller Arbeitsplatz-PC mit großem Bildschirm.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein Computer oder System, das Ressourcen, Daten, Dienste oder Programme über ein Netzwerk für Clients bereitstellt.</li>
+        <li class="opt"><span class="tick"></span>Ein Gerät, das ausschließlich Daten empfängt, aber nie selbst Anforderungen beantwortet.</li>
+        <li class="opt"><span class="tick"></span>Ein Programm, das nur lokal auf einem einzelnen Rechner läuft.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein Server stellt <code>Ressourcen, Daten, Dienste oder Programme</code> über ein Netzwerk für andere Computer (Clients) bereit. Sobald ein Computer Ressourcen mit Clients teilt, gilt er theoretisch als Server. Beispiele: Web-, Mail- oder virtuelle Server.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie läuft die Kommunikation im <code>Client-Server-Modell</code> grundsätzlich ab?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Der Server schickt von sich aus laufend Daten an alle Clients.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der Client sendet eine Anforderung; der Server empfängt sie und antwortet mit den passenden Daten (Anforderungs- und Antwortmodell).</li>
+        <li class="opt"><span class="tick"></span>Clients und Server kommunizieren ausschließlich über USB-Kabel.</li>
+        <li class="opt"><span class="tick"></span>Ein Gerät kann niemals zugleich Server und Client sein.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Es gilt das <strong>Anforderungs- und Antwortmodell</strong> (Request-Response): Der Client fragt über das Netzwerk an, der Server prüft oft Identität und Berechtigung und sendet die formatierte Antwort zurück. Ein einzelnes System kann dabei <em>gleichzeitig</em> Server und Client sein. <span class="tag-mistake">Verwechslung</span> Server „pusht“ nicht ungefragt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wodurch wird ein Standard-Betriebssystem überhaupt zum Server für bestimmte Aufgaben?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Durch den Einbau einer schnelleren Grafikkarte.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Durch zusätzlich installierte <code>Rollen</code> bzw. <code>Dienste</code> (oder Anwendungen), die festlegen, auf welche Client-Anforderungen reagiert wird.</li>
+        <li class="opt"><span class="tick"></span>Allein dadurch, dass das Gerät in einem Rack steht.</li>
+        <li class="opt"><span class="tick"></span>Durch das Entfernen jeglicher Netzwerkverbindung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Server-Funktionalität existiert als Teil des Betriebssystems, als installierte Anwendung oder als Kombination. Zusätzlich installierte <code>Rollen</code>/<code>Dienste</code> erweitern die Art der Anforderungen, auf die reagiert wird (z.&nbsp;B. ein <code>Apache</code>-Webserver als zusätzliche Anwendung über dem OS).</p></div></article>
+
+  <figure class="diagram"><svg viewBox="0 0 740 320" role="img" aria-label="19-Zoll-Rack mit Höheneinheiten: Mehrere Geräte unterschiedlicher Höhe in U/HE gestapelt, Höhe einer Höheneinheit 1,75 Zoll bzw. 4,45 cm, Rackbreite 19 Zoll bzw. 48,26 cm.">
+    <text class="svg-title" x="20" y="26">19″-Rack &amp; Höheneinheit (HE / U)</text>
+    <!-- Rack frame -->
+    <rect x="250" y="50" width="240" height="250" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <!-- Geräte -->
+    <rect x="262" y="62" width="216" height="26" rx="3" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="80" text-anchor="middle">Switch · 1 HE</text>
+    <rect x="262" y="94" width="216" height="48" rx="3" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="123" text-anchor="middle">Rack-Server · 2 HE</text>
+    <rect x="262" y="148" width="216" height="26" rx="3" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="166" text-anchor="middle">Rack-Server · 1 HE</text>
+    <rect x="262" y="180" width="216" height="100" rx="3" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="226" text-anchor="middle">Blade-Chassis · 4 HE</text>
+    <text class="svg-label-sm" x="370" y="244" text-anchor="middle">(mehrere Blade-Server)</text>
+    <!-- Breite -->
+    <line x1="250" y1="40" x2="490" y2="40" stroke="#B9C7D2" stroke-width="1.5"></line>
+    <text class="svg-label-sm" x="370" y="36" text-anchor="middle" style="fill:#5C6B78;">Breite 19″ = 48,26 cm</text>
+    <!-- HE Maß rechts -->
+    <line x1="510" y1="62" x2="510" y2="88" stroke="#DD5430" stroke-width="2"></line>
+    <text class="svg-label-sm" x="600" y="72" text-anchor="middle" style="fill:#B23E1F;">1 HE / 1 U =</text>
+    <text class="svg-label-sm" x="600" y="88" text-anchor="middle" style="fill:#B23E1F;">1,75″ = 4,45 cm</text>
+    <text class="svg-label-sm" x="20" y="170" text-anchor="start" style="fill:#5C6B78;">Racks werden in</text>
+    <text class="svg-label-sm" x="20" y="186" text-anchor="start" style="fill:#5C6B78;">Höhen von 8 U bis</text>
+    <text class="svg-label-sm" x="20" y="202" text-anchor="start" style="fill:#5C6B78;">48 U verkauft.</text>
+    <text class="svg-label-sm" x="20" y="310" text-anchor="start" style="fill:#15786E;">Hot aisle / cold aisle: Lufteinlass vorne (kalt), Abluft hinten (warm) — Reihen Rücken an Rücken.</text>
+  </svg><figcaption>Geräte werden in U/HE (1 U = 1,75″ = 4,45 cm) angegeben, das Rack ist 19″ (48,26 cm) breit.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne die Serverbauformen <code>Tower</code>, <code>Rack</code> und <code>Blade</code> ihrer jeweiligen Beschreibung zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Bauform</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>Tower (Desktop)</td><td>Steht aufrecht in einem eigenen Gehäuse, kann außerhalb eines Schranks aufgestellt werden (oft unter Bürotischen); ähnelt einem Desktop-PC, sollte aber gesichert untergebracht sein.</td></tr>
+          <tr><td>Rack-Server (19″)</td><td>Flache, rechteckige Einheit, die in eine 19″-Rack-Halterung geschraubt wird; mehrere vertikal gestapelt; leicht ein-/ausschiebbar zur Wartung; typisch in Rechenzentren.</td></tr>
+          <tr><td>Blade-Server</td><td>Sehr dünner, stark miniaturisierter Server (ohne eigene Festplatten/interne Kühlung) in einem gemeinsamen Chassis; platzsparend und leicht austauschbar.</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie groß ist eine <code>Höheneinheit</code> (HE bzw. „U“) in einem genormten Rack?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>19″ (48,26 cm).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>1,75″ (4,45 cm).</li>
+        <li class="opt"><span class="tick"></span>Genau 10 cm.</li>
+        <li class="opt"><span class="tick"></span>4,45 cm pro Rack — unabhängig von der Geräteanzahl.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Rackhöhe wird in „U“-Einheiten zu <code>1,75″</code> = <code>4,45&nbsp;cm</code> gemessen; Racks gibt es von 8&nbsp;U bis 48&nbsp;U. Die <strong>Breite</strong> dagegen ist EIA-Standard <code>19″</code> = <code>48,26&nbsp;cm</code>. <span class="tag-mistake">Verwechslung</span> Höhe (U) vs. Breite (19″).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was beschreibt das <code>Hot aisle / cold aisle</code>-Layout bei der Rackaufstellung?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Server werden zufällig im Raum verteilt, um Platz zu sparen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Rackreihen werden Rücken an Rücken gestellt, sodass kalte Zuluft (vorne) nicht mit der warmen Abluft (hinten) vermischt wird.</li>
+        <li class="opt"><span class="tick"></span>Alle Lüfter blasen die warme Luft auf der Vorderseite aus.</li>
+        <li class="opt"><span class="tick"></span>Es bezeichnet die Aufteilung in Tower- und Rack-Server.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Rack-Geräte ziehen vorne kühle Luft an und blasen hinten warme Luft aus. Stellt man Reihen <strong>Rücken an Rücken</strong> (statt Vorderseite an Rückseite), trennt das Layout warme Abluft von kalter Zuluft und maximiert die Kühlung. Blindplatten (blanking plates) decken ungenutzte Slots ab, um den Luftstrom zu verbessern.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen zur <code>Serverhardware</code> sind korrekt? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein Rack-Server lässt sich für Wartung leicht aus dem Rack ziehen (oft auf Rail-Kits).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein Storage-Server (oft als Blade) ist auf Speicherbereitstellung übers Netz optimiert und kann als NAS oder Teil eines SAN dienen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mit einem KVM (Bildschirm/Tastatur/Maus) lassen sich zahlreiche Rack-Server gemeinsam verwalten.</li>
+        <li class="opt"><span class="tick"></span>Ein Tower-Server kann nur innerhalb eines 19″-Racks betrieben werden.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Richtig: Rack-Server sind wartungsfreundlich (oft auf Rail-Kits ein-/ausschiebbar), Storage-Server (i.&nbsp;d.&nbsp;R. Blade) liefern Speicher über das Netz (NAS / Teil eines SAN), und ein gemeinsamer KVM-Satz verwaltet viele Server. Falsch ist die letzte Aussage — gerade ein <strong>Tower</strong>-Server kann <em>außerhalb</em> eines Racks (z.&nbsp;B. unter dem Schreibtisch) stehen.</p></div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Serverdienste — Dienst &amp; Funktion</h2></div>
+  <p class="sec-sub">Datei-, Druck-, DNS-, Mail-, Web-, Datenbank- und Proxyserver: Welcher Dienst übernimmt welche Aufgabe?</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne jedem <code>Serverdienst</code> seine zentrale Funktion zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Dienst</th><th>Funktion</th></tr></thead>
+        <tbody>
+          <tr><td>Dateiserver</td><td>Speichert und verteilt Dateien zentral; vereinfacht Backup &amp; Datenintegrität.</td></tr>
+          <tr><td>Druckserver</td><td>Verwaltet und verteilt Druckaufträge zahlreicher Clients an Drucker.</td></tr>
+          <tr><td>DNS-Server</td><td>Namensauflösung: wandelt Namen in maschinenlesbare <code>IP-Adressen</code> um.</td></tr>
+          <tr><td>E-Mail-Server</td><td>Empfängt und speichert E-Mails, bis ein Client sie abruft; sendet Nachrichten.</td></tr>
+          <tr><td>Webserver</td><td>Beantwortet Browser-Anfragen mit Webseiten/Diensten (z.&nbsp;B. <code>Apache</code>, <code>IIS</code>, <code>Nginx</code>).</td></tr>
+          <tr><td>Datenbankserver</td><td>Führt Datenbankanwendungen aus, antwortet auf viele Client-Abfragen (z.&nbsp;B. Oracle, <code>SQL Server</code>).</td></tr>
+          <tr><td>Proxyserver</td><td>Vermittler zwischen Client und Server; isoliert und leitet Anfragen weiter.</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aufgabe erfüllt ein <code>DNS-Server</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er verteilt automatisch IP-Adressen an Clients.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er löst für Menschen lesbare Namen in maschinenlesbare <code>IP-Adressen</code> auf.</li>
+        <li class="opt"><span class="tick"></span>Er speichert E-Mails, bis sie abgerufen werden.</li>
+        <li class="opt"><span class="tick"></span>Er verwaltet Druckaufträge im Netzwerk.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <code>DNS</code>-Server (Domänennamenserver) führt die <strong>Namensauflösung</strong> durch: Er wandelt verständliche Namen in <code>IP-Adressen</code> um. Das automatische Verteilen von IP-Adressen ist Aufgabe von <code>DHCP</code> (Thema 11). <span class="tag-mistake">Verwechslung</span> DNS (Namen→IP) vs. DHCP (vergibt IP).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was leistet ein <code>Proxyserver</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er ersetzt vollständig jeden DNS- und Mailserver.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er fungiert als Vermittler zwischen Client und Server, nimmt Anfragen an und leitet sie weiter, sodass beide nicht direkt verbunden sein müssen.</li>
+        <li class="opt"><span class="tick"></span>Er ist ein reiner Speicherort für Dateien ohne weitere Funktion.</li>
+        <li class="opt"><span class="tick"></span>Er beschleunigt grundsätzlich jede Internetleitung auf das Doppelte.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein Proxyserver ist ein <strong>Vermittler</strong>: Er nimmt die Client-Anforderung an, gibt sie an einen anderen Server weiter und antwortet dem Client, als käme die Antwort von ihm selbst. So müssen Client und antwortender Server nicht direkt verbunden sein — oft zur Isolation aus Sicherheitsgründen.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche der genannten Programme sind typische <code>Webserver</code>-Anwendungen?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Oracle, DB2, Informix.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Apache, Microsoft IIS und Nginx.</li>
+        <li class="opt"><span class="tick"></span>Word, Excel, PowerPoint.</li>
+        <li class="opt"><span class="tick"></span>HDD, SSD, NAS.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Übliche Webserver sind <code>Apache</code>, Microsofts <code>IIS</code> (Internet Information Services) und <code>Nginx</code>. Oracle, DB2 und Informix sind dagegen <strong>Datenbankserver</strong>-Anwendungen.</p></div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Rechenzentren — Verfügbarkeit, Redundanz &amp; Schutz</h2></div>
+  <p class="sec-sub">Vom Serverraum zum Data Center: Stromversorgung (USV/PDU), Klimatisierung, Brandschutz und die Betriebsformen On-/Off-Premises &amp; Co-Location.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 740 290" role="img" aria-label="Redundanz und Versorgung im Rechenzentrum: Stromnetz und USV speisen redundante Netzteile der Server, Klimatisierung (HVAC) kühlt, Brandschutz und Zutrittskontrolle sichern den Raum.">
+    <text class="svg-title" x="20" y="26">Rechenzentrum — Redundanz &amp; Schutz</text>
+    <!-- Strom -->
+    <rect x="20" y="56" width="130" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="85" y="82" text-anchor="middle">Stromnetz (AC)</text>
+    <rect x="20" y="120" width="130" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="85" y="140" text-anchor="middle">USV (Akku)</text>
+    <text class="svg-label-sm" x="85" y="156" text-anchor="middle">+ PDU</text>
+    <line x1="150" y1="78" x2="300" y2="110" stroke="#DD5430" stroke-width="2"></line>
+    <line x1="150" y1="142" x2="300" y2="130" stroke="#15786E" stroke-width="2"></line>
+    <!-- Server mit redundanten Netzteilen -->
+    <rect x="300" y="90" width="190" height="80" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="395" y="118" text-anchor="middle">Server</text>
+    <text class="svg-label-sm" x="395" y="140" text-anchor="middle">2× redundante</text>
+    <text class="svg-label-sm" x="395" y="156" text-anchor="middle">Netzteile + RAID</text>
+    <!-- Klima -->
+    <rect x="540" y="56" width="180" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="630" y="76" text-anchor="middle">Klimatisierung</text>
+    <text class="svg-label-sm" x="630" y="92" text-anchor="middle">HVAC / Kühlung</text>
+    <line x1="540" y1="100" x2="490" y2="120" stroke="#15786E" stroke-width="2" stroke-dasharray="5 3"></line>
+    <!-- Brandschutz -->
+    <rect x="540" y="116" width="180" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="630" y="142" text-anchor="middle">Brandschutz (Gas)</text>
+    <!-- Zutritt -->
+    <rect x="540" y="176" width="180" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="630" y="202" text-anchor="middle">Zutrittskontrolle</text>
+    <text class="svg-label-sm" x="20" y="200" text-anchor="start" style="fill:#5C6B78;">Redundanz = doppelte</text>
+    <text class="svg-label-sm" x="20" y="216" text-anchor="start" style="fill:#5C6B78;">Auslegung kritischer</text>
+    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#5C6B78;">Komponenten</text>
+    <text class="svg-label-sm" x="20" y="278" text-anchor="start" style="fill:#15786E;">Ziel: hohe Verfügbarkeit — ein Einzelausfall darf den Betrieb nicht stoppen.</text>
+  </svg><figcaption>Hohe Verfügbarkeit durch redundante Stromversorgung (USV/PDU, Netzteile), Klimatisierung, Brandschutz und Zutrittskontrolle.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Worin unterscheidet sich ein <code>Rechenzentrum</code> von einem reinen <code>Serverraum</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es gibt keinen Unterschied — die Begriffe sind identisch.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der Serverraum ist nur ein Raum mit Servern/Switches/Routern; das Rechenzentrum ist größer dimensioniert (oft ganze Gebäude/-teile) und oft eine Dienstleistung.</li>
+        <li class="opt"><span class="tick"></span>Ein Serverraum benötigt nie Klimatisierung, ein Rechenzentrum schon.</li>
+        <li class="opt"><span class="tick"></span>Ein Rechenzentrum darf ausschließlich Tower-Server enthalten.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <strong>Serverraum</strong> ist ein einzelner Raum mit den Servern, Switches und Routern eines Betriebs. Ein <strong>Rechenzentrum</strong> ist größer dimensioniert (umfasst z.&nbsp;T. ganze Gebäude/-teile), gilt als „Herzstück“ des Netzwerks und ist oft eine Dienstleistung, die Server für andere bereitstellt. Komponenten: Router, Switches, Firewalls, Speicher, Server, Controller.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wozu dient eine <code>USV</code> (unterbrechungsfreie Stromversorgung) im Rechenzentrum?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Sie kühlt die Server bei Überhitzung.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie liefert bei Stromausfall über einen Akku-Block temporär Strom, sodass der Betrieb fortgesetzt oder sauber heruntergefahren werden kann.</li>
+        <li class="opt"><span class="tick"></span>Sie löscht Brände mit Gas.</li>
+        <li class="opt"><span class="tick"></span>Sie regelt ausschließlich die Luftfeuchtigkeit.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Eine <code>USV</code> (engl. UPS) ist im Kern ein Akku-Block mit Ladeschaltung und Wechselrichter (DC→AC). Bei einem <strong>Stromausfall</strong> überbrückt sie die Zeit (Minuten bis Stunden), um den Betrieb fortzuführen oder geordnet herunterzufahren. Eine <code>PDU</code> (Power Distribution Unit) verteilt und „bereinigt“ den Strom und schützt vor Spitzen/Spannungseinbrüchen.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Maßnahmen erhöhen die <code>Verfügbarkeit</code> und Sicherheit eines Rechenzentrums? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Redundante Energieversorgung (USV) und redundante Netzteile in den Servern.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Klimatisierung/Kühlung (HVAC) mit Temperatur- und Feuchtesensoren.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Moderne Brandschutzvorrichtungen und Zutrittskontrolle.</li>
+        <li class="opt"><span class="tick"></span>Möglichst viele unverschlüsselte Backup-Medien frei zugänglich lagern.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Hohe Sicherheitsanforderungen erfüllen ein RZ durch <strong>redundante Stromversorgung</strong> (USV, doppelte Netzteile), <strong>Kühlung/Klimatisierung</strong> (HVAC, Sensoren für Temperatur &amp; Feuchte) sowie <strong>Brandschutz</strong> und <strong>Zutrittskontrolle</strong>. Frei zugängliche, unverschlüsselte Backups sind dagegen ein Sicherheitsrisiko (Vertraulichkeit). <span class="tag-mistake">Verwechslung</span> Schutzmaßnahme ↔ Risiko.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne die Betriebsformen <code>On-Premises</code>, <code>Off-Premises (Hosting)</code> und <code>Co-Location</code> ihrer Beschreibung zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Betriebsform</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>On-Premises (lokal)</td><td>Eigene IT-Infrastruktur in eigenen Räumen auf dem Betriebsgelände. Maximale Kontrolle, aber kostenintensiv und eigene Spezialisten nötig.</td></tr>
+          <tr><td>Off-Premises (Hosting)</td><td>Externe Rechenzentren eines Dienstleisters; gut vernetzt, hohe Flexibilität &amp; Skalierbarkeit, ohne die gesamte IT selbst verwalten zu müssen.</td></tr>
+          <tr><td>Co-Location (Serverhousing)</td><td>Eigene Hardware steht im externen RZ des Dienstleisters; Kunde behält Kontrolle über Hardware/Daten, der Anbieter sorgt für Infrastruktur (Klima, Brandschutz, redundanter Strom) &amp; Sicherheit.</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">D</span><h2>Cloud Computing — Service- &amp; Bereitstellungsmodelle</h2></div>
+  <p class="sec-sub">IaaS/PaaS/SaaS, Public/Private/Hybrid Cloud sowie Vor- und Nachteile gegenüber dem lokalen Rechenzentrum.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 740 300" role="img" aria-label="Verantwortungs-Stapel IaaS, PaaS, SaaS: Je höher das Servicemodell, desto mehr Schichten übernimmt der Cloud-Anbieter und desto weniger der Kunde. IaaS liefert Hardware/Netzwerk, PaaS zusätzlich die Entwicklungsumgebung, SaaS die komplette Anwendung.">
+    <text class="svg-title" x="20" y="26">IaaS · PaaS · SaaS — wer verwaltet was?</text>
+    <!-- Spaltenüberschriften -->
+    <text class="svg-label" x="170" y="56" text-anchor="middle">IaaS</text>
+    <text class="svg-label" x="370" y="56" text-anchor="middle">PaaS</text>
+    <text class="svg-label" x="570" y="56" text-anchor="middle">SaaS</text>
+    <!-- Legende -->
+    <rect x="20" y="270" width="16" height="16" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="44" y="283" text-anchor="start">Kunde verwaltet</text>
+    <rect x="200" y="270" width="16" height="16" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="224" y="283" text-anchor="start">Anbieter verwaltet</text>
+    <!-- IaaS column -->
+    <rect x="70" y="70" width="200" height="40" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="170" y="94" text-anchor="middle">Anwendung</text>
+    <rect x="70" y="112" width="200" height="40" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="170" y="136" text-anchor="middle">Entwicklungsumgebung</text>
+    <rect x="70" y="154" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="170" y="178" text-anchor="middle">Hardware / Netzwerk</text>
+    <!-- PaaS column -->
+    <rect x="270" y="70" width="200" height="40" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="94" text-anchor="middle">Anwendung</text>
+    <rect x="270" y="112" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="136" text-anchor="middle">Entwicklungsumgebung</text>
+    <rect x="270" y="154" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="370" y="178" text-anchor="middle">Hardware / Netzwerk</text>
+    <!-- SaaS column -->
+    <rect x="470" y="70" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="570" y="94" text-anchor="middle">Anwendung</text>
+    <rect x="470" y="112" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="570" y="136" text-anchor="middle">Entwicklungsumgebung</text>
+    <rect x="470" y="154" width="200" height="40" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="570" y="178" text-anchor="middle">Hardware / Netzwerk</text>
+    <text class="svg-label-sm" x="20" y="222" text-anchor="start" style="fill:#5C6B78;">Beispiele: IaaS = Server-/Rechenkapazität, Speicher · PaaS = Entwicklungsumgebung · SaaS = E-Mail, Textverarbeitung</text>
+    <text class="svg-label-sm" x="20" y="244" text-anchor="start" style="fill:#15786E;">Von IaaS → SaaS übernimmt der Anbieter immer mehr Schichten.</text>
+  </svg><figcaption>Je höher das Modell (IaaS → PaaS → SaaS), desto mehr verwaltet der Anbieter — der Kunde immer weniger.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">16</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne die Anwendungsgebiete dem passenden Cloud-Servicemodell (<code>IaaS</code>, <code>PaaS</code>, <code>SaaS</code>) zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Anwendungsgebiet</th><th>Modell</th></tr></thead>
+        <tbody>
+          <tr><td>Serverrechenkapazität</td><td>IaaS</td></tr>
+          <tr><td>Speichersystem</td><td>IaaS</td></tr>
+          <tr><td>Betriebssystem</td><td>PaaS</td></tr>
+          <tr><td>Entwicklungsumgebung</td><td>PaaS</td></tr>
+          <tr><td>Softwareupdate</td><td>SaaS</td></tr>
+          <tr><td>E-Mail-Dienst</td><td>SaaS</td></tr>
+        </tbody>
+      </table></div>
+      <div class="step"><strong>Merke:</strong> <code>IaaS</code> = Hardware/Netzwerk &amp; Rechen-/Speicherkapazität · <code>PaaS</code> = Plattform/Entwicklungsumgebung (für Entwickler) · <code>SaaS</code> = fertige Anwendung über das Internet (z.&nbsp;B. E-Mail, Office).</div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">17</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Punkte sind <code>Vorteile</code> von Cloud Computing gegenüber einem lokalen Rechenzentrum? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Hohe Flexibilität.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Betrieb und Wartung entfallen (übernimmt der Anbieter).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Aus fixen Investitionskosten und -risiken werden variable Kosten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>IT-Leistungen sind dynamisch und skalierbar.</li>
+        <li class="opt"><span class="tick"></span>Geringere Abhängigkeit von Drittanbietern.</li>
+        <li class="opt"><span class="tick"></span>Unabhängiger durch eigenes IT-Know-how.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Vorteile der Cloud: <strong>hohe Flexibilität</strong>, <strong>Betrieb/Wartung entfallen</strong>, <strong>variable statt fixe Kosten</strong> (Pay-as-you-go) und <strong>dynamische Skalierbarkeit</strong>. <em>Nicht</em> zutreffend: „geringere Abhängigkeit von Drittanbietern“ und „unabhängiger durch eigenes Know-how“ — bei der Cloud <strong>steigt</strong> die Abhängigkeit vom Anbieter. <span class="tag-mistake">Verwechslung</span> Abhängigkeit nimmt zu, nicht ab.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">18</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein Unternehmen verarbeitet sehr sensible Daten (unternehmenskritisch), hat aber zu Stoßzeiten stark schwankenden Bedarf an Rechenleistung für unkritische Auswertungen. Welche Cloud-/RZ-Strategie ist sinnvoll? Begründe mit den Begriffen <code>Private</code>, <code>Public</code> und <code>Hybrid Cloud</code>.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Empfehlung: eine <strong>Hybrid Cloud</strong> — die Kombination aus privater und öffentlicher Cloud.</p>
+      <ul>
+        <li><strong>Private Cloud / On-Premises:</strong> Die sensiblen, unternehmenskritischen Daten bleiben in einer <code>Private Cloud</code> (intern bzw. lokales RZ) — das bietet erhöhte Sicherheit und maximale Kontrolle.</li>
+        <li><strong>Public Cloud:</strong> Die schwankende Last für unkritische Auswertungen wird in die <code>Public Cloud</code> ausgelagert (Pay-as-you-go) — kostengünstig und dynamisch skalierbar.</li>
+      </ul>
+      <div class="step"><strong>Hybrid Cloud</strong> verbindet beides: unternehmenskritische und weniger wichtige Anwendungen werden flexibel je nach Schutzbedarf verteilt. So maximiert man <em>Kontrolle</em> (sensible Daten) und <em>Effizienz/Skalierbarkeit</em> (Lastspitzen) zugleich.</div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">🔬</span><h2>🔬 [Vertiefung] Stromlast &amp; Brandschutz</h2></div>
+  <p class="sec-sub">Über den Kern-Prüfungsstoff hinaus: einfache Leistungsberechnung im Rack und Brandschutzverfahren.</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">19</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein Rack enthält Geräte, die zusammen <code>2000&nbsp;W</code> ziehen, bei einer Stromkreis-Spannung von <code>240&nbsp;VAC</code>. Wie hoch ist der Strom (in Ampere)? Wie viele solche Racks könnte ein einzelner <code>30-A</code>-Stromkreis versorgen?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Leistung: <code>P = U · I</code> &nbsp;→&nbsp; <code>I = P / U = 2000&nbsp;W / 240&nbsp;V ≈ 8,3&nbsp;A</code> pro Rack.</div>
+      <div class="step">Anzahl Racks an 30&nbsp;A: <code>30&nbsp;A / 8,3&nbsp;A ≈ 3</code> Racks pro 30-A-Stromkreis.</div>
+      <p>Hinweis: Bei nur <code>120&nbsp;VAC</code> wäre der Strom doppelt so hoch — deshalb nutzen Rechenzentren häufig Hochspannungs-Stromkreise.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">20</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum werden in Serverräumen häufig gasbasierte <code>Clean-Agent</code>- (oder früher <code>Halon</code>-) Löschsysteme statt Wasser-Sprinkler eingesetzt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Weil Wasser elektrische Geräte besonders gut schützt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Weil gasbasierte Systeme elektrische Anlagen nicht kurzschließen und keine Rückstände hinterlassen.</li>
+        <li class="opt"><span class="tick"></span>Weil Gas billiger ist als jede andere Lösung.</li>
+        <li class="opt"><span class="tick"></span>Weil Brandschutz im Rechenzentrum nicht vorgeschrieben ist.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Gasbasierte Systeme (<code>Clean Agent</code> wie INERGEN/FM-200, früher <code>Halon</code>) haben den Vorteil, dass sie <strong>elektrische Anlagen nicht kurzschließen</strong> und <strong>keine Rückstände</strong> hinterlassen — anders als Wasser-Sprinkler, die Geräte beschädigen würden. Sie wirken nach dem Feuerdreieck (Hitze, Sauerstoff, Brennstoff) durch Verdrängen des Sauerstoffs. Halon ist heute wegen Ozonschädigung meist verboten.</p></div></article>
+
+  <nav class="pager">
+    <a class="prev" href="6-strukturierte-verkabelung.html"><span>Vorheriges Thema</span><b>6 · Strukturierte Verkabelung</b></a>
+    <a class="next" href="8-edgecomputing.html"><span>Nächstes Thema</span><b>8 · Edge-Computing</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 7 — IT-Infrastruktur</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

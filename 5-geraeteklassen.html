@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 · Geräteklassen — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html" class="current">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Anforderungen der Mitarbeiter</p>
+    <div class="hero-num"><span class="hash">#</span>05</div>
+    <h1>Geräteklassen</h1>
+    <p class="lede">Computer werden anhand technischer Merkmale und Gehäuseformen in Geräteklassen eingeteilt:
+      Barebone, Notebook, Tablet/Smartphone, Desktop-PC und Industrie-PC. Welche Klasse passt, hängt von der
+      Rolle und den Anforderungen des Mitarbeiters ab.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Überblick &amp; Merkmale der Klassen</h2></div>
+  <p class="sec-sub">Die fünf Geräteklassen aus dem Infoblatt und ihre charakteristischen Eigenschaften.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 320" role="img" aria-label="Übersicht der fünf Geräteklassen Barebone, Notebook, Tablet/Smartphone, Desktop-PC und Industrie-PC mit ihren Kernmerkmalen">
+    <text class="svg-title" x="20" y="26">Die fünf Geräteklassen im Überblick</text>
+    <rect x="20" y="44" width="210" height="78" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="34" y="66" text-anchor="start">Barebone</text>
+    <text class="svg-label-sm" x="34" y="86" text-anchor="start">Würfelförmig, Mini-ITX,</text>
+    <text class="svg-label-sm" x="34" y="102" text-anchor="start">kompakt, vom Kunden ergänzt</text>
+    <rect x="255" y="44" width="210" height="78" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="269" y="66" text-anchor="start">Notebook</text>
+    <text class="svg-label-sm" x="269" y="86" text-anchor="start">Mobil, Akku, alles integriert,</text>
+    <text class="svg-label-sm" x="269" y="102" text-anchor="start">sofort einsatzbereit</text>
+    <rect x="490" y="44" width="210" height="78" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="504" y="66" text-anchor="start">Tablet / Smartphone</text>
+    <text class="svg-label-sm" x="504" y="86" text-anchor="start">Touch, sehr portabel,</text>
+    <text class="svg-label-sm" x="504" y="102" text-anchor="start">geringe Leistung, iOS/Android</text>
+    <rect x="140" y="148" width="210" height="78" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="154" y="170" text-anchor="start">Desktop-PC</text>
+    <text class="svg-label-sm" x="154" y="190" text-anchor="start">Genormtes Board, stationär,</text>
+    <text class="svg-label-sm" x="154" y="206" text-anchor="start">ergonomisch, aufrüstbar</text>
+    <rect x="370" y="148" width="210" height="78" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="384" y="170" text-anchor="start">Industrie-PC</text>
+    <text class="svg-label-sm" x="384" y="190" text-anchor="start">Robust, Echtzeit, resistent,</text>
+    <text class="svg-label-sm" x="384" y="206" text-anchor="start">schwache CPU reicht</text>
+    <text class="svg-label-sm" x="20" y="262" text-anchor="start">Einteilungskriterien: technische Merkmale (CPU, RAM, GPU, Mobilität, Schnittstellen)</text>
+    <text class="svg-label-sm" x="20" y="282" text-anchor="start">und teils die Gehäuseform — passend zum Einsatzzweck des Mitarbeiters.</text>
+  </svg><figcaption>Überblick der Geräteklassen aus dem Infoblatt „Die PC-Geräteklassen".</figcaption></figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Nach welchen Kriterien werden Geräte laut Infoblatt vorrangig in Geräteklassen eingeteilt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nach Hersteller und Kaufpreis</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Nach technischen Merkmalen und teils der Gehäuseform</li>
+        <li class="opt"><span class="tick"></span>Nach Betriebssystem und Lizenzmodell</li>
+        <li class="opt"><span class="tick"></span>Ausschließlich nach dem Anschaffungsjahr</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Entscheidend sind in erster Linie <code>technische Merkmale</code> (CPU, RAM, GPU, Mobilität, Schnittstellen) und ab und an auch die <code>Gehäuseform</code>. Hersteller und Preis sind keine Klassifizierungskriterien.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Aussage zum <code>Barebone</code> ist korrekt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er ist sofort mit Maus, Tastatur und Monitor einsatzbereit.</li>
+        <li class="opt"><span class="tick"></span>Er besitzt grundsätzlich keine WLAN-Fähigkeit.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er kommt meist mit Mini-ITX-Board und muss vom Kunden ergänzt werden.</li>
+        <li class="opt"><span class="tick"></span>Er ist ein robuster Computer für Außenbereiche und Feuchträume.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein Barebone enthält i.&nbsp;d.&nbsp;R. nur ein integriertes Netzteil und ein <code>Mini-ITX-Board</code> mit CPU-Kühlung; Bedienelemente und weitere Komponenten muss der Kunde ergänzen. WLAN ist gerade typisch vorhanden. <span class="tag-mistake">Verwechslung</span> Robustheit/Feuchteschutz ist Merkmal des Industrie-PC.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">03</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Eigenschaften treffen auf ein <code>Notebook</code> zu? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Alle Komponenten, Laufwerke, Tastatur und Bildschirm sind integriert</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mobil durch eingebauten Akku</li>
+        <li class="opt"><span class="tick"></span>Beliebig aufrüstbar durch Ein- und Ausbau interner Karten</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Drei Betriebszustände: On, Idle, Stand-By</li>
+        <li class="opt"><span class="tick"></span>Besonders ergonomisch für Dauerbetrieb am festen Arbeitsplatz</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Notebooks sind integriert, akkubetrieben und kennen die Zustände <code>On</code>, <code>Idle</code>, <code>Stand-By</code>. Eine interne Erweiterung ist wegen der Übersichtlichkeit meist <em>nicht</em> möglich (höchstens über Expresscards), und sie gelten ausdrücklich als <em>nicht</em> ergonomisch.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">04</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Ordne die drei Betriebszustände eines Notebooks ihrer Beschreibung zu: <code>On</code>, <code>Idle</code>, <code>Stand-By</code>.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Zustand</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><code>On</code></td><td>Alles aktiv.</td></tr>
+          <tr><td><code>Idle</code></td><td>Prozessor inaktiv, Display aus, Speicher aktiv → sofort einsatzbereit.</td></tr>
+          <tr><td><code>Stand-By</code></td><td>Prozessor inaktiv, Display und weitere Komponenten aus; nur per Refresh wird der Speicherinhalt gehalten.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Vergleich der Klassen</h2></div>
+  <p class="sec-sub">Mobilität, Erweiterbarkeit, Einsatzort und typische Vor-/Nachteile gegenüberstellen.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 270" role="img" aria-label="Vergleichsmatrix der Geräteklassen nach Mobilität, Erweiterbarkeit, Leistungsspanne und Einsatzort">
+    <text class="svg-title" x="20" y="26">Vergleichsmatrix der Geräteklassen</text>
+    <rect x="20" y="40" width="180" height="30" fill="#16242E"></rect>
+    <text class="svg-label" x="30" y="60" text-anchor="start" style="fill:#FFFFFF;">Merkmal</text>
+    <rect x="200" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="210" y="60" text-anchor="start" style="fill:#FFFFFF;">Notebook</text>
+    <rect x="325" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="335" y="60" text-anchor="start" style="fill:#FFFFFF;">Tablet/Phone</text>
+    <rect x="450" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="460" y="60" text-anchor="start" style="fill:#FFFFFF;">Desktop-PC</text>
+    <rect x="575" y="40" width="125" height="30" fill="#16242E"></rect>
+    <text class="svg-label-sm" x="585" y="60" text-anchor="start" style="fill:#FFFFFF;">Industrie-PC</text>
+
+    <text class="svg-label-sm" x="30" y="92" text-anchor="start">Mobilität</text>
+    <text class="svg-label-sm" x="210" y="92" text-anchor="start">hoch</text>
+    <text class="svg-label-sm" x="335" y="92" text-anchor="start">sehr hoch</text>
+    <text class="svg-label-sm" x="460" y="92" text-anchor="start">stationär</text>
+    <text class="svg-label-sm" x="585" y="92" text-anchor="start">stationär</text>
+    <line x1="20" y1="104" x2="700" y2="104" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="128" text-anchor="start">Erweiterbar</text>
+    <text class="svg-label-sm" x="210" y="128" text-anchor="start">kaum (Express)</text>
+    <text class="svg-label-sm" x="335" y="128" text-anchor="start">nein</text>
+    <text class="svg-label-sm" x="460" y="128" text-anchor="start">gut, genormt</text>
+    <text class="svg-label-sm" x="585" y="128" text-anchor="start">begrenzt</text>
+    <line x1="20" y1="140" x2="700" y2="140" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="164" text-anchor="start">Leistung</text>
+    <text class="svg-label-sm" x="210" y="164" text-anchor="start">mittel–hoch</text>
+    <text class="svg-label-sm" x="335" y="164" text-anchor="start">gering</text>
+    <text class="svg-label-sm" x="460" y="164" text-anchor="start">alle Klassen</text>
+    <text class="svg-label-sm" x="585" y="164" text-anchor="start">gering reicht</text>
+    <line x1="20" y1="176" x2="700" y2="176" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="200" text-anchor="start">Einsatzort</text>
+    <text class="svg-label-sm" x="210" y="200" text-anchor="start">unterwegs</text>
+    <text class="svg-label-sm" x="335" y="200" text-anchor="start">mobil/Internet</text>
+    <text class="svg-label-sm" x="460" y="200" text-anchor="start">Büro</text>
+    <text class="svg-label-sm" x="585" y="200" text-anchor="start">Halle/Außen</text>
+    <line x1="20" y1="212" x2="700" y2="212" stroke="#D4DEE6" stroke-width="1"></line>
+
+    <text class="svg-label-sm" x="30" y="236" text-anchor="start">Ergonomie</text>
+    <text class="svg-label-sm" x="210" y="236" text-anchor="start">gering</text>
+    <text class="svg-label-sm" x="335" y="236" text-anchor="start">gering</text>
+    <text class="svg-label-sm" x="460" y="236" text-anchor="start">gut</text>
+    <text class="svg-label-sm" x="585" y="236" text-anchor="start">robust</text>
+  </svg><figcaption>Gegenüberstellung zentraler Merkmale der Geräteklassen (abgeleitet aus dem Quellmaterial).</figcaption></figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welcher <code>Desktop-PC</code>-Vorteil ergibt sich direkt aus der <code>genormten</code> Hauptplatine und den Standardgehäusen?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er ist besonders mobil einsetzbar.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Einzelne Komponenten lassen sich gezielt austauschen und aufrüsten.</li>
+        <li class="opt"><span class="tick"></span>Er benötigt keine externe Peripherie.</li>
+        <li class="opt"><span class="tick"></span>Er ist gegen Schock und Wasser geschützt.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Durch genormte Boards/Gehäuse können Komponenten (<code>RAM</code>, <code>CPU</code>, <code>GPU</code>) gezielt ein- und ausgebaut werden — der PC ist dadurch nahezu unendlich haltbar. Peripherie (Monitor, Maus, Tastatur) muss dagegen ergänzt werden; mobil ist er nicht.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">06</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Eigenschaften sind typisch für den <code>Industrie-PC</code>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Temperatur-, Schock- und Wasserresistenz</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Verarbeitung von Prozessdaten in Echtzeit</li>
+        <li class="opt"><span class="tick"></span>Benötigt zwingend besonders leistungsstarke CPUs</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>EVM-Schutz</code>, Ausfallsicherheit und Langzeitverfügbarkeit</li>
+        <li class="opt"><span class="tick"></span>Wird vor allem mobil von Außendienstmitarbeitern getragen</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Industrie-PC ist für raue Umgebungen (Produktionshalle, Feuchträume, Außenbereich) ausgelegt: resistent, ausfallsicher, echtzeitfähig. Weil die Prozessoranforderungen gering sind, reichen oft <em>schwache</em> CPUs aus — starke CPUs sind nicht nötig, und mobil ist er nicht.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Warum lässt sich ein <code>Notebook</code> intern kaum erweitern, und welche Lösung nennt das Infoblatt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Wegen fehlender CPU; Lösung: externe Tastatur</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Wegen der kompakten Bauweise; Lösung: externe Karteneinschübe über <code>Expresscards</code></li>
+        <li class="opt"><span class="tick"></span>Wegen des genormten Boards; Lösung: Mainboardtausch</li>
+        <li class="opt"><span class="tick"></span>Gar nicht — Notebooks sind voll aufrüstbar</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die kompakte, übersichtliche Bauweise verhindert den internen Einbau von Karten. Über <code>Expresscards</code> lassen sich aber z.&nbsp;B. eSATA-Anschlüsse, WLAN/LTE, TV-/GPS-Empfänger oder Flash-Speicher nachrüsten.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist laut Infoblatt der größte Nachteil eines <code>Smartphones</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es lässt sich nicht mit einem Desktop synchronisieren.</li>
+        <li class="opt"><span class="tick"></span>Es kann keine zusätzlichen Anwendungen installieren.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Bei kaputtem (meist fest verbautem) Akku ist es trotz intaktem System nicht mehr nutzbar.</li>
+        <li class="opt"><span class="tick"></span>Es besitzt kein eigenes Betriebssystem.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der fest verbaute Akku ist der größte Nachteil: ist er defekt, ist das ansonsten intakte Gerät unbrauchbar. Smartphones lassen sich durchaus per Cloud/Desktop synchronisieren und nutzen Betriebssysteme wie <code>Android</code>, <code>iOS</code> oder <code>Tizen</code>.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was unterscheidet ein <code>Convertible</code> von einem klassischen <code>Tablet</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es hat keinen Touchscreen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es besitzt zusätzlich eine bei Bedarf nutzbare Tastatur und erreicht Notebook-Leistung.</li>
+        <li class="opt"><span class="tick"></span>Es ist stets leichter und handlicher als ein Tablet.</li>
+        <li class="opt"><span class="tick"></span>Es kann ausschließlich mit dem Finger bedient werden.</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Konvertible Tablets haben zusätzlich eine ausklappbare Tastatur und erreichen heute Merkmale/Leistung eines klassischen Notebooks. Dafür sind sie gegenüber reinen Tablets eher etwas <em>unhandlich</em> — also nicht leichter.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">10</span><span class="q-type">Vergleich</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Nenne je zwei Vor- und Nachteile des <code>Barebone</code> gemäß Infoblatt.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step"><b>Vorteile:</b> optisch ansprechend &amp; platzsparend (oft direkt am Monitor montierbar); kostensparend, da nur nach Kundenbedarf bestückt; flexibel einsetzbar (Surfen, Office bis hin zu Spielen); meist energiesparend.</div>
+      <div class="step"><b>Nachteile:</b> aktive Kühlung → höherer Geräuschpegel; muss vom Kunden ergänzt werden und ist durch die geringe Größe nur begrenzt erweiterbar; separate Bedienelemente (Maus, Tastatur, Monitor) nötig; bei Flachbauweise externes Netzteil erforderlich.</div>
+    </div>
+  </article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Rolle → Geräteklasse zuordnen</h2></div>
+  <p class="sec-sub">Mitarbeiteranforderungen erkennen und die passende Geräteklasse auswählen.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Zuordnung von Mitarbeiterrollen zu passenden Geräteklassen">
+    <text class="svg-title" x="20" y="26">Mitarbeiterrolle → passende Geräteklasse</text>
+    <rect x="20" y="46" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="68" text-anchor="start">Office mit Standardsoftware</text>
+    <rect x="450" y="46" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="68" text-anchor="start">Barebone / Desktop-PC</text>
+    <line x1="270" y1="63" x2="450" y2="63" stroke="#B9C7D2" stroke-width="2"></line>
+
+    <rect x="20" y="92" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="114" text-anchor="start">Remote / Homeoffice + Office</text>
+    <rect x="450" y="92" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="114" text-anchor="start">Notebook (ein Gerät, mobil)</text>
+    <line x1="270" y1="109" x2="450" y2="109" stroke="#B9C7D2" stroke-width="2"></line>
+
+    <rect x="20" y="138" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="160" text-anchor="start">Außendienst (Outdoor, SIM)</text>
+    <rect x="450" y="138" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="160" text-anchor="start">Notebook / Tablet</text>
+    <line x1="270" y1="155" x2="450" y2="155" stroke="#B9C7D2" stroke-width="2"></line>
+
+    <rect x="20" y="184" width="250" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="32" y="206" text-anchor="start">Produktionshalle / raue Umgebung</text>
+    <rect x="450" y="184" width="250" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="462" y="206" text-anchor="start">Industrie-PC</text>
+    <line x1="270" y1="201" x2="450" y2="201" stroke="#B9C7D2" stroke-width="2"></line>
+  </svg><figcaption>Typische Rollen-zu-Klasse-Zuordnungen, abgeleitet aus den Mitarbeiter-Notizen der Quelle.</figcaption></figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">11</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Ordne jeder Mitarbeiterrolle die passende(n) Geräteklasse(n) zu und begründe kurz: (a) Office-Beschäftigter mit Standardsoftware, (b) Mitarbeiter in Remote/Homeoffice + Büro, (c) Außendienst im Gelände, (d) Mitarbeiter in der Produktionshalle.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Rolle</th><th>Geräteklasse</th><th>Begründung</th></tr></thead>
+        <tbody>
+          <tr><td>(a) Office, Standardsoftware</td><td><code>Barebone</code> / Desktop-PC</td><td>Stationär, für Standardanwendungen konzipiert, kostengünstig nach Bedarf bestückt.</td></tr>
+          <tr><td>(b) Remote/Homeoffice + Büro</td><td><code>Notebook</code></td><td>Nur ein mobiles Gerät nötig; rechenintensive Aufgaben können ausgelagert werden.</td></tr>
+          <tr><td>(c) Außendienst im Gelände</td><td><code>Notebook</code> / Tablet</td><td>Akkubetrieben, outdoor-geeignet, mit integrierter SIM-Karte mobil nutzbar.</td></tr>
+          <tr><td>(d) Produktionshalle</td><td><code>Industrie-PC</code></td><td>Temperatur-/Schock-/Wasserresistent, echtzeitfähig, ausfallsicher.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">12</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Eine Archäologin benötigt ein Gerät, das lokale Simulationssoftware ausführt, aber auch zur Grabungsstelle mitgenommen werden kann. Welche Geräteklasse bzw. Bauform empfiehlst du und warum?</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Empfehlung: ein <b>Notebook in Workstation-Ausführung</b>. Das Notebook ist mobil (Akku, alles integriert, sofort einsatzbereit) und in der Workstation-Variante leistungsstark genug für lokale Simulationssoftware.</div>
+      <div class="step">Ein reines Tablet/Smartphone scheidet wegen zu geringer Leistung und wenig Schnittstellen aus; ein Desktop-PC wäre leistungsfähig, aber nur stationär. Das Notebook vereint Mobilität und ausreichende Leistung.</div>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">13</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Für einen ergonomischen Büroarbeitsplatz mit langer täglicher Bildschirmarbeit und gelegentlichem Aufrüsten soll eine Geräteklasse gewählt werden. Begründe deine Wahl und nenne, welche Peripherie zu ergänzen ist.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Empfehlung: <b>Desktop-PC</b>. Er ist ergonomisch einrichtbar, in nahezu allen Leistungsklassen verfügbar und durch das genormte Board gezielt aufrüstbar (lange Haltbarkeit durch Komponententausch).</div>
+      <div class="step">Zu ergänzende Peripherie: <code>Monitor</code>, <code>Maus</code> und <code>Tastatur</code>. Nachteil ist der hohe Platzbedarf und dass das Gerät nur stationär nutzbar ist.</div>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Ein Mitarbeiter braucht ein sehr portables Gerät nur für E-Mails, Surfen und mobile Kommunikation per WLAN/Mobilfunk. Welche Klasse passt am besten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Industrie-PC</li>
+        <li class="opt"><span class="tick"></span>Desktop-PC</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Tablet</li>
+        <li class="opt"><span class="tick"></span>Barebone</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Tablets sind dünn, leicht und auf mobile Internet-Kommunikation per <code>WLAN</code>/Mobilfunkmodem optimiert, ohne langes Booten sofort einsatzbereit. Für nur leichte Aufgaben ist die geringere Leistung kein Problem. Desktop/Barebone sind stationär, der Industrie-PC ist für raue Umgebungen.</p></div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="4-stueckliste.html"><span>Vorheriges Thema</span><b>4 · Stückliste</b></a>
+    <a class="next" href="6-strukturierte-verkabelung.html"><span>Nächstes Thema</span><b>6 · Strukturierte Verkabelung</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 05 — Geräteklassen</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body></html>

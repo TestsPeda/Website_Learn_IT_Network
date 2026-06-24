@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9 · Server-Betriebssysteme — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html" class="current">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Betriebssysteme</p>
+    <div class="hero-num"><span class="hash">#</span>9</div>
+    <h1>Server-Betriebssysteme</h1>
+    <p class="lede">Aufgaben eines Server-Betriebssystems, der Unterschied zu Desktop-Systemen, die wichtigsten
+      Vertreter (Windows Server, Linux/Unix, NetWare/OES, Cloud), Lizenzmodelle sowie Rollen, Core/CLI und Virtualisierung.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Aufgaben &amp; Abgrenzung zum Desktop-BS</h2></div>
+  <p class="sec-sub">Was ein Server-Betriebssystem leistet und worin es sich von einem Desktop-System unterscheidet.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 300" role="img" aria-label="Vergleich Server-Betriebssystem und Desktop-Betriebssystem nach Stabilität, Nutzern, Diensten und Bedienung">
+    <text class="svg-title" x="20" y="28">Server-BS vs. Desktop-BS</text>
+    <rect x="20" y="50" width="320" height="220" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="180" y="78" text-anchor="middle">Server-Betriebssystem</text>
+    <text class="svg-label-sm" x="40" y="112">• Dauerbetrieb 24/7, hohe Stabilität</text>
+    <text class="svg-label-sm" x="40" y="140">• viele Nutzer gleichzeitig (Multiuser)</text>
+    <text class="svg-label-sm" x="40" y="168">• stellt Dienste/Rollen bereit</text>
+    <text class="svg-label-sm" x="40" y="196">• Remote-Verwaltung, oft Core/CLI</text>
+    <text class="svg-label-sm" x="40" y="224">• Skalierung: viel RAM/CPU/Storage</text>
+    <text class="svg-label-sm" x="40" y="252">• Sicherheit/Rechte im Vordergrund</text>
+    <rect x="380" y="50" width="320" height="220" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="78" text-anchor="middle">Desktop-Betriebssystem</text>
+    <text class="svg-label-sm" x="400" y="112">• Einzelarbeitsplatz, wird ausgeschaltet</text>
+    <text class="svg-label-sm" x="400" y="140">• meist ein angemeldeter Nutzer</text>
+    <text class="svg-label-sm" x="400" y="168">• nutzt Dienste, bietet kaum welche an</text>
+    <text class="svg-label-sm" x="400" y="196">• lokale Bedienung, immer mit GUI</text>
+    <text class="svg-label-sm" x="400" y="224">• Komfort/Multimedia im Vordergrund</text>
+    <text class="svg-label-sm" x="400" y="252">• z. B. Windows 11, macOS, Ubuntu Desktop</text>
+  </svg><figcaption>Ein Server-BS ist auf Dauerbetrieb, Dienste und viele Nutzer optimiert; ein Desktop-BS auf den Einzelarbeitsplatz.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist die grundlegende Aufgabe eines Servers — laut Infotext bis heute unverändert?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Möglichst bunte Oberflächen für Endanwender darzustellen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Auf die Anforderung eines <code>Clients</code> zu antworten und Ressourcen bereitzustellen.</li>
+        <li class="opt"><span class="tick"></span>Ausschließlich Spiele und Multimedia abzuspielen.</li>
+        <li class="opt"><span class="tick"></span>Sich nach Feierabend automatisch herunterzufahren.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Schon „Windows for Workgroups“ machte Rechner per Definition zu Servern, weil sie <code>Ressourcen weitergeben</code> und auf Anforderungen von Clients antworten konnten. Bis heute gilt: ein Server ist ein System, das auf die Anforderung eines Clients antwortet.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Eigenschaft trifft <strong>am ehesten</strong> auf ein Server-BS, aber <strong>nicht</strong> auf ein typisches Desktop-BS zu?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es kann Textdateien öffnen.</li>
+        <li class="opt"><span class="tick"></span>Es besitzt einen Dateimanager.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es ist auf <code>24/7</code>-Dauerbetrieb und hohe Stabilität für viele gleichzeitige Nutzer ausgelegt.</li>
+        <li class="opt"><span class="tick"></span>Es benötigt eine Tastatur.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Server-Betriebssysteme sind für <code>Dauerbetrieb</code>, Stabilität und viele gleichzeitige Verbindungen optimiert. Ein Desktop-BS wird dagegen typischerweise von einer Person genutzt und regelmäßig ausgeschaltet.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Merkmale sind <strong>typisch für ein Server-BS</strong>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Bereitstellung von Diensten/Rollen (Web, Datei, DHCP, DNS …).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Multiuser-/Mehrbenutzerbetrieb mit Rechte- und Rollenverwaltung.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Remote-Verwaltung, häufig ohne grafische Oberfläche (<code>Core/CLI</code>).</li>
+        <li class="opt"><span class="tick"></span>Fokus auf Spiele-Performance und Multimedia-Komfort.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ausgelegt auf Stabilität und Dauerbetrieb (Uptime).</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Dienste/Rollen, Multiuser-Betrieb, Remote-Verwaltung und Dauerbetrieb kennzeichnen ein Server-BS. <span class="tag-mistake">Verwechslung</span>: Spiele-/Multimedia-Komfort ist ein Desktop-Thema, kein Serverziel.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum verzichten Server-Installationen oft auf eine grafische Oberfläche und laufen als <code>Core</code>- bzw. <code>CLI</code>-Variante?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Weil Server keine Festplatten haben.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Weniger laufende Komponenten = geringere Angriffsfläche, weniger Updates/Reboots und mehr Ressourcen für Dienste.</li>
+        <li class="opt"><span class="tick"></span>Weil eine GUI auf Servern technisch unmöglich ist.</li>
+        <li class="opt"><span class="tick"></span>Weil CLI langsamer ist und so Strom spart.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Eine schlanke <code>Core/CLI</code>-Installation hat weniger Komponenten: kleinere Angriffsfläche, weniger Sicherheitsupdates und Neustarts, mehr RAM/CPU für die eigentlichen Dienste. Verwaltet wird remote, z. B. per <code>SSH</code> oder <code>PowerShell</code>.</p></div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Vertreter: Windows Server, Linux/Unix, NetWare</h2></div>
+  <p class="sec-sub">Die wichtigsten Server-Betriebssysteme aus dem Infotext und ihre Einordnung.</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches war laut Infotext Microsofts <strong>erstes echtes</strong> Serverbetriebssystem?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Windows for Workgroups</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>Windows NT</code> (Versionen 3.5 und 3.51)</li>
+        <li class="opt"><span class="tick"></span>Windows Server 2025</li>
+        <li class="opt"><span class="tick"></span>MS-DOS</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Microsofts erstes echtes Serverbetriebssystem war <code>Windows NT</code> (3.5 / 3.51). Darauf folgte die bis heute existierende Windows-Server-Reihe; die neueste Version im Infotext ist <code>Windows Server 2025</code>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche der genannten Systeme gehören zur <strong>Linux-/Unix-Welt</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span><code>Red Hat Enterprise Linux</code>, <code>Debian</code> und <code>CentOS</code></li>
+        <li class="opt"><span class="tick"></span>Windows NT, Windows Server 2025</li>
+        <li class="opt"><span class="tick"></span>Azure, AWS, IBM Cloud</li>
+        <li class="opt"><span class="tick"></span>MS-DOS und Windows for Workgroups</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Infotext nennt <code>Red Hat Enterprise Linux (RHEL)</code>, <code>Debian</code> und <code>CentOS</code> als Linux-/Unix-Varianten. Linux ist als <code>Open Source</code> besonders als Webserver beliebt, oft mit dem <code>Apache</code>-Webanwendungsserver.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Software wird laut Infotext „oft installiert“, weil Linux als Webserver so beliebt ist?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Der Hyper-V-Hypervisor</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der <code>Apache</code>-Webanwendungsserver</li>
+        <li class="opt"><span class="tick"></span>Novell Open Enterprise Server</li>
+        <li class="opt"><span class="tick"></span>Microsoft Azure</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Auf Linux-Webservern wird häufig der <code>Apache</code>-Webanwendungsserver eingesetzt — er liefert Webinhalte aus und ist selbst Open Source.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was geschah laut Infotext schließlich mit <code>NetWare</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es wurde zu Windows NT weiterentwickelt.</li>
+        <li class="opt"><span class="tick"></span>Es ist heute das meistgenutzte Server-BS.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es wurde auf einen <code>Linux-basierten Kernel</code> verlegt und in <code>Novell Open Enterprise Server (OES)</code> umbenannt.</li>
+        <li class="opt"><span class="tick"></span>Es wurde zu Amazons AWS-Plattform.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>NetWare wird nicht mehr produziert. Novell verlegte das Serverbetriebssystem auf einen <code>Linux-basierten Kernel</code> und nannte es <code>Novell Open Enterprise Server (OES)</code>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne jedem Server-BS bzw. Anbieter die passende Eigenschaft zu: <code>Windows Server</code>, <code>Linux/Unix</code>, <code>NetWare/OES</code>, <code>Cloudserver (AWS/Azure/…)</code>.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>System / Anbieter</th><th>Eigenschaft (laut Infotext)</th></tr></thead>
+        <tbody>
+          <tr><td>Windows Server</td><td>Microsofts proprietäre Serverreihe (von NT bis Server 2025); unterstützt Anwendungen, Datenbanken und einen Hypervisor für virtuelle Server.</td></tr>
+          <tr><td>Linux/Unix</td><td>Open Source; Varianten RHEL, Debian, CentOS; sehr beliebt als Webserver (oft mit Apache).</td></tr>
+          <tr><td>NetWare / OES</td><td>Früher großer Akteur der Client-Server-Ära; heute eingestellt, auf Linux-Kernel verlegt als Novell Open Enterprise Server.</td></tr>
+          <tr><td>Cloudserver</td><td>Virtuelle Server auf Drittanbieter-Infrastruktur im offenen Netz (Internet): Google Cloud, Microsoft Azure, IBM Cloud; Vorreiter war Amazons AWS.</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Lizenzmodelle: proprietär vs. Open Source</h2></div>
+  <p class="sec-sub">Wie sich Windows Server und Linux/Unix lizenzrechtlich unterscheiden.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Lizenzmodelle proprietär und Open Source gegenübergestellt">
+    <text class="svg-title" x="20" y="28">Lizenzmodelle im Vergleich</text>
+    <rect x="20" y="50" width="320" height="170" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="180" y="78" text-anchor="middle">Proprietär</text>
+    <text class="svg-label-sm" x="40" y="108">• z. B. Windows Server</text>
+    <text class="svg-label-sm" x="40" y="134">• Quellcode geschlossen</text>
+    <text class="svg-label-sm" x="40" y="160">• kostenpflichtige Lizenz</text>
+    <text class="svg-label-sm" x="40" y="186">• Support vom Hersteller</text>
+    <text class="svg-label-sm" x="40" y="212">• Nutzung an Lizenz gebunden</text>
+    <rect x="380" y="50" width="320" height="170" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="78" text-anchor="middle">Open Source</text>
+    <text class="svg-label-sm" x="400" y="108">• z. B. Linux (Debian, CentOS)</text>
+    <text class="svg-label-sm" x="400" y="134">• Quellcode offen einsehbar</text>
+    <text class="svg-label-sm" x="400" y="160">• meist kostenfrei nutzbar</text>
+    <text class="svg-label-sm" x="400" y="186">• Support über Community/Distributor</text>
+    <text class="svg-label-sm" x="400" y="212">• anpass- und weitergebbar</text>
+  </svg><figcaption>Windows Server ist proprietär; Linux ist als Open-Source-System frei nutzbar und anpassbar.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie wird Linux im Infotext bezüglich seines Lizenzmodells beschrieben?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Als proprietäres System mit geschlossenem Quellcode.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Als <code>Open-Source</code>-Betriebssystem.</li>
+        <li class="opt"><span class="tick"></span>Als reines Cloud-Abo ohne lokale Installation.</li>
+        <li class="opt"><span class="tick"></span>Als kostenpflichtige Microsoft-Lizenz.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Infotext nennt Linux ausdrücklich ein <code>Open-Source</code>-Betriebssystem. Der Quellcode ist offen einsehbar, das System frei nutzbar und anpassbar — ein Grund für die Beliebtheit als Webserver.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen zu <strong>proprietär vs. Open Source</strong> sind korrekt? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Bei proprietären Systemen (z. B. Windows Server) ist der Quellcode geschlossen und die Nutzung an eine Lizenz gebunden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Bei Open Source ist der Quellcode offen und das System darf angepasst und weitergegeben werden.</li>
+        <li class="opt"><span class="tick"></span>Open Source bedeutet immer, dass es keinerlei Support gibt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Linux-Distributionen wie Debian oder CentOS sind typische Open-Source-Vertreter.</li>
+        <li class="opt"><span class="tick"></span>Windows Server ist Open Source.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Proprietär = geschlossener Code + Lizenzbindung (Windows Server). Open Source = offener, anpassbarer Code (Linux, z. B. Debian/CentOS). <span class="tag-mistake">Verwechslung</span>: Auch für Open Source gibt es Support (Community oder kommerziell, z. B. Red Hat); und Windows Server ist <em>nicht</em> Open Source.</p></div></article>
+
+  <div class="sec-head"><span class="ix">D</span><h2>Rollen, Dienste &amp; Virtualisierung</h2></div>
+  <p class="sec-sub">Wozu ein Server-BS eingesetzt wird und wie ein Hypervisor virtuelle Server ermöglicht.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 330" role="img" aria-label="Hypervisor Typ 1 läuft direkt auf der Hardware, Hypervisor Typ 2 läuft auf einem Host-Betriebssystem">
+    <text class="svg-title" x="20" y="28">Virtualisierung: Hypervisor Typ 1 vs. Typ 2</text>
+
+    <text class="svg-label" x="180" y="58" text-anchor="middle">Typ 1 (Bare-Metal)</text>
+    <rect x="40" y="70" width="90" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="85" y="97" text-anchor="middle">VM 1</text>
+    <rect x="140" y="70" width="90" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="185" y="97" text-anchor="middle">VM 2</text>
+    <rect x="240" y="70" width="90" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="285" y="97" text-anchor="middle">VM 3</text>
+    <rect x="40" y="122" width="290" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="185" y="147" text-anchor="middle">Hypervisor (Typ 1)</text>
+    <rect x="40" y="170" width="290" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="185" y="195" text-anchor="middle">Hardware</text>
+    <text class="svg-label-sm" x="185" y="234" text-anchor="middle">z. B. Hyper-V, ESXi, KVM, Proxmox</text>
+
+    <text class="svg-label" x="540" y="58" text-anchor="middle">Typ 2 (Hosted)</text>
+    <rect x="400" y="70" width="130" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="465" y="97" text-anchor="middle">VM 1</text>
+    <rect x="540" y="70" width="130" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="605" y="97" text-anchor="middle">VM 2</text>
+    <rect x="400" y="122" width="270" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="535" y="147" text-anchor="middle">Hypervisor (Typ 2)</text>
+    <rect x="400" y="170" width="270" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="535" y="195" text-anchor="middle">Host-Betriebssystem</text>
+    <rect x="400" y="218" width="270" height="40" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="535" y="243" text-anchor="middle">Hardware</text>
+    <text class="svg-label-sm" x="535" y="282" text-anchor="middle">z. B. VirtualBox, VMware Workstation</text>
+  </svg><figcaption>Typ 1 läuft direkt auf der Hardware (Server/Rechenzentrum), Typ 2 als Anwendung auf einem Host-BS (Arbeitsplatz/Test).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was unterstützt <code>Windows Server 2025</code> laut Infotext unter anderem?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nur ältere DOS-Programme.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Zahlreiche Anwendungen und Datenbanken sowie einen <code>Hypervisor</code>, der virtuelle Server ermöglicht.</li>
+        <li class="opt"><span class="tick"></span>Ausschließlich das Abspielen von Videos.</li>
+        <li class="opt"><span class="tick"></span>Nur einen einzigen gleichzeitigen Nutzer.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Windows Server 2025 unterstützt zahlreiche Anwendungen und Datenbanken sowie einen <code>Hypervisor</code> (bei Microsoft <code>Hyper-V</code>), der virtuelle Server bereitstellt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist ein <code>Cloudserver</code> nach der Definition des Infotextes?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein Server, der nur lokal im eigenen Keller steht.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein <code>virtueller Server</code>, der auf der Infrastruktur eines Drittanbieters in einem offenen Netz wie dem Internet gehostet wird.</li>
+        <li class="opt"><span class="tick"></span>Ein Server ohne jegliches Betriebssystem.</li>
+        <li class="opt"><span class="tick"></span>Eine besondere Festplatte für Backups.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Cloudserver sind <code>virtuelle Server</code> auf der Infrastruktur eines Drittanbieters (Google Cloud, Microsoft Azure, IBM Cloud). Vorreiter war Amazons <code>AWS</code>: Kunden erstellen nahezu augenblicklich einen virtuellen Server und passen die Ressourcen nach Bedarf an (Skalierung).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein kleines Unternehmen will mit knappem Budget mehrere Dienste (Webserver, Dateifreigabe, interne Datenbank) auf <strong>einer</strong> physischen Maschine betreiben und dabei lizenzkostenarm bleiben. Welche Entscheidungen bei Server-BS, Lizenzmodell und Virtualisierung empfiehlst du — und warum?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Sinnvolle Kombination:</p>
+      <ul>
+        <li><strong>Server-BS:</strong> Eine <code>Linux</code>-Distribution (z. B. <code>Debian</code> oder eine RHEL-Variante), weil sie als <code>Open Source</code> lizenzkostenarm und sehr stabil im Dauerbetrieb ist.</li>
+        <li><strong>Webserver:</strong> Den freien <code>Apache</code>-Webanwendungsserver — passt zur Linux-Welt und ist ebenfalls kostenfrei.</li>
+        <li><strong>Mehrere Dienste auf einer Maschine:</strong> Über einen <code>Hypervisor</code> (Virtualisierung) lassen sich Web-, Datei- und Datenbankdienst in getrennten virtuellen Servern isolieren — das erhöht Stabilität und Sicherheit, da ein Problem nicht alle Dienste mitreißt.</li>
+        <li><strong>Verwaltung:</strong> Schlanke <code>Core/CLI</code>-Installation und <code>Remote-Verwaltung</code> (z. B. per <code>SSH</code>) sparen Ressourcen und reduzieren die Angriffsfläche.</li>
+      </ul>
+      <div class="step">Alternative mit Microsoft-Welt: <code>Windows Server</code> mit <code>Hyper-V</code> bietet dieselbe Virtualisierung, ist aber <code>proprietär</code> und kostenpflichtig — daher bei knappem Budget zweite Wahl, dafür mit gewohnter GUI und Hersteller-Support.</div>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="8-edgecomputing.html"><span>Vorheriges Thema</span><b>8 · Edge-Computing</b></a>
+    <a class="next" href="10-adressierung.html"><span>Nächstes Thema</span><b>10 · Adressierung</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 9 — Server-Betriebssysteme</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

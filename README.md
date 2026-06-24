@@ -1,7 +1,14 @@
-# IT-Lernmaterial – Themen 10–15
+# IT-Lernmaterial – Themen 1–16 (Fachunterricht IT)
 
-Lernmaterial zu ausgewählten IT- und Netzwerkthemen, Themen 10–15
-(Adressierung, DHCP & DNS, Übertragungsarten, Topologien, Speichersysteme, RAID).
+Eigenständige Selbsttest-Website zum Fach **FUIT** über alle Themen 1–16:
+Grundbegriffe, Gebäude-/Verkabelungsplan, Übertragungsmedien, Stückliste, Geräteklassen,
+strukturierte Verkabelung, IT-Infrastruktur, Edge-/Fog-Computing, Server-Betriebssysteme,
+Adressierung, DHCP & DNS, Übertragungsarten, Topologien, Speichersysteme, RAID und
+E-Mail-Protokolle.
+
+16 Themenseiten mit insgesamt **247 Aufgaben** (auto-bewertete MC/Mehrfachauswahl sowie
+manuelle Rechen-, Zuordnungs- und Szenarioaufgaben mit Musterlösung), **56 inline-SVG-Diagramme**
+sowie eine **Lernseite** zum Wiederholen der Kernkonzepte. Statisch, ohne externe Abhängigkeiten.
 
 **Live:** [testspeda.github.io/Website_Learn_IT_Network](https://testspeda.github.io/Website_Learn_IT_Network/)
 

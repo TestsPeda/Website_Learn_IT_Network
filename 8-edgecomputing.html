@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 · Edge- &amp; Fog-Computing — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html" class="current">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Verteilte Datenverarbeitung</p>
+    <div class="hero-num"><span class="hash">#</span>8</div>
+    <h1>Edge- &amp; Fog-Computing</h1>
+    <p class="lede">Daten dort verarbeiten, wo sie entstehen — am Rand des Netzes statt zentral in der Cloud.
+      Geringe Latenz, gesparte Bandbreite und Echtzeit-Reaktion für IoT, Industrie 4.0 und autonome Systeme.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>15</b> Aufgaben</span>
+      <span class="pill"><b>4</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Grundidee &amp; Schichtenmodell</h2></div>
+  <p class="sec-sub">Warum Edge-Computing entstand und wie die Ebenen Cloud → Fog → Edge → Endgeräte zusammenspielen.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 740 360" role="img" aria-label="Schichtenmodell: Cloud oben (zentral, hohe Latenz, große Datenmenge), darunter Fog, darunter Edge, unten die Endgeräte. Latenz und Datenmenge steigen nach oben, Echtzeit-Nähe steigt nach unten.">
+    <text class="svg-title" x="20" y="26">Schichtenmodell — Cloud · Fog · Edge · Endgeräte</text>
+    <!-- Achse rechts: Datenmenge / Latenz -->
+    <line x1="660" y1="56" x2="660" y2="310" stroke="#B9C7D2" stroke-width="2"></line>
+    <polygon points="660,50 655,62 665,62" fill="#B9C7D2"></polygon>
+    <text class="svg-label-sm" x="690" y="78" text-anchor="middle">hohe</text>
+    <text class="svg-label-sm" x="690" y="94" text-anchor="middle">Latenz</text>
+    <text class="svg-label-sm" x="690" y="116" text-anchor="middle">große</text>
+    <text class="svg-label-sm" x="690" y="132" text-anchor="middle">Daten-</text>
+    <text class="svg-label-sm" x="690" y="148" text-anchor="middle">menge</text>
+    <text class="svg-label-sm" x="690" y="262" text-anchor="middle">Echtzeit</text>
+    <text class="svg-label-sm" x="690" y="278" text-anchor="middle">&amp; Nähe</text>
+    <text class="svg-label-sm" x="690" y="294" text-anchor="middle">zur Quelle</text>
+    <!-- Cloud -->
+    <rect x="30" y="56" width="600" height="58" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="82" text-anchor="start">Cloud (zentral)</text>
+    <text class="svg-label-sm" x="60" y="102" text-anchor="start">langfristige Analyse &amp; Speicherung · weit entfernte Rechenzentren</text>
+    <!-- Fog -->
+    <rect x="30" y="122" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="148" text-anchor="start">Fog (Zwischenebene)</text>
+    <text class="svg-label-sm" x="60" y="168" text-anchor="start">Geräte selbst treffen kurzfristige Entscheidungen · Vielzahl kleinster Sensoren/Aktoren</text>
+    <!-- Edge -->
+    <rect x="30" y="188" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="214" text-anchor="start">Edge (Rand des Netzes)</text>
+    <text class="svg-label-sm" x="60" y="234" text-anchor="start">Edge-Server nahe der Quelle · Analyse vor Ort · nur nötige Daten gehen weiter</text>
+    <!-- Endgeräte -->
+    <rect x="30" y="254" width="600" height="58" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="60" y="280" text-anchor="start">Endgeräte / Edge-Devices</text>
+    <text class="svg-label-sm" x="60" y="300" text-anchor="start">Maschinen, Autos, VR-Brillen, Smart-Home · Sensoren &amp; Aktoren (Datenquellen)</text>
+    <text class="svg-label-sm" x="30" y="338" text-anchor="start" style="fill:#15786E;">Je weiter unten, desto näher an der Quelle und reaktionsschneller · je weiter oben, desto zentraler.</text>
+  </svg><figcaption>Schichtenmodell: oben zentrale Cloud (hohe Latenz, große Datenmenge), unten die Endgeräte (Echtzeit, Nähe zur Quelle).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was beschreibt <code>Edge-Computing</code> am treffendsten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die zentrale Verarbeitung aller Daten in einem großen Rechenzentrum.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Verarbeitung und Strukturierung der Daten vor Ort, am Rand des Internets.</li>
+        <li class="opt"><span class="tick"></span>Das ausschließliche Speichern von Daten in der Cloud.</li>
+        <li class="opt"><span class="tick"></span>Ein Verfahren, um Bandbreite durch mehr zentrale Server zu erhöhen.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Edge-Computing verarbeitet und strukturiert Daten <code>vor Ort</code>, also am Rand (engl. <em>edge</em>) des Internets — nahe an der Datenquelle. Nur noch notwendige Daten gehen anschließend über das Internet in die Cloud.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Problem hat zur Entwicklung von Edge-Computing geführt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Zu geringe Datenmengen durch fehlende Sensorik.</li>
+        <li class="opt"><span class="tick"></span>Der Wegfall der Cloud als Speicherort.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Überlastung der Clouds und hohe Latenzzeiten durch enorme Datenmassen (Big Data) aus dem IoT.</li>
+        <li class="opt"><span class="tick"></span>Fehlende Verschlüsselung in zentralen Rechenzentren.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Durch <code>Industrie 4.0</code> und das <code>Internet of Things</code> wird fast alles mit Sensoren versehen. Die entstehenden <code>Big-Data</code>-Mengen führen zu <strong>Überlastung der Clouds</strong> und <strong>hohen Latenzzeiten</strong> — genau dafür wurde Edge-Computing entwickelt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussage zum Verhältnis von <code>Latenz</code> und <code>Datenmenge</code> in den Schichten ist korrekt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Je näher an den Endgeräten verarbeitet wird, desto geringer die Latenz; je näher an der Cloud, desto größer die transportierte Datenmenge und Latenz.</li>
+        <li class="opt"><span class="tick"></span>In der Cloud ist die Latenz am geringsten, weil dort die meiste Rechenleistung steht.</li>
+        <li class="opt"><span class="tick"></span>Edge und Cloud haben grundsätzlich dieselbe Latenz.</li>
+        <li class="opt"><span class="tick"></span>An den Endgeräten ist die Latenz am höchsten.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Verarbeitung nahe der Quelle (Edge/Endgeräte) bedeutet <strong>kurze Wege = geringe Latenz</strong>. Daten, die bis in die zentrale Cloud reisen, legen weite Strecken zurück — daher höhere Latenz und es muss eine große Datenmenge transportiert werden.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne den Schichten <code>Cloud</code>, <code>Fog</code>, <code>Edge</code> und <code>Endgeräte</code> ihre jeweilige Aufgabe / Eigenschaft zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Schicht</th><th>Aufgabe / Eigenschaft</th></tr></thead>
+        <tbody>
+          <tr><td>Cloud</td><td>zentral, weit entfernt; nur langfristige Analyse &amp; Speicherung; höchste Latenz, größte Datenmenge</td></tr>
+          <tr><td>Fog</td><td>Zwischenebene; die Geräte selbst treffen kurzfristige Entscheidungen (Cisco-Definition); Vielzahl kleinster Geräte in großer Dichte</td></tr>
+          <tr><td>Edge</td><td>Rand des Netzes; Analyse in nahen, aber schon etwas zentraleren Instanzen (Edge-Server); geringe Latenz</td></tr>
+          <tr><td>Endgeräte</td><td>Datenquellen: Maschinen, Autos, VR-Brillen, Smart-Home mit Sensoren &amp; Aktoren</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Vorteile, Einsatz &amp; Beispiele</h2></div>
+  <p class="sec-sub">Geringe Latenz, Bandbreite, Echtzeit, Datenschutz — und wo Edge-Computing konkret genutzt wird.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 740 290" role="img" aria-label="Vergleich: Cloud-Computing zentral mit weitem Weg und hoher Latenz gegenüber Edge-Computing mit kurzem Weg und niedriger Latenz nahe an der Quelle.">
+    <text class="svg-title" x="20" y="26">Cloud-Computing vs. Edge-Computing</text>
+    <!-- Cloud-Variante -->
+    <text class="svg-label" x="20" y="60" text-anchor="start">Cloud (zentral)</text>
+    <rect x="20" y="72" width="110" height="46" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="75" y="94" text-anchor="middle">Sensor /</text>
+    <text class="svg-label-sm" x="75" y="110" text-anchor="middle">Gerät</text>
+    <line x1="130" y1="95" x2="560" y2="95" stroke="#DD5430" stroke-width="2" stroke-dasharray="6 4"></line>
+    <text class="svg-label-sm" x="345" y="86" text-anchor="middle" style="fill:#B23E1F;">weiter Weg übers Internet → hohe Latenz</text>
+    <rect x="560" y="72" width="150" height="46" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="94" text-anchor="middle">Cloud-Rechen-</text>
+    <text class="svg-label-sm" x="635" y="110" text-anchor="middle">zentrum</text>
+    <!-- Trennlinie -->
+    <line x1="20" y1="150" x2="710" y2="150" stroke="#D4DEE6" stroke-width="1"></line>
+    <!-- Edge-Variante -->
+    <text class="svg-label" x="20" y="186" text-anchor="start">Edge (am Rand)</text>
+    <rect x="20" y="198" width="110" height="46" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="75" y="220" text-anchor="middle">Sensor /</text>
+    <text class="svg-label-sm" x="75" y="236" text-anchor="middle">Gerät</text>
+    <line x1="130" y1="221" x2="210" y2="221" stroke="#15786E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="170" y="212" text-anchor="middle" style="fill:#15786E;">kurz</text>
+    <rect x="210" y="198" width="130" height="46" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="275" y="220" text-anchor="middle">Edge-Server</text>
+    <text class="svg-label-sm" x="275" y="236" text-anchor="middle">(vor Ort)</text>
+    <line x1="340" y1="221" x2="560" y2="221" stroke="#B9C7D2" stroke-width="2" stroke-dasharray="6 4"></line>
+    <text class="svg-label-sm" x="450" y="212" text-anchor="middle" style="fill:#5C6B78;">nur nötige Daten</text>
+    <rect x="560" y="198" width="150" height="46" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="635" y="220" text-anchor="middle">Cloud</text>
+    <text class="svg-label-sm" x="635" y="236" text-anchor="middle">(Langzeit)</text>
+    <text class="svg-label-sm" x="275" y="270" text-anchor="middle" style="fill:#15786E;">Analyse nahe der Quelle → geringe Latenz, weniger Bandbreite</text>
+  </svg><figcaption>Cloud: weiter Weg, hohe Latenz. Edge: Verarbeitung vor Ort, nur noch nötige Daten gehen in die Cloud.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Vorteile bietet Edge-Computing? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Geringere Latenzzeiten durch kurze Wege.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Eingesparte Bandbreite und reduzierte Kosten für Cloud-Speicher/Datenvolumen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Schnellere Reaktion bei Nahezu-Echtzeit-Anwendungen.</li>
+        <li class="opt"><span class="tick"></span>Garantiert geringere Anzahl abzusichernder Geräte als in der Cloud.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Vorteile sind <strong>geringe Latenz</strong>, <strong>gesparte Bandbreite/Kosten</strong> und <strong>schnellere Echtzeit-Reaktion</strong>. Die letzte Aussage ist falsch: Beim Edge-Computing <em>steigt</em> sogar die Anzahl zu sichernder Verbindungen und Geräte — das ist ein Nachteil. <span class="tag-mistake">Verwechslung</span> Vorteil ↔ Nachteil.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum erhöht Edge-Computing beim <code>autonomen Fahren</code> die Sicherheit?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Weil alle Sensordaten zuerst in die zentrale Cloud gesendet werden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Weil die Sensordaten vor Ort ausgewertet werden — die geringere Latenz lässt das Fahrzeug schneller reagieren.</li>
+        <li class="opt"><span class="tick"></span>Weil dadurch gar keine Daten mehr verarbeitet werden müssen.</li>
+        <li class="opt"><span class="tick"></span>Weil die Bandbreite des Mobilfunks dadurch unbegrenzt wird.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim autonomen Fahren werden die Sensordaten des KFZ <code>vor Ort</code> verarbeitet. Die dadurch <strong>reduzierte Latenzzeit</strong> ermöglicht schnellere Reaktionen und steigert so die Sicherheit. Nur noch notwendige Daten gehen anschließend in die Cloud.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Beim Spielen mit <code>AR/VR-Brillen</code> ist laut Telekom (selbst über Glasfaser) ein Rechenzentrum nötig, das …</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>… mindestens 1000&nbsp;km entfernt ist, um Last zu verteilen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>… maximal 100&nbsp;km vom Standort des Nutzers entfernt ist, um nur wenige Millisekunden Verzögerung zu erreichen.</li>
+        <li class="opt"><span class="tick"></span>… ausschließlich in der zentralen Cloud steht.</li>
+        <li class="opt"><span class="tick"></span>… keine Rolle spielt, da Glasfaser verzögerungsfrei ist.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Damit reale und virtuelle Welt ruckelfrei verschmelzen, sind extrem schnelle Server-Reaktionen nötig. Laut Telekom ist dafür selbst über Glasfaser ein Rechenzentrum von <code>max. 100&nbsp;km</code> Entfernung erforderlich — nur so liegen die Verzögerungen bei wenigen Millisekunden. Genau hier wird die zentrale Cloud durch dezentrale (Edge-)Rechenleistung ersetzt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche der folgenden gelten als typische <code>Edge-Devices</code> / Datenquellen? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Maschinen in der Industrie 4.0.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Smart-Home-Geräte.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Autos (autonomes Fahren) und VR-Brillen.</li>
+        <li class="opt"><span class="tick"></span>Das zentrale Cloud-Rechenzentrum selbst.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Zu den <code>Edge-Devices</code> (Datenquellen) gehören <strong>Maschinen, Smart-Homes, Autos und VR-Brillen</strong>. Sie müssen mittels schneller Berechnungen frühzeitig auf Veränderungen reagieren. Das zentrale Cloud-Rechenzentrum ist dagegen die zentrale Instanz, kein Edge-Device.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie werden Edge-Ressourcen für Kunden mit z.&nbsp;B. IoT-Produktionen üblicherweise bereitgestellt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Als ein einziger, weltweit zentraler Großrechner.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Als dezentrale Rechenleistungen „as a Service“, die wegen der Nähe schnellere Auswertungen erlauben.</li>
+        <li class="opt"><span class="tick"></span>Ausschließlich als lokale Software auf jedem Sensor.</li>
+        <li class="opt"><span class="tick"></span>Nur in Form von reinem Cloud-Speicher ohne Rechenleistung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Es werden <strong>dezentrale Rechenleistungen als Service</strong> für Kunden (z.&nbsp;B. IoT-Produktionen) bereitgestellt. Durch die <code>räumliche Nähe</code> zur Datenquelle sind die Auswertungen schneller als in der zentralen Cloud.</p></div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Nachteile, Sicherheit &amp; Fog-Computing</h2></div>
+  <p class="sec-sub">Was Edge-Computing kostet, wie Daten abgesichert werden und worin sich Fog von Edge unterscheidet.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Edge vs Fog nach Cisco: Beim Fog-Computing treffen die Geräte selbst kurzfristige Entscheidungen; beim Edge-Computing erfolgt die Analyse in nahen, aber schon zentraleren Instanzen. Langfristige Analyse und Speicherung erfolgen bei beiden in der Cloud.">
+    <text class="svg-title" x="20" y="26">Fog vs. Edge (nach Cisco)</text>
+    <rect x="20" y="50" width="330" height="150" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="40" y="78" text-anchor="start">Fog-Computing</text>
+    <text class="svg-label-sm" x="40" y="104" text-anchor="start">Geräte selbst treffen</text>
+    <text class="svg-label-sm" x="40" y="122" text-anchor="start">kurzfristige Entscheidungen</text>
+    <text class="svg-label-sm" x="40" y="146" text-anchor="start">„Nebel“ = Vielzahl kleinster</text>
+    <text class="svg-label-sm" x="40" y="164" text-anchor="start">Geräte (Sensoren/Aktoren) in</text>
+    <text class="svg-label-sm" x="40" y="182" text-anchor="start">großer Dichte (IoT)</text>
+    <rect x="390" y="50" width="330" height="150" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="410" y="78" text-anchor="start">Edge-Computing</text>
+    <text class="svg-label-sm" x="410" y="104" text-anchor="start">Analyse in nahen, aber schon</text>
+    <text class="svg-label-sm" x="410" y="122" text-anchor="start">etwas zentraleren Instanzen</text>
+    <text class="svg-label-sm" x="410" y="146" text-anchor="start">(Edge-Server am Rand)</text>
+    <text class="svg-label-sm" x="410" y="170" text-anchor="start">oft synonym zu Fog verwendet</text>
+    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#15786E;">Gemeinsam: nur langfristige Analysen &amp; Speicherungen finden in der Cloud statt.</text>
+  </svg><figcaption>Cisco (Urheber von „Fog“): Fog = Geräte entscheiden selbst, Edge = Analyse in nahen, etwas zentraleren Instanzen.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Worin liegt laut Cisco der Unterschied zwischen <code>Fog-</code> und <code>Edge-Computing</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Fog läuft nur in der Cloud, Edge nur auf dem Smartphone.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Beim Fog treffen die Geräte selbst kurzfristige Entscheidungen; beim Edge erfolgt die Analyse in nahen, aber schon etwas zentraleren Instanzen.</li>
+        <li class="opt"><span class="tick"></span>Fog ist immer schneller als Edge.</li>
+        <li class="opt"><span class="tick"></span>Es gibt keinen Unterschied — die Begriffe sind exakt dasselbe.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Häufig werden beide Begriffe <em>synonym</em> verwendet. Cisco (Urheber des Begriffs <code>Fog</code>) unterscheidet jedoch: Beim <strong>Fog</strong> treffen die <strong>Geräte selbst</strong> kurzfristige Entscheidungen, beim <strong>Edge</strong> erfolgt die Analyse in <strong>nahen, aber schon zentraleren Instanzen</strong>. Bei beiden gilt: Nur <em>langfristige</em> Analyse/Speicherung erfolgt in der Cloud.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was bedeutet der Begriff <code>Fog</code> (Nebel) im IoT-Kontext?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Verschlüsselte Datenübertragung in der Cloud.</li>
+        <li class="opt"><span class="tick"></span>Eine einzelne, sehr leistungsstarke Recheninstanz.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Vielzahl kleinster Geräte (Sensoren, Aktoren) in großer Dichte, wie sie im IoT vorkommt.</li>
+        <li class="opt"><span class="tick"></span>Ein Synonym für die zentrale Cloud.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>Fog</code> bedeutet „Nebel“ und beschreibt die <strong>Vielzahl kleinster Geräte</strong> (Sensoren und Aktoren) in <strong>großer Dichte</strong> — bildlich wie ein Nebel aus vielen Tröpfchen —, wie es beim <code>Internet of Things</code> der Fall ist.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aspekte sind <code>Nachteile</code> bzw. Herausforderungen des Edge-Computings? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Höhere Anzahl abzusichernder Verbindungen und Geräte.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Geräte/Anwendungen sind kaum fehlertolerant — Redundanzen verursachen hohe Kosten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Aufwändige Absicherung nötig (Verschlüsselung, Zugangskontrolle, VPN).</li>
+        <li class="opt"><span class="tick"></span>Grundsätzlich höhere Latenz als in der Cloud.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Nachteile sind die <strong>steigende Zahl abzusichernder Geräte/Verbindungen</strong>, <strong>geringe Fehlertoleranz</strong> mit teuren <code>Redundanzen</code> und der hohe <strong>Sicherungsaufwand</strong> (verschlüsselte Übertragung &amp; Verarbeitung, Zugangskontrolle, <code>VPN</code>). „Höhere Latenz“ ist falsch — gerade die <em>geringe</em> Latenz ist der Hauptvorteil. <span class="tag-mistake">Verwechslung</span> Vorteil ↔ Nachteil.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Eine Fabrik (Industrie 4.0) erfasst über tausende Sensoren laufend Maschinendaten und will <strong>sofort</strong> auf drohende Ausfälle reagieren, ohne ihre Internetleitung zu überlasten. Begründe, warum Edge-Computing hier sinnvoll ist und welche Rolle die Cloud noch spielt.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Edge-Computing passt hier, weil:</p>
+      <ul>
+        <li><strong>Geringe Latenz:</strong> Die Sensordaten werden <code>vor Ort</code> (am Edge-Server) ausgewertet, sodass die Anlage in Nahezu-Echtzeit auf drohende Ausfälle reagieren kann.</li>
+        <li><strong>Bandbreite/Kosten:</strong> Es werden <code>nur noch notwendige Daten</code> über das Internet übertragen — die Leitung und der Cloud-Speicher werden entlastet, Kosten sinken.</li>
+        <li><strong>Big Data:</strong> Die enormen Sensor-Datenmengen würden eine zentrale Cloud überlasten; Vorverarbeitung am Rand löst das.</li>
+      </ul>
+      <div class="step">Rolle der Cloud: Für <strong>langfristige Analysen und Speicherung</strong> (z.&nbsp;B. Trends, Langzeitstatistik, Modelltraining) — nur dafür gehen die aufbereiteten Daten noch in die Cloud.</div>
+      <div class="step">Zu beachten: steigende Zahl abzusichernder Geräte → verschlüsselte Übertragung, Zugangskontrolle, ggf. <code>VPN</code>; für kritische Anlagen Redundanzen einplanen.</div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Verarbeitung verbleibt bei Edge-/Fog-Computing in der <code>Cloud</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die zeitkritische Echtzeit-Auswertung der Sensordaten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Nur die langfristigen Analysen und Speicherungen.</li>
+        <li class="opt"><span class="tick"></span>Gar keine Verarbeitung mehr — die Cloud entfällt vollständig.</li>
+        <li class="opt"><span class="tick"></span>Ausschließlich die Verschlüsselung der Übertragung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Bei Edge wie Fog gilt: Nur <strong>langfristige Analysen und Speicherungen</strong> finden in der Cloud statt. Die zeitkritische Verarbeitung erfolgt vorher am Rand des Netzes. Die Cloud entfällt also nicht, übernimmt aber nur noch die nicht-zeitkritischen Aufgaben.</p></div></article>
+
+  <div class="sec-head"><span class="ix">D</span><h2>Der Edge-Computer als erster intelligenter Knoten</h2></div>
+  <p class="sec-sub">Wo genau „rechnet" der Rand? Vom Sensor bis in die Cloud — am Beispiel einer Fabrik.</p>
+
+  <div class="note">
+    <span class="lbl">Erkenntnis</span>
+    <p style="margin:.4em 0 0;">Ein <strong>Edge-Computer</strong> ist der <strong>erste intelligente Knoten</strong> in der Kette: Er
+    empfängt die <strong>Rohdaten</strong>, verarbeitet sie <strong>lokal</strong> und gibt nur das <strong>Relevante</strong> weiter.
+    Das kann ein <strong>Mikrocontroller (µC)</strong>, ein <strong>Raspberry Pi</strong>, eine <strong>SPS/PLC</strong> oder ein
+    <strong>industrieller Mini-PC</strong> sein — je nach Anwendungsfall.</p>
+    <p style="margin:.5em 0 0;">Mehrere Sensoren an einem Mikrocontroller = klassisches Edge-Szenario: Der <code>µC</code> <em>ist</em> der
+    Edge-Computer, die Sensoren sind seine „Sinnesorgane" <strong>ohne eigene Intelligenz</strong> — sie liefern nur Rohdaten.</p>
+  </div>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Datenfluss in einer Fabrik: Sensoren liefern Rohdaten an einen Edge-Computer (Mikrocontroller, Raspberry Pi, SPS), der lokal verarbeitet und nur Relevantes an Fog/Gateway und schließlich aggregiert an die Cloud weitergibt.">
+      <text x="380" y="24" text-anchor="middle" class="svg-title">Vom Sensor bis in die Cloud — der Edge-Computer als erster Knoten</text>
+      <!-- Pfeil-Labels (oberhalb der Boxen, in den Lücken) -->
+      <text x="165" y="70" text-anchor="middle" class="svg-label-sm" style="fill:#B23E1F;font-weight:700;">Rohdaten →</text>
+      <text x="395" y="70" text-anchor="middle" class="svg-label-sm" style="fill:#B23E1F;font-weight:700;">nur Relevantes →</text>
+      <text x="595" y="70" text-anchor="middle" class="svg-label-sm" style="fill:#15786E;font-weight:700;">aggregiert →</text>
+      <!-- Sensoren -->
+      <text x="75" y="58" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;font-weight:700;">Sensoren</text>
+      <rect x="20" y="70" width="110" height="30" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="75" y="89" text-anchor="middle" class="svg-label-sm">Temperatur</text>
+      <rect x="20" y="110" width="110" height="30" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="75" y="129" text-anchor="middle" class="svg-label-sm">Vibration</text>
+      <rect x="20" y="150" width="110" height="30" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="75" y="169" text-anchor="middle" class="svg-label-sm">Druck</text>
+      <text x="75" y="202" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Sinnesorgane —</text>
+      <text x="75" y="217" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">keine eigene Logik</text>
+      <!-- Sensoren -> Edge -->
+      <line x1="130" y1="85" x2="200" y2="118" stroke="#DD5430" stroke-width="1.8"></line>
+      <line x1="130" y1="125" x2="200" y2="130" stroke="#DD5430" stroke-width="1.8"></line>
+      <line x1="130" y1="165" x2="200" y2="146" stroke="#DD5430" stroke-width="1.8"></line>
+      <!-- Edge-Computer -->
+      <rect x="200" y="78" width="160" height="110" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+      <text x="280" y="104" text-anchor="middle" class="svg-label" style="fill:#B23E1F;font-weight:700;">Edge-Computer</text>
+      <text x="280" y="126" text-anchor="middle" class="svg-label-sm">1. intelligenter Knoten</text>
+      <text x="280" y="146" text-anchor="middle" class="svg-label-sm">µC · Raspberry Pi</text>
+      <text x="280" y="164" text-anchor="middle" class="svg-label-sm">SPS/PLC · Mini-PC</text>
+      <!-- Edge -> Fog -->
+      <line x1="360" y1="133" x2="424" y2="133" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="430,133 420,128 420,138" fill="#15786E"></polygon>
+      <!-- Fog / Gateway -->
+      <rect x="430" y="88" width="130" height="90" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+      <text x="495" y="118" text-anchor="middle" class="svg-label" style="fill:#15786E;font-weight:700;">Fog / Gateway</text>
+      <text x="495" y="140" text-anchor="middle" class="svg-label-sm">Maschinen-Ebene</text>
+      <text x="495" y="158" text-anchor="middle" class="svg-label-sm">bündelt Edge-Knoten</text>
+      <!-- Fog -> Cloud -->
+      <line x1="560" y1="133" x2="624" y2="133" stroke="#15786E" stroke-width="2"></line>
+      <polygon points="630,133 620,128 620,138" fill="#15786E"></polygon>
+      <!-- Cloud -->
+      <rect x="630" y="98" width="110" height="72" rx="14" fill="#fff" stroke="#16242E" stroke-width="2"></rect>
+      <text x="685" y="124" text-anchor="middle" class="svg-label" style="font-weight:700;">Cloud</text>
+      <text x="685" y="144" text-anchor="middle" class="svg-label-sm">Langzeit-Analyse</text>
+      <text x="685" y="160" text-anchor="middle" class="svg-label-sm">&amp; Speicher</text>
+      <!-- Fußnote -->
+      <text x="20" y="252" text-anchor="start" class="svg-label-sm" style="fill:#5C6B78;">Mehrere Sensoren an einem Mikrocontroller = klassisches Edge-Szenario:</text>
+      <text x="20" y="270" text-anchor="start" class="svg-label-sm" style="fill:#5C6B78;">der µC IST der Edge-Computer, die Sensoren liefern nur Rohdaten.</text>
+    </svg>
+    <figcaption>Fabrik-Datenfluss: Sensoren (ohne eigene Intelligenz) → Edge-Computer (verarbeitet lokal) → Fog/Gateway → Cloud (nur Langzeit-Analyse &amp; Speicher).</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist der <code>Edge-Computer</code> als „erster intelligenter Knoten" in einem Sensornetz typischerweise?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Das zentrale Cloud-Rechenzentrum, das alle Sensordaten zuerst empfängt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein lokaler Rechner wie ein <code>Mikrocontroller</code>, <code>Raspberry Pi</code>, eine <code>SPS/PLC</code> oder ein Industrie-Mini-PC, der die Rohdaten empfängt, vor Ort verarbeitet und nur Relevantes weitergibt.</li>
+        <li class="opt"><span class="tick"></span>Jeder einzelne Sensor, der seine Daten vollständig selbst auswertet.</li>
+        <li class="opt"><span class="tick"></span>Ein reines Speichermedium ganz ohne Rechenleistung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Edge-Computer ist der <strong>erste intelligente Knoten</strong>: ein lokaler Rechner (<code>µC</code>, <code>Raspberry Pi</code>, <code>SPS/PLC</code>, Industrie-Mini-PC), der Rohdaten empfängt, <strong>lokal verarbeitet</strong> und nur Relevantes weitergibt. Die <strong>Sensoren</strong> sind nur „Sinnesorgane" <em>ohne eigene Intelligenz</em>. <span class="tag-mistake">Verwechslung</span> Sensor ≠ Edge-Computer; die Cloud ist gerade <em>nicht</em> der erste Knoten.</p></div></article>
+
+  <nav class="pager">
+    <a class="prev" href="7-it-infrastruktur.html"><span>Vorheriges Thema</span><b>7 · IT-Infrastruktur</b></a>
+    <a class="next" href="9-server-betriebssystem.html"><span>Nächstes Thema</span><b>9 · Server-Betriebssysteme</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 8 — Edge- &amp; Fog-Computing</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

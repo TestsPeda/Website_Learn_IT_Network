@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Stückliste (Bill of Materials) — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html" class="current">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Material &amp; Kalkulation</p>
+    <div class="hero-num"><span class="hash">#</span>04</div>
+    <h1>Stückliste (Bill of Materials)</h1>
+    <p class="lede">Die strukturierte Auflistung aller Materialien eines Projekts: Position, Bezeichnung, Menge,
+      Einheit, Einzelpreis und Gesamtpreis. Grundlage für Beschaffung, Kalkulation und Angebot.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>13</b> Aufgaben</span>
+      <span class="pill"><b>2</b> Diagramme</span>
+      <span class="pill">MC · Rechnen · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Grundlagen &amp; Aufbau</h2></div>
+  <p class="sec-sub">Was eine Stückliste ist, welche Spalten sie enthält und wozu sie dient.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Aufbau einer Stückliste: Kopfdaten oben, darunter eine Tabelle mit den Spalten Lfd. Nr., Menge, Einheit, Bezeichnung, Einzelpreis und Gesamtpreis, ganz unten die Summenzeile">
+    <text class="svg-title" x="20" y="26">Aufbau einer Stückliste</text>
+    <rect x="20" y="42" width="680" height="44" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="34" y="62" text-anchor="start">Kopf: Projekt · Projektnr. · Datum · Ersteller</text>
+    <text class="svg-label-sm" x="34" y="79" text-anchor="start">Wer kalkuliert für welches Projekt?</text>
+    <rect x="20" y="98" width="680" height="30" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="60" y="118" text-anchor="middle">Lfd. Nr.</text>
+    <text class="svg-label-sm" x="150" y="118" text-anchor="middle">Menge</text>
+    <text class="svg-label-sm" x="235" y="118" text-anchor="middle">Einheit</text>
+    <text class="svg-label-sm" x="360" y="118" text-anchor="middle">Bezeichnung</text>
+    <text class="svg-label-sm" x="505" y="118" text-anchor="middle">Einzelpreis</text>
+    <text class="svg-label-sm" x="630" y="118" text-anchor="middle">Gesamtpreis</text>
+    <rect x="20" y="130" width="680" height="26" rx="0" fill="#FFFFFF" stroke="#D4DEE6" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="60" y="147" text-anchor="middle">1</text>
+    <text class="svg-label-sm" x="150" y="147" text-anchor="middle">400</text>
+    <text class="svg-label-sm" x="235" y="147" text-anchor="middle">Meter</text>
+    <text class="svg-label-sm" x="360" y="147" text-anchor="middle">Netzwerkkabel Cat.7</text>
+    <text class="svg-label-sm" x="505" y="147" text-anchor="middle">0,40 €</text>
+    <text class="svg-label-sm" x="630" y="147" text-anchor="middle">160,00 €</text>
+    <rect x="20" y="156" width="680" height="26" rx="0" fill="#FFFFFF" stroke="#D4DEE6" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="60" y="173" text-anchor="middle">2</text>
+    <text class="svg-label-sm" x="150" y="173" text-anchor="middle">16</text>
+    <text class="svg-label-sm" x="235" y="173" text-anchor="middle">Stk.</text>
+    <text class="svg-label-sm" x="360" y="173" text-anchor="middle">Netzwerkdosen</text>
+    <text class="svg-label-sm" x="505" y="173" text-anchor="middle">13,90 €</text>
+    <text class="svg-label-sm" x="630" y="173" text-anchor="middle">222,40 €</text>
+    <rect x="20" y="192" width="680" height="34" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="505" y="214" text-anchor="middle">Summe (Netto)</text>
+    <text class="svg-label" x="630" y="214" text-anchor="middle">Σ</text>
+    <text class="svg-label-sm" x="150" y="244" text-anchor="middle" style="fill:#15786E;">Gesamtpreis = Menge × Einzelpreis &nbsp;·&nbsp; Summe = Σ aller Gesamtpreise</text>
+  </svg><figcaption>Aufbau einer Stückliste: Kopfdaten, Positionszeilen (Spalten) und Summenzeile.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist eine <code>Stückliste</code> (Bill of Materials, BOM)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein Zeitplan, der die Reihenfolge der Montagearbeiten festlegt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Eine strukturierte Auflistung aller Materialien/Komponenten eines Projekts mit Menge und Preis.</li>
+        <li class="opt"><span class="tick"></span>Ein Lageplan, der die Position der Netzwerkdosen im Gebäude zeigt.</li>
+        <li class="opt"><span class="tick"></span>Ein Vertrag, der die Gewährleistung der gelieferten Geräte regelt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Stückliste (engl. <code>Bill of Materials</code>) listet vollständig auf, <em>was</em> in welcher <em>Menge</em> zu welchem <em>Preis</em> für ein Projekt beschafft werden muss. <span class="tag-mistake">Verwechslung</span>: Der Zeitplan ist der Projektplan, der Lageplan ist der Gebäude-/Verkabelungsplan.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Angaben gehören in den <code>Kopf</code> einer Stückliste?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nur die Summe und die Mehrwertsteuer.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Projektname, Projektnummer, Datum und Ersteller.</li>
+        <li class="opt"><span class="tick"></span>Die IP-Adressen aller Geräte im Netz.</li>
+        <li class="opt"><span class="tick"></span>Die RAID-Stufe des eingesetzten Speichersystems.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Kopf identifiziert die Liste eindeutig: <code>Projekt</code> (z. B. „A Ä“), <code>Projektnr.</code> (z. B. 187), <code>Datum</code> und <code>Ersteller</code>. So ist klar, wofür und von wem die Kalkulation stammt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Spalten bilden die typische <code>Positionszeile</code> einer Stückliste?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Hostname, MAC-Adresse, Subnetzmaske, Gateway.</li>
+        <li class="opt"><span class="tick"></span>Sender, Empfänger, Protokoll, Port.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Lfd. Nr., Menge, Einheit, Bezeichnung, Einzelpreis, Gesamtpreis.</li>
+        <li class="opt"><span class="tick"></span>Topologie, Medium, Kategorie, Reichweite.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Jede Position trägt eine laufende Nummer (<code>Lfd. Nr.</code>), die <code>Menge</code> mit <code>Einheit</code> (Meter, Stk.), die <code>Bezeichnung</code>, optional eine <code>Bemerkung</code>/Verweis sowie <code>Einzelpreis</code> und daraus berechneten <code>Gesamtpreis</code>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wofür dient eine Stückliste vor allem? <span class="q-hint">(Mehrfachauswahl — danach „Auswerten“)</span></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Als Grundlage für die <code>Beschaffung</code> (Einkauf der richtigen Mengen).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Für die <code>Kalkulation</code> der Materialkosten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Als Basis für ein <code>Angebot</code> an den Kunden.</li>
+        <li class="opt"><span class="tick"></span>Zur Vergabe von IP-Adressen im Netzwerk.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Stückliste verbindet drei Zwecke: <code>Beschaffung</code> (was und wie viel einkaufen), <code>Kalkulation</code> (was kostet das Material) und <code>Angebot</code> (Preisbasis für den Kunden). Die IP-Adressvergabe gehört dagegen zur Netzkonfiguration (DHCP), nicht zur Materialliste.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie berechnet sich der <code>Gesamtpreis</code> einer einzelnen Position?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Einzelpreis ÷ Menge.</li>
+        <li class="opt"><span class="tick"></span>Einzelpreis + Menge.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Menge × Einzelpreis.</li>
+        <li class="opt"><span class="tick"></span>Summe aller Einzelpreise ÷ Anzahl Positionen.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Positions-Gesamtpreis ist <code>Menge × Einzelpreis</code>. Die <code>Summe (Netto)</code> der Liste ist anschließend die Summe aller Positions-Gesamtpreise.</p></div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Mengenermittlung &amp; Einzelpositionen rechnen</h2></div>
+  <p class="sec-sub">Konkrete Positionen aus dem Projekt „A Ä“ (Projektnr. 187). Gesamtpreis = Menge × Einzelpreis.</p>
+
+  <div class="tbl-wrap"><table class="ref">
+    <thead><tr><th>Lfd. Nr.</th><th>Menge</th><th>Einheit</th><th>Bezeichnung</th><th>Einzelpreis (Netto)</th><th>Gesamtpreis (Netto)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>400</td><td>Meter</td><td>Netzwerkkabel (Cat.7, S/FTP)</td><td>0,40 €</td><td>160,00 €</td></tr>
+      <tr><td>2</td><td>16</td><td>Stk.</td><td>Netzwerkdosen (doppelt, geschirmt)</td><td>13,90 €</td><td>222,40 €</td></tr>
+      <tr><td>3</td><td>1</td><td>Stk.</td><td>Patchpanel (16 Ports, CAT.7)</td><td>79,90 €</td><td>79,90 €</td></tr>
+      <tr><td>4</td><td>16</td><td>Stk.</td><td>Patchkabel (1 m, S/FTP)</td><td>3,98 €</td><td>63,68 €</td></tr>
+      <tr><td>5</td><td>1</td><td>Stk.</td><td>Workstation (Dell 9790)</td><td>3.199,00 €</td><td>3.199,00 €</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-sub">Hinweis: Die <code>Gesamtpreis</code>-Spalte ist hier durchgerechnet (<code>Menge × Einzelpreis</code>) und dient als Grundlage der folgenden Aufgaben.</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Pos. 1 – Netzwerkkabel: <code>400 Meter</code> zu <code>0,40 €</code> je Meter. Berechne den Gesamtpreis (Netto).</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Gesamtpreis = Menge × Einzelpreis = 400 × 0,40 € = <strong>160,00 €</strong></div>
+      <p>Bei der Einheit <code>Meter</code> ist die Mengenermittlung eine Längenangabe – der Einzelpreis ist hier der Preis pro Meter.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Pos. 2 – Netzwerkdosen: <code>16 Stk.</code> zu <code>13,90 €</code> je Stück. Wie hoch ist der Gesamtpreis (Netto)?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Gesamtpreis = 16 × 13,90 € = <strong>222,40 €</strong></div>
+      <p>Rechenweg: 16 × 13 € = 208 €; 16 × 0,90 € = 14,40 €; Summe = 222,40 €.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Pos. 4 – Patchkabel: <code>16 Stk.</code> zu <code>3,98 €</code> je Stück. Berechne den Gesamtpreis (Netto).</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Gesamtpreis = 16 × 3,98 € = <strong>63,68 €</strong></div>
+      <p>Trick: 16 × 4 € = 64 €; davon 16 × 0,02 € = 0,32 € abziehen → 64,00 € − 0,32 € = 63,68 €.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text"><strong>Mengenermittlung:</strong> Pro Arbeitsplatz wird je <code>1 Netzwerkdose</code> und <code>1 Patchkabel</code> benötigt; das Patchpanel hat <code>16 Ports</code>. Für wie viele Arbeitsplätze ist diese Stückliste ausgelegt, und passt die Anzahl der Dosen/Patchkabel dazu?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Patchpanel: 16 Ports → bis zu <strong>16 Arbeitsplätze</strong>.</div>
+      <div class="step">Netzwerkdosen: 16 Stk. → 1 Dose je Arbeitsplatz → passt.</div>
+      <div class="step">Patchkabel: 16 Stk. → 1 Kabel je Port am Panel → passt.</div>
+      <p>Die Mengen sind aufeinander abgestimmt (16/16/16). So vermeidet die Mengenermittlung sowohl Engpässe als auch unnötigen Überschuss.</p>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Summenbildung, Netto/Brutto &amp; Szenario</h2></div>
+  <p class="sec-sub">Aus den Positions-Gesamtpreisen die Summe bilden und die Mehrwertsteuer aufschlagen.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 230" role="img" aria-label="Von der Position zur Summe und zum Bruttopreis: Positions-Gesamtpreise werden zur Netto-Summe addiert, plus 19 Prozent Mehrwertsteuer ergibt den Brutto-Endbetrag">
+    <text class="svg-title" x="20" y="26">Von den Positionen zum Endbetrag</text>
+    <rect x="20" y="50" width="180" height="120" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="110" y="72" text-anchor="middle">Gesamtpreise je Pos.</text>
+    <text class="svg-label-sm" x="110" y="96" text-anchor="middle">160,00 €</text>
+    <text class="svg-label-sm" x="110" y="114" text-anchor="middle">222,40 €</text>
+    <text class="svg-label-sm" x="110" y="132" text-anchor="middle">79,90 € · 63,68 €</text>
+    <text class="svg-label-sm" x="110" y="150" text-anchor="middle">3.199,00 €</text>
+    <line x1="200" y1="110" x2="270" y2="110" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="235" y="100" text-anchor="middle">Σ</text>
+    <rect x="270" y="60" width="180" height="100" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="360" y="100" text-anchor="middle">Summe (Netto)</text>
+    <text class="svg-label-sm" x="360" y="124" text-anchor="middle">3.824,98 €</text>
+    <line x1="450" y1="110" x2="520" y2="110" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="485" y="100" text-anchor="middle">+19 %</text>
+    <rect x="520" y="60" width="180" height="100" rx="5" fill="#FBEAE3" stroke="#B23E1F" stroke-width="2"></rect>
+    <text class="svg-label" x="610" y="100" text-anchor="middle">Brutto (inkl. MwSt)</text>
+    <text class="svg-label-sm" x="610" y="124" text-anchor="middle">4.551,73 €</text>
+    <text class="svg-label-sm" x="360" y="205" text-anchor="middle" style="fill:#15786E;">Netto-Summe × 1,19 = Brutto &nbsp;·&nbsp; MwSt = Netto × 0,19</text>
+  </svg><figcaption>Summenbildung: Positions-Gesamtpreise → Netto-Summe → Brutto (inkl. 19 % MwSt).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text"><strong>Summenbildung:</strong> Bilde die <code>Summe (Netto)</code> aus den fünf Positions-Gesamtpreisen: 160,00 € · 222,40 € · 79,90 € · 63,68 € · 3.199,00 €.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">160,00 € + 222,40 € = 382,40 €</div>
+      <div class="step">382,40 € + 79,90 € = 462,30 €</div>
+      <div class="step">462,30 € + 63,68 € = 525,98 €</div>
+      <div class="step">525,98 € + 3.199,00 € = <strong>3.824,98 € (Netto)</strong></div>
+      <p>Die Summe (Netto) ist der reine Materialwert ohne Mehrwertsteuer.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text"><strong>Netto → Brutto:</strong> Schlage auf die Netto-Summe von <code>3.824,98 €</code> die <code>Mehrwertsteuer (19 %)</code> auf. Wie hoch sind MwSt-Betrag und Brutto-Endbetrag?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">MwSt = Netto × 0,19 = 3.824,98 € × 0,19 = <strong>726,75 €</strong></div>
+      <div class="step">Brutto = Netto + MwSt = 3.824,98 € + 726,75 € = <strong>4.551,73 €</strong></div>
+      <p>Kurzform: Brutto = Netto × 1,19. <span class="tag-mistake">Achtung</span>: In der Stückliste werden i. d. R. <code>Netto</code>-Preise geführt; die MwSt wird erst im Angebot/auf der Rechnung ausgewiesen.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Rechnen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text"><strong>Änderung kalkulieren:</strong> Das Projekt wird auf <code>24 Arbeitsplätze</code> erweitert. Es werden zusätzlich <code>8 Netzwerkdosen</code> (je 13,90 €), <code>8 Patchkabel</code> (je 3,98 €) und <code>100 Meter</code> Kabel (0,40 €/m) gebraucht. Um wie viel € (Netto) steigt die Summe?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step">Dosen: 8 × 13,90 € = 111,20 €</div>
+      <div class="step">Patchkabel: 8 × 3,98 € = 31,84 €</div>
+      <div class="step">Kabel: 100 × 0,40 € = 40,00 €</div>
+      <div class="step">Mehrkosten = 111,20 € + 31,84 € + 40,00 € = <strong>183,04 € (Netto)</strong></div>
+      <p>Neue Netto-Summe = 3.824,98 € + 183,04 € = 4.008,02 €. So zeigt die Stückliste direkt, wie sich eine Mengenänderung auf die Kalkulation auswirkt.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Du sollst für ein neues Büro ein <strong>Angebot</strong> erstellen. Welche Schritte gehst du mit der Stückliste durch – von der Mengenermittlung bis zum Brutto-Endbetrag? Nenne auch, warum die Spalte „Links/Verweis“ sinnvoll ist.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ol>
+        <li><strong>Mengenermittlung:</strong> aus dem Gebäude-/Verkabelungsplan ableiten, wie viele Dosen, Kabelmeter, Patchkabel, Patchpanels, Endgeräte je Arbeitsplatz nötig sind.</li>
+        <li><strong>Bezeichnung &amp; Einheit:</strong> jede Position konkret benennen (z. B. „Netzwerkkabel Cat.7, S/FTP“) mit Einheit (Meter, Stk.).</li>
+        <li><strong>Einzelpreise recherchieren</strong> und in die Spalte <code>Einzelpreis (Netto)</code> eintragen.</li>
+        <li><strong>Gesamtpreise rechnen:</strong> je Position <code>Menge × Einzelpreis</code>.</li>
+        <li><strong>Summenbildung:</strong> Σ aller Gesamtpreise = Netto-Summe; dann <code>+ 19 % MwSt</code> = Brutto.</li>
+      </ol>
+      <div class="step">Die Spalte <code>Links/Verweis</code> dokumentiert die Bezugsquelle/das Angebot je Position. Das macht die Kalkulation <strong>nachvollziehbar</strong>, erleichtert die <strong>Beschaffung</strong> (direkt bestellen) und Preisaktualisierungen.</div>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="3-uebertragungsmedien.html"><span>Vorheriges Thema</span><b>3 · Übertragungsmedien</b></a>
+    <a class="next" href="5-geraeteklassen.html"><span>Nächstes Thema</span><b>5 · Geräteklassen</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 04 — Stückliste (Bill of Materials)</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Gebäude- &amp; Verkabelungsplan — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html" class="current">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Planung &amp; Dokumentation</p>
+    <div class="hero-num"><span class="hash">#</span>02</div>
+    <h1>Gebäude- &amp; Verkabelungsplan</h1>
+    <p class="lede">Wie ein Netzwerk vor dem ersten Kabel geplant und dokumentiert wird: Gebäudeplan
+      mit Räumen und Kabelkanälen, Verkabelungsplan vom Patchpanel zur Dose – und wer im Projekt
+      mit Lastenheft bzw. Pflichtenheft was festlegt.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Gebäudeplan – Räume, Symbole, Legende</h2></div>
+  <p class="sec-sub">Der Gebäudeplan zeigt den Grundriss je Stockwerk: Räume, Kabelkanäle, Dosen und den Netzwerkschrank – verständlich nur mit Legende.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 320" role="img" aria-label="Schematischer Gebäudeschnitt mit zwei Etagen, Technikraum mit Netzwerkschrank, horizontalen Kabelkanälen je Etage und einer vertikalen Steigzone, die die Etagen verbindet">
+    <text class="svg-title" x="20" y="26">Schematischer Gebäudeschnitt – Verlegewege</text>
+    <!-- Gebäudehülle -->
+    <rect x="40" y="50" width="560" height="230" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <!-- Etagentrennung -->
+    <line x1="40" y1="165" x2="600" y2="165" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="55" y="72" >1. OG</text>
+    <text class="svg-label-sm" x="55" y="187" >EG</text>
+    <!-- Technikraum mit Schrank (EG) -->
+    <rect x="60" y="200" width="120" height="62" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="120" y="222" text-anchor="middle">Technikraum</text>
+    <rect x="92" y="230" width="56" height="22" rx="3" fill="#DD5430" stroke="#B23E1F" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="120" y="245" text-anchor="middle" style="fill:#FFFFFF;">Schrank</text>
+    <!-- Räume EG -->
+    <rect x="220" y="200" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="275" y="235" text-anchor="middle">Büro 1</text>
+    <rect x="360" y="200" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="415" y="235" text-anchor="middle">Konferenz</text>
+    <!-- Räume OG -->
+    <rect x="220" y="85" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="275" y="120" text-anchor="middle">Büro 3</text>
+    <rect x="360" y="85" width="110" height="62" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="415" y="120" text-anchor="middle">Büro 4</text>
+    <!-- Horizontale Kanäle -->
+    <line x1="180" y1="231" x2="470" y2="231" stroke="#15786E" stroke-width="3"></line>
+    <line x1="180" y1="116" x2="470" y2="116" stroke="#15786E" stroke-width="3"></line>
+    <text class="svg-label-sm" x="500" y="225" >horizontal</text>
+    <text class="svg-label-sm" x="500" y="110" >horizontal</text>
+    <!-- Vertikale Steigzone -->
+    <rect x="170" y="116" width="14" height="115" fill="#DD5430" opacity="0.85"></rect>
+    <text class="svg-label-sm" x="120" y="160" text-anchor="middle" style="fill:#B23E1F;">Steigzone</text>
+    <text class="svg-label-sm" x="120" y="174" text-anchor="middle" style="fill:#B23E1F;">(vertikal)</text>
+  </svg><figcaption>Vom Netzwerkschrank im Technikraum laufen horizontale Kabelkanäle in die Räume; eine vertikale Steigzone verbindet die Etagen.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was zeigt der <code>Gebäudeplan</code> in erster Linie?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Nur die Liste aller benötigten Kabel mit Längen und Preisen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Den Grundriss je Stockwerk mit Räumen, Kabelkanälen, Dosen und Netzwerkschrank.</li>
+        <li class="opt"><span class="tick"></span>Die logische IP-Adressierung aller Endgeräte.</li>
+        <li class="opt"><span class="tick"></span>Die Sitzordnung der Mitarbeiter ohne technische Angaben.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Gebäudeplan ist der <code>Grundriss</code> jedes Stockwerks: Räume mit Namen/Nummern, eingezeichnete Kabelkanäle (horizontal und vertikal), Anschlussdosen, Bodentanks und der Netzwerkschrank. Erst der Verkabelungsplan listet die einzelnen Strecken.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum braucht ein Gebäudeplan zwingend eine <code>Legende</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Damit der Plan farbiger und ansprechender aussieht.</li>
+        <li class="opt"><span class="tick"></span>Weil die Norm verbietet, Symbole ohne Farbe zu verwenden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Weil die Symbole (Dose, Bodentank, Schrank, Kanalart) sonst nicht eindeutig lesbar sind.</li>
+        <li class="opt"><span class="tick"></span>Weil ohne Legende keine Maßstabsangabe möglich ist.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Legende ordnet jedem Symbol seine Bedeutung zu – z. B. dünne Linie = horizontaler Kanal, Raute = Bodentank mit zwei Doppeldosen, oranges Rechteck = Netzwerkschrank. Ohne Legende ist der Plan nicht eindeutig interpretierbar.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Im Plan ist eine Linie als <em>„Kabelkanal (horizontal in abgehängter Decke)“</em> gekennzeichnet. Was bedeutet diese gesonderte Markierung?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Dass an dieser Stelle gar kein Kabel verlegt wird.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Dass die Durchführung in der Decke verläuft und deshalb extra gekennzeichnet ist.</li>
+        <li class="opt"><span class="tick"></span>Dass hier ausschließlich Stromkabel liegen dürfen.</li>
+        <li class="opt"><span class="tick"></span>Dass das Kabel senkrecht zwischen den Etagen läuft.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Kabelkanäle, deren Durchführung in der (abgehängten) Decke verläuft, werden im Plan extra gekennzeichnet – so ist der Verlegeweg eindeutig. <span class="tag-mistake">Verwechslung</span>: Senkrecht zwischen Etagen verläuft der <em>vertikale</em> Kanal (Steigzone), nicht der Deckenkanal.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Element repräsentiert im Plan der <em>Bodentank</em>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Den zentralen Netzwerkschrank mit Patchpanel und Switch.</li>
+        <li class="opt"><span class="tick"></span>Eine einzelne CAT6-Doppeldose an der Wand.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Einen im Boden eingelassenen Anschlusspunkt mit zwei Doppeldosen, per Verlegekabel zugeführt.</li>
+        <li class="opt"><span class="tick"></span>Einen vertikalen Kabelschacht zwischen den Stockwerken.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Im Konferenzraum und in Büro 4 sind <code>Bodentanks mit je zwei Doppeldosen</code> vorgesehen. Sie werden über im Boden verlaufendes Verlegekabel angebunden – sinnvoll für Tische mitten im Raum, weit von der Wand entfernt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Angaben/Elemente gehören laut Aufgabenstellung in einen vollständigen <code>Gebäudeplan</code>? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Raumnummern bzw. Namen der Räume.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Anschlussdosen und Patchpanels.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Kabelschächte mit sinnvollen Kurzkennungen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Maßstab und Legende.</li>
+        <li class="opt"><span class="tick"></span>Die monatlichen Stromkosten je Raum.</li>
+        <li class="opt"><span class="tick"></span>Die Lease-Time des DHCP-Servers.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein Gebäudeplan enthält: den <code>Grundriss</code> je Stockwerk, <code>Kabelschächte mit Kurzkennungen</code>, <code>Anschlussdosen und Patchpanels</code>, <code>Raumnummern/Namen</code>, <code>Maßstab</code> und eine <code>Legende</code>. Stromkosten und DHCP-Lease-Time gehören nicht dazu.</p></div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Kabelkanäle &amp; sinnvolle Kurzkennungen</h2></div>
+  <p class="sec-sub">Damit jeder Kanal eindeutig referenzierbar ist, bekommt er ein kurzes, sprechendes Kürzel – aus Etage, Raum und Lage abgeleitet.</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist der Zweck einer Kurzkennung wie <code>K1B2</code> für einen Kabelkanal?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Sie gibt die exakte Kabellänge in Metern an.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie kennzeichnet den Kanal eindeutig und sprechend (hier: Kanal 1, Büro 2).</li>
+        <li class="opt"><span class="tick"></span>Sie bestimmt die zu verwendende IP-Adresse.</li>
+        <li class="opt"><span class="tick"></span>Sie ist eine zufällige Seriennummer ohne weitere Bedeutung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Kurzkennungen sind <code>sinnvolle Kurzkennungen</code>: <code>K1B2</code> = „Kanal 1, Büro 2“. So lässt sich jeder Kanal eindeutig im Plan und im Verkabelungsplan referenzieren – ohne lange Beschreibungen.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Ein Kanal trägt im Plan das Kürzel <code>KvB4</code> (Kanal vertikal Büro 4). Welche Aufgabe hat ein <em>vertikaler</em> Kanal?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er führt das Kabel waagerecht zur nächsten Wanddose.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er führt Kabel senkrecht – z. B. nach oben in die Decke oder zwischen Ebenen (Steigzone).</li>
+        <li class="opt"><span class="tick"></span>Er ersetzt den Netzwerkschrank.</li>
+        <li class="opt"><span class="tick"></span>Er bündelt ausschließlich Stromleitungen.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <code>vertikaler Kanal</code> (im Plan eigenes Symbol) führt Kabel senkrecht – etwa von der Dose hoch in die Deckenführung oder in einer Steigzone zwischen den Etagen. Im Plan sind solche vertikalen Kanäle gesondert gekennzeichnet.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Erläutere, wie sich aus den Bestandteilen <em>Kanalart</em>, <em>Etage/Nummer</em> und <em>Raum</em> sinnvolle Kurzkennungen bilden lassen. Bilde drei Beispiele und benenne sie.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Eine Kurzkennung kombiniert <strong>Kanalnummer/-art</strong> + <strong>Raum</strong> (ggf. mit Zusatz für die Lage):</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Kürzel</th><th>Bedeutung</th></tr></thead>
+        <tbody>
+          <tr><td><code>K1B1</code></td><td>Kanal 1, Büro 1 (horizontale Zuführung)</td></tr>
+          <tr><td><code>K-UP</code></td><td>Kanal Unterputz (z. B. Flur/WC)</td></tr>
+          <tr><td><code>KvKo</code></td><td>Kanal vertikal Konferenz (senkrechte Führung)</td></tr>
+        </tbody>
+      </table></div>
+      <div class="step">Prinzip: kurz, eindeutig, sprechend. Wer das Kürzel liest, weiß sofort Lage und Raum – ohne den Plan abzusuchen.</div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Verkabelungsplan – vom Patchpanel zur Dose</h2></div>
+  <p class="sec-sub">Der Verkabelungsplan dokumentiert jede einzelne Strecke: Anfangspunkt, Patchpanel-Port, beteiligte Kanäle, Endraum, Dose und Medium.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 250" role="img" aria-label="Verkabelungsstrecke vom Netzwerkschrank über Patchpanel-Port und Kabelkanäle bis zur Anschlussdose im Zielraum">
+    <text class="svg-title" x="20" y="26">Eine Strecke im Verkabelungsplan</text>
+    <!-- Schrank -->
+    <rect x="30" y="70" width="130" height="120" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="95" y="94" text-anchor="middle">Schrank S1</text>
+    <rect x="48" y="110" width="94" height="22" rx="3" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="95" y="125" text-anchor="middle">Patchpanel PP1</text>
+    <rect x="48" y="150" width="94" height="22" rx="3" fill="#15786E"></rect>
+    <text class="svg-label-sm" x="95" y="165" text-anchor="middle" style="fill:#FFFFFF;">Switch S1</text>
+    <!-- Port -->
+    <text class="svg-label-sm" x="200" y="116" text-anchor="middle">PP1-PN12</text>
+    <!-- Kanal -->
+    <line x1="160" y1="130" x2="470" y2="130" stroke="#15786E" stroke-width="3"></line>
+    <text class="svg-label-sm" x="315" y="118" text-anchor="middle">Kanäle: K1T / Kwest / K1B1</text>
+    <text class="svg-label-sm" x="315" y="150" text-anchor="middle" style="fill:#5C6B78;">Medium: S/FTP Kat.6</text>
+    <!-- Zielraum -->
+    <rect x="470" y="70" width="220" height="120" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="580" y="96" text-anchor="middle">Büro 1 (Endraum)</text>
+    <rect x="510" y="120" width="140" height="40" rx="4" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="580" y="138" text-anchor="middle">Doppeldose</text>
+    <text class="svg-label-sm" x="580" y="153" text-anchor="middle">DD1/B1 · DD2/B1</text>
+  </svg><figcaption>Jede Strecke: Anfangsraum/Schrank → Patchpanel-Port (PP/PN) → beteiligte Kabelkanäle → Endraum → Anschlussdose; dazu das Medium (z. B. <code>S/FTP Kat.6</code>).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Angaben dokumentiert eine Strecke im <code>Verkabelungsplan</code>? <em>(Mehrfachauswahl)</em></p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Eine Kennzeichnung / ID der Strecke.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Patchpanel mit Kennzeichnung und Portnummer (<code>PP/PN</code>).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Endpunkt 1 (Anfangsraum) und Endpunkt 2 (Endraum) mit Dose/Port.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Beteiligte Kabelkanäle und das Medium (Kategorie/Linkklasse).</li>
+        <li class="opt"><span class="tick"></span>Die Gehaltsstufe des jeweiligen Raumnutzers.</li>
+        <li class="opt"><span class="tick"></span>Die Standardgateway-Adresse des Subnetzes.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Eine Strecke enthält: <code>ID/Beschreibung</code>, <code>Netzwerkschrank</code>, <code>Patchpanel + Portnummer (PP/PN)</code>, <code>Endpunkt 1</code> (Anfangsraum) und <code>Endpunkt 2</code> (Endraum), <code>Anschlussdose und Port</code>, beteiligte <code>Kabelkanäle</code> und das <code>Medium</code> (KAT./Linkklasse). Gehalt und Gateway gehören nicht dazu.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Im Verkabelungsplan steht bei einer Strecke <code>PP1-PN12-15</code>. Was bedeutet das?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Eine IP-Range von 12 bis 15.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Patchpanel 1, Portnummern 12 bis 15 – also vier Ports/Kabel dieser Strecke.</li>
+        <li class="opt"><span class="tick"></span>Ein Patchkabel mit 12 bis 15 Metern Länge.</li>
+        <li class="opt"><span class="tick"></span>Die Anzahl der Räume im Stockwerk.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>PP1</code> = Patchpanel 1, <code>PN12-15</code> = Portnummern 12 bis 15. Diese Strecke umfasst also vier Ports. Im Beispiel führt sie über <code>K1T/Kwest/K1B1</code> als <code>4 × S/FTP-Kat.6</code> nach Büro 1.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Die Medienangabe lautet <code>S/FTP Kat.6</code>. Wofür stehen die beiden Teile?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>S/FTP = Steckertyp, Kat.6 = Kabellänge.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>S/FTP = Kabelart/Schirmung, Kat.6 = Leistungs-/Kategorieklasse.</li>
+        <li class="opt"><span class="tick"></span>S/FTP = Übertragungsprotokoll, Kat.6 = IP-Version.</li>
+        <li class="opt"><span class="tick"></span>S/FTP = Raumkennung, Kat.6 = Portnummer.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>S/FTP</code> beschreibt die <code>Kabelart/-schirmung</code> (Gesamtschirm + paarweise Folienschirmung), <code>Kat.6</code> die <code>Leistungsklasse/Kategorie</code> des Kabels. Beides zusammen legt das Übertragungsmedium der Strecke fest.</p></div></article>
+
+  <div class="sec-head"><span class="ix">D</span><h2>Lastenheft vs. Pflichtenheft</h2></div>
+  <p class="sec-sub">Vor der Planung steht die Auftragsklärung: Der Auftraggeber sagt im Lastenheft <em>was</em> er will, der Auftragnehmer antwortet im Pflichtenheft <em>wie</em> er es umsetzt.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 230" role="img" aria-label="Fluss vom Lastenheft des Auftraggebers zum Pflichtenheft des Auftragnehmers: Soll-Anforderungen werden zur Wie-Umsetzung">
+    <text class="svg-title" x="20" y="26">Lastenheft → Pflichtenheft</text>
+    <!-- Auftraggeber -->
+    <rect x="30" y="60" width="280" height="130" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="170" y="86" text-anchor="middle">Auftraggeber (Kunde)</text>
+    <rect x="55" y="100" width="230" height="70" rx="5" fill="#FFFFFF" stroke="#15786E" stroke-width="1.5"></rect>
+    <text class="svg-label" x="170" y="126" text-anchor="middle">Lastenheft</text>
+    <text class="svg-label-sm" x="170" y="148" text-anchor="middle" style="fill:#5C6B78;">WAS &amp; WOZU — das Soll</text>
+    <text class="svg-label-sm" x="170" y="162" text-anchor="middle" style="fill:#5C6B78;">Anforderungen / Ziele</text>
+    <!-- Pfeil -->
+    <line x1="310" y1="135" x2="410" y2="135" stroke="#DD5430" stroke-width="3"></line>
+    <polygon points="410,128 426,135 410,142" fill="#DD5430"></polygon>
+    <text class="svg-label-sm" x="368" y="124" text-anchor="middle" style="fill:#B23E1F;">beauftragt</text>
+    <!-- Auftragnehmer -->
+    <rect x="430" y="60" width="260" height="130" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="560" y="86" text-anchor="middle">Auftragnehmer (Anbieter)</text>
+    <rect x="450" y="100" width="220" height="70" rx="5" fill="#FFFFFF" stroke="#DD5430" stroke-width="1.5"></rect>
+    <text class="svg-label" x="560" y="126" text-anchor="middle">Pflichtenheft</text>
+    <text class="svg-label-sm" x="560" y="148" text-anchor="middle" style="fill:#5C6B78;">WIE — die Umsetzung</text>
+    <text class="svg-label-sm" x="560" y="162" text-anchor="middle" style="fill:#5C6B78;">technische Antwort auf das Soll</text>
+  </svg><figcaption>Das Lastenheft (Auftraggeber, „Was/Wozu“) ist die Vorgabe; das Pflichtenheft (Auftragnehmer, „Wie“) die konkrete technische Antwort darauf.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wer schreibt das <code>Lastenheft</code> und was steht darin?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Der Auftragnehmer; es beschreibt die technische Umsetzung im Detail.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der Auftraggeber; es beschreibt das <em>Was</em> und <em>Wozu</em> (Anforderungen, Ziele – das Soll).</li>
+        <li class="opt"><span class="tick"></span>Beide gemeinsam erst nach Projektende.</li>
+        <li class="opt"><span class="tick"></span>Der Auftraggeber; es enthält nur den Maßstab des Gebäudeplans.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Das <code>Lastenheft</code> schreibt der <strong>Auftraggeber</strong>. Es beschreibt aus Kundensicht das <em>Was</em> und <em>Wozu</em> – die Anforderungen und Ziele (das „Soll“) – noch ohne festzulegen, wie sie technisch erfüllt werden.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne jede Aussage entweder dem <strong>Lastenheft</strong> oder dem <strong>Pflichtenheft</strong> zu und begründe kurz.</p>
+      <ul>
+        <li>(1) „In jedem Büro müssen mindestens zwei Netzwerkdosen verfügbar sein.“</li>
+        <li>(2) „Wir verlegen je Büro 4 × S/FTP Kat.6 über die Kanäle K1T/Kwest in Doppeldosen.“</li>
+        <li>(3) „Der Konferenzraum benötigt flexible Anschlüsse mitten im Raum.“</li>
+        <li>(4) „Dafür setzen wir einen Bodentank mit zwei Doppeldosen ein, zugeführt per Verlegekabel.“</li>
+        <li>(5) „Geschrieben vom Auftraggeber.“ / (6) „Geschrieben vom Auftragnehmer.“</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Aussage</th><th>Zuordnung</th><th>Begründung</th></tr></thead>
+        <tbody>
+          <tr><td>(1) mind. zwei Dosen je Büro</td><td><strong>Lastenheft</strong></td><td>Anforderung/Ziel = das <em>Was</em> (Soll).</td></tr>
+          <tr><td>(2) 4 × S/FTP Kat.6 über K1T/Kwest</td><td><strong>Pflichtenheft</strong></td><td>konkrete technische Umsetzung = das <em>Wie</em>.</td></tr>
+          <tr><td>(3) flexible Anschlüsse im Raum</td><td><strong>Lastenheft</strong></td><td>Bedürfnis aus Kundensicht (Soll).</td></tr>
+          <tr><td>(4) Bodentank + Verlegekabel</td><td><strong>Pflichtenheft</strong></td><td>gewählte Lösung = das <em>Wie</em>.</td></tr>
+          <tr><td>(5) vom Auftraggeber</td><td><strong>Lastenheft</strong></td><td>Lastenheft = Auftraggeber.</td></tr>
+          <tr><td>(6) vom Auftragnehmer</td><td><strong>Pflichtenheft</strong></td><td>Pflichtenheft = Auftragnehmer.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="step">Merksatz: Lastenheft = <strong>Auftraggeber</strong> sagt das <strong>Was/Soll</strong>; Pflichtenheft = <strong>Auftragnehmer</strong> beschreibt das <strong>Wie</strong>.</div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Eine Firma beauftragt dich mit der Netzwerkverkabelung eines neuen Bürogebäudes. Skizziere, welche Dokumente in welcher Reihenfolge entstehen und welche Inhalte Gebäude- und Verkabelungsplan beisteuern.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Sinnvolle Reihenfolge:</p>
+      <div class="step"><strong>1. Lastenheft (Auftraggeber):</strong> beschreibt das <em>Was/Wozu</em> – z. B. „jedes Büro vernetzt, Konferenzraum flexibel nutzbar, zukunftssichere Verkabelung“.</div>
+      <div class="step"><strong>2. Pflichtenheft (Auftragnehmer):</strong> beschreibt das <em>Wie</em> – gewählte Kategorie/Schirmung (<code>S/FTP Kat.6</code>), Anzahl Dosen je Raum, Bodentanks, Schrankstandort.</div>
+      <div class="step"><strong>3. Gebäudeplan:</strong> Grundriss je Stockwerk mit Räumen/Nummern, Kabelkanälen (horizontal/vertikal, Decke), Dosen/Bodentanks, Netzwerkschrank, Maßstab und Legende – mit sinnvollen Kurzkennungen der Kanäle.</div>
+      <div class="step"><strong>4. Verkabelungsplan:</strong> jede Strecke einzeln – ID, Schrank, <code>PP/PN</code>, Anfangs- und Endraum, Dose/Port, beteiligte Kanäle, Medium. Achtung Vollständigkeit: im Quellbeispiel war anfangs der Konferenzraum nicht dokumentiert – jede Strecke muss erfasst sein.</div>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="1-grundbegriffe.html"><span>Vorheriges Thema</span><b>1 · Netzwerk-Grundbegriffe</b></a>
+    <a class="next" href="3-uebertragungsmedien.html"><span>Nächstes Thema</span><b>3 · Übertragungsmedien</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 02 — Gebäude- &amp; Verkabelungsplan</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

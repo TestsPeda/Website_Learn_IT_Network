@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Strukturierte Verkabelung — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html" class="current">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Normgerechte Verkabelung</p>
+    <div class="hero-num"><span class="hash">#</span>06</div>
+    <h1>Strukturierte Verkabelung</h1>
+    <p class="lede">Anwendungsneutrale, hierarchische Sternverkabelung nach <code>EN 50173</code> / <code>ISO/IEC 11801</code>:
+      die drei Ebenen Primär, Sekundär und Tertiär mit ihren Verteilern, Medien und maximalen Längen.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <div class="sec-head"><span class="ix">A</span><h2>Grundlagen &amp; Norm</h2></div>
+  <p class="sec-sub">Warum normgerecht verkabelt wird, welche Norm gilt und welches Grundprinzip die drei Ebenen verbindet.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 360" role="img" aria-label="Drei-Ebenen-Hierarchie der strukturierten Verkabelung als Baum: Standortverteiler oben, darunter Gebäudeverteiler, darunter Etagenverteiler und Arbeitsplätze">
+    <text class="svg-title" x="20" y="26">3-Ebenen-Hierarchie der strukturierten Verkabelung</text>
+    <!-- Standortverteiler -->
+    <rect x="290" y="48" width="140" height="46" rx="6" fill="#FBEAE3" stroke="#B23E1F" stroke-width="2"></rect>
+    <text class="svg-label" x="360" y="69" text-anchor="middle">Standortverteiler</text>
+    <text class="svg-label-sm" x="360" y="86" text-anchor="middle">SV (Campus)</text>
+    <!-- Primärlinks -->
+    <g stroke="#B23E1F" stroke-width="3" stroke-dasharray="2 5">
+      <line x1="330" y1="94" x2="180" y2="150"></line>
+      <line x1="390" y1="94" x2="540" y2="150"></line>
+    </g>
+    <text class="svg-label-sm" x="232" y="118" text-anchor="middle" style="fill:#B23E1F;">Primär · LWL · ≤ 1,5 km</text>
+    <text class="svg-label-sm" x="490" y="118" text-anchor="middle" style="fill:#B23E1F;">Sterntopologie</text>
+    <!-- Gebäudeverteiler -->
+    <rect x="110" y="150" width="140" height="46" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="180" y="171" text-anchor="middle">Gebäudeverteiler</text>
+    <text class="svg-label-sm" x="180" y="188" text-anchor="middle">GV (Gebäude A)</text>
+    <rect x="470" y="150" width="140" height="46" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="171" text-anchor="middle">Gebäudeverteiler</text>
+    <text class="svg-label-sm" x="540" y="188" text-anchor="middle">GV (Gebäude B)</text>
+    <!-- Sekundärlinks -->
+    <g stroke="#15786E" stroke-width="3">
+      <line x1="150" y1="196" x2="110" y2="250"></line>
+      <line x1="210" y1="196" x2="250" y2="250"></line>
+      <line x1="540" y1="196" x2="540" y2="250"></line>
+    </g>
+    <text class="svg-label-sm" x="120" y="226" text-anchor="middle" style="fill:#15786E;">Sekundär · LWL/Kupfer · ≤ 500 m</text>
+    <!-- Etagenverteiler -->
+    <rect x="50" y="250" width="120" height="42" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="110" y="269" text-anchor="middle">Etagenverteiler</text>
+    <text class="svg-label-sm" x="110" y="285" text-anchor="middle">EV · OG 1</text>
+    <rect x="190" y="250" width="120" height="42" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="250" y="269" text-anchor="middle">Etagenverteiler</text>
+    <text class="svg-label-sm" x="250" y="285" text-anchor="middle">EV · EG</text>
+    <rect x="480" y="250" width="120" height="42" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="540" y="269" text-anchor="middle">Etagenverteiler</text>
+    <text class="svg-label-sm" x="540" y="285" text-anchor="middle">EV · OG 1</text>
+    <!-- Tertiärlinks -->
+    <g stroke="#DD5430" stroke-width="2">
+      <line x1="110" y1="292" x2="110" y2="330"></line>
+      <line x1="250" y1="292" x2="250" y2="330"></line>
+      <line x1="540" y1="292" x2="540" y2="330"></line>
+    </g>
+    <circle cx="110" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
+    <circle cx="250" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
+    <circle cx="540" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
+    <text class="svg-label-sm" x="180" y="350" text-anchor="middle" style="fill:#DD5430;">Tertiär · Twisted-Pair · ≤ 90 m → Anschlussdose / Arbeitsplatz</text>
+  </svg><figcaption>Hierarchische Sternverkabelung: SV → GV → EV → Arbeitsplatz. Primär (gestrichelt, LWL), Sekundär (Steigbereich), Tertiär (Horizontal zum Arbeitsplatz).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Norm beschreibt die anwendungsneutrale strukturierte Verkabelung in Europa?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span><code>IEEE 802.3</code> (Ethernet).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>EN 50173</code> (entspricht weitgehend <code>ISO/IEC 11801</code>).</li>
+        <li class="opt"><span class="tick"></span><code>RFC 1918</code> (private IP-Adressen).</li>
+        <li class="opt"><span class="tick"></span><code>DIN A4</code>.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die europäische Norm <code>EN 50173</code> regelt die anwendungsneutrale Verkabelung; sie entspricht weitgehend der internationalen <code>ISO/IEC 11801</code>. Beide gehen auf die Normungsarbeit ab 1993 zurück. Die Vorgaben sind nicht gesetzlich verpflichtend, werden aber häufig vertraglich gefordert.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Grund-Topologie sieht die Norm in hierarchischer Struktur vor?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Reine Bustopologie ohne Verteiler.</li>
+        <li class="opt"><span class="tick"></span>Vermaschtes Netz, jeder mit jedem.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Hierarchische <strong>Sternverkabelung</strong> mit Verteilern als Knoten.</li>
+        <li class="opt"><span class="tick"></span>Ringtopologie über alle Arbeitsplätze.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die Norm sieht eine <strong>Sternverkabelung in hierarchischer Struktur</strong> vor. Die Verteiler (SV/GV/EV) bilden die Sternzentren der drei Ebenen. Auf der Primärebene ist zusätzlich auch eine Ring- oder Sternverkabelung zulässig.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Ziele bzw. Vorteile verfolgt eine strukturierte Verkabelung? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Erweiterbarkeit und Vorhalten von Kapazitätsreserven.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Bessere Fehlersuche und Begrenzung von Störungen auf einen Teilbereich.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Anwendungsneutralität (Sprache, Daten, Ton, Bild, Video über dieselbe Infrastruktur).</li>
+        <li class="opt"><span class="tick"></span>Verzicht auf jegliche Dokumentation der Anschlüsse.</li>
+        <li class="opt"><span class="tick"></span>Festlegung auf genau eine Anwendung pro Kabel.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Richtig sind die ersten drei: Erweiterbarkeit/Kapazitätsreserven, einfachere Fehlersuche und Störungsbegrenzung sowie Anwendungsneutralität. Eine ordentliche <strong>Dokumentation</strong> ist gerade Voraussetzung – nicht ihr Gegenteil; und die Verkabelung soll flexibel für <strong>mehrere</strong> Anwendungen nutzbar bleiben.</p></div></article>
+
+  <div class="sec-head"><span class="ix">B</span><h2>Die drei Ebenen im Detail</h2></div>
+  <p class="sec-sub">Primär (Campus-Backbone), Sekundär (Steigbereich) und Tertiär (Horizontal zum Arbeitsplatz) – Medien und Längen.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 240" role="img" aria-label="Lineare Strecke vom Standortverteiler über Gebäudeverteiler und Etagenverteiler bis zum technischen Anschluss, mit den drei Verkabelungsbereichen und den maximalen Längen">
+    <text class="svg-title" x="20" y="26">Verteilerkette &amp; Maximallängen</text>
+    <!-- baseline -->
+    <line x1="40" y1="120" x2="680" y2="120" stroke="#D4DEE6" stroke-width="2"></line>
+    <!-- SV -->
+    <rect x="40" y="98" width="44" height="44" rx="5" fill="#FBEAE3" stroke="#B23E1F" stroke-width="2"></rect>
+    <text class="svg-label" x="62" y="125" text-anchor="middle">SV</text>
+    <!-- GV -->
+    <rect x="240" y="98" width="44" height="44" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label" x="262" y="125" text-anchor="middle">GV</text>
+    <!-- EV -->
+    <rect x="440" y="98" width="44" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
+    <text class="svg-label" x="462" y="125" text-anchor="middle">EV</text>
+    <!-- TA -->
+    <rect x="636" y="100" width="40" height="40" rx="5" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="656" y="124" text-anchor="middle">TA</text>
+    <!-- span labels -->
+    <text class="svg-label-sm" x="160" y="92" text-anchor="middle" style="fill:#B23E1F;">Primär · LWL</text>
+    <text class="svg-label-sm" x="160" y="150" text-anchor="middle" style="fill:#B23E1F;">≤ 1,5 km</text>
+    <text class="svg-label-sm" x="360" y="92" text-anchor="middle" style="fill:#15786E;">Sekundär · LWL/Kupfer</text>
+    <text class="svg-label-sm" x="360" y="150" text-anchor="middle" style="fill:#15786E;">≤ 500 m</text>
+    <text class="svg-label-sm" x="558" y="92" text-anchor="middle" style="fill:#DD5430;">Tertiär · Twisted-Pair</text>
+    <text class="svg-label-sm" x="558" y="150" text-anchor="middle" style="fill:#DD5430;">≤ 90 m (Permanent-Link)</text>
+    <!-- bereich captions -->
+    <text class="svg-label-sm" x="160" y="185" text-anchor="middle">Primärbereich (Gelände)</text>
+    <text class="svg-label-sm" x="360" y="185" text-anchor="middle">Sekundärbereich (Gebäude)</text>
+    <text class="svg-label-sm" x="558" y="185" text-anchor="middle">Tertiärbereich (Etage)</text>
+    <!-- channel note -->
+    <text class="svg-label-sm" x="360" y="216" text-anchor="middle" style="fill:#5C6B78;">Channel-Link (EV → TA → Endgerät): ≤ 100 m</text>
+  </svg><figcaption>SV → GV → Primär (≤ 1,5 km), GV → EV → Sekundär (≤ 500 m), EV → TA → Tertiär/Permanent-Link (≤ 90 m); Channel-Link inkl. Endgeräte-Anschluss ≤ 100 m.</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Medium wird auf der <strong>Primärebene</strong> (Campus-/Geländeverkabelung) praktisch ausschließlich genutzt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Twisted-Pair-Kupferkabel Cat 5e.</li>
+        <li class="opt"><span class="tick"></span>Koaxialkabel.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Lichtwellenleiter (Glasfaser).</li>
+        <li class="opt"><span class="tick"></span>Flachbandkabel.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Auf der Primärebene werden praktisch ausschließlich <strong>Lichtwellenleiter (Glasfaser)</strong> eingesetzt, weil sie Daten auch über die längeren Geländestrecken transportieren können. Hier sollte besonders großzügig dimensioniert werden, um Erweiterungs-Engpässe zu vermeiden.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie groß ist die maximale Kabellänge im <strong>Primärbereich</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>90 m.</li>
+        <li class="opt"><span class="tick"></span>500 m.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>1,5 km.</li>
+        <li class="opt"><span class="tick"></span>100 km.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Im Primärbereich beträgt die maximale Länge <strong>1,5 km</strong> – abgeleitet aus der definierten Maximalfläche des Geländes (bis ca. 1 Mio. m²). <span class="tag-mistake">Verwechslung</span>: 500 m gilt im Sekundär-, 90 m im Tertiärbereich.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was beschreibt der <strong>Sekundärbereich</strong> und wie lang darf die Leitung dort maximal sein?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Geländeverkabelung zwischen Standortverteiler und Gebäuden, max. 1,5 km.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Gebäudeverkabelung vom Gebäudeverteiler zu den Etagen (Steigbereich), max. 500 m.</li>
+        <li class="opt"><span class="tick"></span>Horizontalverkabelung vom Etagenverteiler zur Anschlussdose, max. 90 m.</li>
+        <li class="opt"><span class="tick"></span>Verbindung der Anschlussdose mit dem Endgerät, max. 10 m.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Sekundärbereich ist die <strong>Gebäudeverkabelung</strong>: vom Gebäudeverteiler werden die einzelnen Etagen vertikal angebunden (Steigbereich) – meist als Baumtopologie. Die Leitungen enden im Stockwerk im Netzwerkschrank mit Patchfeld. Maximale Länge: <strong>500 m</strong>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Medien sind im <strong>Sekundärbereich</strong> zulässig?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ausschließlich Koaxialkabel.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>LWL (z. B. 50 µm) oder symmetrisches Kupferkabel – Tendenz zu optischen Medien.</li>
+        <li class="opt"><span class="tick"></span>Nur Twisted-Pair-Kupfer, kein LWL.</li>
+        <li class="opt"><span class="tick"></span>Funk (WLAN) statt Kabel.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Im Sekundärbereich kann <strong>entweder</strong> ein Lichtwellenleiter (Querschnitt z. B. 50 µm) <strong>oder</strong> ein symmetrisches Kupferkabel genutzt werden. In moderneren Systemen geht die Tendenz zu den <strong>optischen</strong> Medien, da sie zukunftsorientierter sind.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Medium und welche Maximallänge gelten im <strong>Tertiärbereich</strong> (Etagenverteiler → Anschlussdose)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Glasfaser, max. 1,5 km.</li>
+        <li class="opt"><span class="tick"></span>Koaxialkabel, max. 500 m.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Twisted-Pair-Kupferkabel, max. 90 m.</li>
+        <li class="opt"><span class="tick"></span>Twisted-Pair, max. 300 m.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Im Tertiärbereich (Horizontalverkabelung) werden <strong>Twisted-Pair-Kabel</strong> in Flurkanälen vom Etagenverteiler zu den Telekommunikationsanschlussdosen geführt. Die Länge darf <strong>90 m</strong> nicht überschreiten.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne jeder Ebene den passenden Verteiler-Übergang, das typische Medium und die maximale Länge zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Ebene</th><th>Übergang</th><th>Bereich</th><th>Medium</th><th>Max. Länge</th></tr></thead>
+        <tbody>
+          <tr><td>Primär</td><td>SV → GV</td><td>Gelände/Campus</td><td>LWL (Glasfaser)</td><td>1,5 km</td></tr>
+          <tr><td>Sekundär</td><td>GV → EV</td><td>Gebäude/Steigbereich</td><td>LWL (50 µm) oder sym. Kupfer</td><td>500 m</td></tr>
+          <tr><td>Tertiär</td><td>EV → Anschlussdose</td><td>Etage/Horizontal</td><td>Twisted-Pair (Kupfer)</td><td>90 m</td></tr>
+        </tbody>
+      </table></div>
+      <div class="step">Merkhilfe: Die Längen nehmen von oben nach unten ab (1,5 km → 500 m → 90 m), das Medium wandelt sich von „nur Glasfaser" über „Glasfaser oder Kupfer" zu „Twisted-Pair-Kupfer".</div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">C</span><h2>Verteiler, Permanent-/Channel-Link &amp; Dokumentation</h2></div>
+  <p class="sec-sub">19-Zoll-Schränke mit Patchpanels, die Begriffe Permanent-Link / Channel-Link und die normgerechte Beschriftung.</p>
+
+  <figure class="diagram"><svg viewBox="0 0 720 230" role="img" aria-label="Etagenverteiler mit Patchpanel und Switch, Permanent-Link bis zur Anschlussdose und Channel-Link inklusive Patchkabel und Endgerät">
+    <text class="svg-title" x="20" y="26">Permanent-Link vs. Channel-Link</text>
+    <!-- EV cabinet -->
+    <rect x="40" y="60" width="150" height="120" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label" x="115" y="82" text-anchor="middle">Etagenverteiler</text>
+    <rect x="58" y="96" width="114" height="26" rx="3" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="115" y="113" text-anchor="middle">Switch</text>
+    <rect x="58" y="130" width="114" height="26" rx="3" fill="#FFFFFF" stroke="#16242E" stroke-width="1.5"></rect>
+    <text class="svg-label-sm" x="115" y="147" text-anchor="middle">Patchpanel</text>
+    <!-- short patch inside -->
+    <line x1="115" y1="122" x2="115" y2="130" stroke="#15786E" stroke-width="2"></line>
+    <!-- Permanent link -->
+    <line x1="172" y1="143" x2="540" y2="143" stroke="#16242E" stroke-width="2"></line>
+    <text class="svg-label-sm" x="350" y="133" text-anchor="middle">fest verlegte Leitung (Twisted-Pair, in Flurkanal)</text>
+    <!-- TA / Dose -->
+    <rect x="540" y="120" width="46" height="46" rx="4" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="563" y="147" text-anchor="middle">TA</text>
+    <!-- patch to endgerät -->
+    <line x1="586" y1="143" x2="650" y2="143" stroke="#15786E" stroke-width="2"></line>
+    <rect x="650" y="120" width="46" height="46" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
+    <text class="svg-label-sm" x="673" y="147" text-anchor="middle">PC</text>
+    <!-- brackets -->
+    <line x1="115" y1="190" x2="563" y2="190" stroke="#B23E1F" stroke-width="1.5"></line>
+    <line x1="115" y1="186" x2="115" y2="194" stroke="#B23E1F" stroke-width="1.5"></line>
+    <line x1="563" y1="186" x2="563" y2="194" stroke="#B23E1F" stroke-width="1.5"></line>
+    <text class="svg-label-sm" x="339" y="208" text-anchor="middle" style="fill:#B23E1F;">Permanent-Link (EV → TA) ≤ 90 m</text>
+    <line x1="115" y1="216" x2="673" y2="216" stroke="#15786E" stroke-width="1.5"></line>
+    <line x1="115" y1="212" x2="115" y2="220" stroke="#15786E" stroke-width="1.5"></line>
+    <line x1="673" y1="212" x2="673" y2="220" stroke="#15786E" stroke-width="1.5"></line>
+    <text class="svg-label-sm" x="500" y="228" text-anchor="middle" style="fill:#15786E;">Channel-Link (inkl. Patchkabel + Endgerät) ≤ 100 m</text>
+  </svg><figcaption>Permanent-Link = fest verbaute Strecke EV → TA (≤ 90 m). Channel-Link = Permanent-Link plus Patchkabel zum Endgerät (≤ 100 m).</figcaption></figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was bezeichnet der Begriff <strong>Permanent-Link</strong> (Permalink)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die gesamte Strecke vom Standortverteiler bis zum Endgerät.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die fest mit dem Gebäude verbundene Strecke vom Etagenverteiler bis zum technischen Anschluss (TA), max. 90 m.</li>
+        <li class="opt"><span class="tick"></span>Das kurze Patchkabel zwischen TA und PC.</li>
+        <li class="opt"><span class="tick"></span>Eine redundante Ersatzleitung im Primärbereich.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <strong>Permanent-Link</strong> ist die fest mit dem Gebäude verbundene Strecke vom <strong>Etagenverteiler bis zum technischen Anschluss (TA)</strong>. Diese darf <strong>90 m</strong> nicht überschreiten.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Worin unterscheidet sich der <strong>Channel-Link</strong> vom Permanent-Link?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er ist kürzer und endet schon am Patchpanel (max. 50 m).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er umfasst zusätzlich die Verbindung des TA mit dem Endgerät und darf max. 100 m lang sein.</li>
+        <li class="opt"><span class="tick"></span>Er bezeichnet die Primärverkabelung zwischen den Gebäuden.</li>
+        <li class="opt"><span class="tick"></span>Er ist identisch mit dem Permanent-Link.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <strong>Channel-Link</strong> umfasst neben dem Permanent-Link <strong>auch die Verbindung des TA mit dem Endgerät</strong> (Patchkabel). Seine Maximallänge beträgt <strong>100 m</strong> – also 10 m mehr als der reine Permanent-Link.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was bilden die Verteiler physisch und was enthalten sie?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Einfache Wandsteckdosen ohne Aktivtechnik.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>19-Zoll-Schränke mit Patchpanels; Patchschnüre verbinden Switchports mit den Netzwerkdosen.</li>
+        <li class="opt"><span class="tick"></span>Reine Glasfaser-Spleißboxen ohne Switch.</li>
+        <li class="opt"><span class="tick"></span>Mobile Geräte ohne festen Standort.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Verteiler sind <strong>19-Zoll-Schränke mit Patchpanels</strong>. An jede Buchse des Patchpanels wird eine fest verlegte Leitung angeschlossen; <strong>Patchschnüre</strong> verbinden die Switchports flexibel mit den Netzwerkdosen auf der Etage. Das erlaubt leichte Erweiterung und begrenzt Störungen auf Teilbereiche.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Die Beschriftung einer Dose lautet <code>A-II.1-3.8</code>. Erkläre jeden Bestandteil und nenne die Schreibweisen (Buchstabe / römische Zahl / arabische Zahl).</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Teil</th><th>Bedeutung</th><th>Schreibweise</th></tr></thead>
+        <tbody>
+          <tr><td><code>A</code></td><td>Gebäude</td><td>Buchstabe</td></tr>
+          <tr><td><code>II</code></td><td>Stockwerk (= 2; EG = 0, dann aufwärts)</td><td>römische Zahl</td></tr>
+          <tr><td><code>1</code></td><td>Etagenverteiler</td><td>arabische Zahl</td></tr>
+          <tr><td><code>3</code></td><td>Patchfeld</td><td>arabische Zahl</td></tr>
+          <tr><td><code>8</code></td><td>Steckplatz</td><td>arabische Zahl</td></tr>
+        </tbody>
+      </table></div>
+      <div class="step">Stockwerke werden im Erdgeschoss mit <code>0</code> begonnen und nach oben durchnummeriert. Auf der Verteilerseite sieht man die angeschlossene Dose nicht – daher wird zusätzlich eine Liste mit Patchfeld, Portnummer, Zimmernummer (und ggf. Leitungstyp) sowie ein Grundrissplan im Verteiler hinterlegt.</div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein Unternehmen plant ein Firmengelände mit drei Bürogebäuden (je 4 Etagen). Plane die Verkabelung normgerecht: Welche Verteiler, welche Medien und welche Maximallängen setzt du je Ebene an, und wie viele Etagenverteiler kalkulierst du grob?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Hierarchische Sternverkabelung nach <code>EN 50173</code> über drei Ebenen:</p>
+      <ul>
+        <li><strong>Primär</strong> – ein zentraler <strong>Standortverteiler (SV)</strong> führt per <strong>Glasfaser (LWL)</strong> sternförmig zu den <strong>Gebäudeverteilern (GV)</strong> der drei Gebäude (meist im Keller/EG); max. <strong>1,5 km</strong>. Kapazität großzügig dimensionieren, ggf. redundante Leitungen für Ausfallsicherheit.</li>
+        <li><strong>Sekundär</strong> – je Gebäude vom GV über den Steigbereich (Baumtopologie) zu den <strong>Etagenverteilern (EV)</strong>; Medium <strong>LWL (50 µm) oder symmetrisches Kupfer</strong>, Tendenz zu optisch; max. <strong>500 m</strong>.</li>
+        <li><strong>Tertiär</strong> – vom EV per <strong>Twisted-Pair</strong> in Flurkanälen zu den Anschlussdosen am Arbeitsplatz; Permanent-Link max. <strong>90 m</strong>, Channel-Link inkl. Endgerät max. <strong>100 m</strong>.</li>
+      </ul>
+      <div class="step">Etagenverteiler-Faustformel: ca. <strong>ein EV pro 1000 m²</strong>. Bei geringem Datendurchsatz kann ein EV auch mehrere Etagen versorgen; bei großen oder lastintensiven Etagen entsprechend mehr. Verteiler als 19-Zoll-Schränke mit Patchpanels, alle Dosen/Verteiler beschriften (z. B. <code>A-II.1-3.8</code>) und Dokumentation + Grundrissplan hinterlegen.</div>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="5-geraeteklassen.html"><span>Vorheriges Thema</span><b>5 · Geräteklassen</b></a>
+    <a class="next" href="7-it-infrastruktur.html"><span>Nächstes Thema</span><b>7 · IT-Infrastruktur</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 06 — Strukturierte Verkabelung</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

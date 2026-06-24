@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · Netzwerk-Grundbegriffe — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html" class="current">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+
+<main><div class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Grundlagen</p>
+    <div class="hero-num"><span class="hash">#</span>01</div>
+    <h1>Netzwerk-Grundbegriffe</h1>
+    <p class="lede">Das Vokabular eines Computernetzwerks: Host, Device und Peripherie,
+      aktive vs. passive Netzwerkkomponenten, die Aufgaben von Router und Switch,
+      Übertragungsmedien sowie die Rolle des Hauptverteilers.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Mehrfachauswahl · Zuordnung · Freitext</span>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ============== A · Geräte, Hosts & Medien ============== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Geräte, Hosts &amp; Übertragungsmedien</h2></div>
+  <p class="sec-sub">Die Grundbausteine: Was ist ein Device, ein Host, ein Peripheriegerät — und worüber laufen die Daten?</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 250" role="img" aria-label="Begriffshierarchie: Device als Oberbegriff, darunter interne Komponenten und Peripheriegeräte; Host und Übertragungsmedium im Netzwerk">
+      <text x="360" y="24" text-anchor="middle" class="svg-title">Device = Oberbegriff aller Hardwarekomponenten</text>
+      <rect x="270" y="38" width="180" height="40" rx="6" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="360" y="63" text-anchor="middle" class="svg-label" style="font-weight:700;">Device (Gerät)</text>
+      <line x1="360" y1="78" x2="200" y2="108" stroke="#B9C7D2"></line>
+      <line x1="360" y1="78" x2="520" y2="108" stroke="#B9C7D2"></line>
+      <rect x="60" y="108" width="280" height="46" rx="6" fill="#E4F1EF" stroke="#15786E"></rect>
+      <text x="200" y="128" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#15786E;">interne Komponenten</text>
+      <text x="200" y="145" text-anchor="middle" class="svg-label-sm">CPU · Netzwerkkarte · RAM (auch virtuell)</text>
+      <rect x="380" y="108" width="280" height="46" rx="6" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="520" y="128" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#B23E1F;">Peripheriegeräte</text>
+      <text x="520" y="145" text-anchor="middle" class="svg-label-sm">Tastatur · Bildschirm · Lautsprecher</text>
+      <line x1="360" y1="170" x2="360" y2="190" stroke="#D4DEE6"></line>
+      <text x="360" y="206" text-anchor="middle" class="svg-label-sm">Peripherie gehört nicht zum eigentlichen Computer, sondern erweitert ihn (Ein-/Ausgabe, Kommunikation)</text>
+      <text x="360" y="232" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Ein <tspan style="font-weight:700;fill:#16242E;">Host</tspan> ist ein vollwertiges Endgerät im Netzwerk (Client oder Server) mit eigener Adresse.</text>
+    </svg>
+    <figcaption>Begriffshierarchie: Device ist der technische Oberbegriff; Peripheriegeräte erweitern den Computer von außen.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was beschreibt der Begriff <strong>Device</strong> am treffendsten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ausschließlich Geräte, die ans Netzwerk angeschlossen sind</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der technische Oberbegriff für alle Hardwarekomponenten (z. B. CPU, Netzwerkkarte) — die auch virtuell auftreten können</li>
+        <li class="opt"><span class="tick"></span>Nur Eingabegeräte wie Maus und Tastatur</li>
+        <li class="opt"><span class="tick"></span>Eine Software, die das Betriebssystem steuert</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>Device</strong> ist der Oberbegriff zu allen Hardwarekomponenten (CPU, Netzwerkkarte, Maus …). Ein Device kann auch <strong>virtuell</strong> sein: Software verhält sich wie eine Hardwarekomponente, sodass dem Betriebssystem kein Unterschied auffällt. <span class="tag-mistake">Verwechslung</span> Nicht jedes Device ist ein Peripheriegerät.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Worin liegt der Unterschied zwischen einem <strong>Peripheriegerät</strong> und einer internen Komponente?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Peripheriegeräte sind immer schneller als interne Komponenten</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Peripheriegeräte gehören nicht zum eigentlichen Computer, sondern erweitern ihn bei Ein-/Ausgabe und Kommunikation</li>
+        <li class="opt"><span class="tick"></span>Peripheriegeräte besitzen keine Stromversorgung</li>
+        <li class="opt"><span class="tick"></span>Es gibt keinen Unterschied, beide Begriffe sind gleichbedeutend</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Peripheriegeräte (Tastatur, Bildschirm, Lautsprecher) <strong>gehören nicht zum eigentlichen Computer</strong>, sondern erweitern ihn nach dem <strong>EVA-Prinzip</strong> (Eingabe – Verarbeitung – Ausgabe) sowie für die Kommunikation. Eine Netzwerkkarte ist dagegen eine interne Komponente.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist ein <strong>Host</strong> in einem Netzwerk?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein passives Kabel zwischen zwei Geräten</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Meist ein Endgerät im LAN, das Daten anfragt und verarbeitet (Client) oder Dienste/Daten bereitstellt (Server)</li>
+        <li class="opt"><span class="tick"></span>Ausschließlich ein Server mit hoher Leistung</li>
+        <li class="opt"><span class="tick"></span>Ein anderer Name für die Subnetzmaske</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Ein <strong>Host</strong> ist meist ein Endgerät im LAN, das entweder Daten <strong>anfragt und verarbeitet</strong> (Client, z. B. Laptop) oder Dienste/Daten <strong>bereitstellt</strong> (Server). Beispiele: Laptop, Server, Workstation.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche Aufgabe hat ein <strong>Übertragungsmedium</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es vergibt IP-Adressen an die Hosts</li>
+        <li class="opt"><span class="tick"></span>Es verbindet verschiedene Netzwerke miteinander</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es ist die Technik bzw. Ressource, die zur Datenübertragung genutzt wird (die „Leiterbahn“ der Datenpakete)</li>
+        <li class="opt"><span class="tick"></span>Es speichert die Daten der Clients dauerhaft</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Das <strong>Übertragungsmedium</strong> ist die Technik/Ressource zur Datenübertragung — die „Leiterbahn“ der Datenpakete. Beispiele: <strong>Glasfaser</strong>, <strong>Kupfer</strong> (z. B. DSL) und <strong>elektromagnetische Wellen</strong> (Funk, WLAN).</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice · Mehrfachauswahl</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche der folgenden zählen zu den typischen <strong>Übertragungsmedien</strong>? (Mehrfachauswahl, dann „Auswerten“.)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Glasfaser (Lichtwellenleiter)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Kupferkabel (z. B. DSL, Twisted Pair)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Elektromagnetische Wellen (Funk / WLAN)</li>
+        <li class="opt"><span class="tick"></span>Der Router</li>
+        <li class="opt"><span class="tick"></span>Die IP-Adresse</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Übertragungsmedien sind <strong>Glasfaser</strong>, <strong>Kupfer</strong> und <strong>elektromagnetische Wellen</strong>. Der <em>Router</em> ist ein aktives Netzwerkgerät, keine Leitung; die <em>IP-Adresse</em> ist eine logische Kennung, kein Medium.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">06</span><span class="q-type">Zuordnung / Freitext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Erklären Sie den Begriff <strong>Device</strong> und grenzen Sie ihn vom <strong>Peripheriegerät</strong> ab.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>Device</strong> = technischer Oberbegriff für alle Hardwarekomponenten (CPU, Netzwerkkarte, Maus …).</li>
+        <li>Devices können auch <strong>virtuell</strong> vorkommen: Software verhält sich wie eine Hardwarekomponente, das Betriebssystem bemerkt keinen Unterschied.</li>
+        <li><strong>Abgrenzung:</strong> Peripheriegeräte gehören <em>nicht</em> zum eigentlichen Computer, sondern erweitern ihn bei <strong>Ein-/Ausgabe und Kommunikation</strong> (z. B. über die Netzwerkkarte).</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============== B · Netzwerkkomponenten: Router & Switch ============== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Netzwerkkomponenten — Router &amp; Switch</h2></div>
+  <p class="sec-sub">Was verbindet Netze, was verbindet Hosts — und welche Komponenten arbeiten aktiv?</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Router verbindet das LAN über das Gateway mit dem Internet; der Switch verbindet die Hosts innerhalb des LAN">
+      <text x="360" y="22" text-anchor="middle" class="svg-title">Switch verbindet Hosts im LAN · Router verbindet Netze</text>
+      <!-- Internet / andere Netze (oben) -->
+      <rect x="255" y="38" width="210" height="38" rx="8" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="360" y="62" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#B23E1F;">Internet / andere Netze</text>
+      <!-- Gateway-Verbindung Internet -> Router -->
+      <line x1="360" y1="76" x2="360" y2="102" stroke="#DD5430" stroke-width="2"></line>
+      <text x="370" y="94" class="svg-label-sm" style="fill:#DD5430;">Gateway</text>
+      <!-- Router -->
+      <rect x="300" y="102" width="120" height="40" rx="6" fill="#DD5430"></rect>
+      <text x="360" y="127" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#fff;">Router</text>
+      <!-- Router -> Switch -->
+      <line x1="360" y1="142" x2="360" y2="176" stroke="#15786E" stroke-width="2"></line>
+      <!-- LAN-Container -->
+      <rect x="20" y="172" width="700" height="118" rx="10" fill="#E4F1EF" stroke="#15786E" stroke-dasharray="5 4"></rect>
+      <text x="34" y="192" class="svg-label-sm" style="fill:#15786E;font-weight:700;">LAN (Local Area Network)</text>
+      <!-- Switch -->
+      <rect x="300" y="176" width="120" height="40" rx="6" fill="#fff" stroke="#15786E"></rect>
+      <text x="360" y="201" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#15786E;">Switch</text>
+      <!-- Hosts -->
+      <rect x="55" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="107" y="267" text-anchor="middle" class="svg-label-sm">Host 1</text>
+      <rect x="195" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="247" y="267" text-anchor="middle" class="svg-label-sm">Host 2</text>
+      <rect x="420" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="472" y="267" text-anchor="middle" class="svg-label-sm">Host 3</text>
+      <rect x="560" y="250" width="105" height="26" rx="4" fill="#fff" stroke="#B9C7D2"></rect>
+      <text x="612" y="267" text-anchor="middle" class="svg-label-sm">Server</text>
+      <!-- Switch -> Hosts -->
+      <line x1="330" y1="216" x2="107" y2="250" stroke="#15786E"></line>
+      <line x1="345" y1="216" x2="247" y2="250" stroke="#15786E"></line>
+      <line x1="390" y1="216" x2="472" y2="250" stroke="#15786E"></line>
+      <line x1="405" y1="216" x2="612" y2="250" stroke="#15786E"></line>
+    </svg>
+    <figcaption>Der Switch verbindet Hosts <em>innerhalb</em> des LAN; der Router verbindet das LAN über das Gateway mit anderen Netzen.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist der <strong>vorrangige Einsatzzweck eines Routers</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die Hosts innerhalb eines LAN miteinander zu verbinden</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Mehrere Netzwerke miteinander zu verbinden und Datenpakete zwischen ihnen zu routen</li>
+        <li class="opt"><span class="tick"></span>Die Daten der Clients zu speichern</li>
+        <li class="opt"><span class="tick"></span>Strom an die Endgeräte zu verteilen</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Die Hauptaufgabe des <strong>Routers</strong> ist es, <strong>mehrere Netzwerke zu verbinden</strong> und Datenpakete zwischen ihnen zu routen (OSI-Schicht 3, Vermittlungsschicht). Über das <strong>Gateway</strong> wird vom eigenen LAN z. B. eine Verbindung zum Internet hergestellt. Zusätzlich vergibt er per <code>DHCP</code> IP-Adressen und schützt das Netz über eine integrierte <strong>Firewall</strong>.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist der <strong>vorrangige Einsatzzweck eines Switches</strong>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Das LAN mit dem Internet zu verbinden</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die im LAN befindlichen Hosts aktiv miteinander zu verbinden</li>
+        <li class="opt"><span class="tick"></span>IP-Adressen an die Hosts zu vergeben</li>
+        <li class="opt"><span class="tick"></span>Namen in IP-Adressen aufzulösen</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Der <strong>Switch</strong> verbindet die im LAN befindlichen <strong>Hosts aktiv miteinander</strong> (wozu auch der Router als Host am Switch gehören kann). Er trifft seine Weiterleitungsentscheidung auf Basis der <strong>MAC-Adressen</strong> (OSI-Schicht 2) bzw. nutzt Broadcasting, wenn das Ziel unbekannt ist.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was ist ein <strong>Hauptverteiler</strong> (Main Distribution Frame)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein einzelner Client mit besonders viel Speicher</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der zentrale Verteilungspunkt, der in der Verteilungshierarchie ganz oben steht und z. B. Router und Switches enthalten kann</li>
+        <li class="opt"><span class="tick"></span>Ein Protokoll zur Namensauflösung</li>
+        <li class="opt"><span class="tick"></span>Eine passive Steckverbindung ohne weitere Funktion</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Der <strong>Hauptverteiler</strong> (engl. <em>Main Distribution Frame</em>) ist der <strong>zentrale Verteilungspunkt</strong> ganz oben in der Verteilungshierarchie. Er kann <strong>Router und Switches</strong> enthalten. In einem mehrstöckigen Bürogebäude mit unterschiedlicher Netzauslastung sorgt er für ein stabiles, durchdachtes Datenmanagement; ihm können Router unterstellt sein.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">10</span><span class="q-type">Zuordnung / Freitext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Erklären Sie anhand von je einem Beispiel <strong>vier Netzwerkkomponenten/-bausteine</strong> und ihre Funktion.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap">
+        <table class="ref">
+          <thead><tr><th>Baustein</th><th>Funktion</th><th>Beispiel</th></tr></thead>
+          <tbody>
+            <tr><td>Übertragungsmedium</td><td>„Leiterbahn“ der Datenpakete</td><td>Kupfer, Glasfaser, EMW</td></tr>
+            <tr><td>Client (Host)</td><td>fragt Infos über das Netz an und verarbeitet sie</td><td>Laptop, Workstation</td></tr>
+            <tr><td>Server (Host)</td><td>stellt Dienste/Daten bereit</td><td>Rechner mit hoher Leistung/Speicher</td></tr>
+            <tr><td>Hauptverteiler</td><td>zentraler Verteilungspunkt; kann Router/Switches enthalten</td><td>MDF im Bürogebäude</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Weitere mögliche Antworten: <strong>Router</strong> (verbindet Netze), <strong>Switch</strong> (verbindet Hosts im LAN), <strong>Gateway</strong> (Übergang ins andere Netz).</p>
+    </div>
+  </article>
+
+  <!-- ============== C · Aktive vs. passive Komponenten ============== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Aktive vs. passive Netzwerkkomponenten</h2></div>
+  <p class="sec-sub">Wer verarbeitet Daten mit eigener Logik — und wer leitet sie nur physikalisch weiter?</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 220" role="img" aria-label="Gegenüberstellung aktiver Netzwerkkomponenten mit eigener Elektronik und passiver Komponenten ohne Logik">
+      <text x="360" y="24" text-anchor="middle" class="svg-title">Aktiv vs. passiv</text>
+      <rect x="30" y="44" width="320" height="150" rx="10" fill="#FBEAE3" stroke="#DD5430"></rect>
+      <text x="190" y="68" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#B23E1F;">AKTIV</text>
+      <text x="190" y="90" text-anchor="middle" class="svg-label-sm">verarbeiten, leiten weiter, steuern</text>
+      <text x="190" y="110" text-anchor="middle" class="svg-label-sm">eigene Elektronik (Prozessor) · brauchen Strom</text>
+      <text x="190" y="140" text-anchor="middle" class="svg-label" style="font-weight:700;">Router · Switch · Firewall</text>
+      <text x="190" y="172" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Logik vorhanden (z. B. Switch: MAC-Adressen, OSI-L2)</text>
+      <rect x="370" y="44" width="320" height="150" rx="10" fill="#E4F1EF" stroke="#15786E"></rect>
+      <text x="530" y="68" text-anchor="middle" class="svg-label" style="font-weight:700;fill:#15786E;">PASSIV</text>
+      <text x="530" y="90" text-anchor="middle" class="svg-label-sm">leiten Daten nur weiter — ohne Verarbeitung</text>
+      <text x="530" y="110" text-anchor="middle" class="svg-label-sm">rein physikalisch leitend · keine Logik</text>
+      <text x="530" y="140" text-anchor="middle" class="svg-label" style="font-weight:700;">Kabel · Patchfeld · Steckverbinder</text>
+      <text x="530" y="172" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">keine eigene Stromversorgung nötig</text>
+      <text x="360" y="212" text-anchor="middle" class="svg-label-sm">Server &amp; Clients zählen streng genommen zu den Endgeräten, nicht zu den Netzwerkkomponenten.</text>
+    </svg>
+    <figcaption>Aktive Komponenten besitzen eigene Elektronik und Logik; passive Komponenten leiten Daten nur physikalisch weiter.</figcaption>
+  </figure>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Was kennzeichnet <strong>aktive</strong> Netzwerkkomponenten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Sie leiten Daten rein physikalisch weiter, ohne Logik</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie verarbeiten, leiten weiter oder steuern Daten, besitzen eigene Elektronik (Prozessoren) und benötigen Strom</li>
+        <li class="opt"><span class="tick"></span>Sie funktionieren grundsätzlich ohne Stromversorgung</li>
+        <li class="opt"><span class="tick"></span>Es handelt sich immer um Kabel</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p><strong>Aktive Komponenten</strong> verarbeiten, leiten weiter oder steuern Daten. Sie haben <strong>eigene Elektronik (Prozessoren)</strong> und brauchen eine <strong>Stromversorgung</strong>. Beispiele: <strong>Router, Switch, Firewall</strong>.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice · Mehrfachauswahl</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Welche der folgenden sind <strong>passive</strong> Netzwerkkomponenten? (Mehrfachauswahl, dann „Auswerten“.)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Netzwerkkabel</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Patchfeld</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Steckverbinder</li>
+        <li class="opt"><span class="tick"></span>Switch</li>
+        <li class="opt"><span class="tick"></span>Firewall</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Passiv (rein physikalisch leitend, ohne Logik): <strong>Netzwerkkabel, Patchfeld, Steckverbinder</strong>. <strong>Switch</strong> und <strong>Firewall</strong> sind dagegen <strong>aktiv</strong> — sie verarbeiten Daten und brauchen Strom.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body">
+      <p class="q-text">Warum ist ein <strong>Switch</strong> eine aktive und kein passives Bauteil?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Weil er aus Kupfer besteht</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Weil er den Datenverkehr anhand der <code>MAC</code>-Adressen entscheidet (OSI-Schicht 2) bzw. per Broadcasting weiterleitet — also Logik anwendet</li>
+        <li class="opt"><span class="tick"></span>Weil er keinen Strom benötigt</li>
+        <li class="opt"><span class="tick"></span>Weil er nur ein Kabel mit Stecker ist</li>
+      </ul>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span>
+      <p>Der <strong>Switch</strong> trifft seine Weiterleitungsentscheidung auf Basis der <code>MAC</code>-Adressen (<strong>OSI-Schicht 2</strong>) oder leitet per <strong>Broadcasting</strong> weiter — er wendet also <strong>Logik</strong> an. Passive Komponenten wären „rein physikalisch leitend, also ohne Logik“.</p>
+    </div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">14</span><span class="q-type">Zuordnung / Freitext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body">
+      <p class="q-text">Erklären Sie den Unterschied zwischen <strong>aktiven</strong> und <strong>passiven</strong> Netzwerkkomponenten und nennen Sie je ein Beispiel. Gehen Sie auch auf die Sonderstellung von Servern/Clients ein.</p>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>Aktiv:</strong> Geräte, die Daten <strong>verarbeiten, weiterleiten oder steuern</strong>; mit eigener Elektronik (Prozessoren) und Stromversorgung. Beispiel: <strong>Router</strong>, <strong>Switch</strong>, <strong>Firewall</strong>.</li>
+        <li><strong>Passiv:</strong> leiten Daten nur weiter, <strong>ohne sie zu verarbeiten</strong>; rein physikalisch leitend, keine Logik, kein Strom nötig. Beispiel: <strong>Netzwerkkabel</strong>, <strong>Patchfeld</strong>, <strong>Steckverbinder</strong>.</li>
+        <li><strong>Sonderstellung:</strong> <strong>Server und Clients</strong> zählen streng genommen <em>nicht</em> zu den Netzwerkkomponenten, sondern zu den <strong>Endgeräten</strong> im Netzwerk.</li>
+      </ul>
+    </div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" aria-disabled="true"><span>Vorheriges Thema</span><b>—</b></a>
+    <a class="next" href="2-verkabelungsplan.html"><span>Nächstes Thema</span><b>2 · Gebäude- &amp; Verkabelungsplan</b></a>
+  </nav>
+
+</div></main>
+
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 01 — Netzwerk-Grundbegriffe</span> · Kerninhalt</div></footer>
+
+<script src="assets/quiz.js"></script>
+</body>
+</html>

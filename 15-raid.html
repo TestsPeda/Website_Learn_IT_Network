@@ -8,15 +8,25 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 10–15</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
   <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
     <a href="10-adressierung.html">10</a>
     <a href="11-dhcp-dns.html">11</a>
     <a href="12-uebertragungsarten.html">12</a>
     <a href="13-topologien.html">13</a>
     <a href="14-speichersysteme.html">14</a>
     <a href="15-raid.html" class="current">15</a>
-      <a href="lernseite.html">Lernen</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -45,18 +55,18 @@
 
   <figure class="diagram">
     <svg viewBox="0 0 460 240" role="img" aria-label="RAID 0 – Daten gestreift über zwei Platten ohne Redundanz">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 0 – Striping</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">keine Redundanz</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 0 – Striping</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">keine Redundanz</text>
       <!-- Disk 1 -->
       <rect x="40" y="70" width="150" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="115" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="115" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="60" y="105" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="115" y="130" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A1</text>
       <rect x="60" y="155" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="115" y="180" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A3</text>
       <!-- Disk 2 -->
       <rect x="270" y="70" width="150" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="345" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 2</text>
+      <text class="svg-label" x="345" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2</text>
       <rect x="290" y="105" width="110" height="40" rx="5" fill="#DD5430"/>
       <text x="345" y="130" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A2</text>
       <rect x="290" y="155" width="110" height="40" rx="5" fill="#DD5430"/>
@@ -67,11 +77,11 @@
 
   <figure class="diagram">
     <svg viewBox="0 0 460 270" role="img" aria-label="RAID 1 – identische Spiegelung über zwei Platten">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 1 – Mirroring</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">50 % nutzbar</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 1 – Mirroring</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">50 % nutzbar</text>
       <!-- Disk 1 -->
       <rect x="40" y="70" width="150" height="185" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="115" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="115" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="60" y="105" width="110" height="38" rx="5" fill="#DD5430"/>
       <text x="115" y="129" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A1</text>
       <rect x="60" y="150" width="110" height="38" rx="5" fill="#DD5430"/>
@@ -80,7 +90,7 @@
       <text x="115" y="219" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A3</text>
       <!-- Disk 2 (Kopie) -->
       <rect x="270" y="70" width="150" height="185" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="345" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 2 (Kopie)</text>
+      <text class="svg-label" x="345" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2 (Kopie)</text>
       <rect x="290" y="105" width="110" height="38" rx="5" fill="#15786E"/>
       <text x="345" y="129" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">A1</text>
       <rect x="290" y="150" width="110" height="38" rx="5" fill="#15786E"/>
@@ -141,23 +151,23 @@
 
   <figure class="diagram">
     <svg viewBox="0 0 620 240" role="img" aria-label="RAID 5 – Striping mit rotierender Parität über drei Platten">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 5 – verteilte Parität</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">mind. 3 Platten · Parität rotiert</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 5 – verteilte Parität</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">mind. 3 Platten · Parität rotiert</text>
       <!-- Disk 1 -->
       <rect x="40" y="70" width="160" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="120" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="120" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="60" y="100" width="120" height="32" rx="5" fill="#DD5430"/><text x="120" y="121" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A1</text>
       <rect x="60" y="138" width="120" height="32" rx="5" fill="#DD5430"/><text x="120" y="159" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">B1</text>
       <rect x="60" y="176" width="120" height="32" rx="5" fill="#C6841E"/><text x="120" y="197" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Cp</text>
       <!-- Disk 2 -->
       <rect x="230" y="70" width="160" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="310" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 2</text>
+      <text class="svg-label" x="310" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2</text>
       <rect x="250" y="100" width="120" height="32" rx="5" fill="#DD5430"/><text x="310" y="121" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A2</text>
       <rect x="250" y="138" width="120" height="32" rx="5" fill="#C6841E"/><text x="310" y="159" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Bp</text>
       <rect x="250" y="176" width="120" height="32" rx="5" fill="#DD5430"/><text x="310" y="197" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">C1</text>
       <!-- Disk 3 -->
       <rect x="420" y="70" width="160" height="150" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="500" y="92" fill="#16242E" font-size="13" text-anchor="middle" font-weight="600">Disk 3</text>
+      <text class="svg-label" x="500" y="92" font-size="13" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 3</text>
       <rect x="440" y="100" width="120" height="32" rx="5" fill="#C6841E"/><text x="500" y="121" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Ap</text>
       <rect x="440" y="138" width="120" height="32" rx="5" fill="#DD5430"/><text x="500" y="159" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">B2</text>
       <rect x="440" y="176" width="120" height="32" rx="5" fill="#DD5430"/><text x="500" y="197" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">C2</text>
@@ -167,8 +177,8 @@
 
   <figure class="diagram">
     <svg viewBox="0 0 640 290" role="img" aria-label="RAID 10 – gespiegelte Paare, die anschließend gestriped werden">
-      <text class="svg-title" x="20" y="28" fill="#16242E" font-size="16" font-weight="700">RAID 10 – spiegeln + stripen</text>
-      <text class="svg-label-sm" x="20" y="48" fill="#16242E" font-size="12">mind. 4 Platten</text>
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">RAID 10 – spiegeln + stripen</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#16242E;">mind. 4 Platten</text>
       <!-- Stripe-Klammer -->
       <line x1="120" y1="68" x2="520" y2="68" stroke="#DD5430" stroke-width="2"/>
       <line x1="120" y1="62" x2="120" y2="74" stroke="#DD5430" stroke-width="2"/>
@@ -177,21 +187,21 @@
       <!-- Paar 1 -->
       <text x="155" y="98" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Spiegelpaar 1</text>
       <rect x="40" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="92" y="128" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Disk 1</text>
+      <text class="svg-label" x="92" y="128" font-size="12" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 1</text>
       <rect x="55" y="140" width="75" height="45" rx="5" fill="#DD5430"/><text x="92" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A1</text>
       <rect x="55" y="195" width="75" height="45" rx="5" fill="#DD5430"/><text x="92" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A3</text>
       <rect x="165" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="217" y="128" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Disk 2 (Kopie)</text>
+      <text class="svg-label" x="217" y="128" font-size="11" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 2 (Kopie)</text>
       <rect x="180" y="140" width="75" height="45" rx="5" fill="#15786E"/><text x="217" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A1</text>
       <rect x="180" y="195" width="75" height="45" rx="5" fill="#15786E"/><text x="217" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A3</text>
       <!-- Paar 2 -->
       <text x="445" y="98" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Spiegelpaar 2</text>
       <rect x="330" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="382" y="128" fill="#16242E" font-size="12" text-anchor="middle" font-weight="600">Disk 3</text>
+      <text class="svg-label" x="382" y="128" font-size="12" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 3</text>
       <rect x="345" y="140" width="75" height="45" rx="5" fill="#DD5430"/><text x="382" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A2</text>
       <rect x="345" y="195" width="75" height="45" rx="5" fill="#DD5430"/><text x="382" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A4</text>
       <rect x="455" y="108" width="105" height="160" rx="5" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
-      <text class="svg-label" x="507" y="128" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Disk 4 (Kopie)</text>
+      <text class="svg-label" x="507" y="128" font-size="11" text-anchor="middle" font-weight="600" style="fill:#16242E;">Disk 4 (Kopie)</text>
       <rect x="470" y="140" width="75" height="45" rx="5" fill="#15786E"/><text x="507" y="167" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A2</text>
       <rect x="470" y="195" width="75" height="45" rx="5" fill="#15786E"/><text x="507" y="222" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">A4</text>
     </svg>

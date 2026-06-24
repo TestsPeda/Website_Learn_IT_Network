@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 · Übertragungsmedien — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html" class="current">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Kabel &amp; Glasfaser</p>
+    <div class="hero-num"><span class="hash">#</span>3</div>
+    <h1>Übertragungsmedien</h1>
+    <p class="lede">Kupferdrahtleitungen mit Twisted Pair und Schirmung, Komponenten­kategorien
+      gegen Verkabelungsklassen, Glasfaser mit Totalreflexion sowie Stecker und
+      Verbindungselemente – und wann Kupfer, wann LWL die richtige Wahl ist.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>17</b> Aufgaben</span>
+      <span class="pill"><b>5</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Kupfer: Twisted Pair &amp; Schirmung</h2></div>
+  <p class="sec-sub">Aufbau verdrillter Aderpaare und die Bezeichnung der Schirmung nach dem Schema <code>X/Y</code>TP.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 250" role="img" aria-label="Verdrilltes Aderpaar (Twisted Pair) – zwei Adern werden umeinander gewickelt, um Störungen zu reduzieren">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Twisted Pair – verdrilltes Aderpaar</text>
+      <text class="svg-label-sm" x="20" y="50" font-size="12" style="fill:#5C6B78;">Das Verdrillen reduziert eingestreute Störungen (Übersprechen / EMV).</text>
+      <!-- gerade Adern (oben) -->
+      <text class="svg-label-sm" x="20" y="92" font-size="11" style="fill:#5C6B78;">nicht verdrillt</text>
+      <line x1="120" y1="86" x2="690" y2="86" stroke="#DD5430" stroke-width="4"/>
+      <line x1="120" y1="100" x2="690" y2="100" stroke="#15786E" stroke-width="4"/>
+      <!-- verdrilltes Paar (unten) -->
+      <text class="svg-label-sm" x="20" y="180" font-size="11" style="fill:#5C6B78;">verdrillt</text>
+      <path d="M120 170 C150 140, 180 140, 210 170 S270 200, 300 170 S360 140, 390 170 S450 200, 480 170 S540 140, 570 170 S630 200, 660 170 L690 170"
+            fill="none" stroke="#DD5430" stroke-width="4"/>
+      <path d="M120 170 C150 200, 180 200, 210 170 S270 140, 300 170 S360 200, 390 170 S450 140, 480 170 S540 200, 570 170 S630 140, 660 170 L690 170"
+            fill="none" stroke="#15786E" stroke-width="4"/>
+    </svg>
+    <figcaption>Verdrillte Aderpaare (Twisted Pair) – das Umeinanderwickeln mindert Übersprechen und Einstreuungen.</figcaption>
+  </figure>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Querschnitt eines S/FTP-Kabels mit Geflecht-Gesamtschirm und vier folienumhüllten Aderpaaren">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Querschnitt S/FTP – Schirmung in zwei Ebenen</text>
+      <!-- Kabelmantel -->
+      <circle cx="180" cy="170" r="115" fill="#FBEAE3" stroke="#16242E" stroke-width="3"/>
+      <!-- Gesamtschirm (Geflecht S) -->
+      <circle cx="180" cy="170" r="100" fill="#fff" stroke="#5C6B78" stroke-width="6" stroke-dasharray="4 4"/>
+      <!-- 4 Paare, jeweils Folie (F) -->
+      <g>
+        <circle cx="148" cy="138" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="138" cy="138" r="11" fill="#DD5430"/><circle cx="160" cy="138" r="11" fill="#B23E1F"/>
+        <circle cx="212" cy="138" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="202" cy="138" r="11" fill="#15786E"/><circle cx="224" cy="138" r="11" fill="#16242E"/>
+        <circle cx="148" cy="202" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="138" cy="202" r="11" fill="#15786E"/><circle cx="160" cy="202" r="11" fill="#DD5430"/>
+        <circle cx="212" cy="202" r="34" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+        <circle cx="202" cy="202" r="11" fill="#B23E1F"/><circle cx="224" cy="202" r="11" fill="#16242E"/>
+      </g>
+      <!-- Legende -->
+      <line x1="360" y1="90"  x2="395" y2="90"  stroke="#16242E" stroke-width="3"/>
+      <text class="svg-label" x="405" y="95"  font-size="13" style="fill:#16242E;">Kabelmantel (außen)</text>
+      <line x1="360" y1="125" x2="395" y2="125" stroke="#5C6B78" stroke-width="6" stroke-dasharray="4 4"/>
+      <text class="svg-label" x="405" y="130" font-size="13" style="fill:#16242E;"><tspan font-weight="700">S</tspan> = Gesamtschirm (Geflecht)</text>
+      <circle cx="377" cy="158" r="14" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="3"/>
+      <text class="svg-label" x="405" y="163" font-size="13" style="fill:#16242E;"><tspan font-weight="700">F</tspan> = Folienschirm je Paar</text>
+      <circle cx="377" cy="190" r="9" fill="#DD5430"/>
+      <text class="svg-label" x="405" y="195" font-size="13" style="fill:#16242E;"><tspan font-weight="700">TP</tspan> = verdrilltes Aderpaar</text>
+      <text class="svg-label-sm" x="360" y="232" font-size="12" style="fill:#5C6B78;">Schema X/YTP:  X = Gesamtschirm · Y = Paarschirm</text>
+      <text class="svg-label-sm" x="360" y="252" font-size="12" style="fill:#5C6B78;">S = Geflecht · F = Folie · U = ohne (unscreened)</text>
+    </svg>
+    <figcaption>S/FTP: Geflecht-Gesamtschirm (S) außen, jedes der vier Aderpaare zusätzlich von einer Folie (F) umhüllt.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wofür steht die Abkürzung <code>TP</code> in Kabelbezeichnungen wie <code>U/UTP</code> oder <code>S/FTP</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Transmission Protocol – ein Übertragungsprotokoll.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Twisted Pair – verdrilltes Aderpaar.</li>
+        <li class="opt"><span class="tick"></span>Total Power – die maximale Sendeleistung.</li>
+        <li class="opt"><span class="tick"></span>Thin Patch – ein besonders dünnes Patchkabel.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>TP</code> = <b>Twisted Pair</b>, auf Deutsch „verdrilltes Aderpaar“. Die zwei Adern eines Paares werden umeinander verdrillt, um eingestreute Magnetfelder und Übersprechen zu reduzieren.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Im Schema <code>X/YTP</code>: Was bezeichnen <code>X</code> und <code>Y</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span><code>X</code> = Kabelfarbe, <code>Y</code> = Anzahl der Adern.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>X</code> = Gesamtschirm der Leitung, <code>Y</code> = Schirm der einzelnen Paare.</li>
+        <li class="opt"><span class="tick"></span><code>X</code> = Kategorie, <code>Y</code> = Klasse.</li>
+        <li class="opt"><span class="tick"></span><code>X</code> = Steckertyp, <code>Y</code> = Buchsentyp.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Links vom Schrägstrich steht der <b>äußere Gesamtschirm</b> der Leitung (<code>X</code>), rechts der Schirm der <b>einzelnen Paare</b> (<code>Y</code>). Dabei steht <code>S</code> für ein Geflecht feiner Drähte, <code>F</code> für eine Folie und <code>U</code> für ungeschirmt (unscreened).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Schirmung beschreibt ein <code>S/FTP</code>-Kabel korrekt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Kein Gesamtschirm, einzelne Paare ungeschirmt.</li>
+        <li class="opt"><span class="tick"></span>Folien-Gesamtschirm, einzelne Paare ungeschirmt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Geflecht-Gesamtschirm (S), jedes Paar zusätzlich von einer Folie (F) umgeben.</li>
+        <li class="opt"><span class="tick"></span>Geflecht-Gesamtschirm, einzelne Paare ungeschirmt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>S/FTP</code> = gemeinsamer <b>Geflechtschirm (S)</b> außen, dazu sind die einzelnen Paare jeweils von einem <b>Folienschirm (FTP)</b> umgeben. Das ist die best geschirmte und damit störungssicherste der hier behandelten Varianten.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen über die Schirmung von Kupferdatenleitungen sind richtig? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein Geflechtschirm (S) ist flexibel und robust, bietet gute Schirmwirkung, ist aber teurer.</li>
+        <li class="opt"><span class="tick"></span>Ein Folienschirm (F) bietet die beste Schirmwirkung aller Varianten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein Folienschirm (F) ist leicht und flexibel, aber anfälliger für Beschädigungen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Schirmung ist nötig, weil Kupfer störanfällig gegenüber magnetischen Feldern ist.</li>
+        <li class="opt"><span class="tick"></span>Bei <code>U/UTP</code> sind die einzelnen Paare durch eine Folie geschirmt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Richtig sind 1, 3 und 4. Geflecht = flexibel/robust/gute Wirkung/teurer; Folie = leicht/flexibel, aber geringere Wirkung und beschädigungsanfälliger; Kupfer braucht Schirmung wegen Störanfälligkeit gegen Magnetfelder. Falsch: Die Folie hat <b>nicht</b> die beste Wirkung (das hat das Geflecht/der Mehrfachschirm), und bei <code>U/UTP</code> sind die Paare gerade <b>nicht</b> geschirmt (U = unscreened).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne den vier Kürzeln <code>S/FTP</code>, <code>F/UTP</code>, <code>SF/UTP</code> und <code>U/UTP</code> jeweils die korrekte Beschreibung von Gesamt- und Paarschirm zu.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Kürzel</th><th>Gesamtschirm (X)</th><th>Paarschirm (Y)</th></tr></thead>
+        <tbody>
+          <tr><td><code>S/FTP</code></td><td>Geflecht (S)</td><td>Folie je Paar (FTP)</td></tr>
+          <tr><td><code>F/UTP</code></td><td>Folie (F)</td><td>ungeschirmt (UTP)</td></tr>
+          <tr><td><code>SF/UTP</code></td><td>Geflecht + Folie (SF)</td><td>ungeschirmt (UTP)</td></tr>
+          <tr><td><code>U/UTP</code></td><td>keiner (U)</td><td>ungeschirmt (UTP)</td></tr>
+        </tbody>
+      </table></div>
+      <p>Merke: links = Gesamtschirm, rechts = Paarschirm; <code>S</code> = Geflecht, <code>F</code> = Folie, <code>U</code> = ohne.</p>
+    </div></article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Kategorien vs. Leistungsklassen</h2></div>
+  <p class="sec-sub">Die DIN EN 50173-1 trennt <code>Kategorie</code> (einzelne Komponente) von <code>Klasse</code> (verkabelte Strecke).</p>
+
+  <div class="tbl-wrap"><table class="ref">
+    <thead><tr><th>Klasse (Strecke)</th><th>Kategorie (Komponente)</th><th>Frequenz</th><th>Datenrate / Einsatz</th></tr></thead>
+    <tbody>
+      <tr><td>Klasse D</td><td>Cat 5 / Cat 5e</td><td>bis 100 MHz</td><td>bis 1 Gbit/s</td></tr>
+      <tr><td>Klasse E</td><td>Cat 6</td><td>bis 250 MHz</td><td>bis 1 Gbit/s</td></tr>
+      <tr><td>Klasse E<sub>A</sub></td><td>Cat 6A</td><td>bis 500 MHz</td><td>bis 10 Gbit/s</td></tr>
+      <tr><td>Klasse F</td><td>Cat 7</td><td>bis 600 MHz</td><td>Multimedia</td></tr>
+      <tr><td>Klasse F<sub>A</sub></td><td>Cat 7A</td><td>bis 1000 MHz</td><td>Multimedia</td></tr>
+      <tr><td>Klasse I / II</td><td>Cat 8.1 / 8.2</td><td>bis 2000 MHz</td><td>bis 40 Gbit/s</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was beschreibt nach DIN EN 50173-1 eine <b>Kategorie</b> (z. B. <code>Cat 6A</code>)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die Leistung der gesamten verkabelten Strecke.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Leistung einer <b>einzelnen Komponente</b> (Kabel, Stecker, Dose).</li>
+        <li class="opt"><span class="tick"></span>Die maximale Kabellänge in Metern.</li>
+        <li class="opt"><span class="tick"></span>Die Schirmungsart des Kabels.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Komponentenkategorie</b> beschreibt die Leistungsfähigkeit einer <b>einzelnen Komponente</b>. Die <b>Klasse</b> dagegen bewertet die <b>gesamte verkabelte Strecke</b>. <span class="tag-mistake">Verwechslung</span> Kategorie (Bauteil) ↔ Klasse (Strecke).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text"><code>Cat 6</code> ist für welche Frequenz und Datenrate ausgelegt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>bis 100 MHz, bis 1 Gbit/s.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>bis 250 MHz, bis 1 Gbit/s.</li>
+        <li class="opt"><span class="tick"></span>bis 500 MHz, bis 10 Gbit/s.</li>
+        <li class="opt"><span class="tick"></span>bis 600 MHz, für Multimedia.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>Cat 6</code> ist bis <b>250 MHz</b> spezifiziert und für Datenraten bis <b>1 Gbit/s</b> geeignet (entspricht Klasse E). 10-Gbit/s benötigt mindestens <code>Cat 6A</code> (500 MHz, Klasse E<sub>A</sub>).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne jeder Komponentenkategorie die passende Verkabelungsklasse zu: <code>Cat 5e</code>, <code>Cat 6</code>, <code>Cat 6A</code>, <code>Cat 7</code>.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Kategorie</th><th>Klasse</th><th>Frequenz</th></tr></thead>
+        <tbody>
+          <tr><td><code>Cat 5e</code></td><td>Klasse D</td><td>bis 100 MHz</td></tr>
+          <tr><td><code>Cat 6</code></td><td>Klasse E</td><td>bis 250 MHz</td></tr>
+          <tr><td><code>Cat 6A</code></td><td>Klasse E<sub>A</sub></td><td>bis 500 MHz</td></tr>
+          <tr><td><code>Cat 7</code></td><td>Klasse F</td><td>bis 600 MHz</td></tr>
+        </tbody>
+      </table></div>
+      <p>Die Kategorie bezieht sich auf einzelne Komponenten, die Klasse auf die fertige Strecke aus passenden Komponenten gleicher Güte.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Erläutere, welche Bedeutung die <b>Klasse</b> bei der Auswahl der Komponenten für das gesamte Netzwerk hat. Wovon hängt die Klassenzugehörigkeit eines Netzwerks ab?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Die Klasse gibt vor, welche Leistungsdaten <b>alle</b> Komponenten eines Netzwerks erfüllen müssen. Ein Netzwerk ist nur so gut wie seine <b>schwächste Komponente</b>: Die schwächste verbaute Komponente bestimmt die tatsächliche Klassenzugehörigkeit der gesamten Strecke.</p>
+      <p>Praktische Folge: Soll z. B. Klasse E<sub>A</sub> (10 Gbit/s) erreicht werden, müssen Kabel, Stecker, Dosen und Patchpanel <b>durchgängig</b> mindestens <code>Cat 6A</code> sein. Eine einzige <code>Cat 5e</code>-Dose würde die ganze Strecke herabstufen.</p>
+    </div></article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Glasfaser / Lichtwellenleiter</h2></div>
+  <p class="sec-sub">Aufbau aus Kern und Mantel, Lichtführung durch Totalreflexion sowie Multimode vs. Singlemode.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 280" role="img" aria-label="Lichtführung in einer Glasfaser: Licht wird an der Grenze zwischen Kern und Mantel durch Totalreflexion im Kern gehalten">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Totalreflexion im Faserkern</text>
+      <text class="svg-label-sm" x="20" y="50" font-size="12" style="fill:#5C6B78;">Kern und Mantel haben unterschiedliche Brechungsindizes → Licht bleibt im Kern.</text>
+      <!-- Mantel (cladding) -->
+      <rect x="60" y="80" width="630" height="150" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
+      <text class="svg-label-sm" x="70" y="102" font-size="12" style="fill:#5C6B78;">Mantel (cladding) – höhere Reflexion, niedrigerer Brechungsindex</text>
+      <!-- Kern (core) -->
+      <rect x="60" y="125" width="630" height="60" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text class="svg-label-sm" x="70" y="218" font-size="12" style="fill:#5C6B78;">Kern / Modenfeld (core) – hier wird das Licht geführt</text>
+      <!-- Grenzlinien -->
+      <line x1="60" y1="125" x2="690" y2="125" stroke="#B23E1F" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="60" y1="185" x2="690" y2="185" stroke="#B23E1F" stroke-width="2" stroke-dasharray="6 4"/>
+      <!-- Lichtstrahl, zickzack durch Totalreflexion -->
+      <polyline points="70,180 170,130 270,180 370,130 470,180 570,130 670,180"
+                fill="none" stroke="#15786E" stroke-width="3"/>
+      <circle cx="170" cy="130" r="4" fill="#15786E"/>
+      <circle cx="270" cy="180" r="4" fill="#15786E"/>
+      <circle cx="370" cy="130" r="4" fill="#15786E"/>
+      <circle cx="470" cy="180" r="4" fill="#15786E"/>
+      <circle cx="570" cy="130" r="4" fill="#15786E"/>
+      <text class="svg-label-sm" x="190" y="122" font-size="11" style="fill:#15786E;">Reflexion an der Grenze</text>
+    </svg>
+    <figcaption>Totalreflexion: An der Grenze Kern↔Mantel wird das Licht reflektiert und so im Kern/Modenfeld geführt.</figcaption>
+  </figure>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 260" role="img" aria-label="Vergleich Multimodefaser mit 50 Mikrometer Kern und mehreren Moden gegen Singlemodefaser mit 9 Mikrometer Kern und einer Mode">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Multimode vs. Singlemode</text>
+      <!-- Multimode -->
+      <text class="svg-label" x="40" y="62" font-size="13" font-weight="600" style="fill:#16242E;">Multimode (G50/125)</text>
+      <rect x="40" y="74" width="300" height="70" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
+      <rect x="40" y="92" width="300" height="34" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <polyline points="50,109 110,96 170,122 230,96 290,122 335,109" fill="none" stroke="#15786E" stroke-width="2"/>
+      <polyline points="50,109 120,124 190,94 260,124 320,98 335,109" fill="none" stroke="#B23E1F" stroke-width="2"/>
+      <line x1="50" y1="109" x2="335" y2="109" stroke="#16242E" stroke-width="1.5"/>
+      <text class="svg-label-sm" x="40" y="166" font-size="12" style="fill:#5C6B78;">Kern 50 μm · mehrere Moden · LED · kürzere Reichweite, günstiger</text>
+      <!-- Singlemode -->
+      <text class="svg-label" x="380" y="62" font-size="13" font-weight="600" style="fill:#16242E;">Singlemode (E9/125)</text>
+      <rect x="380" y="74" width="300" height="70" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
+      <rect x="380" y="103" width="300" height="12" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <line x1="390" y1="109" x2="675" y2="109" stroke="#15786E" stroke-width="3"/>
+      <text class="svg-label-sm" x="380" y="166" font-size="12" style="fill:#5C6B78;">Kern 9 μm · eine Mode · Laser · große Reichweite</text>
+      <!-- Mantel-Hinweis -->
+      <text class="svg-label-sm" x="40" y="210" font-size="12" style="fill:#5C6B78;">Manteldurchmesser bei beiden üblicherweise 125 μm.</text>
+      <text class="svg-label-sm" x="40" y="232" font-size="12" style="fill:#5C6B78;">Beide Faserarten dürfen nicht auf derselben Strecke gemischt werden (hohe Verluste).</text>
+    </svg>
+    <figcaption>Multimode (50 μm Kern, mehrere Moden) gegenüber Singlemode (9 μm Kern, eine Mode) – Mantel je 125 μm.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wodurch wird das Licht in einer Glasfaser im Kern gehalten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Durch eine elektrische Spannung entlang der Faser.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Durch Totalreflexion an der Grenze zwischen Kern und Mantel (unterschiedliche Brechungsindizes).</li>
+        <li class="opt"><span class="tick"></span>Durch Verdrillung der Faser wie bei Twisted Pair.</li>
+        <li class="opt"><span class="tick"></span>Durch einen Folienschirm um den Kern.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Kern (bzw. Modenfeld) und Mantel besitzen <b>unterschiedliche Brechungsindizes</b>. Dadurch wird das Licht an der Grenze reflektiert (<b>Totalreflexion</b>) und möglichst vollständig im Kern geführt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussage zu Multimode- und Singlemodefaser ist korrekt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Multimode hat den kleineren Kern (9 μm) und nutzt einen Laser.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Multimode hat den größeren Kern (50 μm) mit mehreren Moden; Singlemode hat 9 μm mit nur einer Mode.</li>
+        <li class="opt"><span class="tick"></span>Beide haben denselben Kerndurchmesser, unterscheiden sich nur in der Farbe.</li>
+        <li class="opt"><span class="tick"></span>Singlemode hat den größeren Kern und ist deshalb günstiger.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Multimode</b>: Kerndurchmesser ~50 μm, mehrere Lichtmoden gleichzeitig, oft LED-Quelle, günstiger, aber kürzere Reichweite. <b>Singlemode</b>: Kern ~9 μm, nur eine Mode, Laser, sehr große Reichweite. Manteldurchmesser bei beiden 125 μm.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche der folgenden Punkte sind <b>Vorteile</b> von Glasfaserkabeln? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Keine Beeinflussung durch elektrische Störfelder von außen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Hohe Übertragungsraten bei niedriger Signaldämpfung.</li>
+        <li class="opt"><span class="tick"></span>Sehr günstige Anschluss- und Gerätetechnik.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Kein Übersprechen auf benachbarte Fasern.</li>
+        <li class="opt"><span class="tick"></span>Besonders unempfindlich gegen mechanische Belastung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-check btn">Auswerten</button><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Vorteile: keine Beeinflussung durch elektrische Störfelder, hohe Übertragungsraten bei niedriger Dämpfung, kein Übersprechen (außerdem: keine Potentialverschleppung, kompakte Bauform, kein Überspannungsschutz nötig). <b>Nachteile</b> sind dagegen die teure Geräte-/Anschlusstechnik und die Empfindlichkeit gegen mechanische Belastung – diese beiden Optionen sind also falsch.</p></div></article>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 250" role="img" aria-label="Vergleichstabelle Kupfer gegen Glasfaser nach EMV, Reichweite, Bandbreite und Kosten">
+      <text class="svg-title" x="20" y="30" font-size="16" font-weight="700" style="fill:#16242E;">Kupfer (TP) vs. Glasfaser (LWL)</text>
+      <!-- Kopfzeile -->
+      <rect x="20" y="50" width="240" height="38" fill="#16242E"/>
+      <rect x="260" y="50" width="220" height="38" fill="#DD5430"/>
+      <rect x="480" y="50" width="220" height="38" fill="#15786E"/>
+      <text x="140" y="74" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Kriterium</text>
+      <text x="370" y="74" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Kupfer / TP</text>
+      <text x="590" y="74" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Glasfaser / LWL</text>
+      <!-- Zeilen -->
+      <g font-size="12.5">
+        <rect x="20" y="88"  width="680" height="32" fill="#FBEAE3"/>
+        <text x="32" y="109" fill="#16242E" font-weight="600">EMV / Störfelder</text>
+        <text x="272" y="109" fill="#16242E">störanfällig, Schirmung nötig</text>
+        <text x="492" y="109" fill="#16242E">unempfindlich (immun)</text>
+        <rect x="20" y="120" width="680" height="32" fill="#E4F1EF"/>
+        <text x="32" y="141" fill="#16242E" font-weight="600">Reichweite</text>
+        <text x="272" y="141" fill="#16242E">kurz (~100 m)</text>
+        <text x="492" y="141" fill="#16242E">sehr groß (WAN)</text>
+        <rect x="20" y="152" width="680" height="32" fill="#FBEAE3"/>
+        <text x="32" y="173" fill="#16242E" font-weight="600">Bandbreite / Dämpfung</text>
+        <text x="272" y="173" fill="#16242E">geringer, höhere Dämpfung</text>
+        <text x="492" y="173" fill="#16242E">sehr hoch, geringe Dämpfung</text>
+        <rect x="20" y="184" width="680" height="32" fill="#E4F1EF"/>
+        <text x="32" y="205" fill="#16242E" font-weight="600">Kosten / Verlegung</text>
+        <text x="272" y="205" fill="#16242E">günstig, einfach, robust</text>
+        <text x="492" y="205" fill="#16242E">teurer, aufwendig, empfindlich</text>
+      </g>
+      <rect x="20" y="50" width="680" height="166" fill="none" stroke="#B9C7D2" stroke-width="2"/>
+    </svg>
+    <figcaption>Vergleich Kupfer ↔ Glasfaser: EMV, Reichweite, Bandbreite und Kosten als Entscheidungshilfe.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Nenne typische Einsatzgebiete von Kupfer (TP) gegenüber Glasfaser (LWL) und begründe kurz anhand von Reichweite und Kosten.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p><b>Kupfer (TP):</b> kurze Strecken, einfache Heim- und Bürogebäude, Tertiärbereich (Etage bis zum Arbeitsplatz), Altbauten mit vorhandenen Leitungen. Vorteile: kostengünstig, einfach zu verlegen, robust gegen mechanische Belastung. Begrenzt durch ~100 m Reichweite.</p>
+      <p><b>Glasfaser (LWL):</b> Primär- und Sekundärverkabelung, Verbindungen zwischen Gebäuden, SAN und Weitverkehrsnetze (WAN) – also <b>lange Strecken</b>. Höhere Kosten und aufwendigere Installation, dafür große Reichweite, hohe Bandbreite und EMV-Unempfindlichkeit.</p>
+    </div></article>
+
+  <!-- ===================== SECTION D ===================== -->
+  <div class="sec-head"><span class="ix">D</span><h2>Verbindungselemente &amp; Stecker</h2></div>
+  <p class="sec-sub">Stecker, Patchpanel, Datendosen und Patchkabel – ausgewählt nach Medium und Kategorie/Klasse.</p>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie heißt die meistverbaute Steckverbindung für Kupfer-Netzwerkkabel (Twisted Pair)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span><code>LC</code>-Stecker.</li>
+        <li class="opt"><span class="tick"></span><code>SC</code>-Stecker.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>RJ45</code>-Stecker (8-polig).</li>
+        <li class="opt"><span class="tick"></span><code>BNC</code>-Stecker.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b><code>RJ45</code></b>-Stecker (8-polig) ist die übliche Steckverbindung für TP-Patchkabel – bis 10-Gbit-Ethernet. <code>LC</code> und <code>SC</code> sind dagegen <b>Glasfaser</b>-Stecker.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne die Steckertypen <code>RJ45</code>, <code>LC</code> und <code>SC</code> dem jeweiligen Übertragungsmedium zu und nenne ein kurzes Unterscheidungsmerkmal.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Stecker</th><th>Medium</th><th>Merkmal</th></tr></thead>
+        <tbody>
+          <tr><td><code>RJ45</code></td><td>Kupfer / TP</td><td>8-polig, meistverbaut, geschirmt oder ungeschirmt</td></tr>
+          <tr><td><code>SC</code> (Subscriber Connector)</td><td>Glasfaser / LWL</td><td>robust, einfach steckbar</td></tr>
+          <tr><td><code>LC</code> (Lucent Connector)</td><td>Glasfaser / LWL</td><td>kleiner als SC, geringere Steckzyklenzahl</td></tr>
+        </tbody>
+      </table></div>
+      <p><code>SC</code> und <code>LC</code> gibt es für Multimode- wie Singlemodefasern; der Fasertyp des Patchkabels muss zur fest verlegten Faser passen.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">16</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Funktion hat ein <b>Patchpanel</b> und worauf ist bei seiner Auswahl zu achten?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es wandelt Lichtsignale in elektrische Signale um; auf die Wellenlänge ist zu achten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es dient als zentrale Verteilstelle für Kabelmanagement; Kategorie und Klasse müssen zur gesamten Verkabelung passen.</li>
+        <li class="opt"><span class="tick"></span>Es vergibt IP-Adressen im Netzwerk; auf die Portzahl kommt es nicht an.</li>
+        <li class="opt"><span class="tick"></span>Es schirmt das Netzwerk gegen Überspannung; die Farbe ist entscheidend.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein Patchpanel ist die <b>zentrale Verteilstelle</b> (IN/OUT), sorgt für Struktur/Kabelmanagement und flexible Konfiguration. Es verbindet fest verlegte Kabel mit aktiven Komponenten (Switch, Router, AP). Auswahlkriterien: <b>Kategorie und Klasse müssen zur gesamten Verkabelung passen</b>, dazu Portanzahl, Qualität und Montageart/Bauform.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">17</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Bei der Kabelauswahl stehen <code>U/UTP</code> und <code>S/FTP</code> zur Verfügung. Welche Ausführung ist für ein kabelgebundenes Gigabit-Netzwerk in störungsreicher Umgebung besser geeignet? Begründe.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Geeigneter ist <b><code>S/FTP</code></b>. Die Kürzel beschreiben die Abschirmung: <code>S</code> = screened (Geflecht), <code>F</code> = foiled (Folie), <code>U</code> = unscreened. <code>S/FTP</code> hat sowohl einen Geflecht-Gesamtschirm als auch eine Folie um jedes Paar und ist damit deutlich besser gegen äußere Störungen (EMV) geschützt – ideal bei hohem Datenverkehr in störungsreicher Umgebung.</p>
+      <p><code>TP</code> kann hier vernachlässigt werden, da <b>beide</b> Varianten 4 verdrillte Aderpaare besitzen; die Verdrillung reduziert ohnehin die im Kabel induzierten Magnetfelder. Den Unterschied macht allein die zusätzliche Schirmung.</p>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="2-verkabelungsplan.html"><span>Vorheriges Thema</span><b>2 · Gebäude- &amp; Verkabelungsplan</b></a>
+    <a class="next" href="4-stueckliste.html"><span>Nächstes Thema</span><b>4 · Stückliste</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 3 — Übertragungsmedien</span> · Kupfer, Glasfaser &amp; Verbindungselemente</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

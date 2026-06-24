@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16 · E-Mail-Protokolle — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–16</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html" class="current">16</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Anwendungsschicht</p>
+    <div class="hero-num"><span class="hash">#</span>16</div>
+    <h1>E-Mail-Protokolle — SMTP, IMAP, POP3</h1>
+    <p class="lede">Wie eine E-Mail vom Sender zum Empfänger gelangt: <code>SMTP</code> versendet,
+      <code>IMAP</code> verwaltet serverseitig und synchron, <code>POP3</code> lädt lokal herunter –
+      jeweils unverschlüsselt oder per <code>SSL/TLS</code> abgesichert.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>15</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Der Weg einer E-Mail</h2></div>
+  <p class="sec-sub">Versand mit SMTP über Mailserver (MTA), Ablage im Postfach und Abruf mit POP3 oder IMAP.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 740 250" role="img" aria-label="Weg einer E-Mail: Sender per SMTP zum Mailserver, Relay über MTA zum Empfänger-Postfach, Abruf per POP3 oder IMAP">
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">Der Weg einer E-Mail</text>
+      <text class="svg-label-sm" x="20" y="48" font-size="12" style="fill:#5C6B78;">Versand (SMTP) → Ablage im Postfach → Abruf (POP3 / IMAP)</text>
+
+      <!-- Sender -->
+      <rect x="20" y="80" width="120" height="80" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="80" y="112" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">Sender</text>
+      <text x="80" y="132" fill="#5C6B78" font-size="11" text-anchor="middle">Mail-Client</text>
+
+      <!-- SMTP arrow 1 -->
+      <line x1="140" y1="120" x2="205" y2="120" stroke="#DD5430" stroke-width="2.5" marker-end="url(#ah)"/>
+      <text x="172" y="110" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">SMTP</text>
+
+      <!-- MTA 1 (sendender Server) -->
+      <rect x="210" y="80" width="120" height="80" rx="8" fill="#fff" stroke="#D4DEE6" stroke-width="2"/>
+      <text x="270" y="108" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">MTA</text>
+      <text x="270" y="126" fill="#5C6B78" font-size="11" text-anchor="middle">Sende-Server</text>
+      <text x="270" y="142" fill="#5C6B78" font-size="11" text-anchor="middle">(Relay)</text>
+
+      <!-- SMTP arrow 2 (relay) -->
+      <line x1="330" y1="120" x2="395" y2="120" stroke="#DD5430" stroke-width="2.5" marker-end="url(#ah)"/>
+      <text x="362" y="110" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">SMTP</text>
+
+      <!-- MTA 2 / Postfach (Empfänger-Server) -->
+      <rect x="400" y="80" width="150" height="80" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="475" y="106" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">Mailserver</text>
+      <text x="475" y="123" fill="#5C6B78" font-size="11" text-anchor="middle">Empfänger-</text>
+      <text x="475" y="138" fill="#5C6B78" font-size="11" text-anchor="middle">Postfach</text>
+
+      <!-- Abruf arrow -->
+      <line x1="550" y1="120" x2="615" y2="120" stroke="#15786E" stroke-width="2.5" marker-end="url(#ah2)"/>
+      <text x="582" y="110" fill="#15786E" font-size="11" text-anchor="middle" font-weight="700">POP3 /</text>
+      <text x="582" y="146" fill="#15786E" font-size="11" text-anchor="middle" font-weight="700">IMAP</text>
+
+      <!-- Empfänger -->
+      <rect x="620" y="80" width="100" height="80" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="670" y="112" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">Empfänger</text>
+      <text x="670" y="132" fill="#5C6B78" font-size="11" text-anchor="middle">Mail-Client</text>
+
+      <!-- Phasen-Klammern -->
+      <line x1="20" y1="195" x2="395" y2="195" stroke="#DD5430" stroke-width="1.5"/>
+      <text x="207" y="215" fill="#DD5430" font-size="12" text-anchor="middle" font-weight="700">Versand &amp; Transport (SMTP, Push)</text>
+      <line x1="550" y1="195" x2="720" y2="195" stroke="#15786E" stroke-width="1.5"/>
+      <text x="635" y="215" fill="#15786E" font-size="12" text-anchor="middle" font-weight="700">Abruf (Pull)</text>
+
+      <defs>
+        <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#DD5430"/></marker>
+        <marker id="ah2" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#15786E"/></marker>
+      </defs>
+    </svg>
+    <figcaption>SMTP transportiert die Mail (ggf. über Relay-MTAs) bis ins Empfänger-Postfach; der Empfänger holt sie von dort per POP3 oder IMAP ab.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches Protokoll wird zum <b>Versenden</b> von E-Mails verwendet?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span><code>IMAP</code></li>
+        <li class="opt"><span class="tick"></span><code>POP3</code></li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>SMTP</code></li>
+        <li class="opt"><span class="tick"></span><code>HTTP</code></li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>SMTP</code> (Simple Mail Transfer Protocol) ist für den <b>Versand</b> zuständig und transportiert die Nachricht vom Client zum Server des Empfängers. <span class="tag-mistake">Verwechslung</span>: <code>IMAP</code> und <code>POP3</code> dienen nur dem <b>Abruf</b>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was bezeichnet die <b>Relay-Funktion</b> von SMTP?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Das automatische Löschen der Mail nach dem Abruf.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Das Weiterleiten der Nachricht über mehrere beteiligte Server bis zum Empfänger-Server.</li>
+        <li class="opt"><span class="tick"></span>Das Synchronisieren der Mail auf mehreren Endgeräten.</li>
+        <li class="opt"><span class="tick"></span>Das Verschlüsseln der Verbindung per <code>STARTTLS</code>.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim <b>Relay</b> leitet ein SMTP-Server die Nachricht – wenn sie nicht direkt zugestellt werden kann – über einen oder mehrere weitere <b>Relay-Server</b> zum empfangenden Server weiter.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist ein <b>MTA</b> (Mail Transfer Agent) im E-Mail-Weg?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Das Mailprogramm auf dem Smartphone des Nutzers.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein Mailserver, der Nachrichten per SMTP entgegennimmt und weitertransportiert.</li>
+        <li class="opt"><span class="tick"></span>Ein Protokoll zum Abruf von Mails.</li>
+        <li class="opt"><span class="tick"></span>Der lokale Posteingang-Ordner im Mail-Client.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <b>MTA</b> ist ein <b>Mailserver</b>, der eine Mail per SMTP annimmt und – ggf. über Relays – Richtung Empfänger weiterleitet. Das Mailprogramm des Nutzers ist dagegen der Client (MUA).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Beschreibe in eigenen Worten den Weg einer E-Mail von Anna an Ben – von Annas Mailprogramm bis Ben die Mail liest. Nenne dabei, welches Protokoll in welchem Schritt arbeitet.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ol>
+        <li>Anna schreibt die Mail in ihrem Mail-Client und sendet sie ab.</li>
+        <li>Der Client übergibt die Mail per <code>SMTP</code> an Annas Mailserver (sendender MTA).</li>
+        <li>Dieser stellt die Mail per <code>SMTP</code> direkt oder über weitere <b>Relay-Server</b> an Bens Mailserver zu.</li>
+        <li>Bens Mailserver legt die Nachricht in Bens <b>Postfach</b> ab.</li>
+        <li>Ben ruft die Mail mit seinem Client per <code>IMAP</code> (serverseitig, synchron) oder <code>POP3</code> (Download aufs Gerät) ab und liest sie.</li>
+      </ol>
+      <p>Merksatz: <b>SMTP für den Versand/Transport, POP3 oder IMAP für den Abruf.</b></p>
+    </div></article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>POP3 vs. IMAP</h2></div>
+  <p class="sec-sub">Lokaler Download mit POP3 gegenüber serverseitiger, synchroner Verwaltung mit IMAP.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 740 320" role="img" aria-label="Vergleich POP3 lädt herunter und löscht auf dem Server, IMAP belässt die Mails auf dem Server und synchronisiert mehrere Geräte">
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">POP3 vs. IMAP</text>
+
+      <!-- POP3 Spalte -->
+      <text x="185" y="58" fill="#DD5430" font-size="14" text-anchor="middle" font-weight="700">POP3 — gerätebasiert</text>
+      <rect x="120" y="70" width="130" height="58" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="185" y="95" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Server</text>
+      <text x="185" y="114" fill="#5C6B78" font-size="11" text-anchor="middle">Postfach (leer)</text>
+      <line x1="185" y1="128" x2="185" y2="178" stroke="#DD5430" stroke-width="2.5" marker-end="url(#ahp)"/>
+      <text x="265" y="150" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">herunterladen</text>
+      <text x="262" y="166" fill="#B23E1F" font-size="11" text-anchor="middle" font-weight="700">+ löschen</text>
+      <rect x="120" y="182" width="130" height="58" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="185" y="207" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">1 Endgerät</text>
+      <text x="185" y="226" fill="#5C6B78" font-size="11" text-anchor="middle">Mails liegen lokal</text>
+      <text x="185" y="270" fill="#5C6B78" font-size="11" text-anchor="middle">Standard: Mail wird</text>
+      <text x="185" y="286" fill="#5C6B78" font-size="11" text-anchor="middle">vom Server gelöscht,</text>
+      <text x="185" y="302" fill="#5C6B78" font-size="11" text-anchor="middle">keine Synchronisierung</text>
+
+      <!-- Trennlinie -->
+      <line x1="375" y1="60" x2="375" y2="300" stroke="#D4DEE6" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+      <!-- IMAP Spalte -->
+      <text x="560" y="58" fill="#15786E" font-size="14" text-anchor="middle" font-weight="700">IMAP — serverbasiert</text>
+      <rect x="495" y="70" width="130" height="58" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="560" y="95" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Server</text>
+      <text x="560" y="114" fill="#5C6B78" font-size="11" text-anchor="middle">Mails bleiben hier</text>
+
+      <!-- drei Geräte synchron -->
+      <line x1="510" y1="128" x2="450" y2="180" stroke="#15786E" stroke-width="2" marker-end="url(#ahi)"/>
+      <line x1="560" y1="128" x2="560" y2="180" stroke="#15786E" stroke-width="2" marker-end="url(#ahi)"/>
+      <line x1="610" y1="128" x2="670" y2="180" stroke="#15786E" stroke-width="2" marker-end="url(#ahi)"/>
+      <text x="560" y="150" fill="#15786E" font-size="11" text-anchor="middle" font-weight="700">synchron</text>
+
+      <rect x="408" y="184" width="84" height="50" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="450" y="214" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">PC</text>
+      <rect x="518" y="184" width="84" height="50" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="560" y="214" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Tablet</text>
+      <rect x="628" y="184" width="84" height="50" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="670" y="214" fill="#16242E" font-size="11" text-anchor="middle" font-weight="600">Smartphone</text>
+
+      <text x="560" y="270" fill="#5C6B78" font-size="11" text-anchor="middle">Lesen / Verschieben / Löschen</text>
+      <text x="560" y="286" fill="#5C6B78" font-size="11" text-anchor="middle">geschieht auf dem Server →</text>
+      <text x="560" y="302" fill="#5C6B78" font-size="11" text-anchor="middle">gleicher Stand auf allen Geräten</text>
+
+      <defs>
+        <marker id="ahp" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#DD5430"/></marker>
+        <marker id="ahi" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L8,3.2 L0,6.4 Z" fill="#15786E"/></marker>
+      </defs>
+    </svg>
+    <figcaption>POP3 lädt die Mail auf <b>ein</b> Gerät und löscht sie standardmäßig vom Server. IMAP belässt alles auf dem Server und hält <b>mehrere Geräte synchron</b>.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was passiert standardmäßig mit E-Mails, die über <code>POP3</code> abgerufen werden?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Sie bleiben auf dem Server.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie werden nach dem Herunterladen vom Server gelöscht.</li>
+        <li class="opt"><span class="tick"></span>Sie werden auf alle Geräte synchronisiert.</li>
+        <li class="opt"><span class="tick"></span>Sie werden auf dem Server archiviert.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>In der Standardkonfiguration <b>lädt POP3 die Mail auf das Endgerät herunter und löscht sie anschließend vom Server</b>. Danach wird die Nachricht nur noch lokal verwaltet.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Worin liegt der zentrale Vorteil von <code>IMAP</code> gegenüber <code>POP3</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>IMAP ist auch zum Versenden von Mails geeignet.</li>
+        <li class="opt"><span class="tick"></span>IMAP benötigt keine Internetverbindung.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Mails bleiben auf dem Server und werden über mehrere Geräte hinweg synchron verwaltet.</li>
+        <li class="opt"><span class="tick"></span>IMAP löscht die Mails sofort vom Server.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Bei <code>IMAP</code> verbleiben die Mails (und Ordner) auf dem <b>Server</b>. Jede Aktion – Lesen, Verschieben, Löschen – wird serverseitig ausgeführt, sodass alle Geräte denselben Stand <b>synchron</b> sehen.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen über <code>IMAP</code> sind <b>richtig</b>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Mails werden zentral auf dem Server verwaltet.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ordner können direkt am E-Mail-Server angelegt werden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Aktionen wie Lesen, Verschieben und Löschen werden über alle Geräte synchronisiert.</li>
+        <li class="opt"><span class="tick"></span>Die Mails werden nach dem Abruf standardmäßig vom Server gelöscht.</li>
+        <li class="opt"><span class="tick"></span>IMAP ersetzt SMTP beim Versenden von Mails.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Richtig sind die drei serverbasierten Eigenschaften: zentrale Verwaltung, serverseitige Ordner und Synchronisation über alle Geräte. Das <b>Löschen nach Abruf</b> ist POP3-Verhalten; das <b>Versenden</b> übernimmt <code>SMTP</code>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne jedem Protokoll seine <b>Hauptaufgabe</b> zu: <code>SMTP</code>, <code>IMAP</code>, <code>POP3</code> ↔ (a) lokaler Download, löscht meist vom Server · (b) Versand/Transport · (c) serverseitige, synchrone Verwaltung.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Protokoll</th><th>Hauptaufgabe</th></tr></thead>
+        <tbody>
+          <tr><td><code>SMTP</code></td><td>(b) Versenden / Transport der Mail zum Empfänger-Server (inkl. Relay)</td></tr>
+          <tr><td><code>IMAP</code></td><td>(c) Serverseitige, synchrone Verwaltung der Mails über mehrere Geräte</td></tr>
+          <tr><td><code>POP3</code></td><td>(a) Lokaler Download aufs Endgerät, löscht die Mail standardmäßig vom Server</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Szenario</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Eine Nutzerin will ihre Mails auf <b>Smartphone, Tablet und PC</b> jederzeit mit demselben Stand sehen. Welches Abruf-Protokoll empfiehlst du und warum? Wann wäre umgekehrt POP3 sinnvoll?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Empfehlung: <code>IMAP</code>. Da die Mails auf dem Server bleiben und jede Aktion serverseitig ausgeführt wird, finden alle drei Geräte stets denselben <b>synchronen</b> Status vor – ideal für die Mehrgeräte-Nutzung.</p>
+      <p><code>POP3</code> ist dagegen sinnvoll, wenn Mails bewusst <b>lokal auf nur einem Gerät</b> (oder im lokalen Netz) verwaltet werden sollen – etwa um sie vom Server zu entfernen oder offline zu organisieren. Eine Synchronisierung gibt es dann nicht.</p>
+    </div></article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Ports &amp; Verschlüsselung</h2></div>
+  <p class="sec-sub">Standardports der drei Protokolle und die Absicherung per SSL/TLS.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 740 250" role="img" aria-label="Tabelle der Standardports: SMTP 25 und 587/465, POP3 110 und 995, IMAP 143 und 993, jeweils unverschlüsselt und verschlüsselt">
+      <text class="svg-title" x="20" y="28" font-size="16" font-weight="700" style="fill:#16242E;">Standardports der E-Mail-Protokolle</text>
+
+      <!-- Kopfzeile -->
+      <rect x="20" y="50" width="240" height="40" fill="#16242E"/>
+      <rect x="262" y="50" width="230" height="40" fill="#16242E"/>
+      <rect x="494" y="50" width="226" height="40" fill="#16242E"/>
+      <text x="40" y="75" fill="#fff" font-size="13" font-weight="700">Protokoll · Aufgabe</text>
+      <text x="282" y="75" fill="#fff" font-size="13" font-weight="700">Unverschlüsselt</text>
+      <text x="514" y="75" fill="#fff" font-size="13" font-weight="700">Verschlüsselt (SSL/TLS)</text>
+
+      <!-- SMTP -->
+      <rect x="20" y="92" width="240" height="48" fill="#FBEAE3" stroke="#fff" stroke-width="2"/>
+      <rect x="262" y="92" width="230" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <rect x="494" y="92" width="226" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <text x="40" y="115" fill="#16242E" font-size="13" font-weight="700">SMTP</text>
+      <text x="40" y="132" fill="#5C6B78" font-size="11">Versand</text>
+      <text x="282" y="122" fill="#16242E" font-size="13" font-weight="700">25</text>
+      <text x="514" y="116" fill="#16242E" font-size="13" font-weight="700">587 (STARTTLS) · 465</text>
+      <text x="514" y="132" fill="#5C6B78" font-size="11">587 = Submission</text>
+
+      <!-- POP3 -->
+      <rect x="20" y="142" width="240" height="48" fill="#FBEAE3" stroke="#fff" stroke-width="2"/>
+      <rect x="262" y="142" width="230" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <rect x="494" y="142" width="226" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <text x="40" y="165" fill="#16242E" font-size="13" font-weight="700">POP3</text>
+      <text x="40" y="182" fill="#5C6B78" font-size="11">Abruf (Download)</text>
+      <text x="282" y="172" fill="#16242E" font-size="13" font-weight="700">110</text>
+      <text x="514" y="172" fill="#16242E" font-size="13" font-weight="700">995</text>
+
+      <!-- IMAP -->
+      <rect x="20" y="192" width="240" height="48" fill="#E4F1EF" stroke="#fff" stroke-width="2"/>
+      <rect x="262" y="192" width="230" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <rect x="494" y="192" width="226" height="48" fill="#fff" stroke="#D4DEE6" stroke-width="1.5"/>
+      <text x="40" y="215" fill="#16242E" font-size="13" font-weight="700">IMAP</text>
+      <text x="40" y="232" fill="#5C6B78" font-size="11">Abruf (serverseitig)</text>
+      <text x="282" y="222" fill="#16242E" font-size="13" font-weight="700">143</text>
+      <text x="514" y="222" fill="#16242E" font-size="13" font-weight="700">993</text>
+    </svg>
+    <figcaption>Standardports im Überblick: unverschlüsselt links, per SSL/TLS abgesichert rechts. Kern-Prüfungsstoff: <code>25 / 110 / 143</code> (unverschlüsselt) und <code>465</code> (SMTP verschlüsselt).</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welcher Port ist der Standardport für <b>unverschlüsseltes SMTP</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Port <code>110</code></li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Port <code>25</code></li>
+        <li class="opt"><span class="tick"></span>Port <code>143</code></li>
+        <li class="opt"><span class="tick"></span>Port <code>993</code></li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der Standardport für unverschlüsseltes <code>SMTP</code> ist <code>25</code>. Verschlüsselt kommt klassisch <code>465</code> zum Einsatz (bzw. <code>587</code> für die Mail-Einreichung mit STARTTLS).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Zuordnung der <b>unverschlüsselten Standardports</b> ist korrekt?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>SMTP 143 · POP3 25 · IMAP 110</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>SMTP 25 · POP3 110 · IMAP 143</li>
+        <li class="opt"><span class="tick"></span>SMTP 110 · POP3 143 · IMAP 25</li>
+        <li class="opt"><span class="tick"></span>SMTP 465 · POP3 995 · IMAP 993</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Unverschlüsselt gilt: <code>SMTP 25</code>, <code>POP3 110</code>, <code>IMAP 143</code>. Die letzte Option nennt dagegen die <b>verschlüsselten</b> Ports (<code>465/995/993</code>).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Port-Angaben gehören zu einer <b>verschlüsselten (SSL/TLS)</b> Verbindung? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span><code>465</code> – SMTP verschlüsselt</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>993</code> – IMAP verschlüsselt</li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>995</code> – POP3 verschlüsselt</li>
+        <li class="opt"><span class="tick"></span><code>25</code> – SMTP</li>
+        <li class="opt"><span class="tick"></span><code>143</code> – IMAP</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Verschlüsselt sind <code>465</code> (SMTP), <code>993</code> (IMAP) und <code>995</code> (POP3). Die Ports <code>25</code> und <code>143</code> sind die <b>unverschlüsselten</b> Pendants.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was unterscheidet <b>impliziten</b> von <b>explizitem</b> TLS (z. B. <code>STARTTLS</code>)?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Implizit: Verbindung ist von Beginn an verschlüsselt (eigener Port). Explizit/STARTTLS: zunächst Klartext, dann Umschalten auf TLS über denselben Port.</li>
+        <li class="opt"><span class="tick"></span>Implizit verschlüsselt nur den Anhang, explizit nur den Betreff.</li>
+        <li class="opt"><span class="tick"></span>Beide sind identisch und nur unterschiedliche Namen.</li>
+        <li class="opt"><span class="tick"></span>Explizit ist unverschlüsselt, implizit verzichtet ganz auf Verschlüsselung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Bei <b>implizitem TLS</b> ist die Verbindung von Anfang an über einen eigenen, verschlüsselten Port aufgebaut (z. B. <code>465</code>, <code>993</code>, <code>995</code>). Bei <b>explizitem TLS</b> startet die Verbindung im Klartext und wird per <code>STARTTLS</code>-Kommando auf demselben Port (z. B. <code>587</code>, <code>143</code>) auf TLS umgeschaltet.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum sollte man E-Mail-Verbindungen per <code>SSL/TLS</code> verschlüsseln?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Damit Mails schneller versendet werden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Damit Zugangsdaten und Inhalte auf dem Transportweg nicht mitgelesen werden können.</li>
+        <li class="opt"><span class="tick"></span>Damit Mails automatisch auf alle Geräte synchronisiert werden.</li>
+        <li class="opt"><span class="tick"></span>Weil unverschlüsselte Protokolle keine Anhänge unterstützen.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Bei unverschlüsselten Verbindungen (<code>25</code>, <code>110</code>, <code>143</code>) werden Anmeldedaten und Mailinhalte im Klartext übertragen und könnten abgefangen werden. <code>SSL/TLS</code> sichert den <b>Transportweg</b> ab.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Lückentext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Vervollständige: „Das ____ -Protokoll ist für den Versand verantwortlich und überträgt Nachrichten über mehrere ____ (Relay-Funktion). Der unverschlüsselte Standardport ist ____ . Beim Abruf lädt ____ die Mails lokal herunter (Port ____ ), während ____ sie serverseitig synchron verwaltet (Port ____ )."</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Das <code>SMTP</code>-Protokoll ist für den Versand verantwortlich und überträgt Nachrichten über mehrere <b>Server</b> (Relay-Funktion). Der unverschlüsselte Standardport ist <code>25</code>. Beim Abruf lädt <code>POP3</code> die Mails lokal herunter (Port <code>110</code>), während <code>IMAP</code> sie serverseitig synchron verwaltet (Port <code>143</code>).</p>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="15-raid.html"><span>Vorheriges Thema</span><b>15 · Speicherablagearten</b></a>
+    <a class="next" aria-disabled="true"><span>Nächstes Thema</span><b>—</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 16 — E-Mail-Protokolle</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>
