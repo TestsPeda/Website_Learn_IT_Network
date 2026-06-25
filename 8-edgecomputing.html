@@ -72,11 +72,11 @@
     <!-- Fog -->
     <rect x="30" y="122" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="60" y="148" text-anchor="start">Fog (Zwischenebene)</text>
-    <text class="svg-label-sm" x="60" y="168" text-anchor="start">Geräte selbst treffen kurzfristige Entscheidungen · Vielzahl kleinster Sensoren/Aktoren</text>
+    <text class="svg-label-sm" x="60" y="168" text-anchor="start">vernetzte LAN-Ebene · bündelt Daten vieler Edge-Knoten · reicht nur Relevantes an die Cloud</text>
     <!-- Edge -->
     <rect x="30" y="188" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="60" y="214" text-anchor="start">Edge (Rand des Netzes)</text>
-    <text class="svg-label-sm" x="60" y="234" text-anchor="start">Edge-Server nahe der Quelle · Analyse vor Ort · nur nötige Daten gehen weiter</text>
+    <text class="svg-label-sm" x="60" y="234" text-anchor="start">Verarbeitung direkt an / neben der Datenquelle · niedrigste Latenz, echtzeitnah</text>
     <!-- Endgeräte -->
     <rect x="30" y="254" width="600" height="58" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
     <text class="svg-label" x="60" y="280" text-anchor="start">Endgeräte / Edge-Devices</text>
@@ -125,8 +125,8 @@
         <thead><tr><th>Schicht</th><th>Aufgabe / Eigenschaft</th></tr></thead>
         <tbody>
           <tr><td>Cloud</td><td>zentral, weit entfernt; nur langfristige Analyse &amp; Speicherung; höchste Latenz, größte Datenmenge</td></tr>
-          <tr><td>Fog</td><td>Zwischenebene; die Geräte selbst treffen kurzfristige Entscheidungen (Cisco-Definition); Vielzahl kleinster Geräte in großer Dichte</td></tr>
-          <tr><td>Edge</td><td>Rand des Netzes; Analyse in nahen, aber schon etwas zentraleren Instanzen (Edge-Server); geringe Latenz</td></tr>
+          <tr><td>Fog</td><td>vernetzte Zwischenschicht auf LAN-Ebene (von Cisco geprägter Begriff); bündelt &amp; verarbeitet Daten vieler Edge-Knoten und reicht nur Relevantes an die Cloud weiter; hierarchisch aufgebaut</td></tr>
+          <tr><td>Edge</td><td>Rand des Netzes; Verarbeitung direkt an/neben der Datenquelle (Edge-Knoten/-Gateway); niedrigste Latenz, echtzeitnah</td></tr>
           <tr><td>Endgeräte</td><td>Datenquellen: Maschinen, Autos, VR-Brillen, Smart-Home mit Sensoren &amp; Aktoren</td></tr>
         </tbody>
       </table></div>
@@ -229,45 +229,46 @@
   <div class="sec-head"><span class="ix">C</span><h2>Nachteile, Sicherheit &amp; Fog-Computing</h2></div>
   <p class="sec-sub">Was Edge-Computing kostet, wie Daten abgesichert werden und worin sich Fog von Edge unterscheidet.</p>
 
-  <figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Edge vs Fog nach Cisco: Beim Fog-Computing treffen die Geräte selbst kurzfristige Entscheidungen; beim Edge-Computing erfolgt die Analyse in nahen, aber schon zentraleren Instanzen. Langfristige Analyse und Speicherung erfolgen bei beiden in der Cloud.">
-    <text class="svg-title" x="20" y="26">Fog vs. Edge (nach Cisco)</text>
+  <figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Edge gegenüber Fog nach Cisco/OpenFog: Edge-Computing verarbeitet direkt an der Datenquelle mit geringster Latenz; Fog-Computing ist eine vernetzte Zwischenschicht auf LAN-Ebene, die Daten vieler Edge-Knoten bündelt und Richtung Cloud weiterreicht. Reihenfolge Endgerät, Edge, Fog, Cloud.">
+    <text class="svg-title" x="20" y="26">Edge vs. Fog (nach Cisco/OpenFog)</text>
     <rect x="20" y="50" width="330" height="150" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
-    <text class="svg-label" x="40" y="78" text-anchor="start">Fog-Computing</text>
-    <text class="svg-label-sm" x="40" y="104" text-anchor="start">Geräte selbst treffen</text>
-    <text class="svg-label-sm" x="40" y="122" text-anchor="start">kurzfristige Entscheidungen</text>
-    <text class="svg-label-sm" x="40" y="146" text-anchor="start">„Nebel“ = Vielzahl kleinster</text>
-    <text class="svg-label-sm" x="40" y="164" text-anchor="start">Geräte (Sensoren/Aktoren) in</text>
-    <text class="svg-label-sm" x="40" y="182" text-anchor="start">großer Dichte (IoT)</text>
+    <text class="svg-label" x="40" y="78" text-anchor="start">Edge-Computing</text>
+    <text class="svg-label-sm" x="40" y="104" text-anchor="start">Verarbeitung direkt an /</text>
+    <text class="svg-label-sm" x="40" y="122" text-anchor="start">neben der Datenquelle</text>
+    <text class="svg-label-sm" x="40" y="146" text-anchor="start">einzelne Knoten am Netzrand</text>
+    <text class="svg-label-sm" x="40" y="164" text-anchor="start">niedrigste Latenz,</text>
+    <text class="svg-label-sm" x="40" y="182" text-anchor="start">echtzeitnah</text>
     <rect x="390" y="50" width="330" height="150" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
-    <text class="svg-label" x="410" y="78" text-anchor="start">Edge-Computing</text>
-    <text class="svg-label-sm" x="410" y="104" text-anchor="start">Analyse in nahen, aber schon</text>
-    <text class="svg-label-sm" x="410" y="122" text-anchor="start">etwas zentraleren Instanzen</text>
-    <text class="svg-label-sm" x="410" y="146" text-anchor="start">(Edge-Server am Rand)</text>
-    <text class="svg-label-sm" x="410" y="170" text-anchor="start">oft synonym zu Fog verwendet</text>
-    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#15786E;">Gemeinsam: nur langfristige Analysen &amp; Speicherungen finden in der Cloud statt.</text>
-  </svg><figcaption>Cisco (Urheber von „Fog“): Fog = Geräte entscheiden selbst, Edge = Analyse in nahen, etwas zentraleren Instanzen.</figcaption></figure>
+    <text class="svg-label" x="410" y="78" text-anchor="start">Fog-Computing</text>
+    <text class="svg-label-sm" x="410" y="104" text-anchor="start">vernetzte Zwischenschicht</text>
+    <text class="svg-label-sm" x="410" y="122" text-anchor="start">auf LAN-/Gateway-Ebene</text>
+    <text class="svg-label-sm" x="410" y="146" text-anchor="start">bündelt Daten vieler Edge-Knoten</text>
+    <text class="svg-label-sm" x="410" y="164" text-anchor="start">hierarchisch · erweitert die</text>
+    <text class="svg-label-sm" x="410" y="182" text-anchor="start">Cloud Richtung Netzrand</text>
+    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#15786E;">Reihenfolge quellnah → zentral: Endgerät → Edge → Fog → Cloud · nur langfristige Analyse/Speicherung in der Cloud.</text>
+  </svg><figcaption>Edge = Verarbeitung direkt an der Datenquelle (geringste Latenz); Fog = vernetzte Zwischenschicht zwischen Edge und Cloud. Der Begriff „Fog“ (bodennahe Wolke) stammt von Cisco.</figcaption></figure>
 
   <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
-    <div class="q-body"><p class="q-text">Worin liegt laut Cisco der Unterschied zwischen <code>Fog-</code> und <code>Edge-Computing</code>?</p>
+    <div class="q-body"><p class="q-text">Worin liegt nach der Cisco-/OpenFog-Definition der Unterschied zwischen <code>Fog-</code> und <code>Edge-Computing</code>?</p>
       <ul class="q-options" data-multi="false">
         <li class="opt"><span class="tick"></span>Fog läuft nur in der Cloud, Edge nur auf dem Smartphone.</li>
-        <li class="opt" data-correct="true"><span class="tick"></span>Beim Fog treffen die Geräte selbst kurzfristige Entscheidungen; beim Edge erfolgt die Analyse in nahen, aber schon etwas zentraleren Instanzen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Edge verarbeitet direkt an der Datenquelle (geringste Latenz); Fog ist eine vernetzte Zwischenschicht auf LAN-Ebene, die Daten vieler Edge-Knoten bündelt und Richtung Cloud weiterreicht.</li>
         <li class="opt"><span class="tick"></span>Fog ist immer schneller als Edge.</li>
         <li class="opt"><span class="tick"></span>Es gibt keinen Unterschied — die Begriffe sind exakt dasselbe.</li>
       </ul></div>
     <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
-    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Häufig werden beide Begriffe <em>synonym</em> verwendet. Cisco (Urheber des Begriffs <code>Fog</code>) unterscheidet jedoch: Beim <strong>Fog</strong> treffen die <strong>Geräte selbst</strong> kurzfristige Entscheidungen, beim <strong>Edge</strong> erfolgt die Analyse in <strong>nahen, aber schon zentraleren Instanzen</strong>. Bei beiden gilt: Nur <em>langfristige</em> Analyse/Speicherung erfolgt in der Cloud.</p></div></article>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Im Alltag werden beide Begriffe oft <em>synonym</em> verwendet, fachlich (Cisco/OpenFog) gilt aber: <strong>Edge</strong> verarbeitet <strong>direkt an/neben der Datenquelle</strong> — kürzester Weg, geringste Latenz. <strong>Fog</strong> ist die <strong>vernetzte Zwischenschicht</strong> auf LAN-/Gateway-Ebene zwischen Edge und Cloud, die Daten vieler Edge-Knoten bündelt und nur Relevantes weiterreicht. Reihenfolge: Endgerät → Edge → Fog → Cloud; nur <em>langfristige</em> Analyse/Speicherung erfolgt in der Cloud.</p></div></article>
 
   <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
-    <div class="q-body"><p class="q-text">Was bedeutet der Begriff <code>Fog</code> (Nebel) im IoT-Kontext?</p>
+    <div class="q-body"><p class="q-text">Woher kommt der Begriff <code>Fog</code> (Nebel) im Cloud-/Fog-/Edge-Kontext?</p>
       <ul class="q-options" data-multi="false">
         <li class="opt"><span class="tick"></span>Verschlüsselte Datenübertragung in der Cloud.</li>
         <li class="opt"><span class="tick"></span>Eine einzelne, sehr leistungsstarke Recheninstanz.</li>
-        <li class="opt" data-correct="true"><span class="tick"></span>Die Vielzahl kleinster Geräte (Sensoren, Aktoren) in großer Dichte, wie sie im IoT vorkommt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Eine „bodennahe Wolke“: Cloud-Funktionen werden näher an die Geräte (den „Boden“) herabgeholt.</li>
         <li class="opt"><span class="tick"></span>Ein Synonym für die zentrale Cloud.</li>
       </ul></div>
     <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
-    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>Fog</code> bedeutet „Nebel“ und beschreibt die <strong>Vielzahl kleinster Geräte</strong> (Sensoren und Aktoren) in <strong>großer Dichte</strong> — bildlich wie ein Nebel aus vielen Tröpfchen —, wie es beim <code>Internet of Things</code> der Fall ist.</p></div></article>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>Fog</code> heißt „Nebel“ — und Nebel ist im Grunde eine <strong>Wolke (Cloud) nahe am Boden</strong>. Das Bild dahinter: Rechen- und Speicherleistung der Cloud wird <strong>näher an die Geräte</strong> (den „Boden“) geholt, statt sie weit entfernt im zentralen Rechenzentrum zu belassen. Daher sitzt Fog als Schicht <em>zwischen</em> Endgeräten/Edge und Cloud.</p></div></article>
 
   <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multi-Select</span><span class="q-pts">Auto</span></div>
     <div class="q-body"><p class="q-text">Welche Aspekte sind <code>Nachteile</code> bzw. Herausforderungen des Edge-Computings? <em>(Mehrfachauswahl)</em></p>

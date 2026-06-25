@@ -242,45 +242,52 @@
   <p class="sec-sub">Mehrere Signale teilen sich ein Medium — aufgeteilt nach Frequenz, Zeit, Code oder Wellenlänge.</p>
 
   <figure class="diagram">
-    <svg viewBox="0 0 700 250" role="img" aria-label="FDM teilt nach Frequenzbändern, TDM teilt nach rotierenden Zeitschlitzen, WDM nutzt mehrere Lichtwellenlängen in einer Glasfaser">
-      <text x="20" y="28" class="svg-title">FDM · TDM · WDM</text>
+    <svg viewBox="0 0 700 320" role="img" aria-label="Vier Multiplexverfahren: FDM teilt nach Frequenzbändern, TDM nach rotierenden Zeitschlitzen, CDM lässt alle gleichzeitig auf einer Frequenz senden und trennt per Spreizcode, WDM nutzt mehrere Lichtwellenlängen in einer Glasfaser.">
+      <text x="20" y="28" class="svg-title">FDM · TDM · CDM · WDM</text>
 
       <!-- FDM -->
-      <text x="20" y="58" class="svg-label">FDM – nach Frequenz</text>
-      <rect x="20" y="68" width="200" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
-      <line x1="86" y1="68" x2="86" y2="102" stroke="#DD5430" stroke-width="2"/>
-      <line x1="153" y1="68" x2="153" y2="102" stroke="#DD5430" stroke-width="2"/>
-      <text x="53" y="90" text-anchor="middle" class="svg-label-sm">K1</text>
-      <text x="119" y="90" text-anchor="middle" class="svg-label-sm">K2</text>
-      <text x="186" y="90" text-anchor="middle" class="svg-label-sm">K3</text>
-      <text x="20" y="122" class="svg-label-sm">Frequenz →</text>
+      <text x="20" y="66" class="svg-label">FDM – nach Frequenz</text>
+      <rect x="20" y="76" width="200" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <line x1="86" y1="76" x2="86" y2="110" stroke="#DD5430" stroke-width="2"/>
+      <line x1="153" y1="76" x2="153" y2="110" stroke="#DD5430" stroke-width="2"/>
+      <text x="53" y="98" text-anchor="middle" class="svg-label-sm">K1</text>
+      <text x="119" y="98" text-anchor="middle" class="svg-label-sm">K2</text>
+      <text x="186" y="98" text-anchor="middle" class="svg-label-sm">K3</text>
+      <text x="20" y="130" class="svg-label-sm">Frequenz → · alle zugleich, je eigenes Band</text>
 
       <!-- TDM -->
-      <text x="270" y="58" class="svg-label">TDM – nach Zeit</text>
-      <rect x="270" y="68" width="280" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
-      <line x1="316" y1="68" x2="316" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="363" y1="68" x2="363" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="410" y1="68" x2="410" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="456" y1="68" x2="456" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="503" y1="68" x2="503" y2="102" stroke="#15786E" stroke-width="2"/>
-      <text x="293" y="90" text-anchor="middle" class="svg-label-sm">A</text>
-      <text x="339" y="90" text-anchor="middle" class="svg-label-sm">B</text>
-      <text x="386" y="90" text-anchor="middle" class="svg-label-sm">C</text>
-      <text x="433" y="90" text-anchor="middle" class="svg-label-sm">A</text>
-      <text x="479" y="90" text-anchor="middle" class="svg-label-sm">B</text>
-      <text x="526" y="90" text-anchor="middle" class="svg-label-sm">C</text>
-      <text x="270" y="122" class="svg-label-sm">Zeit →</text>
+      <text x="370" y="66" class="svg-label">TDM – nach Zeit</text>
+      <rect x="370" y="76" width="280" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <line x1="416" y1="76" x2="416" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="463" y1="76" x2="463" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="510" y1="76" x2="510" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="556" y1="76" x2="556" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="603" y1="76" x2="603" y2="110" stroke="#15786E" stroke-width="2"/>
+      <text x="393" y="98" text-anchor="middle" class="svg-label-sm">A</text>
+      <text x="439" y="98" text-anchor="middle" class="svg-label-sm">B</text>
+      <text x="486" y="98" text-anchor="middle" class="svg-label-sm">C</text>
+      <text x="533" y="98" text-anchor="middle" class="svg-label-sm">A</text>
+      <text x="579" y="98" text-anchor="middle" class="svg-label-sm">B</text>
+      <text x="626" y="98" text-anchor="middle" class="svg-label-sm">C</text>
+      <text x="370" y="130" class="svg-label-sm">Zeit → · je Signal ein rotierender Zeitschlitz</text>
+
+      <!-- CDM -->
+      <text x="20" y="196" class="svg-label">CDM – nach Code</text>
+      <rect x="20" y="206" width="300" height="40" rx="5" fill="#EEF2F5" stroke="#5C6B78" stroke-width="2"/>
+      <text x="170" y="231" text-anchor="middle" class="svg-label-sm">S1 + S2 + S3 — überlagert, 1 Frequenz</text>
+      <text x="20" y="266" class="svg-label-sm">getrennt nur durch Spreizcode (c1 · c2 · c3)</text>
 
       <!-- WDM -->
-      <text x="20" y="170" class="svg-label">WDM – nach Lichtwellenlänge (Glasfaser)</text>
-      <rect x="20" y="182" width="60" height="40" rx="5" fill="#16242E" stroke="#16242E" stroke-width="2"/>
-      <text x="50" y="207" text-anchor="middle" class="svg-label-sm" style="fill:#ffffff;">Laser</text>
-      <line x1="80" y1="195" x2="600" y2="195" stroke="#DD5430" stroke-width="2"/>
-      <line x1="80" y1="202" x2="600" y2="202" stroke="#15786E" stroke-width="2"/>
-      <line x1="80" y1="209" x2="600" y2="209" stroke="#B9C7D2" stroke-width="2"/>
-      <text x="610" y="207" class="svg-label-sm">Faser</text>
+      <text x="370" y="196" class="svg-label">WDM – nach Wellenlänge (Glasfaser)</text>
+      <rect x="370" y="208" width="54" height="38" rx="5" fill="#16242E" stroke="#16242E" stroke-width="2"/>
+      <text x="397" y="231" text-anchor="middle" class="svg-label-sm" style="fill:#ffffff;">Laser</text>
+      <line x1="424" y1="216" x2="628" y2="216" stroke="#DD5430" stroke-width="2"/>
+      <line x1="424" y1="227" x2="628" y2="227" stroke="#15786E" stroke-width="2"/>
+      <line x1="424" y1="238" x2="628" y2="238" stroke="#B9C7D2" stroke-width="2"/>
+      <text x="634" y="231" class="svg-label-sm">Faser</text>
+      <text x="370" y="266" class="svg-label-sm">mehrere Lichtfarben (λ) in einer Faser</text>
     </svg>
-    <figcaption>FDM – Aufteilung nach Frequenz. TDM – Aufteilung nach Zeitschlitzen. WDM – mehrere Lichtwellenlängen in einer Glasfaser.</figcaption>
+    <figcaption>FDM – nach Frequenz (eigene Bänder). TDM – nach Zeit (rotierende Zeitschlitze). CDM – alle gleichzeitig auf einer Frequenz, getrennt per Code. WDM – mehrere Lichtwellenlängen in einer Glasfaser.</figcaption>
   </figure>
 
   <article class="q">
@@ -332,7 +339,7 @@
         <li class="opt"><span class="tick"></span>Funk mit mehreren Frequenzbändern.</li>
       </ul></div>
     <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
-    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>WDM</b> teilt nach <b>Lichtwellenlänge (Farbe)</b> — das optische Pendant zu FDM: mehrere Lichtwellenlängen in <b>einer</b> Glasfaser. Beispiele: DWDM-Backbone (&gt;80 Kanäle pro Faser), Seekabel. Ideal in explosionsgefährdeten Umgebungen oder bei starker elektromagnetischer Beeinflussung.</p></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>WDM</b> teilt nach <b>Lichtwellenlänge (Farbe)</b> — das optische Pendant zu FDM: mehrere Lichtwellenlängen in <b>einer</b> Glasfaser. Beispiele: DWDM-Backbone (&gt;80 Kanäle pro Faser), Seekabel. Da WDM auf Glasfaser läuft, erbt es deren Medien-Vorteile (unempfindlich gegen elektromagnetische Störungen, auch in explosionsgefährdeten Bereichen einsetzbar).</p></div>
   </article>
 
   <article class="q">
@@ -350,13 +357,28 @@
 
   <article class="q">
     <div class="q-head"><span class="q-num">14</span><span class="q-type">Zuordnung</span><span class="q-pts">manuell</span></div>
-    <div class="q-body"><p class="q-text">Vervollständige die Tabelle <b>Verfahren → aufgeteilt nach → typisches Medium</b> für FDM, TDM, CDM und WDM.</p></div>
+    <div class="q-body"><p class="q-text">Vervollständige die Tabelle <b>Verfahren → aufgeteilt nach → typisches Medium</b>. Trage für jedes Verfahren das Trennkriterium und ein typisches Medium ein:</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Verfahren</th><th>aufgeteilt nach</th><th>typisches Medium</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">FDM</td><td>?</td><td>?</td></tr>
+          <tr><td class="mono">TDM</td><td>?</td><td>?</td></tr>
+          <tr><td class="mono">CDM</td><td>?</td><td>?</td></tr>
+          <tr><td class="mono">WDM</td><td>?</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
     <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
     <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
-      <div class="step">FDM | Frequenz | Funk/Kabel
-TDM | Zeit | Kupfer/Funk
-CDM | Code | Funk
-WDM | Lichtwellenlänge | Glasfaser</div>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Verfahren</th><th>aufgeteilt nach</th><th>typisches Medium</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">FDM</td><td>Frequenz (eigenes Band)</td><td>Funk / Kabel</td></tr>
+          <tr><td class="mono">TDM</td><td>Zeit (rotierende Zeitschlitze)</td><td>Kupfer / Funk</td></tr>
+          <tr><td class="mono">CDM</td><td>Code (Spreizcode)</td><td>Funk</td></tr>
+          <tr><td class="mono">WDM</td><td>Lichtwellenlänge (Farbe)</td><td>Glasfaser</td></tr>
+        </tbody>
+      </table></div>
     </div>
   </article>
 
@@ -375,6 +397,48 @@ WDM | Lichtwellenlänge | Glasfaser</div>
       </ul></div>
     <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
     <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <b>Piconet</b> besteht aus 1 Master + bis zu <b>7 aktiven Slaves</b> (FHSS-Frequenzsprungverfahren). Mehrere Piconets ergeben zusammen ein <b>Scatternet</b>.</p></div>
+  </article>
+
+  <article class="q">
+    <div class="q-head"><span class="q-num">16</span><span class="q-type">Freitext</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">🔬 [Vertiefung] Erkläre die grundlegende <b>Funktionsweise von Bluetooth</b>: Wie sind die Geräte organisiert, wer steuert die Verbindung, und wie wird das Funkmedium genutzt?</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <p>Bluetooth organisiert Geräte in einem <b>Piconet</b>: Ein <b>Master</b> steuert bis zu <b>7 aktive Slaves</b> in einer Sternstruktur und gibt Takt sowie die Frequenz-Sprungfolge vor. Übertragen wird im lizenzfreien <b>2,4-GHz-ISM-Band</b> mit dem Frequenzsprungverfahren <b>FHSS</b> (Frequency Hopping Spread Spectrum): Sender und Empfänger wechseln rund <b>1600-mal pro Sekunde</b> synchron die Frequenz (79 Kanäle à 1 MHz). Das macht die Verbindung robuster gegen Schmalbandstörungen. Vor der ersten Verbindung tauschen die Geräte beim <b>Pairing</b> Adresse und Schlüssel aus. Mehrere gekoppelte Piconets bilden ein <b>Scatternet</b>.</p>
+      <figure class="diagram"><svg viewBox="0 0 700 340" role="img" aria-label="Bluetooth-Piconet: ein Master verbindet sich sternförmig mit bis zu sieben aktiven Slaves und gibt Takt und Frequenzsprungfolge vor. Bluetooth nutzt FHSS im 2,4-GHz-ISM-Band mit rund 1600 Frequenzwechseln pro Sekunde. Mehrere Piconets bilden ein Scatternet.">
+        <text class="svg-title" x="20" y="28">Bluetooth: Piconet &amp; Frequenzsprung (FHSS)</text>
+        <g stroke="#15786E" stroke-width="2">
+          <line x1="210" y1="175" x2="210" y2="60"/>
+          <line x1="210" y1="175" x2="300" y2="103"/>
+          <line x1="210" y1="175" x2="322" y2="201"/>
+          <line x1="210" y1="175" x2="260" y2="279"/>
+          <line x1="210" y1="175" x2="160" y2="279"/>
+          <line x1="210" y1="175" x2="98" y2="201"/>
+          <line x1="210" y1="175" x2="120" y2="103"/>
+        </g>
+        <g fill="#E4F1EF" stroke="#15786E" stroke-width="2">
+          <circle cx="210" cy="60" r="16"/><circle cx="300" cy="103" r="16"/><circle cx="322" cy="201" r="16"/>
+          <circle cx="260" cy="279" r="16"/><circle cx="160" cy="279" r="16"/><circle cx="98" cy="201" r="16"/><circle cx="120" cy="103" r="16"/>
+        </g>
+        <g text-anchor="middle" class="svg-label-sm">
+          <text x="210" y="64">S1</text><text x="300" y="107">S2</text><text x="322" y="205">S3</text>
+          <text x="260" y="283">S4</text><text x="160" y="283">S5</text><text x="98" y="205">S6</text><text x="120" y="107">S7</text>
+        </g>
+        <circle cx="210" cy="175" r="28" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+        <text x="210" y="180" text-anchor="middle" class="svg-label" style="font-weight:700;">Master</text>
+        <text class="svg-label" x="410" y="80">Piconet = 1 Master + max. 7 Slaves</text>
+        <text class="svg-label-sm" x="410" y="108">• Master gibt Takt &amp; Sprungfolge vor</text>
+        <text class="svg-label-sm" x="410" y="130">• Slaves folgen der Frequenz-Sprungfolge</text>
+        <text class="svg-label-sm" x="410" y="158">FHSS – Frequency Hopping Spread Spectrum:</text>
+        <text class="svg-label-sm" x="410" y="180">• 2,4-GHz-ISM-Band, 79 Kanäle (1 MHz)</text>
+        <text class="svg-label-sm" x="410" y="202">• ~1600 Frequenzwechsel pro Sekunde</text>
+        <text class="svg-label-sm" x="410" y="224">• robuster gegen Schmalbandstörungen</text>
+        <text class="svg-label-sm" x="410" y="252">Mehrere gekoppelte Piconets = Scatternet</text>
+        <text class="svg-label-sm" x="410" y="288" style="fill:#5C6B78;">Pairing: Geräte tauschen Adresse &amp; Schlüssel,</text>
+        <text class="svg-label-sm" x="410" y="306" style="fill:#5C6B78;">danach automatische Verbindung.</text>
+      </svg>
+      <figcaption>Bluetooth-Piconet: ein Master steuert bis zu 7 aktive Slaves (Sternstruktur); per FHSS wird im 2,4-GHz-Band ständig die Frequenz gewechselt. Mehrere Piconets bilden ein Scatternet.</figcaption></figure>
+    </div>
   </article>
 
   <nav class="pager">

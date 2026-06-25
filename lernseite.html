@@ -294,10 +294,10 @@
       <text class="svg-label-sm" x="20" y="50" font-size="12" style="fill:#5C6B78;">Kern und Mantel haben unterschiedliche Brechungsindizes → Licht bleibt im Kern.</text>
       <!-- Mantel (cladding) -->
       <rect x="60" y="80" width="630" height="150" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
-      <text class="svg-label-sm" x="70" y="102" font-size="12" style="fill:#5C6B78;">Mantel (cladding) – höhere Reflexion, niedrigerer Brechungsindex</text>
+      <text class="svg-label-sm" x="70" y="102" font-size="12" style="fill:#5C6B78;">Mantel (cladding) – niedrigerer Brechungsindex</text>
       <!-- Kern (core) -->
       <rect x="60" y="125" width="630" height="60" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
-      <text class="svg-label-sm" x="70" y="218" font-size="12" style="fill:#5C6B78;">Kern / Modenfeld (core) – hier wird das Licht geführt</text>
+      <text class="svg-label-sm" x="70" y="218" font-size="12" style="fill:#5C6B78;">Kern / Modenfeld (core) – höherer Brechungsindex, führt das Licht</text>
       <!-- Grenzlinien -->
       <line x1="60" y1="125" x2="690" y2="125" stroke="#B23E1F" stroke-width="2" stroke-dasharray="6 4"/>
       <line x1="60" y1="185" x2="690" y2="185" stroke="#B23E1F" stroke-width="2" stroke-dasharray="6 4"/>
@@ -323,13 +323,15 @@
       <polyline points="50,109 110,96 170,122 230,96 290,122 335,109" fill="none" stroke="#15786E" stroke-width="2"/>
       <polyline points="50,109 120,124 190,94 260,124 320,98 335,109" fill="none" stroke="#B23E1F" stroke-width="2"/>
       <line x1="50" y1="109" x2="335" y2="109" stroke="#16242E" stroke-width="1.5"/>
-      <text class="svg-label-sm" x="40" y="166" font-size="12" style="fill:#5C6B78;">Kern 50 μm · mehrere Moden · LED · kürzere Reichweite, günstiger</text>
+      <text class="svg-label-sm" x="40" y="160" font-size="12" style="fill:#5C6B78;">Kern 50 μm · mehrere Moden · LED</text>
+      <text class="svg-label-sm" x="40" y="176" font-size="12" style="fill:#5C6B78;">kürzere Reichweite, günstiger</text>
       <!-- Singlemode -->
       <text class="svg-label" x="380" y="62" font-size="13" font-weight="600" style="fill:#16242E;">Singlemode (E9/125)</text>
       <rect x="380" y="74" width="300" height="70" fill="#E4F1EF" stroke="#B9C7D2" stroke-width="2"/>
       <rect x="380" y="103" width="300" height="12" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
       <line x1="390" y1="109" x2="675" y2="109" stroke="#15786E" stroke-width="3"/>
-      <text class="svg-label-sm" x="380" y="166" font-size="12" style="fill:#5C6B78;">Kern 9 μm · eine Mode · Laser · große Reichweite</text>
+      <text class="svg-label-sm" x="380" y="160" font-size="12" style="fill:#5C6B78;">Kern 9 μm · eine Mode · Laser</text>
+      <text class="svg-label-sm" x="380" y="176" font-size="12" style="fill:#5C6B78;">große Reichweite</text>
       <!-- Mantel-Hinweis -->
       <text class="svg-label-sm" x="40" y="210" font-size="12" style="fill:#5C6B78;">Manteldurchmesser bei beiden üblicherweise 125 μm.</text>
       <text class="svg-label-sm" x="40" y="232" font-size="12" style="fill:#5C6B78;">Beide Faserarten dürfen nicht auf derselben Strecke gemischt werden (hohe Verluste).</text>
@@ -588,7 +590,7 @@
     <circle cx="110" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
     <circle cx="250" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
     <circle cx="540" cy="332" r="6" fill="#FFFFFF" stroke="#DD5430" stroke-width="2"></circle>
-    <text class="svg-label-sm" x="180" y="350" text-anchor="middle" style="fill:#DD5430;">Tertiär · Twisted-Pair · ≤ 90 m → Anschlussdose / Arbeitsplatz</text>
+    <text class="svg-label-sm" x="20" y="350" text-anchor="start" style="fill:#DD5430;">Tertiär · Twisted-Pair · ≤ 90 m → Anschlussdose / Arbeitsplatz</text>
   </svg><figcaption>Hierarchische Sternverkabelung: SV → GV → EV → Arbeitsplatz. Primär (gestrichelt, LWL), Sekundär (Steigbereich), Tertiär (Horizontal zum Arbeitsplatz).</figcaption></figure></div>
       <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 720 240" role="img" aria-label="Lineare Strecke vom Standortverteiler über Gebäudeverteiler und Etagenverteiler bis zum technischen Anschluss, mit den drei Verkabelungsbereichen und den maximalen Längen">
     <text class="svg-title" x="20" y="26">Verteilerkette &amp; Maximallängen</text>
@@ -682,11 +684,11 @@
     <line x1="142" y1="135" x2="286" y2="135" stroke="#DD5430" stroke-width="2"></line>
     <line x1="142" y1="192" x2="286" y2="154" stroke="#DD5430" stroke-width="2"></line>
     <polygon points="290,135 278,130 278,140" fill="#DD5430"></polygon>
-    <text class="svg-label-sm" x="213" y="48" text-anchor="middle" style="fill:#B23E1F;font-weight:700;">Anforderung →</text>
+    <text class="svg-label-sm" x="213" y="84" text-anchor="middle" style="fill:#B23E1F;font-weight:700;">Anforderung →</text>
     <!-- Antwort: Server -> Netzwerk (gestrichelt) -->
-    <line x1="578" y1="178" x2="442" y2="178" stroke="#15786E" stroke-width="2" stroke-dasharray="6 4"></line>
-    <polygon points="438,178 450,173 450,183" fill="#15786E"></polygon>
-    <text class="svg-label-sm" x="515" y="200" text-anchor="middle" style="fill:#15786E;font-weight:700;">← Antwort</text>
+    <line x1="578" y1="150" x2="442" y2="150" stroke="#15786E" stroke-width="2" stroke-dasharray="6 4"></line>
+    <polygon points="438,150 450,145 450,155" fill="#15786E"></polygon>
+    <text class="svg-label-sm" x="515" y="170" text-anchor="middle" style="fill:#15786E;font-weight:700;">← Antwort</text>
     <text class="svg-label-sm" x="20" y="238" text-anchor="start" style="fill:#5C6B78;">Ein Gerät kann zugleich Server (stellt bereit) und Client (nutzt) sein.</text>
   </svg><figcaption>Request-Response-Modell: Clients fragen an, der Server prüft Berechtigung und antwortet mit den passenden Daten.</figcaption></figure></div>
       <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 320" role="img" aria-label="19-Zoll-Rack mit Höheneinheiten: Mehrere Geräte unterschiedlicher Höhe in U/HE gestapelt, Höhe einer Höheneinheit 1,75 Zoll bzw. 4,45 cm, Rackbreite 19 Zoll bzw. 48,26 cm.">
@@ -809,11 +811,11 @@
     <!-- Fog -->
     <rect x="30" y="122" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="60" y="148" text-anchor="start">Fog (Zwischenebene)</text>
-    <text class="svg-label-sm" x="60" y="168" text-anchor="start">Geräte selbst treffen kurzfristige Entscheidungen · Vielzahl kleinster Sensoren/Aktoren</text>
+    <text class="svg-label-sm" x="60" y="168" text-anchor="start">vernetzte LAN-Ebene · bündelt Daten vieler Edge-Knoten · reicht nur Relevantes an die Cloud</text>
     <!-- Edge -->
     <rect x="30" y="188" width="600" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
     <text class="svg-label" x="60" y="214" text-anchor="start">Edge (Rand des Netzes)</text>
-    <text class="svg-label-sm" x="60" y="234" text-anchor="start">Edge-Server nahe der Quelle · Analyse vor Ort · nur nötige Daten gehen weiter</text>
+    <text class="svg-label-sm" x="60" y="234" text-anchor="start">Verarbeitung direkt an / neben der Datenquelle · niedrigste Latenz, echtzeitnah</text>
     <!-- Endgeräte -->
     <rect x="30" y="254" width="600" height="58" rx="6" fill="#FFFFFF" stroke="#16242E" stroke-width="2"></rect>
     <text class="svg-label" x="60" y="280" text-anchor="start">Endgeräte / Edge-Devices</text>
@@ -851,23 +853,24 @@
     <text class="svg-label-sm" x="635" y="236" text-anchor="middle">(Langzeit)</text>
     <text class="svg-label-sm" x="275" y="270" text-anchor="middle" style="fill:#15786E;">Analyse nahe der Quelle → geringe Latenz, weniger Bandbreite</text>
   </svg><figcaption>Cloud: weiter Weg, hohe Latenz. Edge: Verarbeitung vor Ort, nur noch nötige Daten gehen in die Cloud.</figcaption></figure></div>
-      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Edge vs Fog nach Cisco: Beim Fog-Computing treffen die Geräte selbst kurzfristige Entscheidungen; beim Edge-Computing erfolgt die Analyse in nahen, aber schon zentraleren Instanzen. Langfristige Analyse und Speicherung erfolgen bei beiden in der Cloud.">
-    <text class="svg-title" x="20" y="26">Fog vs. Edge (nach Cisco)</text>
+      <div class="gal-item"><figure class="diagram"><svg viewBox="0 0 740 250" role="img" aria-label="Edge gegenüber Fog nach Cisco/OpenFog: Edge-Computing verarbeitet direkt an der Datenquelle mit geringster Latenz; Fog-Computing ist eine vernetzte Zwischenschicht auf LAN-Ebene, die Daten vieler Edge-Knoten bündelt und Richtung Cloud weiterreicht. Reihenfolge Endgerät, Edge, Fog, Cloud.">
+    <text class="svg-title" x="20" y="26">Edge vs. Fog (nach Cisco/OpenFog)</text>
     <rect x="20" y="50" width="330" height="150" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"></rect>
-    <text class="svg-label" x="40" y="78" text-anchor="start">Fog-Computing</text>
-    <text class="svg-label-sm" x="40" y="104" text-anchor="start">Geräte selbst treffen</text>
-    <text class="svg-label-sm" x="40" y="122" text-anchor="start">kurzfristige Entscheidungen</text>
-    <text class="svg-label-sm" x="40" y="146" text-anchor="start">„Nebel“ = Vielzahl kleinster</text>
-    <text class="svg-label-sm" x="40" y="164" text-anchor="start">Geräte (Sensoren/Aktoren) in</text>
-    <text class="svg-label-sm" x="40" y="182" text-anchor="start">großer Dichte (IoT)</text>
+    <text class="svg-label" x="40" y="78" text-anchor="start">Edge-Computing</text>
+    <text class="svg-label-sm" x="40" y="104" text-anchor="start">Verarbeitung direkt an /</text>
+    <text class="svg-label-sm" x="40" y="122" text-anchor="start">neben der Datenquelle</text>
+    <text class="svg-label-sm" x="40" y="146" text-anchor="start">einzelne Knoten am Netzrand</text>
+    <text class="svg-label-sm" x="40" y="164" text-anchor="start">niedrigste Latenz,</text>
+    <text class="svg-label-sm" x="40" y="182" text-anchor="start">echtzeitnah</text>
     <rect x="390" y="50" width="330" height="150" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
-    <text class="svg-label" x="410" y="78" text-anchor="start">Edge-Computing</text>
-    <text class="svg-label-sm" x="410" y="104" text-anchor="start">Analyse in nahen, aber schon</text>
-    <text class="svg-label-sm" x="410" y="122" text-anchor="start">etwas zentraleren Instanzen</text>
-    <text class="svg-label-sm" x="410" y="146" text-anchor="start">(Edge-Server am Rand)</text>
-    <text class="svg-label-sm" x="410" y="170" text-anchor="start">oft synonym zu Fog verwendet</text>
-    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#15786E;">Gemeinsam: nur langfristige Analysen &amp; Speicherungen finden in der Cloud statt.</text>
-  </svg><figcaption>Cisco (Urheber von „Fog“): Fog = Geräte entscheiden selbst, Edge = Analyse in nahen, etwas zentraleren Instanzen.</figcaption></figure></div>
+    <text class="svg-label" x="410" y="78" text-anchor="start">Fog-Computing</text>
+    <text class="svg-label-sm" x="410" y="104" text-anchor="start">vernetzte Zwischenschicht</text>
+    <text class="svg-label-sm" x="410" y="122" text-anchor="start">auf LAN-/Gateway-Ebene</text>
+    <text class="svg-label-sm" x="410" y="146" text-anchor="start">bündelt Daten vieler Edge-Knoten</text>
+    <text class="svg-label-sm" x="410" y="164" text-anchor="start">hierarchisch · erweitert die</text>
+    <text class="svg-label-sm" x="410" y="182" text-anchor="start">Cloud Richtung Netzrand</text>
+    <text class="svg-label-sm" x="20" y="232" text-anchor="start" style="fill:#15786E;">Reihenfolge quellnah → zentral: Endgerät → Edge → Fog → Cloud · nur langfristige Analyse/Speicherung in der Cloud.</text>
+  </svg><figcaption>Edge = Verarbeitung direkt an der Datenquelle (geringste Latenz); Fog = vernetzte Zwischenschicht zwischen Edge und Cloud. Der Begriff „Fog“ (bodennahe Wolke) stammt von Cisco.</figcaption></figure></div>
       <div class="gal-item"><figure class="diagram">
     <svg viewBox="0 0 760 290" role="img" aria-label="Datenfluss in einer Fabrik: Sensoren liefern Rohdaten an einen Edge-Computer (Mikrocontroller, Raspberry Pi, SPS), der lokal verarbeitet und nur Relevantes an Fog/Gateway und schließlich aggregiert an die Cloud weitergibt.">
       <text x="380" y="24" text-anchor="middle" class="svg-title">Vom Sensor bis in die Cloud — der Edge-Computer als erster Knoten</text>
@@ -940,7 +943,7 @@
     <text class="svg-label-sm" x="400" y="112">• Einzelarbeitsplatz, wird ausgeschaltet</text>
     <text class="svg-label-sm" x="400" y="140">• meist ein angemeldeter Nutzer</text>
     <text class="svg-label-sm" x="400" y="168">• nutzt Dienste, bietet kaum welche an</text>
-    <text class="svg-label-sm" x="400" y="196">• lokale Bedienung, immer mit GUI</text>
+    <text class="svg-label-sm" x="400" y="196">• lokale Bedienung, i. d. R. mit GUI</text>
     <text class="svg-label-sm" x="400" y="224">• Komfort/Multimedia im Vordergrund</text>
     <text class="svg-label-sm" x="400" y="252">• z. B. Windows 11, macOS, Ubuntu Desktop</text>
   </svg><figcaption>Ein Server-BS ist auf Dauerbetrieb, Dienste und viele Nutzer optimiert; ein Desktop-BS auf den Einzelarbeitsplatz.</figcaption></figure></div>
@@ -1140,7 +1143,7 @@
     <figcaption>Vier Schritte der DHCP-Adressvergabe (DORA).</figcaption>
   </figure></div>
       <div class="gal-item"><figure class="diagram">
-    <svg viewBox="0 0 700 230" role="img" aria-label="DNS-Auflösung mit drei Stationen Client-PC, DNS-Server und Webserver sowie drei nummerierten Anfragen">
+    <svg viewBox="0 0 700 250" role="img" aria-label="DNS-Auflösung: Client fragt den DNS-Server nach der IP (1) und erhält sie (2); danach verbindet sich der Client direkt mit dem Webserver (3) – der DNS-Server ist dann nicht mehr beteiligt.">
       <text x="350" y="22" text-anchor="middle" class="svg-title">DNS-Auflösung</text>
       <!-- Boxes -->
       <rect x="30" y="90" width="150" height="50" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
@@ -1159,11 +1162,11 @@
       <polygon points="180,128 192,123 192,133" fill="#15786E"></polygon>
       <text x="227" y="158" text-anchor="middle" class="svg-label">2.</text>
       <text x="227" y="174" text-anchor="middle" class="svg-label-sm">„172.217.16.78"</text>
-      <!-- 3 PC -> Webserver -->
-      <line x1="425" y1="116" x2="520" y2="116" stroke="#16242E" stroke-width="2"></line>
-      <polygon points="520,116 508,111 508,121" fill="#16242E"></polygon>
-      <text x="472" y="66" text-anchor="middle" class="svg-label">3.</text>
-      <text x="472" y="82" text-anchor="middle" class="svg-label-sm">Anfrage an diese IP</text>
+      <!-- 3 PC -> Webserver (direkt; DNS-Server nicht mehr beteiligt) -->
+      <polyline points="105,140 105,205 595,205 595,143" fill="none" stroke="#16242E" stroke-width="2"></polyline>
+      <polygon points="595,140 589,151 601,151" fill="#16242E"></polygon>
+      <text x="350" y="199" text-anchor="middle" class="svg-label">3. HTTP-Anfrage direkt an 172.217.16.78</text>
+      <text x="350" y="224" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Client verbindet sich selbst — der DNS-Server ist ab jetzt außen vor</text>
     </svg>
     <figcaption>Namensauflösung: vom Domainnamen zur IP-Adresse.</figcaption>
   </figure></div>
@@ -1252,45 +1255,52 @@
     <figcaption>Simplex – nur eine Richtung. Halbduplex – beide Richtungen, aber nicht gleichzeitig. Vollduplex – beide Richtungen gleichzeitig.</figcaption>
   </figure></div>
       <div class="gal-item"><figure class="diagram">
-    <svg viewBox="0 0 700 250" role="img" aria-label="FDM teilt nach Frequenzbändern, TDM teilt nach rotierenden Zeitschlitzen, WDM nutzt mehrere Lichtwellenlängen in einer Glasfaser">
-      <text x="20" y="28" class="svg-title">FDM · TDM · WDM</text>
+    <svg viewBox="0 0 700 320" role="img" aria-label="Vier Multiplexverfahren: FDM teilt nach Frequenzbändern, TDM nach rotierenden Zeitschlitzen, CDM lässt alle gleichzeitig auf einer Frequenz senden und trennt per Spreizcode, WDM nutzt mehrere Lichtwellenlängen in einer Glasfaser.">
+      <text x="20" y="28" class="svg-title">FDM · TDM · CDM · WDM</text>
 
       <!-- FDM -->
-      <text x="20" y="58" class="svg-label">FDM – nach Frequenz</text>
-      <rect x="20" y="68" width="200" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
-      <line x1="86" y1="68" x2="86" y2="102" stroke="#DD5430" stroke-width="2"/>
-      <line x1="153" y1="68" x2="153" y2="102" stroke="#DD5430" stroke-width="2"/>
-      <text x="53" y="90" text-anchor="middle" class="svg-label-sm">K1</text>
-      <text x="119" y="90" text-anchor="middle" class="svg-label-sm">K2</text>
-      <text x="186" y="90" text-anchor="middle" class="svg-label-sm">K3</text>
-      <text x="20" y="122" class="svg-label-sm">Frequenz →</text>
+      <text x="20" y="66" class="svg-label">FDM – nach Frequenz</text>
+      <rect x="20" y="76" width="200" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <line x1="86" y1="76" x2="86" y2="110" stroke="#DD5430" stroke-width="2"/>
+      <line x1="153" y1="76" x2="153" y2="110" stroke="#DD5430" stroke-width="2"/>
+      <text x="53" y="98" text-anchor="middle" class="svg-label-sm">K1</text>
+      <text x="119" y="98" text-anchor="middle" class="svg-label-sm">K2</text>
+      <text x="186" y="98" text-anchor="middle" class="svg-label-sm">K3</text>
+      <text x="20" y="130" class="svg-label-sm">Frequenz → · alle zugleich, je eigenes Band</text>
 
       <!-- TDM -->
-      <text x="270" y="58" class="svg-label">TDM – nach Zeit</text>
-      <rect x="270" y="68" width="280" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
-      <line x1="316" y1="68" x2="316" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="363" y1="68" x2="363" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="410" y1="68" x2="410" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="456" y1="68" x2="456" y2="102" stroke="#15786E" stroke-width="2"/>
-      <line x1="503" y1="68" x2="503" y2="102" stroke="#15786E" stroke-width="2"/>
-      <text x="293" y="90" text-anchor="middle" class="svg-label-sm">A</text>
-      <text x="339" y="90" text-anchor="middle" class="svg-label-sm">B</text>
-      <text x="386" y="90" text-anchor="middle" class="svg-label-sm">C</text>
-      <text x="433" y="90" text-anchor="middle" class="svg-label-sm">A</text>
-      <text x="479" y="90" text-anchor="middle" class="svg-label-sm">B</text>
-      <text x="526" y="90" text-anchor="middle" class="svg-label-sm">C</text>
-      <text x="270" y="122" class="svg-label-sm">Zeit →</text>
+      <text x="370" y="66" class="svg-label">TDM – nach Zeit</text>
+      <rect x="370" y="76" width="280" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <line x1="416" y1="76" x2="416" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="463" y1="76" x2="463" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="510" y1="76" x2="510" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="556" y1="76" x2="556" y2="110" stroke="#15786E" stroke-width="2"/>
+      <line x1="603" y1="76" x2="603" y2="110" stroke="#15786E" stroke-width="2"/>
+      <text x="393" y="98" text-anchor="middle" class="svg-label-sm">A</text>
+      <text x="439" y="98" text-anchor="middle" class="svg-label-sm">B</text>
+      <text x="486" y="98" text-anchor="middle" class="svg-label-sm">C</text>
+      <text x="533" y="98" text-anchor="middle" class="svg-label-sm">A</text>
+      <text x="579" y="98" text-anchor="middle" class="svg-label-sm">B</text>
+      <text x="626" y="98" text-anchor="middle" class="svg-label-sm">C</text>
+      <text x="370" y="130" class="svg-label-sm">Zeit → · je Signal ein rotierender Zeitschlitz</text>
+
+      <!-- CDM -->
+      <text x="20" y="196" class="svg-label">CDM – nach Code</text>
+      <rect x="20" y="206" width="300" height="40" rx="5" fill="#EEF2F5" stroke="#5C6B78" stroke-width="2"/>
+      <text x="170" y="231" text-anchor="middle" class="svg-label-sm">S1 + S2 + S3 — überlagert, 1 Frequenz</text>
+      <text x="20" y="266" class="svg-label-sm">getrennt nur durch Spreizcode (c1 · c2 · c3)</text>
 
       <!-- WDM -->
-      <text x="20" y="170" class="svg-label">WDM – nach Lichtwellenlänge (Glasfaser)</text>
-      <rect x="20" y="182" width="60" height="40" rx="5" fill="#16242E" stroke="#16242E" stroke-width="2"/>
-      <text x="50" y="207" text-anchor="middle" class="svg-label-sm" style="fill:#ffffff;">Laser</text>
-      <line x1="80" y1="195" x2="600" y2="195" stroke="#DD5430" stroke-width="2"/>
-      <line x1="80" y1="202" x2="600" y2="202" stroke="#15786E" stroke-width="2"/>
-      <line x1="80" y1="209" x2="600" y2="209" stroke="#B9C7D2" stroke-width="2"/>
-      <text x="610" y="207" class="svg-label-sm">Faser</text>
+      <text x="370" y="196" class="svg-label">WDM – nach Wellenlänge (Glasfaser)</text>
+      <rect x="370" y="208" width="54" height="38" rx="5" fill="#16242E" stroke="#16242E" stroke-width="2"/>
+      <text x="397" y="231" text-anchor="middle" class="svg-label-sm" style="fill:#ffffff;">Laser</text>
+      <line x1="424" y1="216" x2="628" y2="216" stroke="#DD5430" stroke-width="2"/>
+      <line x1="424" y1="227" x2="628" y2="227" stroke="#15786E" stroke-width="2"/>
+      <line x1="424" y1="238" x2="628" y2="238" stroke="#B9C7D2" stroke-width="2"/>
+      <text x="634" y="231" class="svg-label-sm">Faser</text>
+      <text x="370" y="266" class="svg-label-sm">mehrere Lichtfarben (λ) in einer Faser</text>
     </svg>
-    <figcaption>FDM – Aufteilung nach Frequenz. TDM – Aufteilung nach Zeitschlitzen. WDM – mehrere Lichtwellenlängen in einer Glasfaser.</figcaption>
+    <figcaption>FDM – nach Frequenz (eigene Bänder). TDM – nach Zeit (rotierende Zeitschlitze). CDM – alle gleichzeitig auf einer Frequenz, getrennt per Code. WDM – mehrere Lichtwellenlängen in einer Glasfaser.</figcaption>
   </figure></div>
     </div>
 
@@ -1330,7 +1340,7 @@
     <figcaption>Bus – gemeinsame Leitung mit Abschlusswiderständen; immer nur eine Station sendet.</figcaption>
   </figure></div>
       <div class="gal-item"><figure class="diagram">
-    <svg viewBox="0 0 400 250" role="img" aria-label="Ring-Topologie: fünf Stationen zu einem geschlossenen Ring verbunden">
+    <svg viewBox="-60 0 520 250" role="img" aria-label="Ring-Topologie: fünf Stationen zu einem geschlossenen Ring verbunden">
       <text x="200" y="22" text-anchor="middle" class="svg-title">Ring-Topologie</text>
       <g stroke="#16242E" stroke-width="2.5" fill="none">
         <polygon points="200,55 286,114 253,209 147,209 114,114" fill="none"></polygon>

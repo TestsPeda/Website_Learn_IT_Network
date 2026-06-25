@@ -226,7 +226,7 @@
   </article>
 
   <figure class="diagram">
-    <svg viewBox="0 0 700 230" role="img" aria-label="DNS-Auflösung mit drei Stationen Client-PC, DNS-Server und Webserver sowie drei nummerierten Anfragen">
+    <svg viewBox="0 0 700 250" role="img" aria-label="DNS-Auflösung: Client fragt den DNS-Server nach der IP (1) und erhält sie (2); danach verbindet sich der Client direkt mit dem Webserver (3) – der DNS-Server ist dann nicht mehr beteiligt.">
       <text x="350" y="22" text-anchor="middle" class="svg-title">DNS-Auflösung</text>
       <!-- Boxes -->
       <rect x="30" y="90" width="150" height="50" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
@@ -245,13 +245,13 @@
       <polygon points="180,128 192,123 192,133" fill="#15786E"></polygon>
       <text x="227" y="158" text-anchor="middle" class="svg-label">2.</text>
       <text x="227" y="174" text-anchor="middle" class="svg-label-sm">„172.217.16.78"</text>
-      <!-- 3 PC -> Webserver -->
-      <line x1="425" y1="116" x2="520" y2="116" stroke="#16242E" stroke-width="2"></line>
-      <polygon points="520,116 508,111 508,121" fill="#16242E"></polygon>
-      <text x="472" y="66" text-anchor="middle" class="svg-label">3.</text>
-      <text x="472" y="82" text-anchor="middle" class="svg-label-sm">Anfrage an diese IP</text>
+      <!-- 3 PC -> Webserver (direkt; DNS-Server nicht mehr beteiligt) -->
+      <polyline points="105,140 105,205 595,205 595,143" fill="none" stroke="#16242E" stroke-width="2"></polyline>
+      <polygon points="595,140 589,151 601,151" fill="#16242E"></polygon>
+      <text x="350" y="199" text-anchor="middle" class="svg-label">3. HTTP-Anfrage direkt an 172.217.16.78</text>
+      <text x="350" y="224" text-anchor="middle" class="svg-label-sm" style="fill:#5C6B78;">Client verbindet sich selbst — der DNS-Server ist ab jetzt außen vor</text>
     </svg>
-    <figcaption>Namensauflösung: vom Domainnamen zur IP-Adresse.</figcaption>
+    <figcaption>Namensauflösung: Der DNS-Server liefert nur die IP (Schritte 1–2). Die eigentliche Verbindung baut der Client danach selbst direkt zum Webserver auf (Schritt 3).</figcaption>
   </figure>
 
   <article class="q">

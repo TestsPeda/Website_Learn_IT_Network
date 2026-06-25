@@ -81,7 +81,7 @@
     <rect x="20" y="192" width="680" height="34" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"></rect>
     <text class="svg-label" x="505" y="214" text-anchor="middle">Summe (Netto)</text>
     <text class="svg-label" x="630" y="214" text-anchor="middle">Σ</text>
-    <text class="svg-label-sm" x="150" y="244" text-anchor="middle" style="fill:#15786E;">Gesamtpreis = Menge × Einzelpreis &nbsp;·&nbsp; Summe = Σ aller Gesamtpreise</text>
+    <text class="svg-label-sm" x="360" y="244" text-anchor="middle" style="fill:#15786E;">Gesamtpreis = Menge × Einzelpreis &nbsp;·&nbsp; Summe = Σ aller Gesamtpreise</text>
   </svg><figcaption>Aufbau einer Stückliste: Kopfdaten, Positionszeilen (Spalten) und Summenzeile.</figcaption></figure>
 
   <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-pts">Auto</span></div>
@@ -255,6 +255,51 @@
         <li><strong>Summenbildung:</strong> Σ aller Gesamtpreise = Netto-Summe; dann <code>+ 19 % MwSt</code> = Brutto.</li>
       </ol>
       <div class="step">Die Spalte <code>Links/Verweis</code> dokumentiert die Bezugsquelle/das Angebot je Position. Das macht die Kalkulation <strong>nachvollziehbar</strong>, erleichtert die <strong>Beschaffung</strong> (direkt bestellen) und Preisaktualisierungen.</div>
+      <figure class="diagram"><svg viewBox="0 0 740 320" role="img" aria-label="Beispiel einer Stückliste mit Spalte Links/Verweis: Jede Position verweist per Link auf ihre Bezugsquelle – etwa ein Lieferantenangebot, eine Preisliste oder ein Datenblatt. Das macht die Kalkulation nachvollziehbar und erleichtert die Beschaffung.">
+        <text class="svg-title" x="20" y="28">Stückliste mit Spalte „Links/Verweis“</text>
+        <rect x="20" y="48" width="470" height="34" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+        <text class="svg-label-sm" x="45" y="69" text-anchor="middle">Pos.</text>
+        <text class="svg-label-sm" x="175" y="69" text-anchor="middle">Bezeichnung</text>
+        <text class="svg-label-sm" x="395" y="69" text-anchor="middle">Links / Verweis</text>
+        <g fill="#FFFFFF" stroke="#D4DEE6" stroke-width="1.5">
+          <rect x="20" y="82" width="470" height="40"/>
+          <rect x="20" y="122" width="470" height="40"/>
+          <rect x="20" y="162" width="470" height="40"/>
+        </g>
+        <rect x="300" y="82" width="190" height="120" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+        <g class="svg-label-sm">
+          <text x="45" y="107" text-anchor="middle">1</text>
+          <text x="70" y="107">Netzwerkkabel Cat.7</text>
+          <text x="45" y="147" text-anchor="middle">2</text>
+          <text x="70" y="147">Netzwerkdosen</text>
+          <text x="45" y="187" text-anchor="middle">3</text>
+          <text x="70" y="187">Patchpanel 16-Port</text>
+        </g>
+        <g class="svg-label-sm" style="fill:#B23E1F;">
+          <text x="312" y="107">↗ Angebot A</text>
+          <text x="312" y="147">↗ Preisliste</text>
+          <text x="312" y="187">↗ Datenblatt</text>
+        </g>
+        <g stroke="#DD5430" stroke-width="2" fill="none">
+          <line x1="490" y1="100" x2="556" y2="92"/>
+          <line x1="490" y1="140" x2="556" y2="150"/>
+          <line x1="490" y1="180" x2="556" y2="214"/>
+        </g>
+        <polygon points="560,92 548,87 549,97" fill="#DD5430"/>
+        <polygon points="560,150 548,145 549,155" fill="#DD5430"/>
+        <polygon points="560,214 548,209 550,219" fill="#DD5430"/>
+        <rect x="560" y="70" width="160" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"/>
+        <text class="svg-label-sm" x="640" y="89" text-anchor="middle">Angebot Lieferant A</text>
+        <text class="svg-label-sm" x="640" y="105" text-anchor="middle" style="fill:#5C6B78;">Kabel · Art-Nr. 4711</text>
+        <rect x="560" y="128" width="160" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"/>
+        <text class="svg-label-sm" x="640" y="147" text-anchor="middle">Preisliste B</text>
+        <text class="svg-label-sm" x="640" y="163" text-anchor="middle" style="fill:#5C6B78;">Dosen · Stand 06/2026</text>
+        <rect x="560" y="192" width="160" height="44" rx="5" fill="#FFFFFF" stroke="#16242E" stroke-width="2"/>
+        <text class="svg-label-sm" x="640" y="211" text-anchor="middle">Datenblatt C</text>
+        <text class="svg-label-sm" x="640" y="227" text-anchor="middle" style="fill:#5C6B78;">Patchpanel-Specs</text>
+        <text class="svg-label-sm" x="20" y="252" style="fill:#15786E;">Jede Position verweist auf ihre Bezugsquelle → nachvollziehbar, leichtere Beschaffung &amp; Preispflege.</text>
+      </svg>
+      <figcaption>Die Spalte „Links/Verweis“ verknüpft jede Position mit ihrer Quelle (Angebot, Preisliste, Datenblatt) – so bleibt die Kalkulation nachvollziehbar und Bestellungen/Preisupdates gehen schneller.</figcaption></figure>
     </div></article>
 
   <nav class="pager">
