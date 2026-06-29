@@ -34,6 +34,24 @@
     </div>
   </section>
 
+  <section class="explore" aria-label="Themen entdecken">
+    <div class="explore-head">
+      <div class="explore-intro">
+        <p class="eyebrow">Ansicht wählen</p>
+        <p class="explore-sub">Klassisch per Sterntopologie navigieren — oder die 16 Themen
+          über ein kleines Spiel „erjagen". Wähle oben rechts, worauf du gerade Lust hast.</p>
+      </div>
+      <div class="seg" role="tablist" aria-label="Ansichtsmodus">
+        <button class="seg-btn" type="button" role="tab" id="tab-star"   aria-controls="panel-star"   aria-selected="true"  data-mode="star">Sterntopologie</button>
+        <button class="seg-btn" type="button" role="tab" id="tab-search" aria-controls="panel-search" aria-selected="false" tabindex="-1" data-mode="search">Schnellsuche</button>
+        <button class="seg-btn" type="button" role="tab" id="tab-memory" aria-controls="panel-memory" aria-selected="false" tabindex="-1" data-mode="memory">Memory</button>
+        <button class="seg-btn" type="button" role="tab" id="tab-quiz"   aria-controls="panel-quiz"   aria-selected="false" tabindex="-1" data-mode="quiz">Quiz-Tor</button>
+        <button class="seg-btn" type="button" role="tab" id="tab-hunt"   aria-controls="panel-hunt"   aria-selected="false" tabindex="-1" data-mode="hunt">Schatzsuche</button>
+        <button class="seg-btn" type="button" role="tab" id="tab-wheel"  aria-controls="panel-wheel"  aria-selected="false" tabindex="-1" data-mode="wheel">Glücksrad</button>
+      </div>
+    </div>
+
+    <div class="explore-panel" id="panel-star" role="tabpanel" aria-labelledby="tab-star" data-mode="star">
   <figure class="diagram" style="background:var(--surface);">
     <svg viewBox="0 0 920 640" role="img" aria-label="Sterntopologie als Navigation: zentraler Hub verbunden mit den 16 Themenseiten">
       <g stroke="#B9C7D2" stroke-width="2">
@@ -142,6 +160,16 @@
     </svg>
     <figcaption>Klicke einen Knoten an, um den Test zum Thema zu öffnen — das Navigationsbild ist selbst eine Sterntopologie (Thema 13).</figcaption>
   </figure>
+    </div>
+
+    <div class="explore-panel" id="panel-search" role="tabpanel" aria-labelledby="tab-search" data-mode="search" hidden></div>
+    <div class="explore-panel" id="panel-memory" role="tabpanel" aria-labelledby="tab-memory" data-mode="memory" hidden></div>
+    <div class="explore-panel" id="panel-quiz"   role="tabpanel" aria-labelledby="tab-quiz"   data-mode="quiz"   hidden></div>
+    <div class="explore-panel" id="panel-hunt"   role="tabpanel" aria-labelledby="tab-hunt"   data-mode="hunt"   hidden></div>
+    <div class="explore-panel" id="panel-wheel"  role="tabpanel" aria-labelledby="tab-wheel"  data-mode="wheel"  hidden></div>
+
+    <noscript><p class="explore-sub" style="margin-top:12px;">Die Spiel-Ansichten benötigen JavaScript — die Sterntopologie oben und die Themenliste unten funktionieren auch ohne.</p></noscript>
+  </section>
 
   <div class="sec-head"><span class="ix">→</span><h2>Themen auswählen</h2></div>
   <p class="sec-sub">Jede Seite ist eigenständig: Fragen beantworten, Lösungen einzeln aufdecken
@@ -259,5 +287,6 @@
   Kerninhalt; <span class="mono">🔬 [Vertiefung]</span> ist als solche gekennzeichnet.
 </div></footer>
 
+<script src="assets/explore.js"></script>
 </body>
 </html>
