@@ -72,9 +72,12 @@
   Array.prototype.slice.call(root.querySelectorAll(".explore-panel")).forEach(function (p) {
     panels[p.getAttribute("data-mode")] = p;
   });
-  var built = {}; // Spiele werden faul beim ersten Öffnen aufgebaut
+  var built = {};  // Spiele werden faul beim ersten Öffnen aufgebaut
+  var LEAVE = {};  // optionale Aufräum-/Pause-Hooks je Modus (z. B. Snake pausieren)
+  var current = null;
 
   function activate(mode, focusTab) {
+    if (current && current !== mode && LEAVE[current]) LEAVE[current]();
     tabs.forEach(function (b) {
       var on = b.getAttribute("data-mode") === mode;
       b.setAttribute("aria-selected", on ? "true" : "false");
@@ -83,6 +86,7 @@
     });
     Object.keys(panels).forEach(function (k) { panels[k].hidden = (k !== mode); });
     if (!built[mode] && BUILD[mode]) { BUILD[mode](panels[mode]); built[mode] = true; }
+    current = mode;
     try { localStorage.setItem("explore-mode", mode); } catch (e) {}
   }
 
@@ -414,13 +418,290 @@
     btn.addEventListener("click", spin);
   }
 
+  /* =====================================================================
+     Spiel 7 · Snake — Datenpaket durchs Netz steuern; jeder Punkt schaltet
+     ein Thema frei. Steuerung per Pfeiltasten oder WASD. Der Spielhintergrund
+     erwärmt sich dynamisch von Teal zu Orange, je mehr Themen frei sind, und
+     das Gitter wird mit steigendem Level heller.
+     ===================================================================== */
+  function buildSnake(panel) {
+    var N = 18, CELL = 20, SIZE = N * CELL;      // 18×18-Raster, 360px logisch
+    var TEAL = [21, 120, 110], ORANGE = [221, 84, 48];
+
+    panel.innerHTML =
+      '<div class="game-card snake-card">' +
+        '<p class="game-tip">Du bist ein Datenpaket — sammle Knoten ein. <b>Jeder Punkt schaltet ein Thema frei.</b> ' +
+          'Steuerung: <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> oder <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>.</p>' +
+        '<div class="snake-layout">' +
+          '<div class="snake-left">' +
+            '<div class="snake-hud">' +
+              '<span>Score <b class="sn-score">0</b></span>' +
+              '<span>Level <b class="sn-level">1</b></span>' +
+              '<span>Frei <b class="sn-unlocked">0</b>/16</span>' +
+              '<span>Best <b class="sn-best">0</b></span>' +
+            '</div>' +
+            '<div class="snake-board">' +
+              '<canvas class="snake-canvas" width="' + (SIZE) + '" height="' + (SIZE) + '" aria-label="Snake-Spielfeld"></canvas>' +
+              '<div class="snake-overlay"><h4 class="sn-msg">Snake</h4><p class="sn-sub">Pfeiltasten / WASD oder „Start" — los geht’s.</p>' +
+                '<button class="btn primary sn-start" type="button">Start</button></div>' +
+            '</div>' +
+            '<div class="snake-controls">' +
+              '<div class="snake-dpad" aria-hidden="false">' +
+                '<button class="sn-d" data-dir="up"    type="button" aria-label="Hoch">↑</button>' +
+                '<button class="sn-d" data-dir="left"  type="button" aria-label="Links">←</button>' +
+                '<button class="sn-d" data-dir="down"  type="button" aria-label="Runter">↓</button>' +
+                '<button class="sn-d" data-dir="right" type="button" aria-label="Rechts">→</button>' +
+              '</div>' +
+              '<button class="btn sn-reset" type="button">Neues Spiel</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="snake-right">' +
+            '<p class="snake-unlock-label">Freigeschaltete Themen</p>' +
+            '<div class="snake-unlocks"></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    var canvas = panel.querySelector(".snake-canvas");
+    var ctx = canvas.getContext("2d");
+    var board = panel.querySelector(".snake-board");
+    var overlay = panel.querySelector(".snake-overlay");
+    var msgEl = panel.querySelector(".sn-msg");
+    var subEl = panel.querySelector(".sn-sub");
+    var startBtn = panel.querySelector(".sn-start");
+    var scoreEl = panel.querySelector(".sn-score");
+    var levelEl = panel.querySelector(".sn-level");
+    var unlockedEl = panel.querySelector(".sn-unlocked");
+    var bestEl = panel.querySelector(".sn-best");
+    var unlocksBox = panel.querySelector(".snake-unlocks");
+
+    // hochauflösend zeichnen
+    var dpr = Math.max(1, Math.min(3, window.devicePixelRatio || 1));
+    canvas.width = SIZE * dpr; canvas.height = SIZE * dpr;
+    canvas.style.width = SIZE + "px"; canvas.style.height = SIZE + "px";
+    ctx.scale(dpr, dpr);
+
+    var snake, dir, nextDir, food, score, level, state, loopId;
+    var unlocked = 0, best = 0;
+    try {
+      unlocked = parseInt(localStorage.getItem("snake-unlocked") || "0", 10) || 0;
+      best = parseInt(localStorage.getItem("snake-best") || "0", 10) || 0;
+    } catch (e) {}
+    unlocked = Math.max(0, Math.min(TOPICS.length, unlocked));
+
+    function lerpColor(a, b, t) {
+      return "rgb(" + Math.round(a[0] + (b[0] - a[0]) * t) + "," +
+                      Math.round(a[1] + (b[1] - a[1]) * t) + "," +
+                      Math.round(a[2] + (b[2] - a[2]) * t) + ")";
+    }
+    function updateBackground() {
+      var f = unlocked / TOPICS.length;                 // 0 … 1 (Fortschritt)
+      var glow = lerpColor(TEAL, ORANGE, f);
+      var intensity = 0.18 + f * 0.34;
+      board.style.background =
+        "radial-gradient(120% 130% at 50% 0%, " + glow.replace("rgb", "rgba").replace(")", "," + intensity.toFixed(2) + ")") +
+        " 0%, #16242E 62%)";
+    }
+
+    function renderUnlocks() {
+      unlocksBox.innerHTML = "";
+      TOPICS.forEach(function (t, i) {
+        if (i < unlocked) {
+          var a = document.createElement("a");
+          a.className = "snake-chip unlocked";
+          a.href = t.href;
+          a.title = "Thema " + t.n + ": " + t.name;
+          a.innerHTML = '<span class="sc-num">' + t.n + "</span> " + esc(t.name);
+          unlocksBox.appendChild(a);
+        } else {
+          var s = el("span", "snake-chip locked", '<span class="sc-num">' + t.n + "</span> 🔒");
+          s.title = "Noch gesperrt — sammle Punkte!";
+          unlocksBox.appendChild(s);
+        }
+      });
+    }
+    function unlockNext() {
+      if (unlocked < TOPICS.length) {
+        unlocked++;
+        try { localStorage.setItem("snake-unlocked", String(unlocked)); } catch (e) {}
+        renderUnlocks();
+      }
+      unlockedEl.textContent = unlocked;
+      updateBackground();
+    }
+
+    function emptyCell() {
+      var c, tries = 0;
+      do {
+        c = { x: Math.floor(Math.random() * N), y: Math.floor(Math.random() * N) };
+        tries++;
+      } while (tries < 400 && snake.some(function (s) { return s.x === c.x && s.y === c.y; }));
+      return c;
+    }
+    function reset() {
+      stop();
+      snake = [{ x: 8, y: 9 }, { x: 7, y: 9 }, { x: 6, y: 9 }];
+      dir = { x: 1, y: 0 }; nextDir = { x: 1, y: 0 };
+      score = 0; level = 1; state = "idle";
+      food = emptyCell();
+      scoreEl.textContent = "0"; levelEl.textContent = "1";
+      bestEl.textContent = best;
+      showOverlay("Snake", "Pfeiltasten / WASD oder „Start“ — los geht’s.", "Start");
+      draw();
+    }
+    function delay() { return Math.max(70, 150 - (level - 1) * 9); }
+
+    function start() {
+      if (state === "running") return;
+      if (state === "over") reset();
+      state = "running";
+      hideOverlay();
+      schedule();
+    }
+    function schedule() {
+      stop();
+      loopId = setTimeout(tick, delay());
+    }
+    function stop() { if (loopId) { clearTimeout(loopId); loopId = null; } }
+    function pause() {
+      if (state !== "running") return;
+      state = "paused"; stop();
+      showOverlay("Pausiert", "Richtungstaste oder âWeiter“ zum Fortsetzen.", "Weiter");
+    }
+
+    function tick() {
+      dir = nextDir;
+      var head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+      if (head.x < 0 || head.y < 0 || head.x >= N || head.y >= N) return gameOver();
+      for (var i = 0; i < snake.length - 1; i++) {
+        if (snake[i].x === head.x && snake[i].y === head.y) return gameOver();
+      }
+      snake.unshift(head);
+      if (head.x === food.x && head.y === food.y) {
+        score++; scoreEl.textContent = score;
+        level = 1 + Math.floor(score / 4); levelEl.textContent = level;
+        if (score > best) { best = score; bestEl.textContent = best; try { localStorage.setItem("snake-best", String(best)); } catch (e) {} }
+        unlockNext();
+        food = emptyCell();
+      } else {
+        snake.pop();
+      }
+      draw();
+      schedule();
+    }
+    function gameOver() {
+      state = "over"; stop();
+      var done = unlocked >= TOPICS.length;
+      showOverlay("Game Over · Score " + score,
+        done ? "Alle 16 Themen frei! Rechts geht es direkt weiter." : "Sammle weiter, um Themen freizuschalten.",
+        "Nochmal");
+    }
+
+    function showOverlay(title, sub, btn) {
+      msgEl.textContent = title; subEl.textContent = sub;
+      startBtn.textContent = btn; overlay.hidden = false;
+    }
+    function hideOverlay() { overlay.hidden = true; }
+
+    function draw() {
+      ctx.clearRect(0, 0, SIZE, SIZE);
+      // Netz-Gitter, heller mit steigendem Level
+      ctx.strokeStyle = "rgba(255,255,255," + Math.min(0.20, 0.05 + level * 0.012).toFixed(3) + ")";
+      ctx.lineWidth = 1;
+      for (var g = 1; g < N; g++) {
+        ctx.beginPath(); ctx.moveTo(g * CELL + .5, 0); ctx.lineTo(g * CELL + .5, SIZE); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(0, g * CELL + .5); ctx.lineTo(SIZE, g * CELL + .5); ctx.stroke();
+      }
+      // Futter = Knoten
+      var fx = food.x * CELL, fy = food.y * CELL;
+      ctx.fillStyle = "#DD5430";
+      roundRect(fx + 4, fy + 4, CELL - 8, CELL - 8, 4); ctx.fill();
+      ctx.fillStyle = "rgba(255,255,255,.85)";
+      roundRect(fx + CELL / 2 - 2, fy + CELL / 2 - 2, 4, 4, 1); ctx.fill();
+      // Schlange
+      for (var s = snake.length - 1; s >= 0; s--) {
+        var seg = snake[s];
+        ctx.fillStyle = s === 0 ? "#1FA093" : "#15786E";
+        roundRect(seg.x * CELL + 2, seg.y * CELL + 2, CELL - 4, CELL - 4, 5); ctx.fill();
+        if (s === 0) {
+          ctx.fillStyle = "#fff";
+          roundRect(seg.x * CELL + 6, seg.y * CELL + 6, 3, 3, 1); ctx.fill();
+          roundRect(seg.x * CELL + CELL - 9, seg.y * CELL + 6, 3, 3, 1); ctx.fill();
+        }
+      }
+    }
+    function roundRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function setDir(nx, ny) {
+      // 180°-Wende verhindern
+      if (snake.length > 1 && nx === -dir.x && ny === -dir.y) return;
+      nextDir = { x: nx, y: ny };
+    }
+    var DIRS = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
+    function handleDir(d) {
+      if (state === "over") return;
+      if (state === "idle" || state === "paused") start();
+      setDir(d[0], d[1]);
+    }
+
+    // Tastatur (nur wenn dieses Panel sichtbar ist)
+    function onKey(e) {
+      if (panel.hidden) return;
+      var k = e.key.toLowerCase();
+      var map = { arrowup: "up", w: "up", arrowdown: "down", s: "down", arrowleft: "left", a: "left", arrowright: "right", d: "right" };
+      if (map[k]) { e.preventDefault(); handleDir(DIRS[map[k]]); }
+      else if (k === " " || k === "enter") { e.preventDefault(); if (state === "running") pause(); else start(); }
+    }
+    document.addEventListener("keydown", onKey);
+
+    // Touch-Steuerkreuz + Wisch-Gesten
+    Array.prototype.slice.call(panel.querySelectorAll(".sn-d")).forEach(function (b) {
+      b.addEventListener("click", function () { handleDir(DIRS[b.getAttribute("data-dir")]); });
+    });
+    var tsx = 0, tsy = 0;
+    canvas.addEventListener("touchstart", function (e) { var t = e.touches[0]; tsx = t.clientX; tsy = t.clientY; }, { passive: true });
+    canvas.addEventListener("touchend", function (e) {
+      var t = e.changedTouches[0], dx = t.clientX - tsx, dy = t.clientY - tsy;
+      if (Math.abs(dx) < 16 && Math.abs(dy) < 16) return;
+      if (Math.abs(dx) > Math.abs(dy)) handleDir(dx > 0 ? DIRS.right : DIRS.left);
+      else handleDir(dy > 0 ? DIRS.down : DIRS.up);
+    }, { passive: true });
+
+    startBtn.addEventListener("click", function () { if (state === "running") pause(); else start(); });
+    panel.querySelector(".sn-reset").addEventListener("click", reset);
+
+    // Beim Verlassen des Tabs pausieren (kein Hintergrundlauf)
+    LEAVE.snake = function () { if (state === "running") pause(); };
+
+    // Test-Schnittstelle (kein UI; erlaubt deterministische Verifikation)
+    panel._snake = {
+      getState: function () { return { score: score, unlocked: unlocked, state: state, head: snake[0], food: { x: food.x, y: food.y }, dir: { x: dir.x, y: dir.y } }; },
+      start: start,
+      foodAhead: function () { food = { x: snake[0].x + nextDir.x, y: snake[0].y + nextDir.y }; }
+    };
+
+    renderUnlocks();
+    unlockedEl.textContent = unlocked;
+    updateBackground();
+    reset();
+  }
+
   /* ---- Registry & Start ---- */
   var BUILD = {
     search: buildSearch,
     memory: buildMemory,
     quiz: buildQuiz,
     hunt: buildHunt,
-    wheel: buildWheel
+    wheel: buildWheel,
+    snake: buildSnake
   };
 
   var initial = "star";
