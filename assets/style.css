@@ -251,6 +251,27 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
   background:var(--accent-tint); border:1px solid #EBC9BD; border-radius:999px; padding:1px 8px; margin-right:6px;
 }
 
+/* answer field for manual tasks (free-text, matching, calc, scenario, cloze) —
+   a place to type your own answer before revealing the model solution.
+   No auto-grading: the learner compares manually. */
+.q-answer { margin: 6px 0 12px; }
+.q-answer-label {
+  display: block; font-family: var(--font-mono); font-weight: 500; font-size: .68rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+}
+.q-answer-input {
+  width: 100%; font-family: var(--font-body); font-size: .98rem; color: var(--ink);
+  background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: var(--radius);
+  border-left: 3px solid var(--line-strong);
+  padding: 10px 13px; line-height: 1.55; resize: vertical; min-height: 68px;
+  transition: border-color .12s, background .12s;
+}
+.q-answer-input::placeholder { color: var(--muted); opacity: .75; }
+.q-answer-input:focus-visible {
+  outline: none; border-color: var(--accent); border-left-color: var(--accent);
+  background: var(--surface);
+}
+
 /* ---------- figures / diagrams ---------------------------------------- */
 figure.diagram {
   margin: 4px 0 16px; padding: 18px; background: var(--surface-2);

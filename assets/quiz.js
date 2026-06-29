@@ -91,6 +91,49 @@
     if (btn) btn.addEventListener("click", function () { revealSolution(q, false); });
   }
 
+  /* ----- Antwortfeld für manuelle Aufgaben -----
+     Freitext-, Zuordnungs-, Rechen-, Szenario- und Lückentext-Aufgaben haben
+     keine auswählbaren Optionen, sondern nur eine Musterlösung zum Aufdecken.
+     Hier bekommt jede solche Karte ein echtes Eingabefeld, in das man seine
+     Antwort schreiben kann — ohne automatische Bewertung. Man notiert seine
+     Lösung, deckt die Musterlösung auf und gleicht selbst ab. Der Text wird
+     pro Aufgabe lokal gespeichert, damit er beim Auf-/Zuklappen erhalten bleibt. */
+  function initAnswerField(q) {
+    if (q.querySelector(".q-options")) return;   // Multiple-Choice → wird automatisch bewertet
+    if (!q.querySelector(".q-solution")) return; // ohne Musterlösung nichts zum Abgleichen
+    var body = q.querySelector(".q-body");
+    if (!body || q.querySelector(".q-answer")) return;
+
+    var num = q.querySelector(".q-num");
+    var key = "fuit-answer:" + location.pathname + "#" + (num ? num.textContent.trim() : "");
+    var id = "ans-" + Math.random().toString(36).slice(2, 9);
+
+    var wrap = document.createElement("div");
+    wrap.className = "q-answer";
+
+    var label = document.createElement("label");
+    label.className = "q-answer-label";
+    label.setAttribute("for", id);
+    label.textContent = "Deine Antwort (Selbstabgleich)";
+
+    var ta = document.createElement("textarea");
+    ta.className = "q-answer-input";
+    ta.id = id;
+    ta.rows = 3;
+    ta.setAttribute("spellcheck", "false");
+    ta.setAttribute("placeholder",
+      "Hier deine Lösung notieren — danach „Lösung anzeigen“ und selbst vergleichen.");
+
+    try { var saved = localStorage.getItem(key); if (saved) ta.value = saved; } catch (e) {}
+    ta.addEventListener("input", function () {
+      try { localStorage.setItem(key, ta.value); } catch (e) {}
+    });
+
+    wrap.appendChild(label);
+    wrap.appendChild(ta);
+    body.appendChild(wrap);
+  }
+
   /* ----- Score chip ----- */
   function updateScore() {
     var chip = document.getElementById("scorechip");
@@ -122,6 +165,7 @@
     document.querySelectorAll(".q").forEach(function (q) {
       initOptions(q);
       initReveal(q);
+      initAnswerField(q);
     });
     initControls();
     updateScore();
