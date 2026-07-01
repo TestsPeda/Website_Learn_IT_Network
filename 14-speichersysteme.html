@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>14 · Speichersysteme — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 <header class="topbar">
@@ -29,6 +33,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -41,7 +46,7 @@
     <p class="lede">Drei Architekturen im Vergleich: Zugriffsebene (Block oder Datei), Datentyp,
       Netzanbindung, Ort von Dateisystem und LUN, Protokolle und typische Einsätze.</p>
     <div class="hero-meta">
-      <span class="pill"><b>17</b> Aufgaben</span>
+      <span class="pill"><b>18</b> Aufgaben</span>
       <span class="pill"><b>4</b> Diagramme</span>
       <span class="pill">MC · Vergleich · Szenario</span>
     </div>
@@ -383,6 +388,32 @@
       <div class="step">Kommt später eine hochperformante Datenbank mit hohem I/O dazu, ist eine hybride NAS+SAN-Architektur sinnvoll: NAS für die Dateiablage/Kollaboration, SAN für den schnellen Block-Zugriff der Datenbank.</div>
     </div></article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="6">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Szenario</span><span class="q-src">DAS/NAS/SAN-Auswahl</span><span class="q-pts">6 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Ein Unternehmen benötigt (a) zentralen <strong>Dateizugriff</strong> für 30 Mitarbeiter auf gemeinsame Ordner und (b) schnellen <strong>blockbasierten Speicher</strong> für ein Datenbank-Cluster. Empfiehl je Fall ein Speichersystem (DAS/NAS/SAN), begründe die Wahl und nenne je ein typisches Protokoll.</p>
+      <textarea class="code-input" rows="8" data-task="das-nas-san-auswahl" placeholder="Fall a + Fall b: System, Begründung, Protokoll …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 6 Punkte). Aufgabe: Für (a) zentralen Dateizugriff und (b) blockbasierten DB-Speicher je ein Speichersystem (DAS/NAS/SAN) empfehlen, begründen, Protokoll nennen. Kriterien: (a) NAS korrekt (1 P) + Begründung dateibasiert/LAN (1 P) + Protokoll SMB/NFS (0,5 P); (b) SAN korrekt (1 P) + Begründung blockbasiert/Performance (1 P) + Protokoll iSCSI/FC (0,5 P); DAS sinnvoll abgegrenzt (1 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 6). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>(a) NAS</strong> — dateibasierter Speicher, über das LAN von vielen Clients gemeinsam nutzbar. Protokoll: <code>SMB</code>/<code>NFS</code>.</li>
+        <li><strong>(b) SAN</strong> — blockbasierter Speicher über ein dediziertes, performantes Speichernetz; ideal für Datenbank-/Cluster-Last. Protokoll: <code>iSCSI</code> oder <code>Fibre Channel</code>.</li>
+        <li><strong>DAS</strong> wäre direkt an einen einzelnen Server gebunden — kein gemeinsamer Zugriff, daher hier ungeeignet.</li>
+      </ul>
+      <ul class="rubric"><li>NAS für (a) + Begründung + Protokoll</li><li>SAN für (b) + Begründung + Protokoll</li><li>DAS abgegrenzt</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="13-topologien.html"><span>Zurück · Thema 13</span><b>← Topologien</b></a>
     <a class="next" href="15-raid.html"><span>Weiter · Thema 15</span><b>RAID →</b></a>
@@ -390,5 +421,6 @@
 </div></main>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 14 — Speichersysteme</span> · Kerninhalt</div></footer>
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

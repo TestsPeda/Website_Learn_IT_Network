@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>16 · E-Mail-Protokolle — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 <header class="topbar">
@@ -29,6 +33,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -42,7 +47,7 @@
       <code>IMAP</code> verwaltet serverseitig und synchron, <code>POP3</code> lädt lokal herunter –
       jeweils unverschlüsselt oder per <code>SSL/TLS</code> abgesichert.</p>
     <div class="hero-meta">
-      <span class="pill"><b>15</b> Aufgaben</span>
+      <span class="pill"><b>16</b> Aufgaben</span>
       <span class="pill"><b>3</b> Diagramme</span>
       <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
     </div>
@@ -384,6 +389,32 @@
       <p>Das <code>SMTP</code>-Protokoll ist für den Versand verantwortlich und überträgt Nachrichten über mehrere <b>Server</b> (Relay-Funktion). Der unverschlüsselte Standardport ist <code>25</code>. Beim Abruf lädt <code>POP3</code> die Mails lokal herunter (Port <code>110</code>), während <code>IMAP</code> sie serverseitig synchron verwaltet (Port <code>143</code>).</p>
     </div></article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="5">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Szenario</span><span class="q-src">E-Mail-Protokolle</span><span class="q-pts">5 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Eine Nutzerin möchte ihre E-Mails <strong>synchron auf Smartphone und Laptop</strong> lesen (gleicher Stand, gelesene Mails überall gelesen). Welches Abrufprotokoll empfiehlst du? Begründe und grenze zu POP3 ab. Nenne außerdem das Versandprotokoll und je einen typischen verschlüsselten Port.</p>
+      <textarea class="code-input" rows="8" data-task="e-mail-protokolle" placeholder="Protokoll + Begründung + Abgrenzung + Ports …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 5 Punkte). Aufgabe: Abrufprotokoll für geräteübergreifend synchrone Mails empfehlen, zu POP3 abgrenzen, Versandprotokoll + typische verschlüsselte Ports nennen. Kriterien: IMAP empfohlen (1 P), Begründung serverseitige Synchronisation (1 P), POP3 korrekt abgegrenzt (lädt herunter/lokal) (1 P), SMTP als Versand (1 P), Ports (IMAPS 993, SMTPS 465/587) (1 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 5). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>IMAP</strong> — die Mails bleiben auf dem Server, alle Geräte sehen denselben Stand (Ordner, gelesen/ungelesen synchron).</li>
+        <li>Abgrenzung <strong>POP3</strong>: lädt Mails herunter (oft mit Löschen auf dem Server) → nur auf einem Gerät sinnvoll, keine Synchronisation.</li>
+        <li>Versand über <strong>SMTP</strong>. Verschlüsselte Ports: <code>IMAPS 993</code>, <code>SMTP 587</code> (STARTTLS) bzw. <code>465</code> (SMTPS).</li>
+      </ul>
+      <ul class="rubric"><li>IMAP empfohlen</li><li>Begründung Synchronisation</li><li>POP3 abgegrenzt</li><li>SMTP + Ports</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="15-raid.html"><span>Vorheriges Thema</span><b>15 · Speicherablagearten</b></a>
     <a class="next" href="17-netzwerktechnologien.html"><span>Nächstes Thema</span><b>17 · Netzwerktechnologien</b></a>
@@ -391,5 +422,6 @@
 </div></main>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 16 — E-Mail-Protokolle</span> · Kerninhalt</div></footer>
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

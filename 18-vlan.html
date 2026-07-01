@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>18 · VLAN — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 <header class="topbar">
@@ -29,6 +33,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html" class="current">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -43,7 +48,7 @@
       <b>portbasiert</b> oder <b>tagged</b> — bei tagged trägt jeder Frame eine <code>VLAN-ID</code> und mehrere
       VLANs teilen sich eine Trunk-Leitung.</p>
     <div class="hero-meta">
-      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>15</b> Aufgaben</span>
       <span class="pill"><b>3</b> Diagramme</span>
       <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
     </div>
@@ -427,6 +432,32 @@
       </ul>
     </div></article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="5">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Konzept</span><span class="q-src">VLAN-Entwurf</span><span class="q-pts">5 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Zwei Abteilungen (Vertrieb, Buchhaltung) sollen logisch <strong>getrennt</strong> werden, ein gemeinsamer <strong>Netzwerkdrucker</strong> soll aber aus beiden erreichbar sein. Skizziere eine VLAN-Lösung: nenne VLANs, unterscheide <em>Access-</em> und <em>Trunk-Ports</em> und erkläre, wie die abteilungsübergreifende Erreichbarkeit realisiert wird.</p>
+      <textarea class="code-input" rows="8" data-task="vlan-entwurf" placeholder="VLANs + Access/Trunk + Inter-VLAN-Routing …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 5 Punkte). Aufgabe: VLAN-Lösung für zwei getrennte Abteilungen mit gemeinsamem Drucker. Kriterien: getrennte VLANs je Abteilung (1 P), Access-Port = ein VLAN am Endgerät (1 P), Trunk-Port = mehrere VLANs getaggt (802.1q) zwischen Switches/zum Router (1 P), Inter-VLAN-Routing/Layer-3 für die Drucker-Erreichbarkeit (1,5 P), fachlich korrekt (0,5 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 5). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>VLAN 10 = Vertrieb, VLAN 20 = Buchhaltung</strong> → getrennte Broadcast-Domänen.</li>
+        <li><strong>Access-Ports:</strong> jeder Endgeräte-Port gehört zu genau einem VLAN (ungetaggt). <strong>Trunk-Ports:</strong> tragen mehrere VLANs getaggt (<code>802.1q</code>) zwischen Switches und zum Router.</li>
+        <li>Der Drucker liegt z. B. in einem eigenen VLAN oder wird per <strong>Inter-VLAN-Routing</strong> (Router/Layer-3-Switch) für beide VLANs erreichbar gemacht — kontrolliert über Routing/ACLs.</li>
+      </ul>
+      <ul class="rubric"><li>getrennte VLANs</li><li>Access-Port</li><li>Trunk-Port (802.1q)</li><li>Inter-VLAN-Routing für Drucker</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="17-netzwerktechnologien.html"><span>Vorheriges Thema</span><b>17 · Netzwerktechnologien</b></a>
     <a class="next" href="lernseite.html"><span>Weiter</span><b>Konzepte wiederholen →</b></a>
@@ -434,5 +465,6 @@
 </div></main>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 18 — VLAN</span> · Kerninhalt</div></footer>
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

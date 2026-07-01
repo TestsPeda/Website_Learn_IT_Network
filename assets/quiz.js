@@ -98,8 +98,64 @@
      Antwort schreiben kann — ohne automatische Bewertung. Man notiert seine
      Lösung, deckt die Musterlösung auf und gleicht selbst ab. Der Text wird
      pro Aufgabe lokal gespeichert, damit er beim Auf-/Zuklappen erhalten bleibt. */
+  /* ----- Inline-Eingabe in Ausfüll-Tabellen (Zuordnungsaufgaben) -----
+     Manche Aufgaben zeigen eine Tabelle, in der eine Spalte vorgegeben ist und
+     man in die zugehörige Zelle einen Wert einträgt (Platzhalter „?“). Statt
+     eines separaten Textfeldes darunter wird hier direkt in der Zelle ein
+     Eingabefeld erzeugt, sodass man an Ort und Stelle schreiben kann. Die
+     Eingaben werden pro Zelle lokal gespeichert. Gibt true zurück, wenn
+     mindestens eine Platzhalterzelle umgewandelt wurde. */
+  function initTableInputs(q) {
+    var body = q.querySelector(".q-body");
+    if (!body) return false;
+
+    var num = q.querySelector(".q-num");
+    var baseKey = "fuit-answer:" + location.pathname + "#" +
+      (num ? num.textContent.trim() : "") + ":cell:";
+    var cellIndex = 0;
+    var converted = false;
+
+    Array.prototype.forEach.call(body.querySelectorAll("table"), function (table) {
+      var headers = Array.prototype.map.call(
+        table.querySelectorAll("thead th"),
+        function (th) { return th.textContent.trim(); }
+      );
+      Array.prototype.forEach.call(table.querySelectorAll("tbody tr"), function (row) {
+        var cells = Array.prototype.slice.call(row.children);
+        var rowLabel = cells.length ? cells[0].textContent.trim() : "";
+        cells.forEach(function (cell, colIdx) {
+          if (cell.textContent.trim() !== "?") return;
+          converted = true;
+          var key = baseKey + (cellIndex++);
+
+          var input = document.createElement("input");
+          input.type = "text";
+          input.className = "q-cell-input";
+          input.setAttribute("spellcheck", "false");
+          input.setAttribute("autocomplete", "off");
+          input.setAttribute("placeholder", "…");
+          var colLabel = headers[colIdx] || "";
+          input.setAttribute("aria-label",
+            (rowLabel ? rowLabel + " — " : "") + colLabel);
+
+          try { var saved = localStorage.getItem(key); if (saved) input.value = saved; } catch (e) {}
+          input.addEventListener("input", function () {
+            try { localStorage.setItem(key, input.value); } catch (e) {}
+          });
+
+          cell.textContent = "";
+          cell.classList.add("q-cell-fill");
+          cell.appendChild(input);
+        });
+      });
+    });
+    return converted;
+  }
+
   function initAnswerField(q) {
     if (q.querySelector(".q-options")) return;   // Multiple-Choice → wird automatisch bewertet
+    if (q.querySelector(".code-input")) return;  // KI-/Code-Aufgabe → eigenes Feld (code.js)
+    if (q.querySelector(".q-cell-input")) return; // Ausfüll-Tabelle → Inline-Felder in den Zellen
     if (!q.querySelector(".q-solution")) return; // ohne Musterlösung nichts zum Abgleichen
     var body = q.querySelector(".q-body");
     if (!body || q.querySelector(".q-answer")) return;
@@ -142,7 +198,8 @@
     var total = qs.length;
     var ok = document.querySelectorAll(".q.answered-ok").length;
     var done = document.querySelectorAll(".q.answered-ok, .q.answered-bad").length;
-    chip.innerHTML = "Auto-Fragen: <b>" + ok + "</b>/" + done + " richtig · " + total + " gesamt";
+    var html = "Auto-Fragen: <b>" + ok + "</b>/" + done + " richtig · " + total + " gesamt";
+    chip.innerHTML = html;
   }
 
   /* ----- Global controls ----- */
@@ -165,6 +222,7 @@
     document.querySelectorAll(".q").forEach(function (q) {
       initOptions(q);
       initReveal(q);
+      initTableInputs(q);
       initAnswerField(q);
     });
     initControls();

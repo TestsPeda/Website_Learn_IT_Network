@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+/* Schriften lokal eingebettet — kein externer Google-Fonts-Request mehr (Datenschutz/DSGVO). */
+@import url("fonts.css");
 
 /* =========================================================================
    IT-Lernmaterial · Themen 10–15
@@ -496,9 +497,15 @@ hr.rule {
     background 0.12s,
     color 0.12s;
 }
-.q-reveal:hover {
+.q-reveal:hover:not(:disabled) {
   background: var(--accent-2);
   color: #fff;
+}
+.q-reveal:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  border-color: var(--line-strong);
+  color: var(--muted);
 }
 .q-reveal[aria-expanded="true"] {
   background: var(--accent-2);
@@ -558,6 +565,39 @@ hr.rule {
   margin: 8px 0;
   white-space: pre-wrap;
 }
+
+/* Bewertungsraster: markiert eine Liste als die Prüf-/Bewertungskriterien,
+   nach denen die KI-Bewertung die offene Aufgabe benotet. */
+.q-solution .rubric-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin: 14px 0 4px;
+}
+.q-solution ul.rubric {
+  list-style: none;
+  margin: 4px 0 0;
+  padding-left: 0;
+  display: grid;
+  gap: 4px;
+}
+.q-solution ul.rubric li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.9rem;
+}
+.q-solution ul.rubric li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: var(--accent-2);
+  font-weight: 700;
+}
 .tag-mistake {
   display: inline-block;
   font-family: var(--font-mono);
@@ -613,6 +653,33 @@ hr.rule {
   border-color: var(--accent);
   border-left-color: var(--accent);
   background: var(--surface);
+}
+
+/* Inline-Eingabefeld direkt in einer Ausfüll-Tabelle (Zuordnungsaufgaben).
+   Ersetzt die „?“-Platzhalterzelle, sodass man in der Zelle selbst schreibt. */
+td.q-cell-fill {
+  padding: 0;
+}
+.q-cell-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--accent);
+  padding: 8px 11px;
+  transition: background 0.12s;
+}
+.q-cell-input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+.q-cell-input:focus-visible {
+  outline: none;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 
 /* ---------- figures / diagrams ---------------------------------------- */
@@ -1748,4 +1815,75 @@ details.term .tt-body code {
     margin-left: 16px;
     margin-right: 16px;
   }
+}
+
+/* ============================================================
+   Probe-SA (Prüfungssimulation) — für pruefung.html.
+   Genutzt von pruefung.js (Timer, Auswahlteil, offener Teil).
+   ============================================================ */
+.exam-bar {
+  position: sticky; top: 60px; z-index: 40;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  background: var(--ink); color: #fff; border-radius: var(--radius);
+  padding: 12px 18px; margin: 8px 0 24px; box-shadow: var(--shadow);
+}
+.exam-bar .clock {
+  font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700;
+  background: rgba(255,255,255,.1); border-radius: var(--radius); padding: 4px 12px;
+}
+.exam-bar .clock.low { color: #FFD2C6; background: rgba(221,84,48,.35); }
+.exam-bar .lbl { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.exam-bar .spacer { flex: 1; }
+.exam-bar .btn.primary { background: var(--accent); border-color: var(--accent); }
+
+#result {
+  background: var(--accent-2-tint); border: 1px solid #BFE0DB; border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius); padding: 16px 18px; margin: 18px 0; font-size: 1rem;
+}
+#result[hidden] { display: none; }
+#history { margin: 24px 0; }
+#history[hidden] { display: none; }
+
+.open-score-panel { margin-top: 14px; padding-top: 14px; border-top: 1px solid #BFE0DB; }
+.score-help { margin: 6px 0 10px; color: var(--muted); font-size: .92rem; }
+.open-score-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px; margin: 10px 0 12px;
+}
+.open-score-field {
+  display: grid; grid-template-columns: 76px auto; align-items: center; gap: 4px 8px;
+  min-height: 44px; padding: 8px 10px;
+  background: var(--surface); border: 1px solid #BFE0DB; border-radius: var(--radius);
+}
+.open-score-field span {
+  grid-column: 1 / -1; min-width: 0; overflow-wrap: anywhere;
+  font-family: var(--font-mono); font-size: .78rem; color: var(--ink);
+}
+.open-score-field input {
+  width: 76px; height: 32px;
+  font-family: var(--font-mono); font-size: .9rem; color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 4px 7px; background: var(--surface-2);
+}
+.open-score-field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; background: var(--surface); }
+.open-score-field small { font-family: var(--font-mono); font-size: .72rem; color: var(--muted); white-space: nowrap; }
+.final-score-summary {
+  margin-top: 12px; padding: 12px 14px;
+  background: var(--surface); border: 1px solid #BFE0DB; border-radius: var(--radius);
+}
+.final-score-main {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px; align-items: center;
+}
+.final-score-main span { font-family: var(--font-mono); font-size: .9rem; }
+.ihk-scale { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.ihk-scale span {
+  font-family: var(--font-mono); font-size: .7rem; color: var(--muted);
+  border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px 8px; background: var(--surface-2);
+}
+.ihk-scale span.active { color: #fff; background: var(--accent-2); border-color: var(--accent-2); }
+.exam-gate { margin: 8px 0 24px; }
+@media (max-width: 520px) {
+  .open-score-field { grid-template-columns: 70px auto; }
+  .open-score-field input { width: 70px; }
 }

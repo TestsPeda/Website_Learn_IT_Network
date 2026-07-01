@@ -1,6 +1,6 @@
 /* IT-Lernmaterial — Startseiten-Explorer.
    Schaltet die Startseite zwischen mehreren Ansichten um: der klassischen
-   Sterntopologie-Navigation und fünf Mini-Spielen, über die man die 16 Themen
+   Sterntopologie-Navigation und fünf Mini-Spielen, über die man die 18 Themen
    "erjagen" statt nur anklicken kann. Reines Vanilla-JS, ohne Abhängigkeiten,
    passend zum Rest der Seite (vgl. assets/quiz.js). */
 (function () {
@@ -26,7 +26,9 @@
     { n: 13, name: "Topologien",                href: "13-topologien.html",               hint: "Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Ausfallsicherheit", kw: "bus ring stern mesh topologie ausfallsicherheit skalierbarkeit kosten" },
     { n: 14, name: "Speichersysteme",           href: "14-speichersysteme.html",          hint: "DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem, Protokolle", kw: "das nas san speicher lun dateisystem protokoll zugriff block datei" },
     { n: 15, name: "RAID / Speicherablage",     href: "15-raid.html",                     hint: "RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität, Ausfallsicherheit", kw: "raid 0 1 5 10 mirroring striping parität kapazität platten speicherablage" },
-    { n: 16, name: "E-Mail-Protokolle",         href: "16-email-protokolle.html",         hint: "SMTP versendet, POP3 lädt lokal, IMAP synchronisiert — plus Ports und SSL/TLS", kw: "email smtp pop3 imap port ssl tls postfach senden empfangen" }
+    { n: 16, name: "E-Mail-Protokolle",         href: "16-email-protokolle.html",         hint: "SMTP versendet, POP3 lädt lokal, IMAP synchronisiert — plus Ports und SSL/TLS", kw: "email smtp pop3 imap port ssl tls postfach senden empfangen" },
+    { n: 17, name: "Netzwerktechnologien",      href: "17-netzwerktechnologien.html",     hint: "Ethernet-Frame & FCS, MAC-Adresse (OUI), ARP-Auflösung, MAC-Tabelle (Learning/Flooding)", kw: "ethernet frame fcs mac oui arp broadcast unicast switch learning flooding tabelle" },
+    { n: 18, name: "VLAN",                      href: "18-vlan.html",                     hint: "Virtuelle LANs nach 802.1q: Access vs. Trunk, VLAN-Tag/ID, Managed Switch, Inter-VLAN-Routing", kw: "vlan 802.1q tag id access trunk managed switch inter vlan routing segmentierung broadcast domäne" }
   ];
 
   /* ---- Hilfsfunktionen ---- */
@@ -149,7 +151,7 @@
       '<div class="game-card">' +
         '<div class="game-bar">' +
           '<p class="game-tip">Finde die Paare aus <b>Nummer</b> und <b>Thema</b>. Jedes gelöste Paar wird zum anklickbaren Link.</p>' +
-          '<div class="game-stat"><span class="gs-pair">0</span>/16 Paare · <span class="gs-moves">0</span> Züge ' +
+          '<div class="game-stat"><span class="gs-pair">0</span>/18 Paare · <span class="gs-moves">0</span> Züge ' +
             '<button class="btn game-reset" type="button">Neu mischen</button></div>' +
         "</div>" +
         '<div class="mem-grid" aria-label="Memory-Feld"></div>' +
@@ -221,7 +223,7 @@
       pairs++; pairEl.textContent = pairs;
       if (pairs === TOPICS.length) {
         win.hidden = false;
-        win.innerHTML = "🎉 Alle 16 Paare in <b>" + moves + "</b> Zügen! Klick ein Paar an, um direkt zum Thema zu springen.";
+        win.innerHTML = "🎉 Alle 18 Paare in <b>" + moves + "</b> Zügen! Klick ein Paar an, um direkt zum Thema zu springen.";
       }
     }
     start();
@@ -235,7 +237,7 @@
       '<div class="game-card">' +
         '<div class="game-bar">' +
           '<p class="game-tip">Welches Thema steckt hinter der Beschreibung? Richtig getippt = Thema freigeschaltet.</p>' +
-          '<div class="game-stat"><span class="gs-unlock">0</span>/16 frei · <span class="gs-tries">0</span> Versuche</div>' +
+          '<div class="game-stat"><span class="gs-unlock">0</span>/18 frei · <span class="gs-tries">0</span> Versuche</div>' +
         "</div>" +
         '<div class="quiz-stage"></div>' +
         '<div class="quiz-unlocked x-topic-list" aria-label="Freigeschaltete Themen"></div>' +
@@ -250,13 +252,13 @@
 
     function nextQuestion() {
       if (pos >= queue.length) {
-        stage.innerHTML = '<div class="game-win" style="position:static;margin:0;">🏁 Alle 16 Themen erkannt! Unten geht es direkt weiter.</div>';
+        stage.innerHTML = '<div class="game-win" style="position:static;margin:0;">🏁 Alle 18 Themen erkannt! Unten geht es direkt weiter.</div>';
         return;
       }
       var correct = queue[pos];
       var distractors = shuffle(TOPICS.filter(function (t) { return t.n !== correct.n; })).slice(0, 3);
       var options = shuffle(distractors.concat(correct));
-      var html = '<p class="quiz-q"><span class="quiz-ix">' + (pos + 1) + "/16</span> " +
+      var html = '<p class="quiz-q"><span class="quiz-ix">' + (pos + 1) + "/18</span> " +
         esc(correct.hint) + "</p><div class='quiz-opts'>";
       options.forEach(function (o) {
         html += '<button class="quiz-opt" type="button" data-n="' + o.n + '">' +
@@ -286,15 +288,15 @@
   }
 
   /* =====================================================================
-     Spiel 5 · Schatzsuche — die 16 Themen in einem Raster aus Störsignalen aufspüren
+     Spiel 5 · Schatzsuche — die 18 Themen in einem Raster aus Störsignalen aufspüren
      ===================================================================== */
   function buildHunt(panel) {
     var DECOYS = ["Störsignal", "Rauschen", "Leeres Feld", "Kollision", "Timeout", "Paketverlust", "CRC-Fehler", "Echo", "Jitter"];
     panel.innerHTML =
       '<div class="game-card">' +
         '<div class="game-bar">' +
-          '<p class="game-tip">Hinter den Feldern verstecken sich die 16 Themen — dazwischen nur Störsignale. Deck sie auf und jage alle Themen!</p>' +
-          '<div class="game-stat"><span class="gs-found">0</span>/16 gefunden · <span class="gs-clicks">0</span> Aufdeckungen ' +
+          '<p class="game-tip">Hinter den Feldern verstecken sich die 18 Themen — dazwischen nur Störsignale. Deck sie auf und jage alle Themen!</p>' +
+          '<div class="game-stat"><span class="gs-found">0</span>/18 gefunden · <span class="gs-clicks">0</span> Aufdeckungen ' +
             '<button class="btn game-reset" type="button">Neues Feld</button></div>' +
         "</div>" +
         '<div class="hunt-grid" aria-label="Schatzsuche-Feld"></div>' +
@@ -338,7 +340,7 @@
         found++; foundEl.textContent = found;
         if (found === TOPICS.length) {
           win.hidden = false;
-          win.innerHTML = "🏆 Alle 16 Themen aufgespürt mit <b>" + clicks + "</b> Aufdeckungen! Klick ein Thema an.";
+          win.innerHTML = "🏆 Alle 18 Themen aufgespürt mit <b>" + clicks + "</b> Aufdeckungen! Klick ein Thema an.";
         }
       } else {
         btn.classList.add("miss");
@@ -379,7 +381,7 @@
         '<p class="game-tip">Keine Lust zu wählen? Lass das Glücksrad ein Thema bestimmen und leg direkt los.</p>' +
         '<div class="wheel-wrap">' +
           '<div class="wheel-pointer" aria-hidden="true">▼</div>' +
-          '<svg class="wheel-svg" viewBox="0 0 320 320" role="img" aria-label="Glücksrad mit den 16 Themen">' +
+          '<svg class="wheel-svg" viewBox="0 0 320 320" role="img" aria-label="Glücksrad mit den 18 Themen">' +
             '<g class="wheel-rot">' + segs + labels + "</g>" +
             '<circle cx="160" cy="160" r="26" fill="#16242E"></circle>' +
             '<text x="160" y="160" fill="#fff" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" dominant-baseline="central">DREH</text>' +
@@ -437,7 +439,7 @@
             '<div class="snake-hud">' +
               '<span>Score <b class="sn-score">0</b></span>' +
               '<span>Level <b class="sn-level">1</b></span>' +
-              '<span>Frei <b class="sn-unlocked">0</b>/16</span>' +
+              '<span>Frei <b class="sn-unlocked">0</b>/18</span>' +
               '<span>Best <b class="sn-best">0</b></span>' +
             '</div>' +
             '<div class="snake-board">' +
@@ -589,7 +591,7 @@
       state = "over"; stop();
       var done = unlocked >= TOPICS.length;
       showOverlay("Game Over · Score " + score,
-        done ? "Alle 16 Themen frei! Rechts geht es direkt weiter." : "Sammle weiter, um Themen freizuschalten.",
+        done ? "Alle 18 Themen frei! Rechts geht es direkt weiter." : "Sammle weiter, um Themen freizuschalten.",
         "Nochmal");
     }
 

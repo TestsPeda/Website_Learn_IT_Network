@@ -2,9 +2,12 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IT-Lernmaterial · Themen 1–18</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 
@@ -28,9 +31,10 @@
       Diagrammen, gemischten Aufgabentypen und vollständigen Lösungen zum Aufdecken.</p>
     <div class="hero-meta">
       <span class="pill"><b>18</b> Themen</span>
-      <span class="pill"><b>279</b> Aufgaben</span>
+      <span class="pill"><b>287</b> Aufgaben</span>
       <span class="pill"><b>63</b> Diagramme</span>
       <a class="pill" href="lernseite.html" style="text-decoration:none;">Konzepte wiederholen →</a>
+      <a class="pill" href="pruefung.html" style="text-decoration:none;">Probe-SA starten →</a>
     </div>
   </section>
 
@@ -38,7 +42,7 @@
     <div class="explore-head">
       <div class="explore-intro">
         <p class="eyebrow">Ansicht wählen</p>
-        <p class="explore-sub">Klassisch per Sterntopologie navigieren — oder die 16 Themen
+        <p class="explore-sub">Klassisch per Sterntopologie navigieren — oder die 18 Themen
           über ein kleines Spiel „erjagen". Wähle oben rechts, worauf du gerade Lust hast.</p>
       </div>
       <div class="seg" role="tablist" aria-label="Ansichtsmodus">
@@ -238,12 +242,12 @@
     <a class="topic-card" href="10-adressierung.html">
       <span class="tc-num">10</span><h3>Adressierung</h3>
       <p>IPv4-Aufbau, Subnetzmaske &amp; CIDR, Subnetting-Rechnen, Netz-/Broadcast-Adresse, IPv6-Kürzung &amp; Adresstypen.</p>
-      <span class="tc-meta">18 Aufgaben · 4 Diagramme</span>
+      <span class="tc-meta">19 Aufgaben · 4 Diagramme</span>
     </a>
     <a class="topic-card" href="11-dhcp-dns.html">
       <span class="tc-num">11</span><h3>DHCP &amp; DNS</h3>
       <p>Zuweisungsarten, DORA-Ablauf, Lease-Time, DNS-Auflösung &amp; Caching, doppelter DHCP-Server.</p>
-      <span class="tc-meta">14 Aufgaben · 2 Diagramme</span>
+      <span class="tc-meta">15 Aufgaben · 2 Diagramme</span>
     </a>
     <a class="topic-card" href="12-uebertragungsarten.html">
       <span class="tc-num">12</span><h3>Übertragungsarten</h3>
@@ -253,38 +257,38 @@
     <a class="topic-card" href="13-topologien.html">
       <span class="tc-num">13</span><h3>Topologien</h3>
       <p>Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Bewertung nach Kosten, Skalierbarkeit, Ausfallsicherheit.</p>
-      <span class="tc-meta">20 Aufgaben · 6 Diagramme</span>
+      <span class="tc-meta">21 Aufgaben · 6 Diagramme</span>
     </a>
     <a class="topic-card" href="14-speichersysteme.html">
       <span class="tc-num">14</span><h3>Speichersysteme</h3>
       <p>DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem, Protokolle, Einsatz.</p>
-      <span class="tc-meta">17 Aufgaben · 4 Diagramme</span>
+      <span class="tc-meta">18 Aufgaben · 4 Diagramme</span>
     </a>
     <a class="topic-card" href="15-raid.html">
       <span class="tc-num">15</span><h3>Speicherablagearten</h3>
       <p>RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität, Ausfallsicherheit, Auswahl.</p>
-      <span class="tc-meta">13 Aufgaben · 4 Diagramme</span>
+      <span class="tc-meta">14 Aufgaben · 4 Diagramme</span>
     </a>
     <a class="topic-card" href="16-email-protokolle.html">
       <span class="tc-num">16</span><h3>E-Mail-Protokolle</h3>
       <p>Wie eine E-Mail vom Sender zum Empfänger gelangt: SMTP versendet, POP3 lädt lokal, IMAP synchronisiert serverseitig — plus Ports und SSL/TLS.</p>
-      <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
+      <span class="tc-meta">16 Aufgaben · 3 Diagramme</span>
     </a>
     <a class="topic-card" href="17-netzwerktechnologien.html">
       <span class="tc-num">17</span><h3>Netzwerktechnologien</h3>
       <p>Ethernet-Frame (Felder &amp; FCS), MAC-Adresse (OUI), ARP-Auflösung (Broadcast/Unicast) und die MAC-Adress-Tabelle des Switches (Learning &amp; Flooding).</p>
-      <span class="tc-meta">18 Aufgaben · 4 Diagramme</span>
+      <span class="tc-meta">19 Aufgaben · 4 Diagramme</span>
     </a>
     <a class="topic-card" href="18-vlan.html">
       <span class="tc-num">18</span><h3>VLAN</h3>
       <p>Virtuelle LANs nach IEEE 802.1q: portbasiert vs. tagged, Trunk-Leitung, Managed Switch, Inter-VLAN-Routing und der Aufbau des 4-Byte-VLAN-Tags (VLAN-ID).</p>
-      <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
+      <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
     </a>
   </div>
 
-  <div class="sec-head"><span class="ix">▦</span><h2>Konzepte wiederholen</h2></div>
+  <div class="sec-head"><span class="ix">▦</span><h2>Konzepte wiederholen &amp; prüfen</h2></div>
   <p class="sec-sub">Die Lernseite fasst je Thema die Kernkonzepte kompakt zusammen — mit allen
-    63 Diagrammen daneben, ohne Aufgaben dazwischen. Ideal zum schnellen Wiederholen vor dem Test.</p>
+    63 Diagrammen daneben, ohne Aufgaben dazwischen. Ideal zum schnellen Wiederholen vor dem Test. Die <strong>Probe-SA</strong> bündelt alle Themen zu einer Prüfungssimulation mit Timer, Auswertung und Notenschlüssel.</p>
   <div class="topic-grid">
     <a class="topic-card" href="lernseite.html">
       <span class="tc-num">▦</span><h3>Lernseite</h3>
@@ -292,6 +296,12 @@
         bis zu den RAID-Leveln, E-Mail-Protokollen, Ethernet/ARP und VLAN — kompakt erklärt, mit den zugehörigen
         Diagrammen und Rücklink zum jeweiligen Test.</p>
       <span class="tc-meta">18 Themen · 63 Diagramme</span>
+    </a>
+    <a class="topic-card" href="pruefung.html">
+      <span class="tc-num">✎</span><h3>Probe-SA</h3>
+      <p>Prüfungssimulation über alle Themen 1–18: 26 automatisch bewertete Auswahlfragen und ein offener Teil
+        mit KI-Bewertung. Mit Countdown, Notenschlüssel und gespeichertem Versuchsverlauf.</p>
+      <span class="tc-meta">26 Auswahlfragen · offener Teil · 70 min</span>
     </a>
   </div>
 

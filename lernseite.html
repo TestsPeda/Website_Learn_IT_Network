@@ -2,9 +2,12 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lernseite · Themen 1–18 — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 
@@ -30,6 +33,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html" class="current">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip">Konzepte &amp; 63 Diagramme</span>
@@ -2031,6 +2035,23 @@
     <figcaption>Der Switch trägt zu jeder <b>Quell-MAC</b> den Eingangsport ein. Solange das Notebook (P4) selbst nichts gesendet hat, fehlt sein Eintrag — ein an ihn gerichteter Frame wird als <b>Unknown Unicast</b> an alle Ports geflutet.</figcaption>
   </figure></div>
     </div>
+
+  <div class="term-toggles">
+    <p class="tt-lead">Ablauf im LAN — was macht der Switch?</p>
+    <details class="term" open>
+      <summary><span class="tt-tag">Ping</span> <span class="tt-hint">Erster <code>ping</code> A → B im selben LAN (alle Tabellen leer)</span></summary>
+      <div class="tt-body">
+        <p>Vor dem ersten Ping muss <b>ARP</b> die Ziel-MAC beschaffen. Der <b>Switch</b> ist an jedem Schritt beteiligt: Er lernt aus der <b>Quell-MAC</b> eingehender Frames den Port (MAC-Adress-Tabelle) und leitet danach gezielt weiter.</p>
+        <ol>
+          <li>A hat keinen ARP-Eintrag für B → A sendet einen <b>ARP-Request als Broadcast</b> (Ziel-MAC <code>FF:FF:FF:FF:FF:FF</code>).</li>
+          <li>Der <b>Switch</b> lernt die <b>Quell-MAC von A</b> am Eingangsport und <b>flutet</b> den Broadcast an alle anderen Ports.</li>
+          <li>Nur <b>B</b> erkennt seine IP, trägt A in seinen ARP-Cache ein und antwortet mit einem <b>ARP-Reply (Unicast)</b>. Der Switch <b>lernt dabei auch die MAC von B</b> und leitet den Reply gezielt an A.</li>
+          <li>A speichert <code>IP → MAC</code> von B und sendet erst jetzt den <b>ICMP-Echo-Request</b>; der Switch kennt beide Ports und leitet ihn direkt weiter. B antwortet ebenso gezielt.</li>
+        </ol>
+        <p><b>Merke:</b> Die <b>IP</b>-Adressen adressieren Ende-zu-Ende (A ↔ B), die <b>MAC</b>-Adressen jeden Hop. Der Switch entscheidet nur anhand der <b>MAC</b> (Layer&nbsp;2); die <b>ARP-Tabelle</b> liegt auf den Endgeräten (<code>IP → MAC</code>), die <b>MAC-Adress-Tabelle</b> auf dem Switch (<code>MAC → Port</code>).</p>
+      </div>
+    </details>
+  </div>
 
   <div class="term-toggles">
     <p class="tt-lead">Ethernet-Frame — Begriffe im Detail</p>

@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>15 · Speicherablagearten (RAID) — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 <header class="topbar">
@@ -29,6 +33,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -41,7 +46,7 @@
     <p class="lede">Die vier wichtigsten RAID-Level 0, 1, 5 und 10: Prinzip, Mindestanzahl
       Festplatten, nutzbare Kapazität, Ausfallsicherheit – und wann man welches wählt.</p>
     <div class="hero-meta">
-      <span class="pill"><b>13</b> Aufgaben</span>
+      <span class="pill"><b>14</b> Aufgaben</span>
       <span class="pill"><b>4</b> Diagramme</span>
       <span class="pill">MC · Rechnen · Szenario</span>
     </div>
@@ -368,6 +373,31 @@ Spalt-P: 0   0   ✗  │
     <p><strong>RAID 5</strong> hat nur <strong>eine</strong> Dimension (Zeilen-Parität) → kann darum nicht selbst lokalisieren. <strong>RAID 6</strong> fügt die zweite hinzu (Syndrom <strong>Q</strong>), nutzt dafür aber die effizientere <strong>Reed-Solomon</strong>-Variante statt eines vollen Zeilen/Spalten-Gitters (das wäre bei zwei Fehlern mehrdeutig und teurer).</p>
   </div>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="5">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Berechnung</span><span class="q-src">RAID-Auswahl</span><span class="q-pts">5 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Ein Server hat <strong>6 Festplatten à 2 TB</strong>. Gefordert sind hohe Ausfallsicherheit <em>und</em> gute Schreibleistung. Empfiehl ein RAID-Level, nenne die nutzbare Kapazität und begründe gegenüber RAID 5 und RAID 6.</p>
+      <textarea class="code-input" rows="8" data-task="raid-auswahl" placeholder="RAID-Level + nutzbare Kapazität + Begründung …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 5 Punkte). Aufgabe: RAID-Empfehlung für 6×2 TB bei hoher Ausfallsicherheit UND guter Schreibleistung, mit nutzbarer Kapazität und Abgrenzung zu RAID 5/6. Kriterien: RAID 10 gewählt (1 P), nutzbare Kapazität 6 TB korrekt (1 P), Begründung Schreibleistung/keine Paritätsberechnung (1,5 P), Abgrenzung zu RAID 5 (12 TB, langsamere Schreiblast) und RAID 6 (8 TB, 2 Ausfälle) (1,5 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 5). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>RAID 10</strong> (gespiegelte Stripes): nutzbare Kapazität = 6×2 TB / 2 = <strong>6 TB</strong>. Sehr gute Schreibleistung (keine Paritätsberechnung), verträgt je Spiegel eine Platte.</li>
+        <li>Abgrenzung: <strong>RAID 5</strong> = 10 TB nutzbar, aber Schreib-Overhead durch Parität; <strong>RAID 6</strong> = 8 TB, verträgt 2 Ausfälle, noch mehr Schreib-Overhead. Bei Schreibfokus ist RAID 10 vorzuziehen.</li>
+      </ul>
+      <ul class="rubric"><li>RAID 10 gewählt</li><li>Kapazität 6 TB</li><li>Begründung Schreibleistung</li><li>Abgrenzung RAID 5/6</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="14-speichersysteme.html"><span>Zurück · Thema 14</span><b>← Speichersysteme</b></a>
     <a class="next" href="index.html"><span>Test abgeschlossen</span><b>Übersicht →</b></a>
@@ -375,5 +405,6 @@ Spalt-P: 0   0   ✗  │
 </div></main>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 15 — Speicherablagearten (RAID)</span> · Kerninhalt + 🔬 Vertiefung</div></footer>
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

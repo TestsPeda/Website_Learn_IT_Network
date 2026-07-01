@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>13 · Topologien — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 
@@ -30,6 +34,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -44,7 +49,7 @@
     <p class="lede">Bus, Linie, Ring, Stern, Mesh und Baum – Aufbau, Vor- und Nachteile sowie die Bewertung
       nach Kosten, Skalierbarkeit, Fehleranfälligkeit und Wartungsaufwand.</p>
     <div class="hero-meta">
-      <span class="pill"><b>19</b> Aufgaben</span>
+      <span class="pill"><b>20</b> Aufgaben</span>
       <span class="pill"><b>6</b> Diagramme</span>
       <span class="pill">MC · Bewertung · Szenario</span>
     </div>
@@ -602,6 +607,36 @@
     </div>
   </article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="5">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Vergleich</span><span class="q-src">Topologie-Vergleich</span><span class="q-pts">5 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Vergleiche die <strong>Stern-</strong> und die <strong>Bustopologie</strong> hinsichtlich <em>Ausfallsicherheit</em>, <em>Kosten/Verkabelung</em> und <em>Erweiterbarkeit</em>. Empfiehl anschließend begründet eine Topologie für ein modernes Büro-LAN.</p>
+      <textarea class="code-input" rows="8" data-task="topologie-vergleich" placeholder="Vergleich (3 Kriterien) + begründete Empfehlung …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 5 Punkte). Aufgabe: Stern vs. Bus nach Ausfallsicherheit, Kosten/Verkabelung, Erweiterbarkeit vergleichen und begründet eine Topologie fürs Büro-LAN empfehlen. Kriterien: Ausfallsicherheit korrekt verglichen (1 P), Kosten/Verkabelung (1 P), Erweiterbarkeit (1 P), begründete Empfehlung Stern (1,5 P), fachlich korrekt (0,5 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 5). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Kriterium</th><th>Stern</th><th>Bus</th></tr></thead>
+        <tbody>
+          <tr><td>Ausfallsicherheit</td><td>Kabelausfall betrifft nur 1 Gerät; zentraler Switch = Single Point of Failure</td><td>Defekt/Bruch am Bus legt oft das ganze Segment lahm</td></tr>
+          <tr><td>Kosten/Verkabelung</td><td>mehr Kabel (je Gerät eigenes)</td><td>wenig Kabel, aber Terminierung nötig</td></tr>
+          <tr><td>Erweiterbarkeit</td><td>einfach: Port am Switch</td><td>schwierig, Störungen beim Auftrennen</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Empfehlung:</strong> Für ein modernes Büro die <strong>Sterntopologie</strong> mit zentralem Switch — beste Wartbarkeit, Erweiterbarkeit und Fehlerisolierung; der zentrale Ausfallpunkt lässt sich durch redundante Switches abfedern.</p>
+      <ul class="rubric"><li>Ausfallsicherheit</li><li>Kosten/Verkabelung</li><li>Erweiterbarkeit</li><li>begründete Empfehlung</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="12-uebertragungsarten.html"><span>Zurück · Thema 12</span><b>← Übertragungsarten</b></a>
     <a class="next" href="14-speichersysteme.html"><span>Weiter · Thema 14</span><b>Speichersysteme →</b></a>
@@ -612,5 +647,6 @@
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 13 — Topologien</span> · Kerninhalt + 🔬 Vertiefung</div></footer>
 
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

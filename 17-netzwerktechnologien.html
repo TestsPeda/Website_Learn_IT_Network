@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>17 · Netzwerktechnologien — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 <header class="topbar">
@@ -29,6 +33,7 @@
     <a href="17-netzwerktechnologien.html" class="current">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -43,7 +48,7 @@
       die passende MAC-Adresse auf, und der <b>Switch</b> merkt sich anhand seiner MAC-Adress-Tabelle, an welchem
       Port welches Gerät hängt.</p>
     <div class="hero-meta">
-      <span class="pill"><b>18</b> Aufgaben</span>
+      <span class="pill"><b>19</b> Aufgaben</span>
       <span class="pill"><b>4</b> Diagramme</span>
       <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
     </div>
@@ -412,9 +417,9 @@
         <li>PC 3/PC 4 verwerfen den Frame; PC 2 erkennt seine IP und trägt PC 1 in seine ARP-Tabelle ein.</li>
         <li>PC 2 schickt einen <b>ARP-Reply als Unicast</b> an PC 1. Der Switch lernt nun auch die MAC von PC 2.</li>
         <li>PC 1 trägt <code>192.168.0.11 → MAC von PC 2</code> in seinen ARP-Cache ein.</li>
-        <li>Erst jetzt sendet PC 1 den eigentlichen <b>ICMP-Ping</b> gezielt an die MAC von PC 2; der Switch leitet ihn direkt weiter. PC 2 antwortet.</li>
+        <li>Erst jetzt sendet PC 1 den eigentlichen <b>ICMP-Ping</b> gezielt an die MAC von PC 2; der Switch kennt nun beide Ports und leitet ihn direkt weiter. PC 2 antwortet ebenso gezielt zurück.</li>
       </ol>
-      <p>Kern: Vor dem ersten Ping muss <b>ARP</b> die MAC beschaffen; danach kann gezielt kommuniziert werden.</p>
+      <p>Kern: Vor dem ersten Ping muss <b>ARP</b> die MAC beschaffen; danach kann gezielt kommuniziert werden. Der <b>Switch</b> lernt dabei aus den <b>Quell-MACs</b> die Ports (MAC-Adress-Tabelle) und entscheidet nur anhand der MAC (Layer&nbsp;2): Die <b>IP</b>-Adressen adressieren Ende-zu-Ende, die <b>MAC</b>-Adressen jeden Hop.</p>
     </div></article>
 
   <!-- ===================== SECTION C ===================== -->
@@ -525,6 +530,32 @@
       <p>Kern: <b>ARP-Cache (Endgerät)</b> und <b>MAC-Tabelle (Switch)</b> sind unabhängig — ein Switch-Neustart betrifft nur die MAC-Tabelle.</p>
     </div></article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="6">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Erklärung</span><span class="q-src">MAC &amp; Switch-Learning</span><span class="q-pts">6 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Erkläre den Aufbau einer <code>MAC</code>-Adresse (Länge, OUI-/NIC-Teil) und beschreibe an einem Beispiel, wie ein <strong>Switch</strong> seine MAC-Tabelle aufbaut (Learning) und wie er mit unbekannten Zieladressen umgeht (Flooding).</p>
+      <textarea class="code-input" rows="8" data-task="mac-amp-switch-learning" placeholder="MAC-Aufbau + Learning + Flooding am Beispiel …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 6 Punkte). Aufgabe: Aufbau einer MAC-Adresse (Länge/OUI/NIC) erklären und Switch-Learning + Flooding am Beispiel beschreiben. Kriterien: 48 Bit / 6 Byte, hex (1 P), OUI (Hersteller) + NIC-Teil (1 P), Learning = Quell-MAC + Eingangsport in Tabelle (1,5 P), bekannter Ziel-MAC → gezielt weiterleiten (1 P), unbekannter/Broadcast Ziel-MAC → Flooding an alle Ports außer Eingang (1,5 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 6). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>MAC-Adresse:</strong> 48 Bit (6 Byte), hexadezimal. Die ersten 3 Byte = <strong>OUI</strong> (Herstellerkennung), die letzten 3 Byte = geräteindividueller <strong>NIC</strong>-Teil.</li>
+        <li><strong>Learning:</strong> Empfängt der Switch einen Frame, trägt er dessen <em>Quell-MAC</em> zusammen mit dem <em>Eingangsport</em> in die MAC-Tabelle ein.</li>
+        <li><strong>Weiterleitung/Flooding:</strong> Ist die Ziel-MAC bekannt, sendet er gezielt an den zugehörigen Port. Ist sie unbekannt (oder Broadcast), <em>flutet</em> er den Frame an alle Ports außer dem Eingangsport.</li>
+      </ul>
+      <ul class="rubric"><li>48 Bit/6 Byte</li><li>OUI + NIC</li><li>Learning (Quell-MAC/Port)</li><li>gezielte Weiterleitung</li><li>Flooding bei unbekannt</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="16-email-protokolle.html"><span>Vorheriges Thema</span><b>16 · E-Mail-Protokolle</b></a>
     <a class="next" href="18-vlan.html"><span>Nächstes Thema</span><b>18 · VLAN</b></a>
@@ -532,5 +563,6 @@
 </div></main>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 17 — Netzwerktechnologien</span> · Kerninhalt</div></footer>
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>11 · DHCP &amp; DNS — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 <header class="topbar">
@@ -29,6 +33,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -41,7 +46,7 @@
     <p class="lede">Automatische Adressvergabe per DHCP (DORA-Ablauf, Zuweisungsarten, Lease-Time)
       und die Namensauflösung per DNS samt Caching.</p>
     <div class="hero-meta">
-      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>15</b> Aufgaben</span>
       <span class="pill"><b>2</b> Diagramme</span>
       <span class="pill">MC · Ablauf · Szenario</span>
     </div>
@@ -334,6 +339,32 @@
     <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Typische Ursache ist ein zweiter Router, der als Access Point dient, aber noch DHCP aktiv hat. Sauberste Lösung: <b>DHCP am zweiten Gerät deaktivieren</b> und es <b>nur über einen LAN-Port</b> (nicht über den WAN-Port) anschließen. Dann verteilt nur noch ein Server die Adressen.</p></div>
   </article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="5">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Szenario</span><span class="q-src">DHCP-Ablauf</span><span class="q-pts">5 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Ein neuer Client startet im LAN und hat noch keine IP. Beschreibe den <code>DHCP</code>-Ablauf (DORA) Schritt für Schritt und erkläre, welches Problem entsteht, wenn <strong>zwei DHCP-Server</strong> mit überlappenden Bereichen im selben Broadcast aktiv sind.</p>
+      <textarea class="code-input" rows="8" data-task="dhcp-ablauf" placeholder="DORA-Schritte + Problem doppelter DHCP …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 5 Punkte). Aufgabe: DHCP-Ablauf (DORA) beschreiben und das Problem zweier DHCP-Server mit überlappenden Bereichen erklären. Kriterien: 4 DORA-Schritte korrekt benannt und erklärt (2 P), Broadcast/Unicast-Charakter richtig (1 P), Problem doppelter Server (Adresskonflikte/unvorhersehbare Zuteilung) erkannt (1,5 P), Lösungsansatz (nur ein autorisierter Server / Aufteilung) (0,5 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 5). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><strong>Discover</strong> (Broadcast): Client sucht DHCP-Server. <strong>Offer</strong>: Server bietet eine IP an. <strong>Request</strong> (Broadcast): Client fordert das Angebot an. <strong>Acknowledge</strong>: Server bestätigt inkl. Lease-Time, Gateway, DNS.</li>
+        <li>Zwei Server antworten beide mit Offers → der Client nimmt das zuerst eintreffende an. Bei überlappenden Bereichen drohen <strong>doppelt vergebene Adressen (Adresskonflikte)</strong> und unvorhersehbare Konfiguration.</li>
+        <li>Lösung: nur <strong>ein</strong> autorisierter DHCP-Server je Broadcast-Domäne bzw. saubere Bereichsaufteilung/Failover.</li>
+      </ul>
+      <ul class="rubric"><li>4 DORA-Schritte</li><li>Broadcast/Unicast</li><li>Konfliktproblem erkannt</li><li>Lösungsansatz</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="10-adressierung.html"><span>Zurück · Thema 10</span><b>← Adressierung</b></a>
     <a class="next" href="12-uebertragungsarten.html"><span>Weiter · Thema 12</span><b>Übertragungsarten →</b></a>
@@ -341,5 +372,6 @@
 </div></main>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 11 — DHCP &amp; DNS</span> · Kerninhalt</div></footer>
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>

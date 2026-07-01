@@ -2,9 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>10 · Adressierung — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
 </head>
 <body>
 
@@ -30,6 +34,7 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
   <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
@@ -44,7 +49,7 @@
     <p class="lede">Aufbau der IPv4-Adresse, Netz- und Hostanteil, Subnetzmaske und CIDR,
       das Rechnen mit Blockgrößen sowie die wichtigsten IPv6-Grundlagen.</p>
     <div class="hero-meta">
-      <span class="pill"><b>18</b> Aufgaben</span>
+      <span class="pill"><b>19</b> Aufgaben</span>
       <span class="pill"><b>4</b> Diagramme</span>
       <span class="pill">MC · Rechnen · IPv6</span>
     </div>
@@ -492,6 +497,36 @@ Regel 2 (Null-Blöcke → ::):     2001:DB8::1</div>
     </div>
   </article>
 
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="6">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Subnetting</span><span class="q-src">Subnetting</span><span class="q-pts">6 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Teile das Netz <code>10.0.50.0/24</code> in <strong>8 gleich große Subnetze</strong>. Nenne die neue Präfixlänge und für die <strong>ersten drei</strong> Subnetze jeweils Netzadresse, ersten/letzten Host und Broadcast. Zeige den Rechenweg.</p>
+      <textarea class="code-input" rows="8" data-task="subnetting" placeholder="Neue Präfixlänge + Rechenweg + 3 Subnetze …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 6 Punkte). Aufgabe: 10.0.50.0/24 in 8 gleich große Subnetze teilen; für die ersten drei Netze Netzadresse, ersten/letzten Host und Broadcast angeben, mit Rechenweg. Kriterien: neue Präfixlänge /27 (1 P), Subnetz-Schrittweite 32 erkannt (1 P), 3 korrekte Netzadressen (1 P), korrekte Host-Bereiche (1,5 P), korrekte Broadcasts (1 P), Rechenweg nachvollziehbar (0,5 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 6). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <p>8 Subnetze → 3 zusätzliche Netzbits → <code>/27</code>; Blockgröße = 256/8 = 32 Adressen (30 nutzbar).</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Subnetz</th><th>Netz</th><th>Erster Host</th><th>Letzter Host</th><th>Broadcast</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>10.0.50.0/27</td><td>.1</td><td>.30</td><td>.31</td></tr>
+          <tr><td>2</td><td>10.0.50.32/27</td><td>.33</td><td>.62</td><td>.63</td></tr>
+          <tr><td>3</td><td>10.0.50.64/27</td><td>.65</td><td>.94</td><td>.95</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="rubric"><li>Präfix /27</li><li>Schrittweite 32</li><li>Netzadressen korrekt</li><li>Host-Bereiche korrekt</li><li>Broadcasts korrekt</li><li>Rechenweg</li></ul>
+    </div>
+  </article>
+
   <nav class="pager">
     <a class="prev" href="9-server-betriebssystem.html"><span>Vorheriges Thema</span><b>9 · Server-Betriebssysteme</b></a>
     <a class="next" href="11-dhcp-dns.html"><span>Weiter · Thema 11</span><b>DHCP &amp; DNS →</b></a>
@@ -502,5 +537,6 @@ Regel 2 (Null-Blöcke → ::):     2001:DB8::1</div>
 <footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 10 — Adressierung</span> · Kerninhalt</div></footer>
 
 <script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
 </body>
 </html>
