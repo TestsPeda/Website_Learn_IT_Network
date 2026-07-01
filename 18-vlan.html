@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>18 · VLAN — IT-Lernmaterial</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–18</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="17-netzwerktechnologien.html">17</a>
+    <a href="18-vlan.html" class="current">18</a>
+    <a href="lernseite.html">Lernen</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Logische Netztrennung (Layer 2)</p>
+    <div class="hero-num"><span class="hash">#</span>18</div>
+    <h1>VLAN — Virtual Local Area Network</h1>
+    <p class="lede">Ein <code>VLAN</code> teilt ein physisches Netz in mehrere logisch getrennte Netze auf einem
+      <b>gemanagten Switch</b> (Standard <code>IEEE&nbsp;802.1q</code>, Schicht 2). Umgesetzt wird das
+      <b>portbasiert</b> oder <b>tagged</b> — bei tagged trägt jeder Frame eine <code>VLAN-ID</code> und mehrere
+      VLANs teilen sich eine Trunk-Leitung.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>14</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · Szenario</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>VLAN-Grundlagen</h2></div>
+  <p class="sec-sub">Was ein VLAN ist, welche Hardware es braucht und wie das <b>portbasierte</b> VLAN funktioniert.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Portbasiertes VLAN auf einem Switch: die Ports 1 und 2 gehören zu VLAN 1, die Ports 5 und 6 zu VLAN 2; nur Geräte im selben VLAN können kommunizieren">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Portbasiertes VLAN (ein Switch)</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#5C6B78;">Jeder Port ist fest einem VLAN zugeordnet — VLANs sind gegeneinander abgeschottet</text>
+
+      <!-- Switch -->
+      <rect x="50" y="70" width="660" height="54" rx="8" fill="#16242E"/>
+      <text x="72" y="102" fill="#9FB3C0" font-size="12" font-weight="700">Switch</text>
+      <!-- Ports -->
+      <rect x="150" y="82" width="34" height="30" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="167" y="102" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">1</text>
+      <rect x="214" y="82" width="34" height="30" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="231" y="102" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">2</text>
+      <rect x="278" y="82" width="34" height="30" rx="4" fill="#33424D" stroke="#5C6B78" stroke-width="2"/><text x="295" y="102" fill="#9FB3C0" font-size="11" text-anchor="middle" font-weight="700">3</text>
+      <rect x="342" y="82" width="34" height="30" rx="4" fill="#33424D" stroke="#5C6B78" stroke-width="2"/><text x="359" y="102" fill="#9FB3C0" font-size="11" text-anchor="middle" font-weight="700">4</text>
+      <rect x="406" y="82" width="34" height="30" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="423" y="102" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">5</text>
+      <rect x="470" y="82" width="34" height="30" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="487" y="102" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">6</text>
+      <rect x="534" y="82" width="34" height="30" rx="4" fill="#33424D" stroke="#5C6B78" stroke-width="2"/><text x="551" y="102" fill="#9FB3C0" font-size="11" text-anchor="middle" font-weight="700">7</text>
+      <rect x="598" y="82" width="34" height="30" rx="4" fill="#33424D" stroke="#5C6B78" stroke-width="2"/><text x="615" y="102" fill="#9FB3C0" font-size="11" text-anchor="middle" font-weight="700">8</text>
+
+      <!-- Verbindungen -->
+      <line x1="167" y1="112" x2="167" y2="196" stroke="#15786E" stroke-width="2"/>
+      <line x1="231" y1="112" x2="231" y2="196" stroke="#15786E" stroke-width="2"/>
+      <line x1="423" y1="112" x2="423" y2="196" stroke="#DD5430" stroke-width="2"/>
+      <line x1="487" y1="112" x2="487" y2="196" stroke="#DD5430" stroke-width="2"/>
+
+      <!-- PCs -->
+      <rect x="135" y="196" width="64" height="44" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="167" y="223" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC A-1</text>
+      <rect x="199" y="196" width="64" height="44" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="231" y="223" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC A-2</text>
+      <rect x="391" y="196" width="64" height="44" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="423" y="223" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC B-1</text>
+      <rect x="455" y="196" width="64" height="44" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="487" y="223" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC B-2</text>
+
+      <text x="199" y="266" fill="#15786E" font-size="12" text-anchor="middle" font-weight="700">VLAN 1 (Port 1 · 2)</text>
+      <text x="455" y="266" fill="#DD5430" font-size="12" text-anchor="middle" font-weight="700">VLAN 2 (Port 5 · 6)</text>
+      <text x="380" y="288" fill="#5C6B78" font-size="11" text-anchor="middle">Ports 3 · 4 · 7 · 8 sind keinem VLAN zugeordnet (frei) — keine Kommunikation zwischen VLAN 1 und VLAN 2</text>
+    </svg>
+    <figcaption>Beim <b>portbasierten VLAN</b> gehört jeder Switch-Port fest zu einem VLAN. Ein Gerät am Port ist automatisch im zugewiesenen Netz. <b>PC A-1</b> kann nur mit <b>PC A-2</b> reden, nicht mit VLAN 2.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-src">VLAN-Begriff</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist ein <code>VLAN</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein Funkstandard für drahtlose Netzwerke.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein virtuelles, logisch getrenntes Netzwerk innerhalb eines physischen Netzes (Schicht 2, IEEE 802.1q).</li>
+        <li class="opt"><span class="tick"></span>Ein Verfahren zur Verschlüsselung des gesamten Datenverkehrs.</li>
+        <li class="opt"><span class="tick"></span>Ein Protokoll zur automatischen IP-Vergabe.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein <b>VLAN</b> (Virtual Local Area Network) unterteilt ein physisches Netz in mehrere <b>logisch getrennte</b> Netze. Es ist im Standard <code>IEEE 802.1q</code> festgelegt und arbeitet auf der <b>Sicherungsschicht (Schicht 2)</b>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-src">Hardware</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Voraussetzung muss die Hardware erfüllen, damit VLANs eingerichtet werden können?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es genügt ein einfacher, unmanaged Hub.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es müssen <b>gemanagte Switches</b> sein, die den Standard <code>IEEE 802.1q</code> unterstützen.</li>
+        <li class="opt"><span class="tick"></span>Jedes Endgerät braucht eine eigene öffentliche IP-Adresse.</li>
+        <li class="opt"><span class="tick"></span>Alle Kabel müssen Glasfaser sein.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>VLANs setzen <b>Managed Switches</b> mit Unterstützung für <code>IEEE 802.1q</code> voraus. Ein unmanaged Gerät (Hub) kann keine VLANs verwalten.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-src">Inter-VLAN</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie kommunizieren zwei <b>verschiedene</b> VLANs miteinander?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Automatisch, da alle Ports am selben Switch hängen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Nur über einen Router (bzw. einen Layer-3-fähigen Switch).</li>
+        <li class="opt"><span class="tick"></span>Über einen zusätzlichen Hub zwischen den VLANs.</li>
+        <li class="opt"><span class="tick"></span>Gar nicht — VLANs sind technisch nicht verbindbar.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>VLANs sind auf Schicht 2 getrennt. Für die Kommunikation <b>zwischen</b> VLANs ist Routing (Schicht 3) nötig — also ein <b>Router</b> oder ein <b>Layer-3-Switch</b>. <span class="tag-mistake">Merke</span>: gleicher Switch bedeutet nicht gleiche VLAN-Zugehörigkeit.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-src">Portbasiert</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie funktioniert ein <b>portbasiertes</b> VLAN?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Jedem Frame wird eine VLAN-ID angehängt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Jeder Switch-Port wird fest einem VLAN zugewiesen; ein angeschlossenes Gerät ist automatisch in diesem VLAN.</li>
+        <li class="opt"><span class="tick"></span>Die VLAN-Zugehörigkeit richtet sich nach der IP-Adresse des Geräts.</li>
+        <li class="opt"><span class="tick"></span>Jeder Nutzer meldet sich mit Passwort im gewünschten VLAN an.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim <b>portbasierten VLAN</b> bestimmt der <b>Port</b> die VLAN-Zugehörigkeit. Ein an diesen Port angeschlossenes Gerät landet automatisch im zugewiesenen VLAN; VLANs sind gegeneinander abgeschottet.</p></div></article>
+
+  <p class="sec-sub" style="margin:22px 0 8px;font-weight:700">Warum VLANs eingesetzt werden</p>
+  <div class="tbl-wrap"><table class="ref">
+    <thead><tr><th>Vorteil</th><th>Bedeutung</th></tr></thead>
+    <tbody>
+      <tr><td>Logische Trennung</td><td>Geschäftsbereiche/Abteilungen laufen in eigenen Netzen, obwohl sie dieselbe Hardware nutzen.</td></tr>
+      <tr><td>Sicherheit</td><td>Der Verkehr eines VLANs ist von anderen abgeschottet; Zugriffe zwischen VLANs lassen sich am Router/an einer Firewall gezielt regeln.</td></tr>
+      <tr><td>Weniger Hardware</td><td>Ein gemanagter Switch ersetzt mehrere physische Switches — die bestehende Infrastruktur wird weiterverwendet.</td></tr>
+      <tr><td>Verkehrsaufteilung</td><td>Der Netzwerkverkehr wird auf mehrere VLANs verteilt, Broadcast-Domänen werden kleiner.</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multi-Select</span><span class="q-src">Vorteile</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen nennen einen echten <b>Vorteil</b> von VLANs? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Logische Trennung von Geschäftsbereichen auf gemeinsamer Hardware.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Zusätzliche Sicherheitsschicht: Zugriffe zwischen VLANs lassen sich kontrollieren.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Einsparung von Hardware, da ein gemanagter Switch mehrere Netze abbildet.</li>
+        <li class="opt"><span class="tick"></span>VLANs erhöhen automatisch die physische Kabellänge.</li>
+        <li class="opt"><span class="tick"></span>VLANs machen Router grundsätzlich überflüssig.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Echte Vorteile sind <b>logische Trennung</b>, <b>Sicherheit</b> und <b>weniger Hardware</b>. VLANs verändern keine Kabellängen; und für die Kommunikation <b>zwischen</b> VLANs bleibt ein Router nötig.</p></div></article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Tagged VLAN &amp; Trunk</h2></div>
+  <p class="sec-sub">Wie mehrere VLANs über <b>eine</b> Leitung zwischen zwei Switches transportiert werden.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Tagged VLAN: zwei Switches sind über eine einzige getaggte Trunk-Leitung verbunden, die alle VLANs transportiert">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Tagged VLAN — Trunk zwischen zwei Switches</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#5C6B78;">Zuordnung steckt im VLAN-Tag jedes Frames</text>
+
+      <!-- Trunk oben -->
+      <line x1="300" y1="70" x2="300" y2="58" stroke="#16242E" stroke-width="2.5"/>
+      <line x1="300" y1="58" x2="460" y2="58" stroke="#16242E" stroke-width="2.5"/>
+      <line x1="460" y1="58" x2="460" y2="70" stroke="#16242E" stroke-width="2.5"/>
+      <text x="380" y="52" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Trunk (tagged) — trägt alle VLANs</text>
+
+      <!-- Switch A -->
+      <rect x="40" y="72" width="300" height="46" rx="8" fill="#16242E"/>
+      <text x="60" y="100" fill="#9FB3C0" font-size="12" font-weight="700">Switch A</text>
+      <rect x="150" y="82" width="30" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="165" y="100" fill="#16242E" font-size="10" text-anchor="middle" font-weight="700">1</text>
+      <rect x="210" y="82" width="30" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="225" y="100" fill="#16242E" font-size="10" text-anchor="middle" font-weight="700">5</text>
+      <rect x="288" y="82" width="30" height="26" rx="4" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="303" y="100" fill="#16242E" font-size="10" text-anchor="middle" font-weight="700">8</text>
+
+      <!-- Switch B -->
+      <rect x="420" y="72" width="300" height="46" rx="8" fill="#16242E"/>
+      <text x="512" y="100" fill="#9FB3C0" font-size="12" text-anchor="middle" font-weight="700">Switch B</text>
+      <rect x="446" y="82" width="30" height="26" rx="4" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="461" y="100" fill="#16242E" font-size="10" text-anchor="middle" font-weight="700">8</text>
+      <rect x="560" y="82" width="30" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="575" y="100" fill="#16242E" font-size="10" text-anchor="middle" font-weight="700">1</text>
+      <rect x="620" y="82" width="30" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="635" y="100" fill="#16242E" font-size="10" text-anchor="middle" font-weight="700">5</text>
+
+      <!-- PCs A -->
+      <line x1="165" y1="108" x2="165" y2="190" stroke="#15786E" stroke-width="2"/>
+      <line x1="225" y1="108" x2="225" y2="190" stroke="#DD5430" stroke-width="2"/>
+      <rect x="133" y="190" width="64" height="42" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="165" y="216" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC A-1</text>
+      <rect x="193" y="190" width="64" height="42" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="225" y="216" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC A-5</text>
+      <!-- PCs B -->
+      <line x1="575" y1="108" x2="575" y2="190" stroke="#15786E" stroke-width="2"/>
+      <line x1="635" y1="108" x2="635" y2="190" stroke="#DD5430" stroke-width="2"/>
+      <rect x="543" y="190" width="64" height="42" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="575" y="216" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC B-1</text>
+      <rect x="603" y="190" width="64" height="42" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="635" y="216" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">PC B-5</text>
+
+      <text x="303" y="128" fill="#C9A227" font-size="9" text-anchor="middle" font-weight="700">tagged</text>
+      <text x="461" y="128" fill="#C9A227" font-size="9" text-anchor="middle" font-weight="700">tagged</text>
+      <text x="380" y="266" fill="#15786E" font-size="12" text-anchor="middle" font-weight="700">VLAN 1: PC A-1 ↔ PC B-1</text>
+      <text x="380" y="286" fill="#DD5430" font-size="12" text-anchor="middle" font-weight="700">VLAN 2: PC A-5 ↔ PC B-5 — beides über dieselbe Trunk-Leitung</text>
+    </svg>
+    <figcaption>Der <b>Trunk-Port</b> (hier Port 8) ist <b>getagged</b> und transportiert alle VLANs über eine einzige Leitung. Die Client-Ports (1 · 5) sind <b>untagged</b>. Ohne Tagging bräuchte man je VLAN ein eigenes Kabel.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-src">Tagged VLAN</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was leistet ein <b>Tagged VLAN</b> mit Trunk-Leitung?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Es benötigt je VLAN eine eigene physische Leitung zwischen den Switches.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es transportiert mehrere VLANs über eine einzige (getaggte) Leitung, da jeder Frame eine VLAN-ID trägt.</li>
+        <li class="opt"><span class="tick"></span>Es verschlüsselt den VLAN-Verkehr Ende zu Ende.</li>
+        <li class="opt"><span class="tick"></span>Es verbindet VLANs automatisch miteinander.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Beim <b>Tagged VLAN</b> läuft der Verkehr aller VLANs über eine <b>Trunk-Leitung</b>. Jeder Frame erhält ein <b>Tag</b> mit der VLAN-ID, sodass der Ziel-Switch die Zugehörigkeit erkennt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-src">Trunk-Port</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Ports werden „getagged“, welche „untagged“?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Alle Ports müssen getagged sein.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Nur der Trunk-Port (Verbindung zwischen Switches) ist getagged; Ports mit einem einzelnen Client sind untagged.</li>
+        <li class="opt"><span class="tick"></span>Nur Client-Ports sind getagged, der Trunk-Port ist untagged.</li>
+        <li class="opt"><span class="tick"></span>Tagging betrifft nur Glasfaser-Ports.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Getagged</b> sind die <b>Trunk-Ports</b>, über die mehrere VLANs laufen. Ports, an denen nur ein einzelner Client hängt, sind <b>untagged</b> — der Client selbst kennt keine Tags.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Szenario</span><span class="q-src">Portbasiert vs. tagged</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Zwei Switches sollen jeweils VLAN 1 und VLAN 2 führen und untereinander verbinden. Erkläre den Unterschied zwischen einer rein <b>portbasierten</b> und einer <b>tagged</b> Lösung — und warum tagged meist bevorzugt wird.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>Portbasiert:</b> Für jedes VLAN, das über beide Switches reichen soll, braucht man eine <b>eigene physische Verbindung</b> zwischen den Switches. Bei zwei VLANs also <b>zwei Kabel</b>; jedes weitere VLAN kostet einen weiteren Port und ein weiteres Kabel.</li>
+        <li><b>Tagged:</b> Eine einzige <b>Trunk-Leitung</b> genügt. Jeder Frame trägt ein <b>VLAN-Tag</b> mit der VLAN-ID, sodass beide VLANs über dasselbe Kabel übertragen werden.</li>
+        <li><b>Warum tagged bevorzugt:</b> spart Ports und Kabel, ist besser skalierbar (viele VLANs über eine Leitung) und übersichtlicher zu verwalten.</li>
+      </ul>
+    </div></article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Das 802.1q-Tag im Ethernet-Frame</h2></div>
+  <p class="sec-sub">Wo die VLAN-ID sitzt, wie groß das Tag ist und wie viele VLANs möglich sind.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 270" role="img" aria-label="Das 802.1q-VLAN-Tag erweitert den Ethernet-Frame um 4 Byte (TPID und TCI); die TCI enthält Priorität, CFI und die 12-Bit-VLAN-ID">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">VLAN-Tag nach IEEE 802.1q</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#5C6B78;">Der Frame wird um 4 Byte erweitert (TPID + TCI)</text>
+
+      <!-- Byte-Header -->
+      <rect x="20"  y="56" width="90"  height="20" fill="#16242E"/><text x="65"  y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">6</text>
+      <rect x="114" y="56" width="90"  height="20" fill="#16242E"/><text x="159" y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">6</text>
+      <rect x="208" y="56" width="70"  height="20" fill="#B23E1F"/><text x="243" y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">2</text>
+      <rect x="282" y="56" width="70"  height="20" fill="#B23E1F"/><text x="317" y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">2</text>
+      <rect x="356" y="56" width="80"  height="20" fill="#16242E"/><text x="396" y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">2</text>
+      <rect x="440" y="56" width="200" height="20" fill="#16242E"/><text x="540" y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">46–1500</text>
+      <rect x="644" y="56" width="90"  height="20" fill="#16242E"/><text x="689" y="71" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">4</text>
+
+      <!-- Frame-Felder -->
+      <rect x="20"  y="80" width="90"  height="56" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="65"  y="113" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Ziel-MAC</text>
+      <rect x="114" y="80" width="90"  height="56" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="159" y="113" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Quell-MAC</text>
+      <rect x="208" y="80" width="70"  height="56" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="243" y="107" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">TPID</text><text x="243" y="123" fill="#5C6B78" font-size="9" text-anchor="middle">0x8100</text>
+      <rect x="282" y="80" width="70"  height="56" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="317" y="112" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">TCI</text>
+      <rect x="356" y="80" width="80"  height="56" rx="6" fill="#EEF3F6" stroke="#B9C7D2" stroke-width="2"/><text x="396" y="107" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Länge/</text><text x="396" y="123" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Typ</text>
+      <rect x="440" y="80" width="200" height="56" rx="6" fill="#EEF3F6" stroke="#B9C7D2" stroke-width="2"/><text x="540" y="113" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Nutzdaten</text>
+      <rect x="644" y="80" width="90"  height="56" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="689" y="113" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">CRC</text>
+
+      <!-- Tag-Klammer -->
+      <line x1="208" y1="146" x2="352" y2="146" stroke="#DD5430" stroke-width="1.5"/>
+      <line x1="208" y1="142" x2="208" y2="150" stroke="#DD5430" stroke-width="1.5"/>
+      <line x1="352" y1="142" x2="352" y2="150" stroke="#DD5430" stroke-width="1.5"/>
+      <text x="280" y="164" fill="#DD5430" font-size="11" text-anchor="middle" font-weight="700">VLAN-Tag = 4 Byte</text>
+
+      <!-- Zoom TCI -->
+      <line x1="317" y1="136" x2="317" y2="186" stroke="#B9C7D2" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <rect x="250" y="188" width="120" height="44" rx="6" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="310" y="206" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Priorität (PCP)</text><text x="310" y="222" fill="#5C6B78" font-size="10" text-anchor="middle">3 Bit</text>
+      <rect x="374" y="188" width="70"  height="44" rx="6" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="409" y="206" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">CFI</text><text x="409" y="222" fill="#5C6B78" font-size="10" text-anchor="middle">1 Bit</text>
+      <rect x="448" y="188" width="180" height="44" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="538" y="206" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">VLAN-ID</text><text x="538" y="222" fill="#5C6B78" font-size="10" text-anchor="middle">12 Bit → 4094 nutzbar</text>
+      <text x="250" y="256" fill="#5C6B78" font-size="11">TCI (2 Byte) = 3 Bit Priorität + 1 Bit CFI + 12 Bit VLAN-ID</text>
+    </svg>
+    <figcaption>Das <b>802.1q-Tag</b> steckt im Ethernet-Frame (zwischen Quell-MAC und Länge/Typ) und ist <b>4 Byte</b> groß: 2 Byte <code>TPID</code> + 2 Byte <code>TCI</code>. In der TCI liegen <b>12 Bit</b> für die <b>VLAN-ID</b> → 4096 möglich, davon <b>4094 nutzbar</b>.</figcaption>
+  </figure>
+
+  <div class="term-toggles">
+    <p class="tt-lead">Felder des 802.1q-Tags im Detail — aufklappen</p>
+    <details class="term">
+      <summary><span class="tt-tag">TPID</span> <span class="tt-hint">Tag Protocol Identifier · 2 Byte</span></summary>
+      <div class="tt-body">
+        <p>Die <b>TPID</b> ist die <b>erste Hälfte</b> des 4-Byte-Tags. Sie hat den festen Wert <code>0x8100</code> und <b>kennzeichnet den Frame als 802.1q-getaggt</b>.</p>
+        <ul>
+          <li>Sie steht genau an der Stelle, an der sonst das <b>Typ-/Längenfeld</b> beginnt. Liest ein Gerät dort <code>0x8100</code>, weiß es: es folgt ein VLAN-Tag (die TCI), und das eigentliche Typ-/Längenfeld kommt erst danach.</li>
+          <li>Geräte <b>ohne</b> VLAN-Unterstützung kennen <code>0x8100</code> nicht als regulären EtherType und können getaggte Frames nicht korrekt verarbeiten.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term">
+      <summary><span class="tt-tag">TCI</span> <span class="tt-hint">Tag Control Information · 2 Byte</span></summary>
+      <div class="tt-body">
+        <p>Die <b>TCI</b> ist die <b>zweite Hälfte</b> des Tags (16&nbsp;Bit) und trägt die eigentliche Steuerinformation. Sie ist in <b>drei Felder</b> aufgeteilt:</p>
+        <ul>
+          <li><b>3 Bit</b> Priorität (<code>PCP</code>)</li>
+          <li><b>1 Bit</b> <code>CFI</code></li>
+          <li><b>12 Bit</b> <code>VLAN-ID</code></li>
+        </ul>
+        <p>Rechnung: <code>3 + 1 + 12 = 16 Bit = 2 Byte</code>. Zusammen mit der TPID ergibt das die <b>4 Byte</b> Tag-Länge.</p>
+      </div>
+    </details>
+    <details class="term">
+      <summary><span class="tt-tag">PCP</span> <span class="tt-hint">Priority Code Point · 3 Bit</span></summary>
+      <div class="tt-body">
+        <p>Der <b>PCP</b> (Priority Code Point) gibt die <b>Priorität</b> des Frames an (nach <code>IEEE&nbsp;802.1p</code>) und ermöglicht <b>Quality of Service (QoS)</b>.</p>
+        <ul>
+          <li><b>3 Bit → 8 Prioritätsstufen</b> (Werte 0–7); ein höherer Wert bedeutet höhere Priorität.</li>
+          <li>Bei Überlast bevorzugt ein QoS-fähiger Switch wichtige Frames — z.&nbsp;B. <b>VoIP/Video</b> vor einem großen Datei-Download.</li>
+          <li>Wird auch als <i>ToS</i>-Priorität bezeichnet.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term">
+      <summary><span class="tt-tag">CFI</span> <span class="tt-hint">Canonical Format Indicator · 1 Bit</span></summary>
+      <div class="tt-body">
+        <p>Das <b>CFI</b>-Bit (Canonical Format Indicator) zeigt an, ob die MAC-Adressen im <b>kanonischen (Ethernet-)Format</b> vorliegen.</p>
+        <ul>
+          <li>Im <b>Ethernet</b> ist es praktisch immer <code>0</code>. Der Wert <code>1</code> diente der Kompatibilität mit <b>Token Ring</b>.</li>
+          <li>In neueren Standards (<code>802.1ad</code>, „QinQ“) wurde dieses Bit als <b>DEI</b> (Drop Eligible Indicator) umgewidmet — es markiert dann Frames, die bei Überlast bevorzugt verworfen werden dürfen.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term">
+      <summary><span class="tt-tag">VLAN-ID</span> <span class="tt-hint">VLAN Identifier (VID) · 12 Bit</span></summary>
+      <div class="tt-body">
+        <p>Die <b>VLAN-ID</b> (VID) identifiziert, <b>zu welchem VLAN</b> der Frame gehört. Anhand dieses Werts entscheidet der Ziel-Switch, in welches VLAN der Frame weitergeleitet wird.</p>
+        <ul>
+          <li><b>12 Bit</b> → <code>2¹² = 4096</code> mögliche Werte (IDs 0 bis 4095).</li>
+          <li><b>4094 nutzbar</b>, denn <code>0</code> und <code>4095</code> sind reserviert (ID&nbsp;0 = „kein VLAN, nur Priorität“, ID&nbsp;4095 = reserviert).</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-src">802.1q-Tag</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wo befindet sich das VLAN-Tag und wie viel Platz benötigt es?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>In der IP-Kopfzeile; es benötigt 8 Byte.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Im Ethernet-Frame; es erweitert ihn um genau 4 Byte (2 Byte TPID + 2 Byte TCI).</li>
+        <li class="opt"><span class="tick"></span>In der FCS; es benötigt 2 Byte.</li>
+        <li class="opt"><span class="tick"></span>In der Präambel; es benötigt kein zusätzliches Byte.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Das Tag liegt im <b>Ethernet-Frame</b> und vergrößert ihn um <b>4 Byte</b>: 2 Byte <code>TPID</code> und 2 Byte <code>TCI</code>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-src">VLAN-ID</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie viele Bit stehen für die <b>VLAN-ID</b> zur Verfügung und wie viele VLANs sind nutzbar?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>8 Bit → 256 VLANs.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>12 Bit → 4096 möglich, davon 4094 nutzbar.</li>
+        <li class="opt"><span class="tick"></span>16 Bit → 65536 VLANs.</li>
+        <li class="opt"><span class="tick"></span>4 Bit → 16 VLANs.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die VLAN-ID belegt <b>12 Bit</b> → <code>2¹² = 4096</code> mögliche Werte, davon sind <b>4094 nutzbar</b> (zwei IDs sind reserviert).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Multiple Choice</span><span class="q-src">TCI-Felder</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Information kann neben der VLAN-ID im Tag (in der TCI) mitgeführt werden?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Die MAC-Adresse des Empfängers.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Eine Priorität (Priority Code Point, 3 Bit) zur Bevorzugung wichtiger Frames.</li>
+        <li class="opt"><span class="tick"></span>Der komplette DNS-Name des Zielservers.</li>
+        <li class="opt"><span class="tick"></span>Die Subnetzmaske des VLANs.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>TCI</b> enthält neben der 12-Bit-VLAN-ID auch einen <b>Priority Code Point (PCP, 3 Bit)</b> für die Priorität (Werte 0–7) sowie ein CFI-Bit.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Zuordnung</span><span class="q-src">Tag-Aufbau</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne den Bestandteilen des 802.1q-Tags ihre <b>Größe</b> zu.</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Bestandteil</th><th>Größe</th></tr></thead>
+        <tbody>
+          <tr><td>TPID</td><td>?</td></tr>
+          <tr><td>TCI (gesamt)</td><td>?</td></tr>
+          <tr><td>Priorität (PCP)</td><td>?</td></tr>
+          <tr><td>CFI</td><td>?</td></tr>
+          <tr><td>VLAN-ID</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Bestandteil</th><th>Größe</th></tr></thead>
+        <tbody>
+          <tr><td>TPID</td><td>2 Byte</td></tr>
+          <tr><td>TCI (gesamt)</td><td>2 Byte</td></tr>
+          <tr><td>Priorität (PCP)</td><td>3 Bit</td></tr>
+          <tr><td>CFI</td><td>1 Bit</td></tr>
+          <tr><td>VLAN-ID</td><td>12 Bit</td></tr>
+        </tbody>
+      </table></div>
+      <p>TPID + TCI = <b>4 Byte</b> Tag. Innerhalb der TCI (2 Byte = 16 Bit): 3 Bit PCP + 1 Bit CFI + 12 Bit VLAN-ID.</p>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Rechnen</span><span class="q-src">VLAN-ID</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Begründe rechnerisch, warum sich aus 12 Bit VLAN-ID <b>4096</b> Werte ergeben und weshalb nur <b>4094</b> nutzbar sind.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step"><code>2¹² = 4096</code> mögliche Werte (VLAN-ID von 0 bis 4095).</div>
+      <div class="step">Die IDs <code>0</code> und <code>4095</code> sind reserviert und werden nicht als reguläre VLANs vergeben.</div>
+      <div class="step">Nutzbar bleiben daher <code>4096 − 2 = 4094</code> VLANs (IDs 1 bis 4094).</div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Szenario</span><span class="q-src">Einsatz</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein wachsendes Unternehmen mit mehreren Abteilungen (z. B. Vertrieb, Entwicklung, Produktion) hat ein starres, unflexibles Netz. Begründe in Stichpunkten, warum VLANs hier eine passende Lösung sind.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>Logische Trennung:</b> jede Abteilung erhält ihr eigenes VLAN, obwohl dieselbe physische Infrastruktur genutzt wird.</li>
+        <li><b>Sicherheit:</b> der Verkehr der Abteilungen ist getrennt; Zugriffe zwischen VLANs (z. B. auf Server) lassen sich am Router/an einer Firewall gezielt freigeben.</li>
+        <li><b>Flexibilität:</b> Umzüge/Umstrukturierungen erfolgen per Konfiguration statt Neuverkabelung.</li>
+        <li><b>Weniger Hardware:</b> ein gemanagter Switch bildet mehrere Netze ab; bestehende Geräte/Verkabelung werden weitergenutzt.</li>
+        <li><b>Verkehrsaufteilung:</b> der Netzwerkverkehr wird auf mehrere VLANs verteilt, Broadcast-Domänen verkleinert.</li>
+      </ul>
+    </div></article>
+
+  <nav class="pager">
+    <a class="prev" href="17-netzwerktechnologien.html"><span>Vorheriges Thema</span><b>17 · Netzwerktechnologien</b></a>
+    <a class="next" href="lernseite.html"><span>Weiter</span><b>Konzepte wiederholen →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 18 — VLAN</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

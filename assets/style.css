@@ -324,6 +324,46 @@ table.ref code, table.ref .mono { font-family: var(--font-mono); font-size: .9em
 }
 .note .lbl { font-family: var(--font-mono); font-weight: 700; font-size: .7rem; letter-spacing:.12em; text-transform:uppercase; color: var(--gold); }
 
+/* ---------- term deep-dive toggles (native <details>) ----------------- */
+.term-toggles { margin: 14px 0 18px; display: grid; gap: 8px; }
+.term-toggles .tt-lead {
+  font-family: var(--font-mono); font-weight: 700; font-size: .7rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent); margin: 0 0 2px;
+}
+details.term {
+  border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow);
+}
+details.term > summary {
+  cursor: pointer; list-style: none; padding: 11px 15px;
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-weight: 600; color: var(--ink);
+  transition: background .12s; border-radius: var(--radius);
+}
+details.term > summary::-webkit-details-marker { display: none; }
+details.term > summary::before {
+  content: "+"; font-weight: 700; color: var(--accent); font-size: 1.1rem; line-height: 1;
+  width: .8em; flex: none;
+}
+details.term[open] > summary::before { content: "\2013"; }
+details.term > summary:hover { background: var(--surface-2); }
+details.term > summary .tt-tag { font-weight: 700; color: var(--accent); }
+details.term > summary .tt-hint {
+  font-family: var(--font-body); font-weight: 400; font-size: .85rem; color: var(--muted);
+}
+details.term .tt-body {
+  padding: 12px 16px 14px 33px; font-size: .94rem; border-top: 1px solid var(--line);
+}
+details.term .tt-body > :first-child { margin-top: 0; }
+details.term .tt-body p { margin: 10px 0 0; }
+details.term .tt-body ul { margin: 8px 0 0; padding-left: 20px; }
+details.term .tt-body li { margin: 4px 0; }
+details.term .tt-body code {
+  font-family: var(--font-mono); background: var(--surface-2);
+  border: 1px solid var(--line); border-radius: 3px; padding: .04em .35em; font-size: .9em;
+}
+@media (max-width: 620px) { details.term .tt-body { padding-left: 16px; } }
+
 /* ---------- index page topic grid ------------------------------------- */
 .topic-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); gap: 16px; margin: 8px 0 0; }
 .topic-card {

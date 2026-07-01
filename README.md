@@ -12,22 +12,8 @@ sowie eine **Lernseite** zum Wiederholen der Kernkonzepte. Statisch, ohne extern
 
 **Live:** [testspeda.github.io/Website_Learn_IT_Network](https://testspeda.github.io/Website_Learn_IT_Network/)
 
-## Urheberrecht
-
-© 2026. Alle Rechte vorbehalten.
-
-Dieses Material dient ausschließlich Lernzwecken. Eine Weiterverwendung,
-Vervielfältigung oder Veröffentlichung – ganz oder in Teilen – ist nur mit
-ausdrücklicher Genehmigung gestattet.
-
-## Haftungsausschluss
-
-Die Inhalte wurden mit Sorgfalt erstellt, erheben aber keinen Anspruch auf
-Vollständigkeit oder Richtigkeit. Es handelt sich um persönliche
-Zusammenfassungen zu Lernzwecken, **nicht** um offizielle Unterlagen.
-Für Schäden aus der Nutzung der Inhalte wird keine Haftung übernommen.
-
-## Quellen
-
-Eigene Zusammenfassungen auf Basis eigener Recherche sowie KI-gestützter
-Aufbereitung.
+Jede Themenseite enthält Aufgaben mit aufdeckbaren Lösungen; die Lernseite fasst
+die Kernkonzepte zum Wiederholen zusammen. Die Auswahl im Menü (bzw. die
+Sterntopologie auf der Startseite) führt direkt zur jeweiligen Themenseite.
+Die Seiten sind statisch und funktionieren ohne externe Abhängigkeiten – einfach
+`index.html` im Browser öffnen oder den Live-Link aufrufen.
