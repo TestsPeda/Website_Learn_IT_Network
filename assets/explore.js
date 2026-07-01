@@ -482,12 +482,9 @@
     ctx.scale(dpr, dpr);
 
     var snake, dir, nextDir, food, score, level, state, loopId;
+    // Ergebnisse (freigeschaltete Themen & Bestpunktzahl) werden bewusst NICHT
+    // persistiert – bei jedem Besuch muss man sich die Themen neu erspielen.
     var unlocked = 0, best = 0;
-    try {
-      unlocked = parseInt(localStorage.getItem("snake-unlocked") || "0", 10) || 0;
-      best = parseInt(localStorage.getItem("snake-best") || "0", 10) || 0;
-    } catch (e) {}
-    unlocked = Math.max(0, Math.min(TOPICS.length, unlocked));
 
     function lerpColor(a, b, t) {
       return "rgb(" + Math.round(a[0] + (b[0] - a[0]) * t) + "," +
@@ -523,7 +520,6 @@
     function unlockNext() {
       if (unlocked < TOPICS.length) {
         unlocked++;
-        try { localStorage.setItem("snake-unlocked", String(unlocked)); } catch (e) {}
         renderUnlocks();
       }
       unlockedEl.textContent = unlocked;
@@ -580,7 +576,7 @@
       if (head.x === food.x && head.y === food.y) {
         score++; scoreEl.textContent = score;
         level = 1 + Math.floor(score / 4); levelEl.textContent = level;
-        if (score > best) { best = score; bestEl.textContent = best; try { localStorage.setItem("snake-best", String(best)); } catch (e) {} }
+        if (score > best) { best = score; bestEl.textContent = best; }
         unlockNext();
         food = emptyCell();
       } else {
