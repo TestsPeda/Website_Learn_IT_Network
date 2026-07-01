@@ -1,326 +1,1075 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IT-Lernmaterial · Themen 1–18</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/print.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IT-Lernmaterial · Themen 1–18</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/print.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="mark">IT<span class="slash">·</span>Net</span>
+        <b>Themen 1–18</b
+        ><span class="sub">Fachunterricht IT — Selbsttest</span>
+      </a>
+      <div class="spacer"></div>
+      <span class="scorechip">Selbsttest · Grundlagen bis Speicher</span>
+    </header>
 
-<header class="topbar">
-  <a class="brand" href="index.html">
-    <span class="mark">IT<span class="slash">·</span>Net</span>
-    <b>Themen 1–18</b><span class="sub">Fachunterricht IT — Selbsttest</span>
-  </a>
-  <div class="spacer"></div>
-  <span class="scorechip">Selbsttest · Grundlagen bis Speicher</span>
-</header>
+    <main>
+      <div class="wrap">
+        <section class="hero">
+          <p class="eyebrow">Fachunterricht IT</p>
+          <h1>Umfassender Selbsttest<br />Themen 1 bis 18</h1>
+          <p class="lede">
+            Achtzehn Themen — von den Netzwerk-Grundbegriffen über Verkabelung,
+            IP-Adressierung und Topologien bis zu Speichersystemen, RAID,
+            E-Mail-Protokollen, Ethernet/ARP und VLAN. Mit anschaulichen
+            Diagrammen, gemischten Aufgabentypen und vollständigen Lösungen zum
+            Aufdecken.
+          </p>
+          <div class="hero-meta">
+            <span class="pill"><b>18</b> Themen</span>
+            <span class="pill"><b>287</b> Aufgaben</span>
+            <span class="pill"><b>63</b> Diagramme</span>
+            <a class="pill" href="lernseite.html" style="text-decoration: none"
+              >Konzepte wiederholen →</a
+            >
+            <a class="pill" href="pruefung.html" style="text-decoration: none"
+              >Probe-SA starten →</a
+            >
+          </div>
+        </section>
 
-<main>
-<div class="wrap">
+        <section class="explore" aria-label="Themen entdecken">
+          <div class="explore-head">
+            <div class="explore-intro">
+              <p class="eyebrow">Ansicht wählen</p>
+              <p class="explore-sub">
+                Klassisch per Sterntopologie navigieren — oder die 18 Themen
+                über ein kleines Spiel „erjagen". Wähle, worauf du gerade Lust
+                hast.
+              </p>
+            </div>
+            <div class="seg" role="tablist" aria-label="Ansichtsmodus">
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-star"
+                aria-controls="panel-star"
+                aria-selected="true"
+                data-mode="star"
+              >
+                Sterntopologie
+              </button>
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-search"
+                aria-controls="panel-search"
+                aria-selected="false"
+                tabindex="-1"
+                data-mode="search"
+              >
+                Schnellsuche
+              </button>
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-memory"
+                aria-controls="panel-memory"
+                aria-selected="false"
+                tabindex="-1"
+                data-mode="memory"
+              >
+                Memory
+              </button>
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-quiz"
+                aria-controls="panel-quiz"
+                aria-selected="false"
+                tabindex="-1"
+                data-mode="quiz"
+              >
+                Quiz-Tor
+              </button>
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-hunt"
+                aria-controls="panel-hunt"
+                aria-selected="false"
+                tabindex="-1"
+                data-mode="hunt"
+              >
+                Schatzsuche
+              </button>
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-wheel"
+                aria-controls="panel-wheel"
+                aria-selected="false"
+                tabindex="-1"
+                data-mode="wheel"
+              >
+                Glücksrad
+              </button>
+              <button
+                class="seg-btn"
+                type="button"
+                role="tab"
+                id="tab-snake"
+                aria-controls="panel-snake"
+                aria-selected="false"
+                tabindex="-1"
+                data-mode="snake"
+              >
+                Snake
+              </button>
+            </div>
+          </div>
 
-  <section class="hero">
-    <p class="eyebrow">Fachunterricht IT</p>
-    <h1>Umfassender Selbsttest<br>Themen 1 bis 18</h1>
-    <p class="lede">Achtzehn Themen — von den Netzwerk-Grundbegriffen über Verkabelung, IP-Adressierung
-      und Topologien bis zu Speichersystemen, RAID, E-Mail-Protokollen, Ethernet/ARP und VLAN. Mit anschaulichen
-      Diagrammen, gemischten Aufgabentypen und vollständigen Lösungen zum Aufdecken.</p>
-    <div class="hero-meta">
-      <span class="pill"><b>18</b> Themen</span>
-      <span class="pill"><b>287</b> Aufgaben</span>
-      <span class="pill"><b>63</b> Diagramme</span>
-      <a class="pill" href="lernseite.html" style="text-decoration:none;">Konzepte wiederholen →</a>
-      <a class="pill" href="pruefung.html" style="text-decoration:none;">Probe-SA starten →</a>
-    </div>
-  </section>
+          <div
+            class="explore-panel"
+            id="panel-star"
+            role="tabpanel"
+            aria-labelledby="tab-star"
+            data-mode="star"
+          >
+            <figure class="diagram" style="background: var(--surface)">
+              <svg
+                viewBox="0 0 940 680"
+                role="img"
+                aria-label="Sterntopologie als Navigation: zentraler Hub verbunden mit den 18 Themenseiten"
+              >
+                <g stroke="#B9C7D2" stroke-width="2">
+                  <line x1="470" y1="340" x2="470" y2="58"></line>
+                  <line x1="470" y1="340" x2="566" y2="75"></line>
+                  <line x1="470" y1="340" x2="651" y2="124"></line>
+                  <line x1="470" y1="340" x2="714" y2="199"></line>
+                  <line x1="470" y1="340" x2="748" y2="291"></line>
+                  <line x1="470" y1="340" x2="748" y2="389"></line>
+                  <line x1="470" y1="340" x2="714" y2="481"></line>
+                  <line x1="470" y1="340" x2="651" y2="556"></line>
+                  <line x1="470" y1="340" x2="566" y2="605"></line>
+                  <line x1="470" y1="340" x2="470" y2="622"></line>
+                  <line x1="470" y1="340" x2="374" y2="605"></line>
+                  <line x1="470" y1="340" x2="289" y2="556"></line>
+                  <line x1="470" y1="340" x2="226" y2="481"></line>
+                  <line x1="470" y1="340" x2="192" y2="389"></line>
+                  <line x1="470" y1="340" x2="192" y2="291"></line>
+                  <line x1="470" y1="340" x2="226" y2="199"></line>
+                  <line x1="470" y1="340" x2="289" y2="124"></line>
+                  <line x1="470" y1="340" x2="374" y2="75"></line>
+                </g>
+                <g>
+                  <rect
+                    x="380"
+                    y="311"
+                    width="180"
+                    height="58"
+                    rx="8"
+                    fill="#16242E"
+                  ></rect>
+                  <text
+                    x="470"
+                    y="336"
+                    text-anchor="middle"
+                    class="svg-title"
+                    style="fill: #ffffff"
+                  >
+                    FUIT · Test 1–18
+                  </text>
+                  <text
+                    x="470"
+                    y="354"
+                    text-anchor="middle"
+                    class="svg-label-sm"
+                    style="fill: #9fb3c0"
+                  >
+                    Hub · Start (Sterntopologie)
+                  </text>
+                </g>
+                <a href="1-grundbegriffe.html">
+                  <g class="node">
+                    <rect
+                      x="394"
+                      y="35"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="470"
+                      y="55"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      1
+                    </text>
+                    <text
+                      x="470"
+                      y="70"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Grundbegriffe
+                    </text>
+                  </g>
+                </a>
+                <a href="2-verkabelungsplan.html">
+                  <g class="node">
+                    <rect
+                      x="490"
+                      y="52"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="566"
+                      y="72"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      2
+                    </text>
+                    <text
+                      x="566"
+                      y="87"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Verkabelungsplan
+                    </text>
+                  </g>
+                </a>
+                <a href="3-uebertragungsmedien.html">
+                  <g class="node">
+                    <rect
+                      x="575"
+                      y="101"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="651"
+                      y="121"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      3
+                    </text>
+                    <text
+                      x="651"
+                      y="136"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Übertr.medien
+                    </text>
+                  </g>
+                </a>
+                <a href="4-stueckliste.html">
+                  <g class="node">
+                    <rect
+                      x="638"
+                      y="176"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="714"
+                      y="196"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      4
+                    </text>
+                    <text
+                      x="714"
+                      y="211"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Stückliste
+                    </text>
+                  </g>
+                </a>
+                <a href="5-geraeteklassen.html">
+                  <g class="node">
+                    <rect
+                      x="672"
+                      y="268"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="748"
+                      y="288"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      5
+                    </text>
+                    <text
+                      x="748"
+                      y="303"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Geräteklassen
+                    </text>
+                  </g>
+                </a>
+                <a href="6-strukturierte-verkabelung.html">
+                  <g class="node">
+                    <rect
+                      x="672"
+                      y="366"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="748"
+                      y="386"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      6
+                    </text>
+                    <text
+                      x="748"
+                      y="401"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Strukt. Verkab.
+                    </text>
+                  </g>
+                </a>
+                <a href="7-it-infrastruktur.html">
+                  <g class="node">
+                    <rect
+                      x="638"
+                      y="458"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="714"
+                      y="478"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      7
+                    </text>
+                    <text
+                      x="714"
+                      y="493"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      IT-Infrastruktur
+                    </text>
+                  </g>
+                </a>
+                <a href="8-edgecomputing.html">
+                  <g class="node">
+                    <rect
+                      x="575"
+                      y="533"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="651"
+                      y="553"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      8
+                    </text>
+                    <text
+                      x="651"
+                      y="568"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Edge-Computing
+                    </text>
+                  </g>
+                </a>
+                <a href="9-server-betriebssystem.html">
+                  <g class="node">
+                    <rect
+                      x="490"
+                      y="582"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="566"
+                      y="602"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      9
+                    </text>
+                    <text
+                      x="566"
+                      y="617"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Server-BS
+                    </text>
+                  </g>
+                </a>
+                <a href="10-adressierung.html">
+                  <g class="node">
+                    <rect
+                      x="394"
+                      y="599"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="470"
+                      y="619"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      10
+                    </text>
+                    <text
+                      x="470"
+                      y="634"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Adressierung
+                    </text>
+                  </g>
+                </a>
+                <a href="11-dhcp-dns.html">
+                  <g class="node">
+                    <rect
+                      x="298"
+                      y="582"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="374"
+                      y="602"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      11
+                    </text>
+                    <text
+                      x="374"
+                      y="617"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      DHCP &amp; DNS
+                    </text>
+                  </g>
+                </a>
+                <a href="12-uebertragungsarten.html">
+                  <g class="node">
+                    <rect
+                      x="213"
+                      y="533"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="289"
+                      y="553"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      12
+                    </text>
+                    <text
+                      x="289"
+                      y="568"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Übertr.arten
+                    </text>
+                  </g>
+                </a>
+                <a href="13-topologien.html">
+                  <g class="node">
+                    <rect
+                      x="150"
+                      y="458"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="226"
+                      y="478"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      13
+                    </text>
+                    <text
+                      x="226"
+                      y="493"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Topologien
+                    </text>
+                  </g>
+                </a>
+                <a href="14-speichersysteme.html">
+                  <g class="node">
+                    <rect
+                      x="116"
+                      y="366"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="192"
+                      y="386"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      14
+                    </text>
+                    <text
+                      x="192"
+                      y="401"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Speichersysteme
+                    </text>
+                  </g>
+                </a>
+                <a href="15-raid.html">
+                  <g class="node">
+                    <rect
+                      x="116"
+                      y="268"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="192"
+                      y="288"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      15
+                    </text>
+                    <text
+                      x="192"
+                      y="303"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      RAID
+                    </text>
+                  </g>
+                </a>
+                <a href="16-email-protokolle.html">
+                  <g class="node">
+                    <rect
+                      x="150"
+                      y="176"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="226"
+                      y="196"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      16
+                    </text>
+                    <text
+                      x="226"
+                      y="211"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      E-Mail
+                    </text>
+                  </g>
+                </a>
+                <a href="17-netzwerktechnologien.html">
+                  <g class="node">
+                    <rect
+                      x="213"
+                      y="101"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="289"
+                      y="121"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      17
+                    </text>
+                    <text
+                      x="289"
+                      y="136"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      Netzwerktech.
+                    </text>
+                  </g>
+                </a>
+                <a href="18-vlan.html">
+                  <g class="node">
+                    <rect
+                      x="298"
+                      y="52"
+                      width="152"
+                      height="46"
+                      rx="6"
+                      fill="#fff"
+                      stroke="#DD5430"
+                      stroke-width="2"
+                    ></rect>
+                    <text
+                      x="374"
+                      y="72"
+                      text-anchor="middle"
+                      class="svg-title"
+                      style="font-size: 16px; fill: #dd5430"
+                    >
+                      18
+                    </text>
+                    <text
+                      x="374"
+                      y="87"
+                      text-anchor="middle"
+                      class="svg-label-sm"
+                    >
+                      VLAN
+                    </text>
+                  </g>
+                </a>
+              </svg>
+              <figcaption>
+                Klicke einen Knoten an, um den Test zum Thema zu öffnen — das
+                Navigationsbild ist selbst eine Sterntopologie (Thema 13).
+              </figcaption>
+            </figure>
+          </div>
 
-  <section class="explore" aria-label="Themen entdecken">
-    <div class="explore-head">
-      <div class="explore-intro">
-        <p class="eyebrow">Ansicht wählen</p>
-        <p class="explore-sub">Klassisch per Sterntopologie navigieren — oder die 18 Themen
-          über ein kleines Spiel „erjagen". Wähle oben rechts, worauf du gerade Lust hast.</p>
+          <div
+            class="explore-panel"
+            id="panel-search"
+            role="tabpanel"
+            aria-labelledby="tab-search"
+            data-mode="search"
+            hidden
+          ></div>
+          <div
+            class="explore-panel"
+            id="panel-memory"
+            role="tabpanel"
+            aria-labelledby="tab-memory"
+            data-mode="memory"
+            hidden
+          ></div>
+          <div
+            class="explore-panel"
+            id="panel-quiz"
+            role="tabpanel"
+            aria-labelledby="tab-quiz"
+            data-mode="quiz"
+            hidden
+          ></div>
+          <div
+            class="explore-panel"
+            id="panel-hunt"
+            role="tabpanel"
+            aria-labelledby="tab-hunt"
+            data-mode="hunt"
+            hidden
+          ></div>
+          <div
+            class="explore-panel"
+            id="panel-wheel"
+            role="tabpanel"
+            aria-labelledby="tab-wheel"
+            data-mode="wheel"
+            hidden
+          ></div>
+          <div
+            class="explore-panel"
+            id="panel-snake"
+            role="tabpanel"
+            aria-labelledby="tab-snake"
+            data-mode="snake"
+            hidden
+          ></div>
+
+          <noscript
+            ><p class="explore-sub" style="margin-top: 12px">
+              Die Spiel-Ansichten benötigen JavaScript — die Sterntopologie oben
+              und die Themenliste unten funktionieren auch ohne.
+            </p></noscript
+          >
+        </section>
+
+        <div class="sec-head">
+          <span class="ix">→</span>
+          <h2>Themen auswählen</h2>
+        </div>
+        <p class="sec-sub">
+          Jede Seite ist eigenständig: Fragen beantworten, Lösungen einzeln
+          aufdecken oder per Knopf alle einblenden.
+        </p>
+
+        <div class="topic-grid">
+          <a class="topic-card" href="1-grundbegriffe.html">
+            <span class="tc-num">1</span>
+            <h3>Grundbegriffe</h3>
+            <p>
+              Das Vokabular des Netzwerks: Device/Host/Peripherie, aktive vs.
+              passive Komponenten und die Aufgaben von Router, Switch und
+              Hauptverteiler.
+            </p>
+            <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="2-verkabelungsplan.html">
+            <span class="tc-num">2</span>
+            <h3>Gebäude- &amp; Verkabelungsplan</h3>
+            <p>
+              Gebäude- und Verkabelungsplan mit Symbolen und Kanal-Kennungen
+              sowie Lasten- und Pflichtenheft (Was vs. Wie).
+            </p>
+            <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="3-uebertragungsmedien.html">
+            <span class="tc-num">3</span>
+            <h3>Übertragungsmedien</h3>
+            <p>
+              Kupfer (TP, Schirmung), Kategorien vs. Klassen, Glasfaser mit
+              Totalreflexion und Stecker/Verbindungselemente.
+            </p>
+            <span class="tc-meta">17 Aufgaben · 5 Diagramme</span>
+          </a>
+          <a class="topic-card" href="4-stueckliste.html">
+            <span class="tc-num">4</span>
+            <h3>Stückliste</h3>
+            <p>
+              Aufbau und Zweck einer Stückliste (BOM) sowie das Rechnen mit
+              Mengen, Einzel- und Gesamtpreisen.
+            </p>
+            <span class="tc-meta">13 Aufgaben · 2 Diagramme</span>
+          </a>
+          <a class="topic-card" href="5-geraeteklassen.html">
+            <span class="tc-num">5</span>
+            <h3>Geräteklassen</h3>
+            <p>
+              Die fünf PC-Geräteklassen (Barebone, Notebook, Tablet, Desktop,
+              Industrie-PC) und ihre Zuordnung zu Mitarbeiterrollen.
+            </p>
+            <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="6-strukturierte-verkabelung.html">
+            <span class="tc-num">6</span>
+            <h3>Strukturierte Verkabelung</h3>
+            <p>
+              Hierarchische Sternverkabelung nach EN 50173: Primär-, Sekundär-
+              und Tertiärebene mit Verteilern, Medien und Maximallängen.
+            </p>
+            <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="7-it-infrastruktur.html">
+            <span class="tc-num">7</span>
+            <h3>IT-Infrastruktur</h3>
+            <p>
+              Server (Bauformen, Hardware, Dienste), Rechenzentren
+              (Verfügbarkeit, USV, Kühlung, Redundanz) und Cloud
+              (IaaS/PaaS/SaaS).
+            </p>
+            <span class="tc-meta">20 Aufgaben · 4 Diagramme</span>
+          </a>
+          <a class="topic-card" href="8-edgecomputing.html">
+            <span class="tc-num">8</span>
+            <h3>Edge- &amp; Fog-Computing</h3>
+            <p>
+              Daten am Rand des Netzes verarbeiten statt zentral in der Cloud —
+              geringe Latenz, IoT und Industrie 4.0; Edge-Computer als erster
+              Knoten.
+            </p>
+            <span class="tc-meta">15 Aufgaben · 4 Diagramme</span>
+          </a>
+          <a class="topic-card" href="9-server-betriebssystem.html">
+            <span class="tc-num">9</span>
+            <h3>Server-Betriebssysteme</h3>
+            <p>
+              Aufgaben eines Server-BS, Unterschied zum Desktop-System,
+              Vertreter (Windows Server, Linux/Unix), Lizenzmodelle und
+              Virtualisierung.
+            </p>
+            <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="10-adressierung.html">
+            <span class="tc-num">10</span>
+            <h3>Adressierung</h3>
+            <p>
+              IPv4-Aufbau, Subnetzmaske &amp; CIDR, Subnetting-Rechnen,
+              Netz-/Broadcast-Adresse, IPv6-Kürzung &amp; Adresstypen.
+            </p>
+            <span class="tc-meta">19 Aufgaben · 4 Diagramme</span>
+          </a>
+          <a class="topic-card" href="11-dhcp-dns.html">
+            <span class="tc-num">11</span>
+            <h3>DHCP &amp; DNS</h3>
+            <p>
+              Zuweisungsarten, DORA-Ablauf, Lease-Time, DNS-Auflösung &amp;
+              Caching, doppelter DHCP-Server.
+            </p>
+            <span class="tc-meta">15 Aufgaben · 2 Diagramme</span>
+          </a>
+          <a class="topic-card" href="12-uebertragungsarten.html">
+            <span class="tc-num">12</span>
+            <h3>Übertragungsarten</h3>
+            <p>
+              Seriell/parallel, Simplex/Halb-/Vollduplex, Multiplexing FDM · TDM
+              · CDM · WDM.
+            </p>
+            <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="13-topologien.html">
+            <span class="tc-num">13</span>
+            <h3>Topologien</h3>
+            <p>
+              Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Bewertung nach
+              Kosten, Skalierbarkeit, Ausfallsicherheit.
+            </p>
+            <span class="tc-meta">21 Aufgaben · 6 Diagramme</span>
+          </a>
+          <a class="topic-card" href="14-speichersysteme.html">
+            <span class="tc-num">14</span>
+            <h3>Speichersysteme</h3>
+            <p>
+              DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem,
+              Protokolle, Einsatz.
+            </p>
+            <span class="tc-meta">18 Aufgaben · 4 Diagramme</span>
+          </a>
+          <a class="topic-card" href="15-raid.html">
+            <span class="tc-num">15</span>
+            <h3>Speicherablagearten</h3>
+            <p>
+              RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität,
+              Ausfallsicherheit, Auswahl.
+            </p>
+            <span class="tc-meta">14 Aufgaben · 4 Diagramme</span>
+          </a>
+          <a class="topic-card" href="16-email-protokolle.html">
+            <span class="tc-num">16</span>
+            <h3>E-Mail-Protokolle</h3>
+            <p>
+              Wie eine E-Mail vom Sender zum Empfänger gelangt: SMTP versendet,
+              POP3 lädt lokal, IMAP synchronisiert serverseitig — plus Ports und
+              SSL/TLS.
+            </p>
+            <span class="tc-meta">16 Aufgaben · 3 Diagramme</span>
+          </a>
+          <a class="topic-card" href="17-netzwerktechnologien.html">
+            <span class="tc-num">17</span>
+            <h3>Netzwerktechnologien</h3>
+            <p>
+              Ethernet-Frame (Felder &amp; FCS), MAC-Adresse (OUI),
+              ARP-Auflösung (Broadcast/Unicast) und die MAC-Adress-Tabelle des
+              Switches (Learning &amp; Flooding).
+            </p>
+            <span class="tc-meta">19 Aufgaben · 4 Diagramme</span>
+          </a>
+          <a class="topic-card" href="18-vlan.html">
+            <span class="tc-num">18</span>
+            <h3>VLAN</h3>
+            <p>
+              Virtuelle LANs nach IEEE 802.1q: portbasiert vs. tagged,
+              Trunk-Leitung, Managed Switch, Inter-VLAN-Routing und der Aufbau
+              des 4-Byte-VLAN-Tags (VLAN-ID).
+            </p>
+            <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
+          </a>
+        </div>
+
+        <div class="sec-head">
+          <span class="ix">▦</span>
+          <h2>Konzepte wiederholen &amp; prüfen</h2>
+        </div>
+        <p class="sec-sub">
+          Die Lernseite fasst je Thema die Kernkonzepte kompakt zusammen — mit
+          allen 63 Diagrammen daneben, ohne Aufgaben dazwischen. Ideal zum
+          schnellen Wiederholen vor dem Test. Die
+          <strong>Probe-SA</strong> bündelt alle Themen zu einer
+          Prüfungssimulation mit Timer, Auswertung und Notenschlüssel.
+        </p>
+        <div class="topic-grid">
+          <a class="topic-card" href="lernseite.html">
+            <span class="tc-num">▦</span>
+            <h3>Lernseite</h3>
+            <p>
+              Kernkonzepte aller Themen 1–18 — von Device und Host über
+              Verkabelung, DORA und Multiplexing bis zu den RAID-Leveln,
+              E-Mail-Protokollen, Ethernet/ARP und VLAN — kompakt erklärt, mit
+              den zugehörigen Diagrammen und Rücklink zum jeweiligen Test.
+            </p>
+            <span class="tc-meta">18 Themen · 63 Diagramme</span>
+          </a>
+          <a class="topic-card" href="pruefung.html">
+            <span class="tc-num">✎</span>
+            <h3>Probe-SA</h3>
+            <p>
+              Prüfungssimulation über alle Themen 1–18: 26 automatisch bewertete
+              Auswahlfragen und ein offener Teil mit KI-Bewertung. Mit
+              Countdown, Notenschlüssel und gespeichertem Versuchsverlauf.
+            </p>
+            <span class="tc-meta"
+              >26 Auswahlfragen · offener Teil · 70 min</span
+            >
+          </a>
+        </div>
+
+        <div class="note" style="margin-top: 36px">
+          <span class="lbl">Hinweis zur Nutzung</span>
+          <p style="margin: 0.4em 0 0">
+            Bei Multiple-Choice-Fragen klickst du die Antwort an —
+            richtig/falsch wird sofort farbig markiert und die Erklärung
+            erscheint. Bei Mehrfachauswahl zuerst alle Antworten wählen, dann
+            „Auswerten". Rechen-, Zuordnungs- und Freitextaufgaben löst du
+            selbst und deckst die Musterlösung mit „Lösung anzeigen" auf. Der
+            Zähler oben auf jeder Themenseite zählt nur die automatisch
+            auswertbaren Fragen.
+          </p>
+        </div>
       </div>
-      <div class="seg" role="tablist" aria-label="Ansichtsmodus">
-        <button class="seg-btn" type="button" role="tab" id="tab-star"   aria-controls="panel-star"   aria-selected="true"  data-mode="star">Sterntopologie</button>
-        <button class="seg-btn" type="button" role="tab" id="tab-search" aria-controls="panel-search" aria-selected="false" tabindex="-1" data-mode="search">Schnellsuche</button>
-        <button class="seg-btn" type="button" role="tab" id="tab-memory" aria-controls="panel-memory" aria-selected="false" tabindex="-1" data-mode="memory">Memory</button>
-        <button class="seg-btn" type="button" role="tab" id="tab-quiz"   aria-controls="panel-quiz"   aria-selected="false" tabindex="-1" data-mode="quiz">Quiz-Tor</button>
-        <button class="seg-btn" type="button" role="tab" id="tab-hunt"   aria-controls="panel-hunt"   aria-selected="false" tabindex="-1" data-mode="hunt">Schatzsuche</button>
-        <button class="seg-btn" type="button" role="tab" id="tab-wheel"  aria-controls="panel-wheel"  aria-selected="false" tabindex="-1" data-mode="wheel">Glücksrad</button>
-        <button class="seg-btn" type="button" role="tab" id="tab-snake"  aria-controls="panel-snake"  aria-selected="false" tabindex="-1" data-mode="snake">Snake</button>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <span class="mono">IT-Lernmaterial · Fachunterricht IT</span> —
+        Selbsttest Themen 1–18. Kerninhalt;
+        <span class="mono">🔬 [Vertiefung]</span> ist als solche gekennzeichnet.
       </div>
-    </div>
+    </footer>
 
-    <div class="explore-panel" id="panel-star" role="tabpanel" aria-labelledby="tab-star" data-mode="star">
-  <figure class="diagram" style="background:var(--surface);">
-    <svg viewBox="0 0 940 680" role="img" aria-label="Sterntopologie als Navigation: zentraler Hub verbunden mit den 18 Themenseiten">
-      <g stroke="#B9C7D2" stroke-width="2">
-      <line x1="470" y1="340" x2="470" y2="58"></line>
-      <line x1="470" y1="340" x2="566" y2="75"></line>
-      <line x1="470" y1="340" x2="651" y2="124"></line>
-      <line x1="470" y1="340" x2="714" y2="199"></line>
-      <line x1="470" y1="340" x2="748" y2="291"></line>
-      <line x1="470" y1="340" x2="748" y2="389"></line>
-      <line x1="470" y1="340" x2="714" y2="481"></line>
-      <line x1="470" y1="340" x2="651" y2="556"></line>
-      <line x1="470" y1="340" x2="566" y2="605"></line>
-      <line x1="470" y1="340" x2="470" y2="622"></line>
-      <line x1="470" y1="340" x2="374" y2="605"></line>
-      <line x1="470" y1="340" x2="289" y2="556"></line>
-      <line x1="470" y1="340" x2="226" y2="481"></line>
-      <line x1="470" y1="340" x2="192" y2="389"></line>
-      <line x1="470" y1="340" x2="192" y2="291"></line>
-      <line x1="470" y1="340" x2="226" y2="199"></line>
-      <line x1="470" y1="340" x2="289" y2="124"></line>
-      <line x1="470" y1="340" x2="374" y2="75"></line>
-      </g>
-      <g>
-        <rect x="380" y="311" width="180" height="58" rx="8" fill="#16242E"></rect>
-        <text x="470" y="336" text-anchor="middle" class="svg-title" style="fill:#ffffff;">FUIT · Test 1–18</text>
-        <text x="470" y="354" text-anchor="middle" class="svg-label-sm" style="fill:#9FB3C0;">Hub · Start (Sterntopologie)</text>
-      </g>
-      <a href="1-grundbegriffe.html"><g class="node">
-        <rect x="394" y="35" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="470" y="55" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">1</text>
-        <text x="470" y="70" text-anchor="middle" class="svg-label-sm">Grundbegriffe</text>
-      </g></a>
-      <a href="2-verkabelungsplan.html"><g class="node">
-        <rect x="490" y="52" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="566" y="72" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">2</text>
-        <text x="566" y="87" text-anchor="middle" class="svg-label-sm">Verkabelungsplan</text>
-      </g></a>
-      <a href="3-uebertragungsmedien.html"><g class="node">
-        <rect x="575" y="101" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="651" y="121" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">3</text>
-        <text x="651" y="136" text-anchor="middle" class="svg-label-sm">Übertr.medien</text>
-      </g></a>
-      <a href="4-stueckliste.html"><g class="node">
-        <rect x="638" y="176" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="714" y="196" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">4</text>
-        <text x="714" y="211" text-anchor="middle" class="svg-label-sm">Stückliste</text>
-      </g></a>
-      <a href="5-geraeteklassen.html"><g class="node">
-        <rect x="672" y="268" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="748" y="288" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">5</text>
-        <text x="748" y="303" text-anchor="middle" class="svg-label-sm">Geräteklassen</text>
-      </g></a>
-      <a href="6-strukturierte-verkabelung.html"><g class="node">
-        <rect x="672" y="366" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="748" y="386" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">6</text>
-        <text x="748" y="401" text-anchor="middle" class="svg-label-sm">Strukt. Verkab.</text>
-      </g></a>
-      <a href="7-it-infrastruktur.html"><g class="node">
-        <rect x="638" y="458" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="714" y="478" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">7</text>
-        <text x="714" y="493" text-anchor="middle" class="svg-label-sm">IT-Infrastruktur</text>
-      </g></a>
-      <a href="8-edgecomputing.html"><g class="node">
-        <rect x="575" y="533" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="651" y="553" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">8</text>
-        <text x="651" y="568" text-anchor="middle" class="svg-label-sm">Edge-Computing</text>
-      </g></a>
-      <a href="9-server-betriebssystem.html"><g class="node">
-        <rect x="490" y="582" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="566" y="602" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">9</text>
-        <text x="566" y="617" text-anchor="middle" class="svg-label-sm">Server-BS</text>
-      </g></a>
-      <a href="10-adressierung.html"><g class="node">
-        <rect x="394" y="599" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="470" y="619" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">10</text>
-        <text x="470" y="634" text-anchor="middle" class="svg-label-sm">Adressierung</text>
-      </g></a>
-      <a href="11-dhcp-dns.html"><g class="node">
-        <rect x="298" y="582" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="374" y="602" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">11</text>
-        <text x="374" y="617" text-anchor="middle" class="svg-label-sm">DHCP &amp; DNS</text>
-      </g></a>
-      <a href="12-uebertragungsarten.html"><g class="node">
-        <rect x="213" y="533" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="289" y="553" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">12</text>
-        <text x="289" y="568" text-anchor="middle" class="svg-label-sm">Übertr.arten</text>
-      </g></a>
-      <a href="13-topologien.html"><g class="node">
-        <rect x="150" y="458" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="226" y="478" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">13</text>
-        <text x="226" y="493" text-anchor="middle" class="svg-label-sm">Topologien</text>
-      </g></a>
-      <a href="14-speichersysteme.html"><g class="node">
-        <rect x="116" y="366" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="192" y="386" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">14</text>
-        <text x="192" y="401" text-anchor="middle" class="svg-label-sm">Speichersysteme</text>
-      </g></a>
-      <a href="15-raid.html"><g class="node">
-        <rect x="116" y="268" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="192" y="288" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">15</text>
-        <text x="192" y="303" text-anchor="middle" class="svg-label-sm">RAID</text>
-      </g></a>
-      <a href="16-email-protokolle.html"><g class="node">
-        <rect x="150" y="176" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="226" y="196" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">16</text>
-        <text x="226" y="211" text-anchor="middle" class="svg-label-sm">E-Mail</text>
-      </g></a>
-      <a href="17-netzwerktechnologien.html"><g class="node">
-        <rect x="213" y="101" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="289" y="121" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">17</text>
-        <text x="289" y="136" text-anchor="middle" class="svg-label-sm">Netzwerktech.</text>
-      </g></a>
-      <a href="18-vlan.html"><g class="node">
-        <rect x="298" y="52" width="152" height="46" rx="6" fill="#fff" stroke="#DD5430" stroke-width="2"></rect>
-        <text x="374" y="72" text-anchor="middle" class="svg-title" style="font-size:16px;fill:#DD5430;">18</text>
-        <text x="374" y="87" text-anchor="middle" class="svg-label-sm">VLAN</text>
-      </g></a>
-    </svg>
-    <figcaption>Klicke einen Knoten an, um den Test zum Thema zu öffnen — das Navigationsbild ist selbst eine Sterntopologie (Thema 13).</figcaption>
-  </figure>
-    </div>
-
-    <div class="explore-panel" id="panel-search" role="tabpanel" aria-labelledby="tab-search" data-mode="search" hidden></div>
-    <div class="explore-panel" id="panel-memory" role="tabpanel" aria-labelledby="tab-memory" data-mode="memory" hidden></div>
-    <div class="explore-panel" id="panel-quiz"   role="tabpanel" aria-labelledby="tab-quiz"   data-mode="quiz"   hidden></div>
-    <div class="explore-panel" id="panel-hunt"   role="tabpanel" aria-labelledby="tab-hunt"   data-mode="hunt"   hidden></div>
-    <div class="explore-panel" id="panel-wheel"  role="tabpanel" aria-labelledby="tab-wheel"  data-mode="wheel"  hidden></div>
-    <div class="explore-panel" id="panel-snake"  role="tabpanel" aria-labelledby="tab-snake"  data-mode="snake"  hidden></div>
-
-    <noscript><p class="explore-sub" style="margin-top:12px;">Die Spiel-Ansichten benötigen JavaScript — die Sterntopologie oben und die Themenliste unten funktionieren auch ohne.</p></noscript>
-  </section>
-
-  <div class="sec-head"><span class="ix">→</span><h2>Themen auswählen</h2></div>
-  <p class="sec-sub">Jede Seite ist eigenständig: Fragen beantworten, Lösungen einzeln aufdecken
-    oder per Knopf alle einblenden.</p>
-
-  <div class="topic-grid">
-    <a class="topic-card" href="1-grundbegriffe.html">
-      <span class="tc-num">1</span><h3>Grundbegriffe</h3>
-      <p>Das Vokabular des Netzwerks: Device/Host/Peripherie, aktive vs. passive Komponenten und die Aufgaben von Router, Switch und Hauptverteiler.</p>
-      <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="2-verkabelungsplan.html">
-      <span class="tc-num">2</span><h3>Gebäude- &amp; Verkabelungsplan</h3>
-      <p>Gebäude- und Verkabelungsplan mit Symbolen und Kanal-Kennungen sowie Lasten- und Pflichtenheft (Was vs. Wie).</p>
-      <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="3-uebertragungsmedien.html">
-      <span class="tc-num">3</span><h3>Übertragungsmedien</h3>
-      <p>Kupfer (TP, Schirmung), Kategorien vs. Klassen, Glasfaser mit Totalreflexion und Stecker/Verbindungselemente.</p>
-      <span class="tc-meta">17 Aufgaben · 5 Diagramme</span>
-    </a>
-    <a class="topic-card" href="4-stueckliste.html">
-      <span class="tc-num">4</span><h3>Stückliste</h3>
-      <p>Aufbau und Zweck einer Stückliste (BOM) sowie das Rechnen mit Mengen, Einzel- und Gesamtpreisen.</p>
-      <span class="tc-meta">13 Aufgaben · 2 Diagramme</span>
-    </a>
-    <a class="topic-card" href="5-geraeteklassen.html">
-      <span class="tc-num">5</span><h3>Geräteklassen</h3>
-      <p>Die fünf PC-Geräteklassen (Barebone, Notebook, Tablet, Desktop, Industrie-PC) und ihre Zuordnung zu Mitarbeiterrollen.</p>
-      <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="6-strukturierte-verkabelung.html">
-      <span class="tc-num">6</span><h3>Strukturierte Verkabelung</h3>
-      <p>Hierarchische Sternverkabelung nach EN 50173: Primär-, Sekundär- und Tertiärebene mit Verteilern, Medien und Maximallängen.</p>
-      <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="7-it-infrastruktur.html">
-      <span class="tc-num">7</span><h3>IT-Infrastruktur</h3>
-      <p>Server (Bauformen, Hardware, Dienste), Rechenzentren (Verfügbarkeit, USV, Kühlung, Redundanz) und Cloud (IaaS/PaaS/SaaS).</p>
-      <span class="tc-meta">20 Aufgaben · 4 Diagramme</span>
-    </a>
-    <a class="topic-card" href="8-edgecomputing.html">
-      <span class="tc-num">8</span><h3>Edge- &amp; Fog-Computing</h3>
-      <p>Daten am Rand des Netzes verarbeiten statt zentral in der Cloud — geringe Latenz, IoT und Industrie 4.0; Edge-Computer als erster Knoten.</p>
-      <span class="tc-meta">15 Aufgaben · 4 Diagramme</span>
-    </a>
-    <a class="topic-card" href="9-server-betriebssystem.html">
-      <span class="tc-num">9</span><h3>Server-Betriebssysteme</h3>
-      <p>Aufgaben eines Server-BS, Unterschied zum Desktop-System, Vertreter (Windows Server, Linux/Unix), Lizenzmodelle und Virtualisierung.</p>
-      <span class="tc-meta">14 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="10-adressierung.html">
-      <span class="tc-num">10</span><h3>Adressierung</h3>
-      <p>IPv4-Aufbau, Subnetzmaske &amp; CIDR, Subnetting-Rechnen, Netz-/Broadcast-Adresse, IPv6-Kürzung &amp; Adresstypen.</p>
-      <span class="tc-meta">19 Aufgaben · 4 Diagramme</span>
-    </a>
-    <a class="topic-card" href="11-dhcp-dns.html">
-      <span class="tc-num">11</span><h3>DHCP &amp; DNS</h3>
-      <p>Zuweisungsarten, DORA-Ablauf, Lease-Time, DNS-Auflösung &amp; Caching, doppelter DHCP-Server.</p>
-      <span class="tc-meta">15 Aufgaben · 2 Diagramme</span>
-    </a>
-    <a class="topic-card" href="12-uebertragungsarten.html">
-      <span class="tc-num">12</span><h3>Übertragungsarten</h3>
-      <p>Seriell/parallel, Simplex/Halb-/Vollduplex, Multiplexing FDM · TDM · CDM · WDM.</p>
-      <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="13-topologien.html">
-      <span class="tc-num">13</span><h3>Topologien</h3>
-      <p>Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Bewertung nach Kosten, Skalierbarkeit, Ausfallsicherheit.</p>
-      <span class="tc-meta">21 Aufgaben · 6 Diagramme</span>
-    </a>
-    <a class="topic-card" href="14-speichersysteme.html">
-      <span class="tc-num">14</span><h3>Speichersysteme</h3>
-      <p>DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem, Protokolle, Einsatz.</p>
-      <span class="tc-meta">18 Aufgaben · 4 Diagramme</span>
-    </a>
-    <a class="topic-card" href="15-raid.html">
-      <span class="tc-num">15</span><h3>Speicherablagearten</h3>
-      <p>RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität, Ausfallsicherheit, Auswahl.</p>
-      <span class="tc-meta">14 Aufgaben · 4 Diagramme</span>
-    </a>
-    <a class="topic-card" href="16-email-protokolle.html">
-      <span class="tc-num">16</span><h3>E-Mail-Protokolle</h3>
-      <p>Wie eine E-Mail vom Sender zum Empfänger gelangt: SMTP versendet, POP3 lädt lokal, IMAP synchronisiert serverseitig — plus Ports und SSL/TLS.</p>
-      <span class="tc-meta">16 Aufgaben · 3 Diagramme</span>
-    </a>
-    <a class="topic-card" href="17-netzwerktechnologien.html">
-      <span class="tc-num">17</span><h3>Netzwerktechnologien</h3>
-      <p>Ethernet-Frame (Felder &amp; FCS), MAC-Adresse (OUI), ARP-Auflösung (Broadcast/Unicast) und die MAC-Adress-Tabelle des Switches (Learning &amp; Flooding).</p>
-      <span class="tc-meta">19 Aufgaben · 4 Diagramme</span>
-    </a>
-    <a class="topic-card" href="18-vlan.html">
-      <span class="tc-num">18</span><h3>VLAN</h3>
-      <p>Virtuelle LANs nach IEEE 802.1q: portbasiert vs. tagged, Trunk-Leitung, Managed Switch, Inter-VLAN-Routing und der Aufbau des 4-Byte-VLAN-Tags (VLAN-ID).</p>
-      <span class="tc-meta">15 Aufgaben · 3 Diagramme</span>
-    </a>
-  </div>
-
-  <div class="sec-head"><span class="ix">▦</span><h2>Konzepte wiederholen &amp; prüfen</h2></div>
-  <p class="sec-sub">Die Lernseite fasst je Thema die Kernkonzepte kompakt zusammen — mit allen
-    63 Diagrammen daneben, ohne Aufgaben dazwischen. Ideal zum schnellen Wiederholen vor dem Test. Die <strong>Probe-SA</strong> bündelt alle Themen zu einer Prüfungssimulation mit Timer, Auswertung und Notenschlüssel.</p>
-  <div class="topic-grid">
-    <a class="topic-card" href="lernseite.html">
-      <span class="tc-num">▦</span><h3>Lernseite</h3>
-      <p>Kernkonzepte aller Themen 1–18 — von Device und Host über Verkabelung, DORA und Multiplexing
-        bis zu den RAID-Leveln, E-Mail-Protokollen, Ethernet/ARP und VLAN — kompakt erklärt, mit den zugehörigen
-        Diagrammen und Rücklink zum jeweiligen Test.</p>
-      <span class="tc-meta">18 Themen · 63 Diagramme</span>
-    </a>
-    <a class="topic-card" href="pruefung.html">
-      <span class="tc-num">✎</span><h3>Probe-SA</h3>
-      <p>Prüfungssimulation über alle Themen 1–18: 26 automatisch bewertete Auswahlfragen und ein offener Teil
-        mit KI-Bewertung. Mit Countdown, Notenschlüssel und gespeichertem Versuchsverlauf.</p>
-      <span class="tc-meta">26 Auswahlfragen · offener Teil · 70 min</span>
-    </a>
-  </div>
-
-  <div class="note" style="margin-top:36px;">
-    <span class="lbl">Hinweis zur Nutzung</span>
-    <p style="margin:.4em 0 0;">Bei Multiple-Choice-Fragen klickst du die Antwort an — richtig/falsch wird sofort
-    farbig markiert und die Erklärung erscheint. Bei Mehrfachauswahl zuerst alle Antworten wählen, dann
-    „Auswerten". Rechen-, Zuordnungs- und Freitextaufgaben löst du selbst und deckst die Musterlösung mit
-    „Lösung anzeigen" auf. Der Zähler oben auf jeder Themenseite zählt nur die automatisch auswertbaren Fragen.</p>
-  </div>
-
-</div>
-</main>
-
-<footer class="foot"><div class="wrap">
-  <span class="mono">IT-Lernmaterial · Fachunterricht IT</span> — Selbsttest Themen 1–18.
-  Kerninhalt; <span class="mono">🔬 [Vertiefung]</span> ist als solche gekennzeichnet.
-</div></footer>
-
-<script src="assets/explore.js"></script>
-</body>
+    <script src="assets/explore.js"></script>
+  </body>
 </html>
