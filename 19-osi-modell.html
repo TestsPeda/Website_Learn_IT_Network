@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>19 · OSI-Modell — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–19</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="17-netzwerktechnologien.html">17</a>
+    <a href="18-vlan.html">18</a>
+    <a href="19-osi-modell.html" class="current">19</a>
+    <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Referenzmodelle &amp; Troubleshooting</p>
+    <div class="hero-num"><span class="hash">#</span>19</div>
+    <h1>OSI-Modell — Referenzmodelle &amp; Netzwerk-Troubleshooting</h1>
+    <p class="lede">Das <b>OSI-Modell</b> ist ein <b>konzeptionelles Modell</b> mit <code>7 Schichten</code> — es gibt vor,
+      <b>was</b> jede Schicht leisten muss, aber nicht <b>wie</b>. Das <b>TCP/IP-Modell</b> ist dagegen
+      <b>protokollgestützt</b> (<code>4 Schichten</code>). Beide helfen beim Verstehen, Designen und
+      <b>Fehlerbeheben</b> — zusammen mit den Windows-Tools <code>ipconfig</code>, <code>ping</code>,
+      <code>tracert</code>, <code>nslookup</code>, <code>arp</code> und <code>netstat</code>.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>16</b> Aufgaben</span>
+      <span class="pill"><b>4</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · KI-Freitext</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+    <button class="btn" id="reset-answers">Antworten zurücksetzen</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Das OSI-Modell (7 Schichten)</h2></div>
+  <p class="sec-sub">Das OSI-Modell hilft Benutzern, Betreibern, Herstellern und Software-Anbietern beim
+    <b>Verstehen, Designen und Fehlerbeheben</b> von Netzwerkkommunikation. Es ist ein
+    <b>konzeptionelles Modell</b>: Es gibt die Funktionalitäten der Schichten vor — jedoch nicht, <b>wie</b> diese zu erfüllen sind.</p>
+
+  <figure class="diagram" id="osi-fluss-figur">
+    <svg viewBox="0 0 760 452" role="img" aria-label="Die sieben Schichten des OSI-Modells als zwei Türme für Sender und Empfänger: Anwendungsschicht oben bis Physische Schicht unten; ein Datenpaket wandert beim Sender die Schichten hinab, über das Übertragungsmedium und beim Empfänger wieder hinauf">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Die 7 Schichten des OSI-Modells</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#5C6B78;">Senden = Kapselung von Schicht 7 nach 1 · Empfangen = Entkapselung von Schicht 1 nach 7</text>
+
+      <!-- Sender-Turm -->
+      <text x="200" y="72" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Sender</text>
+      <rect x="60" y="80"  width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="74" y="98"  fill="#16242E" font-size="11" font-weight="700">7 · Anwendungsschicht</text><text x="74" y="112" fill="#4A5864" font-size="10">Browser, E-Mail-Client, eigene Software</text>
+      <rect x="60" y="122" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="74" y="140" fill="#16242E" font-size="11" font-weight="700">6 · Darstellungsschicht</text><text x="74" y="154" fill="#4A5864" font-size="10">codieren · verschlüsseln · komprimieren</text>
+      <rect x="60" y="164" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="74" y="182" fill="#16242E" font-size="11" font-weight="700">5 · Sitzungsschicht</text><text x="74" y="196" fill="#4A5864" font-size="10">Sitzungen öffnen/halten/schließen · Kontrollpunkte</text>
+      <rect x="60" y="206" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="224" fill="#16242E" font-size="11" font-weight="700">4 · Transportschicht</text><text x="74" y="238" fill="#4A5864" font-size="10">teilt Daten in Segmente · setzt sie wieder zusammen</text>
+      <rect x="60" y="248" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="266" fill="#16242E" font-size="11" font-weight="700">3 · Netzwerkschicht</text><text x="74" y="280" fill="#4A5864" font-size="10">Routing über den besten Weg · IP-Adressen</text>
+      <rect x="60" y="290" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="308" fill="#16242E" font-size="11" font-weight="700">2 · Datenverbindungsschicht</text><text x="74" y="322" fill="#4A5864" font-size="10">Rahmen (Frames) · LLC + MAC</text>
+      <rect x="60" y="332" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="350" fill="#16242E" font-size="11" font-weight="700">1 · Physische Schicht</text><text x="74" y="364" fill="#4A5864" font-size="10">Bits (0/1) · Kabel oder Funk · Bitrate</text>
+
+      <!-- Empfänger-Turm -->
+      <text x="560" y="72" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Empfänger</text>
+      <rect x="420" y="80"  width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="434" y="105" fill="#16242E" font-size="11" font-weight="700">7 · Anwendungsschicht</text>
+      <rect x="420" y="122" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="434" y="147" fill="#16242E" font-size="11" font-weight="700">6 · Darstellungsschicht</text>
+      <rect x="420" y="164" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="434" y="189" fill="#16242E" font-size="11" font-weight="700">5 · Sitzungsschicht</text>
+      <rect x="420" y="206" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="231" fill="#16242E" font-size="11" font-weight="700">4 · Transportschicht</text>
+      <rect x="420" y="248" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="273" fill="#16242E" font-size="11" font-weight="700">3 · Netzwerkschicht</text>
+      <rect x="420" y="290" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="315" fill="#16242E" font-size="11" font-weight="700">2 · Datenverbindungsschicht</text>
+      <rect x="420" y="332" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="357" fill="#16242E" font-size="11" font-weight="700">1 · Physische Schicht</text>
+
+      <!-- Übertragungsmedium -->
+      <line x1="200" y1="372" x2="200" y2="404" stroke="#16242E" stroke-width="2.5"/>
+      <line x1="200" y1="404" x2="560" y2="404" stroke="#16242E" stroke-width="2.5"/>
+      <line x1="560" y1="404" x2="560" y2="372" stroke="#16242E" stroke-width="2.5"/>
+      <text x="380" y="424" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Übertragungsmedium (Kabel oder Funk)</text>
+
+      <!-- Richtungspfeile -->
+      <text x="352" y="230" fill="#4A5864" font-size="11" text-anchor="middle" font-weight="700">↓</text>
+      <text x="352" y="140" fill="#4A5864" font-size="10" text-anchor="middle" font-weight="700">Kapselung</text>
+      <text x="408" y="230" fill="#4A5864" font-size="11" text-anchor="middle" font-weight="700">↑</text>
+      <text x="408" y="140" fill="#4A5864" font-size="10" text-anchor="middle" font-weight="700">Entkapselung</text>
+
+      <!-- animierbares Datenpaket (Animation: assets/style.css + assets/osi-anim.js) -->
+      <g class="osi-paket" style="--osi-drop:292px; --osi-medium:56px;">
+        <rect x="339" y="88" width="26" height="18" rx="4" fill="#C9A227" stroke="#16242E" stroke-width="1.5"/>
+        <text x="352" y="101" fill="#16242E" font-size="9" text-anchor="middle" font-weight="700">Daten</text>
+      </g>
+    </svg>
+    <div class="osi-anim-ctrl">
+      <button class="btn" id="osi-anim-toggle" aria-pressed="true">Animation anhalten</button>
+    </div>
+    <figcaption>Beim Sender werden die Daten von Schicht <b>7 bis 1</b> verpackt (<b>Kapselung</b>), als Bits über das
+      Medium übertragen und beim Empfänger von Schicht <b>1 bis 7</b> wieder ausgepackt. Schicht 2 besteht aus
+      <b>LLC</b> (Protokolle identifizieren, Fehlerprüfung, Rahmen synchronisieren) und <b>MAC</b> (MAC-Adressen, Sende-/Empfangsberechtigungen).</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-src">Modelltyp</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was für ein Modell ist das <b>OSI-Modell</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein protokollgestütztes Modell — es schreibt konkrete Protokolle je Schicht vor.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein konzeptionelles Modell — es gibt die Funktionalitäten der Schichten vor, aber nicht, wie diese zu erfüllen sind.</li>
+        <li class="opt"><span class="tick"></span>Ein physisches Gerätemodell — es beschreibt den inneren Aufbau von Switches und Routern.</li>
+        <li class="opt"><span class="tick"></span>Ein Verschlüsselungsstandard für sichere Netzwerkkommunikation.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Das OSI-Modell ist ein <b>konzeptionelles Modell</b>: Es legt fest, <b>welche</b> Funktionalität jede Schicht erfüllen muss — aber nicht, <b>wie</b>. Es hilft beim Verstehen, Designen und Fehlerbeheben von Netzwerkkommunikation.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Zuordnung</span><span class="q-src">Schichtnamen</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Trage die <b>deutschen Namen</b> der sieben OSI-Schichten ein (von unten nach oben).</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Nr.</th><th>Schichtname</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>?</td></tr>
+          <tr><td>2</td><td>?</td></tr>
+          <tr><td>3</td><td>?</td></tr>
+          <tr><td>4</td><td>?</td></tr>
+          <tr><td>5</td><td>?</td></tr>
+          <tr><td>6</td><td>?</td></tr>
+          <tr><td>7</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Nr.</th><th>Schichtname</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Physische Schicht</td></tr>
+          <tr><td>2</td><td>Datenverbindungsschicht</td></tr>
+          <tr><td>3</td><td>Netzwerkschicht</td></tr>
+          <tr><td>4</td><td>Transportschicht</td></tr>
+          <tr><td>5</td><td>Sitzungsschicht</td></tr>
+          <tr><td>6</td><td>Darstellungsschicht</td></tr>
+          <tr><td>7</td><td>Anwendungsschicht</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multiple Choice</span><span class="q-src">Schicht 2</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Schicht zerlegt Pakete in <b>Rahmen</b> und besteht aus den zwei Teilen <b>LLC</b> und <b>MAC</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Physische Schicht (Schicht 1)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Datenverbindungsschicht (Schicht 2)</li>
+        <li class="opt"><span class="tick"></span>Netzwerkschicht (Schicht 3)</li>
+        <li class="opt"><span class="tick"></span>Transportschicht (Schicht 4)</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Datenverbindungsschicht</b> stellt die Verbindung zwischen zwei physisch verbundenen Knoten her, zerlegt Pakete in <b>Rahmen</b> und besteht aus <b>LLC</b> (Logical Link Control) und <b>MAC</b> (Media Access Control).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multi-Select</span><span class="q-src">LLC vs. MAC</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aufgaben übernimmt der <b>LLC-Teil</b> (Logical Link Control) der Schicht 2? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Er identifiziert Netzwerkprotokolle.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er führt Fehlerprüfungen durch.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er synchronisiert Rahmen.</li>
+        <li class="opt"><span class="tick"></span>Er verwendet MAC-Adressen, um Geräte zu verbinden.</li>
+        <li class="opt"><span class="tick"></span>Er routet Pakete über den besten Weg durch das Netzwerk.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b>LLC</b> identifiziert Netzwerkprotokolle, führt <b>Fehlerprüfungen</b> durch und <b>synchronisiert Rahmen</b>. MAC-Adressen und Sende-/Empfangsberechtigungen sind Aufgabe des <b>MAC</b>-Teils; das Routing gehört zur <b>Netzwerkschicht</b> (3).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-src">Sitzungsschicht</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Die Sitzungsschicht kann während einer Datenübertragung <b>Kontrollpunkte</b> setzen. Wozu?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Zur Verschlüsselung der Daten an definierten Stellen.</li>
+        <li class="opt"><span class="tick"></span>Um die Bitrate der physischen Verbindung zu kontrollieren.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Damit die Übertragung nach einer Unterbrechung ab dem letzten Kontrollpunkt fortgesetzt werden kann.</li>
+        <li class="opt"><span class="tick"></span>Um Pakete beim Routing zu priorisieren.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Sitzungsschicht</b> öffnet, hält und schließt Sitzungen. Wird die Sitzung unterbrochen, können die Geräte die Übertragung <b>vom letzten Kontrollpunkt aus fortsetzen</b> — es muss nicht von vorn begonnen werden.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multi-Select</span><span class="q-src">Vorteile</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen nennen einen echten <b>Vorteil des OSI-Modells</b>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Es erleichtert die Identifizierung der benötigten Hardware und Software für den Netzaufbau.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es hilft bei der Fehlerbehebung, weil sich das Problem einer bestimmten Schicht zuordnen lässt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es unterstützt Hersteller bei Produkten für offene Interoperabilität.</li>
+        <li class="opt"><span class="tick"></span>Es legt fest, welche konkreten Protokolle in jeder Schicht verwendet werden müssen.</li>
+        <li class="opt"><span class="tick"></span>Es macht Netzwerke automatisch schneller.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Vorteile laut Mitschrift: Identifizierung benötigter <b>Hard-/Software</b>, Verstehen des Kommunikationsprozesses, <b>Fehlerbehebung</b> über die Schicht-Zuordnung, <b>offene Interoperabilität</b> sowie klare Kommunikation, auf welchen Schichten ein Produkt arbeitet. Konkrete Protokolle schreibt OSI gerade <b>nicht</b> vor (das ist der protokollgestützte Ansatz von TCP/IP).</p></div></article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>TCP/IP-Modell &amp; Vergleich mit OSI</h2></div>
+  <p class="sec-sub">Das TCP/IP-Modell überträgt Daten <b>zuverlässig und genau</b> von Gerät zu Gerät. Es ist ein
+    <b>protokollgestütztes Modell</b>: Es gibt eine Reihe an <b>Protokollen</b> vor, die in den Schichten verwendet werden können.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 400" role="img" aria-label="Gegenüberstellung: die sieben OSI-Schichten links werden auf die vier TCP/IP-Schichten rechts abgebildet — Anwendungsschicht deckt OSI 5 bis 7 ab, Transportschicht OSI 4, Internetschicht OSI 3, Netzwerkzugangsschicht OSI 1 und 2">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">OSI ↔ TCP/IP — welche Schichten sich entsprechen</text>
+      <text x="180" y="58" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">OSI (konzeptionell, 7 Schichten)</text>
+      <text x="580" y="58" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">TCP/IP (protokollgestützt, 4 Schichten)</text>
+
+      <!-- OSI links -->
+      <rect x="60" y="68"  width="240" height="38" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="180" y="92"  fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">7 · Anwendungsschicht</text>
+      <rect x="60" y="110" width="240" height="38" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="180" y="134" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">6 · Darstellungsschicht</text>
+      <rect x="60" y="152" width="240" height="38" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="180" y="176" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">5 · Sitzungsschicht</text>
+      <rect x="60" y="194" width="240" height="38" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="180" y="218" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">4 · Transportschicht</text>
+      <rect x="60" y="236" width="240" height="38" rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="180" y="260" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">3 · Netzwerkschicht</text>
+      <rect x="60" y="278" width="240" height="38" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="180" y="302" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">2 · Datenverbindungsschicht</text>
+      <rect x="60" y="320" width="240" height="38" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="180" y="344" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">1 · Physische Schicht</text>
+
+      <!-- Verbindungsbänder -->
+      <polygon points="300,68 460,68 460,152 300,190" fill="#DD5430" opacity="0.12"/>
+      <polygon points="300,194 460,156 460,236 300,232" fill="#15786E" opacity="0.12"/>
+      <polygon points="300,236 460,240 460,316 300,274" fill="#C9A227" opacity="0.15"/>
+      <polygon points="300,278 460,320 460,394 300,358" fill="#33424D" opacity="0.12"/>
+
+      <!-- TCP/IP rechts -->
+      <rect x="460" y="68"  width="240" height="84"  rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="580" y="104" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">4 · Anwendungsschicht</text><text x="580" y="120" fill="#4A5864" font-size="10" text-anchor="middle">alles, was der Nutzer sieht — Zugriff aufs Netz</text>
+      <rect x="460" y="156" width="240" height="80"  rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="580" y="190" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">3 · Transportschicht</text><text x="580" y="206" fill="#4A5864" font-size="10" text-anchor="middle">sichere, zuverlässige Übertragung · Pakete</text>
+      <rect x="460" y="240" width="240" height="76"  rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="580" y="272" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">2 · Internetschicht</text><text x="580" y="288" fill="#4A5864" font-size="10" text-anchor="middle">Routing · eindeutige IP-Adressen</text>
+      <rect x="460" y="320" width="240" height="74"  rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="580" y="350" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">1 · Netzwerkzugangsschicht</text><text x="580" y="366" fill="#4A5864" font-size="10" text-anchor="middle">Kabel, Netzwerkkarte, WLAN, Treiber · MAC-Infos</text>
+    </svg>
+    <figcaption>Die <b>Anwendungsschicht</b> von TCP/IP bündelt OSI <b>5–7</b>, die <b>Transportschicht</b> entspricht OSI <b>4</b>,
+      die <b>Internetschicht</b> OSI <b>3</b> und die <b>Netzwerkzugangsschicht</b> OSI <b>1–2</b>.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-src">Modellvergleich</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Worin unterscheidet sich das <b>TCP/IP-Modell</b> grundsätzlich vom <b>OSI-Modell</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>TCP/IP hat mehr Schichten als OSI und ist deshalb genauer.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>TCP/IP ist protokollgestützt (gibt konkrete Protokolle vor), OSI ist konzeptionell (gibt nur Funktionalitäten vor).</li>
+        <li class="opt"><span class="tick"></span>OSI wird nur für Funknetze verwendet, TCP/IP nur für Kabelnetze.</li>
+        <li class="opt"><span class="tick"></span>Es gibt keinen Unterschied — beide Modelle sind identisch aufgebaut.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>TCP/IP</b> ist ein <b>protokollgestütztes</b> Modell mit <b>4 Schichten</b> — es gibt Protokolle vor, die in den Schichten verwendet werden können. <b>OSI</b> ist <b>konzeptionell</b> mit <b>7 Schichten</b> und beschreibt nur die Funktionalitäten.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Zuordnung</span><span class="q-src">OSI ↔ TCP/IP</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Welchen <b>OSI-Schichten</b> entsprechen die vier TCP/IP-Schichten? Trage die Nummern ein.</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>TCP/IP-Schicht</th><th>entspricht OSI-Schicht(en)</th></tr></thead>
+        <tbody>
+          <tr><td>Netzwerkzugangsschicht</td><td>?</td></tr>
+          <tr><td>Internetschicht</td><td>?</td></tr>
+          <tr><td>Transportschicht</td><td>?</td></tr>
+          <tr><td>Anwendungsschicht</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>TCP/IP-Schicht</th><th>entspricht OSI-Schicht(en)</th></tr></thead>
+        <tbody>
+          <tr><td>Netzwerkzugangsschicht</td><td>1 + 2 (Physische Schicht + Datenverbindungsschicht)</td></tr>
+          <tr><td>Internetschicht</td><td>3 (Netzwerkschicht)</td></tr>
+          <tr><td>Transportschicht</td><td>4 (Transportschicht)</td></tr>
+          <tr><td>Anwendungsschicht</td><td>5 + 6 + 7 (Sitzungs-, Darstellungs-, Anwendungsschicht)</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-src">Internetschicht</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aufgabe hat die <b>Internetschicht</b> des TCP/IP-Modells?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Sie wandelt digitale Daten in übertragbare Signale um.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sie routet Datenpakete von Gerät zu Gerät und weist dazu jedem Gerät eine einzigartige IP-Adresse zu.</li>
+        <li class="opt"><span class="tick"></span>Sie stellt dem Nutzer Anwendungen für den Netzzugriff bereit.</li>
+        <li class="opt"><span class="tick"></span>Sie fügt MAC-Adressinformationen zu den Frames hinzu.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Internetschicht</b> ist für die <b>logische Übertragung</b> verantwortlich: Sie <b>routet</b> Datenpakete über das Netzwerk und weist jedem Gerät eine <b>einzigartige IP-Adresse</b> zu. Signale/MAC gehören zur Netzwerkzugangsschicht, Anwendungen zur Anwendungsschicht.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multi-Select</span><span class="q-src">Vorteile TCP/IP</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen nennen einen <b>Vorteil des TCP/IP-Modells</b>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>TCP/IP ist ein weltweit gültiger Standard und an keinen Hersteller gebunden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>TCP/IP kann auf einfachen Computern bis hin zu Supercomputern implementiert werden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>TCP/IP ist in LANs und WANs nutzbar.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>TCP/IP macht die Anwendung vom Übertragungssystem unabhängig.</li>
+        <li class="opt"><span class="tick"></span>TCP/IP schreibt eine bestimmte Verkabelung (z. B. Glasfaser) vor.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Alle vier Vorteile stammen direkt aus der Mitschrift: <b>herstellerunabhängiger Weltstandard</b>, <b>überall implementierbar</b>, <b>LAN und WAN</b>, <b>Anwendung unabhängig vom Übertragungssystem</b>. Eine Verkabelung schreibt TCP/IP nicht vor.</p></div></article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Windows-Netzwerktools</h2></div>
+  <p class="sec-sub">Sechs Konsolenbefehle fürs <b>Troubleshooting</b> — und auf welcher Schicht sie beim
+    systematischen Prüfen (Schicht <b>1 → 4</b>) helfen.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 330" role="img" aria-label="Troubleshooting-Leiter nach OSI-Schichten 1 bis 4: Schicht 1 Bitübertragung mit Kabel und Netzwerkadapter wird mit ipconfig geprüft, Schicht 2 Sicherung mit MAC-Adressen und Switch mit arp, Schicht 3 Vermittlung mit IP-Adressen und Router mit ping, tracert und nslookup, Schicht 4 Transport mit TCP mit netstat">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Systematisches Troubleshooting — von Schicht 1 nach 4</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#4A5864;">Vorlage: OSI-Schicht → zu prüfende Hardware/Protokoll → Werkzeug</text>
+
+      <!-- Stufe 4 (oben) -->
+      <rect x="270" y="62"  width="470" height="52" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="290" y="84"  fill="#16242E" font-size="12" font-weight="700">4 · Transport</text>
+      <text x="290" y="102" fill="#4A5864" font-size="11">TCP-Verbindungen</text>
+      <text x="640" y="94"  fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">netstat</text>
+      <!-- Stufe 3 -->
+      <rect x="190" y="126" width="550" height="52" rx="6" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/>
+      <text x="210" y="148" fill="#16242E" font-size="12" font-weight="700">3 · Vermittlung</text>
+      <text x="210" y="166" fill="#4A5864" font-size="11">IP-Adressen, Router, DNS</text>
+      <text x="600" y="158" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">ping · tracert · nslookup</text>
+      <!-- Stufe 2 -->
+      <rect x="110" y="190" width="630" height="52" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="130" y="212" fill="#16242E" font-size="12" font-weight="700">2 · Sicherung</text>
+      <text x="130" y="230" fill="#4A5864" font-size="11">MAC-Adressen, Switch, Treiber</text>
+      <text x="600" y="222" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">arp</text>
+      <!-- Stufe 1 (unten) -->
+      <rect x="30"  y="254" width="710" height="52" rx="6" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/>
+      <text x="50"  y="276" fill="#16242E" font-size="12" font-weight="700">1 · Bitübertragung</text>
+      <text x="50"  y="294" fill="#4A5864" font-size="11">Kabel, Stecker, Netzwerkadapter, WLAN</text>
+      <text x="600" y="286" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">ipconfig (Adapter-Konfiguration)</text>
+
+      <!-- Pfeil bottom-up -->
+      <line x1="50" y1="240" x2="50" y2="130" stroke="#DD5430" stroke-width="2.5"/>
+      <polygon points="50,118 44,132 56,132" fill="#DD5430"/>
+      <text x="62" y="140" fill="#DD5430" font-size="11" font-weight="700">von unten nach oben prüfen</text>
+    </svg>
+    <figcaption>Beim Troubleshooting wird <b>von Schicht 1 nach oben</b> geprüft: erst Kabel/Adapter
+      (<code>ipconfig</code>), dann MAC/Switch (<code>arp</code>), dann IP/Routing/DNS
+      (<code>ping</code>, <code>tracert</code>, <code>nslookup</code>), zuletzt die TCP-Verbindungen (<code>netstat</code>).</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Zuordnung</span><span class="q-src">Werkzeuge</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Wofür wird jedes <b>Windows-Netzwerktool</b> verwendet? Trage den Zweck ein.</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Werkzeug</th><th>Zweck</th></tr></thead>
+        <tbody>
+          <tr><td><code>ipconfig</code></td><td>?</td></tr>
+          <tr><td><code>ping</code></td><td>?</td></tr>
+          <tr><td><code>tracert</code></td><td>?</td></tr>
+          <tr><td><code>nslookup</code></td><td>?</td></tr>
+          <tr><td><code>arp</code></td><td>?</td></tr>
+          <tr><td><code>netstat</code></td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Werkzeug</th><th>Zweck</th></tr></thead>
+        <tbody>
+          <tr><td><code>ipconfig</code></td><td>Netzwerkkonfiguration anzeigen: IP-Adressen, Netzwerkadapter, DNS-Einstellungen</td></tr>
+          <tr><td><code>ping</code></td><td>Erreichbarkeit eines IP-Hosts prüfen; Laufzeiten/Qualität der Verbindung (Teil von ICMP)</td></tr>
+          <tr><td><code>tracert</code></td><td>Route eines IP-Pakets aufzeichnen — zeigt die Adressen der Router auf dem Weg</td></tr>
+          <tr><td><code>nslookup</code></td><td>Namen oder IP-Adresse beim DNS-Server abfragen (DNS = „Telefonbuch")</td></tr>
+          <tr><td><code>arp</code></td><td>ARP-Tabelle anzeigen/ändern — verknüpft IP-Adressen mit MAC-Adressen</td></tr>
+          <tr><td><code>netstat</code></td><td>Offene TCP-Verbindungen des Computers anzeigen</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multiple Choice</span><span class="q-src">ping</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Zu welchem Protokoll gehört der Befehl <code>ping</code>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>ARP (Address Resolution Protocol)</li>
+        <li class="opt"><span class="tick"></span>TCP (Transmission Control Protocol)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>ICMP (Internet Control Message Protocol)</li>
+        <li class="opt"><span class="tick"></span>DNS (Domain Name System)</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>ping</code> ist Teil des Protokolls <b>ICMP</b> (Internet Control Message Protocol). Es zeigt, ob ein Rechner bzw. IP-Host erreichbar ist, und meldet die <b>Laufzeiten</b> der Verbindung.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Multiple Choice</span><span class="q-src">nslookup</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Du kennst nur den <b>Namen</b> eines Webservers und brauchst seine <b>IP-Adresse</b>. Welches Tool fragt den eingetragenen DNS-Server ab?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span><code>tracert</code></li>
+        <li class="opt" data-correct="true"><span class="tick"></span><code>nslookup</code></li>
+        <li class="opt"><span class="tick"></span><code>arp</code></li>
+        <li class="opt"><span class="tick"></span><code>netstat</code></li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b><code>nslookup</code></b> fragt Namen oder IP-Adressen beim DNS-Server ab. DNS-Server verhalten sich wie <b>Telefonbücher</b>: Sie speichern die Zuordnung Name ↔ IP-Adresse (Beispiel aus der Mitschrift: der Webserver der Berufsschule hat die IP <code>213.95.20.51</code>).</p></div></article>
+
+  <!-- ===================== SECTION D ===================== -->
+  <div class="sec-head"><span class="ix">D</span><h2>Fehlerquellen &amp; systematisches Vorgehen</h2></div>
+  <p class="sec-sub">Fehlerquellen aus der <b>Kartenabfrage</b> im Unterricht — den OSI-Schichten zugeordnet.
+    Faustregel: <b>Hardware/Verkabelung → Schicht 1</b>, <b>Treiber/MAC/Switch-Logik → Schicht 2</b>,
+    <b>IP/Router/DHCP → Schicht 3</b>, <b>TCP/UDP/Firewall-Ports → Schicht 4</b>.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 350" role="img" aria-label="Zuordnung typischer Fehlerquellen zu den OSI-Schichten 1 bis 4: Schicht 1 umfasst defekte oder nicht eingesteckte Kabel, falsch gepatchte Verbindungen, defekte Access Points, Netzwerkkarten und Switches sowie Störungen beim Provider; Schicht 2 falsche oder defekte Treiber, ARP und VLAN; Schicht 3 Router-Konfiguration, DHCP, feste IP und Proxy; Schicht 4 TCP, UDP und Blockierung durch die Firewall">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Fehlerquellen je Schicht (Kartenabfrage)</text>
+
+      <!-- Spalte 1 -->
+      <rect x="20"  y="48" width="175" height="30" rx="5" fill="#33424D"/><text x="107" y="68" fill="#FFFFFF" font-size="11" text-anchor="middle" font-weight="700">1 · Bitübertragung</text>
+      <rect x="20"  y="86"  width="175" height="26" rx="4" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="107" y="103" fill="#16242E" font-size="10" text-anchor="middle">LAN-/RJ45-Kabel defekt</text>
+      <rect x="20"  y="118" width="175" height="26" rx="4" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="107" y="135" fill="#16242E" font-size="10" text-anchor="middle">Kabel nicht eingesteckt</text>
+      <rect x="20"  y="150" width="175" height="26" rx="4" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="107" y="167" fill="#16242E" font-size="10" text-anchor="middle">falsch gepatcht</text>
+      <rect x="20"  y="182" width="175" height="26" rx="4" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="107" y="199" fill="#16242E" font-size="10" text-anchor="middle">AP / Switch / Netzwerkkarte defekt</text>
+      <rect x="20"  y="214" width="175" height="26" rx="4" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="107" y="231" fill="#16242E" font-size="10" text-anchor="middle">Störung beim Provider</text>
+      <rect x="20"  y="246" width="175" height="26" rx="4" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="107" y="263" fill="#16242E" font-size="10" text-anchor="middle">schlechte Verbindung</text>
+
+      <!-- Spalte 2 -->
+      <rect x="205" y="48" width="175" height="30" rx="5" fill="#15786E"/><text x="292" y="68" fill="#FFFFFF" font-size="11" text-anchor="middle" font-weight="700">2 · Sicherung</text>
+      <rect x="205" y="86"  width="175" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="292" y="103" fill="#16242E" font-size="10" text-anchor="middle">WLAN-Treiber defekt</text>
+      <rect x="205" y="118" width="175" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="292" y="135" fill="#16242E" font-size="10" text-anchor="middle">Treiber falsch</text>
+      <rect x="205" y="150" width="175" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="292" y="167" fill="#16242E" font-size="10" text-anchor="middle">ARP</text>
+      <rect x="205" y="182" width="175" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="292" y="199" fill="#16242E" font-size="10" text-anchor="middle">VLAN(-Zuordnung)</text>
+
+      <!-- Spalte 3 -->
+      <rect x="390" y="48" width="175" height="30" rx="5" fill="#C9A227"/><text x="477" y="68" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">3 · Vermittlung</text>
+      <rect x="390" y="86"  width="175" height="26" rx="4" fill="#FFF6DF" stroke="#C9A227" stroke-width="1.5"/><text x="477" y="103" fill="#16242E" font-size="10" text-anchor="middle">Router(-Konfiguration)</text>
+      <rect x="390" y="118" width="175" height="26" rx="4" fill="#FFF6DF" stroke="#C9A227" stroke-width="1.5"/><text x="477" y="135" fill="#16242E" font-size="10" text-anchor="middle">DHCP</text>
+      <rect x="390" y="150" width="175" height="26" rx="4" fill="#FFF6DF" stroke="#C9A227" stroke-width="1.5"/><text x="477" y="167" fill="#16242E" font-size="10" text-anchor="middle">feste IP einrichten</text>
+      <rect x="390" y="182" width="175" height="26" rx="4" fill="#FFF6DF" stroke="#C9A227" stroke-width="1.5"/><text x="477" y="199" fill="#16242E" font-size="10" text-anchor="middle">Proxy</text>
+
+      <!-- Spalte 4 -->
+      <rect x="575" y="48" width="165" height="30" rx="5" fill="#DD5430"/><text x="657" y="68" fill="#FFFFFF" font-size="11" text-anchor="middle" font-weight="700">4 · Transport</text>
+      <rect x="575" y="86"  width="165" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="657" y="103" fill="#16242E" font-size="10" text-anchor="middle">TCP</text>
+      <rect x="575" y="118" width="165" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="657" y="135" fill="#16242E" font-size="10" text-anchor="middle">UDP</text>
+      <rect x="575" y="150" width="165" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="657" y="167" fill="#16242E" font-size="10" text-anchor="middle">Endgerät von Firewall geblockt</text>
+
+      <text x="20" y="316" fill="#4A5864" font-size="11">Merke: Defekte Hardware liegt meist auf Schicht 1 — sobald es um Treiber, Adressen oder Protokolle geht,</text>
+      <text x="20" y="332" fill="#4A5864" font-size="11">wandert die Fehlerquelle nach oben (2: MAC/Treiber · 3: IP/Routing · 4: Ports/Verbindungen).</text>
+    </svg>
+    <figcaption>Die Karten aus der Unterrichts-Abfrage, sortiert nach Schichten. Ein <b>defekter Switch</b> (Hardware)
+      gehört zu Schicht 1 — eine falsche <b>Switch-/VLAN-Konfiguration</b> dagegen zu Schicht 2.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multi-Select</span><span class="q-src">Schicht 1</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Fehlerquellen gehören zur <b>Schicht 1 (Bitübertragung)</b>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Defektes LAN-Kabel</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Falsch gepatchte Verbindung im Patchfeld</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Netzwerkkabel nicht eingesteckt</li>
+        <li class="opt"><span class="tick"></span>Falscher WLAN-Treiber installiert</li>
+        <li class="opt"><span class="tick"></span>DHCP-Server vergibt keine Adressen</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Kabel- und Steckprobleme (<b>defekt, nicht eingesteckt, falsch gepatcht</b>) sind physische Fehler → <b>Schicht 1</b>. Ein falscher <b>Treiber</b> gehört zur Schicht 2, <b>DHCP</b> (IP-Vergabe) zur Schicht 3.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Szenario</span><span class="q-src">Troubleshooting</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein PC erreicht das Netzwerk nicht. Beschreibe die <b>systematische Fehlersuche</b> nach den
+      Schichten 1–4 (von unten nach oben) und nenne zu jeder Schicht ein passendes <b>Windows-Tool</b> bzw. eine Prüfung.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step"><b>Schicht 1 (Bitübertragung):</b> Kabel eingesteckt/unbeschädigt? Richtig gepatcht? Adapter aktiv? → <code>ipconfig</code> zeigt, ob der Adapter eine Konfiguration hat.</div>
+      <div class="step"><b>Schicht 2 (Sicherung):</b> Treiber korrekt? MAC-Kommunikation im lokalen Netz? → <code>arp</code> zeigt die Zuordnung IP ↔ MAC.</div>
+      <div class="step"><b>Schicht 3 (Vermittlung):</b> IP-Konfiguration korrekt (DHCP/feste IP)? Router erreichbar? Namensauflösung? → <code>ping</code> (Erreichbarkeit), <code>tracert</code> (Route), <code>nslookup</code> (DNS).</div>
+      <div class="step"><b>Schicht 4 (Transport):</b> Kommt die TCP-Verbindung zustande oder blockt z. B. eine Firewall? → <code>netstat</code> zeigt offene TCP-Verbindungen.</div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="6">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Konzept</span><span class="q-src">OSI-Kapselung</span><span class="q-pts">6 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Erkläre den Weg einer Nachricht vom <strong>Browser bis auf das Kabel</strong> anhand der
+        <strong>7 OSI-Schichten</strong> (Kapselung beim Sender). Nenne jede Schicht mit Namen und beschreibe in einem
+        Satz, was sie beiträgt — gehe bei Schicht 2 auf <em>LLC</em> und <em>MAC</em> ein.</p>
+      <textarea class="code-input" name="osi-kapselung" rows="8" data-task="osi-kapselung" placeholder="Schicht 7 (Anwendungsschicht): … → Schicht 6: … → … → Schicht 1: Bits aufs Kabel"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 6 Punkte). Aufgabe: Weg einer Nachricht vom Browser bis aufs Kabel anhand der 7 OSI-Schichten (Kapselung). Kriterien: alle 7 Schichten mit korrektem deutschen Namen in richtiger Reihenfolge 7→1 (3 P; anteilig bei Lücken), je Schicht ein fachlich richtiger Beitrag genannt (2 P; z. B. Darstellungsschicht codiert/verschlüsselt/komprimiert, Transportschicht bildet Segmente, Netzwerkschicht routet über IP-Adressen, Physische Schicht überträgt Bits), LLC (Protokolle identifizieren, Fehlerprüfung, Rahmen synchronisieren) und MAC (MAC-Adressen, Berechtigungen) bei Schicht 2 unterschieden (1 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 6). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>7 · Anwendungsschicht:</b> der Browser (Endbenutzersoftware) erzeugt die zu sendenden Daten.</li>
+        <li><b>6 · Darstellungsschicht:</b> bereitet die Daten vor — <b>codieren, verschlüsseln, komprimieren</b>.</li>
+        <li><b>5 · Sitzungsschicht:</b> öffnet die <b>Sitzung</b>, hält sie offen (Kontrollpunkte) und schließt sie am Ende.</li>
+        <li><b>4 · Transportschicht:</b> teilt die Daten in <b>Segmente</b> (beim Empfänger: Wiederzusammensetzen).</li>
+        <li><b>3 · Netzwerkschicht:</b> <b>routet</b> die Pakete über den besten Weg — mit <b>IP-Adressen</b>.</li>
+        <li><b>2 · Datenverbindungsschicht:</b> zerlegt Pakete in <b>Rahmen</b>; <b>LLC</b> identifiziert Protokolle, prüft Fehler, synchronisiert Rahmen — <b>MAC</b> verbindet Geräte über MAC-Adressen und regelt Sende-/Empfangsberechtigungen.</li>
+        <li><b>1 · Physische Schicht:</b> überträgt die <b>Rohdaten als Bits</b> (0/1) über Kabel oder Funk und kontrolliert die Bitrate.</li>
+      </ul>
+      <ul class="rubric"><li>7 Schichten in Reihenfolge</li><li>Beitrag je Schicht</li><li>LLC vs. MAC</li></ul>
+    </div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="18-vlan.html"><span>Vorheriges Thema</span><b>18 · VLAN</b></a>
+    <a class="next" href="lernseite.html"><span>Weiter</span><b>Konzepte wiederholen →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 19 — OSI-Modell</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
+<script src="assets/osi-anim.js"></script>
+</body>
+</html>

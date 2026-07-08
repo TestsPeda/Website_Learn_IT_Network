@@ -5,11 +5,14 @@
 (function () {
   "use strict";
 
-  var DURATION = 70 * 60;        // PARAMETER (Schritt 6): Sekunden, an den Umfang angepasst
+  var DURATION = 80 * 60;        // PARAMETER (Schritt 6): Sekunden, an den Umfang angepasst
   var remaining = DURATION;
   var timerId = null;
   var started = false;            // Test-Start-Gate: Timer läuft erst nach „Test starten"
   var submitted = false;
+  var noLimit = false;            // „Ohne Zeitlimit üben" (WCAG 2.2.1: Abschalten vor Verlängern)
+  var elapsed = 0;                // verstrichene Zeit (für den Verlauf, auch ohne Countdown)
+  var addedSeconds = 0;           // per „+10 min" hinzugefügte Zeit (Anzeige + Verlauf)
   var currentResultTs = null;     // Zeitstempel des laufenden Versuchs (für Finalisierung)
   var RESULT_KEY = "fuit:probe-sa:results";
   /* PARAMETER (Modul code-ki-bewertung): offene Aufgaben des Prüfungsteils.
@@ -18,7 +21,8 @@
     { id: "open-subnetting", label: "Aufgabe O1 · IPv4-Subnetting",        max: 5 },
     { id: "open-raid",       label: "Aufgabe O2 · RAID-Auswahl",           max: 4 },
     { id: "open-topologie",  label: "Aufgabe O3 · Topologie-Entwurf",      max: 3 },
-    { id: "open-arp",        label: "Aufgabe O4 · ARP-/Ping-Ablauf",       max: 3 }
+    { id: "open-arp",        label: "Aufgabe O4 · ARP-/Ping-Ablauf",       max: 3 },
+    { id: "open-osi",        label: "Aufgabe O5 · OSI-Troubleshooting",    max: 3 }
   ];
   var OPEN_MAX = OPEN_TASKS.reduce(function (s, t) { return s + t.max; }, 0);
   var hasOpen = OPEN_TASKS.length > 0;
@@ -125,14 +129,53 @@
     return m + ":" + (x < 10 ? "0" : "") + x;
   }
 
+  function warn(msg) {
+    var w = document.getElementById("time-warning");
+    if (w) w.textContent = msg;
+  }
+
+  /* Summe der Verlängerungen als „+X min" (immer volle Minuten, da je Klick 10 min). */
+  function extendLabel() {
+    return "+" + (addedSeconds / 60) + " min";
+  }
+
+  /* Dauerhafter Chip neben dem Timer: zeigt die insgesamt zugegebene Zeit. */
+  function updateExtendTotal() {
+    var box = document.getElementById("extend-total");
+    if (!box) return;
+    if (addedSeconds > 0) { box.textContent = extendLabel(); box.hidden = false; }
+    else { box.textContent = ""; box.hidden = true; }
+  }
+
   function tick() {
+    elapsed++;
+    if (noLimit) {
+      var t = document.getElementById("timer");
+      if (t) t.textContent = fmt(elapsed);
+      return;
+    }
     remaining--;
     var el = document.getElementById("timer");
     if (el) {
       el.textContent = fmt(Math.max(0, remaining));
       if (remaining <= 60) el.classList.add("low");
     }
+    if (remaining === 300) warn("Noch 5 Minuten — über „+10 min“ verlängerbar.");
+    if (remaining === 60) warn("Noch 1 Minute!");
     if (remaining <= 0) { clearInterval(timerId); doSubmit(true); }
+  }
+
+  function extendTime() {
+    if (noLimit || submitted || !started) return;
+    remaining += 600;
+    addedSeconds += 600;
+    var el = document.getElementById("timer");
+    if (el) {
+      el.textContent = fmt(remaining);
+      if (remaining > 60) el.classList.remove("low");
+    }
+    updateExtendTotal();
+    if (remaining > 300) warn("Zeit um 10 Minuten verlängert (gesamt " + extendLabel() + ").");
   }
 
   function initSelect() {
@@ -178,13 +221,14 @@
       if (sol) sol.hidden = false;
     });
 
-    var used = DURATION - Math.max(0, remaining);
+    var used = elapsed;
     showResult(ok, total, used, auto);
     currentResultTs = Date.now();
     if (hasOpen) {
       /* Auswahlteil abgegeben — Endnote folgt nach dem Eintragen des offenen Teils. */
       saveResult({
-        ts: currentResultTs, score: ok, total: total, seconds: used,
+        ts: currentResultTs, score: ok, total: total, seconds: used, noLimit: noLimit,
+        addedSeconds: addedSeconds,
         openScore: null, openMax: OPEN_MAX, totalScore: null, totalMax: total + OPEN_MAX,
         percentage: null, grade: null, gradeLabel: null, finalized: false
       });
@@ -192,7 +236,8 @@
       /* Reiner Auswahlteil: Ergebnis ist sofort vollständig. */
       var r = calculateExamResult(ok, total, 0, 0);
       saveResult({
-        ts: currentResultTs, score: ok, total: total, seconds: used,
+        ts: currentResultTs, score: ok, total: total, seconds: used, noLimit: noLimit,
+        addedSeconds: addedSeconds,
         openScore: 0, openMax: 0, totalScore: r.totalScore, totalMax: r.totalMax,
         percentage: r.percentage, grade: r.grade, gradeLabel: r.gradeLabel, finalized: true
       });
@@ -296,7 +341,9 @@
     box.hidden = false;
     box.innerHTML =
       "<strong>Auswahlteil:</strong> " + ok + " / " + total + " richtig (" + pct + " %) · " +
-      "Zeit: " + fmt(used) + (auto ? " · <em>Zeit abgelaufen</em>" : "") +
+      "Zeit: " + fmt(used) + (noLimit ? " (ohne Zeitlimit)" : "") +
+      (addedSeconds > 0 ? " · " + extendLabel() + " verlängert" : "") +
+      (auto ? " · <em>Zeit abgelaufen</em>" : "") +
       "<br>Die Musterlösungen sind jetzt unter den Fragen sichtbar." +
       (hasOpen
         ? "<br><strong>Offener Teil (" + formatPoints(OPEN_MAX) + " P):</strong> per KI-Bewertungs-Prompt bewerten lassen und die Punkte unten eintragen." + renderOpenScorePanel()
@@ -321,8 +368,10 @@
       var pct = (r.percentage !== null && r.percentage !== undefined)
         ? formatPercent(r.percentage) + " %"
         : (r.total ? Math.round(r.score / r.total * 100) + " %*" : "0 %");
+      var zeit = fmt(r.seconds) + (r.noLimit ? " (ohne Zeitlimit)" : "")
+        + (r.addedSeconds ? " (+" + (r.addedSeconds / 60) + " min)" : "");
       return "<tr><td>" + datum + "</td><td>" + auswahl + "</td><td>" + offen +
-             "</td><td>" + note + "</td><td>" + pct + "</td><td>" + fmt(r.seconds) + "</td></tr>";
+             "</td><td>" + note + "</td><td>" + pct + "</td><td>" + zeit + "</td></tr>";
     }).join("");
     box.innerHTML =
       "<span class='rubric-label'>Deine letzten Versuche</span>" +
@@ -415,12 +464,18 @@
   function startExam() {
     if (started) return;
     started = true;
+    var cb = document.getElementById("no-timelimit");
+    noLimit = !!(cb && cb.checked);
     var content = document.getElementById("exam-content");
     if (content) content.hidden = false;
     var gate = document.getElementById("exam-gate");
     if (gate) gate.hidden = true;
     var el = document.getElementById("timer");
-    if (el) el.textContent = fmt(remaining);
+    if (el) el.textContent = noLimit ? fmt(0) : fmt(remaining);
+    var lbl = document.getElementById("timer-label");
+    if (lbl && noLimit) lbl.textContent = "Zeit (ohne Limit)";
+    var ext = document.getElementById("extend-time");
+    if (ext && noLimit) ext.hidden = true;   // ohne Countdown gibt es nichts zu verlängern
     timerId = setInterval(tick, 1000);
     // nach dem Start an den Seitenanfang springen (Hero/Timer + erste Aufgabe im Blick)
     if (typeof window.scrollTo === "function") window.scrollTo({ top: 0, behavior: "smooth" });
@@ -435,6 +490,9 @@
 
     var sb = document.getElementById("submit-btn");
     if (sb) sb.addEventListener("click", function () { doSubmit(false); });
+
+    var ext = document.getElementById("extend-time");
+    if (ext) ext.addEventListener("click", extendTime);
 
     renderBest();
 

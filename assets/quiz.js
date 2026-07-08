@@ -4,12 +4,66 @@
 (function () {
   "use strict";
 
+  /* ----- MC-Persistenz -----
+     Beantwortete Auswahlfragen werden pro Seite und Aufgabennummer lokal
+     gespeichert und beim nächsten Öffnen im bewerteten Zustand wiederhergestellt.
+     „Antworten zurücksetzen" (Button in den Controls) löscht den Seitenstand. */
+  function mcKey(q) {
+    var n = q.querySelector(".q-num");
+    return "fuit-mc:" + location.pathname + "#" + (n ? n.textContent.trim() : "");
+  }
+  function saveMcState(q, picked, ok) {
+    try { localStorage.setItem(mcKey(q), JSON.stringify({ picked: picked, ok: ok })); } catch (e) {}
+  }
+  function loadMcState(q) {
+    try {
+      var raw = localStorage.getItem(mcKey(q));
+      var st = raw ? JSON.parse(raw) : null;
+      return (st && Object.prototype.toString.call(st.picked) === "[object Array]") ? st : null;
+    } catch (e) { return null; }
+  }
+
   /* ----- Multiple-choice handling ----- */
   function initOptions(q) {
     var list = q.querySelector(".q-options");
     if (!list) return;
     var multi = list.getAttribute("data-multi") === "true";
     var opts = Array.prototype.slice.call(list.querySelectorAll(".opt"));
+
+    function gradeSingle(opt, save) {
+      list.classList.add("locked");
+      opts.forEach(function (o) {
+        var ok = o.getAttribute("data-correct") === "true";
+        if (o === opt) {
+          o.classList.add(ok ? "correct" : "wrong");
+          o.setAttribute("aria-checked", "true");
+        }
+        if (ok) o.classList.add("reveal-correct");
+        o.querySelector(".tick").textContent = ok ? "✓" : (o === opt ? "✕" : "");
+      });
+      var right = opt.getAttribute("data-correct") === "true";
+      if (save) saveMcState(q, [opts.indexOf(opt)], right);
+      markCard(q, right);
+      revealSolution(q, true);
+    }
+
+    function gradeMulti(save) {
+      list.classList.add("locked");
+      var allRight = true;
+      var picked = [];
+      opts.forEach(function (o, i) {
+        var ok = o.getAttribute("data-correct") === "true";
+        var isPicked = o.classList.contains("picked");
+        if (isPicked) picked.push(i);
+        o.querySelector(".tick").textContent = ok ? "✓" : (isPicked ? "✕" : "");
+        if (ok) o.classList.add("correct");
+        else if (isPicked) o.classList.add("wrong");
+        if (ok !== isPicked) allRight = false;
+      });
+      if (save) saveMcState(q, picked, allRight);
+      markCard(q, allRight);
+      revealSolution(q, true);
+    }
 
     opts.forEach(function (opt) {
       opt.setAttribute("role", multi ? "checkbox" : "radio");
@@ -24,21 +78,7 @@
           opt.setAttribute("aria-checked", opt.classList.contains("picked"));
           return;
         }
-        lockSingle();
-      }
-      function lockSingle() {
-        list.classList.add("locked");
-        opts.forEach(function (o) {
-          var ok = o.getAttribute("data-correct") === "true";
-          if (o === opt) {
-            o.classList.add(ok ? "correct" : "wrong");
-            o.setAttribute("aria-checked", "true");
-          }
-          if (ok) o.classList.add("reveal-correct");
-          o.querySelector(".tick").textContent = ok ? "✓" : (o === opt ? "✕" : "");
-        });
-        markCard(q, opt.getAttribute("data-correct") === "true");
-        revealSolution(q, true);
+        gradeSingle(opt, true);
       }
 
       opt.addEventListener("click", choose);
@@ -50,21 +90,27 @@
     /* multi-select: a check button grades the set */
     if (multi) {
       var chk = q.querySelector(".q-check");
-      if (chk) chk.addEventListener("click", function () {
-        list.classList.add("locked");
-        var allRight = true;
-        opts.forEach(function (o) {
-          var ok = o.getAttribute("data-correct") === "true";
-          var picked = o.classList.contains("picked");
-          o.querySelector(".tick").textContent = ok ? "✓" : (picked ? "✕" : "");
-          if (ok) o.classList.add("correct");
-          else if (picked) o.classList.add("wrong");
-          if (ok !== picked) allRight = false;
-        });
-        markCard(q, allRight);
-        revealSolution(q, true);
-      });
+      if (chk) chk.addEventListener("click", function () { gradeMulti(true); });
     }
+
+    /* restoreState: gespeicherte Antwort wie eine Live-Bewertung anwenden,
+       aber ohne erneutes Speichern. */
+    function restoreState() {
+      var st = loadMcState(q);
+      if (!st || !st.picked.length) return;
+      if (multi) {
+        st.picked.forEach(function (i) {
+          if (opts[i]) {
+            opts[i].classList.add("picked");
+            opts[i].setAttribute("aria-checked", "true");
+          }
+        });
+        gradeMulti(false);
+      } else if (opts[st.picked[0]]) {
+        gradeSingle(opts[st.picked[0]], false);
+      }
+    }
+    restoreState();
   }
 
   function markCard(q, ok) {
@@ -131,6 +177,7 @@
           var input = document.createElement("input");
           input.type = "text";
           input.className = "q-cell-input";
+          input.name = key;
           input.setAttribute("spellcheck", "false");
           input.setAttribute("autocomplete", "off");
           input.setAttribute("placeholder", "…");
@@ -194,6 +241,7 @@
   function updateScore() {
     var chip = document.getElementById("scorechip");
     if (!chip) return;
+    chip.setAttribute("role", "status");   // Screenreader melden Score-Änderungen
     var qs = document.querySelectorAll(".q");
     var total = qs.length;
     var ok = document.querySelectorAll(".q.answered-ok").length;
@@ -215,6 +263,21 @@
         var q = s.closest(".q"); var b = q.querySelector(".q-reveal");
         if (b) { b.setAttribute("aria-expanded", "false"); b.textContent = "Lösung anzeigen"; }
       });
+    });
+    var reset = document.getElementById("reset-answers");
+    if (reset) reset.addEventListener("click", function () {
+      var prefixes = ["fuit-mc:" + location.pathname, "fuit-answer:" + location.pathname];
+      try {
+        var doomed = [];
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          for (var p = 0; p < prefixes.length; p++) {
+            if (k && k.indexOf(prefixes[p]) === 0) { doomed.push(k); break; }
+          }
+        }
+        doomed.forEach(function (k) { localStorage.removeItem(k); });
+      } catch (e) {}
+      location.reload();
     });
   }
 

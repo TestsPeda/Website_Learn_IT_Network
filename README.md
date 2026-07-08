@@ -1,15 +1,16 @@
-# IT-Lernmaterial – Themen 1–18 (Fachunterricht IT)
+# IT-Lernmaterial – Themen 1–19 (Fachunterricht IT)
 
-Eigenständige Selbsttest-Website zum Fach **FUIT** über alle Themen 1–18:
+Eigenständige Selbsttest-Website zum Fach **FUIT** über alle Themen 1–19:
 Grundbegriffe, Gebäude-/Verkabelungsplan, Übertragungsmedien, Stückliste, Geräteklassen,
 strukturierte Verkabelung, IT-Infrastruktur, Edge-/Fog-Computing, Server-Betriebssysteme,
 Adressierung, DHCP & DNS, Übertragungsarten, Topologien, Speichersysteme, RAID,
-E-Mail-Protokolle, Netzwerktechnologien und VLAN.
+E-Mail-Protokolle, Netzwerktechnologien, VLAN und OSI-Modell/TCP-IP.
 
-18 Themenseiten mit insgesamt rund **287 Aufgaben** (auto-bewertete MC/Mehrfachauswahl,
+19 Themenseiten mit insgesamt **304 Aufgaben** (auto-bewertete MC/Mehrfachauswahl,
 manuelle Rechen-, Zuordnungs- und Szenarioaufgaben mit Musterlösung sowie **Freitextaufgaben
-mit KI-Bewertung**), **63 inline-SVG-Diagramme**, eine **Lernseite** zum Wiederholen der
-Kernkonzepte und eine **Probe-SA** (Prüfungssimulation). Statisch, ohne externe Abhängigkeiten.
+mit KI-Feedback**), **69 Inline-SVG-Diagramme**, eine **Lernseite** zum Wiederholen der
+Kernkonzepte (66 Diagramme) und eine **Probe-SA** (Prüfungssimulation mit 30 Auswahlfragen,
+5 offenen Aufgaben und 80 Minuten Zeit). Statisch, ohne externe Abhängigkeiten.
 
 **Live:** [testspeda.github.io/Website_Learn_IT_Network](https://testspeda.github.io/Website_Learn_IT_Network/)
 
@@ -20,14 +21,29 @@ Kernkonzepte und eine **Probe-SA** (Prüfungssimulation). Statisch, ohne externe
 - **Aufgaben:** Multiple-Choice wird beim Anklicken sofort bewertet; bei Mehrfachauswahl erst alle
   Antworten wählen, dann „Auswerten". Rechen-/Zuordnungs-/Freitextaufgaben selbst lösen und die
   Musterlösung mit „Lösung anzeigen" aufdecken. Der Zähler oben zählt die auswertbaren Fragen.
-- **Freitextaufgaben mit KI-Bewertung:** Antwort ins Feld schreiben, „KI-Bewertungs-Prompt kopieren",
-  den Prompt in einer KI nach den genannten Kriterien bewerten lassen und die erhaltenen Punkte in das
-  Feld „KI-Punkte" eintragen. Diese Punkte fließen in den Seiten-Zähler ein und werden lokal gespeichert.
-- **Probe-SA:** Prüfungssimulation über alle Themen mit Countdown. „Test starten" blendet die Aufgaben ein
-  und startet die Zeit; beim Abgeben wird der Auswahlteil automatisch bewertet. Den offenen Teil per
-  KI-Prompt bewerten lassen, Punkte eintragen – Gesamtpunkte und Note werden berechnet und im Verlauf
-  gespeichert.
-- **Fortschritt:** Antworten, Punkte und Prüfungsergebnisse werden im Browser (localStorage) gespeichert
-  und beim erneuten Öffnen wiederhergestellt.
+- **Freitextaufgaben mit KI-Feedback:** Antwort ins Feld schreiben, „KI-Bewertungs-Prompt kopieren"
+  und den Prompt samt eigener Antwort von einer KI nach den genannten Kriterien bewerten lassen.
+  Das Feedback dient der Selbstkontrolle; Punkte gibt es dafür nur in der Probe-SA.
+- **Probe-SA:** Prüfungssimulation über alle Themen mit Countdown (80 min). „Test starten" blendet
+  die Aufgaben ein und startet die Zeit; wer ohne Zeitdruck üben will, aktiviert vor dem Start
+  „Ohne Zeitlimit üben" oder verlängert laufend per „+10 min". Beim Abgeben wird der Auswahlteil
+  automatisch bewertet; den offenen Teil per KI-Prompt bewerten lassen und die Punkte eintragen –
+  Gesamtpunkte und Note (IHK-Schlüssel) werden berechnet und im Verlauf gespeichert.
+- **Fortschritt:** Beantwortete MC-Fragen, Freitexteingaben und Prüfungsergebnisse werden im Browser
+  (localStorage) gespeichert und beim erneuten Öffnen wiederhergestellt. Die Startseite zeigt je
+  Thema den Bearbeitungsstand; „Antworten zurücksetzen" auf einer Themenseite löscht deren Stand.
 - **Drucken/PDF:** Über die Druckfunktion des Browsers; Bedienelemente werden ausgeblendet und alle
   Lösungen aufgedeckt.
+
+## Selbsttests (für Änderungen)
+
+Ohne Abhängigkeiten, direkt mit Node im Website-Ordner ausführen:
+
+```
+node assets/content.test.js    # Verdrahtung, Navigation, Zähler, Aufgabenstruktur
+node assets/pruefung.test.js   # Punkteverrechnung und Notenschlüssel der Probe-SA
+```
+
+Die Zähler-Prüfungen gleichen die Pills der Startseite und die Themenkarten-Metadaten mit den
+echten Aufgaben-/Diagrammzahlen der Seiten ab – nach dem Ergänzen von Aufgaben oder Themen
+schlagen sie fehl, bis die Zahlen aktualisiert sind.

@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–18</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–19</b></a>
   <nav class="topnav">
     <a href="1-grundbegriffe.html">1</a>
     <a href="2-verkabelungsplan.html">2</a>
@@ -32,6 +32,7 @@
     <a href="16-email-protokolle.html">16</a>
     <a href="17-netzwerktechnologien.html" class="current">17</a>
     <a href="18-vlan.html">18</a>
+    <a href="19-osi-modell.html">19</a>
     <a href="lernseite.html">Lernen</a>
     <a href="pruefung.html">Probe-SA</a>
   </nav>
@@ -56,6 +57,7 @@
   <div class="controls">
     <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
     <button class="btn" id="hide-all">Alle ausblenden</button>
+    <button class="btn" id="reset-answers">Antworten zurücksetzen</button>
   </div>
 
   <!-- ===================== SECTION A ===================== -->
@@ -102,7 +104,7 @@
       <text x="648" y="130" fill="#5C6B78" font-size="10" text-anchor="middle">CRC-Prüfsumme</text>
 
       <!-- Präambel-Hinweis -->
-      <text x="63" y="176" fill="#8A97A2" font-size="10" text-anchor="middle">kein Teil des Frames</text>
+      <text x="63" y="176" fill="#5C6B78" font-size="10" text-anchor="middle">kein Teil des Frames</text>
 
       <!-- Frame-Klammer ab Ziel-MAC -->
       <line x1="112" y1="188" x2="698" y2="188" stroke="#DD5430" stroke-width="1.5"/>
@@ -319,7 +321,7 @@
       <text x="90"  y="288" fill="#15786E" font-size="10" text-anchor="middle">antwortet ✓</text>
       <rect x="215" y="250" width="100" height="48" rx="8" fill="#EEF3F6" stroke="#B9C7D2" stroke-width="2"/>
       <text x="265" y="270" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">PC C</text>
-      <text x="265" y="288" fill="#8A97A2" font-size="10" text-anchor="middle">verwirft ✗</text>
+      <text x="265" y="288" fill="#5C6B78" font-size="10" text-anchor="middle">verwirft ✗</text>
 
       <!-- Rechte Szene: Reply -->
       <text x="620" y="74" fill="#15786E" font-size="13" text-anchor="middle" font-weight="700">② ARP-Reply · Unicast</text>
@@ -445,7 +447,7 @@
       <text x="85" y="197" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">PC03 · P3</text>
       <rect x="30" y="220" width="110" height="40" rx="6" fill="#EEF3F6" stroke="#B9C7D2" stroke-width="2"/>
       <text x="85" y="240" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Notebook · P4</text>
-      <text x="85" y="254" fill="#8A97A2" font-size="9" text-anchor="middle">hat noch nichts gesendet</text>
+      <text x="85" y="254" fill="#5C6B78" font-size="9" text-anchor="middle">hat noch nichts gesendet</text>
 
       <line x1="140" y1="96"  x2="250" y2="108" stroke="#B9C7D2" stroke-width="2"/>
       <line x1="140" y1="144" x2="250" y2="140" stroke="#B9C7D2" stroke-width="2"/>
@@ -537,7 +539,7 @@
     <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Erklärung</span><span class="q-src">MAC &amp; Switch-Learning</span><span class="q-pts">6 P · KI</span></div>
     <div class="q-body">
       <p class="q-text">Erkläre den Aufbau einer <code>MAC</code>-Adresse (Länge, OUI-/NIC-Teil) und beschreibe an einem Beispiel, wie ein <strong>Switch</strong> seine MAC-Tabelle aufbaut (Learning) und wie er mit unbekannten Zieladressen umgeht (Flooding).</p>
-      <textarea class="code-input" rows="8" data-task="mac-amp-switch-learning" placeholder="MAC-Aufbau + Learning + Flooding am Beispiel …"></textarea>
+      <textarea class="code-input" name="mac-amp-switch-learning" rows="8" data-task="mac-amp-switch-learning" placeholder="MAC-Aufbau + Learning + Flooding am Beispiel …"></textarea>
     </div>
     <div class="q-foot">
       <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>

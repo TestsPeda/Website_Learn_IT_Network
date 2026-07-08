@@ -1,6 +1,6 @@
 /* IT-Lernmaterial — Startseiten-Explorer.
    Schaltet die Startseite zwischen mehreren Ansichten um: der klassischen
-   Sterntopologie-Navigation und fünf Mini-Spielen, über die man die 18 Themen
+   Sterntopologie-Navigation und fünf Mini-Spielen, über die man die 19 Themen
    "erjagen" statt nur anklicken kann. Reines Vanilla-JS, ohne Abhängigkeiten,
    passend zum Rest der Seite (vgl. assets/quiz.js). */
 (function () {
@@ -11,24 +11,25 @@
 
   /* ---- Themen-Datenbasis (deckt sich mit der Sterntopologie + Themenliste) ---- */
   var TOPICS = [
-    { n: 1,  name: "Grundbegriffe",             href: "1-grundbegriffe.html",             hint: "Device/Host/Peripherie, aktive & passive Komponenten, Router, Switch, Hauptverteiler", kw: "vokabular device host peripherie aktiv passiv router switch hauptverteiler komponente" },
-    { n: 2,  name: "Verkabelungsplan",          href: "2-verkabelungsplan.html",          hint: "Gebäude- & Verkabelungsplan, Symbole, Kanäle, Lasten- vs. Pflichtenheft", kw: "gebäude verkabelungsplan symbol kanal lastenheft pflichtenheft was wie" },
-    { n: 3,  name: "Übertragungsmedien",        href: "3-uebertragungsmedien.html",       hint: "Kupfer/TP, Schirmung, Kategorien vs. Klassen, Glasfaser, Totalreflexion, Stecker", kw: "kupfer twisted pair schirmung kategorie klasse glasfaser lwl totalreflexion stecker medium" },
-    { n: 4,  name: "Stückliste",                href: "4-stueckliste.html",               hint: "Aufbau & Zweck einer Stückliste (BOM), Mengen, Einzel- und Gesamtpreise", kw: "stückliste bom menge einzelpreis gesamtpreis rechnen material" },
-    { n: 5,  name: "Geräteklassen",             href: "5-geraeteklassen.html",            hint: "Barebone, Notebook, Tablet, Desktop, Industrie-PC und die Zuordnung zu Rollen", kw: "barebone notebook tablet desktop industrie pc geräteklasse rolle mitarbeiter" },
-    { n: 6,  name: "Strukturierte Verkabelung", href: "6-strukturierte-verkabelung.html", hint: "Sternverkabelung nach EN 50173: Primär-, Sekundär-, Tertiärebene, Maximallängen", kw: "strukturiert en50173 primär sekundär tertiär verteiler maximallänge stern ebene" },
-    { n: 7,  name: "IT-Infrastruktur",          href: "7-it-infrastruktur.html",          hint: "Server, Rechenzentren (USV, Kühlung, Redundanz) und Cloud (IaaS/PaaS/SaaS)", kw: "server rechenzentrum usv kühlung redundanz cloud iaas paas saas verfügbarkeit" },
-    { n: 8,  name: "Edge- & Fog-Computing",     href: "8-edgecomputing.html",             hint: "Daten am Rand des Netzes verarbeiten — geringe Latenz, IoT, Industrie 4.0", kw: "edge fog computing latenz iot industrie 4.0 netzrand knoten" },
-    { n: 9,  name: "Server-Betriebssysteme",    href: "9-server-betriebssystem.html",     hint: "Aufgaben eines Server-BS, Windows Server, Linux/Unix, Lizenzen, Virtualisierung", kw: "server betriebssystem windows linux unix lizenz virtualisierung dienst" },
-    { n: 10, name: "Adressierung",              href: "10-adressierung.html",             hint: "IPv4-Aufbau, Subnetzmaske & CIDR, Subnetting, Netz-/Broadcast-Adresse, IPv6", kw: "ipv4 ipv6 subnetz maske cidr subnetting broadcast adresse netz" },
-    { n: 11, name: "DHCP & DNS",                href: "11-dhcp-dns.html",                 hint: "Zuweisungsarten, DORA-Ablauf, Lease-Time, DNS-Auflösung & Caching", kw: "dhcp dns dora lease auflösung caching zuweisung namen" },
-    { n: 12, name: "Übertragungsarten",         href: "12-uebertragungsarten.html",       hint: "Seriell/parallel, Simplex/Halb-/Vollduplex, Multiplexing FDM·TDM·CDM·WDM", kw: "seriell parallel simplex halbduplex vollduplex multiplexing fdm tdm cdm wdm" },
-    { n: 13, name: "Topologien",                href: "13-topologien.html",               hint: "Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Ausfallsicherheit", kw: "bus ring stern mesh topologie ausfallsicherheit skalierbarkeit kosten" },
-    { n: 14, name: "Speichersysteme",           href: "14-speichersysteme.html",          hint: "DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem, Protokolle", kw: "das nas san speicher lun dateisystem protokoll zugriff block datei" },
-    { n: 15, name: "RAID / Speicherablage",     href: "15-raid.html",                     hint: "RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität, Ausfallsicherheit", kw: "raid 0 1 5 10 mirroring striping parität kapazität platten speicherablage" },
-    { n: 16, name: "E-Mail-Protokolle",         href: "16-email-protokolle.html",         hint: "SMTP versendet, POP3 lädt lokal, IMAP synchronisiert — plus Ports und SSL/TLS", kw: "email smtp pop3 imap port ssl tls postfach senden empfangen" },
-    { n: 17, name: "Netzwerktechnologien",      href: "17-netzwerktechnologien.html",     hint: "Ethernet-Frame & FCS, MAC-Adresse (OUI), ARP-Auflösung, MAC-Tabelle (Learning/Flooding)", kw: "ethernet frame fcs mac oui arp broadcast unicast switch learning flooding tabelle" },
-    { n: 18, name: "VLAN",                      href: "18-vlan.html",                     hint: "Virtuelle LANs nach 802.1q: Access vs. Trunk, VLAN-Tag/ID, Managed Switch, Inter-VLAN-Routing", kw: "vlan 802.1q tag id access trunk managed switch inter vlan routing segmentierung broadcast domäne" }
+    { n: 1,  qTotal: 11, name: "Grundbegriffe",             href: "1-grundbegriffe.html",             hint: "Device/Host/Peripherie, aktive & passive Komponenten, Router, Switch, Hauptverteiler", kw: "vokabular device host peripherie aktiv passiv router switch hauptverteiler komponente" },
+    { n: 2,  qTotal: 11, name: "Verkabelungsplan",          href: "2-verkabelungsplan.html",          hint: "Gebäude- & Verkabelungsplan, Symbole, Kanäle, Lasten- vs. Pflichtenheft", kw: "gebäude verkabelungsplan symbol kanal lastenheft pflichtenheft was wie" },
+    { n: 3,  qTotal: 11, name: "Übertragungsmedien",        href: "3-uebertragungsmedien.html",       hint: "Kupfer/TP, Schirmung, Kategorien vs. Klassen, Glasfaser, Totalreflexion, Stecker", kw: "kupfer twisted pair schirmung kategorie klasse glasfaser lwl totalreflexion stecker medium" },
+    { n: 4,  qTotal: 5, name: "Stückliste",                href: "4-stueckliste.html",               hint: "Aufbau & Zweck einer Stückliste (BOM), Mengen, Einzel- und Gesamtpreise", kw: "stückliste bom menge einzelpreis gesamtpreis rechnen material" },
+    { n: 5,  qTotal: 9, name: "Geräteklassen",             href: "5-geraeteklassen.html",            hint: "Barebone, Notebook, Tablet, Desktop, Industrie-PC und die Zuordnung zu Rollen", kw: "barebone notebook tablet desktop industrie pc geräteklasse rolle mitarbeiter" },
+    { n: 6,  qTotal: 11, name: "Strukturierte Verkabelung", href: "6-strukturierte-verkabelung.html", hint: "Sternverkabelung nach EN 50173: Primär-, Sekundär-, Tertiärebene, Maximallängen", kw: "strukturiert en50173 primär sekundär tertiär verteiler maximallänge stern ebene" },
+    { n: 7,  qTotal: 14, name: "IT-Infrastruktur",          href: "7-it-infrastruktur.html",          hint: "Server, Rechenzentren (USV, Kühlung, Redundanz) und Cloud (IaaS/PaaS/SaaS)", kw: "server rechenzentrum usv kühlung redundanz cloud iaas paas saas verfügbarkeit" },
+    { n: 8,  qTotal: 13, name: "Edge- & Fog-Computing",     href: "8-edgecomputing.html",             hint: "Daten am Rand des Netzes verarbeiten — geringe Latenz, IoT, Industrie 4.0", kw: "edge fog computing latenz iot industrie 4.0 netzrand knoten" },
+    { n: 9,  qTotal: 12, name: "Server-Betriebssysteme",    href: "9-server-betriebssystem.html",     hint: "Aufgaben eines Server-BS, Windows Server, Linux/Unix, Lizenzen, Virtualisierung", kw: "server betriebssystem windows linux unix lizenz virtualisierung dienst" },
+    { n: 10, qTotal: 13, name: "Adressierung",              href: "10-adressierung.html",             hint: "IPv4-Aufbau, Subnetzmaske & CIDR, Subnetting, Netz-/Broadcast-Adresse, IPv6", kw: "ipv4 ipv6 subnetz maske cidr subnetting broadcast adresse netz" },
+    { n: 11, qTotal: 12, name: "DHCP & DNS",                href: "11-dhcp-dns.html",                 hint: "Zuweisungsarten, DORA-Ablauf, Lease-Time, DNS-Auflösung & Caching", kw: "dhcp dns dora lease auflösung caching zuweisung namen" },
+    { n: 12, qTotal: 13, name: "Übertragungsarten",         href: "12-uebertragungsarten.html",       hint: "Seriell/parallel, Simplex/Halb-/Vollduplex, Multiplexing FDM·TDM·CDM·WDM", kw: "seriell parallel simplex halbduplex vollduplex multiplexing fdm tdm cdm wdm" },
+    { n: 13, qTotal: 17, name: "Topologien",                href: "13-topologien.html",               hint: "Bus, Ring, Stern, Mesh — Aufbau, Vor-/Nachteile, Ausfallsicherheit", kw: "bus ring stern mesh topologie ausfallsicherheit skalierbarkeit kosten" },
+    { n: 14, qTotal: 15, name: "Speichersysteme",           href: "14-speichersysteme.html",          hint: "DAS, NAS, SAN — Zugriffsebene, Datentyp, LUN, Dateisystem, Protokolle", kw: "das nas san speicher lun dateisystem protokoll zugriff block datei" },
+    { n: 15, qTotal: 11, name: "RAID / Speicherablage",     href: "15-raid.html",                     hint: "RAID 0, 1, 5, 10 — Prinzip, Mindestplatten, nutzbare Kapazität, Ausfallsicherheit", kw: "raid 0 1 5 10 mirroring striping parität kapazität platten speicherablage" },
+    { n: 16, qTotal: 11, name: "E-Mail-Protokolle",         href: "16-email-protokolle.html",         hint: "SMTP versendet, POP3 lädt lokal, IMAP synchronisiert — plus Ports und SSL/TLS", kw: "email smtp pop3 imap port ssl tls postfach senden empfangen" },
+    { n: 17, qTotal: 15, name: "Netzwerktechnologien",      href: "17-netzwerktechnologien.html",     hint: "Ethernet-Frame & FCS, MAC-Adresse (OUI), ARP-Auflösung, MAC-Tabelle (Learning/Flooding)", kw: "ethernet frame fcs mac oui arp broadcast unicast switch learning flooding tabelle" },
+    { n: 18, qTotal: 10, name: "VLAN",                      href: "18-vlan.html",                     hint: "Virtuelle LANs nach 802.1q: Access vs. Trunk, VLAN-Tag/ID, Managed Switch, Inter-VLAN-Routing", kw: "vlan 802.1q tag id access trunk managed switch inter vlan routing segmentierung broadcast domäne" },
+    { n: 19, qTotal: 11, name: "OSI-Modell",                href: "19-osi-modell.html",               hint: "7 OSI-Schichten vs. TCP/IP (4 Schichten), Windows-Tools (ipconfig, ping, tracert, nslookup, arp, netstat), Troubleshooting", kw: "osi schicht modell tcp ip referenzmodell kapselung ipconfig ping tracert nslookup arp netstat troubleshooting fehlerquelle" }
   ];
 
   /* ---- Hilfsfunktionen ---- */
@@ -51,17 +52,77 @@
     if (html != null) e.innerHTML = html;
     return e;
   }
+  /* ---- Themen-Fortschritt ----
+     quiz.js speichert beantwortete Auswahlfragen unter "fuit-mc:<pfad>#<nr>".
+     Daraus wird je Thema der Bearbeitungsstand ermittelt und am Stern-Knoten
+     sowie auf den Themen-Kacheln angezeigt (Zahl + Leiste, nicht nur Farbe). */
+  function progressFor(t) {
+    var p = { done: 0, ok: 0, total: t.qTotal || 0 };
+    try {
+      var prefix = "fuit-mc:" + new URL(t.href, location.href).pathname + "#";
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (!k || k.indexOf(prefix) !== 0) continue;
+        p.done++;
+        try { if (JSON.parse(localStorage.getItem(k)).ok) p.ok++; } catch (e2) {}
+      }
+    } catch (e) {}
+    if (p.done > p.total) p.total = p.done;
+    return p;
+  }
+  function progressLabel(t, p) {
+    return "Thema " + t.n + ": " + t.name + " — " + p.done + " von " + p.total +
+      " beantwortet, " + p.ok + " richtig";
+  }
+
   /* kompakte, anklickbare Themen-Kachel (geteilt von Suche/Memory/Schatzsuche) */
   function topicLink(t) {
     var a = document.createElement("a");
     a.className = "x-topic";
     a.href = t.href;
+    var p = progressFor(t);
     a.innerHTML =
       '<span class="xt-num">' + t.n + "</span>" +
       '<span class="xt-text"><span class="xt-name">' + esc(t.name) + "</span>" +
       '<span class="xt-hint">' + esc(t.hint) + "</span></span>" +
+      (p.done ? '<span class="xt-progress">' + p.done + "/" + p.total + "</span>" : "") +
       '<span class="xt-go" aria-hidden="true">→</span>';
+    if (p.done) a.setAttribute("aria-label", progressLabel(t, p));
     return a;
+  }
+
+  /* Stern-Knoten (statisches SVG der Startseite) mit Leiste + Zähler versehen */
+  function decorateStar() {
+    var panel = root.querySelector('.explore-panel[data-mode="star"]');
+    if (!panel) return;
+    var NS = "http://www.w3.org/2000/svg";
+    TOPICS.forEach(function (t) {
+      var link = panel.querySelector('a[href="' + t.href + '"]');
+      var g = link && link.querySelector("g.node");
+      var box = g && g.querySelector("rect");
+      if (!box) return;
+      var p = progressFor(t);
+      link.setAttribute("aria-label", progressLabel(t, p));
+      if (!p.done || !p.total) return;   // ohne Bearbeitung bleibt der Knoten ruhig
+      var x = parseFloat(box.getAttribute("x")), y = parseFloat(box.getAttribute("y"));
+      var w = parseFloat(box.getAttribute("width")), h = parseFloat(box.getAttribute("height"));
+      var track = document.createElementNS(NS, "rect");
+      track.setAttribute("class", "node-progress");
+      var fill = document.createElementNS(NS, "rect");
+      fill.setAttribute("class", "node-progress-fill");
+      [track, fill].forEach(function (r) {
+        r.setAttribute("x", x + 6); r.setAttribute("y", y + h - 6);
+        r.setAttribute("width", w - 12); r.setAttribute("height", 4);
+        r.setAttribute("rx", 2);
+      });
+      fill.style.setProperty("--p", String(p.done / p.total));
+      var num = document.createElementNS(NS, "text");
+      num.setAttribute("class", "node-progress-text");
+      num.setAttribute("x", x + w - 6); num.setAttribute("y", y + 14);
+      num.setAttribute("text-anchor", "end");
+      num.textContent = p.done + "/" + p.total;
+      g.appendChild(track); g.appendChild(fill); g.appendChild(num);
+    });
   }
   var reduceMotion = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -110,7 +171,7 @@
     panel.innerHTML =
       '<div class="game-card">' +
         '<p class="game-tip">Tippe ein Stichwort, eine Nummer oder einen Themennamen — die Liste filtert sofort. <kbd>Enter</kbd> öffnet den ersten Treffer.</p>' +
-        '<div class="xs-bar"><input class="xs-input" type="search" inputmode="search" ' +
+        '<div class="xs-bar"><input class="xs-input" id="xs-input" name="themensuche" type="search" inputmode="search" ' +
           'placeholder="z. B. „raid", „subnetz", „13" …" aria-label="Themen durchsuchen" autocomplete="off"></div>' +
         '<div class="xs-results x-topic-list" aria-live="polite"></div>' +
       "</div>";
@@ -151,7 +212,7 @@
       '<div class="game-card">' +
         '<div class="game-bar">' +
           '<p class="game-tip">Finde die Paare aus <b>Nummer</b> und <b>Thema</b>. Jedes gelöste Paar wird zum anklickbaren Link.</p>' +
-          '<div class="game-stat"><span class="gs-pair">0</span>/18 Paare · <span class="gs-moves">0</span> Züge ' +
+          '<div class="game-stat"><span class="gs-pair">0</span>/' + TOPICS.length + ' Paare · <span class="gs-moves">0</span> Züge ' +
             '<button class="btn game-reset" type="button">Neu mischen</button></div>' +
         "</div>" +
         '<div class="mem-grid" aria-label="Memory-Feld"></div>' +
@@ -223,7 +284,7 @@
       pairs++; pairEl.textContent = pairs;
       if (pairs === TOPICS.length) {
         win.hidden = false;
-        win.innerHTML = "🎉 Alle 18 Paare in <b>" + moves + "</b> Zügen! Klick ein Paar an, um direkt zum Thema zu springen.";
+        win.innerHTML = "🎉 Alle " + TOPICS.length + " Paare in <b>" + moves + "</b> Zügen! Klick ein Paar an, um direkt zum Thema zu springen.";
       }
     }
     start();
@@ -237,7 +298,7 @@
       '<div class="game-card">' +
         '<div class="game-bar">' +
           '<p class="game-tip">Welches Thema steckt hinter der Beschreibung? Richtig getippt = Thema freigeschaltet.</p>' +
-          '<div class="game-stat"><span class="gs-unlock">0</span>/18 frei · <span class="gs-tries">0</span> Versuche</div>' +
+          '<div class="game-stat"><span class="gs-unlock">0</span>/' + TOPICS.length + ' frei · <span class="gs-tries">0</span> Versuche</div>' +
         "</div>" +
         '<div class="quiz-stage"></div>' +
         '<div class="quiz-unlocked x-topic-list" aria-label="Freigeschaltete Themen"></div>' +
@@ -252,13 +313,13 @@
 
     function nextQuestion() {
       if (pos >= queue.length) {
-        stage.innerHTML = '<div class="game-win" style="position:static;margin:0;">🏁 Alle 18 Themen erkannt! Unten geht es direkt weiter.</div>';
+        stage.innerHTML = '<div class="game-win" style="position:static;margin:0;">🏁 Alle ' + TOPICS.length + ' Themen erkannt! Unten geht es direkt weiter.</div>';
         return;
       }
       var correct = queue[pos];
       var distractors = shuffle(TOPICS.filter(function (t) { return t.n !== correct.n; })).slice(0, 3);
       var options = shuffle(distractors.concat(correct));
-      var html = '<p class="quiz-q"><span class="quiz-ix">' + (pos + 1) + "/18</span> " +
+      var html = '<p class="quiz-q"><span class="quiz-ix">' + (pos + 1) + "/" + TOPICS.length + "</span> " +
         esc(correct.hint) + "</p><div class='quiz-opts'>";
       options.forEach(function (o) {
         html += '<button class="quiz-opt" type="button" data-n="' + o.n + '">' +
@@ -288,15 +349,15 @@
   }
 
   /* =====================================================================
-     Spiel 5 · Schatzsuche — die 18 Themen in einem Raster aus Störsignalen aufspüren
+     Spiel 5 · Schatzsuche — die 19 Themen in einem Raster aus Störsignalen aufspüren
      ===================================================================== */
   function buildHunt(panel) {
-    var DECOYS = ["Störsignal", "Rauschen", "Leeres Feld", "Kollision", "Timeout", "Paketverlust", "CRC-Fehler", "Echo", "Jitter"];
+    var DECOYS = ["Störsignal", "Rauschen", "Leeres Feld", "Kollision", "Timeout", "Paketverlust", "CRC-Fehler", "Echo", "Jitter", "Broadcast-Sturm", "Latenz"];
     panel.innerHTML =
       '<div class="game-card">' +
         '<div class="game-bar">' +
-          '<p class="game-tip">Hinter den Feldern verstecken sich die 18 Themen — dazwischen nur Störsignale. Deck sie auf und jage alle Themen!</p>' +
-          '<div class="game-stat"><span class="gs-found">0</span>/18 gefunden · <span class="gs-clicks">0</span> Aufdeckungen ' +
+          '<p class="game-tip">Hinter den Feldern verstecken sich die ' + TOPICS.length + ' Themen — dazwischen nur Störsignale. Deck sie auf und jage alle Themen!</p>' +
+          '<div class="game-stat"><span class="gs-found">0</span>/' + TOPICS.length + ' gefunden · <span class="gs-clicks">0</span> Aufdeckungen ' +
             '<button class="btn game-reset" type="button">Neues Feld</button></div>' +
         "</div>" +
         '<div class="hunt-grid" aria-label="Schatzsuche-Feld"></div>' +
@@ -340,7 +401,7 @@
         found++; foundEl.textContent = found;
         if (found === TOPICS.length) {
           win.hidden = false;
-          win.innerHTML = "🏆 Alle 18 Themen aufgespürt mit <b>" + clicks + "</b> Aufdeckungen! Klick ein Thema an.";
+          win.innerHTML = "🏆 Alle " + TOPICS.length + " Themen aufgespürt mit <b>" + clicks + "</b> Aufdeckungen! Klick ein Thema an.";
         }
       } else {
         btn.classList.add("miss");
@@ -381,7 +442,7 @@
         '<p class="game-tip">Keine Lust zu wählen? Lass das Glücksrad ein Thema bestimmen und leg direkt los.</p>' +
         '<div class="wheel-wrap">' +
           '<div class="wheel-pointer" aria-hidden="true">▼</div>' +
-          '<svg class="wheel-svg" viewBox="0 0 320 320" role="img" aria-label="Glücksrad mit den 18 Themen">' +
+          '<svg class="wheel-svg" viewBox="0 0 320 320" role="img" aria-label="Glücksrad mit den ' + TOPICS.length + ' Themen">' +
             '<g class="wheel-rot">' + segs + labels + "</g>" +
             '<circle cx="160" cy="160" r="26" fill="#16242E"></circle>' +
             '<text x="160" y="160" fill="#fff" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" dominant-baseline="central">DREH</text>' +
@@ -408,14 +469,24 @@
       var center = i * SEG + SEG / 2;
       var base = ((angle % 360) + 360) % 360;
       angle += (360 * 5) + ((360 - center) - base % 360);
+      var fallback = null;
       function done() {
+        if (fallback !== null) { clearTimeout(fallback); fallback = null; }
         rot.removeEventListener("transitionend", done);
+        rot.removeEventListener("transitioncancel", done);
         spinning = false; btn.disabled = false;
         res.innerHTML = '<span class="wr-label">Dein Thema</span>';
         res.appendChild(topicLink(target));
       }
       if (reduceMotion) { rot.style.transform = "rotate(" + angle + "deg)"; done(); }
-      else { rot.addEventListener("transitionend", done); requestAnimationFrame(function () { rot.style.transform = "rotate(" + angle + "deg)"; }); }
+      else {
+        // transitioncancel + Timeout: ein Ansichtswechsel mitten im Dreh
+        // (display:none bricht die Transition ab) darf das Rad nicht sperren.
+        rot.addEventListener("transitionend", done);
+        rot.addEventListener("transitioncancel", done);
+        fallback = setTimeout(done, 4600);
+        requestAnimationFrame(function () { rot.style.transform = "rotate(" + angle + "deg)"; });
+      }
     }
     btn.addEventListener("click", spin);
   }
@@ -439,7 +510,7 @@
             '<div class="snake-hud">' +
               '<span>Score <b class="sn-score">0</b></span>' +
               '<span>Level <b class="sn-level">1</b></span>' +
-              '<span>Frei <b class="sn-unlocked">0</b>/18</span>' +
+              '<span>Frei <b class="sn-unlocked">0</b>/' + TOPICS.length + '</span>' +
               '<span>Best <b class="sn-best">0</b></span>' +
             '</div>' +
             '<div class="snake-board">' +
@@ -591,7 +662,7 @@
       state = "over"; stop();
       var done = unlocked >= TOPICS.length;
       showOverlay("Game Over · Score " + score,
-        done ? "Alle 18 Themen frei! Rechts geht es direkt weiter." : "Sammle weiter, um Themen freizuschalten.",
+        done ? "Alle " + TOPICS.length + " Themen frei! Rechts geht es direkt weiter." : "Sammle weiter, um Themen freizuschalten.",
         "Nochmal");
     }
 
@@ -707,5 +778,6 @@
     var saved = localStorage.getItem("explore-mode");
     if (saved && (saved === "star" || BUILD[saved])) initial = saved;
   } catch (e) {}
+  decorateStar();
   activate(initial);
 })();

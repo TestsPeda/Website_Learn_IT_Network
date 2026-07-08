@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–18</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–19</b></a>
   <nav class="topnav">
     <a href="1-grundbegriffe.html">1</a>
     <a href="2-verkabelungsplan.html">2</a>
@@ -32,6 +32,7 @@
     <a href="16-email-protokolle.html">16</a>
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
+    <a href="19-osi-modell.html">19</a>
     <a href="lernseite.html">Lernen</a>
     <a href="pruefung.html" class="current">Probe-SA</a>
   </nav>
@@ -41,10 +42,10 @@
 <main><div class="wrap">
   <section class="hero">
     <p class="eyebrow">Prüfungssimulation</p>
-    <h1>Probe-SA — alle Themen 1–18</h1>
-    <p class="lede">Ein Durchlauf über den gesamten Stoff: <b>26 Auswahlfragen</b> (26 P, automatisch bewertet)
-      und ein <b>offener Teil</b> mit 4 Freitext-/Konstruktivaufgaben (15 P, per KI-Bewertung). Zeit: <b>70 Minuten</b>,
-      insgesamt <b>41 Punkte</b>. Beim Abgeben wird der Auswahlteil ausgewertet; die KI-Punkte des offenen Teils
+    <h1>Probe-SA — alle Themen 1–19</h1>
+    <p class="lede">Ein Durchlauf über den gesamten Stoff: <b>30 Auswahlfragen</b> (30 P, automatisch bewertet)
+      und ein <b>offener Teil</b> mit 5 Freitext-/Konstruktivaufgaben (18 P, per KI-Bewertung). Zeit: <b>80 Minuten</b>,
+      insgesamt <b>48 Punkte</b>. Beim Abgeben wird der Auswahlteil ausgewertet; die KI-Punkte des offenen Teils
       trägst du danach ein — Gesamtpunkte und Note werden berechnet und im Verlauf gespeichert.</p>
   </section>
 
@@ -56,19 +57,25 @@
       trägst die Punkte unten ein. Läuft die Zeit ab, wird automatisch abgegeben. Alle Ergebnisse werden
       lokal in deinem Browser gespeichert.</p>
     </div>
-    <div class="controls"><button class="btn primary" id="start-btn" type="button">Test starten</button></div>
+    <div class="controls">
+      <button class="btn primary" id="start-btn" type="button">Test starten</button>
+      <label class="gate-option"><input type="checkbox" id="no-timelimit"> Ohne Zeitlimit üben</label>
+    </div>
   </div>
 
   <div id="exam-content" hidden>
     <div class="exam-bar">
-      <span class="lbl">Verbleibend</span><span class="clock" id="timer">70:00</span>
+      <span class="lbl" id="timer-label">Verbleibend</span><span class="clock" id="timer">80:00</span>
+      <span id="extend-total" class="extend-total" aria-live="polite" hidden></span>
+      <button class="btn" id="extend-time" type="button">+10 min</button>
+      <span id="time-warning" class="time-warning" aria-live="polite"></span>
       <div class="spacer"></div>
       <button class="btn primary" id="submit-btn" type="button">Abgeben &amp; auswerten</button>
     </div>
     <div id="result" hidden></div>
 
     <!-- ===================== AUSWAHLTEIL ===================== -->
-    <div class="sec-head"><span class="ix">A</span><h2>Auswahlteil (26 Fragen · je 1 P)</h2></div>
+    <div class="sec-head"><span class="ix">A</span><h2>Auswahlteil (30 Fragen · je 1 P)</h2></div>
     <p class="sec-sub">Genau eine Option ist richtig. Auswahl anklicken; Bewertung erfolgt beim Abgeben.</p>
 
     <article class="q exam-q" data-answer="1">
@@ -383,8 +390,56 @@
       <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein VLAN trennt ein physisches Netz logisch in mehrere Broadcast-Domänen (Segmentierung, Sicherheit).</p></div>
     </article>
 
+    <article class="q exam-q" data-answer="2">
+      <div class="q-head"><span class="q-num">27</span><span class="q-type">OSI-Modell</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Auf welcher OSI-Schicht arbeitet ein <code>Router</code> (Routing über IP-Adressen)?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>Schicht 1 — Physische Schicht</li>
+          <li class="opt"><span class="tick"></span>Schicht 2 — Datenverbindungsschicht</li>
+          <li class="opt"><span class="tick"></span>Schicht 3 — Netzwerkschicht</li>
+          <li class="opt"><span class="tick"></span>Schicht 7 — Anwendungsschicht</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Netzwerkschicht (3)</b> routet Pakete über den besten Weg und nutzt dazu IP-Adressen — die Aufgabe eines Routers.</p></div>
+    </article>
+
+    <article class="q exam-q" data-answer="1">
+      <div class="q-head"><span class="q-num">28</span><span class="q-type">OSI vs. TCP/IP</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Welche Aussage über die beiden Referenzmodelle trifft zu?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>Beide Modelle haben 7 Schichten und geben konkrete Protokolle vor.</li>
+          <li class="opt"><span class="tick"></span>OSI ist konzeptionell (7 Schichten), TCP/IP ist protokollgestützt (4 Schichten).</li>
+          <li class="opt"><span class="tick"></span>TCP/IP ist konzeptionell, OSI gibt konkrete Protokolle vor.</li>
+          <li class="opt"><span class="tick"></span>OSI hat 4 Schichten, TCP/IP hat 7 Schichten.</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>OSI</b>: konzeptionelles Modell mit 7 Schichten (Funktionalitäten, nicht das Wie). <b>TCP/IP</b>: protokollgestütztes Modell mit 4 Schichten.</p></div>
+    </article>
+
+    <article class="q exam-q" data-answer="0">
+      <div class="q-head"><span class="q-num">29</span><span class="q-type">Netzwerktools</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Mit welchem Windows-Tool zeichnet man die <em>Route</em> eines IP-Pakets über die Router hinweg auf?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>tracert</li>
+          <li class="opt"><span class="tick"></span>ipconfig</li>
+          <li class="opt"><span class="tick"></span>netstat</li>
+          <li class="opt"><span class="tick"></span>arp</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><code>tracert</code> (Traceroute) zeigt die Adressen der Router auf dem Weg zum Ziel. <code>ipconfig</code> zeigt die eigene Konfiguration, <code>netstat</code> offene TCP-Verbindungen, <code>arp</code> die IP↔MAC-Tabelle.</p></div>
+    </article>
+
+    <article class="q exam-q" data-answer="3">
+      <div class="q-head"><span class="q-num">30</span><span class="q-type">TCP/IP-Modell</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Welchen OSI-Schichten entspricht die <code>Netzwerkzugangsschicht</code> des TCP/IP-Modells?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>Schicht 3 und 4</li>
+          <li class="opt"><span class="tick"></span>Schicht 5 bis 7</li>
+          <li class="opt"><span class="tick"></span>nur Schicht 3</li>
+          <li class="opt"><span class="tick"></span>Schicht 1 und 2</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Netzwerkzugangsschicht</b> (Kabel, Netzwerkkarte, WLAN, Treiber, MAC-Infos) entspricht den OSI-Schichten <b>1 + 2</b>.</p></div>
+    </article>
+
     <!-- ===================== OFFENER TEIL ===================== -->
-    <div class="sec-head"><span class="ix">B</span><h2>Offener Teil (4 Aufgaben · 15 P · KI-Bewertung)</h2></div>
+    <div class="sec-head"><span class="ix">B</span><h2>Offener Teil (5 Aufgaben · 18 P · KI-Bewertung)</h2></div>
     <p class="sec-sub">Antwort ins Feld schreiben, „KI-Bewertungs-Prompt kopieren", in einer KI bewerten lassen und die
       erhaltenen Punkte nach dem Abgeben oben eintragen. Der Sammel-Button kopiert alle offenen Aufgaben zusammen.</p>
     <div class="controls"><button class="btn" id="copy-open" type="button">Alle offenen Aufgaben als KI-Prompt kopieren</button></div>
@@ -394,7 +449,7 @@
       <div class="q-body">
         <p class="q-text">Gegeben ist das Netz <code>192.168.20.0/24</code>. Es soll in <strong>4 gleich große Subnetze</strong> aufgeteilt werden.
           Gib für jedes Subnetz an: neue Präfixlänge, Netzadresse, erste/letzte nutzbare Host-Adresse und Broadcast. Zeige den Rechenweg.</p>
-        <textarea class="code-input" rows="9" data-task="subnetting" placeholder="Rechenweg + 4 Subnetze …"></textarea>
+        <textarea class="code-input" name="subnetting" rows="9" data-task="subnetting" placeholder="Rechenweg + 4 Subnetze …"></textarea>
       </div>
       <div class="q-foot">
         <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
@@ -432,7 +487,7 @@
         <p class="q-text">Ein kleiner Fileserver hat <strong>4 Festplatten à 4 TB</strong>. Gefordert sind hohe Ausfallsicherheit
           (mind. eine Platte darf ausfallen) und möglichst viel nutzbare Kapazität. Empfiehl ein RAID-Level, begründe die Wahl und
           nenne die resultierende nutzbare Kapazität. Grenze zu mindestens zwei anderen Leveln ab.</p>
-        <textarea class="code-input" rows="8" data-task="raid" placeholder="Empfehlung + Begründung + Kapazität …"></textarea>
+        <textarea class="code-input" name="raid" rows="8" data-task="raid" placeholder="Empfehlung + Begründung + Kapazität …"></textarea>
       </div>
       <div class="q-foot">
         <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
@@ -457,7 +512,7 @@
       <div class="q-body">
         <p class="q-text">Für ein Büro mit 3 Etagen soll ein LAN entworfen werden. Beschreibe eine geeignete Topologie
           (inkl. Verteiler je Etage und Anbindung), nenne <strong>zwei Vorteile</strong> und <strong>einen Nachteil</strong> deiner Wahl.</p>
-        <textarea class="code-input" rows="7" data-task="topologie" placeholder="Topologie + Verteiler + Vor-/Nachteile …"></textarea>
+        <textarea class="code-input" name="topologie" rows="7" data-task="topologie" placeholder="Topologie + Verteiler + Vor-/Nachteile …"></textarea>
       </div>
       <div class="q-foot">
         <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
@@ -527,7 +582,7 @@
       <div class="q-body">
         <p class="q-text">Host A (<code>192.168.1.10</code>) sendet erstmals einen <code>ping</code> an Host B (<code>192.168.1.20</code>) im selben LAN.
           Beschreibe Schritt für Schritt, welche Rolle <strong>ARP</strong> und der <strong>Switch</strong> dabei spielen und welche Adressen (MAC/IP) ermittelt und genutzt werden.</p>
-        <textarea class="code-input" rows="7" data-task="arp" placeholder="Schrittfolge ARP + Ping …"></textarea>
+        <textarea class="code-input" name="arp" rows="7" data-task="arp" placeholder="Schrittfolge ARP + Ping …"></textarea>
       </div>
       <div class="q-foot">
         <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
@@ -600,19 +655,46 @@
       </div>
     </article>
 
+    <article class="q open-q" id="open-osi" data-ki-max="3">
+      <div class="q-head"><span class="q-num">O5</span><span class="q-type">OSI-Troubleshooting</span><span class="q-src">OSI-Modell</span><span class="q-pts">3 P · KI</span></div>
+      <div class="q-body">
+        <p class="q-text">Ein Rechner erreicht das Internet nicht. Beschreibe das <strong>systematische Troubleshooting
+          nach den OSI-Schichten 1–4</strong> (in der richtigen Reihenfolge) und nenne zu jeder Schicht ein passendes
+          <strong>Windows-Tool</strong> bzw. eine konkrete Prüfung.</p>
+        <textarea class="code-input" name="osi-troubleshooting" rows="7" data-task="osi-troubleshooting" placeholder="Schicht 1: … (Tool) → Schicht 2: … → Schicht 3: … → Schicht 4: …"></textarea>
+      </div>
+      <div class="q-foot">
+        <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+        <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+      </div>
+      <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Prüfungsaufgabe (max. 3 Punkte). Aufgabe: Systematisches Troubleshooting eines Rechners ohne Internetzugang nach den OSI-Schichten 1–4, mit je einem passenden Windows-Tool bzw. einer konkreten Prüfung pro Schicht. Bewertungskriterien: Vorgehen von unten nach oben (Schicht 1 zuerst) erkennbar (1 P); Schichten 1–4 fachlich korrekt benannt und mit passenden Prüfungen verbunden — 1 Kabel/Adapter, 2 Treiber/MAC, 3 IP/Routing/DNS, 4 TCP/Firewall (1 P); passende Tools zugeordnet — ipconfig (1), arp (2), ping/tracert/nslookup (3), netstat (4) (1 P). Vergib Punkte streng nach Kriterien und nenne die Gesamtpunktzahl (max. 3). Lösung des Schülers:
+{{CODE}}</template>
+      <div class="q-solution" hidden>
+        <span class="sol-label">Musterlösung</span>
+        <ul>
+          <li><b>Schicht 1 (Bitübertragung):</b> Kabel eingesteckt/unbeschädigt, richtig gepatcht, Adapter aktiv? → <code>ipconfig</code> zeigt, ob der Adapter eine Konfiguration hat.</li>
+          <li><b>Schicht 2 (Sicherung):</b> Treiber korrekt, MAC-Kommunikation im LAN? → <code>arp</code> zeigt die IP↔MAC-Zuordnungen.</li>
+          <li><b>Schicht 3 (Vermittlung):</b> IP-Konfiguration (DHCP/feste IP), Router erreichbar, DNS? → <code>ping</code> (Erreichbarkeit), <code>tracert</code> (Route), <code>nslookup</code> (Namensauflösung).</li>
+          <li><b>Schicht 4 (Transport):</b> Kommt die TCP-Verbindung zustande oder blockt eine Firewall? → <code>netstat</code> zeigt offene TCP-Verbindungen.</li>
+        </ul>
+        <p class="rubric-label">Bewertungsraster — darauf prüft die KI-Bewertung:</p>
+        <ul class="rubric"><li>bottom-up (Schicht 1 zuerst)</li><li>Schichten 1–4 korrekt + passende Prüfung</li><li>Tools richtig zugeordnet</li></ul>
+      </div>
+    </article>
+
   </div><!-- /exam-content -->
 
   <div id="history" hidden></div>
 
   <div class="note">
     <span class="lbl">So funktioniert die Bewertung</span>
-    <p>Der Auswahlteil (26 P) wird beim Abgeben automatisch ausgewertet. Für den offenen Teil (15 P) kopierst du den
+    <p>Der Auswahlteil (30 P) wird beim Abgeben automatisch ausgewertet. Für den offenen Teil (18 P) kopierst du den
     KI-Bewertungs-Prompt, lässt ihn von einer KI nach den angegebenen Kriterien bewerten und trägst die erhaltenen
-    Punkte je Aufgabe ein. Gesamtpunktzahl (max. 41 P), Prozentwert und Note werden nach dem Notenschlüssel berechnet
+    Punkte je Aufgabe ein. Gesamtpunktzahl (max. 48 P), Prozentwert und Note werden nach dem Notenschlüssel berechnet
     und mit „Endergebnis speichern" dauerhaft im Verlauf abgelegt.</p>
   </div>
 </div></main>
-<footer class="foot"><div class="wrap"><span class="mono">IT·Net · Probe-SA — alle Themen 1–18</span> · Prüfungssimulation</div></footer>
+<footer class="foot"><div class="wrap"><span class="mono">IT·Net · Probe-SA — alle Themen 1–19</span> · Prüfungssimulation</div></footer>
 <!-- Probe-SA nutzt pruefung.js (eigene Logik inkl. offener Teil); NICHT code.js/quiz.js. -->
 <script src="assets/pruefung.js"></script>
 </body>

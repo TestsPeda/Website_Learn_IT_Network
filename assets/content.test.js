@@ -13,11 +13,13 @@ let checks = 0;
 const ok = (cond, msg) => { assert.ok(cond, msg); checks++; };
 
 const kiPages = ["10-adressierung.html","11-dhcp-dns.html","13-topologien.html","14-speichersysteme.html",
-  "15-raid.html","16-email-protokolle.html","17-netzwerktechnologien.html","18-vlan.html"];
+  "15-raid.html","16-email-protokolle.html","17-netzwerktechnologien.html","18-vlan.html",
+  "19-osi-modell.html"];
 const allTopics = ["1-grundbegriffe","2-verkabelungsplan","3-uebertragungsmedien","4-stueckliste",
   "5-geraeteklassen","6-strukturierte-verkabelung","7-it-infrastruktur","8-edgecomputing",
   "9-server-betriebssystem","10-adressierung","11-dhcp-dns","12-uebertragungsarten","13-topologien",
-  "14-speichersysteme","15-raid","16-email-protokolle","17-netzwerktechnologien","18-vlan"].map(n=>n+".html");
+  "14-speichersysteme","15-raid","16-email-protokolle","17-netzwerktechnologien","18-vlan",
+  "19-osi-modell"].map(n=>n+".html");
 
 /* --- Kern-Assets existieren --- */
 for (const a of ["assets/style.css","assets/quiz.js","assets/print.css","assets/code.css","assets/code.js","assets/pruefung.js"]) {
@@ -78,9 +80,9 @@ for (const f of kiPages) {
   ok(!s.includes('src="assets/quiz.js"'), "pruefung: quiz.js darf NICHT geladen sein");
   ok(s.includes('href="assets/code.css"'), "pruefung: code.css (Styling) fehlt");
   const examQ = (s.match(/class="q exam-q"/g) || []).length;
-  ok(examQ === 26, "pruefung: erwartet 26 exam-q, gefunden " + examQ);
+  ok(examQ === 30, "pruefung: erwartet 30 exam-q, gefunden " + examQ);
   const openQ = (s.match(/class="q open-q"/g) || []).length;
-  ok(openQ === 4, "pruefung: erwartet 4 open-q, gefunden " + openQ);
+  ok(openQ === 5, "pruefung: erwartet 5 open-q, gefunden " + openQ);
   // jede exam-q hat data-answer im gültigen Bereich
   const blocks = s.split('class="q exam-q"').slice(1);
   blocks.forEach((b, i) => {
@@ -102,16 +104,101 @@ for (const f of kiPages) {
   ok(!s.includes('die 16 Themen'), "index: veralteter Text „16 Themen\"");
 }
 
-/* --- explore.js: alle 18 Themen in der Navigations-Datenbank --- */
+/* --- Nav: Thema 19 überall verlinkt, keine veralteten 1–18-Beschriftungen --- */
+for (const f of allTopics.concat(["index.html","lernseite.html","pruefung.html"])) {
+  const s = read(f);
+  ok(s.includes('href="19-osi-modell.html"'), f + ": Nav-Link auf Thema 19 fehlt");
+  ok(!s.includes("Themen 1–18") && !s.includes("Themen 1 bis 18"),
+     f + ": veraltete Beschriftung „Themen 1–18\"");
+}
+{
+  const s = read("index.html");
+  ok(!/Achtzehn Themen/.test(s), "index: veralteter Hero-Text „Achtzehn Themen\"");
+  ok(s.includes("<b>19</b> Themen"), "index: Themen-Pill nicht auf 19 aktualisiert");
+  ok(!/die 18 Themen/.test(s), "index: veralteter Text „die 18 Themen\"");
+}
+{
+  const s = read("18-vlan.html");
+  ok(/class="next" href="19-osi-modell\.html"/.test(s), "18-vlan: Pager führt nicht zu Thema 19");
+}
+{
+  const s = read("lernseite.html");
+  ok(s.includes("<h2>OSI-Modell &amp; TCP/IP</h2>"), "lernseite: Abschnitt 19 fehlt");
+  ok(s.includes('href="#t19"'), "lernseite: TOC-Pill für Abschnitt 19 fehlt");
+}
+
+/* --- explore.js: alle 19 Themen in der Navigations-Datenbank --- */
 {
   const s = read("assets/explore.js");
-  ok(s.includes('17-netzwerktechnologien.html'), "explore.js: Thema 17 fehlt in TOPICS");
   ok(s.includes('18-vlan.html'), "explore.js: Thema 18 fehlt in TOPICS");
+  ok(s.includes('19-osi-modell.html'), "explore.js: Thema 19 fehlt in TOPICS");
   const entries = (s.match(/\{ n: \d+,/g) || []).length;
-  ok(entries === 18, "explore.js: erwartet 18 TOPICS-Einträge, gefunden " + entries);
-  // Anzeige-Zähler nicht mehr auf 16 hartkodiert (Swipe-Schwelle < 16 ausgenommen)
-  ok(!/\/16 (Paare|frei|gefunden)/.test(s) && !/Alle 16 (Paare|Themen)/.test(s),
-     "explore.js: veralteter 16er-Zähler in einer Spiel-Ansicht");
+  ok(entries === 19, "explore.js: erwartet 19 TOPICS-Einträge, gefunden " + entries);
+  // Anzeige-Zähler nicht auf eine alte Themenzahl hartkodiert (16er/18er)
+  ok(!/\/1[68] (Paare|frei|gefunden)/.test(s) && !/Alle 1[68] (Paare|Themen)/.test(s),
+     "explore.js: veralteter 16er/18er-Zähler in einer Spiel-Ansicht");
+}
+
+/* --- quiz.js: MC-Persistenz, Wiederherstellung, Status-Rolle; Reset auf jeder Themenseite --- */
+{
+  const s = read("assets/quiz.js");
+  ok(s.includes("fuit-mc:"), "quiz.js: keine MC-Persistenz (fuit-mc:)");
+  ok(s.includes("restoreState"), "quiz.js: keine Wiederherstellung (restoreState)");
+  ok(s.includes('"status"'), "quiz.js: Score-Chip ohne role=status");
+  ok(s.includes("reset-answers"), "quiz.js: kein Reset-Handler");
+}
+for (const f of allTopics) {
+  ok(read(f).includes('id="reset-answers"'), f + ": kein Reset-Button");
+}
+
+/* --- Zähler: Hero-Pills und Themenkarten des Index = echte Zahlen der Seiten --- */
+{
+  const idx = read("index.html");
+  let qSum = 0, svgSum = 0;
+  for (const f of allTopics) {
+    const s = read(f);
+    const nq = (s.match(/<article class="q"/g) || []).length;
+    const ns = (s.match(/<svg /g) || []).length;
+    qSum += nq; svgSum += ns;
+    const card = idx.match(new RegExp('<a class="topic-card" href="' + f.replace(".", "\\.") + '"[\\s\\S]*?class="tc-meta">([^<]+)<'));
+    ok(card, "index: keine Themenkarte für " + f);
+    ok(card[1] === nq + " Aufgaben · " + ns + " Diagramme",
+       "index: Karten-Meta für " + f + " ist „" + card[1] + "“, echt: " + nq + " Aufgaben · " + ns + " Diagramme");
+  }
+  ok(idx.includes("<b>" + qSum + "</b> Aufgaben"), "index: Aufgaben-Pill entspricht nicht " + qSum);
+  ok(idx.includes("<b>" + svgSum + "</b> Diagramme"), "index: Diagramme-Pill entspricht nicht " + svgSum);
+}
+
+/* --- lernseite: 19 lern-sek-Wrapper (content-visibility-Performance) --- */
+{
+  const s = read("lernseite.html");
+  const n = (s.match(/<section class="lern-sek"/g) || []).length;
+  ok(n === 19, "lernseite: erwartet 19 lern-sek-Abschnitte, gefunden " + n);
+  ok(read("assets/style.css").includes("content-visibility: auto"), "style.css: lern-sek ohne content-visibility");
+  ok(read("assets/print.css").includes("content-visibility: visible"), "print.css: Druck-Override fehlt");
+}
+
+/* --- Zähler: Lernseiten-Diagrammzahl = echte SVG-Anzahl der Lernseite --- */
+{
+  const s = read("lernseite.html");
+  const nsvg = (s.match(/<svg /g) || []).length;
+  ok(s.includes(nsvg + " Diagramme"), "lernseite: Diagramm-Zähler entspricht nicht " + nsvg);
+  const idx = read("index.html");
+  ok(idx.includes("allen " + nsvg + " Diagrammen"), "index: Lernseiten-Beschreibung nennt nicht " + nsvg + " Diagramme");
+}
+
+/* --- explore.js: qTotal je Thema == Anzahl MC-Karten (q-options) der Seite --- */
+{
+  const ex = read("assets/explore.js");
+  for (let i = 0; i < allTopics.length; i++) {
+    const s = read(allTopics[i]);
+    const mc = s.split('<article class="q"').slice(1)
+      .filter(b => b.includes('class="q-options"')).length;
+    const m = ex.match(new RegExp("\\{ n: " + (i + 1) + ",[^}]*qTotal: (\\d+)"));
+    ok(m, "explore.js: qTotal für Thema " + (i + 1) + " fehlt");
+    ok(m && parseInt(m[1], 10) === mc,
+       "explore.js: qTotal Thema " + (i + 1) + " = " + (m && m[1]) + ", Seite hat " + mc);
+  }
 }
 
 /* --- keine externen URLs (offline/GitHub Pages) --- */

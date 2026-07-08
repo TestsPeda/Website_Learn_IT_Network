@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lernseite · Themen 1–18 — IT-Lernmaterial</title>
+<title>Lernseite · Themen 1–19 — IT-Lernmaterial</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/print.css">
@@ -12,7 +12,7 @@
 <body>
 
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–18</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–19</b></a>
   <nav class="topnav">
     <a href="1-grundbegriffe.html">1</a>
     <a href="2-verkabelungsplan.html">2</a>
@@ -32,11 +32,12 @@
     <a href="16-email-protokolle.html">16</a>
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
+    <a href="19-osi-modell.html">19</a>
     <a href="lernseite.html" class="current">Lernen</a>
     <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
-  <span class="scorechip">Konzepte &amp; 63 Diagramme</span>
+  <span class="scorechip">Konzepte &amp; 66 Diagramme</span>
 </header>
 
 <main><div class="wrap">
@@ -44,12 +45,12 @@
   <section class="hero">
     <p class="eyebrow">Konzepte wiederholen</p>
     <h1>Lernseite<br>Konzepte auf einen Blick</h1>
-    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 63 Diagrammen
-      der Themenblöcke 1 bis 18, nach Thema gruppiert. Zum Wiederholen ohne Aufgaben; jeder
+    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 66 Diagrammen
+      der Themenblöcke 1 bis 19, nach Thema gruppiert. Zum Wiederholen ohne Aufgaben; jeder
       Block verlinkt zurück auf den zugehörigen Test.</p>
     <div class="hero-meta">
-      <span class="pill"><b>18</b> Themen</span>
-      <span class="pill"><b>63</b> Diagramme</span>
+      <span class="pill"><b>19</b> Themen</span>
+      <span class="pill"><b>66</b> Diagramme</span>
       <span class="pill">Konzepte + Grafiken</span>
     </div>
     <nav class="gal-nav">
@@ -71,10 +72,12 @@
       <a class="pill" href="#t16"><b>16</b> E-Mail-Protokolle <span class="cnt">3</span></a>
       <a class="pill" href="#t17"><b>17</b> Netzwerktech. <span class="cnt">4</span></a>
       <a class="pill" href="#t18"><b>18</b> VLAN <span class="cnt">3</span></a>
+      <a class="pill" href="#t19"><b>19</b> OSI-Modell <span class="cnt">3</span></a>
     </nav>
   </section>
 
   <div class="sec-head" id="t1"><span class="ix">1</span><h2>Netzwerk-Grundbegriffe</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1182px">
   <p class="sec-sub">Device · Host · aktive/passive Komponenten · <a class="src-link" href="1-grundbegriffe.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Device</span><p class="lc-def">Technischer Oberbegriff für <strong>alle Hardwarekomponenten</strong> (z. B. <code>CPU</code>, Netzwerkkarte). Kann auch <strong>virtuell</strong> sein, sodass dem Betriebssystem kein Unterschied zur echten Hardware auffällt.</p></div><div class="learn-card"><span class="lc-term">Peripheriegerät</span><p class="lc-def">Gerät, das <strong>nicht zum eigentlichen Computer</strong> gehört, sondern ihn bei Ein-/Ausgabe und Kommunikation erweitert (EVA-Prinzip). Beispiele: Tastatur, Bildschirm, Lautsprecher.</p></div><div class="learn-card"><span class="lc-term">Host</span><p class="lc-def">Meist ein <strong>Endgerät im LAN</strong>, das Daten anfragt und verarbeitet (<strong>Client</strong>, z. B. Laptop) oder Dienste/Daten bereitstellt (<strong>Server</strong>).</p></div><div class="learn-card"><span class="lc-term">Übertragungsmedium</span><p class="lc-def">Die Technik/Ressource zur Datenübertragung — die „Leiterbahn" der Datenpakete: <strong>Glasfaser</strong>, <strong>Kupfer</strong> (DSL) und <strong>elektromagnetische Wellen</strong> (Funk/WLAN).</p></div><div class="learn-card"><span class="lc-term">Router</span><p class="lc-def">Verbindet <strong>mehrere Netze</strong> und routet Datenpakete (OSI-Schicht 3). Stellt über das <strong>Gateway</strong> die Verbindung zum Internet her, vergibt per <code>DHCP</code> IP-Adressen und schützt per Firewall.</p></div><div class="learn-card"><span class="lc-term">Switch</span><p class="lc-def">Verbindet die <strong>Hosts im LAN aktiv</strong> miteinander. Entscheidet anhand der <code>MAC</code>-Adressen (OSI-Schicht 2) bzw. per Broadcasting.</p></div><div class="learn-card"><span class="lc-term">Hauptverteiler</span><p class="lc-def"><em>Main Distribution Frame</em> — <strong>zentraler Verteilungspunkt</strong> ganz oben in der Hierarchie; kann Router und Switches enthalten.</p></div><div class="learn-card"><span class="lc-term">Aktiv vs. passiv</span><p class="lc-def"><strong>Aktiv:</strong> verarbeitet/steuert Daten, eigene Elektronik + Strom (Router, Switch, Firewall). <strong>Passiv:</strong> leitet nur physikalisch weiter, ohne Logik (Kabel, Patchfeld, Steckverbinder).</p></div>
@@ -157,7 +160,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t2"><span class="ix">2</span><h2>Gebäude- &amp; Verkabelungsplan</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1125px">
   <p class="sec-sub">Pläne · Lastenheft &amp; Pflichtenheft · <a class="src-link" href="2-verkabelungsplan.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Gebäudeplan</span><p class="lc-def">Grundriss je Stockwerk mit Räumen/Nummern, Kabelkanälen, Dosen, Bodentanks und Netzwerkschrank. Braucht <b>Maßstab</b> und <b>Legende</b>.</p></div><div class="learn-card"><span class="lc-term">Legende &amp; Symbole</span><p class="lc-def">Ordnet jedem Zeichen die Bedeutung zu: Linie = horizontaler Kanal, Raute = <b>Bodentank</b>, oranges Rechteck = Netzwerkschrank mit Patchpanel/Switch/Router.</p></div><div class="learn-card"><span class="lc-term">Kabelkanäle &amp; Kennungen</span><p class="lc-def">Jeder Kanal bekommt ein sprechendes Kürzel aus Art + Raum, z. B. <code>K1B2</code> (Kanal 1, Büro 2). Vertikale Kanäle bilden die <b>Steigzone</b>.</p></div><div class="learn-card"><span class="lc-term">Verkabelungsplan</span><p class="lc-def">Dokumentiert jede Strecke: ID, Schrank, Patchpanel + Port (<code>PP/PN</code>), Anfangs-/Endraum, Dose/Port, Kanäle und Medium.</p></div><div class="learn-card"><span class="lc-term">Medium (S/FTP Kat.6)</span><p class="lc-def"><code>S/FTP</code> = Kabelart/Schirmung, <code>Kat.6</code> = Kategorie. Beides legt das Übertragungsmedium der Strecke fest.</p></div><div class="learn-card"><span class="lc-term">Lastenheft</span><p class="lc-def">Vom <b>Auftraggeber</b>: beschreibt das <b>Was/Wozu</b> (Anforderungen, Ziele = das <em>Soll</em>) – noch ohne technische Umsetzung.</p></div><div class="learn-card"><span class="lc-term">Pflichtenheft</span><p class="lc-def">Vom <b>Auftragnehmer</b>: beschreibt das <b>Wie</b> – die konkrete technische Antwort auf das Lastenheft.</p></div><div class="learn-card"><span class="lc-term">Vollständigkeit</span><p class="lc-def">Jede Anschlussstrecke muss erfasst sein – Lücken im Plan führen zu nicht angeschlossenen Räumen.</p></div>
@@ -241,7 +247,10 @@
   </svg><figcaption>Das Lastenheft (Auftraggeber, „Was/Wozu“) ist die Vorgabe; das Pflichtenheft (Auftragnehmer, „Wie“) die konkrete technische Antwort darauf.</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t3"><span class="ix">3</span><h2>Übertragungsmedien</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1441px">
   <p class="sec-sub">Kupfer · Glasfaser · Stecker · <a class="src-link" href="3-uebertragungsmedien.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Twisted Pair (TP)</span><p class="lc-def">Verdrilltes Aderpaar: zwei Adern werden umeinander gewickelt, um Übersprechen und eingestreute Magnetfelder zu reduzieren. Kupferkabel haben i. d. R. 4 Aderpaare.</p></div><div class="learn-card"><span class="lc-term">Schirmung X/YTP</span><p class="lc-def">Links Gesamtschirm (<code>X</code>), rechts Paarschirm (<code>Y</code>): <code>S</code> = Geflecht, <code>F</code> = Folie, <code>U</code> = ohne. Beispiele: <code>S/FTP</code> (best geschirmt), <code>U/UTP</code> (ungeschirmt).</p></div><div class="learn-card"><span class="lc-term">Kategorie vs. Klasse</span><p class="lc-def">Nach DIN EN 50173-1: <code>Kategorie</code> bewertet eine einzelne Komponente (z. B. <code>Cat 6A</code>), <code>Klasse</code> die gesamte Strecke (z. B. Klasse E<sub>A</sub>). Die schwächste Komponente bestimmt die Klasse.</p></div><div class="learn-card"><span class="lc-term">Kategorien-Eckdaten</span><p class="lc-def"><code>Cat 5e</code> 100 MHz/1 Gbit/s · <code>Cat 6</code> 250 MHz · <code>Cat 6A</code> 500 MHz/10 Gbit/s · <code>Cat 7</code> 600 MHz. Jeweils bis ~100 m.</p></div><div class="learn-card"><span class="lc-term">Totalreflexion</span><p class="lc-def">Kern und Mantel haben unterschiedliche Brechungsindizes; an der Grenze wird das Licht reflektiert und so im Kern geführt. Grundprinzip jeder Glasfaser.</p></div><div class="learn-card"><span class="lc-term">Multimode vs. Singlemode</span><p class="lc-def">Multimode: Kern ~50 µm, mehrere Moden, günstiger, kürzere Reichweite. Singlemode: Kern ~9 µm, eine Mode, Laser, große Reichweite. Mantel je 125 µm.</p></div><div class="learn-card"><span class="lc-term">Stecker</span><p class="lc-def"><code>RJ45</code> (8-polig) für Kupfer/TP; <code>SC</code> und <code>LC</code> für Glasfaser. Patchpanel = zentrale Verteilstelle.</p></div><div class="learn-card"><span class="lc-term">Kupfer vs. LWL</span><p class="lc-def">Kupfer: günstig, robust, kurze Strecken, EMV-anfällig. Glasfaser: hohe Bandbreite, geringe Dämpfung, EMV-immun, große Reichweite, aber teurer.</p></div>
@@ -381,7 +390,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t4"><span class="ix">4</span><h2>Stückliste (BOM)</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 809px">
   <p class="sec-sub">Aufbau · Mengen · Kalkulation · <a class="src-link" href="4-stueckliste.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Stückliste (BOM)</span><p class="lc-def">Strukturierte Auflistung aller Materialien eines Projekts mit <code>Menge</code> und <code>Preis</code> – Grundlage für Beschaffung, Kalkulation und Angebot.</p></div><div class="learn-card"><span class="lc-term">Kopfdaten</span><p class="lc-def">Identifizieren die Liste: <code>Projekt</code>, <code>Projektnr.</code>, <code>Datum</code> und <code>Ersteller</code>.</p></div><div class="learn-card"><span class="lc-term">Positionszeile</span><p class="lc-def">Spalten: <code>Lfd. Nr.</code>, <code>Menge</code>, <code>Einheit</code>, <code>Bezeichnung</code>, <code>Einzelpreis</code> und <code>Gesamtpreis</code>.</p></div><div class="learn-card"><span class="lc-term">Gesamtpreis je Position</span><p class="lc-def">Berechnung: <code>Menge × Einzelpreis</code>. Beispiel: 400 m × 0,40 € = 160,00 €.</p></div><div class="learn-card"><span class="lc-term">Mengenermittlung</span><p class="lc-def">Mengen werden aus dem Gebäude-/Verkabelungsplan abgeleitet (z. B. 1 Dose + 1 Patchkabel je Arbeitsplatz) – ohne Engpass oder Überschuss.</p></div><div class="learn-card"><span class="lc-term">Summenbildung</span><p class="lc-def"><code>Summe (Netto)</code> = Σ aller Positions-Gesamtpreise = reiner Materialwert ohne Steuer.</p></div><div class="learn-card"><span class="lc-term">Netto / Brutto</span><p class="lc-def">Stücklisten führen i. d. R. <code>Netto</code>-Preise. <code>Brutto = Netto × 1,19</code> (19 % MwSt).</p></div><div class="learn-card"><span class="lc-term">Zweck</span><p class="lc-def">Drei Funktionen: <code>Beschaffung</code>, <code>Kalkulation</code> und <code>Angebot</code> (Preisbasis für den Kunden).</p></div>
@@ -440,7 +452,10 @@
   </svg><figcaption>Summenbildung: Positions-Gesamtpreise → Netto-Summe → Brutto (inkl. 19 % MwSt).</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t5"><span class="ix">5</span><h2>Geräteklassen</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1056px">
   <p class="sec-sub">Geräteklassen · Rolle → Klasse · <a class="src-link" href="5-geraeteklassen.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Barebone</span><p class="lc-def">Kompaktes Gerät mit <code>Mini-ITX-Board</code> und integriertem Netzteil. WLAN-fähig, aber nur begrenzt erweiterbar; aktive Kühlung erzeugt Geräusche.</p></div><div class="learn-card"><span class="lc-term">Notebook</span><p class="lc-def">Mobiler PC mit Akku; Komponenten, Tastatur und Bildschirm integriert. Zustände <code>On</code>, <code>Idle</code>, <code>Stand-By</code>. Intern kaum erweiterbar.</p></div><div class="learn-card"><span class="lc-term">Tablet &amp; Smartphone</span><p class="lc-def">Sehr portabel, Touch-Bedienung, optimiert auf <code>WLAN</code>/Mobilfunk. Geringe Leistung, OS wie <code>iOS</code>/<code>Android</code>; fest verbauter Akku.</p></div><div class="learn-card"><span class="lc-term">Convertible</span><p class="lc-def">Tablet mit ausklappbarer Tastatur, das Notebook-Leistung erreicht; dafür etwas unhandlicher als ein reines Tablet.</p></div><div class="learn-card"><span class="lc-term">Desktop-PC</span><p class="lc-def">Stationär, genormte Hauptplatine (<code>RAM</code>, <code>CPU</code>, <code>GPU</code>). Ergonomisch und durch Komponententausch gezielt aufrüstbar.</p></div><div class="learn-card"><span class="lc-term">Industrie-PC</span><p class="lc-def">Für raue Umgebungen: temperatur-, schock- und wasserresistent, echtzeitfähig, mit Langzeitverfügbarkeit. Geringe CPU-Leistung reicht.</p></div><div class="learn-card"><span class="lc-term">Einteilungskriterien</span><p class="lc-def">Nach <code>technischen Merkmalen</code> (CPU, RAM, GPU, Mobilität, Schnittstellen) und Gehäuseform – passend zum Einsatzzweck.</p></div><div class="learn-card"><span class="lc-term">Rolle → Klasse</span><p class="lc-def">Office → Barebone/Desktop, Homeoffice → Notebook, Außendienst → Notebook/Tablet, Produktion → Industrie-PC.</p></div>
@@ -546,7 +561,10 @@
   </svg><figcaption>Typische Rollen-zu-Klasse-Zuordnungen.</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t6"><span class="ix">6</span><h2>Strukturierte Verkabelung</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1164px">
   <p class="sec-sub">Primär · Sekundär · Tertiär · <a class="src-link" href="6-strukturierte-verkabelung.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Norm EN 50173 / ISO 11801</span><p class="lc-def">Regeln die <code>anwendungsneutrale</code> strukturierte Verkabelung. Ziel: Erweiterbarkeit, Kapazitätsreserven, einfache Fehlersuche.</p></div><div class="learn-card"><span class="lc-term">Primärverkabelung</span><p class="lc-def">Gelände-/Campus-Backbone <code>SV → GV</code>. Medium fast nur <code>LWL</code>, max. <code>1,5 km</code>.</p></div><div class="learn-card"><span class="lc-term">Sekundärverkabelung</span><p class="lc-def">Gebäude-/Steigbereich <code>GV → EV</code>. Medium <code>LWL</code> oder Kupfer, max. <code>500 m</code>.</p></div><div class="learn-card"><span class="lc-term">Tertiärverkabelung</span><p class="lc-def">Horizontalverkabelung <code>EV → Anschlussdose</code>. Medium <code>Twisted-Pair</code>, max. <code>90 m</code> bis zum Arbeitsplatz.</p></div><div class="learn-card"><span class="lc-term">Verteiler (SV / GV / EV)</span><p class="lc-def">Sternzentren der Ebenen: <code>Standort-</code>, <code>Gebäude-</code>, <code>Etagenverteiler</code> als <code>19-Zoll-Schränke</code> mit Patchpanels.</p></div><div class="learn-card"><span class="lc-term">Permanent- vs. Channel-Link</span><p class="lc-def"><code>Permanent-Link</code> = feste Strecke EV → TA, max. <code>90 m</code>. <code>Channel-Link</code> = plus Patchkabel, max. <code>100 m</code>.</p></div><div class="learn-card"><span class="lc-term">Beschriftung</span><p class="lc-def">Schema <code>A-II.1-3.8</code> = Gebäude · Stockwerk · Etagenverteiler · Patchfeld · Steckplatz. Dokumentation im Verteiler hinterlegen.</p></div>
@@ -663,7 +681,10 @@
   </svg><figcaption>Permanent-Link = fest verbaute Strecke EV → TA (≤ 90 m). Channel-Link = Permanent-Link plus Patchkabel zum Endgerät (≤ 100 m).</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t7"><span class="ix">7</span><h2>IT-Infrastruktur</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1194px">
   <p class="sec-sub">Server · Rechenzentrum · Cloud · <a class="src-link" href="7-it-infrastruktur.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Server</span><p class="lc-def">System, das auf <strong>Anforderungen von Clients</strong> antwortet und Ressourcen/Dienste bereitstellt (Request-Response). Server kann Hardware <em>und</em> Software sein.</p></div><div class="learn-card"><span class="lc-term">Bauformen</span><p class="lc-def"><code>Tower</code> (eigenständig), <code>Rack</code> (im 19-Zoll-Schrank, Höhe in <code>HE/U</code>) und <code>Blade</code> (Einschübe in einem Gehäuse, hohe Dichte).</p></div><div class="learn-card"><span class="lc-term">Serverhardware</span><p class="lc-def">Auf Dauerbetrieb ausgelegt: <strong>redundante Netzteile</strong>, <code>Hot-Swap</code>, <code>RAID</code> und <code>ECC-RAM</code> (Fehlerkorrektur) für hohe Verfügbarkeit.</p></div><div class="learn-card"><span class="lc-term">Serverdienste</span><p class="lc-def"><code>DHCP</code> (IP-Vergabe), <code>DNS</code> (Namensauflösung), Web-, Mail-, Datei-, Druck- und Verzeichnisdienst (<code>AD</code>) — je nach installierter Rolle.</p></div><div class="learn-card"><span class="lc-term">Rechenzentrum</span><p class="lc-def">Gesicherte Umgebung: <strong>Verfügbarkeit/Tier</strong>, <code>USV</code>, Klimatisierung/Kühlung, Brandschutz und <strong>Redundanz</strong>. Effizienzkennzahl <code>PUE</code>.</p></div><div class="learn-card"><span class="lc-term">Cloud: XaaS</span><p class="lc-def"><code>IaaS</code> (Infrastruktur), <code>PaaS</code> (Plattform/Entwicklungsumgebung), <code>SaaS</code> (fertige Anwendung wie E-Mail) — je mehr „aaS", desto weniger eigene Verantwortung.</p></div><div class="learn-card"><span class="lc-term">Cloud-Modelle</span><p class="lc-def"><code>Public</code> (Anbieter, geteilt), <code>Private</code> (eigen, exklusiv) und <code>Hybrid</code> (Kombination). Vorteil: <strong>Skalierbarkeit</strong> nach Bedarf.</p></div><div class="learn-card"><span class="lc-term">Server vs. Client</span><p class="lc-def">Der Server <em>stellt bereit</em>, der Client <em>nutzt</em>. Ein Gerät kann zugleich beides sein.</p></div>
@@ -793,7 +814,10 @@
   </svg><figcaption>Je höher das Modell (IaaS → PaaS → SaaS), desto mehr verwaltet der Anbieter — der Kunde immer weniger.</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t8"><span class="ix">8</span><h2>Edge- &amp; Fog-Computing</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1233px">
   <p class="sec-sub">Edge · Fog · Cloud · <a class="src-link" href="8-edgecomputing.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Edge-Computing</span><p class="lc-def">Verarbeitung der Daten <code>vor Ort</code>, am Rand des Internets — nahe der Quelle. Nur notwendige Daten gehen anschließend in die Cloud.</p></div><div class="learn-card"><span class="lc-term">Edge-Computer (Hardware)</span><p class="lc-def"><strong>Erster intelligenter Knoten</strong>: empfängt Rohdaten, verarbeitet lokal, gibt nur Relevantes weiter. Z. B. <code>Mikrocontroller</code>, <code>Raspberry Pi</code>, <code>SPS/PLC</code> oder Industrie-Mini-PC. Sensoren = „Sinnesorgane" ohne eigene Intelligenz.</p></div><div class="learn-card"><span class="lc-term">Cloud-Computing</span><p class="lc-def">Zentrale, entfernte Rechenzentren; bei Edge/Fog nur noch für <strong>langfristige Analysen und Speicherung</strong> zuständig. Hohe Latenz, große Datenmenge.</p></div><div class="learn-card"><span class="lc-term">Fog-Computing</span><p class="lc-def">„Nebel" = Vielzahl kleinster Geräte in großer Dichte. Laut Cisco treffen die <strong>Geräte selbst</strong> kurzfristige Entscheidungen; oft synonym zu Edge.</p></div><div class="learn-card"><span class="lc-term">Schichtenmodell</span><p class="lc-def"><code>Cloud → Fog → Edge → Endgeräte</code>: nach oben steigen Latenz und Datenmenge, nach unten Nähe zur Quelle und Echtzeit.</p></div><div class="learn-card"><span class="lc-term">Vorteile</span><p class="lc-def">Geringe <strong>Latenz</strong>, gesparte <strong>Bandbreite</strong>/Kosten, schnellere <strong>Echtzeit</strong>-Reaktion (autonomes Fahren, AR/VR).</p></div><div class="learn-card"><span class="lc-term">Nachteile</span><p class="lc-def">Mehr abzusichernde Geräte/Verbindungen (<code>VPN</code>, Zugangskontrolle), geringe Fehlertoleranz → teure <strong>Redundanzen</strong>.</p></div><div class="learn-card"><span class="lc-term">Edge-Devices / IoT</span><p class="lc-def">Datenquellen: Maschinen (Industrie 4.0), Autos, VR-Brillen, Smart-Home. Die <code>Big-Data</code>-Mengen aus dem <code>IoT</code> machten Edge nötig.</p></div>
@@ -930,7 +954,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t9"><span class="ix">9</span><h2>Server-Betriebssysteme</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1188px">
   <p class="sec-sub">Server-BS · Lizenzen · Virtualisierung · <a class="src-link" href="9-server-betriebssystem.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Server-Betriebssystem</span><p class="lc-def">Auf <code>24/7</code>-Dauerbetrieb, Stabilität und viele gleichzeitige Nutzer ausgelegt; stellt <code>Dienste/Rollen</code> bereit und antwortet auf <code>Clients</code>.</p></div><div class="learn-card"><span class="lc-term">Server-BS vs. Desktop-BS</span><p class="lc-def">Server: Dauerbetrieb, Multiuser, Dienste, oft <code>Core/CLI</code> + Remote-Verwaltung. Desktop: Einzelplatz, ein Nutzer, immer <code>GUI</code>.</p></div><div class="learn-card"><span class="lc-term">Windows Server</span><p class="lc-def">Microsofts <code>proprietäre</code> Reihe — vom ersten echten Server-BS <code>Windows NT</code> bis <code>Windows Server 2025</code>; mit Hypervisor Hyper-V.</p></div><div class="learn-card"><span class="lc-term">Linux/Unix</span><p class="lc-def"><code>Open-Source</code>-Welt mit <code>RHEL</code>, <code>Debian</code>, <code>CentOS</code>; sehr beliebt als Webserver, oft mit <code>Apache</code>.</p></div><div class="learn-card"><span class="lc-term">NetWare / OES</span><p class="lc-def">Großer Akteur der Client-Server-Ära; auf einen <code>Linux-Kernel</code> verlegt als <code>Novell OES</code>.</p></div><div class="learn-card"><span class="lc-term">Proprietär vs. Open Source</span><p class="lc-def">Proprietär = geschlossener Code + kostenpflichtige Lizenz (Windows Server). Open Source = offener, frei anpassbarer Code (Linux).</p></div><div class="learn-card"><span class="lc-term">Cloudserver</span><p class="lc-def"><code>Virtuelle Server</code> auf Drittanbieter-Infrastruktur (Azure, Google Cloud); Vorreiter <code>AWS</code> — sofort erstellbar und skalierbar.</p></div><div class="learn-card"><span class="lc-term">Hypervisor</span><p class="lc-def">Ermöglicht mehrere virtuelle Server auf einer Hardware. <code>Typ 1</code> direkt auf der Hardware (Hyper-V, ESXi), <code>Typ 2</code> als App auf einem Host-BS.</p></div>
@@ -1003,7 +1030,10 @@
   </svg><figcaption>Typ 1 läuft direkt auf der Hardware (Server/Rechenzentrum), Typ 2 als Anwendung auf einem Host-BS (Arbeitsplatz/Test).</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t10"><span class="ix">10</span><h2>Adressierung</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 761px">
   <p class="sec-sub">IPv4 · Subnetting · IPv6 · <a class="src-link" href="10-adressierung.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">IPv4-Aufbau</span><p class="lc-def"><code>32 Bit</code> = 4 Oktette à 8 Bit (je <code>0–255</code>). Geteilt in <b>Netzanteil</b> (identifiziert das Netz) und <b>Hostanteil</b> (das Endgerät).</p></div>
@@ -1107,7 +1137,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t11"><span class="ix">11</span><h2>DHCP &amp; DNS</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 558px">
   <p class="sec-sub">DORA · Namensauflösung · <a class="src-link" href="11-dhcp-dns.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">DHCP</span><p class="lc-def">Vergibt automatisch <code>IP-Adresse</code>, <code>Subnetzmaske</code>, <code>Gateway</code> und <code>DNS-Server</code> — spart manuelle Konfiguration und Fehler.</p></div>
@@ -1180,7 +1213,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t12"><span class="ix">12</span><h2>Übertragungsarten</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 934px">
   <p class="sec-sub">Duplex · Multiplexing · <a class="src-link" href="12-uebertragungsarten.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Seriell vs. parallel</span><p class="lc-def"><b>Seriell:</b> 1 Bit pro Takt über eine Leitung. <b>Parallel:</b> n Bit pro Takt über n Leitungen.</p></div>
@@ -1312,7 +1348,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t13"><span class="ix">13</span><h2>Topologien</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1403px">
   <p class="sec-sub">Bus · Ring · Stern · Mesh · <a class="src-link" href="13-topologien.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">Bus / Linie</span><p class="lc-def"><b>Bus:</b> gemeinsame Leitung mit Abschlusswiderständen, immer nur eine Station sendet. <b>Linie:</b> Stationen in Reihe verkettet.</p></div>
@@ -1480,7 +1519,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t14"><span class="ix">14</span><h2>Speichersysteme</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 856px">
   <p class="sec-sub">DAS · NAS · SAN · <a class="src-link" href="14-speichersysteme.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">DAS</span><p class="lc-def">Speicher <b>direkt am Host</b> (SATA/SAS/USB), kein Netzwerk. Block-Zugriff, Dateisystem beim Host. Günstig, aber nicht geteilt.</p></div>
@@ -1581,7 +1623,10 @@
   </svg><figcaption>DAS – Speicher direkt am Host, kein Netzwerk.</figcaption></figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t15"><span class="ix">15</span><h2>Speicherablagearten</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 856px">
   <p class="sec-sub">RAID 0 · 1 · 5 · 10 · <a class="src-link" href="15-raid.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">RAID 0 – Striping</span><p class="lc-def">Daten über ≥2 Platten verteilt → <b>schnell</b>, volle Kapazität, aber <b>keine</b> Redundanz (eine Platte fällt aus → alles weg).</p></div>
@@ -1695,7 +1740,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t16"><span class="ix">16</span><h2>E-Mail-Protokolle</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1196px">
   <p class="sec-sub">SMTP · IMAP · POP3 · <a class="src-link" href="16-email-protokolle.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">SMTP</span><p class="lc-def">Simple Mail Transfer Protocol — <code>Versand</code>. Transportiert die Mail vom Client über Relay-Server zum Empfänger-Mailserver. Port <code>25</code>, <code>587</code>/<code>465</code> (TLS).</p></div><div class="learn-card"><span class="lc-term">POP3</span><p class="lc-def">Post Office Protocol v3 — <b>gerätebasierter</b> Abruf: lädt Mails lokal herunter und löscht sie standardmäßig vom Server. Port <code>110</code>, <code>995</code> (TLS).</p></div><div class="learn-card"><span class="lc-term">IMAP</span><p class="lc-def">Internet Message Access Protocol — <b>serverbasierter</b> Abruf: Mails &amp; Ordner bleiben auf dem Server, über mehrere Geräte <b>synchron</b>. Port <code>143</code>, <code>993</code> (TLS).</p></div><div class="learn-card"><span class="lc-term">Weg einer E-Mail</span><p class="lc-def">Sender → <code>SMTP</code> → MTA → (Relay) → Empfänger-Postfach → Abruf per <code>POP3</code>/<code>IMAP</code>. SMTP schiebt (Push), POP3/IMAP holen ab (Pull).</p></div><div class="learn-card"><span class="lc-term">MTA &amp; Relay</span><p class="lc-def">Ein <b>MTA</b> (Mail Transfer Agent) nimmt die Mail per SMTP an und transportiert sie weiter; die <b>Relay</b>-Funktion leitet über mehrere Server bis zum Ziel.</p></div><div class="learn-card"><span class="lc-term">SSL/TLS</span><p class="lc-def">Sichert den Transportweg. <b>Implizit</b>: von Beginn verschlüsselt (eigener Port <code>465</code>/<code>993</code>/<code>995</code>). <b>Explizit</b> (<code>STARTTLS</code>): Start im Klartext, dann Umschalten (<code>587</code>/<code>143</code>).</p></div><div class="learn-card"><span class="lc-term">POP3 vs. IMAP</span><p class="lc-def">POP3 = lokal, ein Gerät, löscht vom Server. IMAP = serverseitig, mehrere Geräte synchron — ideal für PC, Tablet und Smartphone gleichzeitig.</p></div>
@@ -1850,7 +1898,10 @@
   </figure></div>
     </div>
 
+  </section>
+
   <div class="sec-head" id="t17"><span class="ix">17</span><h2>Netzwerktechnologien</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1782px">
   <p class="sec-sub">Ethernet-Frame · MAC · ARP · Switch-Tabelle · <a class="src-link" href="17-netzwerktechnologien.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">MAC-Adresse</span><p class="lc-def">Physische Hardware-Adresse (Schicht 2), <b>48 Bit</b> = 6 Hex-Oktette. Die ersten 24 Bit sind der <code>OUI</code> (Hersteller, von der IEEE), die letzten 24 Bit gerätespezifisch.</p></div><div class="learn-card"><span class="lc-term">Ethernet-Frame</span><p class="lc-def"><code>Ziel-MAC (6) · Quell-MAC (6) · Typ (2) · Daten (46–1500) · FCS (4)</code>. Die <b>Präambel (8)</b> zählt nicht zum Frame; Mindestlänge <b>64 Byte</b>, kurze Daten per PAD aufgefüllt.</p></div><div class="learn-card"><span class="lc-term">FCS</span><p class="lc-def">32-Bit-<code>CRC</code>-Prüfsumme, berechnet ab der Ziel-MAC — dient der <b>Fehlererkennung</b>. Die Präambel wird nicht mitgerechnet.</p></div><div class="learn-card"><span class="lc-term">ARP</span><p class="lc-def">Löst <code>IP → MAC</code> im lokalen Netz auf. <b>Request</b> = Broadcast (<code>FF:FF:FF:FF:FF:FF</code>), <b>Reply</b> = Unicast direkt an den Anfragenden.</p></div><div class="learn-card"><span class="lc-term">ARP &amp; Gateway</span><p class="lc-def">Liegt das Ziel in einem <b>anderen</b> Netz, sucht der PC per ARP die MAC des <b>Standardgateways</b> — nicht die der fernen Ziel-IP.</p></div><div class="learn-card"><span class="lc-term">MAC-Adress-Tabelle</span><p class="lc-def">Auf dem <b>Switch</b>: <code>MAC → Port</code>. Gelernt aus der <b>Quell-MAC</b> eingehender Frames; unbekannte Ziel-MAC ⇒ <b>Flooding</b> an alle Ports.</p></div><div class="learn-card"><span class="lc-term">ARP-Tab. vs. MAC-Tab.</span><p class="lc-def">ARP-Tabelle liegt auf <b>Endgerät/Router</b> (<code>IP→MAC</code>), MAC-Adress-Tabelle auf dem <b>Switch</b> (<code>MAC→Port</code>).</p></div>
@@ -1896,7 +1947,7 @@
       <text x="648" y="130" fill="#5C6B78" font-size="10" text-anchor="middle">CRC-Prüfsumme</text>
 
       <!-- Präambel-Hinweis -->
-      <text x="63" y="176" fill="#8A97A2" font-size="10" text-anchor="middle">kein Teil des Frames</text>
+      <text x="63" y="176" fill="#5C6B78" font-size="10" text-anchor="middle">kein Teil des Frames</text>
 
       <!-- Frame-Klammer ab Ziel-MAC -->
       <line x1="112" y1="188" x2="698" y2="188" stroke="#DD5430" stroke-width="1.5"/>
@@ -1963,7 +2014,7 @@
       <text x="90"  y="288" fill="#15786E" font-size="10" text-anchor="middle">antwortet ✓</text>
       <rect x="215" y="250" width="100" height="48" rx="8" fill="#EEF3F6" stroke="#B9C7D2" stroke-width="2"/>
       <text x="265" y="270" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">PC C</text>
-      <text x="265" y="288" fill="#8A97A2" font-size="10" text-anchor="middle">verwirft ✗</text>
+      <text x="265" y="288" fill="#5C6B78" font-size="10" text-anchor="middle">verwirft ✗</text>
 
       <!-- Rechte Szene: Reply -->
       <text x="620" y="74" fill="#15786E" font-size="13" text-anchor="middle" font-weight="700">② ARP-Reply · Unicast</text>
@@ -2006,7 +2057,7 @@
       <text x="85" y="197" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">PC03 · P3</text>
       <rect x="30" y="220" width="110" height="40" rx="6" fill="#EEF3F6" stroke="#B9C7D2" stroke-width="2"/>
       <text x="85" y="240" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Notebook · P4</text>
-      <text x="85" y="254" fill="#8A97A2" font-size="9" text-anchor="middle">hat noch nichts gesendet</text>
+      <text x="85" y="254" fill="#5C6B78" font-size="9" text-anchor="middle">hat noch nichts gesendet</text>
 
       <line x1="140" y1="96"  x2="250" y2="108" stroke="#B9C7D2" stroke-width="2"/>
       <line x1="140" y1="144" x2="250" y2="140" stroke="#B9C7D2" stroke-width="2"/>
@@ -2078,7 +2129,10 @@
     </details>
   </div>
 
+  </section>
+
   <div class="sec-head" id="t18"><span class="ix">18</span><h2>VLAN</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1379px">
   <p class="sec-sub">Portbasiert · tagged · Trunk · 802.1q-Tag · <a class="src-link" href="18-vlan.html">zum Test öffnen →</a></p>
   <div class="learn-grid">
 <div class="learn-card"><span class="lc-term">VLAN</span><p class="lc-def">Virtuelles, <b>logisch getrenntes</b> Netz in einem physischen Netz. Standard <code>IEEE 802.1q</code>, Schicht 2 — setzt <b>Managed Switches</b> voraus.</p></div><div class="learn-card"><span class="lc-term">Portbasiert</span><p class="lc-def">Jeder Port ist fest einem VLAN zugewiesen; das angeschlossene Gerät ist automatisch in diesem VLAN. VLANs sind gegeneinander abgeschottet.</p></div><div class="learn-card"><span class="lc-term">Tagged VLAN / Trunk</span><p class="lc-def">Mehrere VLANs über <b>eine</b> Trunk-Leitung: jeder Frame trägt ein <b>Tag</b> mit der VLAN-ID. Der <b>Trunk-Port</b> ist getagged, Client-Ports sind untagged.</p></div><div class="learn-card"><span class="lc-term">Inter-VLAN</span><p class="lc-def">Kommunikation <b>zwischen</b> verschiedenen VLANs nur über einen <b>Router</b> bzw. Layer-3-Switch — gleicher Switch heißt nicht gleiches VLAN.</p></div><div class="learn-card"><span class="lc-term">802.1q-Tag</span><p class="lc-def">Erweitert den Frame um <b>4 Byte</b>: 2 Byte <code>TPID</code> + 2 Byte <code>TCI</code>. TCI = 3 Bit Priorität (PCP) + 1 Bit CFI + 12 Bit VLAN-ID.</p></div><div class="learn-card"><span class="lc-term">VLAN-ID</span><p class="lc-def"><code>12 Bit → 2¹² = 4096</code> mögliche IDs, davon <b>4094 nutzbar</b> (0 und 4095 reserviert).</p></div>
@@ -2238,6 +2292,100 @@
     </details>
   </div>
 
+  </section>
+
+  <div class="sec-head" id="t19"><span class="ix">19</span><h2>OSI-Modell &amp; TCP/IP</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 1336px">
+  <p class="sec-sub">7 Schichten · TCP/IP-Vergleich · Windows-Tools · Troubleshooting · <a class="src-link" href="19-osi-modell.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">OSI-Modell</span><p class="lc-def"><b>Konzeptionelles Modell</b> mit <code>7 Schichten</code>: gibt die Funktionalitäten vor, aber nicht, <b>wie</b> sie zu erfüllen sind. Hilft beim Verstehen, Designen und <b>Fehlerbeheben</b>.</p></div><div class="learn-card"><span class="lc-term">Die 7 Schichten</span><p class="lc-def">1 <b>Physische Schicht</b> (Bits, Kabel/Funk) · 2 <b>Datenverbindung</b> (Rahmen) · 3 <b>Netzwerk</b> (Routing, IP) · 4 <b>Transport</b> (Segmente) · 5 <b>Sitzung</b> · 6 <b>Darstellung</b> · 7 <b>Anwendung</b>.</p></div><div class="learn-card"><span class="lc-term">LLC &amp; MAC (Schicht 2)</span><p class="lc-def"><b>LLC</b> identifiziert Protokolle, prüft Fehler, synchronisiert Rahmen. <b>MAC</b> verbindet Geräte über MAC-Adressen und regelt Sende-/Empfangsberechtigungen.</p></div><div class="learn-card"><span class="lc-term">Sitzung · Darstellung</span><p class="lc-def">Schicht 5 öffnet/hält/schließt <b>Sitzungen</b> und setzt <b>Kontrollpunkte</b> (Fortsetzen nach Abbruch). Schicht 6 <b>codiert, verschlüsselt, komprimiert</b> die Daten.</p></div><div class="learn-card"><span class="lc-term">TCP/IP-Modell</span><p class="lc-def"><b>Protokollgestütztes Modell</b> mit <code>4 Schichten</code>: Netzwerkzugang · Internet (Routing, IP) · Transport · Anwendung. Weltweiter, herstellerunabhängiger Standard für LAN und WAN.</p></div><div class="learn-card"><span class="lc-term">OSI ↔ TCP/IP</span><p class="lc-def">Netzwerkzugangsschicht = OSI <code>1–2</code> · Internetschicht = OSI <code>3</code> · Transportschicht = OSI <code>4</code> · Anwendungsschicht = OSI <code>5–7</code>.</p></div><div class="learn-card"><span class="lc-term">Windows-Tools</span><p class="lc-def"><code>ipconfig</code> Konfiguration · <code>ping</code> Erreichbarkeit (ICMP) · <code>tracert</code> Route · <code>nslookup</code> DNS-Abfrage · <code>arp</code> IP↔MAC-Tabelle · <code>netstat</code> offene TCP-Verbindungen.</p></div><div class="learn-card"><span class="lc-term">Troubleshooting</span><p class="lc-def">Systematisch <b>von Schicht 1 nach 4</b> prüfen: Kabel/Adapter → Treiber/MAC → IP/Routing/DNS → TCP/Firewall. Fehlerquellen der Kartenabfrage lassen sich so einordnen.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 452" role="img" aria-label="Die sieben Schichten des OSI-Modells als zwei Türme für Sender und Empfänger: Anwendungsschicht oben bis Physische Schicht unten, verbunden über das Übertragungsmedium">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Die 7 Schichten des OSI-Modells</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#4A5864;">Senden = Kapselung von Schicht 7 nach 1 · Empfangen = Entkapselung von Schicht 1 nach 7</text>
+      <text x="200" y="72" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Sender</text>
+      <rect x="60" y="80"  width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="74" y="98"  fill="#16242E" font-size="11" font-weight="700">7 · Anwendungsschicht</text><text x="74" y="112" fill="#4A5864" font-size="10">Browser, E-Mail-Client, eigene Software</text>
+      <rect x="60" y="122" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="74" y="140" fill="#16242E" font-size="11" font-weight="700">6 · Darstellungsschicht</text><text x="74" y="154" fill="#4A5864" font-size="10">codieren · verschlüsseln · komprimieren</text>
+      <rect x="60" y="164" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="74" y="182" fill="#16242E" font-size="11" font-weight="700">5 · Sitzungsschicht</text><text x="74" y="196" fill="#4A5864" font-size="10">Sitzungen öffnen/halten/schließen · Kontrollpunkte</text>
+      <rect x="60" y="206" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="224" fill="#16242E" font-size="11" font-weight="700">4 · Transportschicht</text><text x="74" y="238" fill="#4A5864" font-size="10">teilt Daten in Segmente · setzt sie wieder zusammen</text>
+      <rect x="60" y="248" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="266" fill="#16242E" font-size="11" font-weight="700">3 · Netzwerkschicht</text><text x="74" y="280" fill="#4A5864" font-size="10">Routing über den besten Weg · IP-Adressen</text>
+      <rect x="60" y="290" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="308" fill="#16242E" font-size="11" font-weight="700">2 · Datenverbindungsschicht</text><text x="74" y="322" fill="#4A5864" font-size="10">Rahmen (Frames) · LLC + MAC</text>
+      <rect x="60" y="332" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="74" y="350" fill="#16242E" font-size="11" font-weight="700">1 · Physische Schicht</text><text x="74" y="364" fill="#4A5864" font-size="10">Bits (0/1) · Kabel oder Funk · Bitrate</text>
+      <text x="560" y="72" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Empfänger</text>
+      <rect x="420" y="80"  width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="434" y="105" fill="#16242E" font-size="11" font-weight="700">7 · Anwendungsschicht</text>
+      <rect x="420" y="122" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="434" y="147" fill="#16242E" font-size="11" font-weight="700">6 · Darstellungsschicht</text>
+      <rect x="420" y="164" width="280" height="40" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="434" y="189" fill="#16242E" font-size="11" font-weight="700">5 · Sitzungsschicht</text>
+      <rect x="420" y="206" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="231" fill="#16242E" font-size="11" font-weight="700">4 · Transportschicht</text>
+      <rect x="420" y="248" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="273" fill="#16242E" font-size="11" font-weight="700">3 · Netzwerkschicht</text>
+      <rect x="420" y="290" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="315" fill="#16242E" font-size="11" font-weight="700">2 · Datenverbindungsschicht</text>
+      <rect x="420" y="332" width="280" height="40" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="434" y="357" fill="#16242E" font-size="11" font-weight="700">1 · Physische Schicht</text>
+      <line x1="200" y1="372" x2="200" y2="404" stroke="#16242E" stroke-width="2.5"/>
+      <line x1="200" y1="404" x2="560" y2="404" stroke="#16242E" stroke-width="2.5"/>
+      <line x1="560" y1="404" x2="560" y2="372" stroke="#16242E" stroke-width="2.5"/>
+      <text x="380" y="424" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Übertragungsmedium (Kabel oder Funk)</text>
+      <text x="352" y="230" fill="#4A5864" font-size="11" text-anchor="middle" font-weight="700">↓</text>
+      <text x="352" y="140" fill="#4A5864" font-size="10" text-anchor="middle" font-weight="700">Kapselung</text>
+      <text x="408" y="230" fill="#4A5864" font-size="11" text-anchor="middle" font-weight="700">↑</text>
+      <text x="408" y="140" fill="#4A5864" font-size="10" text-anchor="middle" font-weight="700">Entkapselung</text>
+    </svg>
+    <figcaption>Beim Sender werden die Daten von Schicht <b>7 bis 1</b> verpackt (<b>Kapselung</b>), als Bits übertragen und beim Empfänger von <b>1 bis 7</b> wieder ausgepackt.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 400" role="img" aria-label="Gegenüberstellung: die sieben OSI-Schichten links werden auf die vier TCP/IP-Schichten rechts abgebildet — Anwendungsschicht deckt OSI 5 bis 7 ab, Transportschicht OSI 4, Internetschicht OSI 3, Netzwerkzugangsschicht OSI 1 und 2">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">OSI ↔ TCP/IP — welche Schichten sich entsprechen</text>
+      <text x="180" y="58" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">OSI (konzeptionell, 7 Schichten)</text>
+      <text x="580" y="58" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">TCP/IP (protokollgestützt, 4 Schichten)</text>
+      <rect x="60" y="68"  width="240" height="38" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="180" y="92"  fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">7 · Anwendungsschicht</text>
+      <rect x="60" y="110" width="240" height="38" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="180" y="134" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">6 · Darstellungsschicht</text>
+      <rect x="60" y="152" width="240" height="38" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="180" y="176" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">5 · Sitzungsschicht</text>
+      <rect x="60" y="194" width="240" height="38" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="180" y="218" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">4 · Transportschicht</text>
+      <rect x="60" y="236" width="240" height="38" rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="180" y="260" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">3 · Netzwerkschicht</text>
+      <rect x="60" y="278" width="240" height="38" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="180" y="302" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">2 · Datenverbindungsschicht</text>
+      <rect x="60" y="320" width="240" height="38" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="180" y="344" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">1 · Physische Schicht</text>
+      <polygon points="300,68 460,68 460,152 300,190" fill="#DD5430" opacity="0.12"/>
+      <polygon points="300,194 460,156 460,236 300,232" fill="#15786E" opacity="0.12"/>
+      <polygon points="300,236 460,240 460,316 300,274" fill="#C9A227" opacity="0.15"/>
+      <polygon points="300,278 460,320 460,394 300,358" fill="#33424D" opacity="0.12"/>
+      <rect x="460" y="68"  width="240" height="84"  rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="580" y="104" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">4 · Anwendungsschicht</text><text x="580" y="120" fill="#4A5864" font-size="10" text-anchor="middle">alles, was der Nutzer sieht — Zugriff aufs Netz</text>
+      <rect x="460" y="156" width="240" height="80"  rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="580" y="190" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">3 · Transportschicht</text><text x="580" y="206" fill="#4A5864" font-size="10" text-anchor="middle">sichere, zuverlässige Übertragung · Pakete</text>
+      <rect x="460" y="240" width="240" height="76"  rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="580" y="272" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">2 · Internetschicht</text><text x="580" y="288" fill="#4A5864" font-size="10" text-anchor="middle">Routing · eindeutige IP-Adressen</text>
+      <rect x="460" y="320" width="240" height="74"  rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="580" y="350" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">1 · Netzwerkzugangsschicht</text><text x="580" y="366" fill="#4A5864" font-size="10" text-anchor="middle">Kabel, Netzwerkkarte, WLAN, Treiber · MAC-Infos</text>
+    </svg>
+    <figcaption>Die <b>Anwendungsschicht</b> von TCP/IP bündelt OSI <b>5–7</b>, die <b>Transportschicht</b> entspricht OSI <b>4</b>, die <b>Internetschicht</b> OSI <b>3</b>, die <b>Netzwerkzugangsschicht</b> OSI <b>1–2</b>.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 330" role="img" aria-label="Troubleshooting-Leiter nach OSI-Schichten 1 bis 4: Schicht 1 Bitübertragung mit Kabel und Netzwerkadapter wird mit ipconfig geprüft, Schicht 2 Sicherung mit MAC-Adressen und Switch mit arp, Schicht 3 Vermittlung mit IP-Adressen und Router mit ping, tracert und nslookup, Schicht 4 Transport mit TCP mit netstat">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Systematisches Troubleshooting — von Schicht 1 nach 4</text>
+      <text class="svg-label-sm" x="20" y="46" font-size="12" style="fill:#4A5864;">Vorlage: OSI-Schicht → zu prüfende Hardware/Protokoll → Werkzeug</text>
+      <rect x="270" y="62"  width="470" height="52" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="290" y="84"  fill="#16242E" font-size="12" font-weight="700">4 · Transport</text>
+      <text x="290" y="102" fill="#4A5864" font-size="11">TCP-Verbindungen</text>
+      <text x="640" y="94"  fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">netstat</text>
+      <rect x="190" y="126" width="550" height="52" rx="6" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/>
+      <text x="210" y="148" fill="#16242E" font-size="12" font-weight="700">3 · Vermittlung</text>
+      <text x="210" y="166" fill="#4A5864" font-size="11">IP-Adressen, Router, DNS</text>
+      <text x="600" y="158" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">ping · tracert · nslookup</text>
+      <rect x="110" y="190" width="630" height="52" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="130" y="212" fill="#16242E" font-size="12" font-weight="700">2 · Sicherung</text>
+      <text x="130" y="230" fill="#4A5864" font-size="11">MAC-Adressen, Switch, Treiber</text>
+      <text x="600" y="222" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">arp</text>
+      <rect x="30"  y="254" width="710" height="52" rx="6" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/>
+      <text x="50"  y="276" fill="#16242E" font-size="12" font-weight="700">1 · Bitübertragung</text>
+      <text x="50"  y="294" fill="#4A5864" font-size="11">Kabel, Stecker, Netzwerkadapter, WLAN</text>
+      <text x="600" y="286" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">ipconfig (Adapter-Konfiguration)</text>
+      <line x1="50" y1="240" x2="50" y2="130" stroke="#DD5430" stroke-width="2.5"/>
+      <polygon points="50,118 44,132 56,132" fill="#DD5430"/>
+      <text x="62" y="140" fill="#DD5430" font-size="11" font-weight="700">von unten nach oben prüfen</text>
+    </svg>
+    <figcaption>Beim Troubleshooting wird <b>von Schicht 1 nach oben</b> geprüft: Kabel/Adapter (<code>ipconfig</code>), MAC/Switch (<code>arp</code>), IP/Routing/DNS (<code>ping</code>, <code>tracert</code>, <code>nslookup</code>), TCP (<code>netstat</code>).</figcaption>
+  </figure></div>
+    </div>
+
+
+  </section>
+
   <nav class="pager">
     <a class="prev" href="index.html"><span>Zurück</span><b>← Übersicht</b></a>
     <a class="next" href="1-grundbegriffe.html"><span>Zum ersten Test</span><b>1 · Grundbegriffe →</b></a>
@@ -2245,8 +2393,9 @@
 
 </div></main>
 <footer class="foot"><div class="wrap">
-  <span class="mono">IT-Lernmaterial · Konzepte &amp; Diagramme</span> — Lernseite Themen 1–18.
+  <span class="mono">IT-Lernmaterial · Konzepte &amp; Diagramme</span> — Lernseite Themen 1–19.
 </div></footer>
 
+<script src="assets/lern.js"></script>
 </body>
 </html>

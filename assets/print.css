@@ -38,3 +38,8 @@
   .hwtab-nav { display: none !important; }
   .hwtab-panel { display: block !important; }
 }
+
+/* Beim Drucken alles rendern (content-visibility-Optimierung aufheben) */
+@media print {
+  .lern-sek { content-visibility: visible; }
+}

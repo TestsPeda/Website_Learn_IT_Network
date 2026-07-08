@@ -1833,6 +1833,10 @@ details.term .tt-body code {
 }
 .exam-bar .clock.low { color: #FFD2C6; background: rgba(221,84,48,.35); }
 .exam-bar .lbl { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.exam-bar .extend-total {
+  font-family: var(--font-mono); font-size: .82rem; font-weight: 700;
+  background: rgba(255,255,255,.14); border-radius: var(--radius); padding: 4px 10px;
+}
 .exam-bar .spacer { flex: 1; }
 .exam-bar .btn.primary { background: var(--accent); border-color: var(--accent); }
 
@@ -1886,4 +1890,75 @@ details.term .tt-body code {
 @media (max-width: 520px) {
   .open-score-field { grid-template-columns: 70px auto; }
   .open-score-field input { width: 70px; }
+}
+
+/* ===== Themen-Fortschritt (Startseite; Daten aus der quiz.js-Persistenz) ===== */
+.node-progress { fill: #dce5e9; }
+.node-progress-fill {
+  fill: var(--accent-2);
+  transform-box: fill-box;
+  transform-origin: left center;
+  transform: scaleX(var(--p, 0));
+}
+.node-progress-text {
+  font: 700 9px var(--font-mono);
+  fill: #33424d;
+}
+.xt-progress {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-2);
+  background: var(--accent-2-tint);
+  border: 1px solid #bcd9d4;
+  border-radius: 999px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+/* ===== Animationen (nur bei ausdrücklicher Bewegungs-Präferenz) =====
+   Invertiertes Gate: ohne "no-preference" gibt es gar keine Bewegung.
+   Es werden ausschließlich transform/opacity animiert (compositor-freundlich). */
+@media (prefers-reduced-motion: no-preference) {
+  .osi-paket {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: osi-fluss 9s ease-in-out infinite;
+  }
+  @keyframes osi-fluss {
+    0%   { transform: translate(0, 0); opacity: 0; }
+    5%   { transform: translate(0, 0); opacity: 1; }
+    45%  { transform: translate(0, var(--osi-drop)); opacity: 1; }
+    55%  { transform: translate(var(--osi-medium), var(--osi-drop)); opacity: 1; }
+    95%  { transform: translate(var(--osi-medium), 0); opacity: 1; }
+    100% { transform: translate(var(--osi-medium), 0); opacity: 0; }
+  }
+  .q-solution:not([hidden]) { animation: sol-in 0.2s ease-out; }
+  @keyframes sol-in { from { opacity: 0; transform: translateY(4px); } }
+  .node-progress-fill { transition: transform 0.6s ease-out; }
+}
+.osi-anim-paused .osi-paket { animation-play-state: paused; }
+.osi-anim-ctrl { margin: 10px 0 2px; }
+
+/* ===== Probe-SA: Zeitsteuerung (A11y) ===== */
+.gate-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.gate-option input { width: 16px; height: 16px; accent-color: var(--accent-2); }
+.time-warning {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--warn);
+}
+
+/* ===== Lernseite: Abschnitte erst beim Scrollen rendern (Performance) ===== */
+.lern-sek {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }
