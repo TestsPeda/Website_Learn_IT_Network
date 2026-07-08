@@ -1,6 +1,6 @@
 /* IT-Lernmaterial — Startseiten-Explorer.
    Schaltet die Startseite zwischen mehreren Ansichten um: der klassischen
-   Sterntopologie-Navigation und fünf Mini-Spielen, über die man die 19 Themen
+   Sterntopologie-Navigation und fünf Mini-Spielen, über die man die 21 Themen
    "erjagen" statt nur anklicken kann. Reines Vanilla-JS, ohne Abhängigkeiten,
    passend zum Rest der Seite (vgl. assets/quiz.js). */
 (function () {
@@ -29,7 +29,9 @@
     { n: 16, qTotal: 11, name: "E-Mail-Protokolle",         href: "16-email-protokolle.html",         hint: "SMTP versendet, POP3 lädt lokal, IMAP synchronisiert — plus Ports und SSL/TLS", kw: "email smtp pop3 imap port ssl tls postfach senden empfangen" },
     { n: 17, qTotal: 15, name: "Netzwerktechnologien",      href: "17-netzwerktechnologien.html",     hint: "Ethernet-Frame & FCS, MAC-Adresse (OUI), ARP-Auflösung, MAC-Tabelle (Learning/Flooding)", kw: "ethernet frame fcs mac oui arp broadcast unicast switch learning flooding tabelle" },
     { n: 18, qTotal: 10, name: "VLAN",                      href: "18-vlan.html",                     hint: "Virtuelle LANs nach 802.1q: Access vs. Trunk, VLAN-Tag/ID, Managed Switch, Inter-VLAN-Routing", kw: "vlan 802.1q tag id access trunk managed switch inter vlan routing segmentierung broadcast domäne" },
-    { n: 19, qTotal: 11, name: "OSI-Modell",                href: "19-osi-modell.html",               hint: "7 OSI-Schichten vs. TCP/IP (4 Schichten), Windows-Tools (ipconfig, ping, tracert, nslookup, arp, netstat), Troubleshooting", kw: "osi schicht modell tcp ip referenzmodell kapselung ipconfig ping tracert nslookup arp netstat troubleshooting fehlerquelle" }
+    { n: 19, qTotal: 11, name: "OSI-Modell",                href: "19-osi-modell.html",               hint: "7 OSI-Schichten vs. TCP/IP (4 Schichten), Windows-Tools (ipconfig, ping, tracert, nslookup, arp, netstat), Troubleshooting", kw: "osi schicht modell tcp ip referenzmodell kapselung ipconfig ping tracert nslookup arp netstat troubleshooting fehlerquelle" },
+    { n: 20, qTotal: 9,  name: "VPN",                      href: "20-vpn.html",                      hint: "Virtual Private Network: Tunnel & IP-Tunneling, fiktive IP; End-to-Site, Site-to-Site, End-to-End", kw: "vpn virtual private network tunnel ip-tunneling verschlüsselung remote access site-to-site end-to-end gateway openvpn firmennetz ländersperre" },
+    { n: 21, qTotal: 12, name: "Virtualisierung",          href: "21-virtualisierung.html",          hint: "VM & Hypervisor (VMM), Typ 1 Bare-Metal vs. Typ 2 Hosted, Server-/Desktop-/App-Virtualisierung, VDI vs. DaaS", kw: "virtualisierung vm virtuelle maschine hypervisor vmm bare-metal hosted typ1 typ2 hyper-v virtualbox esx vdi daas desktop server applikation sandbox wirt gast" }
   ];
 
   /* ---- Hilfsfunktionen ---- */
@@ -349,7 +351,7 @@
   }
 
   /* =====================================================================
-     Spiel 5 · Schatzsuche — die 19 Themen in einem Raster aus Störsignalen aufspüren
+     Spiel 5 · Schatzsuche — die 21 Themen in einem Raster aus Störsignalen aufspüren
      ===================================================================== */
   function buildHunt(panel) {
     var DECOYS = ["Störsignal", "Rauschen", "Leeres Feld", "Kollision", "Timeout", "Paketverlust", "CRC-Fehler", "Echo", "Jitter", "Broadcast-Sturm", "Latenz"];

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>21 · Virtualisierung — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–21</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="17-netzwerktechnologien.html">17</a>
+    <a href="18-vlan.html">18</a>
+    <a href="19-osi-modell.html">19</a>
+    <a href="20-vpn.html">20</a>
+    <a href="21-virtualisierung.html" class="current">21</a>
+    <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Virtuelle Systeme</p>
+    <div class="hero-num"><span class="hash">#</span>21</div>
+    <h1>Virtualisierung — VM, Hypervisor &amp; Virtualisierungsarten</h1>
+    <p class="lede">Bei der <b>Virtualisierung</b> simuliert <b>Software</b> das Vorhandensein von
+      <b>Hardware</b>. Eine <b>virtuelle Maschine (VM)</b> verhält sich wie ein eigenständiger Rechner und
+      läuft auf einem physischen <b>Wirt</b>. Der <b>Hypervisor</b> (Virtual Machine Monitor) betreibt
+      mehrere VMs parallel. Themen: <b>Typ 1 (Bare-Metal)</b> vs. <b>Typ 2 (Hosted)</b>,
+      Server-/Desktop-/Applikationsvirtualisierung, <b>VDI</b> vs. <b>DaaS</b> sowie Vor- und Nachteile.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>16</b> Aufgaben</span>
+      <span class="pill"><b>4</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · KI-Freitext</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+    <button class="btn" id="reset-answers">Antworten zurücksetzen</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Virtuelle Maschine &amp; Hypervisor</h2></div>
+  <p class="sec-sub">Bei der <b>Virtualisierung</b> wird mit Software das Vorhandensein von Hardware simuliert.
+    Eine <b>VM</b> ist ein virtueller Rechner mit eigener (virtueller) Hardware und eigenem Betriebssystem
+    (<b>Gastsystem</b>); sie läuft auf einem physischen <b>Wirt/Host</b>. Software und Hardware sind dabei
+    <b>logisch entkoppelt</b>. Der <b>Hypervisor</b> (Virtual Machine Monitor, VMM) ermöglicht den parallelen
+    Betrieb mehrerer VMs und <b>partitioniert</b> die Ressourcen (RAM, CPU, Speicher, Peripherie).</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Aufbau der Hardware-Virtualisierung: Auf der physischen Hardware des Wirts läuft der Hypervisor als Virtual Machine Monitor; darauf laufen mehrere virtuelle Maschinen, jede mit eigenem Betriebssystem">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Wirt · Hypervisor · virtuelle Maschinen</text>
+
+      <!-- VMs -->
+      <rect x="60"  y="52" width="190" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="155" y="78" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VM / Gast 1</text><text x="155" y="96" fill="#4A5864" font-size="10" text-anchor="middle">eigenes Betriebssystem</text>
+      <rect x="285" y="52" width="190" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="380" y="78" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VM / Gast 2</text><text x="380" y="96" fill="#4A5864" font-size="10" text-anchor="middle">eigenes Betriebssystem</text>
+      <rect x="510" y="52" width="190" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="605" y="78" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VM / Gast 3</text><text x="605" y="96" fill="#4A5864" font-size="10" text-anchor="middle">eigenes Betriebssystem</text>
+
+      <!-- Hypervisor -->
+      <rect x="60" y="130" width="640" height="44" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="380" y="152" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Hypervisor (Virtual Machine Monitor)</text>
+      <text x="380" y="168" fill="#4A5864" font-size="10" text-anchor="middle">verwaltet &amp; partitioniert RAM · CPU · Speicher · Peripherie</text>
+
+      <!-- Hardware -->
+      <rect x="60" y="190" width="640" height="44" rx="6" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/>
+      <text x="380" y="212" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Hardware — physischer Wirt (Host)</text>
+      <text x="380" y="228" fill="#4A5864" font-size="10" text-anchor="middle">Software und Hardware sind logisch entkoppelt</text>
+    </svg>
+    <figcaption>Der <b>Hypervisor</b> liegt zwischen dem physischen <b>Wirt</b> und den <b>Gastsystemen</b>
+      und teilt die Hardwareressourcen auf die VMs auf. Jede VM „glaubt", einen eigenen kompletten Rechner zu besitzen.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-src">VM</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist eine <b>virtuelle Maschine (VM)</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein virtueller Rechner, der sich wie ein eigenständiger physischer Rechner mit eigener Hardware und eigenem Betriebssystem verhält.</li>
+        <li class="opt"><span class="tick"></span>Ein zweiter physischer Server im selben Rack.</li>
+        <li class="opt"><span class="tick"></span>Ein Cloud-Speicherdienst für Backups.</li>
+        <li class="opt"><span class="tick"></span>Ein Netzwerkprotokoll zur IP-Vergabe.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Eine <b>VM</b> ist ein <b>virtueller Rechner</b>, der sich dem Benutzer gegenüber wie ein eigenständiger physischer Rechner (eigene Hardware, eigenes Betriebssystem) verhält. Man nennt sie auch <b>virtuelles Gastsystem</b>; sie läuft auf einem physischen <b>Wirt/Host</b>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-src">Hypervisor</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist ein <b>Hypervisor</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Ein besonders schneller Prozessor für Server.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Software (Virtual Machine Monitor), die den parallelen Betrieb mehrerer VMs auf einem Wirt ermöglicht und die Hardwareressourcen partitioniert.</li>
+        <li class="opt"><span class="tick"></span>Ein Backup-Programm für virtuelle Festplatten.</li>
+        <li class="opt"><span class="tick"></span>Ein VPN-Gateway zur Standortkopplung.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b>Hypervisor</b> (auch <b>Virtual Machine Monitor, VMM</b>) ist die Abstraktionsschicht zwischen Wirt und Gastsystemen. Er ermöglicht den <b>parallelen Betrieb</b> mehrerer VMs und <b>verwaltet/partitioniert</b> die Hardwareressourcen (RAM, CPU, Speicherplatz, Peripherie).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Zuordnung</span><span class="q-src">Typ 1 vs. Typ 2</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Vergleiche <b>Typ-1-</b> (Bare-Metal) und <b>Typ-2-</b> (Hosted) Hypervisor.</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Merkmal</th><th>Typ 1 (Bare-Metal)</th><th>Typ 2 (Hosted)</th></tr></thead>
+        <tbody>
+          <tr><td>Betriebssystem nötig?</td><td>?</td><td>?</td></tr>
+          <tr><td>Hardware-Zugriff</td><td>?</td><td>?</td></tr>
+          <tr><td>Beispiel</td><td>?</td><td>?</td></tr>
+          <tr><td>Vorteil</td><td>?</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Merkmal</th><th>Typ 1 (Bare-Metal)</th><th>Typ 2 (Hosted)</th></tr></thead>
+        <tbody>
+          <tr><td>Betriebssystem nötig?</td><td>nein (kein vorinstalliertes BS)</td><td>ja (läuft als App auf dem Host-BS)</td></tr>
+          <tr><td>Hardware-Zugriff</td><td>direkt auf die Hardware</td><td>über die Treiber des Host-BS („Brücke")</td></tr>
+          <tr><td>Beispiel</td><td>Microsoft Hyper-V, Citrix XenServer, VMware ESX, Oracle VM</td><td>Oracle VirtualBox, VMware Workstation, Microsoft Virtual-PC</td></tr>
+          <tr><td>Vorteil</td><td>hohe Performance, Sicherheit, Flexibilität (geringer Overhead)</td><td>bessere Hardware-Kompatibilität/Flexibilität</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Hypervisor-Typen 1 &amp; 2</h2></div>
+  <p class="sec-sub">Der <b>Typ-1-</b> (Bare-Metal-)Hypervisor setzt <b>direkt auf der Hardware</b> auf — kein
+    vorinstalliertes Betriebssystem. Der <b>Typ-2-</b> (Hosted-)Hypervisor läuft als <b>Applikation</b> auf
+    einem vorhandenen Betriebssystem und nutzt dessen Treiber als <b>Brücke</b> zur Hardware.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Bare-Metal-Architektur Typ 1: auf der Hardware liegt direkt der Hypervisor und darüber die Gastbetriebssysteme. Hosted-Architektur Typ 2: auf der Hardware liegt ein Host-Betriebssystem, darauf der Hypervisor und darüber die Gastbetriebssysteme">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Bare-Metal (Typ 1) vs. Hosted (Typ 2)</text>
+
+      <!-- Typ 1 links -->
+      <text x="185" y="52" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Typ 1 · Bare-Metal</text>
+      <rect x="40" y="62"  width="290" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="185" y="84"  fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Gast-OS 1 · Gast-OS 2</text>
+      <rect x="40" y="100" width="290" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="185" y="122" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hypervisor (VMM)</text>
+      <rect x="40" y="138" width="290" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="185" y="160" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hardware</text>
+      <text x="185" y="196" fill="#4A5864" font-size="10" text-anchor="middle">kein Host-BS · direkter HW-Zugriff</text>
+
+      <!-- Typ 2 rechts -->
+      <text x="575" y="52" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Typ 2 · Hosted</text>
+      <rect x="430" y="62"  width="290" height="30" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="575" y="82"  fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Gast-OS 1 · Gast-OS 2</text>
+      <rect x="430" y="96"  width="290" height="30" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="575" y="116" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hypervisor (VMM)</text>
+      <rect x="430" y="130" width="290" height="30" rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="575" y="150" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Host-Betriebssystem</text>
+      <rect x="430" y="164" width="290" height="30" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="575" y="184" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hardware</text>
+      <text x="575" y="216" fill="#4A5864" font-size="10" text-anchor="middle">Host-BS als Brücke · mehr Overhead</text>
+
+      <text x="20" y="256" fill="#4A5864" font-size="11">Typ 1: Hyper-V, XenServer, VMware ESX, Oracle VM — meist in großen Rechenzentren (geringer Overhead, stabil, skalierbar).</text>
+      <text x="20" y="273" fill="#4A5864" font-size="11">Typ 2: Oracle VirtualBox, VMware Workstation, Microsoft Virtual-PC — geringere Performance, dafür bessere HW-Kompatibilität.</text>
+    </svg>
+    <figcaption>Bei <b>Typ 1</b> liegt der Hypervisor <b>direkt</b> auf der Hardware; bei <b>Typ 2</b> liegt
+      zwischen Hardware und Hypervisor noch ein <b>Host-Betriebssystem</b>, dessen Treiber als Brücke dienen.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-src">Typ 1</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was gilt für einen <b>Typ-1-</b> (Bare-Metal-)Hypervisor?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er läuft als Anwendung auf einem vorhandenen Windows.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er setzt direkt auf der Hardware auf — es ist kein vorinstalliertes Betriebssystem nötig.</li>
+        <li class="opt"><span class="tick"></span>Er ist grundsätzlich langsamer als ein Typ-2-Hypervisor.</li>
+        <li class="opt"><span class="tick"></span>Er funktioniert ausschließlich in der Cloud.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b>Typ-1-</b> (Bare-Metal-)Hypervisor setzt <b>direkt auf der Hardware</b> des Wirts auf und benötigt daher <b>kein vorab installiertes Betriebssystem</b>. Durch die „dünne" Schicht ist der Overhead gering → hohe Performance, Sicherheit, Stabilität.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-src">Typ 2</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welches ist ein <b>Typ-2-</b> (Hosted-)Hypervisor?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Microsoft Hyper-V</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Oracle VirtualBox</li>
+        <li class="opt"><span class="tick"></span>VMware ESX</li>
+        <li class="opt"><span class="tick"></span>Citrix XenServer</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Oracle VirtualBox</b> ist ein <b>Typ-2-</b> (Hosted-)Hypervisor (ebenso VMware Workstation, Microsoft Virtual-PC). Hyper-V, VMware ESX und Citrix XenServer sind <b>Typ-1-</b> (Bare-Metal-)Hypervisoren.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-src">Overhead</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Warum hat ein <b>Typ-2-</b>Hypervisor tendenziell geringere Performance, dafür bessere Hardware-Kompatibilität?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Er greift über die Treiber des Host-Betriebssystems auf die Hardware zu (Brücke) — das erzeugt Overhead, aber das BS verwaltet die Treiber.</li>
+        <li class="opt"><span class="tick"></span>Er verschlüsselt jeden Hardware-Zugriff einzeln.</li>
+        <li class="opt"><span class="tick"></span>Er läuft direkt auf der Hardware ohne jede Zwischenschicht.</li>
+        <li class="opt"><span class="tick"></span>Er kann nur eine einzige VM gleichzeitig betreiben.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b>Typ-2-</b>Hypervisor nutzt die vom Host-BS bereitgestellten <b>Gerätetreiber als Brücke</b>. Der fehlende direkte Hardware-Zugriff erhöht den <b>Overhead</b> (geringere Performance), dafür ist die <b>Hardware-Kompatibilität besser</b>, weil das Betriebssystem die Treiber verwaltet.</p></div></article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Virtualisierungsarten</h2></div>
+  <p class="sec-sub">Man unterscheidet <b>Server-</b>, <b>Desktop-</b> und <b>Applikationsvirtualisierung</b>.
+    Bei der Desktopvirtualisierung ist die <b>VDI</b> (Virtual Desktop Infrastructure) verbreitet — im
+    Unterschied zu <b>DaaS</b> (Desktop as a Service) läuft sie <b>on-premises</b> im eigenen Rechenzentrum.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 240" role="img" aria-label="VDI gegen DaaS: Bei VDI werden die virtuellen Desktops im unternehmenseigenen Rechenzentrum on-premises gehostet, bei DaaS von einem Cloud-Anbieter; innerhalb von VDI unterscheidet man persistente und non-persistente Desktops">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Desktopvirtualisierung — VDI vs. DaaS</text>
+
+      <rect x="40" y="52" width="320" height="120" rx="8" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="200" y="78" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">VDI · Virtual Desktop Infrastructure</text>
+      <text x="200" y="100" fill="#4A5864" font-size="11" text-anchor="middle">on-premises im eigenen Rechenzentrum</text>
+      <text x="200" y="122" fill="#16242E" font-size="11" text-anchor="middle">persistent = bleibt gespeichert</text>
+      <text x="200" y="140" fill="#16242E" font-size="11" text-anchor="middle">non-persistent = wird zurückgesetzt</text>
+
+      <rect x="400" y="52" width="320" height="120" rx="8" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="560" y="78" fill="#16242E" font-size="13" text-anchor="middle" font-weight="700">DaaS · Desktop as a Service</text>
+      <text x="560" y="100" fill="#4A5864" font-size="11" text-anchor="middle">virtueller Desktop vom Cloud-Anbieter</text>
+      <text x="560" y="130" fill="#4A5864" font-size="11" text-anchor="middle">Verarbeitung in der Cloud statt im eigenen RZ</text>
+
+      <text x="20" y="208" fill="#4A5864" font-size="11">Gemeinsam: Der Client (PC, Thin-/Zero-Client, Smartphone, Tablet) bekommt den Desktop nur gestreamt (vgl. Terminal-Server).</text>
+    </svg>
+    <figcaption><b>VDI</b> wird <b>on-premises</b> im unternehmenseigenen Rechenzentrum gehostet;
+      <b>DaaS</b> stellt der Cloud-Anbieter bereit. Innerhalb von VDI gibt es <b>persistente</b>
+      (beständige) und <b>non-persistente</b> (beim Abmelden zurückgesetzte) Desktops.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-src">VDI vs. DaaS</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Worin unterscheiden sich <b>VDI</b> und <b>DaaS</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>VDI läuft in der Cloud, DaaS im eigenen Rechenzentrum.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>VDI wird on-premises im eigenen Rechenzentrum gehostet, DaaS von einem Cloud-Anbieter.</li>
+        <li class="opt"><span class="tick"></span>Beide sind identisch, nur die Namen unterscheiden sich.</li>
+        <li class="opt"><span class="tick"></span>VDI benötigt keinen Server, DaaS schon.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>VDI</b> hostet die virtuellen Desktops <b>on-premises</b> im unternehmenseigenen Rechenzentrum. <b>DaaS</b> ist ein Service, bei dem ein <b>Cloud-Anbieter</b> den virtuellen Desktop bereitstellt.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-src">persistent</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was kennzeichnet einen <b>non-persistenten</b> VDI-Desktop?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Er wird individuell angepasst und dauerhaft gespeichert.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Er wird beim Abmelden auf den Ursprungszustand zurückgesetzt (Fortschritt gelöscht).</li>
+        <li class="opt"><span class="tick"></span>Er liegt immer in der Cloud eines Anbieters.</li>
+        <li class="opt"><span class="tick"></span>Er benötigt keinen Server im Hintergrund.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Bei einem <b>non-persistenten</b> Desktop greift der Nutzer auf einen Pool identischer Images zu; beim <b>Abmelden</b> wird der Desktop auf den Ursprungszustand <b>zurückgesetzt</b> — der Bearbeitungsfortschritt geht verloren. Ein <b>persistenter</b> Desktop bleibt dagegen individuell gespeichert.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multiple Choice</span><span class="q-src">Szenario</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Ein <b>Klassenzimmer</b> wird von physischen PCs auf virtuelle Arbeitsplätze umgestellt. Welche Virtualisierungsart?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Servervirtualisierung</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Desktopvirtualisierung (VDI)</li>
+        <li class="opt"><span class="tick"></span>Applikationsvirtualisierung</li>
+        <li class="opt"><span class="tick"></span>Netzwerkvirtualisierung</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Virtuelle <b>Arbeitsplatzrechner</b> gehören zur <b>Desktopvirtualisierung</b>; die Umrüstung eines Klassenzimmers auf virtuelle Desktops im eigenen Rechenzentrum ist ein klassischer <b>VDI</b>-Fall.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Multiple Choice</span><span class="q-src">Applikationsvirt.</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was beschreibt die <b>Applikationsvirtualisierung</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Anwendung wird vom Betriebssystem isoliert und in einer eigenen Umgebung (Sandbox) bzw. zentral über einen Server bereitgestellt.</li>
+        <li class="opt"><span class="tick"></span>Ein physischer Server wird in mehrere virtuelle Server aufgeteilt.</li>
+        <li class="opt"><span class="tick"></span>Ein virtueller Desktop wird per Remote gestreamt.</li>
+        <li class="opt"><span class="tick"></span>Mehrere Standorte werden per VPN gekoppelt.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Applikations-/Anwendungsvirtualisierung</b> isoliert die Anwendung vom ausführenden Betriebssystem — sie läuft in einer eigenen <b>Sandbox</b> oder wird zentral auf einem Server bereitgestellt (nur eine Verknüpfung/.exe liegt auf dem Client). Tools: Bufferzone, Sandboxie; Anbieter: Citrix XenApp, VMware ThinApp, Microsoft App-V.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Zuordnung</span><span class="q-src">Beispiele</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ordne den Kategorien passende <b>Beispiel-Software</b> zu.</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Kategorie</th><th>Beispiel(e)</th></tr></thead>
+        <tbody>
+          <tr><td>Typ-1-Hypervisor (Bare-Metal)</td><td>?</td></tr>
+          <tr><td>Typ-2-Hypervisor (Hosted)</td><td>?</td></tr>
+          <tr><td>Applikationsvirtualisierung</td><td>?</td></tr>
+          <tr><td>Sandbox-Tools</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>Kategorie</th><th>Beispiel(e)</th></tr></thead>
+        <tbody>
+          <tr><td>Typ-1-Hypervisor (Bare-Metal)</td><td>Microsoft Hyper-V, Citrix XenServer, VMware ESX, Oracle VM</td></tr>
+          <tr><td>Typ-2-Hypervisor (Hosted)</td><td>Oracle VirtualBox, VMware Workstation, Microsoft Virtual-PC</td></tr>
+          <tr><td>Applikationsvirtualisierung</td><td>Citrix XenApp, VMware ThinApp, Microsoft App-V</td></tr>
+          <tr><td>Sandbox-Tools</td><td>Bufferzone, Sandboxie</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <!-- ===================== SECTION D ===================== -->
+  <div class="sec-head"><span class="ix">D</span><h2>Vor- &amp; Nachteile</h2></div>
+  <p class="sec-sub">Virtualisierung bringt vor allem <b>Serverkonsolidierung</b> und bessere Auslastung —
+    hat aber auch Schattenseiten wie einen <b>Single Point of Failure</b> und Lizenz-/Komplexitätskosten.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Vor- und Nachteile der Virtualisierung: Vorteile sind Serverkonsolidierung, bessere Ressourcenauslastung, schnelles Klonen, Isolation und Hochverfügbarkeit, einfacheres Backup und Live-Migration; Nachteile sind Single Point of Failure, Lizenzkosten, Performance-Overhead und steigende Komplexität">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Vorteile vs. Nachteile der Virtualisierung</text>
+
+      <rect x="20" y="44" width="350" height="30" rx="5" fill="#15786E"/><text x="195" y="64" fill="#FFFFFF" font-size="12" text-anchor="middle" font-weight="700">Vorteile</text>
+      <rect x="20" y="80"  width="350" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="30" y="97"  fill="#16242E" font-size="11">Serverkonsolidierung — weniger Hardware &amp; Kosten</text>
+      <rect x="20" y="110" width="350" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="30" y="127" fill="#16242E" font-size="11">bessere Ressourcenauslastung</text>
+      <rect x="20" y="140" width="350" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="30" y="157" fill="#16242E" font-size="11">schnelles Bereitstellen/Klonen von VMs</text>
+      <rect x="20" y="170" width="350" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="30" y="187" fill="#16242E" font-size="11">Isolation &amp; Hochverfügbarkeit</text>
+      <rect x="20" y="200" width="350" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="30" y="217" fill="#16242E" font-size="11">einfacheres Backup / Disaster Recovery</text>
+      <rect x="20" y="230" width="350" height="26" rx="4" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="30" y="247" fill="#16242E" font-size="11">Live-Migration ohne Downtime</text>
+
+      <rect x="390" y="44" width="350" height="30" rx="5" fill="#DD5430"/><text x="565" y="64" fill="#FFFFFF" font-size="12" text-anchor="middle" font-weight="700">Nachteile</text>
+      <rect x="390" y="80"  width="350" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="400" y="97"  fill="#16242E" font-size="11">Single Point of Failure</text>
+      <rect x="390" y="110" width="350" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="400" y="127" fill="#16242E" font-size="11">Lizenzkosten mancher Hypervisor-/Management-Tools</text>
+      <rect x="390" y="140" width="350" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="400" y="157" fill="#16242E" font-size="11">Performance-Overhead (v. a. Typ 2)</text>
+      <rect x="390" y="170" width="350" height="26" rx="4" fill="#FBEAE3" stroke="#DD5430" stroke-width="1.5"/><text x="400" y="187" fill="#16242E" font-size="11">steigende Komplexität im Management</text>
+      <text x="400" y="222" fill="#4A5864" font-size="10">Merke: Fällt der eine physische Wirt aus,</text>
+      <text x="400" y="238" fill="#4A5864" font-size="10">sind ohne Redundanz alle VMs betroffen.</text>
+    </svg>
+    <figcaption>Der große Vorteil ist die <b>Serverkonsolidierung</b> (weniger Hardware, Strom, Platz).
+      Dem stehen ein <b>Single Point of Failure</b>, <b>Lizenzkosten</b>, <b>Overhead</b> und mehr
+      <b>Komplexität</b> gegenüber.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">12</span><span class="q-type">Multi-Select</span><span class="q-src">Vorteile</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen nennen einen echten <b>Vorteil</b> der Virtualisierung? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Serverkonsolidierung — weniger Hardware und geringere Kosten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Bessere Auslastung der Ressourcen.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Schnelles Bereitstellen/Klonen von VMs.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Isolation/Hochverfügbarkeit — der Absturz einer VM betrifft andere nicht.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Live-Migration: VMs ohne Downtime auf andere Hardware verschieben.</li>
+        <li class="opt"><span class="tick"></span>Sie beseitigt jeden Single Point of Failure.</li>
+        <li class="opt"><span class="tick"></span>Sie macht Software-Lizenzen überflüssig.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Echte Vorteile: <b>Serverkonsolidierung</b>, bessere <b>Auslastung</b>, schnelles <b>Klonen</b>, <b>Isolation/Hochverfügbarkeit</b>, <b>Live-Migration</b>, einfacheres Backup/DR. Ein Single Point of Failure wird gerade <b>nicht</b> beseitigt (im Gegenteil), und Lizenzen bleiben nötig.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">13</span><span class="q-type">Multi-Select</span><span class="q-src">Nachteile</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Aussagen nennen einen echten <b>Nachteil</b> der Virtualisierung? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Single Point of Failure.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Lizenzkosten mancher Hypervisor-/Management-Tools.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Performance-Overhead (vor allem bei Typ 2).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Steigende Komplexität im Management.</li>
+        <li class="opt"><span class="tick"></span>Höherer Stromverbrauch durch mehr physische Server.</li>
+        <li class="opt"><span class="tick"></span>Es ist keinerlei Isolation der Systeme möglich.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Nachteile: <b>Single Point of Failure</b>, <b>Lizenzkosten</b>, <b>Performance-Overhead</b>, steigende <b>Komplexität</b>. Der Stromverbrauch <b>sinkt</b> durch Serverkonsolidierung, und Isolation ist gerade ein <b>Vorteil</b>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">14</span><span class="q-type">Multi-Select</span><span class="q-src">Servervirt.</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was trifft auf die <b>Servervirtualisierung</b> zu? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein physischer Server wird in mehrere virtuelle Server aufgeteilt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Hardware und Software werden logisch entkoppelt.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der Hypervisor teilt RAM/CPU/Speicher auf die Gastsysteme auf.</li>
+        <li class="opt"><span class="tick"></span>Jeder VM wird ein eigener physischer Server zugeteilt.</li>
+        <li class="opt"><span class="tick"></span>Sie funktioniert nur zusammen mit einem Cloud-Anbieter.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Bei der <b>Servervirtualisierung</b> wird ein physischer Server per Virtualisierungssoftware in mehrere <b>virtuelle Server</b> aufgeteilt; Hardware und Software sind <b>logisch entkoppelt</b>, der <b>Hypervisor</b> partitioniert die Ressourcen. Ein eigener physischer Server je VM oder ein zwingender Cloud-Anbieter widerspricht genau dem Prinzip.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">15</span><span class="q-type">Szenario</span><span class="q-src">Prinzip</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Für den <b>Dateiserver</b> und den <b>ERP-Zugang</b> der Schule ist eine Virtualisierung geplant.
+      Erkläre das <b>Prinzip der Servervirtualisierung</b>.</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step"><b>1.</b> Ein <b>physischer Server</b> wird per Virtualisierungssoftware in mehrere isolierte <b>virtuelle Maschinen</b> aufgeteilt (z. B. eine VM für den Dateiserver, eine für ERP).</div>
+      <div class="step"><b>2.</b> Software und Hardware werden <b>logisch entkoppelt</b> (Hardware-Virtualisierung).</div>
+      <div class="step"><b>3.</b> Der <b>Hypervisor</b> verwaltet und <b>partitioniert</b> die Ressourcen (RAM, CPU, Speicher) auf die Gastsysteme.</div>
+      <div class="step"><b>4.</b> Ergebnis: bessere <b>Auslastung</b>, <b>Serverkonsolidierung</b> (weniger Hardware/Strom) und <b>Isolation</b> der Dienste voneinander.</div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="6">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Konzept</span><span class="q-src">Servervirtualisierung</span><span class="q-pts">6 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Erkläre den Begriff <strong>virtuelle Maschine</strong> und den Aufbau der
+        <strong>Servervirtualisierung</strong> mit Hypervisor <strong>Typ 1 vs. Typ 2</strong>; nenne je ein
+        Beispiel und <strong>2 Vorteile</strong> der Virtualisierung.</p>
+      <textarea class="code-input" name="servervirt" rows="8" data-task="servervirt" placeholder="Virtuelle Maschine: … Hypervisor (VMM): … Typ 1 (Beispiel …) vs. Typ 2 (Beispiel …) … 2 Vorteile: …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 6 Punkte). Aufgabe: Begriff „virtuelle Maschine" erklären, Aufbau der Servervirtualisierung mit Hypervisor Typ 1 (Bare-Metal) vs. Typ 2 (Hosted) inkl. je einem Beispiel, plus 2 Vorteile der Virtualisierung. Kriterien: VM als virtueller Rechner auf einem Wirt/Host, mit Gastsystem, HW/SW logisch entkoppelt (2 P); Hypervisor als VMM erklärt und Typ-1/Typ-2-Unterschied korrekt (direkt auf HW / kein Host-BS vs. App auf Host-BS) mit je einem Beispiel (Typ 1: Hyper-V/ESX/XenServer; Typ 2: VirtualBox/VMware Workstation) (2 P); zwei stichhaltige Vorteile (z. B. Serverkonsolidierung, bessere Auslastung, Isolation, Live-Migration, einfaches Klonen/Backup) (2 P). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 6). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>Virtuelle Maschine:</b> ein virtueller Rechner, der sich wie ein eigenständiger physischer Rechner (eigene HW, eigenes BS = Gastsystem) verhält und auf einem physischen <b>Wirt/Host</b> läuft; HW und SW sind logisch entkoppelt.</li>
+        <li><b>Servervirtualisierung:</b> ein physischer Server wird per Virtualisierungssoftware in mehrere VMs aufgeteilt; der <b>Hypervisor (VMM)</b> betreibt sie parallel und partitioniert die Ressourcen.</li>
+        <li><b>Typ 1 (Bare-Metal):</b> direkt auf der Hardware, kein Host-BS — z. B. <b>Microsoft Hyper-V</b> / VMware ESX. <b>Typ 2 (Hosted):</b> als App auf einem Host-BS — z. B. <b>Oracle VirtualBox</b> / VMware Workstation.</li>
+        <li><b>2 Vorteile:</b> z. B. <b>Serverkonsolidierung</b> (weniger Hardware/Kosten) und <b>Isolation/Hochverfügbarkeit</b> bzw. <b>Live-Migration</b>.</li>
+      </ul>
+      <ul class="rubric"><li>VM/Wirt-Gast</li><li>Hypervisor + Typ 1/2 + Beispiele</li><li>2 Vorteile</li></ul>
+    </div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="20-vpn.html"><span>Vorheriges Thema</span><b>20 · VPN</b></a>
+    <a class="next" href="lernseite.html"><span>Weiter</span><b>Konzepte wiederholen →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 21 — Virtualisierung</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
+</body>
+</html>

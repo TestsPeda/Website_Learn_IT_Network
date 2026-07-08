@@ -41,7 +41,7 @@ eq(S.getIhkGrade(29).grade, 6, "29% → Note 6");
 eq(S.getIhkGrade(0).grade, 6, "0% → Note 6");
 
 /* --- Punkteverrechnung: Auswahlteil + KI-Punkte (offener Teil) --- */
-// 30 Auswahl (30 P) + 18 offen (KI). Volle Punkte → 100%.
+// Generische Beispielrechnung: 30 Auswahl + 18 offen = 48 P (die Live-SA nutzt 34 + 21 = 55 P). Volle Punkte → 100%.
 let r = S.calculateExamResult(30, 30, 18, 18);
 eq(r.totalScore, 48, "voll: Gesamtpunkte");
 eq(r.totalMax, 48, "voll: Höchstpunkte");

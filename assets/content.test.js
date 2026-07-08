@@ -14,12 +14,12 @@ const ok = (cond, msg) => { assert.ok(cond, msg); checks++; };
 
 const kiPages = ["10-adressierung.html","11-dhcp-dns.html","13-topologien.html","14-speichersysteme.html",
   "15-raid.html","16-email-protokolle.html","17-netzwerktechnologien.html","18-vlan.html",
-  "19-osi-modell.html"];
+  "19-osi-modell.html","20-vpn.html","21-virtualisierung.html"];
 const allTopics = ["1-grundbegriffe","2-verkabelungsplan","3-uebertragungsmedien","4-stueckliste",
   "5-geraeteklassen","6-strukturierte-verkabelung","7-it-infrastruktur","8-edgecomputing",
   "9-server-betriebssystem","10-adressierung","11-dhcp-dns","12-uebertragungsarten","13-topologien",
   "14-speichersysteme","15-raid","16-email-protokolle","17-netzwerktechnologien","18-vlan",
-  "19-osi-modell"].map(n=>n+".html");
+  "19-osi-modell","20-vpn","21-virtualisierung"].map(n=>n+".html");
 
 /* --- Kern-Assets existieren --- */
 for (const a of ["assets/style.css","assets/quiz.js","assets/print.css","assets/code.css","assets/code.js","assets/pruefung.js"]) {
@@ -80,9 +80,9 @@ for (const f of kiPages) {
   ok(!s.includes('src="assets/quiz.js"'), "pruefung: quiz.js darf NICHT geladen sein");
   ok(s.includes('href="assets/code.css"'), "pruefung: code.css (Styling) fehlt");
   const examQ = (s.match(/class="q exam-q"/g) || []).length;
-  ok(examQ === 30, "pruefung: erwartet 30 exam-q, gefunden " + examQ);
+  ok(examQ === 34, "pruefung: erwartet 34 exam-q, gefunden " + examQ);
   const openQ = (s.match(/class="q open-q"/g) || []).length;
-  ok(openQ === 5, "pruefung: erwartet 5 open-q, gefunden " + openQ);
+  ok(openQ === 6, "pruefung: erwartet 6 open-q, gefunden " + openQ);
   // jede exam-q hat data-answer im gültigen Bereich
   const blocks = s.split('class="q exam-q"').slice(1);
   blocks.forEach((b, i) => {
@@ -104,27 +104,44 @@ for (const f of kiPages) {
   ok(!s.includes('die 16 Themen'), "index: veralteter Text „16 Themen\"");
 }
 
-/* --- Nav: Thema 19 überall verlinkt, keine veralteten 1–18-Beschriftungen --- */
+/* --- Nav: Themen 19–21 überall verlinkt, keine veralteten Themenzahl-Beschriftungen --- */
 for (const f of allTopics.concat(["index.html","lernseite.html","pruefung.html"])) {
   const s = read(f);
   ok(s.includes('href="19-osi-modell.html"'), f + ": Nav-Link auf Thema 19 fehlt");
+  ok(s.includes('href="20-vpn.html"'), f + ": Nav-Link auf Thema 20 fehlt");
+  ok(s.includes('href="21-virtualisierung.html"'), f + ": Nav-Link auf Thema 21 fehlt");
   ok(!s.includes("Themen 1–18") && !s.includes("Themen 1 bis 18"),
      f + ": veraltete Beschriftung „Themen 1–18\"");
+  ok(!s.includes("Themen 1–19") && !s.includes("Themen 1 bis 19"),
+     f + ": veraltete Beschriftung „Themen 1–19\"");
 }
 {
   const s = read("index.html");
   ok(!/Achtzehn Themen/.test(s), "index: veralteter Hero-Text „Achtzehn Themen\"");
-  ok(s.includes("<b>19</b> Themen"), "index: Themen-Pill nicht auf 19 aktualisiert");
+  ok(!/Neunzehn Themen/.test(s), "index: veralteter Hero-Text „Neunzehn Themen\"");
+  ok(s.includes("<b>21</b> Themen"), "index: Themen-Pill nicht auf 21 aktualisiert");
   ok(!/die 18 Themen/.test(s), "index: veralteter Text „die 18 Themen\"");
+  ok(!/die 19 Themen/.test(s), "index: veralteter Text „die 19 Themen\"");
 }
 {
   const s = read("18-vlan.html");
   ok(/class="next" href="19-osi-modell\.html"/.test(s), "18-vlan: Pager führt nicht zu Thema 19");
 }
 {
+  const s = read("19-osi-modell.html");
+  ok(/class="next" href="20-vpn\.html"/.test(s), "19-osi: Pager führt nicht zu Thema 20");
+}
+{
+  const s = read("20-vpn.html");
+  ok(/class="next" href="21-virtualisierung\.html"/.test(s), "20-vpn: Pager führt nicht zu Thema 21");
+}
+{
   const s = read("lernseite.html");
   ok(s.includes("<h2>OSI-Modell &amp; TCP/IP</h2>"), "lernseite: Abschnitt 19 fehlt");
   ok(s.includes('href="#t19"'), "lernseite: TOC-Pill für Abschnitt 19 fehlt");
+  ok(s.includes('href="#t20"'), "lernseite: TOC-Pill für Abschnitt 20 fehlt");
+  ok(s.includes('href="#t21"'), "lernseite: TOC-Pill für Abschnitt 21 fehlt");
+  ok(/id="t20"/.test(s) && /id="t21"/.test(s), "lernseite: sec-head-Anker t20/t21 fehlen");
 }
 
 /* --- explore.js: alle 19 Themen in der Navigations-Datenbank --- */
@@ -133,7 +150,7 @@ for (const f of allTopics.concat(["index.html","lernseite.html","pruefung.html"]
   ok(s.includes('18-vlan.html'), "explore.js: Thema 18 fehlt in TOPICS");
   ok(s.includes('19-osi-modell.html'), "explore.js: Thema 19 fehlt in TOPICS");
   const entries = (s.match(/\{ n: \d+,/g) || []).length;
-  ok(entries === 19, "explore.js: erwartet 19 TOPICS-Einträge, gefunden " + entries);
+  ok(entries === 21, "explore.js: erwartet 21 TOPICS-Einträge, gefunden " + entries);
   // Anzeige-Zähler nicht auf eine alte Themenzahl hartkodiert (16er/18er)
   ok(!/\/1[68] (Paare|frei|gefunden)/.test(s) && !/Alle 1[68] (Paare|Themen)/.test(s),
      "explore.js: veralteter 16er/18er-Zähler in einer Spiel-Ansicht");
@@ -173,7 +190,7 @@ for (const f of allTopics) {
 {
   const s = read("lernseite.html");
   const n = (s.match(/<section class="lern-sek"/g) || []).length;
-  ok(n === 19, "lernseite: erwartet 19 lern-sek-Abschnitte, gefunden " + n);
+  ok(n === 21, "lernseite: erwartet 21 lern-sek-Abschnitte, gefunden " + n);
   ok(read("assets/style.css").includes("content-visibility: auto"), "style.css: lern-sek ohne content-visibility");
   ok(read("assets/print.css").includes("content-visibility: visible"), "print.css: Druck-Override fehlt");
 }

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lernseite · Themen 1–19 — IT-Lernmaterial</title>
+<title>Lernseite · Themen 1–21 — IT-Lernmaterial</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/print.css">
@@ -12,7 +12,7 @@
 <body>
 
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–19</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–21</b></a>
   <nav class="topnav">
     <a href="1-grundbegriffe.html">1</a>
     <a href="2-verkabelungsplan.html">2</a>
@@ -33,11 +33,13 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="19-osi-modell.html">19</a>
+    <a href="20-vpn.html">20</a>
+    <a href="21-virtualisierung.html">21</a>
     <a href="lernseite.html" class="current">Lernen</a>
     <a href="pruefung.html">Probe-SA</a>
   </nav>
   <div class="spacer"></div>
-  <span class="scorechip">Konzepte &amp; 66 Diagramme</span>
+  <span class="scorechip">Konzepte &amp; 70 Diagramme</span>
 </header>
 
 <main><div class="wrap">
@@ -45,12 +47,12 @@
   <section class="hero">
     <p class="eyebrow">Konzepte wiederholen</p>
     <h1>Lernseite<br>Konzepte auf einen Blick</h1>
-    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 66 Diagrammen
+    <p class="lede">Je Thema die Kernkonzepte kompakt erklärt — zusammen mit allen 70 Diagrammen
       der Themenblöcke 1 bis 19, nach Thema gruppiert. Zum Wiederholen ohne Aufgaben; jeder
       Block verlinkt zurück auf den zugehörigen Test.</p>
     <div class="hero-meta">
       <span class="pill"><b>19</b> Themen</span>
-      <span class="pill"><b>66</b> Diagramme</span>
+      <span class="pill"><b>70</b> Diagramme</span>
       <span class="pill">Konzepte + Grafiken</span>
     </div>
     <nav class="gal-nav">
@@ -73,6 +75,8 @@
       <a class="pill" href="#t17"><b>17</b> Netzwerktech. <span class="cnt">4</span></a>
       <a class="pill" href="#t18"><b>18</b> VLAN <span class="cnt">3</span></a>
       <a class="pill" href="#t19"><b>19</b> OSI-Modell <span class="cnt">3</span></a>
+      <a class="pill" href="#t20"><b>20</b> VPN <span class="cnt">2</span></a>
+      <a class="pill" href="#t21"><b>21</b> Virtualisierung <span class="cnt">2</span></a>
     </nav>
   </section>
 
@@ -2386,6 +2390,108 @@
 
   </section>
 
+  <div class="sec-head" id="t20"><span class="ix">20</span><h2>VPN — Virtual Private Network</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 900px">
+  <p class="sec-sub">Verschlüsselter Tunnel · IP-Tunneling · drei Typen · <a class="src-link" href="20-vpn.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">VPN</span><p class="lc-def"><b>Virtual Private Network</b> — ein privates, <b>verschlüsseltes</b> Netzwerk („Tunnel") durch das unsichere Internet. Ziele: <b>Fernzugriff</b> aufs Firmennetz (Außendienst) und Umgehen von Ländersperren.</p></div><div class="learn-card"><span class="lc-term">IP-Tunneling</span><p class="lc-def">Der <b>VPN-Client</b> verschlüsselt die Datenpakete und verpackt sie erneut in IP-Pakete. Der Ziel-Server sieht nur die <b>fiktive IP</b> des VPN-Servers. Die erstellte Verbindung ist der <b>VPN-Tunnel</b>.</p></div><div class="learn-card"><span class="lc-term">End-to-Site</span><p class="lc-def"><b>Remote-Access</b>: einzelner Rechner ↔ Firmennetz, <b>VPN-Client</b> auf dem PC nötig (z. B. OpenVPN). Für Außendienstmitarbeiter.</p></div><div class="learn-card"><span class="lc-term">Site-to-Site</span><p class="lc-def"><b>LAN-to-LAN</b>: koppelt Standorte (Zweigstelle ↔ Hauptstelle) über <b>VPN-Gateways</b>; <b>keine</b> Clients auf den Hosts, Zugriffskontrolle per Firewall.</p></div><div class="learn-card"><span class="lc-term">End-to-End</span><p class="lc-def">Verschlüsselt die <b>komplette Strecke</b> zwischen zwei Hosts über ein Gateway; beide Hosts brauchen VPN-Software. Typisch: Remote-Desktop (TeamViewer).</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Ein VPN als verschlüsselter Tunnel: Der Rechner mit VPN-Client sendet durch einen verschlüsselten Tunnel über das unsichere Internet an den VPN-Server, der die Anfrage an den Ziel-Server weiterleitet; der Ziel-Server sieht nur die fiktive IP-Adresse des VPN-Servers">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">VPN-Tunnel — sichere Verbindung durchs unsichere Internet</text>
+      <rect x="20" y="96" width="130" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="85" y="120" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Ihr Rechner</text>
+      <text x="85" y="138" fill="#4A5864" font-size="11" text-anchor="middle">VPN-Client</text>
+      <ellipse cx="335" cy="125" rx="120" ry="52" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/>
+      <text x="335" y="100" fill="#33424D" font-size="11" text-anchor="middle" font-weight="700">Internet (unsicher)</text>
+      <rect x="150" y="115" width="370" height="22" rx="11" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="335" y="131" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">verschlüsselter VPN-Tunnel</text>
+      <rect x="520" y="96" width="110" height="58" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="575" y="120" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VPN-Server</text>
+      <text x="575" y="138" fill="#4A5864" font-size="11" text-anchor="middle">fiktive IP</text>
+      <rect x="645" y="96" width="95" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="692" y="118" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Ziel-/</text>
+      <text x="692" y="134" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Firmenserver</text>
+      <line x1="630" y1="125" x2="643" y2="125" stroke="#16242E" stroke-width="2"/>
+      <polygon points="645,125 638,121 638,129" fill="#16242E"/>
+      <text x="20" y="205" fill="#4A5864" font-size="11">Der VPN-Client verschlüsselt die Datenpakete und verpackt sie erneut (IP-Tunneling).</text>
+      <text x="20" y="222" fill="#4A5864" font-size="11">Der Ziel-Server sieht nur die fiktive IP des VPN-Servers — nicht Ihre echte.</text>
+    </svg>
+    <figcaption>Die Kommunikation läuft durch einen <b>verschlüsselten VPN-Tunnel</b> zum VPN-Server; nach außen erscheint nur dessen <b>fiktive IP</b>.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 320" role="img" aria-label="Die drei VPN-Typen: End-to-Site verbindet einen einzelnen Host per VPN-Client mit dem Firmennetz; Site-to-Site verbindet zwei LANs über VPN-Gateways ohne Client auf den Hosts; End-to-End verschlüsselt die komplette Strecke zwischen zwei Hosts über ein Gateway">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Drei VPN-Typen im Vergleich</text>
+      <text x="20" y="60" fill="#16242E" font-size="12" font-weight="700">End-to-Site (Remote-Access)</text>
+      <rect x="20"  y="70" width="90" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="65"  y="91" fill="#16242E" font-size="10" text-anchor="middle">Host + Client</text>
+      <rect x="150" y="70" width="120" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="210" y="91" fill="#16242E" font-size="10" text-anchor="middle">VPN-Tunnel · Internet</text>
+      <rect x="310" y="70" width="110" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="365" y="91" fill="#16242E" font-size="10" text-anchor="middle">Firmennetz</text>
+      <text x="440" y="91" fill="#4A5864" font-size="10">VPN-Client nötig (z. B. OpenVPN)</text>
+      <text x="20" y="140" fill="#16242E" font-size="12" font-weight="700">Site-to-Site (LAN-to-LAN)</text>
+      <rect x="20"  y="150" width="90" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="65"  y="171" fill="#16242E" font-size="10" text-anchor="middle">LAN A</text>
+      <rect x="120" y="150" width="70" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="155" y="171" fill="#16242E" font-size="10" text-anchor="middle">Gateway</text>
+      <rect x="200" y="150" width="120" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="260" y="171" fill="#16242E" font-size="10" text-anchor="middle">VPN-Tunnel · Internet</text>
+      <rect x="330" y="150" width="70" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="365" y="171" fill="#16242E" font-size="10" text-anchor="middle">Gateway</text>
+      <rect x="410" y="150" width="90" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="455" y="171" fill="#16242E" font-size="10" text-anchor="middle">LAN B</text>
+      <text x="520" y="171" fill="#4A5864" font-size="10">keine Clients · VPN-Gateways</text>
+      <text x="20" y="220" fill="#16242E" font-size="12" font-weight="700">End-to-End (Host zu Host)</text>
+      <rect x="20"  y="230" width="90" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="65"  y="251" fill="#16242E" font-size="10" text-anchor="middle">Host A</text>
+      <rect x="150" y="230" width="90" height="34" rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="195" y="251" fill="#16242E" font-size="10" text-anchor="middle">Gateway</text>
+      <rect x="280" y="230" width="120" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="340" y="251" fill="#16242E" font-size="10" text-anchor="middle">ganze Strecke chiffriert</text>
+      <rect x="440" y="230" width="90" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="485" y="251" fill="#16242E" font-size="10" text-anchor="middle">Host B</text>
+      <text x="550" y="251" fill="#4A5864" font-size="10">z. B. TeamViewer</text>
+      <text x="20" y="300" fill="#4A5864" font-size="11">Faustregel: einzelner Rechner → End-to-Site · Standorte koppeln → Site-to-Site · zwei Hosts direkt → End-to-End.</text>
+    </svg>
+    <figcaption><b>End-to-Site</b> (Client nötig) · <b>Site-to-Site</b> (VPN-Gateways, keine Clients) · <b>End-to-End</b> (ganze Strecke zwischen zwei Hosts).</figcaption>
+  </figure></div>
+    </div>
+  </section>
+
+  <div class="sec-head" id="t21"><span class="ix">21</span><h2>Virtualisierung</h2></div>
+  <section class="lern-sek" style="contain-intrinsic-size: auto 900px">
+  <p class="sec-sub">VM &amp; Hypervisor · Typ 1/2 · Arten · Vor-/Nachteile · <a class="src-link" href="21-virtualisierung.html">zum Test öffnen →</a></p>
+  <div class="learn-grid">
+<div class="learn-card"><span class="lc-term">Virtualisierung / VM</span><p class="lc-def">Software simuliert Hardware. Eine <b>VM</b> ist ein virtueller Rechner (eigenes BS = <b>Gastsystem</b>) auf einem physischen <b>Wirt/Host</b>; HW und SW sind <b>logisch entkoppelt</b>.</p></div><div class="learn-card"><span class="lc-term">Hypervisor (VMM)</span><p class="lc-def">Der <b>Virtual Machine Monitor</b> betreibt mehrere VMs parallel und <b>partitioniert</b> die Ressourcen (RAM, CPU, Speicher, Peripherie).</p></div><div class="learn-card"><span class="lc-term">Typ 1 vs. Typ 2</span><p class="lc-def"><b>Typ 1 (Bare-Metal)</b>: direkt auf der Hardware, kein Host-BS (Hyper-V, ESX, XenServer) — hohe Performance. <b>Typ 2 (Hosted)</b>: App auf einem Host-BS (VirtualBox, VMware Workstation) — mehr Overhead, bessere HW-Kompatibilität.</p></div><div class="learn-card"><span class="lc-term">Virtualisierungsarten</span><p class="lc-def"><b>Server-</b>, <b>Desktop-</b> (VDI on-premises vs. <b>DaaS</b> Cloud; persistent/non-persistent) und <b>Applikationsvirtualisierung</b> (Sandbox; XenApp/ThinApp/App-V).</p></div><div class="learn-card"><span class="lc-term">Vor- &amp; Nachteile</span><p class="lc-def"><b>+</b> Serverkonsolidierung, Auslastung, Klonen, Isolation, Live-Migration, Backup/DR. <b>−</b> Single Point of Failure, Lizenzkosten, Overhead, Komplexität.</p></div>
+  </div>
+    <div class="gal-grid">
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Aufbau der Hardware-Virtualisierung: Auf der physischen Hardware des Wirts läuft der Hypervisor als Virtual Machine Monitor; darauf laufen mehrere virtuelle Maschinen, jede mit eigenem Betriebssystem">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Wirt · Hypervisor · virtuelle Maschinen</text>
+      <rect x="60"  y="52" width="190" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="155" y="78" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VM / Gast 1</text><text x="155" y="96" fill="#4A5864" font-size="10" text-anchor="middle">eigenes Betriebssystem</text>
+      <rect x="285" y="52" width="190" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="380" y="78" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VM / Gast 2</text><text x="380" y="96" fill="#4A5864" font-size="10" text-anchor="middle">eigenes Betriebssystem</text>
+      <rect x="510" y="52" width="190" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="605" y="78" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VM / Gast 3</text><text x="605" y="96" fill="#4A5864" font-size="10" text-anchor="middle">eigenes Betriebssystem</text>
+      <rect x="60" y="130" width="640" height="44" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="380" y="152" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Hypervisor (Virtual Machine Monitor)</text>
+      <text x="380" y="168" fill="#4A5864" font-size="10" text-anchor="middle">verwaltet &amp; partitioniert RAM · CPU · Speicher · Peripherie</text>
+      <rect x="60" y="190" width="640" height="44" rx="6" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/>
+      <text x="380" y="212" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Hardware — physischer Wirt (Host)</text>
+      <text x="380" y="228" fill="#4A5864" font-size="10" text-anchor="middle">Software und Hardware sind logisch entkoppelt</text>
+    </svg>
+    <figcaption>Der <b>Hypervisor</b> liegt zwischen dem <b>Wirt</b> und den <b>Gastsystemen</b> und teilt die Ressourcen auf die VMs auf.</figcaption>
+  </figure></div>
+      <div class="gal-item"><figure class="diagram">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Bare-Metal-Architektur Typ 1: auf der Hardware liegt direkt der Hypervisor und darüber die Gastbetriebssysteme. Hosted-Architektur Typ 2: auf der Hardware liegt ein Host-Betriebssystem, darauf der Hypervisor und darüber die Gastbetriebssysteme">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Bare-Metal (Typ 1) vs. Hosted (Typ 2)</text>
+      <text x="185" y="52" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Typ 1 · Bare-Metal</text>
+      <rect x="40" y="62"  width="290" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="185" y="84"  fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Gast-OS 1 · Gast-OS 2</text>
+      <rect x="40" y="100" width="290" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="185" y="122" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hypervisor (VMM)</text>
+      <rect x="40" y="138" width="290" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="185" y="160" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hardware</text>
+      <text x="185" y="196" fill="#4A5864" font-size="10" text-anchor="middle">kein Host-BS · direkter HW-Zugriff</text>
+      <text x="575" y="52" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Typ 2 · Hosted</text>
+      <rect x="430" y="62"  width="290" height="30" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="575" y="82"  fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Gast-OS 1 · Gast-OS 2</text>
+      <rect x="430" y="96"  width="290" height="30" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/><text x="575" y="116" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hypervisor (VMM)</text>
+      <rect x="430" y="130" width="290" height="30" rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="575" y="150" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Host-Betriebssystem</text>
+      <rect x="430" y="164" width="290" height="30" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/><text x="575" y="184" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Hardware</text>
+      <text x="575" y="216" fill="#4A5864" font-size="10" text-anchor="middle">Host-BS als Brücke · mehr Overhead</text>
+      <text x="20" y="256" fill="#4A5864" font-size="11">Typ 1: Hyper-V, XenServer, VMware ESX, Oracle VM — meist in großen Rechenzentren.</text>
+      <text x="20" y="273" fill="#4A5864" font-size="11">Typ 2: VirtualBox, VMware Workstation, Virtual-PC — bessere HW-Kompatibilität.</text>
+    </svg>
+    <figcaption>Bei <b>Typ 1</b> liegt der Hypervisor direkt auf der Hardware; bei <b>Typ 2</b> liegt dazwischen noch ein <b>Host-Betriebssystem</b>.</figcaption>
+  </figure></div>
+    </div>
+  </section>
+
   <nav class="pager">
     <a class="prev" href="index.html"><span>Zurück</span><b>← Übersicht</b></a>
     <a class="next" href="1-grundbegriffe.html"><span>Zum ersten Test</span><b>1 · Grundbegriffe →</b></a>
@@ -2393,7 +2499,7 @@
 
 </div></main>
 <footer class="foot"><div class="wrap">
-  <span class="mono">IT-Lernmaterial · Konzepte &amp; Diagramme</span> — Lernseite Themen 1–19.
+  <span class="mono">IT-Lernmaterial · Konzepte &amp; Diagramme</span> — Lernseite Themen 1–21.
 </div></footer>
 
 <script src="assets/lern.js"></script>

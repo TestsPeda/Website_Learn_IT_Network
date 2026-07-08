@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–19</b></a>
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–21</b></a>
   <nav class="topnav">
     <a href="1-grundbegriffe.html">1</a>
     <a href="2-verkabelungsplan.html">2</a>
@@ -33,6 +33,8 @@
     <a href="17-netzwerktechnologien.html">17</a>
     <a href="18-vlan.html">18</a>
     <a href="19-osi-modell.html">19</a>
+    <a href="20-vpn.html">20</a>
+    <a href="21-virtualisierung.html">21</a>
     <a href="lernseite.html">Lernen</a>
     <a href="pruefung.html" class="current">Probe-SA</a>
   </nav>
@@ -42,10 +44,10 @@
 <main><div class="wrap">
   <section class="hero">
     <p class="eyebrow">Prüfungssimulation</p>
-    <h1>Probe-SA — alle Themen 1–19</h1>
-    <p class="lede">Ein Durchlauf über den gesamten Stoff: <b>30 Auswahlfragen</b> (30 P, automatisch bewertet)
-      und ein <b>offener Teil</b> mit 5 Freitext-/Konstruktivaufgaben (18 P, per KI-Bewertung). Zeit: <b>80 Minuten</b>,
-      insgesamt <b>48 Punkte</b>. Beim Abgeben wird der Auswahlteil ausgewertet; die KI-Punkte des offenen Teils
+    <h1>Probe-SA — alle Themen 1–21</h1>
+    <p class="lede">Ein Durchlauf über den gesamten Stoff: <b>34 Auswahlfragen</b> (34 P, automatisch bewertet)
+      und ein <b>offener Teil</b> mit 6 Freitext-/Konstruktivaufgaben (21 P, per KI-Bewertung). Zeit: <b>90 Minuten</b>,
+      insgesamt <b>55 Punkte</b>. Beim Abgeben wird der Auswahlteil ausgewertet; die KI-Punkte des offenen Teils
       trägst du danach ein — Gesamtpunkte und Note werden berechnet und im Verlauf gespeichert.</p>
   </section>
 
@@ -65,7 +67,7 @@
 
   <div id="exam-content" hidden>
     <div class="exam-bar">
-      <span class="lbl" id="timer-label">Verbleibend</span><span class="clock" id="timer">80:00</span>
+      <span class="lbl" id="timer-label">Verbleibend</span><span class="clock" id="timer">90:00</span>
       <span id="extend-total" class="extend-total" aria-live="polite" hidden></span>
       <button class="btn" id="extend-time" type="button">+10 min</button>
       <span id="time-warning" class="time-warning" aria-live="polite"></span>
@@ -75,7 +77,7 @@
     <div id="result" hidden></div>
 
     <!-- ===================== AUSWAHLTEIL ===================== -->
-    <div class="sec-head"><span class="ix">A</span><h2>Auswahlteil (30 Fragen · je 1 P)</h2></div>
+    <div class="sec-head"><span class="ix">A</span><h2>Auswahlteil (34 Fragen · je 1 P)</h2></div>
     <p class="sec-sub">Genau eine Option ist richtig. Auswahl anklicken; Bewertung erfolgt beim Abgeben.</p>
 
     <article class="q exam-q" data-answer="1">
@@ -438,8 +440,56 @@
       <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Die <b>Netzwerkzugangsschicht</b> (Kabel, Netzwerkkarte, WLAN, Treiber, MAC-Infos) entspricht den OSI-Schichten <b>1 + 2</b>.</p></div>
     </article>
 
+    <article class="q exam-q" data-answer="1">
+      <div class="q-head"><span class="q-num">31</span><span class="q-type">VPN</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Welcher <em>VPN-Typ</em> koppelt zwei Firmenstandorte über VPN-Gateways, ohne dass auf den Hosts ein Client nötig ist?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>End-to-Site (Remote-Access)</li>
+          <li class="opt"><span class="tick"></span>Site-to-Site (LAN-to-LAN)</li>
+          <li class="opt"><span class="tick"></span>End-to-End</li>
+          <li class="opt"><span class="tick"></span>Proxy-VPN</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Site-to-Site</b> (LAN-to-LAN) verbindet Standorte über <b>VPN-Gateways</b>; die Hosts brauchen keinen Client. End-to-Site braucht einen Client, End-to-End verbindet zwei einzelne Hosts.</p></div>
+    </article>
+
+    <article class="q exam-q" data-answer="1">
+      <div class="q-head"><span class="q-num">32</span><span class="q-type">VPN</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Wie heißt das <em>Verschlüsseln und nochmalige Verpacken</em> der Datenpakete beim VPN?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>NAT</li>
+          <li class="opt"><span class="tick"></span>IP-Tunneling</li>
+          <li class="opt"><span class="tick"></span>Broadcasting</li>
+          <li class="opt"><span class="tick"></span>Routing</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Das Verschlüsseln und erneute Verpacken der Pakete in IP-Internetpakete heißt <b>IP-Tunneling</b>; die dabei erstellte Verbindung ist der <b>VPN-Tunnel</b>.</p></div>
+    </article>
+
+    <article class="q exam-q" data-answer="1">
+      <div class="q-head"><span class="q-num">33</span><span class="q-type">Virtualisierung</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Was gilt für einen <em>Typ-1-</em> (Bare-Metal-)Hypervisor?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>Er benötigt ein vorinstalliertes Betriebssystem.</li>
+          <li class="opt"><span class="tick"></span>Er setzt direkt auf der Hardware auf (kein Host-BS nötig).</li>
+          <li class="opt"><span class="tick"></span>Er ist immer langsamer als ein Typ-2-Hypervisor.</li>
+          <li class="opt"><span class="tick"></span>Er läuft nur in der Cloud.</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b>Typ-1-</b> (Bare-Metal-)Hypervisor setzt <b>direkt auf der Hardware</b> auf und braucht kein vorinstalliertes Betriebssystem — daher geringer Overhead und hohe Performance.</p></div>
+    </article>
+
+    <article class="q exam-q" data-answer="1">
+      <div class="q-head"><span class="q-num">34</span><span class="q-type">Virtualisierung</span><span class="q-pts">1 P</span></div>
+      <div class="q-body"><p class="q-text">Worin unterscheidet sich <code>VDI</code> von <code>DaaS</code>?</p>
+        <ul class="q-options" data-multi="false">
+          <li class="opt"><span class="tick"></span>VDI läuft in der Cloud, DaaS im eigenen Rechenzentrum.</li>
+          <li class="opt"><span class="tick"></span>VDI wird on-premises im eigenen Rechenzentrum gehostet, DaaS von einem Cloud-Anbieter.</li>
+          <li class="opt"><span class="tick"></span>Beide sind identisch, nur die Namen unterscheiden sich.</li>
+          <li class="opt"><span class="tick"></span>VDI benötigt keinen Server, DaaS schon.</li>
+        </ul></div>
+      <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>VDI</b> hostet die virtuellen Desktops <b>on-premises</b> im eigenen Rechenzentrum; bei <b>DaaS</b> stellt ein <b>Cloud-Anbieter</b> den Desktop bereit.</p></div>
+    </article>
+
     <!-- ===================== OFFENER TEIL ===================== -->
-    <div class="sec-head"><span class="ix">B</span><h2>Offener Teil (5 Aufgaben · 18 P · KI-Bewertung)</h2></div>
+    <div class="sec-head"><span class="ix">B</span><h2>Offener Teil (6 Aufgaben · 21 P · KI-Bewertung)</h2></div>
     <p class="sec-sub">Antwort ins Feld schreiben, „KI-Bewertungs-Prompt kopieren", in einer KI bewerten lassen und die
       erhaltenen Punkte nach dem Abgeben oben eintragen. Der Sammel-Button kopiert alle offenen Aufgaben zusammen.</p>
     <div class="controls"><button class="btn" id="copy-open" type="button">Alle offenen Aufgaben als KI-Prompt kopieren</button></div>
@@ -682,19 +732,45 @@
       </div>
     </article>
 
+    <article class="q open-q" id="open-virt" data-ki-max="3">
+      <div class="q-head"><span class="q-num">O6</span><span class="q-type">Server-Virtualisierung</span><span class="q-src">Virtualisierung</span><span class="q-pts">3 P · KI</span></div>
+      <div class="q-body">
+        <p class="q-text">Erkläre die <strong>Server-Virtualisierung</strong>: Was ist eine <em>virtuelle Maschine</em>, wozu dient der
+          <em>Hypervisor</em>, und worin unterscheiden sich <em>Typ 1</em> und <em>Typ 2</em>? Nenne außerdem <strong>2 Vorteile</strong> der Virtualisierung.</p>
+        <textarea class="code-input" name="servervirt-exam" rows="8" data-task="servervirt-exam" placeholder="VM: … Hypervisor (VMM): … Typ 1 vs. Typ 2 (je Beispiel) … 2 Vorteile: …"></textarea>
+      </div>
+      <div class="q-foot">
+        <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+        <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+      </div>
+      <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Prüfungsaufgabe (max. 3 Punkte). Aufgabe: Server-Virtualisierung erklären — virtuelle Maschine, Hypervisor (VMM), Unterschied Typ 1 (Bare-Metal) vs. Typ 2 (Hosted) und 2 Vorteile. Bewertungskriterien: VM als virtueller Rechner auf einem Wirt/Host mit eigenem Gastsystem (1 P); Hypervisor als VMM plus korrekter Typ-1/Typ-2-Unterschied (direkt auf HW/kein Host-BS vs. App auf Host-BS), gern mit Beispiel (1 P); zwei stichhaltige Vorteile, z. B. Serverkonsolidierung, bessere Auslastung, Isolation, Live-Migration (1 P). Vergib Punkte streng nach Kriterien und nenne die Gesamtpunktzahl (max. 3). Lösung des Schülers:
+{{CODE}}</template>
+      <div class="q-solution" hidden>
+        <span class="sol-label">Musterlösung</span>
+        <ul>
+          <li><b>Virtuelle Maschine:</b> virtueller Rechner mit eigener (virtueller) Hardware und eigenem BS (Gastsystem), läuft auf einem physischen <b>Wirt/Host</b>; HW und SW sind logisch entkoppelt.</li>
+          <li><b>Hypervisor (VMM):</b> betreibt mehrere VMs parallel und partitioniert die Ressourcen (RAM, CPU, Speicher).</li>
+          <li><b>Typ 1 (Bare-Metal):</b> direkt auf der Hardware, kein Host-BS (z. B. Hyper-V, ESX). <b>Typ 2 (Hosted):</b> App auf einem Host-BS (z. B. VirtualBox).</li>
+          <li><b>2 Vorteile:</b> z. B. Serverkonsolidierung (weniger Hardware/Kosten) und Isolation/Hochverfügbarkeit bzw. Live-Migration.</li>
+        </ul>
+        <p class="rubric-label">Bewertungsraster — darauf prüft die KI-Bewertung:</p>
+        <ul class="rubric"><li>VM/Wirt-Gast</li><li>Hypervisor + Typ 1/2</li><li>2 Vorteile</li></ul>
+      </div>
+    </article>
+
   </div><!-- /exam-content -->
 
   <div id="history" hidden></div>
 
   <div class="note">
     <span class="lbl">So funktioniert die Bewertung</span>
-    <p>Der Auswahlteil (30 P) wird beim Abgeben automatisch ausgewertet. Für den offenen Teil (18 P) kopierst du den
+    <p>Der Auswahlteil (34 P) wird beim Abgeben automatisch ausgewertet. Für den offenen Teil (21 P) kopierst du den
     KI-Bewertungs-Prompt, lässt ihn von einer KI nach den angegebenen Kriterien bewerten und trägst die erhaltenen
-    Punkte je Aufgabe ein. Gesamtpunktzahl (max. 48 P), Prozentwert und Note werden nach dem Notenschlüssel berechnet
+    Punkte je Aufgabe ein. Gesamtpunktzahl (max. 55 P), Prozentwert und Note werden nach dem Notenschlüssel berechnet
     und mit „Endergebnis speichern" dauerhaft im Verlauf abgelegt.</p>
   </div>
 </div></main>
-<footer class="foot"><div class="wrap"><span class="mono">IT·Net · Probe-SA — alle Themen 1–19</span> · Prüfungssimulation</div></footer>
+<footer class="foot"><div class="wrap"><span class="mono">IT·Net · Probe-SA — alle Themen 1–21</span> · Prüfungssimulation</div></footer>
 <!-- Probe-SA nutzt pruefung.js (eigene Logik inkl. offener Teil); NICHT code.js/quiz.js. -->
 <script src="assets/pruefung.js"></script>
 </body>

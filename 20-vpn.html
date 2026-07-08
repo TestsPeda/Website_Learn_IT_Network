@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20 · VPN — IT-Lernmaterial</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/code.css">
+<link rel="stylesheet" href="assets/print.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="mark">IT<span class="slash">·</span>Net</span><b>Themen 1–21</b></a>
+  <nav class="topnav">
+    <a href="1-grundbegriffe.html">1</a>
+    <a href="2-verkabelungsplan.html">2</a>
+    <a href="3-uebertragungsmedien.html">3</a>
+    <a href="4-stueckliste.html">4</a>
+    <a href="5-geraeteklassen.html">5</a>
+    <a href="6-strukturierte-verkabelung.html">6</a>
+    <a href="7-it-infrastruktur.html">7</a>
+    <a href="8-edgecomputing.html">8</a>
+    <a href="9-server-betriebssystem.html">9</a>
+    <a href="10-adressierung.html">10</a>
+    <a href="11-dhcp-dns.html">11</a>
+    <a href="12-uebertragungsarten.html">12</a>
+    <a href="13-topologien.html">13</a>
+    <a href="14-speichersysteme.html">14</a>
+    <a href="15-raid.html">15</a>
+    <a href="16-email-protokolle.html">16</a>
+    <a href="17-netzwerktechnologien.html">17</a>
+    <a href="18-vlan.html">18</a>
+    <a href="19-osi-modell.html">19</a>
+    <a href="20-vpn.html" class="current">20</a>
+    <a href="21-virtualisierung.html">21</a>
+    <a href="lernseite.html">Lernen</a>
+    <a href="pruefung.html">Probe-SA</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="scorechip" id="scorechip">Auto-Fragen: 0/0 richtig</span>
+</header>
+<main><div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Sichere Verbindungen</p>
+    <div class="hero-num"><span class="hash">#</span>20</div>
+    <h1>VPN — Virtual Private Network</h1>
+    <p class="lede">Ein <b>VPN</b> ist ein <b>privates, verschlüsseltes Netzwerk</b> — bildlich ein
+      <b>Tunnel</b>, durch den man das Internet für Außenstehende unsichtbar und abhörsicher nutzt.
+      Es dient dem <b>Fernzugriff</b> von außen auf ein Firmennetz oder dem Umgehen von Ländersperren.
+      Kernbegriffe: <code>IP-Tunneling</code>, <code>VPN-Tunnel</code>, <code>fiktive IP</code> und die
+      drei Typen <b>End-to-Site</b>, <b>Site-to-Site</b> und <b>End-to-End</b>.</p>
+    <div class="hero-meta">
+      <span class="pill"><b>12</b> Aufgaben</span>
+      <span class="pill"><b>3</b> Diagramme</span>
+      <span class="pill">MC · Multi-Select · Zuordnung · KI-Freitext</span>
+    </div>
+  </section>
+  <div class="controls">
+    <button class="btn primary" id="show-all">Alle Lösungen einblenden</button>
+    <button class="btn" id="hide-all">Alle ausblenden</button>
+    <button class="btn" id="reset-answers">Antworten zurücksetzen</button>
+  </div>
+
+  <!-- ===================== SECTION A ===================== -->
+  <div class="sec-head"><span class="ix">A</span><h2>Was ist ein VPN — und wozu?</h2></div>
+  <p class="sec-sub">Ein <b>VPN</b> (Virtual Private Network) ist ein privates Netzwerk und bildlich ein
+    <b>Tunnel</b> durch das unsichere Internet: Andere können die Verbindung nicht abhören oder Daten
+    abgreifen. Zwei typische Ziele: <b>Fernzugriff</b> von außen auf ein Firmennetz (z. B. Außendienst)
+    und das <b>Umgehen von Ländersperren</b> (durch Privatpersonen).</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Ein VPN als verschlüsselter Tunnel: Der Rechner mit VPN-Client sendet durch einen verschlüsselten Tunnel über das unsichere Internet an den VPN-Server, der die Anfrage an den Ziel-Server weiterleitet; der Ziel-Server sieht nur die fiktive IP-Adresse des VPN-Servers">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">VPN-Tunnel — sichere Verbindung durchs unsichere Internet</text>
+
+      <!-- Client -->
+      <rect x="20" y="96" width="130" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="85" y="120" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">Ihr Rechner</text>
+      <text x="85" y="138" fill="#4A5864" font-size="11" text-anchor="middle">VPN-Client</text>
+
+      <!-- Internet-Wolke -->
+      <ellipse cx="335" cy="125" rx="120" ry="52" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/>
+      <text x="335" y="100" fill="#33424D" font-size="11" text-anchor="middle" font-weight="700">Internet (unsicher)</text>
+
+      <!-- Tunnel durch die Wolke -->
+      <rect x="150" y="115" width="370" height="22" rx="11" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="335" y="131" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">verschlüsselter VPN-Tunnel</text>
+
+      <!-- VPN-Server -->
+      <rect x="520" y="96" width="110" height="58" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="575" y="120" fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">VPN-Server</text>
+      <text x="575" y="138" fill="#4A5864" font-size="11" text-anchor="middle">fiktive IP</text>
+
+      <!-- Ziel-Server -->
+      <rect x="645" y="96" width="95" height="58" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="692" y="118" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Ziel-/</text>
+      <text x="692" y="134" fill="#16242E" font-size="11" text-anchor="middle" font-weight="700">Firmenserver</text>
+
+      <!-- Verbindungspfeile -->
+      <line x1="630" y1="125" x2="643" y2="125" stroke="#16242E" stroke-width="2"/>
+      <polygon points="645,125 638,121 638,129" fill="#16242E"/>
+
+      <text x="20" y="205" fill="#4A5864" font-size="11">Der VPN-Client verschlüsselt die Datenpakete und verpackt sie erneut (IP-Tunneling).</text>
+      <text x="20" y="222" fill="#4A5864" font-size="11">Der Ziel-Server sieht nur die <tspan font-weight="700">fiktive IP</tspan> des VPN-Servers — nicht Ihre echte.</text>
+    </svg>
+    <figcaption>Statt sich direkt (unsicher) einzuwählen, läuft die Kommunikation durch einen
+      <b>verschlüsselten VPN-Tunnel</b> zum <b>VPN-Server</b>. Nach außen erscheint nur dessen
+      <b>fiktive IP-Adresse</b> — so ist ein Mitlesen oder Nachverfolgen nicht möglich.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">01</span><span class="q-type">Multiple Choice</span><span class="q-src">Definition</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was ist ein <b>VPN</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>Ein privates, verschlüsseltes Netzwerk — ein „Tunnel" durch das unsichere Internet.</li>
+        <li class="opt"><span class="tick"></span>Ein neuer Verkabelungsstandard für Rechenzentren.</li>
+        <li class="opt"><span class="tick"></span>Ein Protokoll zur automatischen IP-Vergabe im LAN.</li>
+        <li class="opt"><span class="tick"></span>Eine spezielle Bauform einer Hardware-Firewall.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>VPN = Virtual Private Network</b>: ein privates Netzwerk, das man sich als <b>Tunnel</b> vorstellen kann, durch den man das Internet abhörsicher nutzt. Die Kommunikation ist <b>verschlüsselt</b> und kann von Außenstehenden nicht mitgelesen werden.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">02</span><span class="q-type">Multiple Choice</span><span class="q-src">Ziel</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wozu dient ein VPN unter anderem?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Um Dateien vor dem Versenden zu komprimieren.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Um externen Zugriff von außen auf ein Firmennetz zu ermöglichen (z. B. für Außendienstmitarbeiter).</li>
+        <li class="opt"><span class="tick"></span>Um IP-Adressen innerhalb des lokalen Netzes zu vergeben.</li>
+        <li class="opt"><span class="tick"></span>Um die physische Bandbreite der Internetleitung zu erhöhen.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Ein VPN ermöglicht den <b>Fernzugriff</b> von außen auf ein Netzwerk (z. B. der Außendienstmitarbeiter greift aufs Firmennetz zu). Ein zweiter Zweck ist das <b>Umgehen von Ländersperren</b> (durch Privatpersonen). Bandbreite oder Verkabelung ändert ein VPN nicht.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">03</span><span class="q-type">Multi-Select</span><span class="q-src">Nutzen</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welchen <b>Nutzen</b> bietet ein VPN? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Kommunikation ist verschlüsselt und kann nicht mitgelesen werden.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Aktivitäten sind nicht nachverfolgbar (fiktive, mehrfach vergebene IP-Adresse).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Der Rechner wird virtuell dem Firmenstandort zugeordnet.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Sichere Nutzung auch im öffentlichen WLAN (z. B. am Flughafen).</li>
+        <li class="opt"><span class="tick"></span>Es erhöht die physische Bandbreite der Leitung.</li>
+        <li class="opt"><span class="tick"></span>Es ersetzt die Verkabelung im Gebäude.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Weil die Kommunikation <b>verschlüsselt</b> abläuft, lässt sich kein Mitlesen und kein Nachverfolgen mehr durchführen. Der Rechner erhält eine IP, die ihn dem <b>Firmenstandort</b> zuordnet — ideal auch für unsichere öffentliche Netze. Bandbreite und Verkabelung bleiben unberührt.</p></div></article>
+
+  <!-- ===================== SECTION B ===================== -->
+  <div class="sec-head"><span class="ix">B</span><h2>Funktionsweise: IP-Tunneling</h2></div>
+  <p class="sec-sub">Auch ein VPN nutzt das <b>Internet</b> als Basis. Der <b>VPN-Client</b> verschlüsselt die
+    Anfragen und Datenpakete und verpackt sie erneut in IP-Internetpakete — bildlich ein
+    <b>Briefumschlag im Briefumschlag</b>. Der Empfänger sieht nur die <b>fiktive IP</b>. Das Verschlüsseln
+    und nochmalige Verpacken heißt <b>IP-Tunneling</b>; die dabei erstellte Verbindung ist der <b>VPN-Tunnel</b>.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 250" role="img" aria-label="IP-Tunneling: Eine Anfrage wird vom VPN-Client verschlüsselt, in ein IP-Internetpaket verpackt und über das Internet zum VPN-Server geschickt; die Antwort kommt verschlüsselt zurück">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">IP-Tunneling — Anfrage verschlüsseln und neu verpacken</text>
+
+      <rect x="20"  y="70" width="150" height="60" rx="6" fill="#E4F1EF" stroke="#15786E" stroke-width="2"/>
+      <text x="95" y="94"  fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">1 · Anfrage (Request)</text>
+      <text x="95" y="112" fill="#4A5864" font-size="10" text-anchor="middle">z. B. an den Mailserver</text>
+
+      <rect x="205" y="70" width="150" height="60" rx="6" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/>
+      <text x="280" y="94"  fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">2 · verschlüsseln</text>
+      <text x="280" y="112" fill="#4A5864" font-size="10" text-anchor="middle">VPN-Client chiffriert</text>
+
+      <rect x="390" y="70" width="160" height="60" rx="6" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/>
+      <text x="470" y="94"  fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">3 · in IP-Paket</text>
+      <text x="470" y="112" fill="#4A5864" font-size="10" text-anchor="middle">nochmals verpackt (Umschlag)</text>
+
+      <rect x="585" y="70" width="155" height="60" rx="6" fill="#EDF1F4" stroke="#33424D" stroke-width="2"/>
+      <text x="662" y="94"  fill="#16242E" font-size="12" text-anchor="middle" font-weight="700">4 · VPN-Server</text>
+      <text x="662" y="112" fill="#4A5864" font-size="10" text-anchor="middle">entpackt &amp; leitet weiter</text>
+
+      <!-- Pfeile -->
+      <line x1="170" y1="100" x2="203" y2="100" stroke="#16242E" stroke-width="2"/><polygon points="205,100 198,96 198,104" fill="#16242E"/>
+      <line x1="355" y1="100" x2="388" y2="100" stroke="#16242E" stroke-width="2"/><polygon points="390,100 383,96 383,104" fill="#16242E"/>
+      <line x1="550" y1="100" x2="583" y2="100" stroke="#16242E" stroke-width="2"/><polygon points="585,100 578,96 578,104" fill="#16242E"/>
+
+      <text x="20" y="175" fill="#16242E" font-size="12" font-weight="700">IP-Tunneling</text>
+      <text x="20" y="192" fill="#4A5864" font-size="11">= Verschlüsseln + nochmaliges Verpacken der Datenpakete (Schritte 2 + 3).</text>
+      <text x="20" y="214" fill="#16242E" font-size="12" font-weight="700">VPN-Tunnel</text>
+      <text x="20" y="231" fill="#4A5864" font-size="11">= die dabei erstellte (verschlüsselte) Verbindung. Die Antwort (Response) kommt ebenso verschlüsselt zurück.</text>
+    </svg>
+    <figcaption>Der <b>VPN-Client</b> verschlüsselt jede Anfrage und verpackt sie erneut in ein
+      IP-Internetpaket. Genau dieses <b>Verschlüsseln + Verpacken</b> ist das <b>IP-Tunneling</b>;
+      die entstehende Verbindung nennt man <b>VPN-Tunnel</b>.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">04</span><span class="q-type">Multiple Choice</span><span class="q-src">IP-Tunneling</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Wie nennt man das <b>Verschlüsseln und nochmalige Verpacken</b> der Datenpakete beim VPN?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>NAT (Network Address Translation)</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>IP-Tunneling</li>
+        <li class="opt"><span class="tick"></span>Broadcasting</li>
+        <li class="opt"><span class="tick"></span>Routing</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Das <b>Verschlüsseln</b> der Datenpakete und ihr <b>nochmaliges Verpacken</b> in IP-Internetpakete heißt <b>IP-Tunneling</b>.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">05</span><span class="q-type">Multiple Choice</span><span class="q-src">VPN-Tunnel</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Was bezeichnet man als <b>VPN-Tunnel</b>?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>Den physischen Glasfaserstrang zwischen zwei Standorten.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die beim VPN erstellte (verschlüsselte) Verbindung.</li>
+        <li class="opt"><span class="tick"></span>Eine bestimmte Firewall-Regel.</li>
+        <li class="opt"><span class="tick"></span>Die öffentliche IP-Adresse des Internet-Routers.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p>Der <b>VPN-Tunnel</b> ist die <b>Verbindung, die beim VPN erstellt wird</b> — die verschlüsselte Strecke, durch die die getunnelten Pakete laufen.</p></div></article>
+
+  <!-- ===================== SECTION C ===================== -->
+  <div class="sec-head"><span class="ix">C</span><h2>Die drei VPN-Typen</h2></div>
+  <p class="sec-sub">Man unterscheidet drei Typen: <b>End-to-Site</b> (Remote-Access),
+    <b>Site-to-Site</b> (LAN-to-LAN) und <b>End-to-End</b> (Host zu Host).</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 760 320" role="img" aria-label="Die drei VPN-Typen: End-to-Site verbindet einen einzelnen Host per VPN-Client mit dem Firmennetz; Site-to-Site verbindet zwei LANs über VPN-Gateways ohne Client auf den Hosts; End-to-End verschlüsselt die komplette Strecke zwischen zwei Hosts über ein Gateway">
+      <text class="svg-title" x="20" y="26" font-size="16" font-weight="700" style="fill:#16242E;">Drei VPN-Typen im Vergleich</text>
+
+      <!-- End-to-Site -->
+      <text x="20" y="60" fill="#16242E" font-size="12" font-weight="700">End-to-Site (Remote-Access)</text>
+      <rect x="20"  y="70" width="90" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="65"  y="91" fill="#16242E" font-size="10" text-anchor="middle">Host + Client</text>
+      <rect x="150" y="70" width="120" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="210" y="91" fill="#16242E" font-size="10" text-anchor="middle">VPN-Tunnel · Internet</text>
+      <rect x="310" y="70" width="110" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="365" y="91" fill="#16242E" font-size="10" text-anchor="middle">Firmennetz</text>
+      <text x="440" y="91" fill="#4A5864" font-size="10">VPN-Client nötig (z. B. OpenVPN)</text>
+
+      <!-- Site-to-Site -->
+      <text x="20" y="140" fill="#16242E" font-size="12" font-weight="700">Site-to-Site (LAN-to-LAN)</text>
+      <rect x="20"  y="150" width="90" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="65"  y="171" fill="#16242E" font-size="10" text-anchor="middle">LAN A</text>
+      <rect x="120" y="150" width="70" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="155" y="171" fill="#16242E" font-size="10" text-anchor="middle">Gateway</text>
+      <rect x="200" y="150" width="120" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="260" y="171" fill="#16242E" font-size="10" text-anchor="middle">VPN-Tunnel · Internet</text>
+      <rect x="330" y="150" width="70" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="365" y="171" fill="#16242E" font-size="10" text-anchor="middle">Gateway</text>
+      <rect x="410" y="150" width="90" height="34" rx="5" fill="#EDF1F4" stroke="#33424D" stroke-width="1.5"/><text x="455" y="171" fill="#16242E" font-size="10" text-anchor="middle">LAN B</text>
+      <text x="520" y="171" fill="#4A5864" font-size="10">keine Clients · VPN-Gateways</text>
+
+      <!-- End-to-End -->
+      <text x="20" y="220" fill="#16242E" font-size="12" font-weight="700">End-to-End (Host zu Host)</text>
+      <rect x="20"  y="230" width="90" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="65"  y="251" fill="#16242E" font-size="10" text-anchor="middle">Host A</text>
+      <rect x="150" y="230" width="90" height="34" rx="5" fill="#FFF6DF" stroke="#C9A227" stroke-width="2"/><text x="195" y="251" fill="#16242E" font-size="10" text-anchor="middle">Gateway</text>
+      <rect x="280" y="230" width="120" height="34" rx="5" fill="#FBEAE3" stroke="#DD5430" stroke-width="2"/><text x="340" y="251" fill="#16242E" font-size="10" text-anchor="middle">ganze Strecke chiffriert</text>
+      <rect x="440" y="230" width="90" height="34" rx="5" fill="#E4F1EF" stroke="#15786E" stroke-width="1.5"/><text x="485" y="251" fill="#16242E" font-size="10" text-anchor="middle">Host B</text>
+      <text x="550" y="251" fill="#4A5864" font-size="10">z. B. TeamViewer</text>
+
+      <text x="20" y="300" fill="#4A5864" font-size="11">Faustregel: einzelner Rechner → End-to-Site · Standorte koppeln → Site-to-Site · zwei Hosts direkt → End-to-End.</text>
+    </svg>
+    <figcaption><b>End-to-Site</b> hängt einen einzelnen Rechner (mit VPN-Client) ans Firmennetz;
+      <b>Site-to-Site</b> koppelt zwei LANs über <b>VPN-Gateways</b> (ohne Client auf den Hosts);
+      <b>End-to-End</b> verschlüsselt die komplette Strecke zwischen zwei Hosts über ein Gateway.</figcaption>
+  </figure>
+
+  <article class="q"><div class="q-head"><span class="q-num">06</span><span class="q-type">Multiple Choice</span><span class="q-src">Szenario</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Ein <b>Außendienstmitarbeiter</b> soll mit seinem einzelnen Laptop ins Firmennetz. Welcher VPN-Typ?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt" data-correct="true"><span class="tick"></span>End-to-Site (Remote-Access) — VPN-Client auf dem PC, z. B. OpenVPN.</li>
+        <li class="opt"><span class="tick"></span>Site-to-Site (LAN-to-LAN).</li>
+        <li class="opt"><span class="tick"></span>End-to-End (Host zu Host).</li>
+        <li class="opt"><span class="tick"></span>Proxy-VPN.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>End-to-Site</b> (Remote-Access): Einzelne Rechner werden aus dem Firmennetz „ausgelagert" und greifen per <b>VPN-Client</b> (z. B. OpenVPN) darauf zu — man arbeitet, als säße man direkt im Unternehmen.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">07</span><span class="q-type">Multiple Choice</span><span class="q-src">Szenario</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Eine <b>Zweigstelle</b> soll dauerhaft mit der Hauptstelle gekoppelt werden. Welcher Typ?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>End-to-Site.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Site-to-Site (LAN-to-LAN) — über VPN-Gateways.</li>
+        <li class="opt"><span class="tick"></span>End-to-End.</li>
+        <li class="opt"><span class="tick"></span>DNS-VPN.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Site-to-Site</b> (auch LAN-to-LAN- oder Branch-Office-VPN) verbindet mehrere verteilte Firmennetze. Statt Clients auf den Hosts richtet man aufeinander abgestimmte <b>VPN-Gateways</b> (VPN-fähige Router) ein; die Zugriffskontrolle läuft über Firewalls.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">08</span><span class="q-type">Multiple Choice</span><span class="q-src">Szenario</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Eine verschlüsselte Verbindung zwischen genau <b>zwei Hosts</b> (Remote-Desktop, z. B. TeamViewer). Welcher Typ?</p>
+      <ul class="q-options" data-multi="false">
+        <li class="opt"><span class="tick"></span>End-to-Site.</li>
+        <li class="opt"><span class="tick"></span>Site-to-Site.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>End-to-End.</li>
+        <li class="opt"><span class="tick"></span>Broadcast-VPN.</li>
+      </ul></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>End-to-End</b> verbindet zwei Hosts (Client-Client, Client-Server, Server-Server) und verschlüsselt die <b>komplette Strecke</b>. Die Verbindung wird über eine zentrale Station (<b>Gateway</b>, im Router oder in der Firewall) geleitet; typischer Einsatz ist der Remote-Desktop-Bereich (z. B. TeamViewer).</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">09</span><span class="q-type">Multi-Select</span><span class="q-src">Site-to-Site</span><span class="q-pts">Auto</span></div>
+    <div class="q-body"><p class="q-text">Welche Merkmale gelten für ein <b>Site-to-Site-VPN</b>? (Mehrfachauswahl)</p>
+      <ul class="q-options" data-multi="true">
+        <li class="opt" data-correct="true"><span class="tick"></span>Es verbindet mehrere LANs (LAN-to-LAN-Kopplung).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Auf den Hosts sind keine VPN-Clients nötig.</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Es nutzt VPN-Gateways (VPN-fähige Router mit abgestimmter Konfiguration).</li>
+        <li class="opt" data-correct="true"><span class="tick"></span>Die Zugriffskontrolle kann über Firewalls gesteuert werden.</li>
+        <li class="opt"><span class="tick"></span>Jeder Host benötigt einen eigenen OpenVPN-Client.</li>
+        <li class="opt"><span class="tick"></span>Es dient vor allem Privatpersonen zum Umgehen von Ländersperren.</li>
+      </ul>
+      <button class="btn q-check" type="button" style="margin-top:6px;">Auswerten</button>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Lösung</span><p><b>Site-to-Site</b> koppelt ganze LANs (z. B. Zweigstelle ↔ Hauptstelle) über <b>VPN-Gateways</b>; die Hosts brauchen <b>keinen</b> Client. Ein Client auf jedem Host ist Merkmal von <b>End-to-Site</b>; das Umgehen von Ländersperren ist ein privater Einsatzzweck des VPN allgemein.</p></div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">10</span><span class="q-type">Zuordnung</span><span class="q-src">Typen-Übersicht</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Vervollständige die Übersicht der drei VPN-Typen.</p>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>VPN-Typ</th><th>Client auf dem Host?</th><th>Was wird gekoppelt?</th><th>Beispiel/Einsatz</th></tr></thead>
+        <tbody>
+          <tr><td>End-to-Site</td><td>?</td><td>?</td><td>?</td></tr>
+          <tr><td>Site-to-Site</td><td>?</td><td>?</td><td>?</td></tr>
+          <tr><td>End-to-End</td><td>?</td><td>?</td><td>?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="tbl-wrap"><table class="ref">
+        <thead><tr><th>VPN-Typ</th><th>Client auf dem Host?</th><th>Was wird gekoppelt?</th><th>Beispiel/Einsatz</th></tr></thead>
+        <tbody>
+          <tr><td>End-to-Site</td><td>ja (VPN-Client)</td><td>einzelner Rechner ↔ Firmennetz</td><td>OpenVPN, Außendienst/Remote-Access</td></tr>
+          <tr><td>Site-to-Site</td><td>nein</td><td>LAN ↔ LAN (Standorte)</td><td>VPN-Gateways, Zweigstelle ↔ Hauptstelle</td></tr>
+          <tr><td>End-to-End</td><td>ja (beide Hosts)</td><td>Host ↔ Host (über Gateway)</td><td>TeamViewer, Remote-Desktop</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+  <article class="q"><div class="q-head"><span class="q-num">11</span><span class="q-type">Szenario</span><span class="q-src">IP-Tunneling</span><span class="q-pts">manuell</span></div>
+    <div class="q-body"><p class="q-text">Ein Mitarbeiter am <b>Flughafen-WLAN</b> stellt eine Anfrage an den Firmen-Mailserver.
+      Beschreibe in Stichpunkten, wie sie dank VPN <b>sicher</b> ankommt (IP-Tunneling, fiktive IP).</p></div>
+    <div class="q-foot"><button class="q-reveal" aria-expanded="false">Lösung anzeigen</button></div>
+    <div class="q-solution" hidden><span class="sol-label">Musterlösung</span>
+      <div class="step"><b>1.</b> Vor der Einwahl den <b>VPN-Client</b> aktivieren.</div>
+      <div class="step"><b>2.</b> Der Client <b>verschlüsselt</b> die Anfrage und <b>verpackt</b> sie erneut in ein IP-Internetpaket (IP-Tunneling).</div>
+      <div class="step"><b>3.</b> Das Paket läuft durch den <b>VPN-Tunnel</b> zum <b>VPN-Server</b>.</div>
+      <div class="step"><b>4.</b> Nach außen erscheint nur die <b>fiktive IP</b> des VPN-Servers (Zuordnung zum Firmenstandort).</div>
+      <div class="step"><b>5.</b> Die <b>Antwort</b> kommt ebenso verschlüsselt zurück — im offenen WLAN kann niemand mitlesen oder nachverfolgen.</div>
+    </div></article>
+
+  <div class="sec-head"><span class="ix">★</span><h2>Freitext · KI-Bewertung</h2></div>
+  <p class="sec-sub">Frei formulieren, „KI-Bewertungs-Prompt kopieren", von einer KI nach den Kriterien bewerten
+    lassen und das Feedback zum Üben nutzen. Deine Antwort wird lokal gespeichert. Diese Freitextaufgaben zählen nicht zum Seiten-Score — Punkte gibt es nur in der Probe-SA.</p>
+  <article class="q" data-ki-max="6">
+    <div class="q-head"><span class="q-num">F1</span><span class="q-type">Freitext · Konzept</span><span class="q-src">VPN-Typen</span><span class="q-pts">6 P · KI</span></div>
+    <div class="q-body">
+      <p class="q-text">Erkläre die <strong>drei VPN-Typen</strong> (End-to-Site, Site-to-Site, End-to-End) mit je
+        einem <strong>Einsatzbeispiel</strong> und gib an, ob ein <strong>VPN-Client</strong> auf dem Host nötig ist.</p>
+      <textarea class="code-input" name="vpn-typen" rows="8" data-task="vpn-typen" placeholder="End-to-Site: … (Beispiel …, Client: ja/nein) → Site-to-Site: … → End-to-End: …"></textarea>
+    </div>
+    <div class="q-foot">
+      <button class="q-copyprompt">KI-Bewertungs-Prompt kopieren</button>
+      <button class="q-reveal" aria-expanded="false">Musterlösung anzeigen</button>
+    </div>
+    <template class="prompt-tpl">Du bist Lehrkraft für IT-Systeme &amp; Netzwerktechnik und bewertest eine Freitextaufgabe (max. 6 Punkte). Aufgabe: die drei VPN-Typen (End-to-Site/Remote-Access, Site-to-Site/LAN-to-LAN, End-to-End) erklären, je ein Einsatzbeispiel nennen und angeben, ob ein VPN-Client auf dem Host nötig ist. Kriterien: alle drei Typen fachlich korrekt beschrieben (3 P; anteilig), je ein passendes Beispiel (2 P; End-to-Site → Außendienst/OpenVPN, Site-to-Site → Zweigstellen/VPN-Gateways, End-to-End → TeamViewer/Remote-Desktop), Client-Angabe korrekt (1 P; End-to-Site ja, Site-to-Site nein, End-to-End beide Hosts). Vergib Punkte streng und nenne die Gesamtpunktzahl (max. 6). Lösung des Schülers:
+{{CODE}}</template>
+    <div class="q-solution" hidden>
+      <span class="sol-label">Musterlösung</span>
+      <ul>
+        <li><b>End-to-Site (Remote-Access):</b> lagert einzelne Rechner aus dem Firmennetz aus; ein <b>VPN-Client</b> auf dem PC ist nötig (z. B. OpenVPN). Beispiel: Außendienstmitarbeiter greift aufs Firmennetz zu.</li>
+        <li><b>Site-to-Site (LAN-to-LAN / Branch-Office):</b> verbindet mehrere LANs über <b>VPN-Gateways</b>; <b>keine</b> Clients auf den Hosts. Beispiel: Zweigstelle ↔ Hauptgeschäftsstelle.</li>
+        <li><b>End-to-End:</b> verschlüsselt die komplette Strecke zwischen <b>zwei Hosts</b> über ein Gateway; <b>beide</b> Hosts brauchen VPN-Software. Beispiel: Remote-Desktop mit TeamViewer.</li>
+      </ul>
+      <ul class="rubric"><li>3 Typen korrekt</li><li>je ein Beispiel</li><li>Client ja/nein</li></ul>
+    </div>
+  </article>
+
+  <nav class="pager">
+    <a class="prev" href="19-osi-modell.html"><span>Vorheriges Thema</span><b>19 · OSI-Modell</b></a>
+    <a class="next" href="21-virtualisierung.html"><span>Weiter · Thema 21</span><b>Virtualisierung →</b></a>
+  </nav>
+</div></main>
+<footer class="foot"><div class="wrap"><span class="mono">IT-Lernmaterial · Thema 20 — VPN</span> · Kerninhalt</div></footer>
+<script src="assets/quiz.js"></script>
+<script src="assets/code.js"></script>
+</body>
+</html>

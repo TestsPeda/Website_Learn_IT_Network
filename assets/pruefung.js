@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var DURATION = 80 * 60;        // PARAMETER (Schritt 6): Sekunden, an den Umfang angepasst
+  var DURATION = 90 * 60;        // PARAMETER: Sekunden, an den Umfang angepasst (34 Auswahl + 6 offen)
   var remaining = DURATION;
   var timerId = null;
   var started = false;            // Test-Start-Gate: Timer läuft erst nach „Test starten"
@@ -22,7 +22,8 @@
     { id: "open-raid",       label: "Aufgabe O2 · RAID-Auswahl",           max: 4 },
     { id: "open-topologie",  label: "Aufgabe O3 · Topologie-Entwurf",      max: 3 },
     { id: "open-arp",        label: "Aufgabe O4 · ARP-/Ping-Ablauf",       max: 3 },
-    { id: "open-osi",        label: "Aufgabe O5 · OSI-Troubleshooting",    max: 3 }
+    { id: "open-osi",        label: "Aufgabe O5 · OSI-Troubleshooting",    max: 3 },
+    { id: "open-virt",       label: "Aufgabe O6 · Server-Virtualisierung", max: 3 }
   ];
   var OPEN_MAX = OPEN_TASKS.reduce(function (s, t) { return s + t.max; }, 0);
   var hasOpen = OPEN_TASKS.length > 0;
