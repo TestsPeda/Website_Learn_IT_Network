@@ -58,6 +58,10 @@ body {
   color: var(--ink);
   background: var(--ground);
   line-height: 1.62;
+  /* Sicherheitsnetz gegen seitliches Scrollen: sehr lange Komposita (z. B.
+     „Applikationsvirtualisierung") und Tokens brechen im Notfall um, statt den
+     Viewport zu sprengen. break-word verändert die intrinsische Breite nicht. */
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   /* faint blueprint grid — quiet atmosphere, not loud */
@@ -341,7 +345,10 @@ hr.rule {
 .q-head {
   display: flex;
   align-items: center;
-  gap: 12px;
+  /* auf sehr schmalen Displays dürfen die Kopf-Chips umbrechen, statt die
+     Fragekarte über den Viewport hinaus zu schieben. */
+  flex-wrap: wrap;
+  gap: 6px 12px;
   padding: 14px 22px 0;
 }
 .q-num {
@@ -407,6 +414,10 @@ hr.rule {
   display: flex;
   align-items: flex-start;
   gap: 11px;
+  /* als Grid-Item niemals unter die Track-Breite gedrückt werden: min-width:0
+     erlaubt dem Text-Flexchild, statt zu überlaufen umzubrechen (Mobil). */
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 11px 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1637,6 +1648,12 @@ details.term .tt-body code {
   .hunt-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+  /* Snake-Spielfeld an schmale Displays anpassen: die feste 360px-Spalte
+     (flex:none) muss mitschrumpfen dürfen, sonst überläuft das Canvas. */
+  .snake-left {
+    min-width: 0;
+    max-width: 100%;
+  }
   .snake-board,
   .snake-canvas {
     width: 100%;
@@ -1707,6 +1724,9 @@ details.term .tt-body code {
 }
 .pager a {
   flex: 1;
+  /* min-width:0 lässt die beiden Flex-Karten unter ihre Inhaltsbreite
+     schrumpfen; lange Themen-Wörter brechen um, statt überzulaufen (Mobil). */
+  min-width: 0;
   text-decoration: none;
   color: var(--ink);
   background: var(--surface);
@@ -1716,6 +1736,9 @@ details.term .tt-body code {
   transition:
     border-color 0.14s,
     background 0.14s;
+}
+.pager a b {
+  overflow-wrap: anywhere;
 }
 .pager a:hover {
   border-color: var(--accent);
@@ -1804,6 +1827,21 @@ details.term .tt-body code {
 @media (max-width: 620px) {
   .topnav {
     display: none;
+  }
+  /* Topbar darf umbrechen; der Score-Chip rutscht bei Bedarf in die nächste
+     Zeile, statt die Leiste (und damit die Seite) breiter als den Viewport zu
+     schieben. Ohne Themen-Navigation entfällt der flexible Spacer. */
+  .topbar {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+  .topbar .spacer {
+    display: none;
+  }
+  .scorechip {
+    margin-left: auto;
+    min-width: 0;
+    white-space: normal;
   }
   .q-head,
   .q-body,
